@@ -1,1 +1,1 @@
-export { default } from './TeamSlider';
+export { default } from './testimonials';

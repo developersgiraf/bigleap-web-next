@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
-import styles from "./TeamSlider.module.css";
+import styles from "./Testimonials.module.css";
 
-const TeamSlider = ({ teamData = [] }) => {
+export default function Testimonials({ teamData = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleMembers, setVisibleMembers] = useState([]);
 
@@ -190,6 +190,6 @@ const TeamSlider = ({ teamData = [] }) => {
       </div>
     </div>
   );
-};
+}
 
-export default TeamSlider;
+// export default TeamSlider;
