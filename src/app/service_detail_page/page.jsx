@@ -1,5 +1,5 @@
 import styles from "./service-detail.module.scss";
-import TitleDescription from "../components/title-description/titleDes";
+import TitleDescription from "../servicess/components/title-description/titleDes";
 
 export default function Services() {
   return (
@@ -19,8 +19,8 @@ export default function Services() {
               <span className={styles.paraColor}>
                 lorem ipsum dolor sit amet consectetur adipiscing elit. lorem
                 ipsum dolor sit amet consectetur adipiscing elit. lorem ipsum
-                dolor sit amet consectetur adipiscing elit. lorem ipsum dolor sit
-                amet consectetur adipiscing elit. lorem ipsum dolor sit amet
+                dolor sit amet consectetur adipiscing elit. lorem ipsum dolor
+                sit amet consectetur adipiscing elit. lorem ipsum dolor sit amet
                 consectetur adipiscing elit. lorem ipsum dolor sit amet
                 consectetur adipiscing elit. lorem ipsum dolor sit amet
                 consectetur adipiscing elit. lorem ipsum dolor sit amet

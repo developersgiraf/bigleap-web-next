@@ -8,7 +8,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "/servicess/2danimation"
   },
   {
     image: "/servicess/3danimation.png",
@@ -16,7 +16,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "/servicess/3danimation"
   },
   {
     image: "/servicess/Whiteboard Animation.png",
@@ -24,7 +24,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "/servicess/whiteboard-animation"
   },
   {
     image: "/servicess/character.png",
@@ -32,7 +32,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "/servicess/character-design"
   },
   {
     image: "/servicess/comic-book.png",
@@ -40,7 +40,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "/servicess/comic-book"
   },
   {
     image: "/servicess/red-machine.png",
