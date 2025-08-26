@@ -1,56 +1,64 @@
 import ServiceImage from "../components/services-sect/ser";
+import TitleBanner from "../components/title-banner/title";
+import TeamSlider from "../components/team-slider/TeamSlider";
 const blogData = [
   {
     image: "/servicess/2danimation.png",
     caption: "2D Animation",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/3danimation.png",
     caption: "3D Animation",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/Whiteboard Animation.png",
     caption: "Whiteboard Animation",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/character.png",
     caption: "Character Design",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/comic-book.png",
     caption: "Comic Book",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/red-machine.png",
     caption: "red machine",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/VFX & Post Production.png",
     caption: "VFX & Post Production",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/video.png",
     caption: "Video Editing & Post Production",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/Whiteboard Animation.png",
     caption: "white board",
-    link: "#"
+    link: "#",
   },
 ];
 
 export default function BlogPage() {
   return (
     <>
+      <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" />
+      <ServiceImage head="Our Blogs" />
+
       <ServiceImage data={blogData} anim="x" />
+
+      {/* Team Slider Demo */}
+      <TeamSlider />
     </>
   );
 }
