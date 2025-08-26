@@ -1,7 +1,7 @@
 import TitleBanner from "../components/title-banner/title.jsx";
 import styles from "./services.module.scss";
 import Image from "next/image";
-import ServiceImage from "../components/services-sect/ser.jsx";
+import ServiceImage from "../components/services-sect/servicesImage.jsx";
 import Industries from "../components/industries/industries.jsx";
 import EnquirySect from "../components/enquiry/enquiry.jsx";
 import TitleDescription from "../components/title-description/titleDes.jsx";
@@ -17,7 +17,7 @@ export default function ServicesPage() {
             <div className="col-xl-3">
               <div className={styles.image}>
                 <Image
-                  src="/services/comic-book.png"
+                  src="/servicess/comic-book.png"
                   alt=""
                   width={237}
                   height={365}
@@ -58,16 +58,19 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <ServiceImage head="Services We Provide" />
+      <section className={styles.serviceCollect}>
+        <ServiceImage head="Services We Provide" />
+      </section>
 
-      <section className={styles.detailHead}>
+      <section className={styles.titledes}>
         <div className="container">
           <TitleDescription
             title={
               <>
                 Do You Want to <span className={styles.textColor}>Create</span>{" "}
-                an <span className={styles.textColor}>Impact</span> with a
-                Professional & Effective{" "}
+                an <br />
+                <span className={styles.textColor}>Impact</span> with a
+                Professional & <br /> Effective{" "}
                 <span className={styles.textColor}>Animated Video</span> ?{" "}
               </>
             }
@@ -81,7 +84,15 @@ export default function ServicesPage() {
                 consectetur adipiscing elit. lorem ipsum dolor sit amet
                 consectetur adipiscing elit. lorem ipsum dolor sit amet
                 consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit.
+                consectetur adipiscing elit. <br />
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
+                dolores, quasi porro ducimus inventore corporis maxime commodi
+                quo optio nemo aliquam officia recusandae consequatur ipsa
+                dolorum blanditiis vitae placeat delectus!Lorem, ipsum dolor sit
+                amet consectetur adipisicing elit. Modi dolores, quasi porro
+                ducimus inventore corporis maxime commodi quo optio nemo aliquam
+                officia recusandae consequatur ipsa dolorum blanditiis vitae
+                placeat delectus!
               </span>
             }
           />

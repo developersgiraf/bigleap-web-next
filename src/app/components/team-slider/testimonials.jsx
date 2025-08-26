@@ -136,35 +136,19 @@ export default function Testimonials({ teamData = [] }) {
 
         {/* Navigation Arrows */}
         <button
-          className={`${styles.navButton} ${styles.prevButton}`}
+          className="circle-nav-btn left"
           onClick={goToPrev}
           aria-label="Previous team member"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          {"<"}
         </button>
 
         <button
-          className={`${styles.navButton} ${styles.nextButton}`}
+          className="circle-nav-btn right"
           onClick={goToNext}
           aria-label="Next team member"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          {">"}
         </button>
       </div>
 
@@ -175,7 +159,7 @@ export default function Testimonials({ teamData = [] }) {
         <p className={styles.memberDescription}>{currentMember.description}</p>
       </div>
 
-      {/* Dots Indicator */}
+      {/* Dots Indicator
       <div className={styles.dotsIndicator}>
         {data.map((_, index) => (
           <button
@@ -187,7 +171,7 @@ export default function Testimonials({ teamData = [] }) {
             aria-label={`Go to team member ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import styles from "./ser.module.scss";
-import ServicesImage from "./animation";
+import Animation from "./animation";
 
 const defaultData = [
   {
@@ -72,23 +72,28 @@ const defaultData = [
     link: "#"
   },
 ];
-export default function ServiceImage({ data = defaultData, anim='scale', head='' }) {
+export default function ServiceImage({ data = defaultData, anim='scale', head='', maxCols = 3 }) {
 
   return (
     <>
       <section className={styles.ServiceImage}>
         {head.length > 0 && <h2>{head}</h2>}
         <div className="container">
-          <div className="row">
+          <div
+            className={`row ${styles.serimgs}`}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: `repeat(${maxCols}, 1fr)`,
+              gap: '24px',
+            }}
+          >
             {data.map((item, index) => (
-              <div key={index} className="col-xl-4">
+              <div key={index} className={styles.serImg}>
                 <div className={styles.serMain}>
-                  <ServicesImage data={item} buttonName="LEARN MORE" anim={anim} />
-
+                  <Animation data={item} buttonName="LEARN MORE" anim={anim} />
                 </div>
               </div>
             ))}
-            <div></div>
           </div>
         </div>
       </section>

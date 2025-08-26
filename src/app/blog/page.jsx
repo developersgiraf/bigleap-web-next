@@ -1,4 +1,4 @@
-import ServiceImage from "../components/services-sect/ser";
+import ServiceImage from "../components/services-sect/servicesImage";
 import TitleBanner from "../components/title-banner/title";
 import Testimonials from "../components/team-slider/testimonials";
 const blogData = [
@@ -55,8 +55,6 @@ export default function BlogPage() {
       <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" />
 
       <ServiceImage head="Our Blogs" data={blogData} anim="x" />
-
-      <Testimonials />
     </>
   );
 }

@@ -9,6 +9,7 @@ import FAQSection from "./components/faq/faq.jsx";
 import BlogSection from "./components/blogs/blog.jsx";
 import EnquirySect from "./components/enquiry/enquiry.jsx";
 import ClientsArea from "./components/clients-area/clients.jsx";
+import Testimonials from "./components/team-slider/testimonials";
 const list = [
   {
     title: "Strengthening brand identity",
@@ -351,6 +352,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* client area */}
       <ClientsArea />

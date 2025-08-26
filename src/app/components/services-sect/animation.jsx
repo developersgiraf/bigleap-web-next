@@ -2,19 +2,22 @@ import Items from "../item";
 import styles from "./ser.module.scss";
 import Image from "next/image";
 import CTAButton from "../ctaButton/ctabtn";
-export default function ServicesImage({
+
+
+export default function Animation({
   data = {
     image: "/servicess/character.png",
     caption: "Character Design",
     link: "#"
   },
   buttonName = "LEARN MORE",
-  anim="scale"
+  anim="scale",
+  
 
 }) {
   return (
     <>
-      <section className={styles.servicepage}>
+      <div className={styles.servicepage}>
         <div className={styles.serviceimageCover}>
           <div className={styles.image + " " + (anim==="scale"?styles.scale:styles.posX)}>
             <Image src={data.image} width={387} height={396} alt="image" />
@@ -50,7 +53,7 @@ export default function ServicesImage({
           <h6>{data.caption}</h6>
         </div>
         <CTAButton title={buttonName} link={data.link} />
-      </section>
+      </div>
     </>
   );
 }
