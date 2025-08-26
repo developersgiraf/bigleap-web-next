@@ -1,82 +1,55 @@
 import Items from "../item";
 import styles from "./ser.module.scss";
 import Image from "next/image";
-export default function ServicesImage({ image, caption}) {
-  const list = [
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",    
-    },
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",
-    },
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",
-    },
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",
-    },
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",
-    },
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",
-    },
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",
-    },
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",
-    },
-    {
-      sub1: "Lorem ipsum dolor sit",
-      sub2: "Lorem ipsum dolor sit",
-      sub3: "Lorem ipsum dolor sit",
-    },
-    
-];
+import CTAButton from "../ctaButton/ctabtn";
+export default function ServicesImage({
+  data = {
+    image: "/servicess/character.png",
+    caption: "Character Design",
+    link: "#"
+  },
+  buttonName = "LEARN MORE",
+  anim="scale"
+
+}) {
   return (
     <>
       <section className={styles.servicepage}>
         <div className={styles.serviceimageCover}>
-          <div className={styles.image}>
-            <Image src={image} width={387} height={396} alt="image" />
-            {
-                list.map((item, index) => (
-                    <div className={styles.list} key={index}>
-                        <div className={styles.listItem}>
-                            <h5>{item.sub1}</h5>
-                        </div>
-                        <div className={styles.listItem}>
-                            <h5>{item.sub2}</h5>
-                        </div>
-                        <div className={styles.listItem}>
-                            <h5>{item.sub3}</h5>
-                        </div>
-                    </div>
-                ))
-            }
-          
+          <div className={styles.image + " " + (anim==="scale"?styles.scale:styles.posX)}>
+            <Image src={data.image} width={387} height={396} alt="image" />
+            <div className={styles.list}>
+              {data.sub1 && (
+                <div
+                  className={styles.listItem}
+                  style={{ transitionDelay: ".05s" }}
+                >
+                  <h5>{data.sub1}</h5>
+                </div>
+              )}
+              {data.sub2 && (
+                <div
+                  className={styles.listItem}
+                  style={{ transitionDelay: ".1s" }}
+                >
+                  <h5>{data.sub2}</h5>
+                </div>
+              )}
+              {data.sub3 && (
+                <div
+                  className={styles.listItem}
+                  style={{ transitionDelay: ".15s" }}
+                >
+                  <h5>{data.sub3}</h5>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <div className={styles.content}>
-          <h6>{caption}</h6>
+          <h6>{data.caption}</h6>
         </div>
+        <CTAButton title={buttonName} link={data.link} />
       </section>
     </>
   );

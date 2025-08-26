@@ -3,7 +3,8 @@ import styles from "./services.module.scss";
 import Image from "next/image";
 import ServiceImage from "../components/services-sect/ser.jsx";
 import Industries from "../components/industries/industries.jsx";
-import EnquirySect from "../components/enquiry/enquiry.jsx"
+import EnquirySect from "../components/enquiry/enquiry.jsx";
+import TitleDescription from "../components/title-description/titleDes.jsx";
 export default function ServicesPage() {
   return (
     <>
@@ -31,20 +32,25 @@ export default function ServicesPage() {
                   captivating animation videos that bring ideas to life.
                 </h4>
                 <p>
-                  Adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim.Adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim.Adipiscing elit, <br />
-                  sed do eiusmod tempor incididunt Ut labore et dolore magna
-                  aliqua. Adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua. Ut enim ad minim.Adipiscing
-                  elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim.Adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua .
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+                  quo illum eum eligendi, obcaecati repellat aliquid repudiandae
+                  dolore culpa earum tenetur voluptas rem veritatis nisi
+                  molestiae explicabo! Cum, ad omnis? Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Alias quod autem, assumenda
+                  voluptates cupiditate numquam, vel excepturi consequuntur id
+                  illo quibusdam! Vero facere veritatis dolorem rerum
+                  repellendus nulla, ipsa dignissimos. <br />
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  eius neque delectus, eveniet magni modi est. Assumenda eveniet
+                  ipsam sunt modi tempora ex debitis, non totam doloribus nobis
+                  aspernatur doloremque. Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Est, iusto officia? Cupiditate dolorem omnis
+                  iure, consequuntur quae qui est delectus doloremque excepturi
+                  nobis neque sunt libero a sequi, quam laudantium. Lorem ipsum
+                  dolor, sit amet consectetur adipisicing elit. Officia esse
+                  accusamus repudiandae culpa amet mollitia nam odio recusandae
+                  debitis et reprehenderit autem aspernatur beatae, eos
+                  quibusdam provident repellendus. Quam, neque!
                 </p>
               </div>
             </div>
@@ -52,53 +58,35 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <ServiceImage />
+      <ServiceImage head="Services We Provide" />
 
-      <section className={styles.animatedDes}>
+      <section className={styles.detailHead}>
         <div className="container">
-          <div className={styles.allDes}>
-            <h2>
-              Do You Want to
-              <span className={styles.colordText}>Create </span>
-              an <span className={styles.colordText}>Impact</span> with a
-              Professional & Effective
-              <span className={styles.colordText}>Animated Video </span> ?
-            </h2>
-            <div className={styles.aniContent}>
-              <p>
-                Brand Bugs ensure the top-notch level video production services
-                in Dubai with a perfect focus on empowering your brand with
-                animated videos and motion graphics in a highly experienced
-                manner. Our professionals at the leading video production
-                company in UAE go over and above the standard criteria to
-                convince your target audience with a spellbinding and resounding
-                animated video.
-              </p>
-              <p>
-                Our animation services in Dubai understand the importance of
-                animated videos because they are an integral tool for effective
-                marketing communication. The consumers of today are not
-                interested in reading the lengthy content pieces, be it on a
-                website or elsewhere. And this is where we offer our clients the
-                most robust solutions with a short, crispy, and astounding
-                animated video that will certainly engage your potential
-                customers while acquainting them with your services and products
-                in a matter of a few minutes.
-              </p>
-              <p>
-                Our certified, expert, and knowledgeable specialists are highly
-                experienced in corporate video production services, commercial
-                video production services, animation services, and motion
-                graphics in Dubai. Adding more to this, our services don’t limit
-                here, we expand our horizons with long-duration story-based
-                videos in Dubai to earn a massive revenue for businesses on
-                popular video streaming websites such as YouTube.
-              </p>
-            </div>
-          </div>
+          <TitleDescription
+            title={
+              <>
+                Do You Want to <span className={styles.textColor}>Create</span>{" "}
+                an <span className={styles.textColor}>Impact</span> with a
+                Professional & Effective{" "}
+                <span className={styles.textColor}>Animated Video</span> ?{" "}
+              </>
+            }
+            description={
+              <span className={styles.paraColor}>
+                lorem ipsum dolor sit amet consectetur adipiscing elit. lorem
+                ipsum dolor sit amet consectetur adipiscing elit. lorem ipsum
+                dolor sit amet consectetur adipiscing elit. lorem ipsum dolor
+                sit amet consectetur adipiscing elit. lorem ipsum dolor sit amet
+                consectetur adipiscing elit. lorem ipsum dolor sit amet
+                consectetur adipiscing elit. lorem ipsum dolor sit amet
+                consectetur adipiscing elit. lorem ipsum dolor sit amet
+                consectetur adipiscing elit. lorem ipsum dolor sit amet
+                consectetur adipiscing elit.
+              </span>
+            }
+          />
         </div>
       </section>
-
       <Industries />
       <EnquirySect />
     </>
