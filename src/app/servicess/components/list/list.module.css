@@ -1,0 +1,17 @@
+.listSection {
+  margin: 300px 0;
+}
+.listSection .all {
+  padding: 0 100px;
+}
+.listSection .all .listStyle {
+  padding: 0 20px;
+}
+.listSection .all .listStyle h3 {
+  color: #fff;
+  padding: 20px 0;
+}
+.listSection .all .listStyle p {
+  color: #ccc;
+  text-align: justify;
+}/*# sourceMappingURL=list.module.css.map */

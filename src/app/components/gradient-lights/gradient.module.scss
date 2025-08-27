@@ -1,0 +1,54 @@
+.gradient-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  pointer-events: none;
+  z-index: -2;
+  overflow: visible;
+}
+
+.light {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background-color: #ed2124;
+  border-radius: 50%;
+  filter: blur(250px);
+  opacity: 0.5;
+  animation: move 6s infinite alternate;
+}
+
+.left {
+  left: -100px;
+}
+
+.right {
+  right: -100px;
+}
+
+.halftoneDots {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/body/dot.png");
+  background-repeat: repeat;
+  background-size: auto;
+  pointer-events: none;
+  z-index: -1;
+}
+@keyframes move {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-50px) translateX(50px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}

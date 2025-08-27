@@ -1,0 +1,17 @@
+.listSection {
+  margin: 300px 0;
+  .all {
+    padding: 0 100px;
+    .listStyle {
+      padding: 0 20px;
+      h3 {
+        color: #fff;
+        padding: 20px 0;
+      }
+      p {
+        color: #ccc;
+        text-align: justify;
+      }
+    }
+  }
+}
