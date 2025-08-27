@@ -118,12 +118,12 @@
   flex-shrink: 1;
 }
 
-.logo img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
-}
+// .logo img {
+//   width: 5rem;
+//   height: 5rem;
+//   object-fit: contain;
+//   filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
+// }
 
 @media (max-width: 600px) {
   .header {
@@ -135,7 +135,7 @@
     gap: 1rem;
   }
 
-  .logo img {
+  .logo .logoImage {
     width: 2.5rem;
     height: 2.5rem;
   }

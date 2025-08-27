@@ -101,4 +101,41 @@
   color: #1abc9c;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(26, 188, 156, 0.3);
+}
+
+.serDetail {
+  padding: 60px 0;
+}
+.serDetail .detail {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.serDetail .detail .imgs .image {
+  width: 100%;
+  max-width: 400px;
+}
+.serDetail .detail .des .description {
+  color: #cfcfcf;
+  line-height: 1.8;
+  margin: 20px 0;
+  font-size: 16px;
+  max-width: none;
+  text-align: justify;
+}
+.serDetail .detail .des h4 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  line-height: 50px;
+}
+
+@media (max-width: 768px) {
+  .serDetail .detail .des {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+  .serDetail .detail .des .description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
 }/*# sourceMappingURL=service-detail.module.css.map */

@@ -1,6 +1,7 @@
 'use client';
 import styles from './header.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function MainHeader() {
@@ -16,8 +17,8 @@ export default function MainHeader() {
 
     return (
         <header className={styles.header}>
-            <Link href="#" className={styles.logo}>
-                <img src="logo.png" alt="logo" />
+            <Link href="/" className={styles.logo}>
+                <Image src="/logo.png" alt="logo" width={74} height={87} className={styles.logoImage} />
             </Link>
 
             <button
