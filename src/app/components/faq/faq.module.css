@@ -91,10 +91,4 @@
     padding: 20px;
     font-size: 0.9rem;
   }
-}
-
-:global(.container) {
-  max-width: 1510px;
-  margin: 0 auto;
-  padding: 0 20px;
 }/*# sourceMappingURL=faq.module.css.map */
