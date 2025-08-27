@@ -6,6 +6,7 @@ import Difference from "../components/different";
 import ClientsArea from "../components/clients-area/clients.jsx";
 import TitleBanner from "../components/title-banner/title.jsx";
 import Testimonials from "../components/team-slider/testimonials.jsx";
+import GradientLights from "../components/gradient-lights/gradient.jsx";
 export default function AboutPage() {
   return (
     <>
@@ -106,6 +107,7 @@ export default function AboutPage() {
 
       <FAQSection />
       <Difference />
+      <GradientLights />
     </>
   );
 }

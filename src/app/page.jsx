@@ -10,6 +10,7 @@ import BlogSection from "./components/blogs/blog.jsx";
 import EnquirySect from "./components/enquiry/enquiry.jsx";
 import ClientsArea from "./components/clients-area/clients.jsx";
 import Testimonials from "./components/team-slider/testimonials";
+import GradientLights from "./components/gradient-lights/gradient";
 const list = [
   {
     title: "Strengthening brand identity",
@@ -365,6 +366,7 @@ export default function Home() {
       <BlogSection />
 
       <EnquirySect />
+      <GradientLights />
     </>
   );
 }

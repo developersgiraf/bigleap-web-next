@@ -1,6 +1,7 @@
 import styles from "./service-detail.module.scss";
 import TitleDescription from "../components/title-description/titleDes";
 import TitleBanner from "../../components/title-banner/title";
+import GradientLights from "../../components/gradient-lights/gradient";
 const data = {
   "2danimation": {
     image: "/servicess/detail-image.png",
@@ -93,6 +94,7 @@ export default function Services({ params }) {
           />
         </div>
       </section>
+      <GradientLights />
     </>
   );
 }

@@ -5,6 +5,7 @@ import ServiceImage from "../components/services-sect/servicesImage.jsx";
 import Industries from "../components/industries/industries.jsx";
 import EnquirySect from "../components/enquiry/enquiry.jsx";
 import TitleDescription from "./components/title-description/titleDes.jsx";
+import GradientLights from "../components/gradient-lights/gradient.jsx";
 export default function ServicesPage() {
   return (
     <>
@@ -100,6 +101,7 @@ export default function ServicesPage() {
       </section>
       <Industries />
       <EnquirySect />
+      <GradientLights />
     </>
   );
 }

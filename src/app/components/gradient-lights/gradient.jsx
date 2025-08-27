@@ -1,20 +1,26 @@
-'use client';
+"use client";
 
 import styles from "./gradient.module.scss";
 import { useEffect, useState } from "react";
 
 export default function GradientLights({ count = 0 }) {
   const [dynamicCount, setDynamicCount] = useState(count);
-  const [pageHeight, setPageHeight] = useState('100vh');
+  const [pageHeight, setPageHeight] = useState("100vh");
 
   useEffect(() => {
     const updateDimensions = () => {
-      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+      );
       const viewportHeight = window.innerHeight;
-      
+
       // Set page height for halftone dots
       setPageHeight(`${scrollHeight}px`);
-      
+
       if (count <= 0) {
         const calculatedCount = Math.ceil(scrollHeight / viewportHeight);
         setDynamicCount(Math.max(calculatedCount, 2)); // Minimum 2 lights
@@ -23,62 +29,43 @@ export default function GradientLights({ count = 0 }) {
       }
     };
 
-    // Initial calculation
-    updateDimensions();
+    // Initial update with small delay for content to load
+    const initialTimer = setTimeout(updateDimensions, 100);
 
-    // Listen for various events that might change page height
+    // Additional checks for dynamic content
+    const additionalTimers = [
+      setTimeout(updateDimensions, 500),
+      setTimeout(updateDimensions, 1000),
+    ];
+
+    // Listen for window resize
     window.addEventListener("resize", updateDimensions);
-    window.addEventListener("load", updateDimensions);
-    
-    // Use MutationObserver to detect DOM changes (page navigation, content changes)
-    const observer = new MutationObserver(() => {
-      // Debounce the updates to avoid excessive recalculation
-      setTimeout(updateDimensions, 100);
-    });
 
-    // Observe changes in the document body and its subtree
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['style', 'class']
-    });
-
-    // Also check periodically for dynamic content changes
-    const interval = setInterval(updateDimensions, 2000);
-
-    // Cleanup
     return () => {
+      clearTimeout(initialTimer);
+      additionalTimers.forEach((timer) => clearTimeout(timer));
       window.removeEventListener("resize", updateDimensions);
-      window.removeEventListener("load", updateDimensions);
-      observer.disconnect();
-      clearInterval(interval);
     };
-  }, [count]);
+  }, [count]); // Only depend on count, not pathname since it's per-page now
 
   return (
     <>
-    <div className={styles["gradient-lights"]}>
-      {Array.from({ length: dynamicCount }).map((_, index) => {
-        let position = index % 2 === 0 ? "left" : "right";
-        return (
-          <div
-            key={index}
-            className={`${styles.light} ${styles[position]}`}
-            style={{
-              top: `${index * 100}vh`, // Increment Y position by 100vh for each light
-              animationDelay: `${index * 1.5}s`, // Stagger animation delays
-            }}
-          ></div>
-
-        );
-      })}
-    </div>
-    <div 
-      className={styles.halftoneDots}
-      style={{ height: pageHeight }}
-    ></div>
-    
+      <div className={styles["gradient-lights"]}>
+        {Array.from({ length: dynamicCount }).map((_, index) => {
+          let position = index % 2 === 0 ? "left" : "right";
+          return (
+            <div
+              key={index}
+              className={`${styles.light} ${styles[position]}`}
+              style={{
+                top: `${index * 100}vh`, // Increment Y position by 100vh for each light
+                animationDelay: `${index * 1.5}s`, // Stagger animation delays
+              }}
+            ></div>
+          );
+        })}
+      </div>
+      <div className={styles.halftoneDots} style={{ height: pageHeight }}></div>
     </>
   );
 }

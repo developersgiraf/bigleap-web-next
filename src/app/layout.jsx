@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MainHeader from "./components/header/header";
 import InfoArea from "./components/info";
 import Footer from "./components/footer/footer";
-import GradientLights from "./components/gradient-lights/gradient";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +33,6 @@ export default function RootLayout({ children }) {
         <InfoArea />
         <MainHeader />
         {children}
-        <GradientLights />
         <Footer />
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
