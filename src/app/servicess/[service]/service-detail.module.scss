@@ -75,14 +75,12 @@
     text-shadow: 0 2px 4px rgba(231, 76, 60, 0.4);
   }
 }
-.paraColor{
+.paraColor {
   color: #cfcfcf;
   line-height: 1.7;
   margin: 0 0 0.9rem;
 }
-.detailHead{
 
-}
 /* Additional color variations */
 .textColorBlue {
   color: #3498db;
@@ -102,4 +100,54 @@
   color: #1abc9c;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(26, 188, 156, 0.3);
+}
+
+.serDetail {
+  padding: 60px 0;
+
+  .detail {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .imgs {
+      .image {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+    .des {
+      // padding-left: 40px;
+
+      .description {
+        color: #cfcfcf;
+        line-height: 1.8;
+        margin: 20px 0;
+        font-size: 16px;
+        max-width: none;
+        text-align: justify;
+      }
+      h4 {
+        color: #fff;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        line-height: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .serDetail {
+    .detail {
+      .des {
+        padding-left: 0;
+        margin-top: 30px;
+
+        .description {
+          font-size: 15px;
+          line-height: 1.7;
+        }
+      }
+    }
+  }
 }
