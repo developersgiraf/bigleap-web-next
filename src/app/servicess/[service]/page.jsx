@@ -31,7 +31,7 @@ export default function Services({ params }) {
   return (
     <>
       <TitleBanner
-        title="Imagination Unleashed: 
+        title="Imagination Unleashed:
       A Journey Beyond Reality"
       />
 

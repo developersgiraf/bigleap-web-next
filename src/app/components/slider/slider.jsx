@@ -123,14 +123,15 @@ export default function Slider({
                           top: 0,
                           left: 0,
                           color: "#fff",
-                          fontSize: "70px",
+                          fontSize: "60px",
                           padding: "82px 80px",
                           // borderTopLeftRadius: "8px",
                           zIndex: 999,
-                          maxWidth: "60%",
+                          maxWidth: "50%",
                           fontWeight: "bold",
                           fontFamily: "Boldonse, system-ui !important",
                           lineHeight: "110px",
+   
                         }}
                       >
                         {item.caption}

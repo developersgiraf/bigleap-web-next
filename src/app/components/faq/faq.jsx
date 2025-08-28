@@ -39,7 +39,7 @@ export default function FAQSection() {
                                     className={styles.accordionHeader}
                                     onClick={() => toggleAccordion(index)}
                                 >
-                                    <span>{item.question}</span>
+                                    <span className={styles.question}>{item.question}</span>
                                     <span className={styles.arrow}>
                                         {openIndex === index ? '▲' : '▼'}
                                     </span>

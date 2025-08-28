@@ -69,9 +69,9 @@ export default function ServicesPage() {
             title={
               <>
                 Do You Want to <span className={styles.textColor}>Create</span>{" "}
-                an <br />
-                <span className={styles.textColor}>Impact</span> with a
-                Professional & <br /> Effective{" "}
+                an 
+                <span className={styles.textColor}> Impact</span> with a
+                Professional & Effective{" "}
                 <span className={styles.textColor}>Animated Video</span> ?{" "}
               </>
             }

@@ -12,7 +12,7 @@ $sunset-pink: #e91e63;
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 0 200px;
+  padding: 120px 160px;
 
   .title {
     font-size: 3.6rem;
@@ -31,6 +31,7 @@ $sunset-pink: #e91e63;
   }
 
   .description {
+    padding: 10px 0;
     font-size: 1.1rem;
     line-height: 1.6;
     text-align: center;

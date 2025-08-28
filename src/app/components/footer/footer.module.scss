@@ -1,19 +1,31 @@
 .footerArea {
   position: relative;
-  padding: 120px 0 50px 0;
+  padding: 120px 0 0 0;
 
-  .bigleap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .firstcol {
+    padding-left: 90px;
+    .bigleap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
 
-    .footerImage {
-      width: 55%;
-      height: 20vh;
-      object-fit: contain;
+      .footerImage {
+        width: 55%;
+        height: 20vh;
+        object-fit: contain;
+      }
+    }
+
+    .address {
+      p {
+        margin: 0;
+        color: #fefefe;
+        font-family: "Montserrat", sans-serif !important;
+        font-size: 14px;
+        line-height: 24px;
+      }
     }
   }
-
   .content {
     padding: 0 0 30px 70px;
 
@@ -62,20 +74,37 @@
         font-family: "Montserrat", sans-serif !important;
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
+        font-weight: bold;
       }
 
       ul {
         list-style: none;
 
         li {
-            list-style: none;
-            line-height: 30px;
+          list-style: none;
+          line-height: 30px;
+
+          .contactItem {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .icon {
+              flex-shrink: 0;
+              width: 16px;
+              height: 16px;
+            }
+          }
+
           a {
-            color: #bdbdbd;
+            color: #d0d0d0;
             text-decoration: none;
             font-family: "Montserrat", sans-serif !important;
             font-size: 16px;
             font-weight: 500;
+          }
+          a:hover{
+            color: #fff;
           }
         }
       }

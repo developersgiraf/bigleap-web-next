@@ -5,7 +5,9 @@
     text-align: center;
     padding-bottom: 50px;
   }
-
+.teamRow{
+  padding: 0 150px;
+}
   .image-style:hover {
     background: rgb(206, 25, 25);
 
@@ -18,7 +20,6 @@
     img {
       width: 100%;
       transition: all 0.3s ease-in-out;
-      height: 50vh;
       object-fit: contain;
     }
   }

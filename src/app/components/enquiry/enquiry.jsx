@@ -23,7 +23,7 @@ export default function EnquirySect() {
     <>
       <section className={styles["enquiry-section"]}>
         <Image
-          src="/enquiry/Enquire Now.png"
+          src="/enquiry/EnquireNow.png"
           alt="Enquiry Background"
           width={1728}
           height={756}

@@ -5,7 +5,7 @@ export default function CreativeTeam() {
     {
       image: "/team/gokul.jpg",
       name: "Gokul",
-      status: "creative Director",
+      status: "Creative Director",
     },
     {
       image: "/team/basil.jpg",
@@ -37,7 +37,7 @@ export default function CreativeTeam() {
     <section className={styles["creative-team"]}>
       <h2>Meet The Creative Team</h2>
       <div className="container">
-        <div className="row">
+        <div className={`row ${styles.teamRow}`}>
               {list.map((item, index) => (
                 <div key={index} className="col-xl-4">
                     <Profile
