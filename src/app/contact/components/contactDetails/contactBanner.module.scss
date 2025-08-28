@@ -1,0 +1,21 @@
+.ContactBanner {
+  padding: 180px 0;
+  display: flex;
+  justify-content: center;
+  ul {
+    display: flex;
+    gap: 140px;
+    list-style: none;
+    li {
+      text-decoration: none;
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+          color: #ed2124;
+          transition: 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}

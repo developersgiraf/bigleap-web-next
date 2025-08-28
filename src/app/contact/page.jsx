@@ -1,10 +1,24 @@
 import GradientLights from "../components/gradient-lights/gradient.jsx";
-
+import styles from "./contact.module.scss";
+import TitleBanner from "../components/title-banner/title.jsx";
+import ContactBanner from "./components/contactDetails/contactBanner.jsx";
+import ContactForm from "./components/contactDetails/contactForm/form.jsx";
+// import Testimonials from "../components/testimonials/testimonials.jsx";
 export default function ContactPage() {
   return (
     <>
-      <h1>Contact Us</h1>
-      <p>If you have any questions or inquiries, feel free to reach out!</p>
+      <TitleBanner title="Get in Touch With Us" />
+      <div className={styles.ContactPage}>
+        <p>
+          We strive to deliver innovative digital marketing solutions that drive
+          your business forward.
+        </p>
+        <h5 className="signature-text-large">Basanth Raghavan</h5>
+      </div>
+      <ContactBanner />
+      <ContactForm />
+      {/* <Testimonials /> */}
+
       <GradientLights />
     </>
   );
