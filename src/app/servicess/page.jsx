@@ -100,6 +100,7 @@ export default function ServicesPage() {
         </div>
       </section>
       <Industries />
+      
       <EnquirySect />
       <GradientLights />
     </>
