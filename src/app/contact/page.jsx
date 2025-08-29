@@ -3,7 +3,8 @@ import styles from "./contact.module.scss";
 import TitleBanner from "../components/title-banner/title.jsx";
 import ContactBanner from "./components/contactDetails/contactBanner.jsx";
 import ContactForm from "./components/contactDetails/contactForm/form.jsx";
-// import Testimonials from "../components/testimonials/testimonials.jsx";
+import Testimonials from "../components/team-slider/testimonials.jsx";
+
 export default function ContactPage() {
   return (
     <>
@@ -17,7 +18,9 @@ export default function ContactPage() {
       </div>
       <ContactBanner />
       <ContactForm />
-      {/* <Testimonials /> */}
+      <div className={styles.testimonialsSection}>
+        <Testimonials hideBackground />
+      </div>
 
       <GradientLights />
     </>

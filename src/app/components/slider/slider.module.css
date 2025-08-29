@@ -26,7 +26,28 @@
   transform: translateY(-50%);
   z-index: 10;
 }
+.caption{
+  margin-top: 8px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif !important;
+  font-style: medium;
+  text-align: center;
+  line-height: 22px;
+  padding-top: 15px;
+  letter-spacing: 0%;
 
+}
+.readbtn{
+  margin-top: 8px;
+  background: none;
+  border: none;
+  font-style: regular;
+  font-family: 'Roboto', sans-serif !important;
+  color: #ed2124;
+}
+                    
 #swiper-nav-btn.left {
   left: 0;
 }

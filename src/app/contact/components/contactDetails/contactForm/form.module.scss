@@ -1,11 +1,10 @@
 .contactFormArea {
-    background: url("/enquiry/comic.png");
-  padding: 50px 20px;
-  //   backdrop-filter: blur(10px);
+  /* background: url("/enquiry/comic.png"); */
+  /* background-repeat: no-repeat; */
   border-radius: 20px;
-  //   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
+  padding: 120px 0 220px 0;
 
   &::before {
     content: "";
@@ -16,11 +15,30 @@
     bottom: 0;
     z-index: -1;
   }
-
-  h5 {
+  .formBackground {
+    object-fit: cover;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .formContent {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h4 {
     text-align: center;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 600;
     margin-bottom: 10px;
     font-family: "Boldonse", system-ui !important;
@@ -29,7 +47,8 @@
   p {
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
+    font-size: 20px;
+    padding-top: 10px;
     margin-bottom: 40px;
     font-family: "Montserrat", sans-serif !important;
   }
@@ -57,6 +76,7 @@
 
       .formInput {
         width: 100%;
+        opacity: 0.6;
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -68,14 +88,14 @@
         outline: none;
 
         &::placeholder {
-          color: rgba(255, 255, 255, 0.6);
+          color: #ffffff;
           font-weight: 400;
         }
 
         &:focus {
-          border-color: rgba(255, 140, 0, 0.6);
-          box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
-          background: rgba(255, 255, 255, 0.08);
+          // border-color: #ed2124;
+          box-shadow: 0 0 5px #ed2124;
+          // background: rgba(255, 255, 255, 0.08);
         }
 
         &:hover {
@@ -90,7 +110,6 @@
         font-family: inherit;
       }
     }
-     
   }
 
   @media (max-width: 768px) {

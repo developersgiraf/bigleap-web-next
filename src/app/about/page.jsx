@@ -2,7 +2,7 @@ import styles from "./about.module.scss";
 import Image from "next/image";
 import CreativeTeam from "../components/creative-team/creative";
 import FAQSection from "../components/faq/faq";
-import Difference from "../components/different";
+import Difference from "../components/differences/different";
 import ClientsArea from "../components/clients-area/clients.jsx";
 import TitleBanner from "../components/title-banner/title.jsx";
 import Testimonials from "../components/team-slider/testimonials.jsx";

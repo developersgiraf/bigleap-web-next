@@ -1,12 +1,28 @@
 import CTAButton from "../../../../components/ctaButton/ctabtn";
 import styles from "./form.module.scss";
-
+import Image from "next/image";
 export default function ContactForm() {
   return (
-    <>
-      <section className={styles.contactFormArea}>
+    <section
+      className={styles.contactFormArea}
+      style={{ position: "relative" }}
+    >
+      {/* Background Image */}
+      <Image
+        src="/enquiry/comic.png"
+        alt="Contact Background"
+        fill
+        priority
+        className={styles.formBackground} />
+          
+        
+     
+      {/* Centered Content overlays the background */}
+      <div className={styles.formContent}>
+        
+      
         <div className="container">
-          <h5>Get in Touch</h5>
+          <h4>Get in Touch</h4>
           <p>Reach out to us for any inquiries or collaborations.</p>
           <div className={styles.formContainer}>
             <form className={styles.contactForm}>
@@ -48,7 +64,7 @@ export default function ContactForm() {
             </form>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

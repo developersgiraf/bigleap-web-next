@@ -41,7 +41,7 @@ export default function Slider({
     1024: { slidesPerView: 3, spaceBetween: 120 },
     1366: { slidesPerView: 4, spaceBetween: 20 },
   },
-  autoplay = { delay: 2500, disableOnInteraction: false },  
+  autoplay = { delay: 2500, disableOnInteraction: false },
   navButtons = true,
   imageSize = 100,
   navPos = 0,
@@ -131,7 +131,6 @@ export default function Slider({
                           fontWeight: "bold",
                           fontFamily: "Boldonse, system-ui !important",
                           lineHeight: "110px",
-   
                         }}
                       >
                         {item.caption}
@@ -218,28 +217,10 @@ export default function Slider({
                       </div>
                     )}
                     {item.caption != "" ? (
-                      <div
-                        style={{
-                          marginTop: "8px",
-                          color: "#fff",
-                          fontSize: "16px",
-                        }}
-                      >
-                        {item.caption}
-                      </div>
+                      <div className={styles.caption}>{item.caption}</div>
                     ) : null}
                     {item.readbtn != "" ? (
-                      <button
-                        style={{
-                          marginTop: "8px",
-                          background: "none",
-                          border: "none",
-                          color: "#ed232a",
-                        }}
-                        className={styles.readbtn}
-                      >
-                        {item.readbtn}
-                      </button>
+                      <button className={styles.readbtn}>{item.readbtn}</button>
                     ) : null}
                   </div>
                 </SwiperSlide>

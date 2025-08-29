@@ -14,11 +14,12 @@
 
       .title {
         color: #fff;
+        font-family: "Boldonse", system-ui !important;
         font-weight: 400;
         margin: 0;
         text-align: left;
-        font-size: 3.8rem;
-        line-height: 84px;
+        font-size: 4rem;
+        line-height: 95px;
       }
     }
 
@@ -48,6 +49,7 @@
             background: #d32f2f;
           }
           .question {
+            
             font-family: "Montserrat", sans-serif !important;
           }
           .arrow {

@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./index.module.scss";
 import Slider from "./components/slider/slider.jsx";
 import BusinessArea from "./components/business-area";
-import Difference from "./components/different";
+import Difference from "./components/differences/different";
 import CTAButton from "./components/ctaButton/ctabtn.jsx";
 import FAQSection from "./components/faq/faq.jsx";
 import BlogSection from "./components/blogs/blog.jsx";
@@ -12,6 +12,7 @@ import ClientsArea from "./components/clients-area/clients.jsx";
 import Testimonials from "./components/team-slider/testimonials";
 import GradientLights from "./components/gradient-lights/gradient";
 import InstaFeeds from "./components/insta-feeds/feeds";
+import { FALSE } from "sass";
 const list = [
   {
     title: "Strengthening brand identity",
@@ -77,7 +78,7 @@ export default function Home() {
 
       <section className={styles["about-area"]}>
         <div className="container">
-          <div className="row align-items-center">
+          <div className={`row align-items-center ${styles["about-row"]}`}>
             <div className="col-xl-5 col-lg-4 col-md-3 col-12">
               <div className={styles["about-first-box"]}>
                 <img src="Scate.png" alt="" />
@@ -100,18 +101,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* SLIDER SECTION */}
+
+
+      {/* SSPECIALIZED AREA START */}
 
       <section className={styles["slide-head"]}>
         <div className="container">
           <div className={styles["special-head"]}>
             <h2>We are Specialized</h2>
 
-            <h5>
+            <p>
               We are a highly dynamic creative bunch who specializes in
               delivering 360 production services. Specialized company in
               photography, videography and film production in UAE
-            </h5>
+            </p>
           </div>
           <div className={styles.specialslide}>
             <Slider
@@ -119,46 +122,46 @@ export default function Home() {
                 {
                   img: "/img2.jpg",
                   caption: "2D motion graphics",
-                  readbtn: "Know More",
+                  readbtn: "Learn more...",
                   idname: "folio1",
                 },
                 {
                   img: "/img3.jpg",
                   caption: "Whiteboard Animations",
-                  readbtn: "Know More",
+                  readbtn: "Learn more...",
                   idname: "folio",
                 },
                 {
                   img: "/img4.jpg",
                   caption: "Storytelling scripted animations",
-                  readbtn: "Know More",
+                  readbtn: "Learn more...",
                   idname: "folio",
                 },
                 {
                   img: "/img1.jpg",
                   caption: "3D product animation",
-                  readbtn: "Know More",
+                  readbtn: "Learn more...",
                   idname: "folio",
                 },
                 {
                   img: "/img2.jpg",
                   caption: "2D motion graphics",
-                  readbtn: "Know More",
+                  readbtn: "Learn more...",
                   idname: "folio",
                 },
                 {
                   img: "/img1.jpg",
                   caption: "2D motion graphics",
-                  readbtn: "Know More",
+                  readbtn: "Learn more...",
                   idname: "folio",
                 },
               ]}
-              spaceBetween={0}
+              spaceBetween={-50}
               slidesPerView={4}
               loop={true}
-              imageSize={190}
-              navPos={25}
-              autoplay={true}
+              imageSize={170}
+              navPos={150}
+              autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 15 },
@@ -173,8 +176,33 @@ export default function Home() {
       </section>
 
       {/* WATCH VIDEO AREA */}
-      <section className={styles["watch-area"]}>
-        <div className="container">
+      <section
+        className={styles["watch-area"]}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        >
+          <Image
+            src="/backgd.png"
+            alt="Background"
+            fill
+            priority
+            style={{
+              objectFit: "cover",
+              width: "100%",
+              height: "100%",
+              boxShadow: "0 0 80px 40px rgba(15,18,24,0.7)",
+            }}
+          />
+          {/* Removed overlay for originality effect */}
+        </div>
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div className={styles.watch}>
             <div className="row">
               <div className="col-xl-6 col-lg-6 col-md-12 col-12">
@@ -360,7 +388,7 @@ export default function Home() {
       {/* client area */}
       <ClientsArea />
       {/* DIFFERENCE AREA START */}
-      <Difference></Difference>
+      <Difference />
 
       <FAQSection />
 

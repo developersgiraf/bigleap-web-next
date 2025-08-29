@@ -4,7 +4,10 @@ import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import styles from "./Testimonials.module.css";
 
-export default function Testimonials({ teamData = [] }) {
+export default function Testimonials({
+  teamData = [],
+  hideBackground = false,
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleMembers, setVisibleMembers] = useState([]);
 
@@ -17,7 +20,7 @@ export default function Testimonials({ teamData = [] }) {
         name: "Gokul",
         title: "Creative Director",
         description:
-          "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.",
+          " labore et dolore magna aliqua. Ut enim ad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.",
       },
       {
         id: 2,
@@ -25,7 +28,7 @@ export default function Testimonials({ teamData = [] }) {
         name: "Basil",
         title: "Generalist",
         description:
-          "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Aaliqua. Ut enim ad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
       {
         id: 3,
@@ -33,7 +36,7 @@ export default function Testimonials({ teamData = [] }) {
         name: "Iyas",
         title: "Senior Designer",
         description:
-          "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Adipiscing elit, sed do eiusmod tempord minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
       {
         id: 4,
@@ -41,7 +44,7 @@ export default function Testimonials({ teamData = [] }) {
         name: "Anu",
         title: "Animator",
         description:
-          "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Adipiscing elit, sed do eiusmod tempor incididuad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
       {
         id: 5,
@@ -104,74 +107,109 @@ export default function Testimonials({ teamData = [] }) {
   const currentMember = data[currentIndex];
 
   return (
-    <div className={styles.teamSlider}>
-      <div className={styles.sliderContainer}>
-        {/* Team Members Circle */}
-        <div className={styles.membersCircle}>
-          {visibleMembers.map((member, index) => (
-            <div
-              key={member.id}
-              className={`${styles.memberAvatar} ${
-                member.isCenter ? styles.centerMember : styles.sideMember
-              } ${styles[`position${member.position}`]}`}
-              onClick={() =>
-                goToMember(
-                  (currentIndex + member.position - 2 + data.length) %
-                    data.length
-                )
-              }
-            >
-              <div className={styles.avatarWrapper}>
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={member.isCenter ? 150 : 80}
-                  height={member.isCenter ? 150 : 80}
-                  className={styles.avatarImage}
-                />
+    <div className={styles.teamSlider} style={{ position: "relative" }}>
+      {/* Background Image (conditionally rendered) */}
+      {!hideBackground && (
+        <Image
+          src="/testimonials.png"
+          alt="Testimonials Background"
+          fill
+          priority
+          style={{
+            objectFit: "cover",
+            zIndex: 0,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            pointerEvents: "none",
+          }}
+        />
+      )}
+      {/* Centered Content overlays the background */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className={styles.sliderContainer}>
+          {/* Team Members Circle */}
+          <div className={styles.membersCircle}>
+            {visibleMembers.map((member, index) => (
+              <div
+                key={member.id}
+                className={`${styles.memberAvatar} ${
+                  member.isCenter ? styles.centerMember : styles.sideMember
+                } ${styles[`position${member.position}`]}`}
+                onClick={() =>
+                  goToMember(
+                    (currentIndex + member.position - 2 + data.length) %
+                      data.length
+                  )
+                }
+              >
+                <div className={styles.avatarWrapper}>
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={member.isCenter ? 150 : 80}
+                    height={member.isCenter ? 150 : 80}
+                    className={styles.avatarImage}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            className="circle-nav-btn left"
+            onClick={goToPrev}
+            aria-label="Previous team member"
+          >
+            {"<"}
+          </button>
+
+          <button
+            className="circle-nav-btn right"
+            onClick={goToNext}
+            aria-label="Next team member"
+          >
+            {">"}
+          </button>
         </div>
 
-        {/* Navigation Arrows */}
-        <button
-          className="circle-nav-btn left"
-          onClick={goToPrev}
-          aria-label="Previous team member"
-        >
-          {"<"}
-        </button>
+        {/* Member Details */}
+        <div className={styles.memberDetails}>
+          <h3 className={styles.memberName}>{currentMember.name}</h3>
+          <p className={styles.memberTitle}>{currentMember.title}</p>
+          <p className={styles.memberDescription}>
+            {currentMember.description}
+          </p>
+        </div>
 
-        <button
-          className="circle-nav-btn right"
-          onClick={goToNext}
-          aria-label="Next team member"
-        >
-          {">"}
-        </button>
+        {/* Dots Indicator
+        <div className={styles.dotsIndicator}>
+          {data.map((_, index) => (
+            <button
+              key={index}
+              className={`${styles.dot} ${
+                index === currentIndex ? styles.activeDot : ""
+              }`}
+              onClick={() => goToMember(index)}
+              aria-label={`Go to team member ${index + 1}`}
+            />
+          ))}
+        </div> */}
       </div>
-
-      {/* Member Details */}
-      <div className={styles.memberDetails}>
-        <h3 className={styles.memberName}>{currentMember.name}</h3>
-        <p className={styles.memberTitle}>{currentMember.title}</p>
-        <p className={styles.memberDescription}>{currentMember.description}</p>
-      </div>
-
-      {/* Dots Indicator
-      <div className={styles.dotsIndicator}>
-        {data.map((_, index) => (
-          <button
-            key={index}
-            className={`${styles.dot} ${
-              index === currentIndex ? styles.activeDot : ""
-            }`}
-            onClick={() => goToMember(index)}
-            aria-label={`Go to team member ${index + 1}`}
-          />
-        ))}
-      </div> */}
     </div>
   );
 }

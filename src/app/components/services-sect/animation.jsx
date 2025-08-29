@@ -1,4 +1,4 @@
-import Items from "../item";
+import Items from "../differences/item";
 import styles from "./ser.module.scss";
 import Image from "next/image";
 import CTAButton from "../ctaButton/ctabtn";

@@ -1,4 +1,4 @@
-import styles from '../index.module.scss'
+import styles from "./difference.module.scss";
 
 export default function Items({ title, sub }) {
   return (

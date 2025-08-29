@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
   @import url('https://fonts.cdnfonts.com/css/pecita');
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /* ========================================
    GLOBAL TEXT COLOR CLASSES
@@ -103,6 +104,7 @@ body {
 .container {
     width: 100%;
     max-width: 1510px !important;
+    /* max-width: 1340px !important; */
     margin: 0 auto;
     padding: 0 20px;
 }
