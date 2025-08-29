@@ -156,11 +156,11 @@ export default function Home() {
                   idname: "folio",
                 },
               ]}
-              spaceBetween={-50}
+              spaceBetween={-60}
               slidesPerView={4}
               loop={true}
               imageSize={170}
-              navPos={150}
+              navPos={180}
               autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },

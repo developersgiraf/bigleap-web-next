@@ -45,7 +45,7 @@ export default function InstaFeeds() {
   return (
     <section className={styles.instaFeeds}>
         <div className={styles.stikyImage}>
-            <Image src="/feeds/camera.png" alt="Sticky Image" width={512} height={512} className={styles.stikyimg} />
+            <Image src="/feeds/backgd.png" alt="Sticky Image" width={114} height={115} className={styles.stikyimg} />
         </div>
       {/* <div className="container"> */}
         <div className={styles.swiperContainer}>
