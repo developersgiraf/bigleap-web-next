@@ -2,7 +2,7 @@ import Image from "next/image";
 // import styles from "./page.module.css";
 import styles from "./index.module.scss";
 import Slider from "./components/slider/slider.jsx";
-import BusinessArea from "./components/business-area";
+import BusinessItems from "./components/business/business-items";
 import Difference from "./components/differences/different";
 import CTAButton from "./components/ctaButton/ctabtn.jsx";
 import FAQSection from "./components/faq/faq.jsx";
@@ -13,20 +13,7 @@ import Testimonials from "./components/team-slider/testimonials";
 import GradientLights from "./components/gradient-lights/gradient";
 import InstaFeeds from "./components/insta-feeds/feeds";
 import { FALSE } from "sass";
-const list = [
-  {
-    title: "Strengthening brand identity",
-    sub: "Custom animated videos make all the difference by anchoring your unique brand identity, that will leave your mark in the competitive edge.",
-  },
-  {
-    title: "Simplifying complex ideas",
-    sub: "Complex concepts can be simplified with the help of engaging animation, that will effectively communicate your idea..",
-  },
-  {
-    title: "Strengthening brand identity",
-    sub: "Utilize the innovations of animation and create enthralling content that will lead to customer engagement, resulting in more leads and increase in sales.",
-  },
-];
+
 export default function Home() {
   return (
     <>
@@ -159,7 +146,7 @@ export default function Home() {
               spaceBetween={-60}
               slidesPerView={4}
               loop={true}
-              imageSize={170}
+              imageSize={160}
               navPos={180}
               autoplay={false}
               breakpoints={{
@@ -189,7 +176,7 @@ export default function Home() {
           }}
         >
           <Image
-            src="/backgd.png"
+            src="/video-bg.png"
             alt="Background"
             fill
             priority
@@ -232,7 +219,7 @@ export default function Home() {
               <div className="col-xl-6 col-lg-6 col-md-12 col-12 odr">
                 <div className={styles["second-video"]}>
                   <div className={styles.content}>
-                    <h6> Our Portfolio</h6>
+                    <p> Our Portfolio</p>
                     <h2>Lorem ipsum </h2>
                     <CTAButton title="WATCH MORE" link="#" />
                   </div>
@@ -263,22 +250,25 @@ export default function Home() {
             <Slider
               datas={[
                 {
+                  sub:'key projects',
                   caption: "Lorem ipsum dolor sit amet.",
-                  paragraph: "hghgbh vggxhgsdgsugggh hgsdgsudgyug,",
+                  paragraph: "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",
                 },
                 {
+                  sub:'key projects',
                   caption: "Lorem ipsum dolor sit amet.",
-                  paragraph: "hbugdu gh gssusgschc.",
+                  paragraph: "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",
                 },
                 {
+                  sub:'key projects',
                   caption: "Lorem ipsum dolor sit amet.",
-                  paragraph: "hgsbhgs shgygvsg hgds.",
+                  paragraph: "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",
@@ -288,7 +278,7 @@ export default function Home() {
               slidesPerView={1}
               imageSize={100}
               loop={true}
-              navPos={25}
+              navPos={-680}
               autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
@@ -306,32 +296,36 @@ export default function Home() {
       <section className={styles["motion-graphics"]}>
         <div className="container">
           <div className={styles["motion-graphics-content"]}>
-            <h5>Motion Graphics</h5>
+            <h6>Motion Graphics</h6>
             <h2>Living. Breathing. Digital Experiences</h2>
           </div>
-          {/* <div className={styles.specialslide}> */}
+          <div className={styles.specialslide}>
           <Slider
             datas={[
               {
                 img: "/gr-1.gif",
+                client:"client",
                 date: "01-02-2025",
                 caption: "2D motion graphics",
                 idname: "MoGraph",
               },
               {
                 img: "/gr-2.gif",
+                client:"client",
                 date: "01-02-2025",
                 caption: "Whiteboard Animations",
                 idname: "MoGraph",
               },
               {
                 img: "/gr-3.gif",
+                client:"client",
                 date: "01-02-2025",
                 caption: "Storytelling scripted ",
                 idname: "MoGraph",
               },
               {
                 img: "/gr-1.gif",
+                client:"client",
                 date: "01-02-2025",
                 caption: "3D product animation",
                 idname: "MoGraph",
@@ -339,6 +333,8 @@ export default function Home() {
             ]}
             spaceBetween={50}
             slidesPerView={3}
+            navPos={90}
+            autoplay={false}
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 10 },
               640: { slidesPerView: 2, spaceBetween: 15 },
@@ -348,40 +344,10 @@ export default function Home() {
             imageSize={400}
           />
         </div>
-        {/* </div> */}
-      </section>
-
-      {/* BUSINESS AREA START */}
-
-      <section className={styles.businessArea}>
-        <div className="container">
-          <div className={styles["business-list"]}>
-            <div className="row align-items-center">
-              <div className="col-xl-5">
-                <div className={styles.heading}>
-                  <h2>Let animation lead your business</h2>
-                  <p className={styles.list}>
-                    Where words fail, visuals take over. In this tech-driven
-                    world, animation is the major edge that provides a creative
-                    nudge to communication.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-7">
-                <div className={styles.lists}>
-                  {list.map((item, idx) => (
-                    <BusinessArea
-                      key={idx}
-                      title={item.title}
-                      sub={item.sub}
-                    ></BusinessArea>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
+
+      <BusinessItems />
 
       <Testimonials />
 

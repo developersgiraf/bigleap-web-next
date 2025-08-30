@@ -1,0 +1,56 @@
+// BUSINESS AREA START
+
+.businessArea {
+  padding: 120px 0 80px 0;
+
+  .business-list {
+    .heading {
+      h2 {
+        color: #fff;
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 90px;
+        font-family: "Boldonse", system-ui !important;
+      }
+
+      .list {
+        color: #fff;
+        font-weight: 400;
+        font-size: 16px;
+        // box-sizing: border-box;
+        line-height: 125%;
+        font-style: regular;
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+
+    .lists {
+      padding-left: 45px;
+    }
+  }
+
+  // BUSINESS AREA ITEMS CSS
+
+  .buscol {
+    .businessHead {
+      padding-top: 15px;
+
+      h5 {
+        color: #ed232a;
+        font-size: 20px;
+        font-weight: bold;
+        font-weight: 700;
+        line-height: 125%;
+        font-family: "Montserrat", sans-serif !important;
+      }
+
+      .listcontent {
+        color: #fff;
+        font-weight: 400;
+        line-height: 125%;
+        font-size: 16px;
+        font-family: "Montserrat", sans-serif !important;
+      }
+    }
+  }
+}

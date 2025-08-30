@@ -1,10 +1,10 @@
 import Slider from "../slider/slider.jsx";
-import styles from "../../index.module.scss";
+import styles from "./clients.module.scss";
 export default function ClientsArea() {
   return (
     <section className={styles["client-section"]}>
       <div className={styles["client-content"]}>
-        <h5>Our Clients</h5>
+        <h6>Our Clients</h6>
         <h2>Trusted Clients</h2>
       </div>
       <Slider
@@ -24,7 +24,7 @@ export default function ClientsArea() {
         ]}
         spaceBetween={0}
         slidesPerView={11}
-        imageSize={150}
+        imageSize={180}
         navButtons={false}
         breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 0 },

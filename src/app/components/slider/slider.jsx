@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperNavigation from "./SwiperNavigation";
 import styles from "./slider.module.css";
@@ -11,11 +11,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import "./slider.module.css";
-
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { Fauna_One } from "next/font/google";
 
 export default function Slider({
   datas = [
@@ -47,14 +44,16 @@ export default function Slider({
   navPos = 0,
 }) {
   const swiperRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const isVideoSlides = datas.length > 0 && datas[0].iframe;
-  // No need to track activeIndexes, use Swiper's API for visibility
+
   return (
     <div style={{ position: "relative" }}>
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         style={
           isVideoSlides ? { padding: "10px 0px" } : { padding: "30px 0px" }
         }
@@ -80,152 +79,157 @@ export default function Slider({
         className="mySwiper"
       >
         {isVideoSlides
-          ? datas.map((item, idx) => {
-              const isActive =
-                swiperRef.current &&
-                swiperRef.current.slides &&
-                swiperRef.current.slides[idx] &&
-                swiperRef.current.slides[idx].classList.contains(
-                  "swiper-slide-visible"
-                );
-              return (
-                <SwiperSlide
-                  key={
-                    item.idname
-                      ? `video-${item.idname}-${idx}`
-                      : `video-slide-${idx}`
-                  }
-                  className={isActive ? styles.active : styles.inactive}
+          ? datas.map((item, idx) => (
+              <SwiperSlide
+                key={
+                  item.idname
+                    ? `video-${item.idname}-${idx}`
+                    : `video-slide-${idx}`
+                }
+                className={
+                  activeIndex === idx ? styles.active : styles.inactive
+                }
+              >
+                <div
+                  className={styles.video}
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    height: "400px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
                 >
-                  <div
+                  <iframe
+                    src={item.iframe}
+                    title={item.caption || `Video Slide ${idx + 1}`}
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
                     style={{
-                      position: "relative",
-                      width: "100%",
-                      height: "400px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
+                      width: "60%",
+                      height: "100vh",
+                      paddingLeft: "80px",
                     }}
-                  >
-                    <iframe
-                      src={item.iframe}
-                      title={item.caption || `Video Slide ${idx + 1}`}
-                      frameBorder="0"
-                      allow="autoplay; encrypted-media"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                      style={{ width: "70%", height: "100%" }}
-                    />
-                    {item.caption && (
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          color: "#fff",
-                          fontSize: "60px",
-                          padding: "82px 80px",
-                          // borderTopLeftRadius: "8px",
-                          zIndex: 999,
-                          maxWidth: "50%",
-                          fontWeight: "bold",
-                          fontFamily: "Boldonse, system-ui !important",
-                          lineHeight: "110px",
-                        }}
-                      >
-                        {item.caption}
-                      </div>
-                    )}
-                    {item.paragraph && (
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: "300px",
-                          left: 0,
-                          color: "#fff",
-                          fontSize: " 16px",
-                          padding: "0 90px",
-                          zIndex: 999,
-                          maxWidth: "60%",
-                          fontWeight: "700",
-                        }}
-                      >
-                        {item.paragraph}
-                      </div>
-                    )}
-                  </div>
-                </SwiperSlide>
-              );
-            })
-          : datas.map((item, idx) => {
-              const isActive =
-                swiperRef.current &&
-                swiperRef.current.slides &&
-                swiperRef.current.slides[idx] &&
-                swiperRef.current.slides[idx].classList.contains(
-                  "swiper-slide-visible"
-                );
-              return (
-                <SwiperSlide
-                  key={item.idname ? `${item.idname}-${idx}` : `slide-${idx}`}
-                  className={isActive ? styles.active : styles.inactive}
+                  />
+
+                  {item.sub && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "20px",
+                        left: "20px",
+                        color: "#fff",
+                        fontSize: "16px",
+                        padding: "20px 24px",
+                        zIndex: 1000,
+                        lineHeight: "93%",
+                        fontWeight: 400,
+                        fontStyle: "regular",
+                        fontFamily: "Montserrat, sans-serif !important",
+                        borderRadius: 0,
+                        maxWidth: "60%",
+                        textAlign: "left",
+                        background: "none",
+                        boxShadow: "none",
+                      }}
+                    >
+                      {item.sub}
+                    </div>
+                  )}
+                  {item.caption && (
+                    <div className={styles.vdocaption}>{item.caption}</div>
+                  )}
+                  {item.paragraph && (
+                    <div className={styles.paragraph}>{item.paragraph}</div>
+                  )}
+                </div>
+              </SwiperSlide>
+            ))
+          : datas.map((item, idx) => (
+              <SwiperSlide
+                key={item.idname ? `${item.idname}-${idx}` : `slide-${idx}`}
+                className={
+                  activeIndex === idx ? styles.active : styles.inactive
+                }
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                    justifyContent: "center",
+                    padding: "20px",
+                  }}
                 >
                   <div
+                    className={styles.imageContainer}
                     style={{
                       width: "100%",
                       height: "100%",
                       display: "flex",
-                      flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <div
-                      className={styles.imageContainer}
+                    <Image
+                      className={styles.slideImage}
+                      src={item.img}
+                      alt={item.caption || "img"}
                       style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        maxWidth: `${imageSize}px`,
+                        maxHeight: `${imageSize}px`,
+                        height: "auto",
+                        objectFit: "contain",
                       }}
-                    >
-                      <Image
-                        className={styles.slideImage}
-                        src={item.img}
-                        alt={item.caption || "img"}
-                        style={{
-                          maxWidth: `${imageSize}px`,
-                          maxHeight: `${imageSize}px`,
-                          // width: "auto",
-                          height: "auto",
-                          objectFit: "contain",
-                        }}
-                        width={imageSize}
-                        height={imageSize}
-                      />
-                    </div>
-                    {item.date && (
+                      width={imageSize}
+                      height={imageSize}
+                    />
+                  </div>
+                  <div className={styles.clientDate}>
+                    {item.client && (
                       <div
                         style={{
                           marginTop: "8px",
-                          color: "#fff",
+                          color: "#fdfdfd",
+                          fontWeight: 400,
+                          fontSize: "16px",
+                          lineHeight: "93%",
+                          fontFamily: "Montserrat, sans-serif !important",
+                        }}
+                      >
+                        {item.client}
+                      </div>
+                    )}
+
+                    {item.date && (
+                      <div
+                        style={{
+                          fontFamily:"Roboto, sans-serif !important",
+                          marginTop: "8px",
+                          color: "#fdfdfd",
                           fontSize: "14px",
+                          fontWeight: 400,
+                          lineHeight: "125%",
                         }}
                       >
                         {item.date}
                       </div>
                     )}
-                    {item.caption != "" ? (
-                      <div className={styles.caption}>{item.caption}</div>
-                    ) : null}
-                    {item.readbtn != "" ? (
-                      <button className={styles.readbtn}>{item.readbtn}</button>
-                    ) : null}
                   </div>
-                </SwiperSlide>
-              );
-            })}
+                  {item.caption !== "" ? (
+                    <div className={styles.caption}>{item.caption}</div>
+                  ) : null}
+                  {item.readbtn !== "" ? (
+                    <button className={styles.readbtn}>{item.readbtn}</button>
+                  ) : null}
+                </div>
+              </SwiperSlide>
+            ))}
       </Swiper>
       {navButtons && (
         <SwiperNavigation

@@ -9,16 +9,19 @@
     align-items: center;
     justify-content: center;
     h2 {
-      color: #fff;
-      text-align: center;
-      font-size: 4rem;
+      color: #fdfdfd;
+      font-weight: 400;
       font-family: "Boldonse", system-ui !important;
+      font-size: 64px;
+      text-align: center;
     }
     p {
-      width: 45%;
+      width: 48%;
+      font-weight: 400;
       text-align: center;
-      padding-top: 20px;
-      color: #fff;
+      line-height: 125%;
+      padding-top: 16px;
+      color: #fdfdfd;
       font-family: "Montserrat", sans-serif !important;
     }
   }
@@ -37,15 +40,20 @@
       border-radius: 12px;
 
       .h5 {
-        color: #ed232a;
-        font-size: 1.1rem;
-        font-weight: lighter;
-        font-family: Montserrat, sans-serif !important;
+        color: #ed2124;
+        font-size: 20px;
+        line-height: 125%;
+        font-style: bold;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif !important;
       }
 
       p {
-        color: #cac7c7;
-        align-items: left;
+        font-family: "Montserrat", sans-serif !important;
+        color: #fdfdfd;
+        font-size: 16px;
+        line-height: 125%;
+        text-align: justify;
       }
     }
   }
