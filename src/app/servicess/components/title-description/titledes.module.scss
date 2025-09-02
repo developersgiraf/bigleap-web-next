@@ -15,11 +15,12 @@ $sunset-pink: #e91e63;
   padding: 120px 160px;
 
   .title {
-    font-size: 3.6rem;
-    font-weight: bold;
+    font-family: "Boldonse", system-ui, sans-serif !important;
+    font-size: 64px;
+    font-weight: 400;
     margin-bottom: 1rem;
-    line-height: 95px;
-    color: #fff;
+    line-height: 90px;
+    color: #fdfdfd;
 
     @media (max-width: 768px) {
       font-size: 2rem;

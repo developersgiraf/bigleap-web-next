@@ -87,7 +87,7 @@ export default function ServiceImage({
           <div className={styles.headings}>
             {head.length > 0 && <h2>{head}</h2>}
             <select className={styles.select}>
-              <option value="scale" className={styles.options}>Scale</option>
+              <option value="scale" className={styles.options}>Creative Team</option>
               <option value="fade" className={styles.options}>Fade</option>
               <option value="slide" className={styles.options}>Slide</option>
             </select>
