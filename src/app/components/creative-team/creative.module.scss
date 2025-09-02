@@ -1,12 +1,20 @@
 .creative-team {
   padding: 120px 0 80px 0;
   h2 {
-    color: #fff;
+    color: #fdfdfd;
+    font-size: 64px;
+    font-family: "Boldonse", system-ui !important;
+    line-height: 90px;
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 .teamRow{
-  padding: 0 150px;
+  // padding: 0 150px;
+  .profileCol{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
   .image-style:hover {
     background: rgb(206, 25, 25);
@@ -39,6 +47,7 @@
 }
 
 .profile {
+  
   .image-style {
   }
 }

@@ -50,8 +50,8 @@
 .title {
   text-align: center;
   color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
+  font-family: "boldonse", sans-serif !important;
+  // font-size: 20px;
   letter-spacing: 2px;
   flex: 1;
   margin: 0;
@@ -66,7 +66,7 @@
   background: transparent;
   border: none;
   font-size: 1.5rem;
-  color: #050505;
+  color: #ffffff;
   padding: 0.25rem;
   cursor: pointer;
 
@@ -80,16 +80,17 @@
 .input textarea {
   width: 100%;
   margin-bottom: 20px;
-  padding: 10px 0;
+  // padding: 10px 0;
   border: none;
   border-bottom: 1px solid #e51c23;
   outline: none;
-  font-size: 1.25rem;
+  font-size: 16px;
   background: transparent;
+  font-family: 'montserrat', sans-serif !important;
   color: #333;
 }
 .input{
-  padding: 0 35px;
+  padding: 15px 40px;
 }
 
 .foottt {

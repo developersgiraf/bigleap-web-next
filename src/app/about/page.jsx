@@ -41,42 +41,61 @@ export default function AboutPage() {
                     A creative studio specializing in the production of
                     captivating animation videos that bring ideas to life.
                   </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sunt debitis beatae voluptatem libero impedit iusto maiores
-                    quaerat magnam expedita odit natus fugit quasi accusamus
-                    veritatis, nemo delectus cupiditate perferendis
-                    eligendi.Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Sunt debitis beatae voluptatem libero impedit iusto
-                    maiores quaerat magnam expedita odit natus fugit quasi
-                    accusamus veritatis, nemo delectus cupiditate perferendis
-                    eligendi.Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Sunt debitis beatae voluptatem libero impedit iusto
-                    maiores quaerat magnam expedita odit natus fugit quasi
-                    accusamus veritatis, nemo delectus cupiditate perferendis
-                    eligendi.Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Sunt debitis beatae voluptatem libero impedit iusto
-                    maiores quaerat magnam expedita odit natus fugit quasi
-                    accusamus veritatis, nemo delectus cupiditate perferendis
-                    eligendi.Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Sunt debitis beatae voluptatem libero impedit iusto
-                    maiores quaerat magnam expedita odit natus fugit quasi
-                    accusamus veritatis, nemo delectus cupiditate perferendis
-                    eligendi.Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Sunt debitis beatae voluptatem libero impedit iusto
-                    maiores quaerat magnam expedita odit natus fugit quasi
-                    accusamus veritatis, nemo delectus cupiditate perferendis
-                    eligendi.Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Sunt debitis beatae voluptatem libero impedit iusto
-                    maiores quaerat magnam expedita odit natus fugit quasi
-                    accusamus veritatis, nemo delectus cupiditate perferendis
-                    eligendi.Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Sunt debitis beatae voluptatem libero impedit iusto
-                    maiores quaerat magnam expedita odit natus fugit quasi
-                    accusamus veritatis, nemo delectus cupiditate perferendis
-                    eligendi.Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Sunt debitis beatae voluptatem libero
-                  </p>
+                  <div className={styles["aboutContent"]}>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Sunt debitis beatae voluptatem libero impedit iusto
+                      maiores quaerat magnam expedita odit natus fugit quasi
+                      accusamus veritatis, nemo delectus cupiditate perferendis
+                      eligendi.Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Sunt debitis beatae voluptatem libero
+                      impedit iusto maiores quaerat magnam expedita odit natus
+                      fugit quasi accusamus veritatis, nemo delectus cupiditate
+                      perferendis eligendi.Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero impedit iusto maiores quaerat magnam
+                      expedita odit natus fugit quasi accusamus veritatis, nemo
+                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero impedit iusto maiores quaerat magnam
+                      expedita odit natus fugit quasi accusamus veritatis, nemo
+                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero impedit iusto maiores quaerat magnam
+                      expedita odit natus fugit quasi accusamus veritatis, nemo
+                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero impedit iusto maiores quaerat magnam
+                      expedita odit natus fugit quasi accusamus veritatis, nemo
+                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero impedit iusto maiores quaerat magnam
+                      expedita odit natus fugit quasi accusamus veritatis, nemo
+                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero impedit iusto maiores quaerat magnam
+                      expedita odit natus fugit quasi accusamus veritatis, nemo
+                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero
+                    </p>
+                    <p>
+                      Sunt debitis beatae voluptatem libero impedit iusto
+                      maiores quaerat magnam expedita odit natus fugit quasi
+                      accusamus veritatis, nemo delectus cupiditate perferendis
+                      eligendi.Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Sunt debitis beatae voluptatem libero
+                      impedit iusto maiores quaerat magnam expedita odit natus
+                      fugit quasi accusamus veritatis, nemo delectus cupiditate
+                      perferendis eligendi.Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero impedit iusto maiores quaerat magnam
+                      expedita odit natus fugit quasi accusamus veritatis, nemo
+                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit. Sunt debitis beatae
+                      voluptatem libero
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -89,12 +108,9 @@ export default function AboutPage() {
       <section className={styles["history-area"]}>
         <div className="container">
           <div className={styles["history-head"]}>
-            <h2>HISTORY</h2>
+            <h2>History</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-              sint dolorem sed nihil atque tempora commodi eligendi,
-              exercitationem, dicta totam sequi ab culpa repellendus nesciunt
-              fugiat
+              We are a highly dynamic creative bunch who specializes in delivering 360 production services. Specialized company in photography, videography and film production in UAE
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ export default function BlogStyle({ image, title, date, about }) {
         <div className='col-xl-4'>
             <div className={styles.blog}>
                 <img src={image} alt={image} />
-                <p>{title}</p>
+                <h6>{title}</h6>
                 <p>{date}</p>
                 <p>{about}</p>
             </div>

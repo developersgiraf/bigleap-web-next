@@ -17,12 +17,13 @@
     }
 
     .address {
-      p {
+      h6 {
         margin: 0;
-        color: #fefefe;
+        color: #fdfdfd;
+        font-weight: 400;
         font-family: "Montserrat", sans-serif !important;
-        font-size: 14px;
-        line-height: 24px;
+        font-size: 16px;
+        line-height: 125%;
       }
     }
   }
@@ -32,8 +33,9 @@
     .bigleapCnt {
       h2 {
         margin: 0 0 50px 0;
-        color: #fff;
-        font-size: 3.5rem;
+        color: #fdfdfd;
+        line-height: 90px;
+        font-size: 64px;
         font-weight: 400;
         font-family: "Boldonse", system-ui !important;
       }
@@ -61,50 +63,47 @@
         text-align: left;
 
         h5 {
+          font-family: "Montserrat", sans-serif !important;
+          font-weight: 600;
+          font-style: semi-bold;
           margin-bottom: 10px;
+          font-size: 20px;
+          line-height: 93%;
+          color: #ff0106;
+
+          // color: #fdfdfd;
         }
 
         ul {
           padding-left: 0;
-        }
-      }
-
-      h5 {
-        color: #ff0106;
-        font-family: "Montserrat", sans-serif !important;
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-      }
-
-      ul {
-        list-style: none;
-
-        li {
           list-style: none;
-          line-height: 30px;
+          li {
+            list-style: none;
+            line-height: 30px;
 
-          .contactItem {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            .contactItem {
+              display: flex;
+              align-items: center;
+              gap: 8px;
 
-            .icon {
-              flex-shrink: 0;
-              width: 16px;
-              height: 16px;
+              .icon {
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+              }
             }
-          }
 
-          a {
-            color: #d0d0d0;
-            text-decoration: none;
-            font-family: "Montserrat", sans-serif !important;
-            font-size: 16px;
-            font-weight: 500;
-          }
-          a:hover{
-            color: #fff;
+            a {
+              color: #d0d0d0;
+              text-decoration: none;
+              font-family: "Montserrat", sans-serif !important;
+              font-size: 16px;
+              line-height: 140%;
+              font-weight: 400;
+            }
+            a:hover {
+              color: #fff;
+            }
           }
         }
       }
@@ -114,23 +113,33 @@
   .footer-bottom {
     border-top: 1px solid #3e3e3e;
     padding: 40px 0 0 0;
+    width: 90%;
 
     .footerCopyRight {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0;
 
       li {
         list-style: none;
         color: #bdbdbd;
+        font-family: "Montserrat", sans-serif !important;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 125%;
 
         a {
+          font-family: 'montserrat', sans-serif !important;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 125%;
           text-decoration: none;
           color: #fff;
         }
 
         a:hover {
-          color: #ff0106;
+          color: #ed2124;
         }
       }
     }

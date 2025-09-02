@@ -3,6 +3,7 @@
 
 .about-main-section {
   position: relative;
+  // padding: 120px 0 80px 0;
 
   .about-sect {
     display: flex;
@@ -19,23 +20,33 @@
     }
 
     .abt-cnt {
-      padding: 160px 0;
-      width: 90%;
+      // padding: 160px 0;
+      width: 70%;
       h4 {
-        line-height: 50px;
-        color: #fff;
-        font-size: 1.7rem;
-        font-family: "Boldonse", system-ui !important;
+        line-height: 100%;
+        color: #fdfdfd;
+        font-weight: 600;
+        font-size: 30px;
+        font-family: "montserrat", sans-serif !important;
+        text-align: justify;
       }
 
-      p {
-        color: #dedede;
-        text-align: left;
-        line-height: 27px;
-        padding-top: 15px;
+      .aboutContent {
+        padding-top: 10px;
+        p {
+          text-align: justify;
+          color: #dedede;
+          font-family: "montserrat", sans-serif !important;
+          font-weight: 400;
+        font-size: 16px;
+        line-height: 125%;
+        // padding-top: 15px;
       }
     }
   }
+}
+
+// Close .about-main-section block
 }
 
 // HISTORY AREA START
@@ -49,18 +60,22 @@
     flex-direction: column;
 
     h2 {
-      color: #fff;
-      font-size: 3.5rem;
+      color: #fdfdfd;
+      font-size: 96px;
       font-weight: 400;
       font-family: "Boldonse", system-ui !important;
+      line-height: 93%;
     }
 
     p {
-      font-size: 1rem;
-      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 125%;
+      color: #fdfdfd;
+      font-style: normal;
       font-family: "Montserrat", sans-serif !important;
       text-align: center;
-      padding: 20px 200px;
+      padding: 45px 200px;
     }
   }
 }

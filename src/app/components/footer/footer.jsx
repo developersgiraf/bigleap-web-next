@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./footer.module.scss";
 import Image from "next/image";
 
@@ -20,11 +21,11 @@ export default function Footer() {
                 />
               </div>
               <div className={styles.address}>
-                <p>
+                <h6>
                   Big Leap <br />
                   LV36 A, HAMRIYAH FREE ZONE, PHASE 2, <br />
                   SHARJAH | UAE
-                </p>
+                </h6>
               </div>
             </div>
             <div className="col-xl-8 col-lg-8 col-md-9 col-12">
@@ -40,16 +41,16 @@ export default function Footer() {
                         <h5>Socials</h5>
                         <ul>
                           <li>
-                            <a href="">facebook</a>
+                            <Link href="">facebook</Link>
                           </li>
                           <li>
-                            <a href="">LinkedIn</a>
+                            <Link href="">LinkedIn</Link>
                           </li>
                           <li>
-                            <a href="">instagram</a>
+                            <Link href="">instagram</Link>
                           </li>
                           <li>
-                            <a href="">twitter</a>
+                            <Link href="">twitter</Link>
                           </li>
                         </ul>
                       </div>
@@ -59,22 +60,22 @@ export default function Footer() {
                         <h5>Menu</h5>
                         <ul>
                           <li>
-                            <a href="">Home</a>
+                            <Link href="">Home</Link>
                           </li>
                           <li>
-                            <a href="">About</a>
+                            <Link href="">About</Link>
                           </li>
                           <li>
-                            <a href="">Services</a>
+                            <Link href="">Services</Link>
                           </li>
                           <li>
-                            <a href="">Blogs</a>
+                            <Link href="">Blogs</Link>
                           </li>
                           <li>
-                            <a href="">Portfolio</a>
+                            <Link href="">Portfolio</Link>
                           </li>
                           <li>
-                            <a href="">Contact</a>
+                            <Link href="">Contact</Link>
                           </li>
                         </ul>
                       </div>
@@ -159,7 +160,7 @@ export default function Footer() {
                                   strokeLinejoin="round"
                                 />
                               </svg>
-                              <a href="#">Dubai, UAE</a>
+                              <Link href="#">Dubai, UAE</Link>
                             </div>
                           </li>
                         </ul>
@@ -176,11 +177,11 @@ export default function Footer() {
                   <li>
                     {" "}
                     Bigleap © 2025. All Rights Reserved.{" "}
-                    <a href=""> bigleap.ae </a>
+                    <Link href=""> bigleap.ae </Link>
                   </li>
                   <li>
                     {" "}
-                    <a href="#"> Privacy Policy </a>{" "}
+                    <Link href="#"> <u>Privacy Policy</u> </Link>{" "}
                   </li>
                 </ul>
               </div>

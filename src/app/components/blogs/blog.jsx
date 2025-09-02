@@ -28,7 +28,7 @@ export default function BlogSection() {
         <div className="container">
           <div className={styles.blogcontent}>
             <div className={styles.bloghead}>
-              <h5>Blogs</h5>
+              <h6>Blogs</h6>
               <h2>Our Latest Blogs</h2>
             </div>
             <div className={styles.blogimages}>

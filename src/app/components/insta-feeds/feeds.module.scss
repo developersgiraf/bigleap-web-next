@@ -15,6 +15,11 @@
   margin: 0;
   cursor: pointer;
 }
+.stikyImage:hover {
+  transform: scale(1.05);
+
+}
+
 .stikyimg{
     width: 100px;
     height: 100px;

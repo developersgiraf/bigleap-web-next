@@ -1,4 +1,4 @@
-import styles from "../components/info.module.scss";
+import styles from "./info.module.scss";
 import Link from "next/link";
 
 export default function InfoArea() {

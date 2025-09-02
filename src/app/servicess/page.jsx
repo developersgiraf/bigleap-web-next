@@ -33,25 +33,8 @@ export default function ServicesPage() {
                   captivating animation videos that bring ideas to life.
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-                  quo illum eum eligendi, obcaecati repellat aliquid repudiandae
-                  dolore culpa earum tenetur voluptas rem veritatis nisi
-                  molestiae explicabo! Cum, ad omnis? Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Alias quod autem, assumenda
-                  voluptates cupiditate numquam, vel excepturi consequuntur id
-                  illo quibusdam! Vero facere veritatis dolorem rerum
-                  repellendus nulla, ipsa dignissimos. <br />
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                  eius neque delectus, eveniet magni modi est. Assumenda eveniet
-                  ipsam sunt modi tempora ex debitis, non totam doloribus nobis
-                  aspernatur doloremque. Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Est, iusto officia? Cupiditate dolorem omnis
-                  iure, consequuntur quae qui est delectus doloremque excepturi
-                  nobis neque sunt libero a sequi, quam laudantium. Lorem ipsum
-                  dolor, sit amet consectetur adipisicing elit. Officia esse
-                  accusamus repudiandae culpa amet mollitia nam odio recusandae
-                  debitis et reprehenderit autem aspernatur beatae, eos
-                  quibusdam provident repellendus. Quam, neque!
+                  Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt <br />
+                 Ut labore et dolore magna aliqua. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua .
                 </p>
               </div>
             </div>

@@ -3,26 +3,51 @@
   // width: 100%;
   // position: relative;
   padding: 150px 0 80px 0;
+
+  .headings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // gap: 50px;
+    margin-bottom: 24px;
+    padding: 0 10px;
+
+    select {
+      padding: 8px 16px;
+      border: none;
+      background: none;
+      color: #fff;
+      .options{
+        color: #fff;
+        background: #000000;
+      }
+      .options:hover{
+        background: red;
+      }
+    }
+  }
+
   h2 {
     color: #fff;
-    text-align: center;
-    font-size: 4rem;
-      font-family: "Boldonse", system-ui !important;
-
+    text-align: left;
+    line-height: 90px;
+    font-size: 64px;
+    font-weight: 400;
+    font-family: "Boldonse", system-ui !important;
   }
   .serMain {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  .serimgs{
+  .serimgs {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 80px;
     padding-top: 30px;
   }
-  .serImg{
+  .serImg {
     width: fit-content;
   }
   .servicepage {
@@ -40,25 +65,24 @@
       width: 100%;
       transition: all 0.3s ease-in-out;
     }
-    .posX{
+    .posX {
       transform: translateX(-10px) scale(1.1);
     }
     .serviceimageCover:hover {
       .image {
         background-color: #fff;
         opacity: 0.69;
-        
+
         .list {
           .listItem {
             transform: translate(0, -50%);
           }
         }
       }
-      .scale{
-        
+      .scale {
         transform: scale(1.1);
       }
-      .posX{
+      .posX {
         transform: translateX(10px) scale(1.1);
       }
     }
@@ -72,7 +96,7 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      
+
       .listItem {
         background: #ffffff;
         padding: 2px 10px;
@@ -80,7 +104,7 @@
         transform: translate(-220%, -50%);
         transition: transform 0.3s ease-in-out;
         h5 {
-            color: #000000;
+          color: #000000;
           font-size: 14px !important;
           font-family: "Montserrat", sans-serif !important;
         }

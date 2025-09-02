@@ -1,6 +1,8 @@
+'use client'
+
 import styles from "./ser.module.scss";
 import Animation from "./animation";
-
+import React from "react";
 const defaultData = [
   {
     image: "/servicess/2danimation.png",
@@ -8,7 +10,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/2danimation"
+    link: "/servicess/2danimation",
   },
   {
     image: "/servicess/3danimation.png",
@@ -16,7 +18,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/3danimation"
+    link: "/servicess/3danimation",
   },
   {
     image: "/servicess/Whiteboard Animation.png",
@@ -24,7 +26,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/whiteboard-animation"
+    link: "/servicess/whiteboard-animation",
   },
   {
     image: "/servicess/character.png",
@@ -32,7 +34,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/character-design"
+    link: "/servicess/character-design",
   },
   {
     image: "/servicess/comic-book.png",
@@ -40,7 +42,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/comic-book"
+    link: "/servicess/comic-book",
   },
   {
     image: "/servicess/red-machine.png",
@@ -48,7 +50,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/VFX & Post Production.png",
@@ -56,44 +58,61 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/video.png",
     caption: "Video Editing & Post Production",
     sub1: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "#",
   },
   {
     image: "/servicess/Whiteboard Animation.png",
     caption: "white board",
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
-    link: "#"
+    link: "#",
   },
 ];
-export default function ServiceImage({ data = defaultData, anim='scale', head='', maxCols = 3 }) {
-
+export default function ServiceImage({
+  data = defaultData,
+  anim = "scale",
+  head = "",
+  maxCols = 3,
+}) {
   return (
     <>
       <section className={styles.ServiceImage}>
-        {head.length > 0 && <h2>{head}</h2>}
         <div className="container">
-          <div
-            className={`row ${styles.serimgs}`}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: `repeat(${maxCols}, 1fr)`,
-              gap: '24px',
-            }}
-          >
-            {data.map((item, index) => (
-              <div key={index} className={styles.serImg}>
-                <div className={styles.serMain}>
-                  <Animation data={item} buttonName="LEARN MORE" anim={anim} />
+          <div className={styles.headings}>
+            {head.length > 0 && <h2>{head}</h2>}
+            <select className={styles.select}>
+              <option value="scale" className={styles.options}>Scale</option>
+              <option value="fade" className={styles.options}>Fade</option>
+              <option value="slide" className={styles.options}>Slide</option>
+            </select>
+          </div>
+          <div className="container">
+            <div
+              className={`row ${styles.serimgs}`}
+              style={{
+                display: "grid",
+                gridTemplateColumns: `repeat(${maxCols}, 1fr)`,
+                gap: "24px",
+              }}
+            >
+              {data.map((item, index) => (
+                <div key={index} className={styles.serImg}>
+                  <div className={styles.serMain}>
+                    <Animation
+                      data={item}
+                      buttonName="LEARN MORE"
+                      anim={anim}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
