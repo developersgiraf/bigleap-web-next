@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import styles from "./ser.module.scss";
 import Animation from "./animation";
@@ -78,19 +78,31 @@ export default function ServiceImage({
   data = defaultData,
   anim = "scale",
   head = "",
+  sub = "",
   maxCols = 3,
+  showButton = true,
+  showSelect = true,
 }) {
   return (
     <>
       <section className={styles.ServiceImage}>
         <div className="container">
+          <div className={styles.sub}>{sub}</div>
           <div className={styles.headings}>
             {head.length > 0 && <h2>{head}</h2>}
-            <select className={styles.select}>
-              <option value="scale" className={styles.options}>Creative Team</option>
-              <option value="fade" className={styles.options}>Fade</option>
-              <option value="slide" className={styles.options}>Slide</option>
-            </select>
+            {showSelect && (
+              <select className={styles.select}>
+                <option value="scale" className={styles.options}>
+                  Creative Team
+                </option>
+                <option value="fade" className={styles.options}>
+                  Fade
+                </option>
+                <option value="slide" className={styles.options}>
+                  Slide
+                </option>
+              </select>
+            )}
           </div>
           <div className="container">
             <div
@@ -106,8 +118,9 @@ export default function ServiceImage({
                   <div className={styles.serMain}>
                     <Animation
                       data={item}
-                      buttonName="LEARN MORE"
+                      buttonName={showButton ? "LEARN MORE" : null}
                       anim={anim}
+                      showButton={showButton}
                     />
                   </div>
                 </div>

@@ -1,0 +1,39 @@
+.businessArea {
+  padding: 120px 0 80px 0;
+}
+.businessArea .business-list .heading h2 {
+  color: #fff;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 90px;
+  font-family: "Boldonse", system-ui !important;
+}
+.businessArea .business-list .heading .list {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  font-style: regular;
+  font-family: "Montserrat", sans-serif;
+}
+.businessArea .business-list .lists {
+  padding-left: 45px;
+}
+.businessArea .buscol .businessHead {
+  padding-top: 15px;
+}
+.businessArea .buscol .businessHead h5 {
+  color: #ed232a;
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: 700;
+  line-height: 125%;
+  font-family: "Montserrat", sans-serif !important;
+}
+.businessArea .buscol .businessHead .listcontent {
+  color: #fff;
+  font-weight: 400;
+  line-height: 125%;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif !important;
+}/*# sourceMappingURL=business.module.css.map */

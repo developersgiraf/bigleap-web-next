@@ -2,14 +2,15 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 0 200px;
+  padding: 120px 160px;
 }
 .titleDescription .title {
-  font-size: 3.6rem;
-  font-weight: bold;
+  font-family: "Boldonse", system-ui, sans-serif !important;
+  font-size: 64px;
+  font-weight: 400;
   margin-bottom: 1rem;
-  line-height: 95px;
-  color: #fff;
+  line-height: 90px;
+  color: #fdfdfd;
 }
 @media (max-width: 768px) {
   .titleDescription .title {
@@ -22,6 +23,7 @@
   }
 }
 .titleDescription .description {
+  padding: 10px 0;
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: center;

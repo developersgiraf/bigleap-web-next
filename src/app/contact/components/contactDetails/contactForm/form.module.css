@@ -1,0 +1,128 @@
+.contactFormArea {
+  /* background: url("/enquiry/comic.png"); */
+  /* background-repeat: no-repeat; */
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 220px 0;
+}
+.contactFormArea::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.contactFormArea .formBackground {
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.contactFormArea .formContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contactFormArea h4 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: "Boldonse", system-ui !important;
+}
+.contactFormArea p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  padding-top: 10px;
+  margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif !important;
+}
+.contactFormArea .contactForm {
+  padding: 30px 270px;
+}
+.contactFormArea .contactForm .formRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .contactFormArea .contactForm .formRow {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.contactFormArea .contactForm .formRow .inputGroup {
+  flex: 1;
+}
+.contactFormArea .contactForm .inputGroup {
+  margin-bottom: 20px;
+  position: relative;
+}
+.contactFormArea .contactForm .inputGroup .formInput {
+  width: 100%;
+  opacity: 0.6;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 15px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.contactFormArea .contactForm .inputGroup .formInput::-moz-placeholder {
+  color: #ffffff;
+  font-weight: 400;
+}
+.contactFormArea .contactForm .inputGroup .formInput::placeholder {
+  color: #ffffff;
+  font-weight: 400;
+}
+.contactFormArea .contactForm .inputGroup .formInput:focus {
+  box-shadow: 0 0 5px #ed2124;
+}
+.contactFormArea .contactForm .inputGroup .formInput:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+.contactFormArea .contactForm .inputGroup .textArea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+@media (max-width: 768px) {
+  .contactFormArea {
+    padding: 30px 15px;
+  }
+  .contactFormArea h5 {
+    font-size: 1.5rem;
+  }
+  .contactFormArea .formContainer {
+    padding: 0 10px;
+  }
+  .contactFormArea .contactForm .inputGroup .formInput {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  .contactFormArea .contactForm .submitBtnContainer .submitBtn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=form.module.css.map */

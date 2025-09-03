@@ -1,5 +1,5 @@
 .listSection {
-  margin: 300px 0;
+  padding: 150px 0 80px 0;
 }
 .listSection .all {
   padding: 0 100px;
@@ -10,6 +10,7 @@
 .listSection .all .listStyle h3 {
   color: #fff;
   padding: 20px 0;
+  font-size: 1.2rem;
 }
 .listSection .all .listStyle p {
   color: #ccc;

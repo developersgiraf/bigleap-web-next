@@ -4,7 +4,8 @@
 .faqSection .faqrow {
   width: 100%;
   display: flex;
-  gap: 40px;
+  gap: 20px;
+  padding: 0 40px;
 }
 .faqSection .faqrow .faqContent {
   flex: 0 0 33.333%;
@@ -13,12 +14,13 @@
   justify-content: center;
 }
 .faqSection .faqrow .faqContent .title {
-  color: #fff;
+  color: #fdfdfd;
+  font-family: "Boldonse", system-ui !important;
   font-weight: 400;
   margin: 0;
   text-align: left;
-  font-size: 3rem;
-  line-height: 75px;
+  font-size: 64px;
+  line-height: 90px;
 }
 .faqSection .faqrow .faqList {
   flex: 0 0 66.667%;
@@ -32,7 +34,7 @@
   color: #fff;
   font-size: 1.2rem;
   font-weight: 500;
-  padding: 14px;
+  padding: 25px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -45,15 +47,27 @@
 .faqSection .faqrow .faqList .accordionItem .accordionHeader:hover {
   background: #d32f2f;
 }
+.faqSection .faqrow .faqList .accordionItem .accordionHeader .question {
+  color: #fdfdfd;
+  font-weight: 500;
+  font-style: medium;
+  font-size: 20px;
+  line-height: 125%;
+  font-family: "Montserrat", sans-serif !important;
+}
 .faqSection .faqrow .faqList .accordionItem .accordionHeader .arrow {
   font-size: 14px;
   transition: transform 0.2s ease;
 }
 .faqSection .faqrow .faqList .accordionItem .accordionContent {
-  color: #fff;
-  font-size: 1rem;
+  font-weight: 400;
+  color: #fdfdfd;
+  font-size: 16px;
   padding: 24px;
+  line-height: 125%;
+  text-align: justify;
   animation: fadeIn 0.3s ease;
+  font-family: "Montserrat", sans-serif !important;
 }
 .faqSection .faqrow .faqList .accordionItem .accordionContent p {
   margin: 0;

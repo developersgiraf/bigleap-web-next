@@ -1,10 +1,50 @@
 .ServiceImage {
   padding: 150px 0 80px 0;
 }
+.ServiceImage .sub {
+  color: #fdfdfd;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 400;
+  font-size: 16px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.ServiceImage .headings {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 0 10px;
+}
+.ServiceImage .headings h2 {
+  text-align: center;
+  font-family: "Boldonse", system-ui !important;
+  font-size: 64px;
+  font-weight: 400;
+}
+.ServiceImage .headings select {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  color: #fff;
+  margin-right: 85px;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600;
+  font-size: 30px;
+}
+.ServiceImage .headings select .options {
+  color: #fff;
+  background: #000000;
+}
+.ServiceImage .headings select .options:hover {
+  background: red;
+}
 .ServiceImage h2 {
   color: #fff;
-  text-align: center;
-  font-size: 3rem;
+  text-align: left;
+  line-height: 90px;
+  font-size: 64px;
+  font-weight: 400;
+  font-family: "Boldonse", system-ui !important;
 }
 .ServiceImage .serMain {
   display: flex;
@@ -15,7 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 80px;
   padding-top: 30px;
 }
 .ServiceImage .serImg {
@@ -79,4 +119,32 @@
   padding-top: 15px;
   color: rgb(255, 255, 255);
   margin: auto;
+}
+.ServiceImage .content {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+}
+.ServiceImage .content h5 {
+  color: #fdfdfd;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 93%;
+}
+.ServiceImage .content p {
+  color: #e1d9d9;
+  font-family: "Roboto", sans-serif !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 125%;
+}
+.ServiceImage h4 {
+  color: #fdfdfd;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
+  font-style: medium;
+  font-size: 20px;
+  line-height: 93%;
+  padding-top: 10px;
 }/*# sourceMappingURL=ser.module.css.map */

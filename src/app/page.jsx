@@ -42,27 +42,6 @@ export default function Home() {
       </section>
       {/* HERO SECTION END */}
 
-      {/* <section className={styles.about}>
-        <div className="row align-items-center">
-          <div className={styles.rowss}>
-            <div className="col-xl-4">
-              <img src="Scate.png" alt="" className={styles.image} />
-            </div>
-            <div className="col-xl-8">
-              <div className={styles.abtcnt}>
-                <h4>
-                  Bigleap is a digital product design agency thatturns complex
-                  technology into intuitive, usable interfaces. We work with
-                  forward-thinking teams to create market-ready digital products
-                  that areeasy to use and hard to ignore.
-                </h4>
-                <CTAButton title="ABOUT US" link="/about" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       <section className={styles["about-area"]}>
         <div className="container">
           <div className={`row align-items-center ${styles["about-row"]}`}>
@@ -88,7 +67,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* SSPECIALIZED AREA START */}
 
@@ -250,25 +228,28 @@ export default function Home() {
             <Slider
               datas={[
                 {
-                  sub:'key projects',
+                  sub: "key projects",
                   caption: "Lorem ipsum dolor sit amet.",
-                  paragraph: "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
+                  paragraph:
+                    "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",
                 },
                 {
-                  sub:'key projects',
+                  sub: "key projects",
                   caption: "Lorem ipsum dolor sit amet.",
-                  paragraph: "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
+                  paragraph:
+                    "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",
                 },
                 {
-                  sub:'key projects',
+                  sub: "key projects",
                   caption: "Lorem ipsum dolor sit amet.",
-                  paragraph: "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
+                  paragraph:
+                    "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",
@@ -300,50 +281,50 @@ export default function Home() {
             <h2>Living. Breathing. Digital Experiences</h2>
           </div>
           <div className={styles.specialslide}>
-          <Slider
-            datas={[
-              {
-                img: "/gr-1.gif",
-                client:"client",
-                date: "01-02-2025",
-                caption: "2D motion graphics",
-                idname: "MoGraph",
-              },
-              {
-                img: "/gr-2.gif",
-                client:"client",
-                date: "01-02-2025",
-                caption: "Whiteboard Animations",
-                idname: "MoGraph",
-              },
-              {
-                img: "/gr-3.gif",
-                client:"client",
-                date: "01-02-2025",
-                caption: "Storytelling scripted ",
-                idname: "MoGraph",
-              },
-              {
-                img: "/gr-1.gif",
-                client:"client",
-                date: "01-02-2025",
-                caption: "3D product animation",
-                idname: "MoGraph",
-              },
-            ]}
-            spaceBetween={50}
-            slidesPerView={3}
-            navPos={90}
-            autoplay={false}
-            breakpoints={{
-              320: { slidesPerView: 1, spaceBetween: 10 },
-              640: { slidesPerView: 2, spaceBetween: 15 },
-              1024: { slidesPerView: 3, spaceBetween: 120 },
-              1366: { slidesPerView: 3, spaceBetween: 50 },
-            }}
-            imageSize={400}
-          />
-        </div>
+            <Slider
+              datas={[
+                {
+                  img: "/gr-1.gif",
+                  client: "client",
+                  date: "01-02-2025",
+                  caption: "2D motion graphics",
+                  idname: "MoGraph",
+                },
+                {
+                  img: "/gr-2.gif",
+                  client: "client",
+                  date: "01-02-2025",
+                  caption: "Whiteboard Animations",
+                  idname: "MoGraph",
+                },
+                {
+                  img: "/gr-3.gif",
+                  client: "client",
+                  date: "01-02-2025",
+                  caption: "Storytelling scripted ",
+                  idname: "MoGraph",
+                },
+                {
+                  img: "/gr-1.gif",
+                  client: "client",
+                  date: "01-02-2025",
+                  caption: "3D product animation",
+                  idname: "MoGraph",
+                },
+              ]}
+              spaceBetween={50}
+              slidesPerView={3}
+              navPos={90}
+              autoplay={false}
+              breakpoints={{
+                320: { slidesPerView: 1, spaceBetween: 10 },
+                640: { slidesPerView: 2, spaceBetween: 15 },
+                1024: { slidesPerView: 3, spaceBetween: 120 },
+                1366: { slidesPerView: 3, spaceBetween: 50 },
+              }}
+              imageSize={400}
+            />
+          </div>
         </div>
       </section>
 

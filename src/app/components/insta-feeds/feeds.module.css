@@ -1,0 +1,113 @@
+.instaFeeds {
+  padding: 60px 0;
+  position: relative;
+}
+
+.stikyImage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 77%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.stikyImage:hover {
+  transform: scale(1.05);
+}
+
+.stikyimg {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.swiperContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.feedSwiper {
+  width: 100%;
+}
+.feedSwiper .swiper-slide {
+  height: auto;
+}
+.feedSwiper .swiper-pagination {
+  bottom: 10px;
+}
+.feedSwiper .swiper-pagination .swiper-pagination-bullet {
+  background: #007bff;
+  opacity: 0.5;
+}
+.feedSwiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.feedSwiper .swiper-button-next,
+.feedSwiper .swiper-button-prev {
+  color: #007bff;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.feedSwiper .swiper-button-next:after,
+.feedSwiper .swiper-button-prev:after {
+  font-size: 16px;
+  font-weight: bold;
+}
+.feedSwiper .swiper-button-next:hover,
+.feedSwiper .swiper-button-prev:hover {
+  background: rgb(255, 255, 255);
+}
+
+.feedSlide {
+  width: 100%;
+  height: auto;
+}
+
+.feedItem {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.feedImage {
+  width: 100% !important;
+  height: 100% !important;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.feedImage:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .instaFeeds {
+    padding: 40px 0;
+  }
+  .feedItem {
+    height: 300px;
+  }
+  .feedSwiper .swiper-button-next,
+  .feedSwiper .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+  }
+  .feedSwiper .swiper-button-next:after,
+  .feedSwiper .swiper-button-prev:after {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .feedItem {
+    height: 250px;
+  }
+}/*# sourceMappingURL=feeds.module.css.map */

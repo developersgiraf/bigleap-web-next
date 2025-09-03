@@ -3,23 +3,27 @@ import styles from "./ser.module.scss";
 import Image from "next/image";
 import CTAButton from "../ctaButton/ctabtn";
 
-
 export default function Animation({
   data = {
     image: "/servicess/character.png",
     caption: "Character Design",
-    link: "#"
+    link: "#",
   },
   buttonName = "LEARN MORE",
-  anim="scale",
-  
-
+  anim = "scale",
+  showButton = true,
 }) {
   return (
     <>
       <div className={styles.servicepage}>
         <div className={styles.serviceimageCover}>
-          <div className={styles.image + " " + (anim==="scale"?styles.scale:styles.posX)}>
+          <div
+            className={
+              styles.image +
+              " " +
+              (anim === "scale" ? styles.scale : styles.posX)
+            }
+          >
             <Image src={data.image} width={387} height={396} alt="image" />
             <div className={styles.list}>
               {data.sub1 && (
@@ -50,9 +54,14 @@ export default function Animation({
           </div>
         </div>
         <div className={styles.content}>
-          <h6>{data.caption}</h6>
+          <h5>{data.caption}</h5>
+          <p>{data.date}</p>
         </div>
-        <CTAButton title={buttonName} link={data.link} />
+        <h4>{data.about}</h4>
+
+        {showButton && buttonName && (
+          <CTAButton title={buttonName} link={data.link} />
+        )}
       </div>
     </>
   );

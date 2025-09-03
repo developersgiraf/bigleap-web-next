@@ -1,0 +1,22 @@
+.client-section {
+  padding: 120px 0 80px 0;
+}
+.client-section .client-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.client-section .client-content h6 {
+  color: #fdfdfd;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16px;
+  line-height: 93%;
+}
+.client-section .client-content h2 {
+  color: #fff;
+  font-weight: 400;
+  font-family: "Boldonse", system-ui !important;
+  font-size: 64px;
+  padding: 10px 0;
+}/*# sourceMappingURL=clients.module.css.map */

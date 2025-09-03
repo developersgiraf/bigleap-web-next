@@ -4,7 +4,8 @@
   .faqrow {
     width: 100%;
     display: flex;
-    gap: 40px;
+    gap: 20px;
+    padding: 0 40px;
 
     .faqContent {
       flex: 0 0 33.333%; // Equivalent to col-xl-4

@@ -1,0 +1,21 @@
+.ContactBanner {
+  padding: 180px 0;
+  display: flex;
+  justify-content: center;
+}
+.ContactBanner ul {
+  display: flex;
+  gap: 140px;
+  list-style: none;
+}
+.ContactBanner ul li {
+  text-decoration: none;
+}
+.ContactBanner ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.ContactBanner ul li a:hover {
+  color: #ed2124;
+  transition: 0.3s ease-in-out;
+}/*# sourceMappingURL=contactBanner.module.css.map */

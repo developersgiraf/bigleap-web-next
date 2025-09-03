@@ -1,0 +1,53 @@
+.test {
+  padding: 120px 0 80px;
+}
+.test .diff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.test .diff h2 {
+  color: #fdfdfd;
+  font-weight: 400;
+  font-family: "Boldonse", system-ui !important;
+  font-size: 64px;
+  text-align: center;
+}
+.test .diff p {
+  width: 48%;
+  font-weight: 400;
+  text-align: center;
+  line-height: 125%;
+  padding-top: 16px;
+  color: #fdfdfd;
+  font-family: "Montserrat", sans-serif !important;
+}
+.test .all {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 40px 60px;
+  gap: 30px;
+}
+.test .all .each {
+  border: 2px dotted #5f5f5f;
+  height: 230px;
+  padding: 15px 20px;
+  border-radius: 12px;
+}
+.test .all .each .h5 {
+  color: #ed2124;
+  font-size: 20px;
+  line-height: 125%;
+  font-style: bold;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif !important;
+}
+.test .all .each p {
+  font-family: "Montserrat", sans-serif !important;
+  color: #fdfdfd;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: justify;
+}/*# sourceMappingURL=difference.module.css.map */
