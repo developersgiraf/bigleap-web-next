@@ -1,6 +1,7 @@
 import ServiceImage from "../components/services-sect/servicesImage";
 import TitleBanner from "../components/title-banner/title";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
+import styles from "./blog.module.css";
 
 const blogData = [
   {
@@ -55,7 +56,14 @@ export default function BlogPage() {
     <>
       <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" />
 
-      <ServiceImage head="Our Blogs" data={blogData} anim="x" showSelect={false} />
+      <div className={styles.blogPageWrapper}>
+        <ServiceImage
+          head="Our Blogs"
+          data={blogData}
+          anim="x"
+          showSelect={false}
+        />
+      </div>
       <GradientLights />
     </>
   );

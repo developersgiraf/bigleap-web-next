@@ -1,5 +1,5 @@
-import ServiceImage from "../../../components/services-sect/servicesImage";
-import GradientLights from "../../../components/gradient-lights/gradient";
+import ServiceImage from "../../../../components/services-sect/servicesImage";
+import GradientLights from "../../../../components/gradient-lights/gradient";
 
 const motion = [
   {
@@ -76,6 +76,7 @@ export default function MotionGraphics() {
         data={motion}
         showButton={false}
         showSelect={false}
+        anim={false}
       />
       <GradientLights />
     </>

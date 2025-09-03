@@ -79,7 +79,6 @@ export default function ServiceImage({
   anim = "scale",
   head = "",
   sub = "",
-  maxCols = 3,
   showButton = true,
   showSelect = true,
 }) {
@@ -107,11 +106,11 @@ export default function ServiceImage({
           <div className="container">
             <div
               className={`row ${styles.serimgs}`}
-              style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${maxCols}, 1fr)`,
-                gap: "24px",
-              }}
+              // style={{
+              //   display: "grid",
+              //   gridTemplateColumns: `repeat(${maxCols}, 1fr)`,
+              //   gap: "24px",
+              // }}
             >
               {data.map((item, index) => (
                 <div key={index} className={styles.serImg}>

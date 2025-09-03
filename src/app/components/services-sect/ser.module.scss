@@ -12,12 +12,12 @@
     text-align: center;
   }
   .headings {
-    // display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     // gap: 50px;
     margin-bottom: 24px;
-    padding: 0 10px;
+    padding: 0 50px;
     h2 {
       text-align: center;
       font-family: "Boldonse", system-ui !important;
@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 60px;
     padding-top: 30px;
   }
   .serImg {
