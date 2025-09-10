@@ -1,4 +1,4 @@
-import TitleBanner from "../components/title-banner/title.jsx";
+import TitleBanner from "../components/title-banner/titleBannerr";
 import styles from "./services.module.scss";
 import Image from "next/image";
 import ServiceImage from "../components/services-sect/servicesImage.jsx";
@@ -9,7 +9,7 @@ import GradientLights from "../components/gradient-lights/gradient.jsx";
 export default function ServicesPage() {
   return (
     <>
-      <TitleBanner title="Our creativity begins where reality ends" />
+      <TitleBanner title="Our creativity begins where reality ends" sub=""/>
 
       {/* SERVICE MAIN AREA START */}
       <section className={styles["service-main-area"]}>

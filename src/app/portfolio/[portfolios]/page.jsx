@@ -1,4 +1,4 @@
-import TitleBanner from "../../components/title-banner/title";
+import TitleBanner from "../components/title-banner/titleBannerr";
 import styles from "./portfolioDetail.module.scss";
 import Image from "next/image";
 import MotionGraphics from "./components/motionGraphics/motionGraphics";
@@ -8,7 +8,7 @@ import GradientLights from "../../components/gradient-lights/gradient";
 export default function firstAnimation() {
   return (
     <>
-      <TitleBanner title="Our creativity begins where reality ends" />
+      <TitleBanner title="Our creativity begins where reality ends" sub=""/>
 
       <>
         <section className={styles.videoSwiper}>

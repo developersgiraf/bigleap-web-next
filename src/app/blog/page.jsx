@@ -1,43 +1,43 @@
 import ServiceImage from "../components/services-sect/servicesImage";
 import GradientLights from "../components/gradient-lights/gradient";
-import TitleBanner from "../components/title-banner/titleBanner";
+import TitleBanner from "../components/title-banner/titleBannerr";
 import styles from "./blog.module.css";
 
 const blogData = [
   {
     image: "/servicess/2danimation.png",
     caption: "2D Animation",
-    link: "/blogs/blog1",
+    link: "/blog/2danimation",
   },
   {
     image: "/servicess/3danimation.png",
     caption: "3D Animation",
-    link: "/blogs/blog2",
+    link: "/blog/3danimation",
   },
   {
     image: "/servicess/Whiteboard Animation.png",
     caption: "Whiteboard Animation",
-    link: "/blogs/blog3",
+    link: "/blog/whiteboard-animation",
   },
   {
     image: "/servicess/character.png",
     caption: "Character Design",
-    link: "/blogs/blog4",
+    link: "/blog/character-design",
   },
   {
     image: "/servicess/comic-book.png",
     caption: "Comic Book",
-    link: "/blogs/blog5",
+    link: "/blog/comic-book",
   },
   {
     image: "/servicess/red-machine.png",
     caption: "red machine",
-    link: "/blogs/blog6",
+    link: "#",
   },
   {
     image: "/servicess/VFX & Post Production.png",
     caption: "VFX & Post Production",
-    link: "/blogs/blog7",
+    link: "#",
   },
   {
     image: "/servicess/video.png",
@@ -54,7 +54,7 @@ const blogData = [
 export default function BlogPage() {
   return (
     <>
-      <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" />
+      <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" sub=""/>
 
       <div className={styles.blogPageWrapper}>
         <ServiceImage

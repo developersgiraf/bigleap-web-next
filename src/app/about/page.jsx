@@ -4,7 +4,7 @@ import CreativeTeam from "../components/creative-team/creative";
 import FAQSection from "../components/faq/faq";
 import Difference from "../components/differences/different";
 import ClientsArea from "../components/clients-area/clients.jsx";
-import TitleBanner from "../components/title-banner/title.jsx";
+import TitleBanner from "../components/title-banner/titleBannerr";
 import Testimonials from "../components/team-slider/testimonials.jsx";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
 export default function AboutPage() {
@@ -16,7 +16,7 @@ export default function AboutPage() {
                 <h1> Our creativity begins where reality ends </h1>
 
             </section> */}
-      <TitleBanner title="Our creativity begins where reality ends" />
+      <TitleBanner title="Our creativity begins where reality ends" sub=""/>
 
       {/* ABOUT CONTENT AREA */}
 

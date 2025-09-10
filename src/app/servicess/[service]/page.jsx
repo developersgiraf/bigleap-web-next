@@ -1,6 +1,6 @@
 import styles from "./service-detail.module.scss";
 import TitleDescription from "../components/title-description/titleDes";
-import TitleBanner from "../../components/title-banner/title";
+import TitleBanner from "../../components/title-banner/titleBannerr";
 import GradientLights from "../../components/gradient-lights/gradient";
 import ListServices from "../components/list/list";
 import EnquirySect from "@/app/components/enquiry/enquiry";
@@ -16,14 +16,16 @@ const data = {
     image: "/servicess/red-machine.png",
     heading:
       "A dynamic studio focused on crafting engaging 3D mascot animations that transform concepts into vibrant visuals.",
-    description: "do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ",
+    description:
+      "do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ",
   },
   "whiteboard-animation": {
     image: "/servicess/detail-image.png",
     heading:
       "A dynamic studio focused on crafting engaging 3D mascot animations that transform concepts into vibrant visuals.",
-      description: "do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ",
-    },
+    description:
+      "do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ",
+  },
 };
 
 export default function Services({ params }) {
@@ -34,7 +36,7 @@ export default function Services({ params }) {
     <>
       <TitleBanner
         title="Imagination Unleashed:
-      A Journey Beyond Reality"
+      A Journey Beyond Reality" sub=""
       />
 
       <section className={styles.serDetail}>

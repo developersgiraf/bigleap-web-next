@@ -1,6 +1,5 @@
 import styles from "./industries.module.scss";
 import ListIndustry from "./list-industry";
-import TitleBanner from "../title-banner/title";
 export default function Industries() {
   const list = [
     {
