@@ -1,6 +1,9 @@
-import TitleBanner from "@/app/components/title-banner/title";
+import TitleBanner from "@/app/components/title-banner/titleBanner";
 import GradientLights from "@/app/components/gradient-lights/gradient";
 import styles from "../[blogdetail]/blog-details.module.scss"
+import Image from "next/image";
+
+
 const list = {
   "2danimation": {
     title: "2d animation",
@@ -15,13 +18,13 @@ const list = {
       "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt Ut labore et dolore magna aliqua. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua .Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididuntUt labore et dolore magna aliqua. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua .",
   },
 };
-export default function BlogDetailPage({ params }) {
-  const { blogs } = params;
-  const blogsData = list[blogs];
+export default function BlogDetailPage( {params} ) {
+  const { blogdetail } = params;
+  const blogsData = list[blogdetail];
 
   return (
     <>
-      <TitleBanner title={blogsData.title} />
+    <TitleBanner title={blogsData.title} />
       <div>
         <Image src={blogsData.image} width={100} height={100} alt={blogsData.image} className={styles.image} />
         <h2 className={styles.title}>{blogsData.title}</h2>
