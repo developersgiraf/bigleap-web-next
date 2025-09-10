@@ -1,33 +1,33 @@
 import ServiceImage from "../components/services-sect/servicesImage";
+import GradientLights from "../components/gradient-lights/gradient";
 import TitleBanner from "../components/title-banner/title";
-import GradientLights from "../components/gradient-lights/gradient.jsx";
 import styles from "./blog.module.css";
 
 const blogData = [
   {
     image: "/servicess/2danimation.png",
     caption: "2D Animation",
-    link: "#",
+    link: "/services/2danimation",
   },
   {
     image: "/servicess/3danimation.png",
     caption: "3D Animation",
-    link: "#",
+    link: "/services/3danimation",
   },
   {
     image: "/servicess/Whiteboard Animation.png",
     caption: "Whiteboard Animation",
-    link: "#",
+    link: "/services/whiteboard-animation",
   },
   {
     image: "/servicess/character.png",
     caption: "Character Design",
-    link: "#",
+    link: "/services/character-design",
   },
   {
     image: "/servicess/comic-book.png",
     caption: "Comic Book",
-    link: "#",
+    link: "/services/comic-book.png",
   },
   {
     image: "/servicess/red-machine.png",
