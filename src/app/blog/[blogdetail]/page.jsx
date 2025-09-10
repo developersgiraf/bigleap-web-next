@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import TitleBanner from "@/app/components/title-banner/title";
 import GradientLights from "@/app/components/gradient-lights/gradient";
 import styles from "../[blogdetail]/blog-details.module.scss"
@@ -19,9 +18,7 @@ const list = {
 export default function BlogDetailPage({ params }) {
   const { blogs } = params;
   const blogsData = list[blogs];
-  if (!blogsData) {
-    notFound();
-  }
+
   return (
     <>
       <TitleBanner title={blogsData.title} />
