@@ -38,7 +38,7 @@ export default function Slider({
     1024: { slidesPerView: 3, spaceBetween: 120 },
     1366: { slidesPerView: 4, spaceBetween: 20 },
   },
-  autoplay = { delay: 2500, disableOnInteraction: false },
+  autoplay = { delay: 2500, disableOnInteraction: true },
   navButtons = true,
   imageSize = 100,
   navPos = 0,

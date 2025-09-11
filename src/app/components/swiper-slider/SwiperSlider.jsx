@@ -145,7 +145,7 @@ export default function SwiperSlider({
             <video
               src={slide.src}
               controls={slide.controls !== false}
-              autoPlay={slide.autoPlay || false}
+              autoPlay={slide.autoPlay || true}
               muted={slide.muted || false}
               loop={slide.loop || false}
               className={styles.video}

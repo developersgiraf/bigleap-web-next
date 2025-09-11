@@ -12,6 +12,7 @@ import ClientsArea from "./components/clients-area/clients.jsx";
 import Testimonials from "./components/team-slider/testimonials";
 import GradientLights from "./components/gradient-lights/gradient";
 import InstaFeeds from "./components/insta-feeds/feeds";
+import CounterSect from "./components/counter/counter.jsx";
 import { FALSE } from "sass";
 
 export default function Home() {
@@ -126,7 +127,7 @@ export default function Home() {
               loop={true}
               imageSize={160}
               navPos={180}
-              autoplay={false}
+              autoplay={true}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 15 },
@@ -218,6 +219,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <CounterSect />
       {/* <CounterHead /> */}
 
       {/* VIDEO SLIDER AREA START */}
@@ -259,8 +262,8 @@ export default function Home() {
               slidesPerView={1}
               imageSize={100}
               loop={true}
-              navPos={-680}
-              autoplay={false}
+              navPos={-20}
+              autoplay={true}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 15 },
@@ -315,7 +318,7 @@ export default function Home() {
               spaceBetween={50}
               slidesPerView={3}
               navPos={90}
-              autoplay={false}
+              autoplay={true}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 15 },
