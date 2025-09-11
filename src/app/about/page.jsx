@@ -7,6 +7,7 @@ import ClientsArea from "../components/clients-area/clients.jsx";
 import TitleBanner from "../components/title-banner/titleBannerr";
 import Testimonials from "../components/team-slider/testimonials.jsx";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
+import Timeline from "./components/timeline/timelineSlider.jsx";
 export default function AboutPage() {
   return (
     <>
@@ -106,14 +107,15 @@ export default function AboutPage() {
       {/* HISTORY AREA START */}
 
       <section className={styles["history-area"]}>
-        <div className="container">
+        {/* <div className="container"> */}
           <div className={styles["history-head"]}>
             <h2>History</h2>
             <p>
               We are a highly dynamic creative bunch who specializes in delivering 360 production services. Specialized company in photography, videography and film production in UAE
             </p>
+            <Timeline />
           </div>
-        </div>
+        {/* </div> */}
       </section>
 
       {/* CREATIVE TEAM */}
