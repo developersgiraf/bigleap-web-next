@@ -1,9 +1,10 @@
-import TitleBanner from "../components/title-banner/titleBannerr";
+import TitleBanner from "../../components/title-banner/titleBannerr";
 import styles from "./portfolioDetail.module.scss";
 import Image from "next/image";
 import MotionGraphics from "./components/motionGraphics/motionGraphics";
 import TitleDescription from "../../servicess/components/title-description/titleDes.jsx";
 import GradientLights from "../../components/gradient-lights/gradient";
+import VideoSwiper from "./components/VideoSwiper";
 
 export default function firstAnimation() {
   return (
@@ -21,12 +22,8 @@ export default function firstAnimation() {
               deliver real results.
             </p>
           </div>
-          <Image
-            src="/blog1.png"
-            alt="Project Image"
-            width={500}
-            height={300}
-          />
+          
+          <VideoSwiper styles={styles} />
         </section>
       </>
 

@@ -16,7 +16,7 @@ const slides = [
     description:
       "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     buttonText: "EXPLORE",
-    link: "/services/animation",
+    link: "/portfolio/animation",
     background: "linear-gradient(135deg, #2c1810 0%, #4a0e4e 100%)",
     bgClass: "bg1",
   },
@@ -26,7 +26,7 @@ const slides = [
     description:
       "Creating stunning three-dimensional visuals that bring concepts to life with depth and realism. Our expert team crafts immersive experiences.",
     buttonText: "EXPLORE",
-    link: "/services/3d-design",
+    link: "/portfolio/3d-design",
     background: "linear-gradient(135deg, #0f4c75 0%, #3282b8 100%)",
     bgClass: "bg2",
   },
@@ -36,7 +36,7 @@ const slides = [
     description:
       "Developing unique and memorable characters that tell stories and connect with audiences through creative design and personality.",
     buttonText: "EXPLORE",
-    link: "/services/character-design",
+    link: "/portfolio/character-design",
     background: "linear-gradient(135deg, #2d5016 0%, #4a7c59 100%)",
     bgClass: "bg3",
   },

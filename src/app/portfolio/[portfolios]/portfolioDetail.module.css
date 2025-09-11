@@ -1,9 +1,9 @@
 .videoSwiper {
   background: #000000;
-  height: 50vh;
+  height: 60vh;
 }
 .videoSwiper .sliderText {
-  padding: 20px;
+  padding: 2px;
   color: #fdfdfd;
   text-align: left;
   position: absolute;
@@ -99,4 +99,8 @@
   color: #ed2124 !important;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
+}
+
+.videoSlide .slideImage {
+  width: 100%;
 }/*# sourceMappingURL=portfolioDetail.module.css.map */
