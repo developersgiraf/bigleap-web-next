@@ -17,7 +17,7 @@
   background-color: #ed2124;
   border-radius: 50%;
   filter: blur(250px);
-  opacity: 0.5;
+  opacity: 0.3;
   animation: move 6s infinite alternate;
 }
 
