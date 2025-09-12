@@ -13,6 +13,7 @@ import Testimonials from "./components/team-slider/testimonials";
 import GradientLights from "./components/gradient-lights/gradient";
 import InstaFeeds from "./components/insta-feeds/feeds";
 import CounterSect from "./components/counter/counter.jsx";
+import SocialMediaIcon from "./components/socialMedia-icon/socialMedia-icon.jsx";
 import { FALSE } from "sass";
 
 export default function Home() {
@@ -41,8 +42,10 @@ export default function Home() {
           />
         </div>
       </section>
+
       {/* HERO SECTION END */}
 
+<SocialMediaIcon />
       <section className={styles["about-area"]}>
         <div className="container">
           <div className={`row align-items-center ${styles["about-row"]}`}>

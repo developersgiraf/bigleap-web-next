@@ -46,7 +46,7 @@ export default function firstAnimation() {
       <section className={styles.portVideos}>
         <div className="container">
           <iframe
-            src="https://www.youtube.com/embed/geMtgE6RmTQ?autoplay=1&mute=1&loop=1&playlist=geMtgE6RmTQ&controls=0&modestbranding=1&rel=0"
+            src="https://www.youtube.com/embed/geMtgE6RmTQ?autoplay=1&mute=1&loop=1&playlist=geMtgE6RmTQ&controls=0&modestbranding=0&rel=0"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
             allowFullScreen
