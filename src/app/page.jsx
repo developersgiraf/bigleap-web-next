@@ -1,50 +1,23 @@
 import Image from "next/image";
-import dynamic from "next/dynamic";
 // import styles from "./page.module.css";
 import styles from "./index.module.scss";
+import Slider from "./components/slider/slider.jsx";
+import BusinessItems from "./components/business/business-items";
+import Difference from "./components/differences/different";
 import CTAButton from "./components/ctaButton/ctabtn.jsx";
+import FAQSection from "./components/faq/faq.jsx";
+import BlogSection from "./components/blogs/blog.jsx";
+import EnquirySect from "./components/enquiry/enquiry.jsx";
+import ClientsArea from "./components/clients-area/clients.jsx";
+import Testimonials from "./components/team-slider/testimonials";
 import GradientLights from "./components/gradient-lights/gradient";
-import YouTubeLazyEmbed from "./components/youtube-lazy/youtube-lazy.jsx";
-import CriticalResourcePreloader from "./components/critical-preloader/critical-preloader.jsx";
+import InstaFeeds from "./components/insta-feeds/feeds";
+import CounterSect from "./components/counter/counter.jsx";
 import { FALSE } from "sass";
-
-// Dynamic imports for better code splitting
-const Slider = dynamic(() => import("./components/slider/slider.jsx"), {
-  loading: () => <div>Loading...</div>,
-});
-const BusinessItems = dynamic(() => import("./components/business/business-items"), {
-  loading: () => <div>Loading...</div>,
-});
-const Difference = dynamic(() => import("./components/differences/different"), {
-  loading: () => <div>Loading...</div>,
-});
-const FAQSection = dynamic(() => import("./components/faq/faq.jsx"), {
-  loading: () => <div>Loading...</div>,
-});
-const BlogSection = dynamic(() => import("./components/blogs/blog.jsx"), {
-  loading: () => <div>Loading...</div>,
-});
-const EnquirySect = dynamic(() => import("./components/enquiry/enquiry.jsx"), {
-  loading: () => <div>Loading...</div>,
-});
-const ClientsArea = dynamic(() => import("./components/clients-area/clients.jsx"), {
-  loading: () => <div>Loading...</div>,
-});
-const Testimonials = dynamic(() => import("./components/team-slider/testimonials"), {
-  loading: () => <div>Loading...</div>,
-});
-const InstaFeeds = dynamic(() => import("./components/insta-feeds/feeds"), {
-  loading: () => <div>Loading...</div>,
-});
-const CounterSect = dynamic(() => import("./components/counter/counter.jsx"), {
-  loading: () => <div>Loading...</div>,
-});
 
 export default function Home() {
   return (
     <>
-      <CriticalResourcePreloader />
-      
       {/* HERO SECTION START */}
 
       <section className={styles.hero}>
@@ -75,14 +48,7 @@ export default function Home() {
           <div className={`row align-items-center ${styles["about-row"]}`}>
             <div className="col-xl-5 col-lg-4 col-md-3 col-12">
               <div className={styles["about-first-box"]}>
-                <Image 
-                  src="/Scate.png" 
-                  alt="Skate illustration" 
-                  width={500}
-                  height={400}
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+                <img src="Scate.png" alt="" />
               </div>
             </div>
 
@@ -208,16 +174,24 @@ export default function Home() {
               <div className="col-xl-6 col-lg-6 col-md-12 col-12">
                 <div className={styles["first-video"]}>
                   <div className={styles.video1}>
-                    <YouTubeLazyEmbed 
-                      videoId="xiW4HMDR1eo" 
-                      title="Bigleap Portfolio Video 1"
-                    />
+                    <iframe
+                      src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                   <div className={styles.video2}>
-                    <YouTubeLazyEmbed 
-                      videoId="xiW4HMDR1eo" 
-                      title="Bigleap Portfolio Video 2"
-                    />
+                    <iframe
+                      src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 </div>
               </div>
@@ -230,10 +204,14 @@ export default function Home() {
                   </div>
 
                   <div className={styles.video3}>
-                    <YouTubeLazyEmbed 
-                      videoId="xiW4HMDR1eo" 
-                      title="Bigleap Portfolio Video 3"
-                    />
+                    <iframe
+                      src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 </div>
               </div>
