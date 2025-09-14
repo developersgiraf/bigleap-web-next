@@ -4,13 +4,17 @@ import styles from "./cta-button.module.scss";
 export default function CTAButton({
   title = "Default Title",
   link = "#",
-  onClick = null,
-  type = "button",
+  isModal = false,
+  modalTarget = "#",
 }) {
-  if (onClick) {
+  if (isModal) {
     return (
       <div className={styles.btn}>
-        <button type={type} onClick={onClick}>
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target={modalTarget}
+        >
           {title}
         </button>
       </div>

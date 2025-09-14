@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect } from "react";
 import styles from "../enquiry/enquiry.module.scss";
 import Image from "next/image";
 import CTAButton from "../ctaButton/ctabtn.jsx";
-import CustomModal from "../custom-modal/custom-modal.jsx";
 
 export default function EnquirySect() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  useEffect(() => {
+    // Dynamically import Bootstrap JS only on client side
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +17,6 @@ export default function EnquirySect() {
     const data = Object.fromEntries(formData.entries());
     console.log("Form Submitted:", data);
     // You can send `data` to your API here
-    setIsModalOpen(false);
   };
 
   return (
@@ -31,65 +32,89 @@ export default function EnquirySect() {
         <div className={styles.buttonContainer}>
           <CTAButton
             title="ENQUIRE NOW"
-            onClick={() => setIsModalOpen(true)}
+            isModal={true}
+            modalTarget="#enquiryModal"
           />
         </div>
       </section>
 
-      {/* Custom Enquiry Modal */}
-      <CustomModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        title="ENQUIRY FORM"
-        className={styles.modalContent}
+      {/* Enquiry Modal */}
+      <div
+        className="modal fade"
+        id="enquiryModal"
+        aria-hidden="true"
+        aria-labelledby="enquiryModalLabel"
+        tabIndex="-1"
       >
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-xl-6">
-              <div className={styles.input}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
+        <div
+          className={`modal-dialog modal-dialog-centered ${styles.modalDialog}`}
+        >
+          <div className={`modal-content ${styles.modalContent}`}>
+            <div className={`modal-header ${styles.modalHeader}`}>
+              <h1
+                className={`modal-title ${styles.title} fs-5`}
+                id="enquiryModalLabel"
+              >
+                ENQUIRY FORM
+              </h1>
+              <button
+                type="button"
+                className={`btn-close ${styles.btnClose}`}
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
-            <div className="col-xl-6">
-              <div className={styles.input}>
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="Your Phone"
-                  required
-                />
+            <form onSubmit={handleSubmit}>
+              <div className={`modal-body ${styles.modalBody}`}>
+                <div className="row">
+                  <div className="col-xl-6">
+                    <div className={styles.input}>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6">
+                    <div className={styles.input}>
+                      <input
+                        type="text"
+                        name="phone"
+                        placeholder="Your Phone"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-12">
+                    <div className={styles.input}>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-12">
+                    <div className={styles.input}>
+                      <input
+                        type="text"
+                        name="message"
+                        placeholder="Your Message"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="col-xl-12">
-              <div className={styles.input}>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                />
+              <div className={`modal-footer ${styles.foottt}`}>
+                <CTAButton title="SUBMIT" link="#" />
               </div>
-            </div>
-            <div className="col-xl-12">
-              <div className={styles.input}>
-                <input
-                  type="text"
-                  name="message"
-                  placeholder="Your Message"
-                />
-              </div>
-            </div>
+            </form>
           </div>
-          <div className={styles.foottt}>
-            <CTAButton title="SUBMIT" type="submit" />
-          </div>
-        </form>
-      </CustomModal>
+        </div>
+      </div>
     </>
   );
 }
