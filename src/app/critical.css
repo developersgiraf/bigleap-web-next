@@ -1,0 +1,76 @@
+/* Critical CSS - Inline this for fastest rendering */
+
+/* Base styles to prevent FOUC */
+html {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f1218;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Critical container styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Critical grid styles */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col,
+[class*="col-"] {
+  padding: 0 15px;
+  flex: 1;
+}
+
+/* Critical hero section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f1218 0%, #1a1f2e 100%);
+}
+
+/* Critical button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #ed232a;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Critical loading state */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #ed232a;
+  font-size: 16px;
+}

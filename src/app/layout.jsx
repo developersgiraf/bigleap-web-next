@@ -1,22 +1,22 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
+import "./critical.css";
 import "./globals.css";
+import "./performance-optimizations.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainHeader from "./components/header/header";
 import InfoArea from "./components/info-area/info";
 import Footer from "./components/footer/footer";
 import WebVitals from "./components/web-vitals/web-vitals";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Optimize font loading - use single font family with multiple weights
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
 });
 
 export const metadata = {
@@ -37,35 +37,48 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        {/* Critical resource hints */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Preload critical CSS */}
+        <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
         
         {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="//www.youtube.com" />
         <link rel="dns-prefetch" href="//img.youtube.com" />
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={inter.className}>
         <WebVitals />
         <InfoArea />
         <MainHeader />
         {children}
         <Footer />
         
-        {/* Load FontAwesome with better strategy */}
+        {/* Defer non-critical CSS */}
         <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          strategy="afterInteractive"
+          id="load-fontawesome"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              const link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+              link.media = 'print';
+              link.onload = function() { this.media = 'all'; };
+              document.head.appendChild(link);
+            `
+          }}
         />
         
-        {/* Load Bootstrap JS after interactive */}
+        {/* Load Bootstrap JS after DOM is ready */}
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>

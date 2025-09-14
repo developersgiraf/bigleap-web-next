@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback, useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperNavigation from "./SwiperNavigation";
 import styles from "./slider.module.css";
@@ -45,18 +45,54 @@ export default function Slider({
 }) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const isVideoSlides = datas.length > 0 && datas[0].iframe;
+  
+  // Memoize computed values to prevent unnecessary recalculations
+  const isVideoSlides = useMemo(() => datas.length > 0 && datas[0].iframe, [datas]);
+  
+  // Memoize breakpoints for video slides
+  const videoBreakpoints = useMemo(() => ({
+    320: { slidesPerView: 1 },
+    640: { slidesPerView: 1 },
+    1024: { slidesPerView: 1 },
+    1366: { slidesPerView: 1 },
+  }), []);
+
+  // Use useCallback to prevent function recreation on each render
+  const handleSlideChange = useCallback((swiper) => {
+    // Use requestAnimationFrame to batch state updates
+    requestAnimationFrame(() => {
+      setActiveIndex(swiper.realIndex);
+    });
+  }, []);
+
+  const handleSwiperInit = useCallback((swiper) => {
+    swiperRef.current = swiper;
+  }, []);
+
+  // Memoize slide style objects to prevent recreation
+  const containerStyle = useMemo(() => ({
+    position: "relative",
+  }), []);
+
+  const swiperStyle = useMemo(() => 
+    isVideoSlides 
+      ? { padding: "10px 0px" } 
+      : { padding: "30px 0px" }
+  , [isVideoSlides]);
+
+  const imageStyle = useMemo(() => ({
+    maxWidth: `${imageSize}px`,
+    maxHeight: `${imageSize}px`,
+    height: "auto",
+    objectFit: "contain",
+  }), [imageSize]);
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={containerStyle}>
       <Swiper
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        style={
-          isVideoSlides ? { padding: "10px 0px" } : { padding: "30px 0px" }
-        }
+        onSwiper={handleSwiperInit}
+        onSlideChange={handleSlideChange}
+        style={swiperStyle}
         autoplay={autoplay}
         grabCursor={true}
         spaceBetween={spaceBetween}
@@ -65,16 +101,7 @@ export default function Slider({
         loop={loop}
         allowSlidePrev={true}
         allowSlideNext={true}
-        breakpoints={
-          isVideoSlides
-            ? {
-                320: { slidesPerView: 1 },
-                640: { slidesPerView: 1 },
-                1024: { slidesPerView: 1 },
-                1366: { slidesPerView: 1 },
-              }
-            : breakpoints
-        }
+        breakpoints={isVideoSlides ? videoBreakpoints : breakpoints}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
@@ -90,17 +117,7 @@ export default function Slider({
                   activeIndex === idx ? styles.active : styles.inactive
                 }
               >
-                <div
-                  className={styles.video}
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "400px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
+                <div className={styles.videoSlideContainer}>
                   <iframe
                     src={item.iframe}
                     title={item.caption || `Video Slide ${idx + 1}`}
@@ -108,34 +125,12 @@ export default function Slider({
                     allow="autoplay; encrypted-media"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                    style={{
-                      width: "60%",
-                      height: "100vh",
-                      paddingLeft: "80px",
-                    }}
+                    className={styles.videoFrame}
+                    loading="lazy"
                   />
 
                   {item.sub && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: "20px",
-                        left: "20px",
-                        color: "#fff",
-                        fontSize: "16px",
-                        padding: "20px 24px",
-                        zIndex: 1000,
-                        lineHeight: "93%",
-                        fontWeight: 400,
-                        fontStyle: "regular",
-                        fontFamily: "Montserrat, sans-serif !important",
-                        borderRadius: 0,
-                        maxWidth: "60%",
-                        textAlign: "left",
-                        background: "none",
-                        boxShadow: "none",
-                      }}
-                    >
+                    <div className={styles.sub}>
                       {item.sub}
                     </div>
                   )}
@@ -155,39 +150,16 @@ export default function Slider({
                   activeIndex === idx ? styles.active : styles.inactive
                 }
               >
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "20px",
-                  }}
-                >
-                  <div
-                    className={styles.imageContainer}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+                <div className={styles.slideContainer}>
+                  <div className={styles.imageContainer}>
                     <Image
                       className={styles.slideImage}
                       src={item.img}
                       alt={item.caption || "img"}
-                      style={{
-                        maxWidth: `${imageSize}px`,
-                        maxHeight: `${imageSize}px`,
-                        height: "auto",
-                        objectFit: "contain",
-                      }}
+                      style={imageStyle}
                       width={imageSize}
                       height={imageSize}
+                      loading="lazy"
                     />
                   </div>
                   <div className={styles.clientDate}>
@@ -199,7 +171,7 @@ export default function Slider({
                           fontWeight: 400,
                           fontSize: "16px",
                           lineHeight: "93%",
-                          fontFamily: "Montserrat, sans-serif !important",
+                          fontFamily: "Montserrat, sans-serif",
                         }}
                       >
                         {item.client}
@@ -209,7 +181,7 @@ export default function Slider({
                     {item.date && (
                       <div
                         style={{
-                          fontFamily:"Roboto, sans-serif !important",
+                          fontFamily:"Roboto, sans-serif",
                           marginTop: "8px",
                           color: "#fdfdfd",
                           fontSize: "14px",
