@@ -6,7 +6,6 @@ import CTAButton from "./components/ctaButton/ctabtn.jsx";
 import GradientLights from "./components/gradient-lights/gradient";
 import YouTubeLazyEmbed from "./components/youtube-lazy/youtube-lazy.jsx";
 import CriticalResourcePreloader from "./components/critical-preloader/critical-preloader.jsx";
-import PerformanceOptimizer from "./components/performance-optimizer/performance-optimizer.jsx";
 import { FALSE } from "sass";
 
 // Dynamic imports for better code splitting
@@ -45,7 +44,6 @@ export default function Home() {
   return (
     <>
       <CriticalResourcePreloader />
-      <PerformanceOptimizer />
       
       {/* HERO SECTION START */}
 
@@ -80,8 +78,8 @@ export default function Home() {
                 <Image 
                   src="/Scate.png" 
                   alt="Skate illustration" 
-                  width={441}
-                  height={404}
+                  width={500}
+                  height={400}
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />

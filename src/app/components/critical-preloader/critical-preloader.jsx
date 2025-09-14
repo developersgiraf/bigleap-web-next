@@ -3,7 +3,7 @@ import Head from "next/head";
 const CriticalResourcePreloader = () => {
   return (
     <Head>
-      {/* Preload critical images with highest priority */}
+      {/* Preload critical images */}
       <link 
         rel="preload" 
         as="image" 
@@ -21,34 +21,27 @@ const CriticalResourcePreloader = () => {
       <link 
         rel="preload" 
         as="image" 
-        href="/Scate.png" 
-        type="image/png"
-        fetchPriority="high"
-      />
-      
-      {/* Preload critical background image */}
-      <link 
-        rel="preload" 
-        as="image" 
         href="/video-bg.png" 
         type="image/png"
         fetchPriority="high"
       />
       
-      {/* Preconnect to critical domains */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://www.youtube.com" />
-      <link rel="preconnect" href="https://img.youtube.com" />
+      {/* Preload critical fonts */}
+      <link
+        rel="preload"
+        href="https://fonts.gstatic.com/s/geist/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
       
-      {/* Prefetch likely navigation */}
-      <link rel="prefetch" href="/about" />
-      <link rel="prefetch" href="/portfolio" />
-      <link rel="prefetch" href="/servicess" />
-      
-      {/* Resource hints for performance */}
-      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-      <meta name="format-detection" content="telephone=no" />
+      {/* Preload critical CSS */}
+      <link
+        rel="preload"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        as="style"
+        onLoad="this.onload=null;this.rel='stylesheet'"
+      />
     </Head>
   );
 };

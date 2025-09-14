@@ -1,11 +1,10 @@
-/* Performance optimized styles to prevent forced reflows */
-
 .singlebtn-center {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin-top: 16px;
+  
 }
 
 #swiper-nav-btn {
@@ -21,154 +20,60 @@
   box-shadow: -4px 0px 0 0px #fff;
   padding: 16px 20px;
   cursor: pointer;
-  /* Use transform instead of layout properties for animations */
-  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), background 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  /* Optimize for animations */
-  will-change: transform;
-  backface-visibility: hidden;
 }
-
-#swiper-nav-btn:hover {
-  transform: translateY(-50%) scale(1.05);
+.videoArea{
+position: relative;
+width: 100%;
+height: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
 }
-
-#swiper-nav-btn.left {
-  left: 0;
-}
-
-#swiper-nav-btn.right {
-  right: 0;
-}
-
-/* Optimized video area - avoid layout-triggering properties */
-.videoArea {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9; /* Use aspect-ratio instead of fixed height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Performance optimizations */
-  contain: layout style paint;
-  will-change: transform;
-}
-
-/* Fixed height fallback for older browsers */
-@supports not (aspect-ratio: 16 / 9) {
-  .videoArea {
-    height: 400px;
-  }
-}
-
-.videoSlideContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Performance optimizations */
-  contain: layout style;
-  transform: translateZ(0); /* Force GPU acceleration */
-}
-
-.videoFrame {
-  width: 60%;
-  height: 100%;
-  padding-left: 80px;
-  /* Optimize iframe performance */
-  contain: strict;
-  will-change: auto;
-}
-
-.slideContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  /* Performance optimizations */
-  contain: layout style paint;
-  transform: translateZ(0);
-}
-
-.imageContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Optimize image container */
-  contain: layout style;
-}
-
-.slideImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  /* GPU acceleration for images */
-  transform: translateZ(0);
-  will-change: auto;
-}
-
-.sub {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: #fff;
-  font-size: 16px;
-  padding: 20px 24px;
+.sub{
+  font-size: 24px;
+  padding: 10px 24px;
   z-index: 1000;
-  line-height: 93%;
-  font-weight: 400;
-  font-style: regular;
-  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-family: "system-ui, sans-serif";
   border-radius: 0;
   max-width: 60%;
   text-align: left;
   background: none;
   box-shadow: none;
-  /* Performance optimization */
-  contain: style;
 }
-
-.paragraph {
-  position: absolute;
-  top: 300px;
-  left: 40px;
-  color: #fff;
-  font-size: 16px;
-  font-style: regular;
-  text-align: justify;
-  font-family: "Montserrat", sans-serif;
-  z-index: 999;
-  max-width: 33%;
-  font-weight: 400;
-  /* Performance optimization */
-  contain: style;
+.paragraph{
+position: absolute;
+top: 300px;
+left: 40px;
+color: #fff;
+font-size: 16px;
+font-style: regular;
+text-align: justify;
+font-family: "Montserrat", sans-serif !important;
+/* padding: 0 90px; */
+z-index: 999;
+max-width: 33%;
+font-weight: 400;                      
 }
-
-.caption {
+.caption{
   margin-top: 8px;
   color: #fff;
   font-size: 20px;
   font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   font-style: medium;
   text-align: center;
   line-height: 93%;
+  /* padding-top: 10px; */
   letter-spacing: 0%;
-  /* Performance optimization */
-  contain: style;
-}
 
-.readbtn {
+}
+.readbtn{
   margin-top: 8px;
   background: none;
   border: none;
@@ -177,81 +82,45 @@
   letter-spacing: 0%;
   font-style: regular;
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   color: #ed2124;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  /* Performance optimization */
-  will-change: transform;
 }
+.vdocaption{
+position: absolute;
+top: 80px;
+left: 40px;
+color: #fff;
+font-size: 64px;
+font-style: 400;
+/* padding: 62px 80px; */
+z-index: 999;
+max-width: 40%;
+font-weight: bold;
+font-family: "Boldonse", system-ui !important;
+line-height: 100px;
+letter-spacing: 0%;
 
-.readbtn:hover {
-  transform: scale(1.05);
-}
-
-.vdocaption {
-  position: absolute;
-  top: 80px;
-  left: 40px;
-  color: #fff;
-  font-size: 64px;
-  font-style: 400;
-  z-index: 999;
-  max-width: 40%;
-  font-weight: bold;
-  font-family: "Boldonse", system-ui;
-  line-height: 100px;
-  letter-spacing: 0%;
-  /* Performance optimization */
-  contain: style;
-}
-
-.clientDate {
+}           
+.clientDate{
   display: flex;
   gap: 20px;
   padding-top: 10px;
-  /* Performance optimization */
-  contain: style;
+}         
+#swiper-nav-btn.left {
+  left: 0;
 }
 
-/* Swiper optimizations */
+#swiper-nav-btn.right {
+  right: 0;
+}
+
 .swiper {
   width: 100%;
   height: 100%;
-  /* Performance optimizations */
-  contain: layout style;
-  transform: translateZ(0);
 }
 
-/* Slide state optimizations */
-.active {
-  /* GPU acceleration for active slides */
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-.inactive {
-  /* Optimize inactive slides */
-  will-change: auto;
-}
-
-/* Media queries for responsive optimization */
-@media (max-width: 768px) {
-  .videoFrame {
-    width: 90%;
-    padding-left: 20px;
-  }
-  
-  .vdocaption {
-    font-size: 32px;
-    line-height: 40px;
-    left: 20px;
-    max-width: 80%;
-  }
-  
-  .paragraph {
-    left: 20px;
-    max-width: 80%;
-    top: 250px;
-  }
+.slideImage{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
