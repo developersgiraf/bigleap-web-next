@@ -70,7 +70,7 @@ export default function BlogDetailPage({ params }) {
           <p className={styles.description}>{blogsData.description}</p>
         </div>
       </div>
-      <GradientLights />
+      <GradientLights count={3} />
     </>
   );
 }

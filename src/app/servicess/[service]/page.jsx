@@ -106,7 +106,7 @@ export default function Services({ params }) {
       </section>
       <ListServices />
       <EnquirySect />
-      <GradientLights />
+      <GradientLights count={5} />
     </>
   );
 }

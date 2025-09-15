@@ -7,7 +7,7 @@ export default function PortfolioPage() {
     <>
       <TitleBanner title="Our creativity begins where reality ends" sub=""/>
       <PortfolioSwiper />
-      <GradientLights />
+      <GradientLights count={2} />
     </>
   );
 }

@@ -64,7 +64,7 @@ export default function BlogPage() {
           showSelect={false}
         />
       </div>
-      <GradientLights />
+      <GradientLights count={4} />
     </>
   );
 }

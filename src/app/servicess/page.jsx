@@ -85,7 +85,7 @@ export default function ServicesPage() {
       <Industries />
       
       <EnquirySect />
-      <GradientLights />
+      <GradientLights count={7} />
     </>
   );
 }

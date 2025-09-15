@@ -1,10 +1,6 @@
-"use client";
-
 import styles from "./gradient.module.scss";
-import { useEffect, useState } from "react";
 
 export default function GradientLights({ count = 2 }) {
-  // Manual count, no dynamic calculation
   return (
     <>
       <div className={styles["gradient-lights"]}>
@@ -15,14 +11,14 @@ export default function GradientLights({ count = 2 }) {
               key={index}
               className={`${styles.light} ${styles[position]}`}
               style={{
-                top: `${index * 100}vh`, // Increment Y position by 100vh for each light
+                top: `${index * 100}dvh`, // Increment Y position by 100dvh for each light
                 animationDelay: `${index * 1.5}s`, // Stagger animation delays
               }}
             ></div>
           );
         })}
       </div>
-      <div className={styles.halftoneDots} style={{ height: "100vh" }}></div>
+      <div className={styles.halftoneDots} style={{ height: "100dvh" }}></div>
     </>
   );
 }

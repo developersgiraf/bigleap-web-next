@@ -322,7 +322,7 @@ export default function Home() {
               ]}
               spaceBetween={50}
               slidesPerView={3}
-              navPos={90}
+              navPos={20}
               autoplay={true}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },

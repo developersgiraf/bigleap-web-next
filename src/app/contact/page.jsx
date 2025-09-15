@@ -23,7 +23,7 @@ export default function ContactPage() {
         <Testimonials hideBackground />
       </div>
 
-      <GradientLights />
+      <GradientLights count={4} />
     </>
   );
 }

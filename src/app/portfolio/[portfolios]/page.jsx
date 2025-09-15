@@ -74,7 +74,7 @@ export default function firstAnimation() {
 
       <MotionGraphics />
 
-      <GradientLights />
+      <GradientLights count={6} />
     </>
   );
 }
