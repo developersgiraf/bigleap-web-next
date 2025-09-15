@@ -1,17 +1,23 @@
 .listSection {
-  padding: 150px 0 80px 0;
+  padding: 350px 0 80px 0;
   .all {
-    padding: 0 100px;
+    padding: 0 50px;
     .listStyle {
-      padding: 0 20px;
+      padding: 0 40px;
       h3 {
-        color: #fff;
+        color: #fdfdfd;
         padding: 20px 0;
-        font-size: 1.2rem;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: justify;
+        font-family: "montserrat", sans-serif !important;
       }
       p {
-        color: #ccc;
+        color: #fdfdfd;
         text-align: justify;
+        font-size: 16px;
+        line-height: 125%;
+        font-family: "montserrat", sans-serif !important;
       }
     }
   }

@@ -42,21 +42,20 @@ export default function Slider({
   navButtons = true,
   imageSize = 100,
   navPos = 0,
+  videoAspect = '16/9',
+  videoWidth = "100%",
 }) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const isVideoSlides = datas.length > 0 && datas[0].iframe;
 
   return (
-    <div style={{ position: "relative" }}>
+    <div className={styles.sliderWrapper}>
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        style={
-          isVideoSlides ? { padding: "10px 0px" } : { padding: "30px 0px" }
-        }
         autoplay={autoplay}
         grabCursor={true}
         spaceBetween={spaceBetween}
@@ -76,7 +75,7 @@ export default function Slider({
             : breakpoints
         }
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className={styles.mySwiper}
       >
         {isVideoSlides
           ? datas.map((item, idx) => (
@@ -90,54 +89,20 @@ export default function Slider({
                   activeIndex === idx ? styles.active : styles.inactive
                 }
               >
-                <div
-                  className={styles.video}
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "400px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
+                <div className={styles.video}>
                   <iframe
-                    src={item.iframe}
+                    src={`${item.iframe}&mute=1&showinfo=0&controls=0&disablekb=1&modestbranding=1&rel=0`}
                     title={item.caption || `Video Slide ${idx + 1}`}
                     frameBorder="0"
                     allow="autoplay; encrypted-media"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                    style={{
-                      width: "60%",
-                      height: "100vh",
-                      paddingLeft: "80px",
-                    }}
+                    className={styles.videoIframe}
+                    style={{ aspectRatio: videoAspect, width: videoWidth }}
                   />
 
                   {item.sub && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: "20px",
-                        left: "20px",
-                        color: "#fff",
-                        fontSize: "16px",
-                        padding: "20px 24px",
-                        zIndex: 1000,
-                        lineHeight: "93%",
-                        fontWeight: 400,
-                        fontStyle: "regular",
-                        fontFamily: "Montserrat, sans-serif !important",
-                        borderRadius: 0,
-                        maxWidth: "60%",
-                        textAlign: "left",
-                        background: "none",
-                        boxShadow: "none",
-                      }}
-                    >
-                      {item.sub}
-                    </div>
+                    <div className={styles.videoSub}>{item.sub}</div>
                   )}
                   {item.caption && (
                     <div className={styles.vdocaption}>{item.caption}</div>
@@ -155,70 +120,22 @@ export default function Slider({
                   activeIndex === idx ? styles.active : styles.inactive
                 }
               >
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "20px",
-                  }}
-                >
-                  <div
-                    className={styles.imageContainer}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+                <div className={styles.slideContent}>
+                  <div className={styles.imageContainer}>
                     <Image
                       className={styles.slideImage}
                       src={item.img}
                       alt={item.caption || "img"}
-                      style={{
-                        maxWidth: `${imageSize}px`,
-                        maxHeight: `${imageSize}px`,
-                        height: "auto",
-                        objectFit: "contain",
-                      }}
                       width={imageSize}
                       height={imageSize}
                     />
                   </div>
                   <div className={styles.clientDate}>
                     {item.client && (
-                      <div
-                        style={{
-                          marginTop: "8px",
-                          color: "#fdfdfd",
-                          fontWeight: 400,
-                          fontSize: "16px",
-                          lineHeight: "93%",
-                          fontFamily: "Montserrat, sans-serif !important",
-                        }}
-                      >
-                        {item.client}
-                      </div>
+                      <div className={styles.client}>{item.client}</div>
                     )}
-
                     {item.date && (
-                      <div
-                        style={{
-                          fontFamily:"Roboto, sans-serif !important",
-                          marginTop: "8px",
-                          color: "#fdfdfd",
-                          fontSize: "14px",
-                          fontWeight: 400,
-                          lineHeight: "125%",
-                        }}
-                      >
-                        {item.date}
-                      </div>
+                      <div className={styles.date}>{item.date}</div>
                     )}
                   </div>
                   {item.caption !== "" ? (

@@ -13,10 +13,6 @@ export default function AboutPage() {
     <>
       {/* TITLE BANNER AREA */}
 
-      {/* <section className={styles['title-banner']}>
-                <h1> Our creativity begins where reality ends </h1>
-
-            </section> */}
       <TitleBanner title="Our creativity begins where reality ends" sub=""/>
 
       {/* ABOUT CONTENT AREA */}

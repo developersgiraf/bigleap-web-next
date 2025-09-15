@@ -76,10 +76,8 @@ export default function Services({ params }) {
           <TitleDescription
             title={
               <>
-                Do You Want to <span className={styles.textColor}>Create</span>{" "}
-                an <span className={styles.textColor}>Impact</span> with a
-                Professional & Effective{" "}
-                <span className={styles.textColor}>Animated Video</span> ?{" "}
+                Readt to Bring Your Brand to Life with a  <span className={styles.textColor}>Unique  Mascot?</span>{" "}
+               
               </>
             }
             description={
@@ -92,7 +90,15 @@ export default function Services({ params }) {
                 consectetur adipiscing elit. lorem ipsum dolor sit amet
                 consectetur adipiscing elit. lorem ipsum dolor sit amet
                 consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit.
+                consectetur adipiscing elit. <br />
+                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
+                dolores, quasi porro ducimus inventore corporis maxime commodi
+                quo optio nemo aliquam officia recusandae consequatur ipsa
+                dolorum blanditiis vitae placeat delectus!Lorem, ipsum dolor sit
+                amet consectetur adipisicing elit. Modi dolores, quasi porro
+                ducimus inventore corporis maxime commodi quo optio nemo aliquam
+                officia recusandae consequatur ipsa dolorum blanditiis vitae
+                placeat delectus!
               </span>
             }
           />
