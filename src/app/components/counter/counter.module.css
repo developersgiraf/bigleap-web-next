@@ -76,41 +76,6 @@
   }
 }
 
-:global(.stat-number) {
-  font-size: 128px;
-  font-weight: 700;
-  color: #989797;
-  line-height: 93%;
-  letter-spacing: -2px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  font-family: "montserrat", sans-serif !important;
-  background: linear-gradient(135deg, #5c5b5b 0%, #5c5b5b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-:global(.stat-number).counter_stat-number__animating {
-  transform: scale(1.05);
-}
-:global(.stat-number).counter_stat-number__completed {
-  transform: scale(1);
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
-}
-@media (max-width: 768px) {
-  :global(.stat-number) {
-    font-size: 3rem;
-  }
-}
-@media (max-width: 480px) {
-  :global(.stat-number) {
-    font-size: 2.5rem;
-  }
-}
-
 .stat-label {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
