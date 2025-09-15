@@ -351,7 +351,7 @@ export default function Home() {
 
       <EnquirySect />
       <InstaFeeds />
-      <GradientLights />
+      <GradientLights count={13} />
     </>
   );
 }

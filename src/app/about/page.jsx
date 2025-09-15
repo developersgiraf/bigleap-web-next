@@ -121,7 +121,7 @@ export default function AboutPage() {
 
       <FAQSection />
       <Difference />
-      <GradientLights />
+      <GradientLights count={8} />
     </>
   );
 }
