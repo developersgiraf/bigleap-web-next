@@ -169,7 +169,7 @@ p {
 
 .stat-number.counter_stat-number__completed {
     transform: scale(1);
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+    /* filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)); */
 }
 
 @media (max-width: 768px) {

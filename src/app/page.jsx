@@ -13,7 +13,7 @@ import Testimonials from "./components/team-slider/testimonials";
 import GradientLights from "./components/gradient-lights/gradient";
 import InstaFeeds from "./components/insta-feeds/feeds";
 import CounterSect from "./components/counter/counter.jsx";
-import SocialMediaIcon from "./components/socialMedia-icon/socialMedia-icon.jsx";
+import SocialMediaIcon from "./components/socialMediaIcon/socialMedia-icon.jsx"
 import { FALSE } from "sass";
 
 export default function Home() {
@@ -42,10 +42,10 @@ export default function Home() {
           />
         </div>
       </section>
-
       {/* HERO SECTION END */}
 
-<SocialMediaIcon />
+      <SocialMediaIcon />
+
       <section className={styles["about-area"]}>
         <div className="container">
           <div className={`row align-items-center ${styles["about-row"]}`}>
@@ -130,7 +130,7 @@ export default function Home() {
               loop={true}
               imageSize={160}
               navPos={180}
-              autoplay={false}
+              autoplay={true}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 15 },
@@ -248,7 +248,7 @@ export default function Home() {
                   paragraph:
                     "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
                   iframe:
-                    "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
+                    "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&loop=1&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",
                 },
                 {
@@ -273,6 +273,8 @@ export default function Home() {
                 1024: { slidesPerView: 3, spaceBetween: 120 },
                 1366: { slidesPerView: 4, spaceBetween: 20 },
               }}
+              aspectRatio={"16/9"}
+              videoWidth={"80%"}
             />
           </div>
         </div>

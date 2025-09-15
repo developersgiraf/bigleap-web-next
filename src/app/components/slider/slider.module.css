@@ -1,3 +1,77 @@
+.sliderWrapper {
+  position: relative;
+}
+
+.mySwiper {
+  padding: 30px 0px;
+}
+
+.mySwiper.video {
+  padding: 10px 0px;
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoIframe {
+  /* width: 60%;
+  height: 100vh; */
+  /* padding-left: 80px; */
+  margin-left: 80px;
+}
+
+.videoSub {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 16px;
+  padding: 20px 24px;
+  z-index: 1000;
+  line-height: 93%;
+  font-weight: 400;
+  font-style: normal;
+  font-family: Montserrat, sans-serif !important;
+  border-radius: 0;
+  max-width: 60%;
+  text-align: left;
+  background: none;
+  box-shadow: none;
+}
+
+.slideContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.client {
+  margin-top: 8px;
+  color: #fdfdfd;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 93%;
+  font-family: Montserrat, sans-serif !important;
+}
+
+.date {
+  font-family: Roboto, sans-serif !important;
+  margin-top: 8px;
+  color: #fdfdfd;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 125%;
+}
 .singlebtn-center {
   display: flex;
   justify-content: center;
