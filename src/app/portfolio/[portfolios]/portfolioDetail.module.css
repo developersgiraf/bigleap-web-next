@@ -3,6 +3,7 @@
   height: 70vh;
   display: flex;
   align-items: center;
+  margin: 120px 0 80px 0;
 }
 .videoSwiper .sliderText {
   padding: 20px 20px;

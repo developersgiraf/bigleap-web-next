@@ -2,14 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  margin: 0;
+  margin: 0 0 0 70px;
   position: relative;
   z-index: 999;
-  background-color: #ff0000;
+  background-color: #ed2124;
   padding: 10px 0 10px 0;
   width: -moz-fit-content;
   width: fit-content;
-  margin-left: auto;
   gap: 40px;
   padding: 20px 40px;
 }

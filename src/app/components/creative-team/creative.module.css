@@ -9,6 +9,9 @@
   text-align: center;
   padding-bottom: 20px;
 }
+.creative-team .teamRow {
+  padding: 0 100px;
+}
 .creative-team .teamRow .profileCol {
   display: flex;
   justify-content: center;

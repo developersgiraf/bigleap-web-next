@@ -48,7 +48,7 @@ export default function BlogSection() {
               </div>
             </div>
             
-            <CTAButton title="VIEW MORE" link="#" />
+            <CTAButton title="VIEW MORE" link="/blog" />
           </div>
         </div>
       </section>

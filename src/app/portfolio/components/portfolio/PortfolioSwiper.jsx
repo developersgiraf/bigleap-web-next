@@ -67,13 +67,13 @@ export default function PortfolioSwiper() {
                 </div>
               </div>
               <div className={styles.imageContent}>
-                <Image
+                {/* <Image
                   width={600}
                   height={500}
                   src={slide.image}
                   alt={slide.title}
                   className={styles.slideImage}
-                />
+                /> */}
               </div>
             </div>
           </SwiperSlide>

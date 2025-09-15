@@ -8,12 +8,13 @@ import Testimonials from "../components/team-slider/testimonials.jsx";
 export default function ContactPage() {
   return (
     <>
-      <TitleBanner title="Get in Touch With Us" sub=""/>
+      <TitleBanner title="Get in Touch With Us" sub="We strive to deliver innovative digital marketing solutions that drive
+          your business forward."/>
       <div className={styles.ContactPage}>
-        <p>
+        {/* <p>
           We strive to deliver innovative digital marketing solutions that drive
           your business forward.
-        </p>
+        </p> */}
         <h5 className="signature-text-large">Basanth Raghavan</h5>
       </div>
       <ContactBanner />

@@ -76,7 +76,7 @@
 .footerArea .footer-bottom {
   border-top: 1px solid #3e3e3e;
   padding: 40px 0 0 0;
-  width: 90%;
+  width: 100%;
 }
 .footerArea .footer-bottom .footerCopyRight {
   display: flex;

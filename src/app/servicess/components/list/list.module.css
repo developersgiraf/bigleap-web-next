@@ -8,11 +8,17 @@
   padding: 0 20px;
 }
 .listSection .all .listStyle h3 {
-  color: #fff;
+  color: #fdfdfd;
   padding: 20px 0;
-  font-size: 1.2rem;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: justify;
+  font-family: "montserrat", sans-serif !important;
 }
 .listSection .all .listStyle p {
-  color: #ccc;
+  color: #fdfdfd;
   text-align: justify;
+  font-size: 16px;
+  line-height: 125%;
+  font-family: "montserrat", sans-serif !important;
 }/*# sourceMappingURL=list.module.css.map */

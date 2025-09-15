@@ -4,8 +4,8 @@
 .faqSection .faqrow {
   width: 100%;
   display: flex;
-  gap: 20px;
-  padding: 0 40px;
+  gap: 50px;
+  padding: 0 120px;
 }
 .faqSection .faqrow .faqContent {
   flex: 0 0 33.333%;

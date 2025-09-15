@@ -5,13 +5,19 @@
     .listStyle {
       padding: 0 20px;
       h3 {
-        color: #fff;
+        color: #fdfdfd;
         padding: 20px 0;
-        font-size: 1.2rem;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: justify;
+        font-family: "montserrat", sans-serif !important;
       }
       p {
-        color: #ccc;
+        color: #fdfdfd;
         text-align: justify;
+        font-size: 16px;
+        line-height: 125%;
+        font-family: "montserrat", sans-serif !important;
       }
     }
   }

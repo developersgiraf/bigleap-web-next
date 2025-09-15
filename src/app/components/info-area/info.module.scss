@@ -4,24 +4,21 @@
       display: flex;
       align-items: center;
       justify-content: end;
-      margin: 0;
+      margin: 0 0 0 70px;
       position: relative;
       z-index: 999;
-      background-color: #ff0000;
+      background-color: #ed2124;
       padding: 10px 0 10px 0;
       width: fit-content;
-      margin-left: auto;
+      // margin-left: auto;
       gap: 40px;
       padding: 20px 40px;
       
-    //   @media (max-width: 768px) {
-        
-    //     .head-top-contacts {
-    //       ul{
-    //         gap: 20px;
-    //       }
-    //   }
-    // }
+     @media (max-width: 768px) {
+        gap: 20px;
+        margin: 0 0 0 0;
+        width: auto;
+    }
       li {
         list-style: none;
         .link {

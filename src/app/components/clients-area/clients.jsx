@@ -17,10 +17,12 @@ export default function ClientsArea() {
           { img: "/image (7).jpg", imgWH: 774, idname: "clientSlide2" },
           { img: "/image (8).jpg", imgWH: 774, idname: "clientSlide3" },
           { img: "/image (9).jpg", imgWH: 774, idname: "clientSlide1" },
-          { img: "/image (10).jpg", imgWH: 774, idname: "clientSlide4" },
+          { img: "/image (10).jpg", imgWH: 774, idname: "clientSlide4"},
           { img: "/image (3).jpg", imgWH: 774, idname: "clientSlide2" },
           { img: "/image (7).jpg", imgWH: 774, idname: "clientSlide3" },
           { img: "/image (5).jpg", imgWH: 774, idname: "clientSlide4" },
+          { img: "/image (5).jpg", imgWH: 774, idname: "clientSlide4" },
+
         ]}
         spaceBetween={0}
         slidesPerView={11}
