@@ -74,15 +74,17 @@ export default function VideoSlider({
                 className={styles.videoIframe}
                 style={{ aspectRatio: videoAspect, width: videoWidth }}
               />
-              {item.sub && (
-                <div className={styles.videoSub}>{item.sub}</div>
-              )}
-              {item.caption && (
-                <div className={styles.vdocaption}>{item.caption}</div>
-              )}
-              {item.paragraph && (
-                <div className={styles.paragraph}>{item.paragraph}</div>
-              )}
+              <div className={styles.contentWrapper}>
+                {item.sub && (
+                  <div className={styles.videoSub}>{item.sub}</div>
+                )}
+                {item.caption && (
+                  <div className={styles.vdocaption}>{item.caption}</div>
+                )}
+                {item.paragraph && (
+                  <div className={styles.paragraph}>{item.paragraph}</div>
+                )}
+              </div>
             </div>
           </SwiperSlide>
         ))}

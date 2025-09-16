@@ -7,8 +7,7 @@ export default function SocialMediaIcon() {
         <>
         <div className={styles["social-media-icon"]}>
          <Link href="#"> 
-         <Image
-               src="/socialIcons/linkedin.png" alt="" width={21} height={21} className={styles.image}/></Link>
+         <Image src="/socialIcons/linkedin.png" alt="" width={21} height={21} className={styles.image}/></Link>
          <Link href="#"> <Image src="/socialIcons/facebook.png" alt="" width={21} height={21} className={styles.image}/></Link>
          <Link href="#"> <Image src="/socialIcons/instagram.png" alt="" width={21} height={21} className={styles.image}/></Link>
          <Link href="#"> <Image src="/socialIcons/youtube.png" alt="" width={21} height={21} className={styles.image}/></Link>

@@ -107,7 +107,7 @@ export default function Testimonials({
   const currentMember = data[currentIndex];
 
   return (
-    <div className={styles.teamSlider} style={{ position: "relative" }}>
+    <div className={styles.teamSlider}>
       {/* Background Image (conditionally rendered) */}
       {!hideBackground && (
         <Image
@@ -115,31 +115,11 @@ export default function Testimonials({
           alt="Testimonials Background"
           fill
           priority
-          style={{
-            objectFit: "cover",
-            zIndex: 0,
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-          }}
+          className={styles.backgroundImage}
         />
       )}
       {/* Centered Content overlays the background */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 1,
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className={styles.contentWrapper}>
         <div className={styles.sliderContainer}>
           {/* Team Members Circle */}
           <div className={styles.membersCircle}>
@@ -171,7 +151,7 @@ export default function Testimonials({
 
           {/* Navigation Arrows */}
           <button
-            className="circle-nav-btn left"
+            className={`${styles.circleNavBtn} ${styles.circleNavLeft}`}
             onClick={goToPrev}
             aria-label="Previous team member"
           >
@@ -179,7 +159,7 @@ export default function Testimonials({
           </button>
 
           <button
-            className="circle-nav-btn right"
+            className={`${styles.circleNavBtn} ${styles.circleNavRight}`}
             onClick={goToNext}
             aria-label="Next team member"
           >

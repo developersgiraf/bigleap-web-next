@@ -4,6 +4,10 @@
         align-items: center;
         margin: 20px 0;
 
+        @media (max-width: 768px) {
+            margin: 10px 0;
+        }
+
         a, button {
             text-decoration: none;
             display: flex;
@@ -22,6 +26,11 @@
             transition: transform 0.1s, box-shadow 0.1s;
             position: relative;
             cursor: pointer;
+
+            @media (max-width: 768px) {
+                padding: 10px 20px;
+                
+            }
 
             &:hover {
                 transform: translateY(2px);

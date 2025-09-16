@@ -167,3 +167,45 @@ a.secondary {
     filter: invert();
   }
 }
+
+/* PAGE-SPECIFIC EXTERNAL CSS */
+
+/* Watch Video Area Styles */
+.watchAreaContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  box-shadow: 0 0 80px 40px rgba(15, 18, 24, 0.7);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .backgroundImage {
+    height: 80vh;
+    box-shadow: 0 0 40px 20px rgba(15, 18, 24, 0.7);
+  }
+}
+
+@media (max-width: 480px) {
+  .backgroundImage {
+    height: 60vh;
+    box-shadow: 0 0 20px 10px rgba(15, 18, 24, 0.7);
+  }
+}

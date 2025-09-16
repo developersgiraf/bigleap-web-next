@@ -1,6 +1,7 @@
 import Image from "next/image";
 // import styles from "./page.module.css";
 import styles from "./index.module.scss";
+import pageStyles from "./page.module.css";
 import Slider from "./components/slider/slider.jsx";
 import BusinessItems from "./components/business/business-items";
 import Difference from "./components/differences/different";
@@ -13,7 +14,7 @@ import Testimonials from "./components/team-slider/testimonials";
 import GradientLights from "./components/gradient-lights/gradient";
 import InstaFeeds from "./components/insta-feeds/feeds";
 import CounterSect from "./components/counter/counter.jsx";
-import SocialMediaIcon from "./components/socialMediaIcon/socialMedia-icon.jsx"
+import SocialMediaIcon from "./components/socialMedia-icon/socialMedia-icon";
 import { FALSE } from "sass";
 
 export default function Home() {
@@ -30,6 +31,8 @@ export default function Home() {
             width={1711}
             height={655}
             className={styles.yeehaimage}
+            priority
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 100vw"
           />
           {/* <img id="img360" src="360.png" alt="360image" /> */}
           <Image
@@ -39,6 +42,7 @@ export default function Home() {
             width={1200}
             height={1666}
             className={styles.characterimage}
+            sizes="(max-width: 360px) 50vw, (max-width: 480px) 60vw, (max-width: 768px) 70vw, (max-width: 1024px) 80vw, 1200px"
           />
         </div>
       </section>
@@ -130,7 +134,7 @@ export default function Home() {
               loop={true}
               imageSize={160}
               navPos={180}
-              autoplay={true}
+              autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 15 },
@@ -146,32 +150,19 @@ export default function Home() {
 
       {/* WATCH VIDEO AREA */}
       <section
-        className={styles["watch-area"]}
-        style={{ position: "relative", overflow: "hidden" }}
+        className={`${styles["watch-area"]} ${pageStyles.watchAreaContainer}`}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            pointerEvents: "none",
-          }}
-        >
+        <div className={pageStyles.backgroundWrapper}>
           <Image
             src="/video-bg.png"
             alt="Background"
             fill
             priority
-            style={{
-              objectFit: "cover",
-              width: "100%",
-              height: "100%",
-              boxShadow: "0 0 80px 40px rgba(15,18,24,0.7)",
-            }}
+            className={pageStyles.backgroundImage}
           />
           {/* Removed overlay for originality effect */}
         </div>
-        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+        <div className={`container ${pageStyles.contentWrapper}`}>
           <div className={styles.watch}>
             <div className="row">
               <div className="col-xl-6 col-lg-6 col-md-12 col-12">
@@ -323,7 +314,7 @@ export default function Home() {
               spaceBetween={50}
               slidesPerView={3}
               navPos={20}
-              autoplay={true}
+              autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 15 },

@@ -2,12 +2,25 @@
 
 .hero {
   height: 90vh;
-      @media (max-width: 768px) {
-        height: 40vh;
-      }
+  position: relative;
+  overflow: hidden;
 
+  @media (max-width: 1024px) {
+    height: 70vh;
+  }
+
+  @media (max-width: 768px) {
+    height: 60vh;
+  }
+
+  @media (max-width: 480px) {
+    height: 50vh;
+  }
 
   .hanging {
+    position: relative;
+    height: 100%;
+    
     .yeehaimage {
       display: block;
       margin: 0 auto;
@@ -18,12 +31,25 @@
       right: 0;
       margin: 0 auto;
       width: 100%;
+      height: auto;
+      max-width: 1711px;
+
+      @media (max-width: 1024px) {
+        width: 90%;
+        height: auto;
+      }
 
       @media (max-width: 768px) {
-        height: 30vh;
-    object-fit: contain
-    }
-      ;
+        width: 95%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      @media (max-width: 480px) {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
 
     .characterimage {
@@ -35,8 +61,31 @@
       left: 0;
       right: 0;
       margin: 0 auto;
-      // width: 100%;
       top: -92%;
+      max-width: 1200px;
+      height: auto;
+
+      @media (max-width: 1024px) {
+        top: -80%;
+        width: 80%;
+      }
+
+      @media (max-width: 768px) {
+        top: -60%;
+        width: 70%;
+      }
+
+      @media (max-width: 480px) {
+        top: -50%;
+        width: 80%;
+        max-width: 300px;
+      }
+
+      @media (max-width: 360px) {
+        top: -30%;
+        width: 50%;
+        max-width: 250px;
+      }
     }
   }
 }
@@ -80,6 +129,8 @@ padding: 0 0 120px 0;
 
         @media (max-width: 768px) {
         text-align: left;
+        padding-top: 20px;
+        font-size: 20px;
         
       }
       }
@@ -117,7 +168,7 @@ padding: 0 0 120px 0;
       font-style: regular;
 
       @media (max-width: 768px) {
-      font-size: 55px;
+      font-size: 50px;
         line-height: 70px;
         
       }
@@ -139,9 +190,6 @@ padding: 0 0 120px 0;
 
       }
     }
-  }
-
-  .specialslide {
   }
 }
 
@@ -173,6 +221,10 @@ padding: 0 0 120px 0;
       align-items: flex-end;
       gap: 20px;
 
+      @media (max-width: 768px) {
+        gap: 10px;
+      }
+
       .video1 {
         width: 100%;
         height: 100%;
@@ -180,7 +232,11 @@ padding: 0 0 120px 0;
         iframe {
           width: 100%;
           height: 400px;
-          // padding-left: 170px;
+           
+          @media (max-width: 768px) {
+            height: 200px;
+            padding: 0 10px;
+          }
         }
       }
 
@@ -193,6 +249,10 @@ padding: 0 0 120px 0;
         iframe {
           width: 100%;
           height: 300px;
+           @media (max-width: 768px) {
+            height: 200px;
+            padding: 0 10px;
+          }
         }
       }
     }
@@ -206,6 +266,7 @@ padding: 0 0 120px 0;
 
       @media (max-width: 768px) {
     flex-direction: column-reverse;
+    padding-top: 10px;
       }
 
       .content {
@@ -213,6 +274,10 @@ padding: 0 0 120px 0;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
+        @media (max-width: 768px) {
+          padding: 10px 0 0 10px;
+        }
 
         p {
           color: #fdfdfd;
@@ -231,8 +296,9 @@ padding: 0 0 120px 0;
           letter-spacing: 0%;
           font-style: regular;
           line-height: 90%;
+
           @media (max-width: 768px) {
-    font-size: 44px;
+          font-size: 34px;
 
       }
         }
@@ -244,6 +310,10 @@ padding: 0 0 120px 0;
         iframe {
           width: 100%;
           height: 400px;
+           @media (max-width: 768px) {
+            height: 200px;
+            padding: 0 10px;
+          }
         }
       }
     }
@@ -254,6 +324,110 @@ padding: 0 0 120px 0;
 
 .video-slider {
   padding: 250px 0 80px 0;
+
+  @media (max-width: 1024px) {
+    padding: 120px 0 60px 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0 40px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 0 20px 0;
+  }
+
+  // Video container customization
+  .vdo {
+    position: relative;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      padding: 0 10px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 5px;
+    }
+
+    // Custom video width controls
+    iframe {
+      width: 80% !important;
+      max-width: 800px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+      @media (max-width: 1024px) {
+        width: 85% !important;
+        max-width: 700px;
+      }
+
+      @media (max-width: 768px) {
+        width: 90% !important;
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 480px) {
+        width: 95% !important;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    // Video slider content wrapper
+    .video-content {
+      text-align: center;
+      max-width: 80%;
+      margin: 0 auto;
+
+      @media (max-width: 768px) {
+        max-width: 90%;
+      }
+
+      @media (max-width: 480px) {
+        max-width: 95%;
+      }
+    }
+
+    // Custom video aspect ratio container
+    .video-wrapper {
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+      @media (max-width: 1024px) {
+        width: 85%;
+      }
+
+      @media (max-width: 768px) {
+        width: 90%;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 480px) {
+        width: 95%;
+        border-radius: 6px;
+      }
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        border: none;
+      }
+    }
+  }
 }
 
 // MOTION GRAPHICS AREA START
@@ -265,6 +439,11 @@ padding: 0 0 120px 0;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+     align-items: flex-start;
+      
+    }
 
     h6 {
       color: #fdfdfd;
@@ -281,13 +460,105 @@ padding: 0 0 120px 0;
       line-height: 90px;
       font-family: "Boldonse", system-ui !important;
       font-size: 53px;
+
+      @media (max-width: 768px) {
+        font-size: 47px;
+        line-height: 70px;
+      }
     }
   }
   .specialslide{
     padding: 0 160px;
-  }
 
-  .motion-gif {
+    @media (max-width: 1024px) {
+      padding: 0 80px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 20px;
+    }
+  }
+}
+
+// CUSTOM VIDEO WIDTH UTILITIES
+.video-width-full {
+  width: 100% !important;
+}
+
+.video-width-90 {
+  width: 90% !important;
+}
+
+.video-width-80 {
+  width: 80% !important;
+}
+
+.video-width-70 {
+  width: 70% !important;
+}
+
+.video-width-60 {
+  width: 60% !important;
+}
+
+// RESPONSIVE VIDEO WIDTH CLASSES
+.video-responsive {
+  width: 80%;
+  margin: 0 auto;
+  
+  @media (max-width: 1024px) {
+    width: 85%;
+  }
+  
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+  
+  @media (max-width: 480px) {
+    width: 95%;
+  }
+}
+
+// VIDEO ASPECT RATIO UTILITIES
+.video-aspect-16-9 {
+  aspect-ratio: 16/9;
+}
+
+.video-aspect-4-3 {
+  aspect-ratio: 4/3;
+}
+
+.video-aspect-21-9 {
+  aspect-ratio: 21/9;
+}
+
+// VIDEO STYLING UTILITIES
+.video-rounded {
+  border-radius: 12px;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    border-radius: 6px;
+  }
+}
+
+.video-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  
+  @media (max-width: 768px) {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 480px) {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   }
 }
 

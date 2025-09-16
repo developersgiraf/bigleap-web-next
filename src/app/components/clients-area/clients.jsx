@@ -28,9 +28,11 @@ export default function ClientsArea() {
         slidesPerView={11}
         imageSize={180}
         navButtons={false}
+        autoplay={false}
+        loop={true}
         breakpoints={{
-          320: { slidesPerView: 1, spaceBetween: 0 },
-          640: { slidesPerView: 2, spaceBetween: 0 },
+          320: { slidesPerView: 2, spaceBetween: 0 },
+          640: { slidesPerView: 3, spaceBetween: 0 },
           1024: { slidesPerView: 3, spaceBetween: 0 },
           1366: { slidesPerView: 11, spaceBetween: 0 },
         }}
