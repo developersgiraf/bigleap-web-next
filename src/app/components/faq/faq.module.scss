@@ -37,7 +37,7 @@
         .accordionHeader {
           background: #eb2729;
           color: #fff;
-          font-size: 1.2rem;
+          font-size: 20px;
           font-weight: 500;
           padding: 25px;
           cursor: pointer;
@@ -96,7 +96,7 @@
       transform: translateY(0);
     }
   }
-
+}
   // Responsive styles
   @media (max-width: 768px) {
     .faqSection{
@@ -105,12 +105,15 @@
     .faqrow {
       flex-direction: column;
       gap: 40px;
+      padding:  0 10px !important;
 
       .faqContent {
         flex: 1;
 
         .title {
-          font-size: 2.5rem;
+          font-size: 47px !important;
+          line-height: 65px !important;
+          text-align: center !important;
         }
       }
 
@@ -119,17 +122,19 @@
 
         .accordionItem {
           .accordionHeader {
-            font-size: 1rem;
-            padding: 20px;
+            padding: 10px 20px !important;
+
+            .question{
+              font-size: 16px !important;
+            }
           }
 
           .accordionContent {
-            padding: 20px;
-            font-size: 0.9rem;
+            padding: 10px !important;
           }
         }
       }
     }
   }
-}
+
 
