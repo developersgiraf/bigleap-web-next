@@ -110,3 +110,63 @@
     transition: background 0.2s;
   }
 }
+
+//mobile responsiveness
+@media (max-width: 768px) {
+  .enquiry-section {
+  
+
+  .image {
+    height: 40vh !important;
+  }
+
+  .buttonContainer {
+    
+  }
+}
+.modalBody{
+  
+}
+
+/* Modal width override */
+.modalDialog {
+  
+}
+
+.modalContent {
+ 
+}
+
+.modalHeader {
+  
+}
+
+.title {
+  
+}
+
+.btn-close {
+  filter: invert(1); 
+  
+
+ 
+}
+.btnClose{
+}
+
+.input input,
+.input textarea {
+}
+.input{
+}
+
+.foottt {
+ 
+
+  .btn {
+    
+  }
+}
+}
+
+

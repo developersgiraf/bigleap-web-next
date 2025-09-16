@@ -72,3 +72,41 @@
         }
     }
 }
+
+//mobile responsive
+@media (max-width: 768px) {
+    .blogsection {
+
+    .blogcontent {
+
+        .bloghead {
+            
+            h2 {
+                font-size: 47px !important;
+                line-height: 65px !important;
+                text-align: center !important;
+            }
+        }
+
+        .blogimages {
+
+            img {
+                height: 30vh !important;
+                margin-top: 20px !important;
+               
+            }
+
+            .titleHead {
+               padding-top: 10px !important;
+            }
+
+            .about {
+                p {
+                    font-size: 16px !important;
+                }
+            }
+        }
+    }
+}
+
+}

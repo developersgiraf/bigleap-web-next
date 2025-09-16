@@ -129,3 +129,89 @@
     }
   }
 }
+
+//mobile responsive
+@media (max-width: 768px) {
+  .footerArea {
+  
+
+  .firstcol {
+    padding: 0 0 0 20px !important;
+    .bigleap {
+      
+
+      .footerImage {
+        
+      }
+    }
+
+    .address {
+      // padding-top: 90px;
+      h6 {
+       
+      }
+    }
+  }
+  .content {
+      padding: 0 0 0 10px !important;
+       .bigleapCnt {
+        padding-top: 10px;
+      h2 {
+        line-height: 65px;
+        font-size: 27px;
+        margin: 10px 0;
+      }
+    }
+  }
+
+   
+
+  .footerList {
+    .subcol {
+      
+
+      h5 {
+        
+
+      }
+
+      ul {
+        
+        li {
+          
+
+        .iconImg{
+        }
+
+          a {
+
+          
+          }
+          a:hover {
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding: 10px 0 !important;
+    .footerCopyRight {
+      
+
+      li {
+        
+            font-size: 9px !important;
+
+        a {
+            font-size: 9px !important;
+          
+        }
+
+        a:hover {
+        }
+      }
+    }
+  }
+}
+}

@@ -55,14 +55,11 @@ export default function InstaFeeds() {
             slidesPerView={3}
             navigation={false}
             // pagination={{ clickable: false }}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-            }}
+            autoplay={false}
             loop={true}
             breakpoints={{
               320: {
-                slidesPerView: 1,
+                slidesPerView: 2,
                 spaceBetween: 0,
               },
               768: {

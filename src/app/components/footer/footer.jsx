@@ -36,7 +36,7 @@ export default function Footer() {
 
                 <div className={styles.footerList}>
                   <div className="row">
-                    <div className="col-xl-3">
+                    <div className="col-xl-3 col-lg-3 col-md-6 col-6">
                       <div className={styles.subcol}>
                         <h5>Socials</h5>
                         <ul>
@@ -55,7 +55,7 @@ export default function Footer() {
                         </ul>
                       </div>
                     </div>
-                    <div className="col-xl-3">
+                    <div className="col-xl-3 col-lg-3 col-md-6 col-6">
                       <div className={styles.subcol}>
                         <h5>Menu</h5>
                         <ul>
@@ -80,7 +80,7 @@ export default function Footer() {
                         </ul>
                       </div>
                     </div>
-                    <div className="col-xl-3">
+                    <div className="col-xl-3 col-lg-3 col-md-6 col-6">
                       <div className={styles.subcol}>
                         <h5>Say Hello</h5>
                         <ul>
@@ -108,7 +108,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="col-xl-12">
+            <div className="col-xl-12 col-lg-12 col-md-12 col-12">
               <div className={styles["footer-bottom"]}>
                 <ul className={styles.footerCopyRight}>
                   <li>
