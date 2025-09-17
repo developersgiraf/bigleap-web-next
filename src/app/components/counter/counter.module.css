@@ -16,6 +16,12 @@
   bottom: 0;
   pointer-events: none;
 }
+@media (max-width: 1024px) {
+  .stats-section {
+    gap: 20px;
+    padding: 70px 80px;
+  }
+}
 @media (max-width: 767px) {
   .stats-section {
     padding: 60px 20px;
@@ -61,16 +67,6 @@
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
   position: relative;
   z-index: 1;
-}
-@media (max-width: 767px) {
-  .stat-number {
-    font-size: 128px;
-  }
-}
-@media (max-width: 480px) {
-  .stat-number {
-    font-size: 3.5rem;
-  }
 }
 
 .stat-label {

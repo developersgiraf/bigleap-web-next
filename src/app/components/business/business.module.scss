@@ -6,10 +6,16 @@
   .business-list {
     padding: 0 110px;
 
-    @media(max-width: 768px) {
+    @media(max-width: 1024px) {
+      padding: 0 0;
+    }
+    @media(max-width: 767px) {
       padding: 0 0;
     }
     .heading {
+       @media(max-width: 1024px) {
+    padding: 0 20px;
+    }
       h2 {
         color: #fff;
         font-size: 64px;
@@ -17,7 +23,11 @@
         line-height: 90px;
         font-family: "Boldonse", system-ui !important;
 
-        @media (max-width: 768px) {
+        @media(max-width: 1024px) {
+      font-size: 32px;
+      line-height: 60px;
+    }
+        @media (max-width: 767px) {
           font-size: 45px;
           line-height: 60px;
         }
@@ -32,7 +42,7 @@
         font-style: regular;
         font-family: "Montserrat", sans-serif;
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           padding-top: 10px;
           font-size: 16px;
         }
@@ -41,8 +51,10 @@
 
     .lists {
       padding-left: 45px;
-
-      @media (max-width: 768px) {
+ @media(max-width: 1024px) {
+      padding-left: 10px;
+    }
+      @media (max-width: 767px) {
         padding-left: 0px;
       }
     }
@@ -62,7 +74,7 @@
         line-height: 125%;
         font-family: "Montserrat", sans-serif !important;
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           font-size: 16px;
         }
       }
@@ -74,7 +86,7 @@
         font-size: 16px;
         font-family: "Montserrat", sans-serif !important;
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           font-size: 14px;
         }
       }

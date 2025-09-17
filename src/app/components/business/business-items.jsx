@@ -20,7 +20,7 @@ export default function BusinessItems({ title, sub }) {
         <div className="container">
           <div className={styles["business-list"]}>
             <div className="row align-items-center">
-              <div className="col-xl-5">
+              <div className="col-xl-5 col-lg-6 col-md-12 col-sm-12">
                 <div className={styles.heading}>
                   <h2>Let animation lead your business</h2>
                   <p className={styles.list}>
@@ -30,7 +30,7 @@ export default function BusinessItems({ title, sub }) {
                   </p>
                 </div>
               </div>
-              <div className="col-xl-7">
+              <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12">
                 <div className={styles.lists}>
                     {list.map((item, idx) => (
                       <BusinessArea

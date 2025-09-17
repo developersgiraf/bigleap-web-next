@@ -4,9 +4,19 @@
 .businessArea .business-list {
   padding: 0 110px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .businessArea .business-list {
     padding: 0 0;
+  }
+}
+@media (max-width: 767px) {
+  .businessArea .business-list {
+    padding: 0 0;
+  }
+}
+@media (max-width: 1024px) {
+  .businessArea .business-list .heading {
+    padding: 0 20px;
   }
 }
 .businessArea .business-list .heading h2 {
@@ -16,7 +26,13 @@
   line-height: 90px;
   font-family: "Boldonse", system-ui !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .businessArea .business-list .heading h2 {
+    font-size: 32px;
+    line-height: 60px;
+  }
+}
+@media (max-width: 767px) {
   .businessArea .business-list .heading h2 {
     font-size: 45px;
     line-height: 60px;
@@ -30,7 +46,7 @@
   font-style: regular;
   font-family: "Montserrat", sans-serif;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .businessArea .business-list .heading .list {
     padding-top: 10px;
     font-size: 16px;
@@ -39,7 +55,12 @@
 .businessArea .business-list .lists {
   padding-left: 45px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .businessArea .business-list .lists {
+    padding-left: 10px;
+  }
+}
+@media (max-width: 767px) {
   .businessArea .business-list .lists {
     padding-left: 0px;
   }
@@ -55,7 +76,7 @@
   line-height: 125%;
   font-family: "Montserrat", sans-serif !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .businessArea .buscol .businessHead h5 {
     font-size: 16px;
   }
@@ -67,7 +88,7 @@
   font-size: 16px;
   font-family: "Montserrat", sans-serif !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .businessArea .buscol .businessHead .listcontent {
     font-size: 14px;
   }

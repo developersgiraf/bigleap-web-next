@@ -240,6 +240,8 @@ p {
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+
+    
 }
 
 .stat-number.counter_stat-number__animating {
@@ -251,9 +253,14 @@ p {
     /* filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)); */
 }
 
+@media (max-width: 1024px) {
+    .stat-number {
+        font-size: 68px;
+    }
+}
 @media (max-width: 767px) {
     .stat-number {
-        font-size: 3rem;
+        font-size: 60px;
     }
 }
 
@@ -309,4 +316,64 @@ p {
   .circle-nav-btn.right {
     right: 5px !important;
   }
+}
+
+/* ========================================
+   CLIENTS SLIDER GLOBAL STYLES
+   ======================================== */
+/* Global styles for slider components - moved from clients.module.scss */
+.sliderWrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.mySwiper {
+  padding: 20px 0 !important;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .mySwiper {
+    padding: 15px 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .mySwiper {
+    padding: 10px 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mySwiper {
+    padding: 8px 0 !important;
+  }
+}
+
+.slideContent {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.imageContainer {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.slideImage {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.swiper-slide {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.swiper-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
 }

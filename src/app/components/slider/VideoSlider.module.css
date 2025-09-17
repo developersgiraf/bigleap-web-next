@@ -6,6 +6,10 @@
 .mySwiper {
   padding: 10px 0px;
 
+  @media (max-width: 1024px) {
+    padding: 20px 0px;
+  }
+
   @media (max-width: 768px) {
     padding: 5px 0px;
   }
@@ -21,10 +25,11 @@
   min-height: 600px;
 
   @media (max-width: 1024px) {
-    min-height: 500px;
+    min-height: 710px;
+    padding: 0 20px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     min-height: 400px;
     flex-direction: column;
   }
@@ -42,7 +47,12 @@
   bottom: 0;
   pointer-events: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    top: 310px;
+    left: 0;
+  }
+
+  @media (max-width: 767px) {
     position: relative;
     top: auto;
     left: auto;
@@ -64,10 +74,11 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 1024px) {
-    margin-left: 120px;
+    margin-left: auto;
+    width: 100% !important;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     margin-left: 0px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     width: 90% !important;
@@ -99,14 +110,14 @@
   box-shadow: none;
 
   @media (max-width: 1024px) {
-    top: 140px;
-    left: 15px;
-    font-size: 15px;
-    padding: 15px 0px;
-    max-width: 50%;
+    top: 250px;
+    left: 0px;
+    font-size: 16px;
+    padding: 15px 20px;
+    max-width: 45%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     position: relative;
     top: auto;
     left: auto;
@@ -133,7 +144,7 @@
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     height: 300px;
   }
 
@@ -157,13 +168,15 @@
   line-height: 1.5;
 
   @media (max-width: 1024px) {
-    top: 420px;
-    left: 30px;
-    font-size: 15px;
-    max-width: 40%;
+    top: 330px;
+    left: 23px;
+    font-size: 16px;
+    max-width: 65%;
+    line-height: 1.6;
+    text-align: left;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     position: relative;
     top: auto;
     left: auto;
@@ -198,14 +211,14 @@
   letter-spacing: 0%;
 
   @media (max-width: 1024px) {
-    top: 220px;
-    left: 30px;
-    font-size: 48px;
-    line-height: 80px;
+    top: 280px;
+    left: 20px;
+    font-size: 18px;
+    line-height: 55px;
     max-width: 45%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     position: relative;
     top: auto;
     left: auto;
