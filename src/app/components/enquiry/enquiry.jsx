@@ -67,7 +67,7 @@ export default function EnquirySect() {
             <form onSubmit={handleSubmit}>
               <div className={`modal-body ${styles.modalBody}`}>
                 <div className="row">
-                  <div className="col-xl-6">
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div className={styles.input}>
                       <input
                         type="text"
@@ -77,7 +77,7 @@ export default function EnquirySect() {
                       />
                     </div>
                   </div>
-                  <div className="col-xl-6">
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div className={styles.input}>
                       <input
                         type="text"
@@ -87,7 +87,7 @@ export default function EnquirySect() {
                       />
                     </div>
                   </div>
-                  <div className="col-xl-12">
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div className={styles.input}>
                       <input
                         type="email"
@@ -97,7 +97,7 @@ export default function EnquirySect() {
                       />
                     </div>
                   </div>
-                  <div className="col-xl-12">
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div className={styles.input}>
                       <input
                         type="text"

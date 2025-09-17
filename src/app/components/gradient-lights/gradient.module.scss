@@ -19,14 +19,77 @@
   filter: blur(250px);
   opacity: 0.3;
   animation: move 6s infinite alternate;
+
+  /* Tablet responsiveness */
+  @media (max-width: 1024px) {
+    width: 500px;
+    height: 500px;
+    filter: blur(180px);
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    width: 350px;
+    height: 350px;
+    filter: blur(120px);
+    opacity: 0.25;
+  }
+
+  /* Small mobile responsiveness */
+  @media (max-width: 480px) {
+    width: 250px;
+    height: 250px;
+    filter: blur(80px);
+    opacity: 0.2;
+  }
+
+  /* Extra small mobile */
+  @media (max-width: 360px) {
+    width: 200px;
+    height: 200px;
+    filter: blur(60px);
+    opacity: 0.15;
+  }
 }
 
 .left {
   left: -100px;
+
+  /* Tablet responsiveness */
+  @media (max-width: 1024px) {
+    left: -80px;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    left: -60px;
+  }
+
+  /* Small mobile responsiveness */
+  @media (max-width: 480px) {
+    left: -40px;
+  }
+
+  /* Extra small mobile */
+  @media (max-width: 360px) {
+    left: -30px;
+  }
 }
 
 .right {
   right: -100px;
+
+  /* Tablet responsiveness */
+  @media (max-width: 1024px) {
+    right: 70px;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 767px) {
+    right: 20px;
+  }
+
+  
 }
 
 .halftoneDots {
@@ -40,6 +103,29 @@
   background-size: auto;
   pointer-events: none;
   z-index: -1;
+
+  /* Tablet responsiveness */
+  @media (max-width: 1024px) {
+    background-size: 80%;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 767px) {
+    background-size: 60%;
+    opacity: 0.8;
+  }
+
+  /* Small mobile responsiveness */
+  @media (max-width: 480px) {
+    background-size: 50%;
+    opacity: 0.6;
+  }
+
+  /* Extra small mobile */
+  @media (max-width: 360px) {
+    background-size: 40%;
+    opacity: 0.5;
+  }
 }
 @keyframes move {
   0% {
@@ -50,5 +136,34 @@
   }
   100% {
     transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+/* Mobile animation adjustments */
+@media (max-width: 767px) {
+  @keyframes move {
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+      transform: translateY(-25px) translateX(25px) scale(1.05);
+    }
+    100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  @keyframes move {
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+      transform: translateY(-15px) translateX(15px) scale(1.03);
+    }
+    100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
   }
 }

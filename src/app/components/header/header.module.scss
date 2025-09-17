@@ -13,13 +13,26 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 600px) {
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile Responsive (up to 767px) */
+@media (max-width: 767px) {
+  .header {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* iPad Portrait Responsive (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .header {
     padding: 1.5rem 5%;
   }
 }
 
-@media (min-width: 768px) {
+/* Desktop Responsive (1025px and above) */
+@media (min-width: 1025px) {
   .header {
     padding: 0 10%;
   }
@@ -37,7 +50,11 @@
   flex-direction: row;
 }
 
-/* Hide nav on mobile, show hamburger */
+/* ============================================
+   NAVIGATION RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile Navigation (up to 767px) */
 @media (max-width: 767px) {
   .nav ul {
     display: none;
@@ -50,7 +67,40 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 0.5rem;
     gap: 0;
-    padding: 20px 10px;
+    padding: 15px 8px;
+    line-height: 35px;
+  }
+
+  .nav.open ul {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #ddd6cb;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: auto;
+  }
+}
+
+/* iPad Portrait Navigation (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #000;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    gap: 0;
+    padding: 20px 12px;
     line-height: 40px;
   }
 
@@ -66,18 +116,14 @@
     color: #ddd6cb;
     cursor: pointer;
     z-index: 1001;
-      margin-left: 280px;
-
-
-   
+    margin-left: auto;
   }
 }
 
-/* Hide hamburger on desktop */
-@media (min-width: 768px) {
+/* Desktop Navigation (1025px and above) */
+@media (min-width: 1025px) {
   .nav-toggle {
     display: none;
-
   }
 }
 
@@ -100,8 +146,8 @@
 
 .active {
   background: linear-gradient(90deg, #ff8a05, #f9b331);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -133,11 +179,12 @@
 //   filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
 // }
 
-@media (max-width: 600px) {
-  .header {
-    padding: 1rem 0.5rem;
-  }
+/* ============================================
+   LOGO RESPONSIVE BREAKPOINTS
+   ============================================ */
 
+/* Mobile Logo (up to 767px) */
+@media (max-width: 767px) {
   .logo {
     font-size: 1.1rem;
     gap: 1rem;
@@ -147,7 +194,35 @@
     width: 2.5rem;
     height: 2.5rem;
   }
+}
 
+/* iPad Portrait Logo (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logo {
+    font-size: 1.3rem;
+    gap: 1.5rem;
+  }
+
+  .logo .logoImage {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* ============================================
+   NAVIGATION LINKS RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile Navigation Links (up to 767px) */
+@media (max-width: 767px) {
+  .nav a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* iPad Portrait Navigation Links (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .nav a {
     font-size: 0.95rem;
     padding: 0.5rem 0.8rem;
