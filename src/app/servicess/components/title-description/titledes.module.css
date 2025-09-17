@@ -2,14 +2,14 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 120px 160px;
+  padding: 0 160px;
 }
 .titleDescription .title {
   font-family: "Boldonse", system-ui, sans-serif !important;
   font-size: 64px;
   font-weight: 400;
   margin-bottom: 1rem;
-  line-height: 90px;
+  line-height: 100px;
   color: #fdfdfd;
 }
 @media (max-width: 768px) {
@@ -27,6 +27,8 @@
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: center;
+  margin: auto;
+  width: 90%;
 }
 @media (max-width: 768px) {
   .titleDescription .description {

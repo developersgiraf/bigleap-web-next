@@ -6,6 +6,7 @@ export default function CounterSect() {
     <>
       <CounterJs />
       <section className={styles['stats-section']}>
+        {/* <div className="container"> */}
         <div className={styles['stat-block']}>
           <span className={styles['stat-label']}>Projects</span>
           <span className="stat-number" data-target="105" data-symbol="+">

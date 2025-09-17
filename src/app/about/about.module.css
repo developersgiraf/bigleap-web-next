@@ -1,6 +1,6 @@
 .about-main-section {
   position: relative;
-  padding: 120px 0 80px 0;
+  padding: 390px 0 80px 0;
 }
 .about-main-section .about-sect {
   display: flex;
@@ -15,7 +15,7 @@
   display: block;
 }
 .about-main-section .about-sect .abt-cnt {
-  width: 80%;
+  width: 70%;
 }
 .about-main-section .about-sect .abt-cnt h4 {
   line-height: 100%;
@@ -38,7 +38,7 @@
 }
 
 .history-area {
-  padding: 120px 0 80px 0;
+  padding: 170px 0 80px 0;
 }
 .history-area .history-head {
   display: flex;

@@ -4,6 +4,11 @@
   align-items: center;
   margin: 20px 0;
 }
+@media (max-width: 768px) {
+  .btn {
+    margin: 10px 0;
+  }
+}
 .btn a, .btn button {
   text-decoration: none;
   display: flex;
@@ -22,6 +27,16 @@
   transition: transform 0.1s, box-shadow 0.1s;
   position: relative;
   cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .btn a, .btn button {
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 767px) {
+  .btn a, .btn button {
+    padding: 10px 20px;
+  }
 }
 .btn a:hover, .btn button:hover {
   transform: translateY(2px);

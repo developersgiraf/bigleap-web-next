@@ -89,7 +89,12 @@
   line-height: 93%;
   letter-spacing: 0%;
 
-  @media (max-width: 768px) {
+@media (max-width: 1024px) {
+    font-size: 18px;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 767px) {
     font-size: 18px;
     margin-top: 6px;
   }
@@ -113,7 +118,11 @@
   color: #ed2124;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    font-size: 17px;
+    margin-top: 6px;
+  }
+  @media (max-width: 767px) {
     font-size: 12px;
     margin-top: 6px;
   }

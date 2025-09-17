@@ -22,4 +22,21 @@
   line-height: 93%;
   text-decoration: none;
   color: #fdfdfd;
+}
+
+@media (max-width: 1024px) {
+  .header-top-area .head-top-contacts ul {
+    padding: 20px 20px !important;
+    margin: 0 0 0 0 !important;
+    width: auto !important;
+    justify-content: center !important;
+    gap: 80px !important;
+  }
+}
+@media (max-width: 767px) {
+  .header-top-area .head-top-contacts ul {
+    padding: 20px 20px !important;
+    margin: 0 0 0 0 !important;
+    width: auto !important;
+  }
 }/*# sourceMappingURL=info.module.css.map */

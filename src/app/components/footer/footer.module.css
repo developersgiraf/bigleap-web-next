@@ -1,6 +1,6 @@
 .footerArea {
   position: relative;
-  padding: 120px 0 0 0;
+  padding: 170px 0 0 0;
 }
 .footerArea .firstcol {
   padding: 40px 0 0 90px;
@@ -102,4 +102,30 @@
 }
 .footerArea .footer-bottom .footerCopyRight li a:hover {
   color: #ed2124;
+}
+
+@media (max-width: 768px) {
+  .footerArea .firstcol {
+    padding: 0 0 0 20px !important;
+  }
+  .footerArea .content {
+    padding: 0 0 0 10px !important;
+  }
+  .footerArea .content .bigleapCnt {
+    padding-top: 10px;
+  }
+  .footerArea .content .bigleapCnt h2 {
+    line-height: 65px;
+    font-size: 27px;
+    margin: 10px 0;
+  }
+  .footerArea .footer-bottom {
+    padding: 10px 0 !important;
+  }
+  .footerArea .footer-bottom .footerCopyRight li {
+    font-size: 9px !important;
+  }
+  .footerArea .footer-bottom .footerCopyRight li a {
+    font-size: 9px !important;
+  }
 }/*# sourceMappingURL=footer.module.css.map */

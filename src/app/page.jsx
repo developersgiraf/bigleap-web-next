@@ -53,13 +53,13 @@ export default function Home() {
       <section className={styles["about-area"]}>
         <div className="container">
           <div className={`row align-items-center ${styles["about-row"]}`}>
-            <div className="col-xl-5 col-lg-6 col-md-3 col-12">
+            <div className="col-xl-5 col-lg-6 col-md-5 col-12">
               <div className={styles["about-first-box"]}>
                 <img src="Scate.png" alt="" />
               </div>
             </div>
 
-            <div className="col-xl-7 col-lg-6 col-md-9 col-12">
+            <div className="col-xl-7 col-lg-6 col-md-7 col-12">
               <div className={styles["about-secont-box"]}>
                 <h4>
                   {" "}
@@ -137,8 +137,8 @@ export default function Home() {
               autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
-                640: { slidesPerView: 2, spaceBetween: 15 },
-                1024: { slidesPerView: 3, spaceBetween: 120 },
+                640: { slidesPerView: 3, spaceBetween: 10 },
+                1024: { slidesPerView: 3, spaceBetween: 1 },
                 1366: { slidesPerView: 4, spaceBetween: 20 },
               }}
             />

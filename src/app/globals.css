@@ -66,7 +66,7 @@
   }
 
   /* Mobile responsiveness */
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 40px;
     height: 40px;
     padding: 8px 12px;
@@ -97,12 +97,12 @@
 
   /* Tablet responsiveness */
   @media (max-width: 1024px) {
-    left: 5px;
+    left: 0;
     font-size: 20px;
   }
 
   /* Mobile responsiveness */
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     left: 8px;
     font-size: 18px;
   }
@@ -131,7 +131,7 @@
   }
 
   /* Mobile responsiveness */
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     right: 8px;
     font-size: 18px;
   }
@@ -251,7 +251,7 @@ p {
     /* filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)); */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .stat-number {
         font-size: 3rem;
     }
@@ -266,7 +266,18 @@ p {
 }
 
 /* Mobile Navigation Override - Force visibility and proper positioning */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .circle-nav-btn.left {
+    left: 10px !important;
+    z-index: 1000;
+  }
+  
+  .circle-nav-btn.right {
+    right: 10px !important;
+    z-index: 1000;
+  }
+}
+@media (max-width: 767px) {
   .circle-nav-btn.left {
     left: 10px !important;
     z-index: 1000;
@@ -279,7 +290,7 @@ p {
 }
 
 /* Small mobile override */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .circle-nav-btn.left {
     left: 8px !important;
   }
@@ -287,7 +298,7 @@ p {
   .circle-nav-btn.right {
     right: 8px !important;
   }
-}
+} */
 
 /* Extra small mobile override */
 @media (max-width: 360px) {

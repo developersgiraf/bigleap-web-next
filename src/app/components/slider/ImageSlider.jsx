@@ -34,8 +34,8 @@ export default function ImageSlider({
   loop = true,
   breakpoints = {
     320: { slidesPerView: 1, spaceBetween: 10 },
-    640: { slidesPerView: 2, spaceBetween: 15 },
-    1024: { slidesPerView: 3, spaceBetween: 120 },
+    640: { slidesPerView: 3, spaceBetween: 15 },
+    1024: { slidesPerView: 3, spaceBetween: 1 },
     1366: { slidesPerView: 4, spaceBetween: 20 },
   },
   autoplay = { delay: 2500, disableOnInteraction: false },

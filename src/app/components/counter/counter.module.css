@@ -16,9 +16,8 @@
   bottom: 0;
   pointer-events: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .stats-section {
-    gap: 40px;
     padding: 60px 20px;
     flex-wrap: wrap;
   }
@@ -32,15 +31,13 @@
   position: relative;
   padding: 20px;
   border-radius: 12px;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   min-width: 140px;
 }
 .stat-block:hover {
   transform: translateY(-5px);
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .stat-block {
     min-width: 120px;
     padding: 15px;
@@ -65,20 +62,20 @@
   position: relative;
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .stat-number {
     font-size: 128px;
   }
 }
 @media (max-width: 480px) {
   .stat-number {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 }
 
 .stat-label {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #fdfdfd;
   font-weight: 700;
   letter-spacing: 2px;
   margin-top: 0px;
@@ -92,7 +89,7 @@
   z-index: 2;
   padding: 8px 16px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .stat-label {
     font-size: 0.8rem;
     letter-spacing: 1.5px;
@@ -118,7 +115,7 @@
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .stat-divider {
     display: none;
   }

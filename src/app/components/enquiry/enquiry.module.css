@@ -31,8 +31,8 @@
 }
 
 .modalContent {
-  width: 70% !important;
-  height: 70vh;
+  width: 70%;
+  height: 50vh;
   max-width: 1200px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
@@ -51,6 +51,7 @@
   text-align: center;
   color: #fff;
   font-family: "boldonse", sans-serif !important;
+  font-size: 20px;
   letter-spacing: 2px;
   flex: 1;
   margin: 0;
@@ -105,4 +106,30 @@
   font-size: 1.25rem;
   font-weight: 600;
   transition: background 0.2s;
+}
+
+@media (max-width: 768px) {
+  .enquiry-section .image {
+    height: 40vh !important;
+  }
+  .modalBody {
+    padding: 30px 0 !important;
+  }
+  /* Modal width override */
+  .modalDialog {
+    max-width: none !important;
+  }
+  .modalContent {
+    width: 100% !important;
+    height: 65vh;
+  }
+  .title {
+    font-size: 16px !important;
+  }
+  .btn-close {
+    filter: invert(1);
+  }
+  .input {
+    padding: 15px 20px !important;
+  }
 }/*# sourceMappingURL=enquiry.module.css.map */

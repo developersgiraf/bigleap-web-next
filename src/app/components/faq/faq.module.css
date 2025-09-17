@@ -1,5 +1,5 @@
 .faqSection {
-  padding: 120px 0 80px 0;
+  padding: 270px 0 80px 0;
 }
 .faqSection .faqrow {
   width: 100%;
@@ -32,7 +32,7 @@
 .faqSection .faqrow .faqList .accordionItem .accordionHeader {
   background: #eb2729;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: 500;
   padding: 25px;
   cursor: pointer;
@@ -41,8 +41,8 @@
   justify-content: space-between;
   transition: background 0.2s ease;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+       user-select: none;
 }
 .faqSection .faqrow .faqList .accordionItem .accordionHeader:hover {
   background: #d32f2f;
@@ -83,26 +83,34 @@
     transform: translateY(0);
   }
 }
+
 @media (max-width: 768px) {
-  .faqSection .faqrow {
+  .faqSection {
+    padding: 80px 0 50px 0;
+  }
+  .faqrow {
     flex-direction: column;
     gap: 40px;
+    padding: 0 10px !important;
   }
-  .faqSection .faqrow .faqContent {
+  .faqrow .faqContent {
     flex: 1;
   }
-  .faqSection .faqrow .faqContent .title {
-    font-size: 2.5rem;
+  .faqrow .faqContent .title {
+    font-size: 40px !important;
+    line-height: 55px !important;
+    text-align: center !important;
   }
-  .faqSection .faqrow .faqList {
+  .faqrow .faqList {
     flex: 1;
   }
-  .faqSection .faqrow .faqList .accordionItem .accordionHeader {
-    font-size: 1rem;
-    padding: 20px;
+  .faqrow .faqList .accordionItem .accordionHeader {
+    padding: 10px 20px !important;
   }
-  .faqSection .faqrow .faqList .accordionItem .accordionContent {
-    padding: 20px;
-    font-size: 0.9rem;
+  .faqrow .faqList .accordionItem .accordionHeader .question {
+    font-size: 16px !important;
+  }
+  .faqrow .faqList .accordionItem .accordionContent {
+    padding: 10px !important;
   }
 }/*# sourceMappingURL=faq.module.css.map */
