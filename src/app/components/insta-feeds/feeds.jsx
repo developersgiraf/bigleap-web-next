@@ -62,12 +62,12 @@ export default function InstaFeeds() {
                 slidesPerView: 2,
                 spaceBetween: 0,
               },
-              768: {
-                slidesPerView: 2,
+              640: {
+                slidesPerView: 3,
                 spaceBetween: 0,
               },
               1024: {
-                slidesPerView: 6,
+                slidesPerView: 3,
                 spaceBetween: 0,
               },
             }}

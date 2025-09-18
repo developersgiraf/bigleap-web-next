@@ -112,7 +112,25 @@
 }
 
 //mobile responsiveness
-@media (max-width: 768px) {
+
+@media (max-width: 1024px) {
+  .enquiry-section {
+    .image {
+      height: 60vh !important;
+    }
+
+    .buttonContainer {
+      top: 50% !important;
+    }
+    
+  }
+  .modalContent{
+      width: 80% !important;
+      height: 55vh !important;
+    }
+}
+
+@media (max-width: 767px) {
   .enquiry-section {
   
 

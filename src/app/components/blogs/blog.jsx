@@ -34,7 +34,7 @@ export default function BlogSection() {
             <div className={styles.blogimages}>
               <div className={`row ${styles.blogrow}`}>
                 {list.map((item, index) => (
-                  <div className="col-md-4" key={index}>
+                  <div className="col-xl-4 col-lg-12 col-md-6 col-sm-12" key={index}>
                     <img src={item.image} alt={item.title} />
                     <div className={styles.titleHead}>
                       <h6 className={styles.title}>{item.title}</h6>

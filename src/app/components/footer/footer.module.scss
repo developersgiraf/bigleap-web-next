@@ -131,7 +131,86 @@
 }
 
 //mobile responsive
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .footerArea {
+    padding: 120px 0 0 0;
+
+    .firstcol {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: left !important;
+      padding: 40px 0 0 0 !important;
+      
+      .bigleap {
+        .footerImage {
+          width: 65%;
+          height: 20vh;
+        }
+      }
+
+      .address {
+        // padding-top: 90px;
+        h6 {
+          font-size: 14px;
+        }
+      }
+    }
+    .content {
+      padding: 0 0 0px 0px !important;
+
+      .bigleapCnt {
+        h2 {
+          line-height: 80px;
+          font-size: 48px;
+          margin: 0 0 40px 0;
+        }
+      }
+    }
+
+   
+
+    .footerList {
+      .subcol {
+       
+
+        h5 {
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+
+        ul {
+         
+          li {
+            line-height: 25px;
+
+          .iconImg{
+            margin-right: 8px;
+          }
+
+            a {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      padding: 30px 0 0 0 !important;
+      .footerCopyRight {
+       
+
+        li {
+          font-size: 14px !important;
+
+          a {
+            font-size: 14px !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
   .footerArea {
   
 
