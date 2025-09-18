@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./portfolioEntry.module.scss";
 
 
-export default function PortfolioEntry({ NextSlide }) {
+export default function PortfolioEntry({ open = false }) {
     const data = {
         title: "Animation",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
