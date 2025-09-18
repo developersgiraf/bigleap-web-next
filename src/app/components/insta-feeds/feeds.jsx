@@ -54,7 +54,7 @@ export default function InstaFeeds() {
             spaceBetween={0}
             slidesPerView={3}
             navigation={false}
-            // pagination={{ clickable: false }}
+            pagination={{ clickable: false }}
             autoplay={false}
             loop={true}
             breakpoints={{

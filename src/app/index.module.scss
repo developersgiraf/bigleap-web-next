@@ -62,7 +62,7 @@
       left: 0;
       right: 0;
       margin: 0 auto;
-      top: -92%;
+      top: -112%;
       max-width: 1200px;
       height: auto;
 
@@ -182,7 +182,7 @@
     h2 {
       color: #fff;
       font-family: "Boldonse", system-ui !important;
-      font-size: 75px;
+      font-size: 96px;
       text-align: center;
       font-weight: 400;
       letter-spacing: 0%;
@@ -190,7 +190,9 @@
       font-style: regular;
 
       @media (max-width: 1024px) {
-        font-size: 50px;
+        font-size: 60px;
+      margin: 0px 0px 20px 0;
+
       }
       @media (max-width: 767px) {
       font-size: 45px;
@@ -210,7 +212,7 @@
       line-height: 125%;
 
        @media (max-width: 1024px) {
-        padding: 0 80px;
+        padding: 0 30px;
 
       }
        @media (max-width: 767px) {
@@ -525,7 +527,7 @@
       color: #fdfdfd;
       line-height: 90px;
       font-family: "Boldonse", system-ui !important;
-      font-size: 53px;
+      font-size: 64px;
 
       @media (max-width: 1024px) {
         font-size: 32px;
@@ -539,7 +541,7 @@
     }
   }
   .specialslide{
-    padding: 0 160px;
+    padding: 0 50px;
 
     @media (max-width: 1024px) {
       padding: 0 80px;

@@ -138,8 +138,8 @@ export default function Home() {
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 3, spaceBetween: 10 },
-                1024: { slidesPerView: 3, spaceBetween: 1 },
-                1366: { slidesPerView: 4, spaceBetween: 20 },
+                1024: { slidesPerView: 2, spaceBetween: 120 },
+                1366: { slidesPerView: 4, spaceBetween: 10 },
               }}
             />
 
@@ -317,9 +317,9 @@ export default function Home() {
               autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
-                640: { slidesPerView: 2, spaceBetween: 15 },
-                1024: { slidesPerView: 3, spaceBetween: 120 },
-                1366: { slidesPerView: 3, spaceBetween: 50 },
+                640: { slidesPerView: 1, spaceBetween: 5 },
+                // 1024: { slidesPerView: 2, spaceBetween: 10 },
+                1366: { slidesPerView: 3, spaceBetween: 10 },
               }}
               imageSize={400}
             />
