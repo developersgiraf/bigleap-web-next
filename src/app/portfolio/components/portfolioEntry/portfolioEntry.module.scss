@@ -1,0 +1,33 @@
+.portfolio-entry{
+    background-color: rgb(105, 48, 105);
+    position: relative;
+    height: 40dvh;
+
+    .fullContent{
+   
+.content{
+padding: 90px 0;
+
+    h3{
+        color: #fdfdfd;
+        font-size: 64px;
+        font-family: "Boldonse", sans-serif !important;
+    }
+    p{
+        color: #fdfdfd;
+        font-size: 16px;
+        font-family: "montserrat", sans-serif !important;
+        width: 30%;
+
+    }
+}
+    .portfolio-image{
+        width: 20%;
+        height: auto;
+        margin-top: 10px;
+        position: absolute;
+        bottom: 0;
+        right: 190px;
+    }
+}
+}
