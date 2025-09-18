@@ -42,6 +42,26 @@ padding: 90px 0;
 .open{
     width : 100%;
 }
+
+.focused {
+    
+    
+    .description {
+        display: block; // Ensure description is visible when focused
+    }
+}
+
+.unfocused {
+    width: 40%;
+    
+    .description {
+        display: none; // Hide description when unfocused
+    }
+}
+
+
+
+
 .closed{
     width : 0%;
     overflow: hidden;

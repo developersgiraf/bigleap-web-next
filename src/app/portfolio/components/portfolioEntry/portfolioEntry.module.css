@@ -35,6 +35,17 @@
   width: 100%;
 }
 
+.focused .description {
+  display: block;
+}
+
+.unfocused {
+  width: 40%;
+}
+.unfocused .description {
+  display: none;
+}
+
 .closed {
   width: 0%;
   overflow: hidden;
