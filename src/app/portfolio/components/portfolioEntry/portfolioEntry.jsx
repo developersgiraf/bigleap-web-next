@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./portfolioEntry.module.scss";
+import ButtonCTA from "@/app/components/ctaButton/buttoncta";
 
 
 export default function PortfolioEntry({ open = false }) {
@@ -22,6 +23,8 @@ export default function PortfolioEntry({ open = false }) {
                         </div>
                         <Image src={data.image} alt={data.title} width={300} height={200} className={styles["portfolio-image"]} />
                     </div>
+                    <ButtonCTA title={'>'} />
+
                 </div>
             </div>
         </div>
