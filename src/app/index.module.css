@@ -69,7 +69,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: -92%;
+  top: -112%;
   max-width: 1200px;
   height: auto;
 }
@@ -190,7 +190,7 @@
 .slide-head .special-head h2 {
   color: #fff;
   font-family: "Boldonse", system-ui !important;
-  font-size: 75px;
+  font-size: 96px;
   text-align: center;
   font-weight: 400;
   letter-spacing: 0%;
@@ -199,7 +199,8 @@
 }
 @media (max-width: 1024px) {
   .slide-head .special-head h2 {
-    font-size: 50px;
+    font-size: 60px;
+    margin: 0px 0px 20px 0;
   }
 }
 @media (max-width: 767px) {
@@ -220,7 +221,7 @@
 }
 @media (max-width: 1024px) {
   .slide-head .special-head p {
-    padding: 0 80px;
+    padding: 0 30px;
   }
 }
 @media (max-width: 767px) {
@@ -544,7 +545,7 @@
   color: #fdfdfd;
   line-height: 90px;
   font-family: "Boldonse", system-ui !important;
-  font-size: 53px;
+  font-size: 64px;
 }
 @media (max-width: 1024px) {
   .motion-graphics .motion-graphics-content h2 {
@@ -559,7 +560,7 @@
   }
 }
 .motion-graphics .specialslide {
-  padding: 0 160px;
+  padding: 0 50px;
 }
 @media (max-width: 1024px) {
   .motion-graphics .specialslide {

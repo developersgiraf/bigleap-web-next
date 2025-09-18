@@ -1,0 +1,36 @@
+.portfolio-entry {
+  background-color: rgb(105, 48, 105);
+  position: relative;
+  height: 40dvh;
+}
+.portfolio-entry .fullContent .content {
+  padding: 90px 0;
+}
+.portfolio-entry .fullContent .content h3 {
+  color: #fdfdfd;
+  font-size: 64px;
+  font-family: "Boldonse", sans-serif !important;
+}
+.portfolio-entry .fullContent .content p {
+  color: #fdfdfd;
+  font-size: 16px;
+  font-family: "montserrat", sans-serif !important;
+  width: 30%;
+}
+.portfolio-entry .fullContent .portfolio-image {
+  width: 20%;
+  height: auto;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 190px;
+}
+
+.open {
+  width: 100%;
+}
+
+.closed {
+  width: 0%;
+  overflow: hidden;
+}/*# sourceMappingURL=portfolioEntry.module.css.map */

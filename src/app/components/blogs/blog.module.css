@@ -25,32 +25,36 @@
 .blogsection .blogcontent .blogimages {
   padding: 30px 0;
 }
-.blogsection .blogcontent .blogimages img {
+.blogsection .blogcontent .blogimages .blogrow {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.blogsection .blogcontent .blogimages .blogrow img {
   width: 100%;
   height: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.blogsection .blogcontent .blogimages .titleHead {
+.blogsection .blogcontent .blogimages .blogrow .titleHead {
   display: flex;
   gap: 20px;
   padding-top: 20px;
 }
-.blogsection .blogcontent .blogimages .titleHead .title {
+.blogsection .blogcontent .blogimages .blogrow .titleHead .title {
   font-size: 16px;
   font-weight: 400;
   color: #fdfdfd;
   line-height: 93%;
   font-family: "montserrat", sans-serif !important;
 }
-.blogsection .blogcontent .blogimages .titleHead .date {
+.blogsection .blogcontent .blogimages .blogrow .titleHead .date {
   font-size: 14px;
   font-weight: 400;
   font-family: "roboto", sans-serif !important;
   line-height: 125%;
   color: #cfc9c9;
 }
-.blogsection .blogcontent .blogimages .about p {
+.blogsection .blogcontent .blogimages .blogrow .about p {
   font-size: 20px;
   font-family: "montserrat", sans-serif !important;
   font-weight: 500;
@@ -59,7 +63,33 @@
   color: #fdfdfd;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .blogsection {
+    padding: 100px 0 60px 0;
+  }
+  .blogsection .blogcontent .bloghead h2 {
+    font-size: 35px !important;
+    line-height: 50px !important;
+    text-align: center !important;
+  }
+  .blogsection .blogcontent .blogimages .blogrow {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  .blogsection .blogcontent .blogimages .blogrow img {
+    height: 25vh !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+  }
+  .blogsection .blogcontent .blogimages .blogrow .titleHead {
+    padding-top: 15px !important;
+  }
+  .blogsection .blogcontent .blogimages .blogrow .about p {
+    font-size: 18px !important;
+  }
+}
+@media (max-width: 767px) {
   .blogsection .blogcontent .bloghead h2 {
     font-size: 36px !important;
     line-height: 55px !important;

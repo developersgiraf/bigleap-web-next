@@ -11,18 +11,18 @@ export default function PortfolioEntry({ open = false }) {
     }
     
     return(
-        <div>
+        <div className={open ? styles.open : styles.closed}>
             <div className={styles["portfolio-entry"]}>
-            <div className="container">
-            <div className={styles["fullContent"]}>
-                <div className={styles.content}>
-                <h3>{data.title}</h3>
-                <p>{data.description}</p>
-                <button>{data.readbtn}</button>
+                <div className="container">
+                    <div className={styles["fullContent"]}>
+                        <div className={styles.content}>
+                        <h3>{data.title}</h3>
+                        <p>{data.description}</p>
+                        <button>{data.readbtn}</button>
+                        </div>
+                        <Image src={data.image} alt={data.title} width={300} height={200} className={styles["portfolio-image"]} />
+                    </div>
                 </div>
-                <Image src={data.image} alt={data.title} width={300} height={200} className={styles["portfolio-image"]} />
-                </div>
-            </div>
             </div>
         </div>
     )

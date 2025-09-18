@@ -1,11 +1,6 @@
 .test {
   padding: 240px 0 80px;
 }
-@media (max-width: 768px) {
-  .test {
-    padding: 120px 0 40px;
-  }
-}
 .test .diff {
   display: flex;
   flex-direction: column;
@@ -19,12 +14,6 @@
   font-size: 64px;
   text-align: center;
 }
-@media (max-width: 768px) {
-  .test .diff h2 {
-    font-size: 39px;
-    line-height: 55px;
-  }
-}
 .test .diff p {
   width: 48%;
   font-weight: 400;
@@ -34,14 +23,6 @@
   color: #fdfdfd;
   font-family: "Montserrat", sans-serif !important;
 }
-@media (max-width: 768px) {
-  .test .diff p {
-    width: 90%;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: justify;
-  }
-}
 .test .all {
   display: flex;
   flex-wrap: nowrap;
@@ -49,19 +30,13 @@
   padding: 40px 150px;
   gap: 30px;
 }
-@media (max-width: 768px) {
-  .test .all {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-}
 .test .all .each {
   border: 2px dotted #5f5f5f;
   height: 230px;
   padding: 15px 20px;
   border-radius: 12px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .test .all .each {
     height: auto;
   }
@@ -80,4 +55,49 @@
   font-size: 16px;
   line-height: 125%;
   text-align: justify;
+}
+
+@media (max-width: 1024px) {
+  .test {
+    padding: 180px 0 60px;
+  }
+  .test .diff h2 {
+    font-size: 45px !important;
+    line-height: 40px !important;
+  }
+  .test .diff p {
+    width: 90% !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .test .all {
+    flex-wrap: wrap;
+    padding: 20px 70px !important;
+    gap: 20px;
+  }
+  .test .all .each {
+    height: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  .test {
+    padding: 120px 0 40px;
+  }
+  .diff h2 {
+    font-size: 39px !important;
+    line-height: 55px !important;
+  }
+  .diff p {
+    width: 90% !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    text-align: justify !important;
+  }
+  .all {
+    flex-direction: column !important;
+    padding: 10px 20px !important;
+  }
+  .each {
+    height: auto !important;
+  }
 }/*# sourceMappingURL=difference.module.css.map */

@@ -108,7 +108,19 @@
   transition: background 0.2s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .enquiry-section .image {
+    height: 60vh !important;
+  }
+  .enquiry-section .buttonContainer {
+    top: 50% !important;
+  }
+  .modalContent {
+    width: 80% !important;
+    height: 55vh !important;
+  }
+}
+@media (max-width: 767px) {
   .enquiry-section .image {
     height: 40vh !important;
   }

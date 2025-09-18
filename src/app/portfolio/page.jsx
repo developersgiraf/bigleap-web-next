@@ -12,7 +12,7 @@ export default function PortfolioPage() {
       <div className={styles.portfolioEntryContainer}>
 
         <PortfolioEntry open={true}/>
-        <PortfolioEntry open={true}/>
+        <PortfolioEntry open={false}/>
         <PortfolioEntry open={false}/>
         <PortfolioEntry open={false}/>
       </div>
