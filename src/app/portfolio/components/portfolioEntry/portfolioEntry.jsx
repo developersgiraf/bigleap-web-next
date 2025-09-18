@@ -23,12 +23,12 @@ export default function PortfolioEntry({ open = false, onButtonClick, buttonTitl
                         </div>
                         <Image src={data.image} alt={data.title} width={300} height={200} className={styles["portfolio-image"]} />
                     </div>
-                    <div className={styles.buttonWrapper}>
-                        <ButtonCTA title={buttonTitle} onClick={onButtonClick} />
-                    </div>
 
                 </div>
             </div>
+                    <div className={styles.buttonWrapper}>
+                        <ButtonCTA title={buttonTitle} onClick={onButtonClick} />
+                    </div>
         </div>
     )
 }

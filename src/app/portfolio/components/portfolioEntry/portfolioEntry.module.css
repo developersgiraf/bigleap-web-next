@@ -41,5 +41,16 @@
 }
 
 .portfolioEntryWrapper {
+  position: relative;
   transition: width 0.5s ease;
+}
+
+.buttonWrapper {
+  position: absolute;
+  width: -moz-fit-content;
+  width: fit-content;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 50px;
 }/*# sourceMappingURL=portfolioEntry.module.css.map */
