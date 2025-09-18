@@ -3,7 +3,7 @@ import styles from "./portfolioEntry.module.scss";
 import ButtonCTA from "@/app/components/ctaButton/buttoncta";
 
 
-export default function PortfolioEntry({ open = false, onButtonClick }) {
+export default function PortfolioEntry({ open = false, onButtonClick, buttonTitle = '>' }) {
     const data = {
         title: "Animation",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -24,7 +24,7 @@ export default function PortfolioEntry({ open = false, onButtonClick }) {
                         <Image src={data.image} alt={data.title} width={300} height={200} className={styles["portfolio-image"]} />
                     </div>
                     <div className={styles.buttonWrapper}>
-                        <ButtonCTA title={'>'} onClick={onButtonClick} />
+                        <ButtonCTA title={buttonTitle} onClick={onButtonClick} />
                     </div>
 
                 </div>
