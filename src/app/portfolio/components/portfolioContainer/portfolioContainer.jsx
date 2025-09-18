@@ -21,7 +21,9 @@ export default function PortfolioContainer() {
         for (let i = currentIndex + 1; i < newStates.length; i++) {
           newStates[i] = false;
         }
-        setFocusedIndex(null); // Clear focus when closing
+        
+        // For backward (closing) logic, set focus to the current button's entry (currentIndex)
+        setFocusedIndex(currentIndex);
       } else {
         // If next entry is closed, open only the next entry and close all after it
         if (nextIndex < newStates.length) {
