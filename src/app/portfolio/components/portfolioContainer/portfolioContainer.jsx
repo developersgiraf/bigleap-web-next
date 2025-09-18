@@ -4,8 +4,34 @@ import { useState } from "react";
 import PortfolioEntry from "../portfolioEntry/portfolioEntry";
 import styles from "../../portfolio.module.css";
 
+const data = [{
+        title: "Animation",
+        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        image: "/portfolio/portfolio1.png",
+        readbtn: "Explore More"
+    },
+    {
+        title: "Web Design",
+        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        image: "/portfolio/portfolio2.png",
+        readbtn: "Explore More"
+    },
+    {
+        title: "Animation",
+        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        image: "/portfolio/portfolio1.png",
+        readbtn: "Explore More"
+    },
+    {
+        title: "Web Design",
+        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        image: "/portfolio/portfolio2.png",
+        readbtn: "Explore More"
+    }
+    ];
+
 export default function PortfolioContainer() {
-  const [openStates, setOpenStates] = useState([true, false, false, false]);
+  const [openStates, setOpenStates] = useState(data.map((_, index) => index < 1)); // Initialize based on data length
   const [focusedIndex, setFocusedIndex] = useState(null); // Track which entry is focused
 
   const handleNextOpen = (currentIndex) => {
@@ -54,10 +80,12 @@ export default function PortfolioContainer() {
 
   return (
     <div className={styles.portfolioEntryContainer}>
-      {openStates.map((isOpen, index) => (
+      {data.map((item, index) => (
         <PortfolioEntry 
           key={index}
-          open={isOpen}
+          index={index}
+          data={data}
+          open={openStates[index]}
           focusClass={getFocusClass(index)}
           buttonTitle={getArrowDirection(index)}
           onButtonClick={() => handleNextOpen(index)}
