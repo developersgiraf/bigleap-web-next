@@ -24,6 +24,11 @@
   position: absolute;
   bottom: 0;
   right: 190px;
+  z-index: 1;
+}
+.portfolio-entry .buttonWrapper {
+  position: relative;
+  z-index: 10;
 }
 
 .open {
@@ -33,4 +38,8 @@
 .closed {
   width: 0%;
   overflow: hidden;
+}
+
+.portfolioEntryWrapper {
+  transition: width 0.5s ease;
 }/*# sourceMappingURL=portfolioEntry.module.css.map */

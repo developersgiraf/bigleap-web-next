@@ -28,8 +28,15 @@ padding: 90px 0;
         position: absolute;
         bottom: 0;
         right: 190px;
+        z-index: 1;
     }
 }
+
+    .buttonWrapper {
+        position: relative;
+        z-index: 10;
+    }
+    
 }
 
 .open{
@@ -38,4 +45,8 @@ padding: 90px 0;
 .closed{
     width : 0%;
     overflow: hidden;
+}
+
+.portfolioEntryWrapper{
+    transition: width 0.5s ease;
 }
