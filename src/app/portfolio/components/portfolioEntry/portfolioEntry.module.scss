@@ -36,7 +36,11 @@
         bottom: 0;
         right: 190px;
         z-index: 1;
+        transition: transform 0.5s ease;
+
     }
+    .fullContent{
+        transition: transform 0.5s ease;}
 }
 
     .buttonWrapper {
@@ -48,6 +52,7 @@
 
 .open{
     width : 100%;
+    min-width: 475px;
 }
 
 .focused {
@@ -59,7 +64,7 @@
 }
 
 .unfocused {
-    width: 100%;
+    width: 40%;
     
     .description {
         display: none; // Hide description when unfocused
@@ -86,6 +91,14 @@
 .closed{
     width : 0%;
     overflow: hidden;
+
+    .fullContent{
+        transform: translateX(300%);
+    }
+    .portfolio-image{
+        transform: translateX(300%);
+    }
+    
 }
 
 .portfolioEntryWrapper{
