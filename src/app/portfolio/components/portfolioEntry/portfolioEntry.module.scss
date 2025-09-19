@@ -1,12 +1,14 @@
 .portfolio-entry{
-    background-color: rgb(105, 48, 105);
     position: relative;
-    height: 40dvh;
-
+    height: 50dvh;
+background-image: linear-gradient(to bottom, #28002A, #000000);
     .fullContent{
    
 .content{
-padding: 90px 0;
+    padding: 90px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
     h3{
         color: #fdfdfd;
@@ -22,7 +24,7 @@ padding: 90px 0;
     }
 }
     .portfolio-image{
-        width: 20%;
+        width: 23%;
         height: auto;
         margin-top: 10px;
         position: absolute;
@@ -56,6 +58,20 @@ padding: 90px 0;
     
     .description {
         display: none; // Hide description when unfocused
+    }
+    .portfolio-image{
+        width: 90% !important;
+        position: absolute;
+        bottom: 0;
+        right: 80px !important;
+    }
+    h3{
+        font-size: 44px !important;
+    }
+    .content{
+        padding: 280px 0 0 0 !important;
+        position: relative;
+        z-index: 2; // Ensure content appears over the image when unfocused
     }
 }
 

@@ -11,21 +11,21 @@ const data = [{
         readbtn: "Explore More"
     },
     {
-        title: "Web Design",
+        title: "Web & App",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/portfolio/portfolio2.png",
+        image: "/portfolio/blue.png",
         readbtn: "Explore More"
     },
     {
-        title: "Animation",
+        title: "Graphic Design",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/portfolio/portfolio1.png",
+        image: "/portfolio/black.png",
         readbtn: "Explore More"
     },
     {
-        title: "Web Design",
+        title: "SEO SEM",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/portfolio/portfolio2.png",
+        image: "/portfolio/last.png",
         readbtn: "Explore More"
     }
     ];

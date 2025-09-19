@@ -5,7 +5,6 @@ import PortfolioContainer from "./components/portfolioContainer/portfolioContain
 export default function PortfolioPage() {
   return (
     <>
-      <TitleBanner title="Our creativity begins where reality ends" sub=""/>
       <PortfolioContainer />
       <GradientLights count={2} />
     </>

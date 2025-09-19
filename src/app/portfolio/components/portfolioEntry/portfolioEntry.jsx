@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./portfolioEntry.module.scss";
 import ButtonCTA from "@/app/components/ctaButton/buttoncta";
+import CTAButton from "@/app/components/ctaButton/ctabtn";
 
 
 export default function PortfolioEntry({index = 0, open = false, onButtonClick, buttonTitle = '>', focusClass = '', data = [{
@@ -24,9 +25,10 @@ export default function PortfolioEntry({index = 0, open = false, onButtonClick, 
                         <div className={styles.content}>
                         <h3>{data[index].title}</h3>
                         <p className={styles.description}>{data[index].description}</p>
-                        <button>{data[index].readbtn}</button>
+                        <CTAButton title={data[index].readbtn} onClick={() => {}} />
                         </div>
-                        <Image src={data[index].image} alt={data[index].title} width={300} height={200} className={styles["portfolio-image"]} />
+                        
+                        <Image src={data[index].image} alt={data[index].title} width={1024} height={1536} className={styles["portfolio-image"]} />
                     </div>
 
                 </div>

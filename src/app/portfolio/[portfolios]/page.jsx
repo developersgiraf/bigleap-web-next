@@ -9,7 +9,7 @@ import VideoSwiper from "./components/VideoSwiper";
 export default function firstAnimation() {
   return (
     <>
-      <TitleBanner title="Our creativity begins where reality ends" sub=""/>
+       <TitleBanner title="Our creativity begins where reality ends" sub=""/>
 
       <>
         <section className={styles.videoSwiper}>
