@@ -32,7 +32,7 @@ const data = [
 
     },
     {
-        title: "SEO SEM",
+        title: "SEO/SEM",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         image: "/portfolio/last.png",
         readbtn: "Explore More",
