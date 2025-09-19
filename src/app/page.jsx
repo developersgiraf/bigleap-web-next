@@ -53,13 +53,13 @@ export default function Home() {
       <section className={styles["about-area"]}>
         <div className="container">
           <div className={`row align-items-center ${styles["about-row"]}`}>
-            <div className="col-xl-5 col-lg-6 col-md-5 col-12">
+            <div className="col-xl-5 col-lg-5 col-md-5 col-12">
               <div className={styles["about-first-box"]}>
                 <img src="Scate.png" alt="" />
               </div>
             </div>
 
-            <div className="col-xl-7 col-lg-6 col-md-7 col-12">
+            <div className="col-xl-7 col-lg-7 col-md-7 col-12">
               <div className={styles["about-secont-box"]}>
                 <h4>
                   {" "}
@@ -143,7 +143,7 @@ export default function Home() {
               }}
             />
 
-            <CTAButton title="VIEW ALL" link="#" />
+            <CTAButton title="VIEW ALL" link="/portfolio" />
           </div>
         </div>
       </section>

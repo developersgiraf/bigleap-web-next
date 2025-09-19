@@ -138,8 +138,8 @@
     .firstcol {
       display: flex !important;
       align-items: center !important;
-      justify-content: left !important;
-      padding: 40px 0 0 0 !important;
+      justify-content: center !important;
+      padding: 0 0 0 0 !important;
       
       .bigleap {
         .footerImage {
@@ -157,11 +157,15 @@
     }
     .content {
       padding: 0 0 0px 0px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
 
       .bigleapCnt {
         h2 {
           line-height: 80px;
-          font-size: 48px;
+          font-size: 40px;
           margin: 0 0 40px 0;
         }
       }
@@ -171,7 +175,7 @@
 
     .footerList {
       .subcol {
-       
+       padding: 0 20px !important;
 
         h5 {
           font-size: 18px;

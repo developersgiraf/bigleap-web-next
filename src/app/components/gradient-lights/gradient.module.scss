@@ -28,7 +28,7 @@
   }
 
   /* Mobile responsiveness */
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 350px;
     height: 350px;
     filter: blur(120px);
@@ -61,7 +61,7 @@
   }
 
   /* Mobile responsiveness */
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     left: -60px;
   }
 
@@ -80,6 +80,9 @@
   right: -100px;
 
   /* Tablet responsiveness */
+  @media (max-width: 1366px) {
+    right: 120px;
+  }
   @media (max-width: 1024px) {
     right: 70px;
   }

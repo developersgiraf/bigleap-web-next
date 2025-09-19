@@ -60,27 +60,27 @@ export default function Footer() {
                         <h5>Menu</h5>
                         <ul>
                           <li>
-                            <Link href="">Home</Link>
+                            <Link href="/">Home</Link>
                           </li>
                           <li>
-                            <Link href="">About</Link>
+                            <Link href="/about">About</Link>
                           </li>
                           <li>
-                            <Link href="">Services</Link>
+                            <Link href="/servicess">Services</Link>
                           </li>
                           <li>
-                            <Link href="">Blogs</Link>
+                            <Link href="/blogs">Blogs</Link>
                           </li>
                           <li>
-                            <Link href="">Portfolio</Link>
+                            <Link href="/portfolio">Portfolio</Link>
                           </li>
                           <li>
-                            <Link href="">Contact</Link>
+                            <Link href="/contact">Contact</Link>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md- col-6">
+                    <div className="col-xl-3 col-lg-3 col-md-6 col-6">
                       <div className={styles.subcol}>
                         <h5>Say Hello</h5>
                         <ul>

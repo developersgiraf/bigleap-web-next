@@ -43,6 +43,14 @@ export default function ServicesPage() {
       </section>
 
       <section className={styles.serviceCollect}>
+        <Image
+          src="/ser-back.png"
+          alt="Services Background"
+          fill
+          priority
+          className={styles.bgImage}
+          quality={95}
+        />
         <ServiceImage head="Services We Provide" />
       </section>
 

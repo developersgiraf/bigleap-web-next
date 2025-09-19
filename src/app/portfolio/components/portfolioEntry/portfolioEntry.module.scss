@@ -1,7 +1,7 @@
 .portfolio-entry{
     position: relative;
     height: 50dvh;
-background-image: linear-gradient(to bottom, #28002A, #000000);
+    margin: 300px 0;
     .fullContent{
    
 .content{
@@ -24,8 +24,10 @@ background-image: linear-gradient(to bottom, #28002A, #000000);
     }
 }
     .portfolio-image{
-        width: 23%;
-        height: auto;
+        width: auto;
+        height: 23%;
+        max-height: 700px !important;
+        min-height: 600px !important;
         margin-top: 10px;
         position: absolute;
         bottom: 0;
@@ -36,7 +38,7 @@ background-image: linear-gradient(to bottom, #28002A, #000000);
 
     .buttonWrapper {
         position: relative;
-        z-index: 10;
+        z-index: 100;
     }
     
 }
@@ -54,16 +56,18 @@ background-image: linear-gradient(to bottom, #28002A, #000000);
 }
 
 .unfocused {
-    width: 40%;
+    width: 100%;
     
     .description {
         display: none; // Hide description when unfocused
     }
     .portfolio-image{
-        width: 90% !important;
+        // width: 90% !important;
         position: absolute;
         bottom: 0;
         right: 80px !important;
+        height:90% !important;
+        width: auto !important;
     }
     h3{
         font-size: 44px !important;
@@ -96,4 +100,5 @@ background-image: linear-gradient(to bottom, #28002A, #000000);
     transform: translateY(-50%);
     // inset: 0;
     margin-right: 50px;
+    z-index: 100;
 }

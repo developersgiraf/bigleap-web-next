@@ -4,7 +4,9 @@
   height: 90vh;
   position: relative;
   overflow: hidden;
-
+@media (max-width: 1366px) {
+    height: 70vh !important;
+  }
   @media (max-width: 1024px) {
     height: 50vh;
   }
@@ -20,7 +22,7 @@
   .hanging {
     position: relative;
     height: 100%;
-    
+
     .yeehaimage {
       display: block;
       margin: 0 auto;
@@ -32,12 +34,16 @@
       margin: 0 auto;
       width: 100%;
       height: auto;
-      max-width: 1711px;
-
+      max-width: 1850px;
+      @media (max-width: 1366px) {
+        height: 50vh !important;
+        max-width: 100% !important;
+      }
       @media (max-width: 1024px) {
         width: 100%;
         height: 30vh;
         object-fit: contain;
+        max-width: 730px;
       }
 
       @media (max-width: 767px) {
@@ -66,6 +72,10 @@
       max-width: 1200px;
       height: auto;
 
+      @media (max-width: 1366px) {
+        width: 70% !important;
+        top: -90% !important;
+      }
       @media (max-width: 1024px) {
         top: -80%;
         width: 80%;
@@ -94,15 +104,22 @@
 .about-area {
   padding: 180px 0 120px 0;
 
-      @media (max-width: 1024px) {
-        padding: 0 0 80px 0;
-      }
-      @media (max-width: 767px) {
-       padding: 0 0 120px 0;
-      }
+@media (max-width: 1366px) {
+    padding: 70px 0 80px 0 !important;
+  }
+  @media (max-width: 1024px) {
+    padding: 0 0 80px 0;
+  }
+  @media (max-width: 767px) {
+    padding: 0 0 120px 0;
+  }
   .about-row {
     margin: 0 auto;
     width: 100%;
+         @media (max-width: 1366px) {
+             padding: 0 70px !important;
+            }
+
     .about-first-box {
       display: flex;
       justify-self: flex-end;
@@ -110,9 +127,11 @@
 
       img {
         width: 100%;
-
-        @media (max-width: 1024px) {
-        }
+     @media (max-width: 1366px) {
+width: 90% !important;
+            }
+            @media (max-width: 1024px) {
+            }
       }
     }
 
@@ -123,12 +142,11 @@
       width: 80%;
 
       @media (max-width: 1024px) {
-          width: 100%;
-        }
+        width: 100%;
+      }
       @media (max-width: 767px) {
         width: 100%;
         text-align: left;
-        
       }
       h4 {
         color: #fff;
@@ -140,16 +158,14 @@
         @media (max-width: 1024px) {
           font-size: 16px;
           text-align: left;
-        line-height: 21px;
-
+          line-height: 21px;
         }
         @media (max-width: 767px) {
-        text-align: left;
-        padding-top: 20px;
-        font-size: 16px;
-        line-height: 21px;
-        
-      }
+          text-align: left;
+          padding-top: 20px;
+          font-size: 16px;
+          line-height: 21px;
+        }
       }
 
       a {
@@ -163,15 +179,13 @@
 .slide-head {
   padding: 200px 320px;
 
-  @media (max-width:1024px){
+  @media (max-width: 1024px) {
     padding: 150px 0;
-    
   }
 
-        @media (max-width: 767px) {
-        padding: 30px 0;
-        
-      }
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
 
   .special-head {
     display: flex;
@@ -191,13 +205,11 @@
 
       @media (max-width: 1024px) {
         font-size: 60px;
-      margin: 0px 0px 20px 0;
-
+        margin: 0px 0px 20px 0;
       }
       @media (max-width: 767px) {
-      font-size: 45px;
+        font-size: 45px;
         line-height: 60px;
-        
       }
     }
 
@@ -211,14 +223,12 @@
       padding: 0 40px;
       line-height: 125%;
 
-       @media (max-width: 1024px) {
+      @media (max-width: 1024px) {
         padding: 0 30px;
-
       }
-       @media (max-width: 767px) {
+      @media (max-width: 767px) {
         padding: 0 10px;
         text-align: left;
-
       }
     }
   }
@@ -265,8 +275,8 @@
         iframe {
           width: 100%;
           height: 400px;
-           
-           @media (max-width: 1024px) {
+
+          @media (max-width: 1024px) {
             height: none;
           }
 
@@ -281,20 +291,18 @@
         width: 70%;
 
         @media (max-width: 1024px) {
-    width: 100%;
-
-      }
-@media (max-width: 767px) {
-    width: 100%;
-
-      }
+          width: 100%;
+        }
+        @media (max-width: 767px) {
+          width: 100%;
+        }
         iframe {
           width: 100%;
           height: 300px;
           @media (max-width: 1024px) {
             height: 400px;
           }
-           @media (max-width: 767px) {
+          @media (max-width: 767px) {
             height: 200px;
             padding: 0 10px;
           }
@@ -309,13 +317,13 @@
       justify-content: space-between;
       height: 100%;
 
-    @media (max-width: 1024px) {
-    flex-direction: column-reverse;
-    padding-top: 10px;
+      @media (max-width: 1024px) {
+        flex-direction: column-reverse;
+        padding-top: 10px;
       }
       @media (max-width: 767px) {
-    flex-direction: column-reverse;
-    padding-top: 10px;
+        flex-direction: column-reverse;
+        padding-top: 10px;
       }
 
       .content {
@@ -353,9 +361,8 @@
             font-size: 47px;
           }
           @media (max-width: 767px) {
-          font-size: 34px;
-
-      }
+            font-size: 34px;
+          }
         }
       }
 
@@ -368,7 +375,7 @@
           @media (max-width: 1024px) {
             height: none;
           }
-           @media (max-width: 767px) {
+          @media (max-width: 767px) {
             height: 200px;
             padding: 0 10px;
           }
@@ -504,13 +511,11 @@
 
     @media (max-width: 1024px) {
       text-align: center;
-      
     }
 
     @media (max-width: 767px) {
-     align-items: flex-start;
-     padding-left: 20px;
-      
+      align-items: flex-start;
+      padding-left: 20px;
     }
 
     h6 {
@@ -540,7 +545,7 @@
       }
     }
   }
-  .specialslide{
+  .specialslide {
     padding: 0 50px;
 
     @media (max-width: 1024px) {
@@ -582,15 +587,15 @@
 .video-responsive {
   width: 80%;
   margin: 0 auto;
-  
+
   @media (max-width: 1024px) {
     width: 85%;
   }
-  
+
   @media (max-width: 768px) {
     width: 90%;
   }
-  
+
   @media (max-width: 480px) {
     width: 95%;
   }
@@ -613,11 +618,11 @@
 .video-rounded {
   border-radius: 12px;
   overflow: hidden;
-  
+
   @media (max-width: 768px) {
     border-radius: 8px;
   }
-  
+
   @media (max-width: 480px) {
     border-radius: 6px;
   }
@@ -625,16 +630,12 @@
 
 .video-shadow {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  
+
   @media (max-width: 768px) {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
-  
+
   @media (max-width: 480px) {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   }
 }
-
-
-
-

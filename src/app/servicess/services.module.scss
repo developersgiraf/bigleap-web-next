@@ -1,6 +1,32 @@
 // ========================================
 .serviceCollect {
   padding: 120px 0 80px 0;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+.bgImage {
+  object-fit: contain;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  filter: blur(0.5px);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimizeQuality;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  
 }
 // GLOBAL TEXT COLOR CLASSES
 // ========================================

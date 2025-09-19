@@ -4,31 +4,43 @@ import { useState } from "react";
 import PortfolioEntry from "../portfolioEntry/portfolioEntry";
 import styles from "../../portfolio.module.css";
 
-const data = [{
+const data = [
+    {
         title: "Animation",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         image: "/portfolio/portfolio1.png",
-        readbtn: "Explore More"
+        readbtn: "Explore More",
+        background: "linear-gradient(to bottom, #28002A, #000000)",
+        link: "/portfolio/portfolio1"
     },
     {
         title: "Web & App",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         image: "/portfolio/blue.png",
-        readbtn: "Explore More"
+        readbtn: "Explore More",
+        background: "linear-gradient(to bottom, #00062A, #000000)",
+        link: "/portfolio/portfolio2"
+
     },
     {
         title: "Graphic Design",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         image: "/portfolio/black.png",
-        readbtn: "Explore More"
+        readbtn: "Explore More",
+        background: "linear-gradient(to bottom, #102A00, #000000)",
+        link: "/portfolio/portfolio3"
+
     },
     {
         title: "SEO SEM",
         description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         image: "/portfolio/last.png",
-        readbtn: "Explore More"
+        readbtn: "Explore More",
+        background: "linear-gradient(to bottom, #2A2500, #000000)",
+        link: "/portfolio/portfolio4"
+
     }
-    ];
+];
 
 export default function PortfolioContainer() {
   const [openStates, setOpenStates] = useState(data.map((_, index) => index < 1)); // Initialize based on data length
@@ -69,7 +81,7 @@ export default function PortfolioContainer() {
   // Function to determine arrow direction for each button
   const getArrowDirection = (index) => {
     const nextIndex = index + 1;
-    return nextIndex < openStates.length && openStates[nextIndex] ? '>' : '<';
+    return nextIndex < openStates.length && openStates[nextIndex] ? '<' : '>';
   };
 
   // Function to determine focus class for each entry
