@@ -15,9 +15,7 @@
     height: 60vh;
   }
 
-  @media (max-width: 480px) {
-    height: 50vh;
-  }
+  
 
   .hanging {
     position: relative;
@@ -52,11 +50,7 @@
         object-fit: contain;
       }
 
-      @media (max-width: 480px) {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-      }
+      
     }
 
     .characterimage {
@@ -77,26 +71,16 @@
         top: -90% !important;
       }
       @media (max-width: 1024px) {
-        top: -80%;
-        width: 80%;
+        top: -80% !important;
+        width: 80% !important;
       }
 
       @media (max-width: 767px) {
-        top: -60%;
-        width: 70%;
+        top: -60% !important;
+        width: 70% !important;
       }
 
-      @media (max-width: 480px) {
-        top: -50%;
-        width: 80%;
-        max-width: 300px;
-      }
-
-      @media (max-width: 360px) {
-        top: -30%;
-        width: 50%;
-        max-width: 250px;
-      }
+      
     }
   }
 }
@@ -394,13 +378,11 @@ width: 90% !important;
     padding: 120px 40px 60px 40px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 60px 0 40px 0;
   }
 
-  @media (max-width: 480px) {
-    padding: 40px 0 20px 0;
-  }
+  
 
   // Video container customization
   .vdo {
@@ -411,13 +393,11 @@ width: 90% !important;
       padding: 0 20px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       padding: 0 10px;
     }
 
-    @media (max-width: 480px) {
-      padding: 0 5px;
-    }
+   
 
     // Custom video width controls
     iframe {
@@ -433,18 +413,14 @@ width: 90% !important;
         max-width: 700px;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         width: 90% !important;
         max-width: 100%;
         border-radius: 8px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
 
-      @media (max-width: 480px) {
-        width: 95% !important;
-        border-radius: 6px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-      }
+      
     }
 
     // Video slider content wrapper
@@ -453,13 +429,11 @@ width: 90% !important;
       max-width: 80%;
       margin: 0 auto;
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         max-width: 90%;
       }
 
-      @media (max-width: 480px) {
-        max-width: 95%;
-      }
+      
     }
 
     // Custom video aspect ratio container
@@ -476,16 +450,13 @@ width: 90% !important;
         width: 85%;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         width: 90%;
         border-radius: 8px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
 
-      @media (max-width: 480px) {
-        width: 95%;
-        border-radius: 6px;
-      }
+      
 
       iframe {
         position: absolute;
@@ -552,13 +523,11 @@ width: 90% !important;
       padding: 0 80px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       padding: 0 40px;
     }
 
-    @media (max-width: 480px) {
-      padding: 0 20px;
-    }
+    
   }
 }
 
@@ -592,13 +561,11 @@ width: 90% !important;
     width: 85%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 90%;
   }
 
-  @media (max-width: 480px) {
-    width: 95%;
-  }
+  
 }
 
 // VIDEO ASPECT RATIO UTILITIES
@@ -619,23 +586,19 @@ width: 90% !important;
   border-radius: 12px;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     border-radius: 8px;
   }
 
-  @media (max-width: 480px) {
-    border-radius: 6px;
-  }
+  
 }
 
 .video-shadow {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 
-  @media (max-width: 480px) {
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  }
+  
 }
