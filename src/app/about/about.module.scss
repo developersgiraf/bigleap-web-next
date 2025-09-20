@@ -79,3 +79,146 @@
     }
   }
 }
+
+// responsive
+
+@media (max-width: 1024px) {
+  .about-main-section {
+    padding: 0px 0 40px 0;
+
+    .about-sect {
+      flex-direction: column;
+      padding: 0 50px;
+.abt-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+      .comic {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+      .abt-cnt {
+        width: 100%;
+
+        h4 {
+          font-size: 24px;
+        }
+        .aboutContent {
+        padding-top: 10px;
+        p {
+        font-size: 14px;
+        line-height: 125%;
+        // padding-top: 15px;
+      }
+    }
+      }
+    }
+  }
+
+  .history-area {
+    padding: 100px 0 40px 0;
+
+    .history-head {
+      h2 {
+        font-size: 48px;
+      }
+
+      p {
+        padding: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+
+}
+@media (max-width: 992px) {
+  .about-main-section {
+    padding: 0px 0 40px 0;
+
+    .about-sect {
+      flex-direction: column;
+      padding: 0 0px;
+.abt-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+      .comic {
+        width: 60%;
+        height: auto;
+        display: block;
+      }
+    }
+      .abt-cnt {
+        width: 100%;
+
+        h4 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .history-area {
+    padding: 100px 0 40px 0;
+
+    .history-head {
+      h2 {
+        font-size: 48px;
+      }
+
+      p {
+        padding: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .about-main-section {
+    padding: 0px 0 40px 0;
+
+    .about-sect {
+      flex-direction: column;
+      padding: 0 0px;
+.abt-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+      .comic {
+        width: 70%;
+        height: auto;
+        display: block;
+      }
+    }
+      .abt-cnt {
+        width: 100%;
+        padding: 15px;
+
+        h4 {
+          font-size: 24px;
+        text-align: left;
+
+        }
+      }
+    }
+  }
+
+  .history-area {
+    padding: 40px 0 40px 0;
+
+    .history-head {
+      h2 {
+        font-size: 35px;
+      }
+
+      p {
+        padding: 15px;
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -567,6 +567,11 @@
       line-height: 93%;
       font-weight: 400;
       font-family: "Montserrat", sans-serif !important;
+
+      @media (max-width: 1024px) {
+        font-size: 14px !important;
+        text-align: center !important;
+      }
     }
 
     h2 {
@@ -577,6 +582,9 @@
       font-size: 64px;
 
       @media (max-width: 1024px) {
+        font-size: 40px !important;
+      }
+      @media (max-width: 992px) {
         font-size: 32px !important;
       }
 
@@ -591,9 +599,11 @@
     padding: 0 50px;
 
     @media (max-width: 1024px) {
+      padding: 0 0 !important;
+    }
+    @media (max-width: 992px) {
       padding: 0 80px !important;
     }
-
     @media (max-width: 767px) {
       padding: 0 40px !important;
     }

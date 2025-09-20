@@ -130,8 +130,18 @@
   }
 }
 
-
 @media (max-width: 1024px) {
+.bigleapCnt {
+      h2 {
+font-size: 30px !important;
+line-height: 30px !important;
+      }
+}
+.firstcol{
+  padding: 0 0 0 90px !important;
+}
+}
+@media (max-width: 992px) {
   .footerArea {
     padding: 120px 0 0 0;
 
@@ -215,6 +225,7 @@
   }
 }
 //mobile responsive
+
 @media (max-width: 767px) {
   .footerArea {
   

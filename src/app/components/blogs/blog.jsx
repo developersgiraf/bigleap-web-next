@@ -20,6 +20,7 @@ export default function BlogSection() {
       date: "2023-10-03",
       about: "This is a brief description of Blog 3.",
     },
+   
   ];
 
   return (
@@ -34,7 +35,7 @@ export default function BlogSection() {
             <div className={styles.blogimages}>
               <div className={`row ${styles.blogrow}`}>
                 {list.map((item, index) => (
-                  <div className="col-xl-4 col-lg-12 col-md-6 col-sm-12" key={index}>
+                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12" key={index}>
                     <img src={item.image} alt={item.title} />
                     <div className={styles.titleHead}>
                       <h6 className={styles.title}>{item.title}</h6>

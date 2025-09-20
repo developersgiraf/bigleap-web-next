@@ -7,7 +7,7 @@ export default function ClientsArea() {
         <h6>Our Clients</h6>
         <h2>Trusted Clients</h2>
       </div>
-      <Slider
+      <Slider 
         datas={[
           { img: "/image (1).jpg", imgWH: 774, idname: "clientSlide1" },
           { img: "/image (2).jpg", imgWH: 774, idname: "clientSlide2" },
@@ -32,8 +32,9 @@ export default function ClientsArea() {
         loop={true}
         breakpoints={{
           320: { slidesPerView: 3, spaceBetween: 0 },
-          640: { slidesPerView: 4, spaceBetween: 0 },
-          1024: { slidesPerView: 3, spaceBetween: 0 },
+          640: { slidesPerView: 5, spaceBetween: 0 },
+          992: { slidesPerView: 8, spaceBetween: 0 },
+          1024: { slidesPerView: 7, spaceBetween: 0 },
           1366: { slidesPerView: 11, spaceBetween: 0 },
         }}
       />

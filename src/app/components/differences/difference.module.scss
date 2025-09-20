@@ -77,6 +77,35 @@
     padding: 180px 0 60px !important;
     .diff {
       h2 {
+        font-size: 55px;
+        line-height: 40px;
+      }
+      p {
+        width: 90% !important;
+        font-size: 14px;
+        line-height: 20px !important;
+      }
+    }
+    .all {
+      flex-wrap: wrap;
+      padding: 20px 0px;
+      gap: 20px !important;
+
+      .each {
+        height: auto !important;
+        p{
+          font-size: 14px !important;
+          text-align: left !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .test {
+    padding: 180px 0 60px !important;
+    .diff {
+      h2 {
         font-size: 45px;
         line-height: 40px;
       }
@@ -97,7 +126,6 @@
     }
   }
 }
-
   @media (max-width: 767px) {
     .test {
       padding: 120px 0 40px !important;

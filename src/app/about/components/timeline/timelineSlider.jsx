@@ -68,12 +68,12 @@ export default function TimelineSlider() {
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                     breakpoints={{
                         320: {
-                            slidesPerView: 1,
-                            spaceBetween: 20,
+                            slidesPerView: 2,
+                            spaceBetween: 0,
                         },
                         640: {
                             slidesPerView: 2,
-                            spaceBetween: 30,
+                            spaceBetween: 10,
                         },
                         1024: {
                             slidesPerView: 3,

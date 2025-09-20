@@ -115,7 +115,7 @@
     }
 
     // Media queries
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         padding: 60px 10px;
         
         .timelineIcon {
@@ -137,19 +137,5 @@
         }
     }
 
-    @media (max-width: 480px) {
-        .timelineIcon {
-            width: 80px;
-            height: 80px;
-        }
-        
-        .timelineTitle {
-            font-size: 11px;
-            max-width: 100px;
-        }
-        
-        .timelineYear {
-            font-size: 14px;
-        }
-    }
+
 }

@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles["about-sect"]}>
             <div className="row">
-              <div className="col-xl-5">
+              <div className="col-xl-5 col-lg-5 col-md-12 col-12">
                 <div className={styles["abt-img"]}>
                   <Image
                     src="/comic.png"
@@ -32,7 +32,7 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              <div className="col-xl-7">
+              <div className="col-xl-7 col-lg-7 col-md-12 col-12">
                 <div className={styles["abt-cnt"]}>
                   <h4>
                     A creative studio specializing in the production of
@@ -76,22 +76,7 @@ export default function AboutPage() {
                       sit amet consectetur adipisicing elit. Sunt debitis beatae
                       voluptatem libero
                     </p>
-                    <p>
-                      Sunt debitis beatae voluptatem libero impedit iusto
-                      maiores quaerat magnam expedita odit natus fugit quasi
-                      accusamus veritatis, nemo delectus cupiditate perferendis
-                      eligendi.Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Sunt debitis beatae voluptatem libero
-                      impedit iusto maiores quaerat magnam expedita odit natus
-                      fugit quasi accusamus veritatis, nemo delectus cupiditate
-                      perferendis eligendi.Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero impedit iusto maiores quaerat magnam
-                      expedita odit natus fugit quasi accusamus veritatis, nemo
-                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero
-                    </p>
+                    
                   </div>
                 </div>
               </div>

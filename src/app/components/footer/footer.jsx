@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="container">
           <div className="row justify-content-center">
             <div
-              className={`col-xl-4 col-lg-4 col-md-12 col-12 ${styles.firstcol}`}
+              className={`col-xl-4 col-lg-5 col-md-12 col-12 ${styles.firstcol}`}
             >
               <div className={styles.bigleap}>
                 <Image
@@ -28,7 +28,7 @@ export default function Footer() {
                 </h6>
               </div>
             </div>
-            <div className="col-xl-8 col-lg-8 col-md-12 col-12">
+            <div className="col-xl-8 col-lg-7 col-md-12 col-12">
               <div className={styles.content}>
                 <div className={styles.bigleapCnt}>
                   <h2>Let's Starts from a 'Hi'</h2>
@@ -80,7 +80,7 @@ export default function Footer() {
                         </ul>
                       </div>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md-6 col-7">
+                    <div className="col-xl-3 col-lg-6 col-md-6 col-7">
                       <div className={styles.subcol}>
                         <h5>Say Hello</h5>
                         <ul>

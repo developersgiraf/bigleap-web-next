@@ -122,6 +122,27 @@
     .buttonContainer {
       top: 50% !important;
     }
+  
+    
+  }
+  .modalContent{
+      width: 80% !important;
+      height: 60vh !important;
+    }
+      .input{
+  padding: 15px 20px !important;
+}
+}
+
+@media (max-width: 992px) {
+  .enquiry-section {
+    .image {
+      height: 60vh !important;
+    }
+
+    .buttonContainer {
+      top: 50% !important;
+    }
     
   }
   .modalContent{
@@ -129,7 +150,6 @@
       height: 55vh !important;
     }
 }
-
 @media (max-width: 767px) {
   .enquiry-section {
   
