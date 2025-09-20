@@ -115,8 +115,18 @@
     }
 
     // Media queries
+    @media (max-width: 1024px) {
+          .timelineWrapper {
+        max-width: 980px;
+    }
+    }
+    @media (max-width: 992px) {
+         .timelineWrapper {
+        max-width: 760px;
+    }
+    }
     @media (max-width: 767px) {
-        padding: 60px 10px;
+        padding: 10px 10px;
         
         .timelineIcon {
             width: 100px;
@@ -135,6 +145,9 @@
         .timelineLine {
             height: 2px;
         }
+        .timelineWrapper {
+        max-width: 370px;
+    }
     }
 
 

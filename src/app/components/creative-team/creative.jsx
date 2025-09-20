@@ -39,7 +39,7 @@ export default function CreativeTeam() {
       <div className="container">
         <div className={`row ${styles.teamRow}`}>
               {list.map((item, index) => (
-                <div key={index} className={`col-xl-4 ${styles.profileCol}`}>
+                <div key={index} className={`col-xl-4 col-lg-4 col-md-6 col-12 ${styles.profileCol}`}>
                     <Profile
                       image={item.image}
                       name={item.name}
