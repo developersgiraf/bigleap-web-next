@@ -60,35 +60,21 @@
 
   /* Tablet responsiveness */
   @media (max-width: 1024px) {
-    width: 50px;
-    height: 50px;
-    padding: 12px 16px;
+    width: 50px !important;
+    height: 50px !important;
+    padding: 12px 16px !important;
   }
 
   /* Mobile responsiveness */
   @media (max-width: 767px) {
-    width: 40px;
-    height: 40px;
-    padding: 8px 12px;
-    border-radius: 20px;
-    box-shadow: -2px 0px 0 0px #fff;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px 12px !important;
+    border-radius: 20px !important;
+    box-shadow: -2px 0px 0 0px #fff !important;
   }
 
-  /* Small mobile responsiveness */
-  @media (max-width: 480px) {
-    width: 45px;
-    height: 45px;
-    padding: 6px 20px;
-    border-radius: 28px;
-  }
-
-  /* Extra small mobile */
-  @media (max-width: 360px) {
-    width: 30px;
-    height: 30px;
-    padding: 4px 8px;
-    border-radius: 15px;
-  }
+   
 }
 
 .circle-nav-btn.left {
@@ -97,27 +83,17 @@
 
   /* Tablet responsiveness */
   @media (max-width: 1024px) {
-    left: 0;
-    font-size: 20px;
+    left: 0 !important;
+    font-size: 20px !important;
   }
 
   /* Mobile responsiveness */
   @media (max-width: 767px) {
-    left: 8px;
-    font-size: 18px;
+    left: 8px !important;
+    font-size: 18px !important;
   }
 
-  /* Small mobile responsiveness */
-  @media (max-width: 480px) {
-    left: 10px;
-    font-size: 16px;
-  }
-
-  /* Extra small mobile */
-  @media (max-width: 360px) {
-    left: 10px;
-    font-size: 14px;
-  }
+  
 }
 
 .circle-nav-btn.right {
@@ -126,27 +102,17 @@
   
   /* Tablet responsiveness */
   @media (max-width: 1024px) {
-    right: 5px;
-    font-size: 20px;
+    right: 5px !important;
+    font-size: 20px !important;
   }
 
   /* Mobile responsiveness */
   @media (max-width: 767px) {
-    right: 8px;
-    font-size: 18px;
+    right: 8px !important;
+    font-size: 18px !important;
   }
 
-  /* Small mobile responsiveness */
-  @media (max-width: 480px) {
-    right: 10px;
-    font-size: 16px;
-  }
-
-  /* Extra small mobile */
-  @media (max-width: 360px) {
-    right: 10px;
-    font-size: 14px;
-  }
+  
 }
 
 :root {
@@ -255,12 +221,12 @@ p {
 
 @media (max-width: 1024px) {
     .stat-number {
-        font-size: 68px;
+        font-size: 68px !important;
     }
 }
 @media (max-width: 767px) {
     .stat-number {
-        font-size: 60px;
+        font-size: 60px !important;
     }
 }
 
@@ -276,47 +242,27 @@ p {
 @media (max-width: 1024px) {
   .circle-nav-btn.left {
     left: 10px !important;
-    z-index: 1000;
+    z-index: 1000 !important;
   }
   
   .circle-nav-btn.right {
     right: 10px !important;
-    z-index: 1000;
+    z-index: 1000 !important;
   }
 }
 @media (max-width: 767px) {
   .circle-nav-btn.left {
     left: 10px !important;
-    z-index: 1000;
+    z-index: 1000 !important;
   }
   
   .circle-nav-btn.right {
     right: 10px !important;
-    z-index: 1000;
+    z-index: 1000 !important;
   }
 }
 
-/* Small mobile override */
-/* @media (max-width: 480px) {
-  .circle-nav-btn.left {
-    left: 8px !important;
-  }
-  
-  .circle-nav-btn.right {
-    right: 8px !important;
-  }
-} */
 
-/* Extra small mobile override */
-@media (max-width: 360px) {
-  .circle-nav-btn.left {
-    left: 5px !important;
-  }
-  
-  .circle-nav-btn.right {
-    right: 5px !important;
-  }
-}
 
 /* ========================================
    CLIENTS SLIDER GLOBAL STYLES
@@ -338,17 +284,13 @@ p {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .mySwiper {
     padding: 10px 0 !important;
   }
 }
 
-@media (max-width: 480px) {
-  .mySwiper {
-    padding: 8px 0 !important;
-  }
-}
+
 
 .slideContent {
   padding: 0 !important;
@@ -369,7 +311,6 @@ p {
 }
 
 .swiper-slide {
-  margin: 0 !important;
   padding: 0 !important;
 }
 

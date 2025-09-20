@@ -59,15 +59,15 @@ export default function InstaFeeds() {
             loop={true}
             breakpoints={{
               320: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 0,
               },
               640: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 0,
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 0,
               },
               1200: {

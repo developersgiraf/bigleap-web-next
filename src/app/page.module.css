@@ -196,16 +196,17 @@ a.secondary {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+ 
+  .contentWrapper {
+    padding: 0 40px !important;
+  }
+}
+@media (max-width: 767px) {
   .backgroundImage {
     height: 80vh;
     box-shadow: 0 0 40px 20px rgba(15, 18, 24, 0.7);
-  }
+ 
 }
 
-@media (max-width: 480px) {
-  .backgroundImage {
-    height: 60vh;
-    box-shadow: 0 0 20px 10px rgba(15, 18, 24, 0.7);
-  }
-}
+

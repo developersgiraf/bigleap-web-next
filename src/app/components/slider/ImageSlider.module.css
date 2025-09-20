@@ -5,13 +5,20 @@
 .mySwiper {
   padding: 30px 0px;
 
-  @media (max-width: 767px) {
-    padding: 20px 0px;
+  @media (max-width: 1024px) {
+    padding: 20px 100px !important;
+
   }
 
-  @media (max-width: 480px) {
-    padding: 15px 0px;
+  @media (max-width: 992px) {
+    padding: 20px 50px !important;
+
   }
+  @media (max-width: 767px) {
+    padding: 10px 0px !important;
+  }
+
+ 
 }
 
 .slideContent {
@@ -23,12 +30,10 @@
   justify-content: center;
 
   @media (max-width: 767px) {
-    padding: 10px;
+    padding: 0 !important;
   }
 
-  @media (max-width: 480px) {
-    padding: 5px;
-  }
+  
 }
 
 .imageContainer {
@@ -42,6 +47,9 @@
   object-fit: contain;
   width: 100%;
  
+  @media (max-width: 767px) {
+   height: 22vh !important;
+  }
 }
 
 .client {
@@ -67,15 +75,12 @@
   gap: 20px;
   padding-top: 10px;
 
-  @media (max-width: 768px) {
-    gap: 15px;
-    padding-top: 8px;
+  @media (max-width: 767px) {
+    gap: 15px !important;
+    padding-top: 8px !important;
   }
 
-  @media (max-width: 480px) {
-    gap: 10px;
-    padding-top: 6px;
-  }
+  
 }
 
 .caption {
@@ -90,19 +95,16 @@
   letter-spacing: 0%;
 
 @media (max-width: 1024px) {
-    font-size: 18px;
-    margin-top: 6px;
+    font-size: 18px !important;
+    margin-top: 6px !important;
   }
 
   @media (max-width: 767px) {
-    font-size: 18px;
-    margin-top: 6px;
+    font-size: 18px !important;
+    margin-top: 6px !important;
   }
 
-  @media (max-width: 480px) {
-    font-size: 16px;
-    margin-top: 4px;
-  }
+ 
 }
 
 .readbtn {
@@ -119,18 +121,15 @@
   cursor: pointer;
 
   @media (max-width: 1024px) {
-    font-size: 17px;
-    margin-top: 6px;
+    font-size: 17px !important;
+    margin-top: 6px !important;
   }
   @media (max-width: 767px) {
-    font-size: 12px;
-    margin-top: 6px;
+    font-size: 12px !important;
+    margin-top: 6px !important;
   }
 
-  @media (max-width: 480px) {
-    font-size: 13px;
-    margin-top: 4px;
-  }
+  
 }
 
 .readbtn:hover {

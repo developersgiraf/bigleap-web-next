@@ -31,7 +31,7 @@ export default function ClientsArea() {
         autoplay={false}
         loop={true}
         breakpoints={{
-          320: { slidesPerView: 2, spaceBetween: 0 },
+          320: { slidesPerView: 3, spaceBetween: 0 },
           640: { slidesPerView: 4, spaceBetween: 0 },
           1024: { slidesPerView: 3, spaceBetween: 0 },
           1366: { slidesPerView: 11, spaceBetween: 0 },

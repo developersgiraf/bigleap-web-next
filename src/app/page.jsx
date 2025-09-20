@@ -137,8 +137,8 @@ export default function Home() {
               autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
-                640: { slidesPerView: 3, spaceBetween: 10 },
-                1024: { slidesPerView: 2, spaceBetween: 120 },
+                640: { slidesPerView: 3, spaceBetween: 80 },
+                1024: { slidesPerView: 3, spaceBetween: 90 },
                 1366: { slidesPerView: 4, spaceBetween: 10 },
               }}
             />
@@ -317,8 +317,9 @@ export default function Home() {
               autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
-                640: { slidesPerView: 1, spaceBetween: 5 },
-                // 1024: { slidesPerView: 2, spaceBetween: 10 },
+                640: { slidesPerView: 1, spaceBetween: 50 },
+                992: { slidesPerView: 2, spaceBetween: 40 },
+                1024: { slidesPerView: 2, spaceBetween: 100 },
                 1366: { slidesPerView: 3, spaceBetween: 10 },
               }}
               imageSize={400}

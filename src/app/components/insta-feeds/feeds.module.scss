@@ -95,9 +95,9 @@
 }
 
 // Responsive styles
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .instaFeeds {
-    padding: 40px 0;
+    padding: 0px 0 !important;
   }
 
   .feedItem {
@@ -115,14 +115,14 @@
       }
     }
   }
-}
+
 .stikyimg{
-  width: 100px !important;
-  height: 100px !important;
+  width: 70px !important;
+  height: 70px !important;
+}
+.stikyImage {
+  height: 100% !important;
+}
 }
 
-@media (max-width: 480px) {
-  .feedItem {
-    height: 250px;
-  }
-}
+

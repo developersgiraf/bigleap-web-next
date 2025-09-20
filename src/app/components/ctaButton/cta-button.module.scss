@@ -4,8 +4,8 @@
         align-items: center;
         margin: 20px 0;
 
-        @media (max-width: 768px) {
-            margin: 10px 0;
+        @media (max-width: 767px) {
+            margin: 10px 0 !important;
         }
 
         a, button {
@@ -32,12 +32,12 @@
                 font-size: 14px !important;
             }
             @media (max-width: 1024px) {
-                padding: 10px 15px;
+                padding: 10px 25px !important;
                 
             }
             @media (max-width: 767px) {
-                padding: 10px 20px;
-                
+                padding: 10px 15px !important;
+
             }
 
             &:hover {

@@ -65,15 +65,7 @@
     left: -60px;
   }
 
-  /* Small mobile responsiveness */
-  @media (max-width: 480px) {
-    left: -40px;
-  }
-
-  /* Extra small mobile */
-  @media (max-width: 360px) {
-    left: -30px;
-  }
+ 
 }
 
 .right {
@@ -83,8 +75,14 @@
   @media (max-width: 1366px) {
     right: 120px;
   }
+  @media (max-width: 1199px) {
+    right: 100px;
+  }
   @media (max-width: 1024px) {
-    right: 70px;
+    right: 100px;
+  }
+  @media (max-width: 992px) {
+    right: 120px;
   }
 
   /* Mobile responsiveness */

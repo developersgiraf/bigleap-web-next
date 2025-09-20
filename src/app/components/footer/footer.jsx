@@ -80,7 +80,7 @@ export default function Footer() {
                         </ul>
                       </div>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md-6 col-6">
+                    <div className="col-xl-3 col-lg-3 col-md-6 col-7">
                       <div className={styles.subcol}>
                         <h5>Say Hello</h5>
                         <ul>
