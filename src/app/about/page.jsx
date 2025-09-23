@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles["about-sect"]}>
             <div className="row">
-              <div className="col-xl-5 col-lg-5 col-md-12 col-12">
+              <div className="col-xxl-col-xl-5 col-lg-5 col-md-12 col-12">
                 <div className={styles["abt-img"]}>
                   <Image
                     src="/comic.png"

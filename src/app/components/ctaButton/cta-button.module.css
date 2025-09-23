@@ -4,9 +4,9 @@
   align-items: center;
   margin: 20px 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .btn {
-    margin: 10px 0;
+    margin: 10px 0 !important;
   }
 }
 .btn a, .btn button {
@@ -28,14 +28,20 @@
   position: relative;
   cursor: pointer;
 }
+@media (max-width: 1366px) {
+  .btn a, .btn button {
+    padding: 8px 8px !important;
+    font-size: 14px !important;
+  }
+}
 @media (max-width: 1024px) {
   .btn a, .btn button {
-    padding: 10px 15px;
+    padding: 10px 25px !important;
   }
 }
 @media (max-width: 767px) {
   .btn a, .btn button {
-    padding: 10px 20px;
+    padding: 10px 15px !important;
   }
 }
 .btn a:hover, .btn button:hover {
@@ -48,5 +54,5 @@
 
 .btn {
   position: relative;
-  z-index: 10;
+  z-index: 100;
 }/*# sourceMappingURL=cta-button.module.css.map */

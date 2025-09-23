@@ -112,7 +112,13 @@
 }
 
 //mobile responsiveness
+@media (max-width: 1370px) {
+  .modalContent{
+      width: 80% !important;
+      height: 55vh !important;
+    }
 
+}
 @media (max-width: 1024px) {
   .enquiry-section {
     .image {

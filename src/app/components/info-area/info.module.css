@@ -24,6 +24,11 @@
   color: #fdfdfd;
 }
 
+@media (max-width: 1370px) {
+  .head-top-contacts ul {
+    margin: 0 0 0 130px !important;
+  }
+}
 @media (max-width: 1024px) {
   .header-top-area .head-top-contacts ul {
     padding: 20px 20px !important;
@@ -38,5 +43,6 @@
     padding: 20px 20px !important;
     margin: 0 0 0 0 !important;
     width: auto !important;
+    gap: 30px !important;
   }
 }/*# sourceMappingURL=info.module.css.map */

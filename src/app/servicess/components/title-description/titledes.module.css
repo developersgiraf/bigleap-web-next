@@ -12,16 +12,6 @@
   line-height: 100px;
   color: #fdfdfd;
 }
-@media (max-width: 768px) {
-  .titleDescription .title {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 480px) {
-  .titleDescription .title {
-    font-size: 1.8rem;
-  }
-}
 .titleDescription .description {
   padding: 10px 0;
   font-size: 1.1rem;
@@ -29,11 +19,6 @@
   text-align: center;
   margin: auto;
   width: 90%;
-}
-@media (max-width: 768px) {
-  .titleDescription .description {
-    font-size: 1rem;
-  }
 }
 
 .highlight {
@@ -122,4 +107,18 @@
 .glow.teal {
   color: #1abc9c;
   text-shadow: 0 0 10px rgba(26, 188, 156, 0.5);
+}
+
+@media (max-width: 1370px) {
+  .titleDescription {
+    padding: 0 30px !important;
+  }
+}
+@media (max-width: 767px) {
+  .description {
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
 }/*# sourceMappingURL=titledes.module.css.map */

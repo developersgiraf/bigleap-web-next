@@ -35,21 +35,6 @@
     opacity: 0.25;
   }
 
-  /* Small mobile responsiveness */
-  @media (max-width: 480px) {
-    width: 250px;
-    height: 250px;
-    filter: blur(80px);
-    opacity: 0.2;
-  }
-
-  /* Extra small mobile */
-  @media (max-width: 360px) {
-    width: 200px;
-    height: 200px;
-    filter: blur(60px);
-    opacity: 0.15;
-  }
 }
 
 .left {
@@ -72,8 +57,8 @@
   right: -100px;
 
   /* Tablet responsiveness */
-  @media (max-width: 1366px) {
-    right: 120px;
+  @media (max-width: 1370px) {
+    right: 100px;
   }
   @media (max-width: 1199px) {
     right: 100px;

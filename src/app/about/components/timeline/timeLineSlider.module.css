@@ -3,6 +3,11 @@
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 1370px) {
+  .timelineSlider {
+    padding: 40px 90px !important;
+  }
+}
 .timelineSlider .timelineWrapper {
   position: relative;
   max-width: 1200px;
@@ -100,9 +105,19 @@
 .timelineSlider :global(.swiper-wrapper) {
   align-items: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .timelineSlider .timelineWrapper {
+    max-width: 980px;
+  }
+}
+@media (max-width: 992px) {
+  .timelineSlider .timelineWrapper {
+    max-width: 760px;
+  }
+}
+@media (max-width: 767px) {
   .timelineSlider {
-    padding: 60px 10px;
+    padding: 10px 10px;
   }
   .timelineSlider .timelineIcon {
     width: 100px;
@@ -118,17 +133,7 @@
   .timelineSlider .timelineLine {
     height: 2px;
   }
-}
-@media (max-width: 480px) {
-  .timelineSlider .timelineIcon {
-    width: 80px;
-    height: 80px;
-  }
-  .timelineSlider .timelineTitle {
-    font-size: 11px;
-    max-width: 100px;
-  }
-  .timelineSlider .timelineYear {
-    font-size: 14px;
+  .timelineSlider .timelineWrapper {
+    max-width: 370px;
   }
 }/*# sourceMappingURL=timeLineSlider.module.css.map */

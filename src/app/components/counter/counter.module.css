@@ -45,8 +45,8 @@
 }
 @media (max-width: 767px) {
   .stat-block {
-    min-width: 120px;
-    padding: 15px;
+    min-width: 120px !important;
+    padding: 20px !important;
   }
 }
 

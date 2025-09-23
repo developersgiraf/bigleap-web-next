@@ -53,13 +53,13 @@ export default function Home() {
       <section className={styles["about-area"]}>
         <div className="container">
           <div className={`row align-items-center ${styles["about-row"]}`}>
-            <div className="col-xl-5 col-lg-5 col-md-5 col-12">
+            <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-12">
               <div className={styles["about-first-box"]}>
                 <img src="Scate.png" alt="" />
               </div>
             </div>
 
-            <div className="col-xl-7 col-lg-7 col-md-7 col-12">
+            <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-12">
               <div className={styles["about-secont-box"]}>
                 <h4>
                   {" "}

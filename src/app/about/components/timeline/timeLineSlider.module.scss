@@ -2,7 +2,10 @@
     padding: 40px 20px;
     position: relative;
     overflow: hidden;
-
+    
+    @media (max-width: 1370px) {
+            padding: 40px 90px !important;
+    }
     .timelineWrapper {
         position: relative;
         max-width: 1200px;
@@ -115,6 +118,7 @@
     }
 
     // Media queries
+    
     @media (max-width: 1024px) {
           .timelineWrapper {
         max-width: 980px;

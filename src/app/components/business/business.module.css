@@ -6,17 +6,22 @@
 }
 @media (max-width: 1024px) {
   .businessArea .business-list {
-    padding: 0 0;
+    padding: 0 20px !important;
+  }
+}
+@media (max-width: 992px) {
+  .businessArea .business-list {
+    padding: 0 0 !important;
   }
 }
 @media (max-width: 767px) {
   .businessArea .business-list {
-    padding: 0 0;
+    padding: 0 0 !important;
   }
 }
 @media (max-width: 1024px) {
   .businessArea .business-list .heading {
-    padding: 0 20px;
+    padding: 0 20px !important;
   }
 }
 .businessArea .business-list .heading h2 {
@@ -28,14 +33,14 @@
 }
 @media (max-width: 1024px) {
   .businessArea .business-list .heading h2 {
-    font-size: 32px;
-    line-height: 60px;
+    font-size: 32px !important;
+    line-height: 60px !important;
   }
 }
 @media (max-width: 767px) {
   .businessArea .business-list .heading h2 {
-    font-size: 45px;
-    line-height: 60px;
+    font-size: 25px !important;
+    line-height: 36px !important;
   }
 }
 .businessArea .business-list .heading .list {
@@ -48,8 +53,8 @@
 }
 @media (max-width: 767px) {
   .businessArea .business-list .heading .list {
-    padding-top: 10px;
-    font-size: 16px;
+    padding-top: 10px !important;
+    font-size: 14px !important;
   }
 }
 .businessArea .business-list .lists {
@@ -57,12 +62,12 @@
 }
 @media (max-width: 1024px) {
   .businessArea .business-list .lists {
-    padding-left: 10px;
+    padding-left: 10px !important;
   }
 }
 @media (max-width: 767px) {
   .businessArea .business-list .lists {
-    padding-left: 0px;
+    padding-left: 0px !important;
   }
 }
 .businessArea .buscol .businessHead {
@@ -78,7 +83,7 @@
 }
 @media (max-width: 767px) {
   .businessArea .buscol .businessHead h5 {
-    font-size: 16px;
+    font-size: 16px !important;
   }
 }
 .businessArea .buscol .businessHead .listcontent {
@@ -90,6 +95,6 @@
 }
 @media (max-width: 767px) {
   .businessArea .buscol .businessHead .listcontent {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 }/*# sourceMappingURL=business.module.css.map */

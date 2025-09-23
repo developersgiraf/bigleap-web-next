@@ -89,9 +89,15 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .stikyimg {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+@media (max-width: 767px) {
   .instaFeeds {
-    padding: 40px 0;
+    padding: 0px 0 !important;
   }
   .feedItem {
     height: 300px;
@@ -105,14 +111,11 @@
   .feedSwiper .swiper-button-prev:after {
     font-size: 14px;
   }
-}
-.stikyimg {
-  width: 100px !important;
-  height: 100px !important;
-}
-
-@media (max-width: 480px) {
-  .feedItem {
-    height: 250px;
+  .stikyimg {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .stikyImage {
+    height: 100% !important;
   }
 }/*# sourceMappingURL=feeds.module.css.map */

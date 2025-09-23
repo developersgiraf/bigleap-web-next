@@ -82,6 +82,17 @@
 
 // responsive
 
+@media (max-width: 1370px) {
+   .about-main-section {
+    padding: 200px 0 40px 0 !important;
+   }
+    .abt-cnt {
+        width: 90% !important;
+    }
+    .comic {
+      width: 90% !important;
+      }
+}
 @media (max-width: 1024px) {
   .about-main-section {
     padding: 220px 0 40px 0;

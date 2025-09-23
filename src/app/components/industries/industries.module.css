@@ -29,4 +29,13 @@
 }
 .Industries .industryList ul li .link:hover {
   color: red;
+}
+
+@media (max-width: 1370px) {
+  .contents {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 100px;
+  }
 }/*# sourceMappingURL=industries.module.css.map */

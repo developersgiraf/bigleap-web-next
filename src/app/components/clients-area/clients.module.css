@@ -24,7 +24,7 @@
 
 @media (max-width: 1024px) {
   .client-section {
-    padding: 0px 0 50px 0;
+    padding: 0px 0 50px 0 !important;
   }
   .client-section h2 {
     font-size: 48px !important;
@@ -33,8 +33,8 @@
 }
 @media (max-width: 767px) {
   .client-section h2 {
-    font-size: 47px;
-    line-height: 65px;
-    text-align: center;
+    font-size: 35px !important;
+    line-height: 40px !important;
+    text-align: center !important;
   }
 }/*# sourceMappingURL=clients.module.css.map */

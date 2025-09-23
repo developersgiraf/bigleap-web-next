@@ -61,4 +61,131 @@
   font-family: "Montserrat", sans-serif !important;
   text-align: center;
   padding: 45px 200px;
+}
+
+@media (max-width: 1370px) {
+  .about-main-section {
+    padding: 200px 0 40px 0 !important;
+  }
+  .abt-cnt {
+    width: 90% !important;
+  }
+  .comic {
+    width: 90% !important;
+  }
+}
+@media (max-width: 1024px) {
+  .about-main-section {
+    padding: 220px 0 40px 0;
+  }
+  .about-main-section .about-sect {
+    flex-direction: column;
+    padding: 0 50px;
+  }
+  .about-main-section .about-sect .abt-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-main-section .about-sect .abt-img .comic {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .about-main-section .about-sect .abt-cnt {
+    width: 100%;
+  }
+  .about-main-section .about-sect .abt-cnt h4 {
+    font-size: 24px;
+  }
+  .about-main-section .about-sect .abt-cnt .aboutContent {
+    padding-top: 10px;
+  }
+  .about-main-section .about-sect .abt-cnt .aboutContent p {
+    font-size: 14px;
+    line-height: 125%;
+  }
+  .history-area {
+    padding: 100px 0 40px 0;
+  }
+  .history-area .history-head h2 {
+    font-size: 48px;
+  }
+  .history-area .history-head p {
+    padding: 20px 110px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 992px) {
+  .about-main-section {
+    padding: 0px 0 40px 0;
+  }
+  .about-main-section .about-sect {
+    flex-direction: column;
+    padding: 0 30px;
+  }
+  .about-main-section .about-sect .abt-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-main-section .about-sect .abt-img .comic {
+    width: 60%;
+    height: auto;
+    display: block;
+  }
+  .about-main-section .about-sect .abt-cnt {
+    width: 100%;
+  }
+  .about-main-section .about-sect .abt-cnt h4 {
+    font-size: 24px;
+  }
+  .history-area {
+    padding: 100px 0 40px 0;
+  }
+  .history-area .history-head h2 {
+    font-size: 48px;
+  }
+  .history-area .history-head p {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .about-main-section {
+    padding: 0px 0 40px 0;
+  }
+  .about-main-section .about-sect {
+    flex-direction: column;
+    padding: 0 0px;
+  }
+  .about-main-section .about-sect .abt-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-main-section .about-sect .abt-img .comic {
+    width: 70%;
+    height: auto;
+    display: block;
+  }
+  .about-main-section .about-sect .abt-cnt {
+    width: 100%;
+    padding: 15px;
+  }
+  .about-main-section .about-sect .abt-cnt h4 {
+    font-size: 24px;
+    text-align: left;
+  }
+  .history-area {
+    padding: 40px 0 40px 0;
+  }
+  .history-area .history-head h2 {
+    font-size: 35px;
+  }
+  .history-area .history-head p {
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+  }
 }/*# sourceMappingURL=about.module.css.map */

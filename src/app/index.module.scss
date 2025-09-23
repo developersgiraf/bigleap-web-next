@@ -99,7 +99,7 @@
 .about-area {
   padding: 180px 0 120px 0;
 
-@media (max-width: 1366px) {
+@media (max-width: 1370px) {
     padding: 70px 0 80px 0 !important;
   }
   @media (max-width: 1024px) {
@@ -114,8 +114,8 @@
   .about-row {
     margin: 0 auto;
     width: 100%;
-         @media (max-width: 1366px) {
-             padding: 0 70px !important;
+         @media (max-width: 1370px) {
+             padding: 0 0px !important;
             }
             @media (max-width: 1024px) {
                 padding: 0 40px !important;
@@ -136,7 +136,7 @@
       img {
         width: 100%;
 
-            @media (max-width: 1366px) {
+            @media (max-width: 1370px) {
               width: 90% !important;
             }
             @media (max-width: 1024px) {
@@ -153,6 +153,9 @@
       align-items: flex-start;
       width: 80%;
 
+      @media (max-width: 1370px) {
+        width: 90% !important;
+      }
       @media (max-width: 1024px) {
         width: 100% !important;
       }
@@ -167,6 +170,9 @@
         font-size: 30px;
         text-align: justify;
 
+        @media (max-width: 1370px) {
+          width: 100% !important;
+        }
         @media (max-width: 1024px) {
           font-size: 16px !important;
           text-align: left !important;
@@ -191,6 +197,9 @@
 .slide-head {
   padding: 200px 320px;
 
+  @media (max-width: 1370px) {
+    padding: 150px 0 !important;
+  }
   @media (max-width: 1024px) {
     padding: 150px 0 !important;
   }
@@ -214,7 +223,9 @@
       letter-spacing: 0%;
       margin: 0px 0px 30px 0;
       font-style: regular;
-
+      @media (max-width: 1370px) {
+      margin: 0 0 40px 0 !important;
+      }
       @media (max-width: 1024px) {
         font-size: 65px !important;
         margin: 0px 0px 20px 0 !important;
@@ -234,7 +245,10 @@
       font-size: 16px;
       width: 90%;
       line-height: 125%;
-
+      @media (max-width: 1370px) {
+        width: 80% !important;
+        font-size: 14px !important;
+      }
       @media (max-width: 1024px) {
         width: 80% !important;
         font-size: 14px !important;
@@ -249,6 +263,11 @@
         font-size: 14px !important;
       }
     }
+  }
+  .specialslide{
+    @media (max-width: 1370px) {
+        padding: 0 80px !important;
+      }
   }
 }
 
