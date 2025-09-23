@@ -181,6 +181,11 @@ a.secondary {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+
+  @media(max-width: 1370px) {
+    top: 0px !important;
+    height: 110vh !important;
+  }
 }
 
 .backgroundImage {
@@ -209,4 +214,4 @@ a.secondary {
  
 }
 
-
+}

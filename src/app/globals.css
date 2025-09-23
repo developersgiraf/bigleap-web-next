@@ -83,7 +83,7 @@
 
   /* Tablet responsiveness */
   @media (max-width: 1370px) {
-    left: 0 !important;
+    left: -68 !important;
 
   }
   @media (max-width: 1024px) {
@@ -106,7 +106,7 @@
   
   /* Tablet responsiveness */
   @media (max-width: 1370px) {
-    right: 5px !important;
+    right: -68px !important;
 
   }
   @media (max-width: 1024px) {

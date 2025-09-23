@@ -132,6 +132,9 @@
 // responsive
 
 @media (max-width: 1024px) {
+  .service-main-area{
+    padding: 150px 0 80px 0 !important;
+  }
   .serviceBox{
   padding: 30px 20px !important;
   }
@@ -142,6 +145,13 @@
   }
 }
 @media (max-width: 992px) {
+  .content{
+    padding: 0 20px !important;
+
+    h4{
+      text-align: left !important;
+    }
+  }
 }
 @media (max-width: 767px) {
   .service-main-area{

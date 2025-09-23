@@ -342,6 +342,11 @@
     padding: 0 40px !important;
   }
 }
+@media (max-width: 1370px) {
+  .watch-area .watch {
+    padding: 0 40px !important;
+  }
+}
 .watch-area .watch .first-video {
   display: flex;
   flex-direction: column;
@@ -365,6 +370,11 @@
 .watch-area .watch .first-video .video1 iframe {
   width: 100%;
   height: 400px;
+}
+@media (max-width: 1370px) {
+  .watch-area .watch .first-video .video1 iframe {
+    height: 350px !important;
+  }
 }
 @media (max-width: 1024px) {
   .watch-area .watch .first-video .video1 iframe {
@@ -398,6 +408,11 @@
 .watch-area .watch .first-video .video2 iframe {
   width: 100%;
   height: 300px;
+}
+@media (max-width: 1370px) {
+  .watch-area .watch .first-video .video2 iframe {
+    height: 250px !important;
+  }
 }
 @media (max-width: 1024px) {
   .watch-area .watch .first-video .video2 iframe {
@@ -498,6 +513,11 @@
 .watch-area .watch .second-video .video3 iframe {
   width: 100%;
   height: 400px;
+}
+@media (max-width: 1370px) {
+  .watch-area .watch .second-video .video3 iframe {
+    height: 350px !important;
+  }
 }
 @media (max-width: 1024px) {
   .watch-area .watch .second-video .video3 iframe {
@@ -651,6 +671,11 @@
   font-family: "Boldonse", system-ui !important;
   font-size: 64px;
 }
+@media (max-width: 1370px) {
+  .motion-graphics .motion-graphics-content h2 {
+    font-size: 54px !important;
+  }
+}
 @media (max-width: 1024px) {
   .motion-graphics .motion-graphics-content h2 {
     font-size: 40px !important;
@@ -668,21 +693,26 @@
     text-align: left !important;
   }
 }
-.motion-graphics .specialslide {
+.motion-graphics .specialslides {
   padding: 0 50px;
 }
+@media (max-width: 1370px) {
+  .motion-graphics .specialslides {
+    padding: 0 100px !important;
+  }
+}
 @media (max-width: 1024px) {
-  .motion-graphics .specialslide {
+  .motion-graphics .specialslides {
     padding: 0 0 !important;
   }
 }
 @media (max-width: 992px) {
-  .motion-graphics .specialslide {
+  .motion-graphics .specialslides {
     padding: 0 80px !important;
   }
 }
 @media (max-width: 767px) {
-  .motion-graphics .specialslide {
+  .motion-graphics .specialslides {
     padding: 0 40px !important;
   }
 }

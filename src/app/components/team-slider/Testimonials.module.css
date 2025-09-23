@@ -254,7 +254,11 @@
 
   }
 }
-
+@media (max-width: 992px) {
+  .teamSlider{
+    min-height: 100vh !important;
+  }
+}
 @media (max-width: 767px) {
   .teamSlider {
     padding: 0 0px !important;

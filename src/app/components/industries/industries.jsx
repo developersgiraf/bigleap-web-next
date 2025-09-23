@@ -35,7 +35,7 @@ export default function Industries() {
         <div className="container">
           <div className="row contents">
             {list.map((item, index) => (
-              <div key={index} className="col-xl-4">
+              <div key={index} className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <ListIndustry
                   industries={[
                     item.li1,

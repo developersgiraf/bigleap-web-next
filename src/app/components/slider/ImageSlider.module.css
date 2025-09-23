@@ -29,6 +29,9 @@
   align-items: center;
   justify-content: center;
 
+  /* @media (max-width: 1370px) {
+    padding: 0 20px !important;
+  } */
   @media (max-width: 767px) {
     padding: 0 !important;
   }

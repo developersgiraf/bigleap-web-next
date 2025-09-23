@@ -1,1 +1,185 @@
+// Video Swiper Styles
+.videoSwiperContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.videoSlide {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  &:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.videoElement {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+// Navigation Buttons
+.swiperButtonNext,
+.swiperButtonPrev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(237, 33, 36, 0.8);
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  
+  &::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+  }
+  
+  &:hover {
+    background: rgba(237, 33, 36, 1);
+    transform: translateY(-50%) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.swiperButtonNext {
+  right: 20px;
+  
+  &::after {
+    transform: rotate(45deg);
+    margin-left: -2px;
+  }
+}
+
+.swiperButtonPrev {
+  left: 20px;
+  
+  &::after {
+    transform: rotate(-135deg);
+    margin-right: -2px;
+  }
+}
+
+// Pagination
+.swiperPagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 10;
+  
+  :global(.swiper-pagination-bullet) {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: all 0.3s ease-in-out;
+    
+    &.swiper-pagination-bullet-active {
+      background: #ed2124;
+      transform: scale(1.2);
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 1024px) {
+  .videoElement {
+    height: 350px;
+  }
+}
+
+@media (max-width: 992px) {
+  .videoElement {
+    height: 300px;
+  }
+  
+  .swiperButtonNext,
+  .swiperButtonPrev {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    
+    &::after {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+  .swiperPagination {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .videoSwiperContainer {
+    order: 2;
+    width: 100%;
+    margin-top: 0;
+  }
+  
+  .videoSlide {
+    margin: 0 10px;
+    border-radius: 8px;
+  }
+  
+  .videoElement {
+    height: 250px;
+    border-radius: 8px;
+  }
+  
+  .swiperButtonNext,
+  .swiperButtonPrev {
+    width: 35px;
+    height: 35px;
+    
+    &::after {
+      width: 8px;
+      height: 8px;
+    }
+  }
+  
+  .swiperButtonNext {
+    right: 10px;
+  }
+  
+  .swiperButtonPrev {
+    left: 10px;
+  }
+  
+  .swiperPagination {
+    bottom: 15px;
+    
+    :global(.swiper-pagination-bullet) {
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+    }
+  }
+}
 

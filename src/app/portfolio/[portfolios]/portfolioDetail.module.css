@@ -106,4 +106,13 @@
 
 .videoSlide .slideImage {
   width: 100%;
+}
+
+@media (max-width: 1370px) {
+  .portVideos {
+    padding: 0 50px !important;
+  }
+  .portVideos iframe {
+    height: 82vh !important;
+  }
 }/*# sourceMappingURL=portfolioDetail.module.css.map */

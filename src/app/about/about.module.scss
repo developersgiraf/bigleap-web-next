@@ -84,10 +84,10 @@
 
 @media (max-width: 1370px) {
    .about-main-section {
-    padding: 200px 0 40px 0 !important;
+    padding: 260px 0 40px 0 !important;
    }
     .abt-cnt {
-        width: 90% !important;
+        width: 100% !important;
     }
     .comic {
       width: 90% !important;
@@ -95,7 +95,7 @@
 }
 @media (max-width: 1024px) {
   .about-main-section {
-    padding: 220px 0 40px 0;
+    padding: 220px 0 40px 0 !important;
 
     .about-sect {
       flex-direction: column;

@@ -101,10 +101,10 @@ export default function PortfolioDetail({ params }) {
       <section className={styles.portfolioDetail}>
         <div className="container">
           <div className={`row ${styles.portfolioDetailRow}`}>
-            <div className="col-xl-6">
+            <div className="col-xl-6 col-lg-6 col-md-12 col-12">
               <h2>{portfolio.description}</h2>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-6 col-lg-6 col-md-12 col-12">
               <h6>
                 {portfolio.content}
               </h6>

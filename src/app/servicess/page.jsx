@@ -15,7 +15,7 @@ export default function ServicesPage() {
       <section className={styles["service-main-area"]}>
         <div className="container">
           <div className={`row ${styles.serviceBox}`}>
-            <div className="col-xl-3 col-lg-5 col-md-6 col-12">
+            <div className="col-xl-3 col-lg-5 col-md-12 col-12">
               <div className={styles.image}>
                 <Image
                   src="/servicess/comic-book.png"
@@ -26,7 +26,7 @@ export default function ServicesPage() {
                 />
               </div>
             </div>
-            <div className="col-xl-6 col-lg-7 col-md-6 col-12">
+            <div className="col-xl-6 col-lg-7 col-md-12 col-12">
               <div className={styles.content}>
                 <h4>
                   A creative studio specializing in the production of

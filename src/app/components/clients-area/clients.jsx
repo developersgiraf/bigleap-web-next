@@ -7,6 +7,7 @@ export default function ClientsArea() {
         <h6>Our Clients</h6>
         <h2>Trusted Clients</h2>
       </div>
+      <div className={styles["client-border"]}>
       <Slider 
         datas={[
           { img: "/image (1).jpg", imgWH: 774, idname: "clientSlide1" },
@@ -38,6 +39,7 @@ export default function ClientsArea() {
           1366: { slidesPerView: 11, spaceBetween: 0 },
         }}
       />
+      </div>
     </section>
   );
 }

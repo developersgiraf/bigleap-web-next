@@ -3,24 +3,56 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import styles from "./video.module.scss";
 
-export default function VideoSwiper({ styles }) {
+export default function VideoSwiper({ styles: parentStyles }) {
   return (
     <Swiper
-      modules={[Navigation, Autoplay]}
+      modules={[Navigation, Autoplay, Pagination]}
       spaceBetween={30}
       slidesPerView={3}
       loop={true}
       autoplay={{
-        delay: 3000,
-        disableOnInteraction: true,
+        delay: 6500,
+        disableOnInteraction: false,
       }}
       navigation={false}
-      className={styles.videoSwiperSlider}
+      pagination={{
+        el: `.${styles.swiperPagination}`,
+        clickable: true,
+        type: 'bullets',
+      }}
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 15,
+          navigation: false,
+          pagination: true,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          navigation: false,
+          pagination: true,
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 25,
+          navigation: false,
+          pagination: false,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          navigation: false,
+          pagination: false,
+        },
+      }}
+      className={`${parentStyles?.videoSwiperSlider || ''} ${styles.videoSwiperContainer}`}
     >
       <SwiperSlide>
         <div className={styles.videoSlide}>
@@ -32,8 +64,7 @@ export default function VideoSwiper({ styles }) {
             controls={false}
             playsInline={true}
             preload="metadata"
-            width="100%"
-            height="400"
+            className={styles.videoElement}
             title="Animation Showreel"
           />
         </div>
@@ -49,8 +80,7 @@ export default function VideoSwiper({ styles }) {
             controls={false}
             playsInline={true}
             preload="metadata"
-            width="100%"
-            height="400"
+            className={styles.videoElement}
             title="Animation Showreel"
           />
         </div>
@@ -66,8 +96,7 @@ export default function VideoSwiper({ styles }) {
             controls={false}
             playsInline={true}
             preload="metadata"
-            width="100%"
-            height="400"
+            className={styles.videoElement}
             title="Animation Showreel"
           />
         </div>
@@ -83,12 +112,14 @@ export default function VideoSwiper({ styles }) {
             controls={false}
             playsInline={true}
             preload="metadata"
-            width="100%"
-            height="400"
+            className={styles.videoElement}
             title="Animation Showreel"
           />
         </div>
       </SwiperSlide>
+
+      {/* Pagination for mobile */}
+      <div className={styles.swiperPagination}></div>
     </Swiper>
   );
 }

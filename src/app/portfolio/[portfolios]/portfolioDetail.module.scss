@@ -117,3 +117,191 @@
     width: 100%;
 }
 }
+// RESPONSIVE SECTION
+
+@media (max-width: 1370px) {
+
+  .portVideos{
+    padding: 0 50px !important;
+  iframe{
+    height: 77vh !important;
+  }
+}
+}
+
+@media (max-width: 1024px) {
+  .videoSwiper {
+    height: 60vh;
+    margin: 250px 0 80px 0;
+    
+    .sliderText {
+      padding: 25px;
+      
+      h2 {
+        font-size: 48px;
+        line-height: 60px;
+        width: 60%;
+      }
+      
+      p {
+        width: 35%;
+        font-size: 15px;
+        line-height: 19px;
+      }
+    }
+  }
+  
+  .portfolioDetail {
+    padding: 120px 0 80px 0;
+    
+    .portfolioDetailRow {
+      padding: 0 80px;
+      
+      h2 {
+        font-size: 35px;
+        line-height: 50px;
+      }
+    }
+  }
+  .portVideos {
+    
+    iframe {
+      height: 66vh !important;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .videoSwiper {
+    height: 30vh;
+    margin: 350px 10px 60px 10px;
+    
+    .sliderText {
+      padding: 20px;
+      top: 790px;
+      
+      
+      h2 {
+        font-size: 40px;
+        line-height: 50px;
+        width: 100%;
+      }
+      
+      p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+  
+  .portfolioDetail {
+    padding: 100px 0 60px 0;
+    
+    .portfolioDetailRow {
+      padding: 0 60px;
+      
+      h2 {
+        font-size: 40px;
+        line-height: 60px;
+      }
+    }
+  }
+  
+  .portVideos {
+    padding: 0 30px !important;
+    
+    iframe {
+      height: 38vh !important;
+    }
+  }
+} 
+
+@media (max-width: 767px) {
+  .videoSwiper {
+    margin: 100px 0 60px 0 !important;
+    height: auto !important;
+    min-height: 400px;
+    padding: 20px 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    
+    .sliderText {
+      position: static !important;
+      padding: 20px !important;
+      text-align: left !important;
+      margin-bottom: 30px;
+      order: 1;
+      width: 100%;
+      
+      &::after {
+        background: none !important;
+      }
+      
+      h6 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      h2 {
+        font-size: 28px !important;
+        line-height: 36px !important;
+        width: 100% !important;
+        margin-bottom: 15px;
+      }
+      
+      p {
+        width: 100% !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 18px !important;
+        max-width: 360px !important;
+        margin: 0 auto;
+      }
+    }
+  }
+  
+  .portfolioDetail {
+    padding: 80px 0 60px 0;
+    
+    .portfolioDetailRow {
+      padding: 0 20px;
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+      
+      h2 {
+        font-size: 25px;
+        line-height: 36px;
+        margin-bottom: 0px;
+      }
+      
+      h6 {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+  
+  .portVideos {
+    padding: 0 20px !important;
+    
+    iframe {
+      height: 23vh !important;
+    }
+  }
+  
+  .titleDescriptionSection {
+    padding: 80px 0 20px 0;
+    
+    h2 {
+      font-size: 28px;
+      line-height: 36px;
+      padding: 0 20px;
+    }
+  }
+}
+
+
+

@@ -6,7 +6,8 @@
     color: #fff;
     text-align: center;
     font-family: "Boldonse", system-ui !important;
-    font-size: 3.7rem !important;
+    font-size: 64px;
+    font-weight: 400;
   }
   p{
     padding: 20px 0;
@@ -36,6 +37,7 @@
   }
 
 }
+// responsive styles
 
 @media (max-width: 1370px) {
    .contents{
@@ -45,4 +47,18 @@
     padding: 0 100px;  
   }
 }
+
+@media (max-width: 1024px) {
+
+}
+@media (max-width: 992px) {
+ .Industries{
+  h2{
+    font-size: 60px !important;
+  }
+ }
+}
+@media (max-width: 767px) {
+  
+} 
 

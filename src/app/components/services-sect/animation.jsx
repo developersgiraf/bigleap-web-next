@@ -24,7 +24,7 @@ export default function Animation({
               (anim === "scale" ? styles.scale : styles.posX)
             }
           >
-            <Image src={data.image} width={387} height={396} alt="image" />
+            <Image src={data.image} width={387} height={396} alt="image" className={styles.imageClass} />
             <div className={styles.list}>
               {data.sub1 && (
                 <div

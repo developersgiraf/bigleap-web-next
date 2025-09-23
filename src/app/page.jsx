@@ -279,7 +279,7 @@ export default function Home() {
             <h6>Motion Graphics</h6>
             <h2>Living. Breathing. Digital Experiences</h2>
           </div>
-          <div className={styles.specialslide}>
+          <div className={styles.specialslides}>
             <Slider
               datas={[
                 {
