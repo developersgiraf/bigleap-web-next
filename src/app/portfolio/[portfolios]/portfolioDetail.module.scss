@@ -1,11 +1,11 @@
 .videoSwiper {
   background: #000000;
-  height: 70vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   margin: 330px 0 80px 0;
   .sliderText {
-    padding: 30px;
+    padding: 50px;
     color: #fdfdfd;
     text-align: left;
     position: absolute;
@@ -120,27 +120,33 @@
 // RESPONSIVE SECTION
 
 @media (max-width: 1370px) {
-
+  .videoSwiper {
+    height:55vh;
+  }
   .portVideos{
     padding: 0 50px !important;
   iframe{
     height: 77vh !important;
   }
 }
+.sliderText{
+      padding: 50px 0 50px 30px !important;
+    margin-top: 36px !important;
+}
 }
 
 @media (max-width: 1024px) {
   .videoSwiper {
-    height: 60vh;
+    height:50vh;
     margin: 250px 0 80px 0;
     
     .sliderText {
-      padding: 25px;
+      padding: 0 60px;
       
       h2 {
         font-size: 48px;
-        line-height: 60px;
-        width: 60%;
+        line-height: 70px;
+        width: 50%;
       }
       
       p {
@@ -169,12 +175,19 @@
       height: 66vh !important;
     }
   }
+  .sliderText{
+    &::after {
+      height: 100% !important;
+
+    }
+  }
 }
 
 @media (max-width: 992px) {
   .videoSwiper {
     height: 30vh;
     margin: 350px 10px 60px 10px;
+    // background: none !important;
     
     .sliderText {
       padding: 20px;

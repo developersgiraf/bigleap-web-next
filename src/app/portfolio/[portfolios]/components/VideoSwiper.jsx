@@ -34,7 +34,7 @@ export default function VideoSwiper({ styles: parentStyles }) {
           pagination: true,
         },
         768: {
-          slidesPerView: 1,
+          slidesPerView: 2,
           spaceBetween: 20,
           navigation: false,
           pagination: true,
