@@ -164,7 +164,27 @@
   }
 }
 
+// responsive
 
+@media (max-width: 1024px) {
+  .ServiceImage{
+    padding: 0 0 80px 0 !important;
+  }
+  .headings{
+  padding: 0 60px !important;
+  select{
+    padding: 8px 10px !important;
+    margin-right: 17px !important;
+  }
+  h2{
+    font-size: 38px !important;
+    line-height: 20px !important;
+  }
+
+}
+}
+@media (max-width: 992px) {
+}
 @media (max-width: 767px) {
   .ServiceImage {
     padding: 0 0 80px 0 !important;
