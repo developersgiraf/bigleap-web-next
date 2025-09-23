@@ -17,3 +17,11 @@
 .testimonialsSection{
     padding: 120px 0 80px 0;
 }
+
+@media (max-width: 767px) {
+    .ContactPage{
+        h5{
+            font-size: 24px !important;
+        }
+    }
+}

@@ -3,6 +3,7 @@ import Link from "next/link";
 export default function ContactBanner() {
   return (
     <section className={styles.ContactBanner}>
+    
       <ul>
         <li>
           <Link href="/contact">info@bigleap.ae</Link>
