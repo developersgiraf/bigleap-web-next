@@ -10,7 +10,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/2danimation",
+    link: "/servicess/two-d-animation",
   },
   {
     image: "/servicess/3danimation.png",
@@ -18,7 +18,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/3danimation",
+    link: "/servicess/three-d-animation",
   },
   {
     image: "/servicess/Whiteboard Animation.png",

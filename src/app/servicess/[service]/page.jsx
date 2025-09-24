@@ -8,8 +8,9 @@ import EnquirySect from "@/app/components/enquiry/enquiry";
 // import data from "./data/ServicePageData.js";
 
 
+
 const data = {
-  "2danimation": {
+  "twoDanimation": {
     section01: {
       image: "/servicess/detail-image.png",
       heading:
@@ -31,6 +32,7 @@ const data = {
       subdes3:
         "2D animation can be easily adapted to various platforms such as mobile apps, social media, and websites. It can be easily viewed and shared across these diverse platforms, which helps businesses to reach their target audience effectively. ",
     },
+    listHead: "Our 2D Animation Services Include",
     list: [
       {
         title: "Explainer Videos",
@@ -54,7 +56,7 @@ const data = {
       },
     ],
   },
-  "3danimation": {
+  "three-d-animation": {
     section01: {
       image: "/servicess/red-machine.png",
       heading: "The Creative Animation Studio That Brings Your Vision To Life.",
@@ -78,6 +80,7 @@ const data = {
       subdes4:
         "The scope of 3D animation finds its application in a wide range of industries, which include healthcare, education, and many more. Client visualization, visual walkthrough, product demonstration, and explanation- 3D animation brings versatility that makes complex ideas easy to understand.",
     },
+    listHead: "Our 3D Animation Services Include",
     list: [
       {
         title: "Product Visualization",
@@ -108,10 +111,13 @@ const data = {
   },
 
   "whiteboard-animation": {
+    section01: {
     image: "/servicess/Whiteboard Animation.png",
     heading: "Whiteboard Animation",
     description:
       "Sometimes a simple sketch can speak volumes than a thousand words combined. Wait till you see the impact of whiteboard animation. At Big Leap, we animate with strategy. Our whiteboard animation services are crafted to deliver your brand message most effectively and engagingly in a way that will resonate with the audience. We make sure that your unique voice will cut through the noise and stand out in the competitive edge.",
+  },
+    section02: {
     subhead1: "Audience Engagement",
     subdes1:
       "Whiteboard animations can simplify complex concepts into comprehensible visuals. The combination of simple hand-drawn sketches with spoken explanation will help the audience to stay informed and engaged. ",
@@ -124,6 +130,8 @@ const data = {
     subhead4: "Adaptability",
     subdes4:
       "Whiteboard animation can be adapted to suit various online platforms such as social media, websites, email campaigns, and more. It can be used for creating different types of content such as product explanation, demonstration, training, etc. ",
+  },
+    listHead: "Our Whiteboard Animation Services Include",
     list: [
       {
         title: "Educational and Training Videos",
@@ -143,10 +151,13 @@ const data = {
     ],
   },
   "character-design": {
+    section01: {
     image: "/servicess/Character.png",
     heading: "Character Design & Rigging",
     description:
       "Bring your characters to life with expert character designing and rigging. At Big Leap, we turn concepts into reality, animating characters to motion. Adding charm and personality, our team will craft the character that will align with your vision, embodying the vibrance, emotional appeal, and realism.",
+  },
+    section02: {
     subhead1: "Realistic Movements ",
     subdes1:
       "Rigging gives the 3D model smooth and realistic movements such as walking, dancing, blinking and more. ",
@@ -156,6 +167,8 @@ const data = {
     subhead3: "Flexibility",
     subdes3:
       "Rigging enables easier adjustments, which helps the animators to experiment with different movements that the situation demands. ",
+    },
+    listHead: "Our Character Design & Rigging Services Include",
     list: [
       {
         title: "2D and 3D Character Design",
@@ -175,10 +188,13 @@ const data = {
     ],
   },
   "motion-graphics": {
+    section01: {
     image: "/servicess/motion-graphics.png",
     heading: "Motion Graphics",
     description:
       "Bringing stories to life through motion, we are the leading motion graphics company trusted by top brands across Dubai. We deliver high-impact and compelling animated graphics that will place your narrative on a different scale enhancing brand marketing.",
+  },
+    section02: {
     subhead1: "Realistic Movements ",
     subdes1:
       "Rigging gives the 3D model smooth and realistic movements such as walking, dancing, blinking and more. ",
@@ -188,11 +204,21 @@ const data = {
     subhead3: "Flexibility",
     subdes3:
       "Rigging enables easier adjustments, which helps the animators to experiment with different movements that the situation demands. ",
+    },
+    listHead: "Our Motion Graphics Services Include",
+    list: [
+      {
+
+      }
+    ]
   },
 };
 
-
 export default function Services({ params }) {
+  const metadata = {
+  title: "Services - Big Leap",
+  description: "Explore our range of creative services designed to elevate your brand.",
+};
   const { service } = params;
   const serviceData = data[service];
 
@@ -200,7 +226,8 @@ export default function Services({ params }) {
     <>
       <TitleBanner
         title="Imagination Unleashed:
-      A Journey Beyond Reality" sub=""
+      A Journey Beyond Reality"
+        sub=""
       />
 
       <section className={styles.serDetail}>
@@ -255,15 +282,18 @@ export default function Services({ params }) {
           />
         </div>
       </section>
+      <h1>{serviceData.listHead}</h1>
       <ListServices listItems={serviceData.list} />
       <EnquirySect />
-      <GradientLights customCounts={{
-        xl: 8,  // Rich visual experience for extra large screens
-        lg: 5,  // Substantial gradients for large screens
-        md: 5,  // Balanced for medium screens
-        sm: 4,  // Moderate for tablets
-        xs: 5   // Minimal but visible on mobile
-      }} />
+      <GradientLights
+        customCounts={{
+          xl: 8, // Rich visual experience for extra large screens
+          lg: 5, // Substantial gradients for large screens
+          md: 5, // Balanced for medium screens
+          sm: 4, // Moderate for tablets
+          xs: 5, // Minimal but visible on mobile
+        }}
+      />
     </>
   );
 }
