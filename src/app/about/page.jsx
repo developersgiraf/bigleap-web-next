@@ -7,6 +7,7 @@ import ClientsArea from "../components/clients-area/clients.jsx";
 import TitleBanner from "../components/title-banner/titleBannerr";
 import Testimonials from "../components/team-slider/testimonials.jsx";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
+import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
 import Timeline from "./components/timeline/timelineSlider.jsx";
 export default function AboutPage() {
   return (
@@ -106,7 +107,13 @@ export default function AboutPage() {
 
       <FAQSection />
       <Difference />
-      <GradientLights count={8} />
+      <GradientLights customCounts={{
+        xl: 8,  // Rich visual experience for extra large screens
+        lg: 8,  // Substantial gradients for large screens
+        md: 8,  // Balanced for medium screens
+        sm:8,  // Moderate for tablets
+        xs: 10   // Minimal but visible on mobile
+      }} />
     </>
   );
 }

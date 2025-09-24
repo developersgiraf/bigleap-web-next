@@ -1,5 +1,6 @@
 import ServiceImage from "../components/services-sect/servicesImage";
 import GradientLights from "../components/gradient-lights/gradient";
+import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
 import TitleBanner from "../components/title-banner/titleBannerr";
 import styles from "./blog.module.css";
 
@@ -64,7 +65,13 @@ export default function BlogPage() {
           showSelect={false}
         />
       </div>
-      <GradientLights count={4} />
+      <GradientLights customCounts={{
+        xl: 4,  // Rich visual experience for extra large screens
+        lg: 4,  // Substantial gradients for large screens
+        md: 6,  // Balanced for medium screens
+        sm: 8,  // Moderate for tablets
+        xs: 8   // Minimal but visible on mobile
+      }} />
     </>
   );
 }

@@ -117,6 +117,11 @@
   
 
 // RESPONSIVE STYLES
+@media (max-width:1370px) {
+    .formBackground{
+    height: 80%;
+}
+}
 @media (max-width:1024) {
   
   .contactForm {

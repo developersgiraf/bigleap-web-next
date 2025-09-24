@@ -1,4 +1,5 @@
 import GradientLights from "../components/gradient-lights/gradient.jsx";
+import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
 import styles from "./contact.module.scss";
 import TitleBanner from "../components/title-banner/titleBannerr";
 import ContactBanner from "./components/contactDetails/contactBanner.jsx";
@@ -23,7 +24,13 @@ export default function ContactPage() {
         <Testimonials hideBackground />
       </div>
 
-      <GradientLights count={4} />
+      <GradientLights customCounts={{
+        xl: 4, // More gradients for visual appeal on large screens
+        lg: 4, // Current count maintained for large screens
+        md: 3, // Balanced for medium screens
+        sm: 2, // Reduced for tablets
+        xs: 1  // Single gradient for mobile
+      }} />
     </>
   );
 }

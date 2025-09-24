@@ -12,6 +12,7 @@ import EnquirySect from "./components/enquiry/enquiry.jsx";
 import ClientsArea from "./components/clients-area/clients.jsx";
 import Testimonials from "./components/team-slider/testimonials";
 import GradientLights from "./components/gradient-lights/gradient";
+import { GRADIENT_PRESETS } from "./components/gradient-lights/gradientConfig.js";
 import InstaFeeds from "./components/insta-feeds/feeds";
 import CounterSect from "./components/counter/counter.jsx";
 import SocialMediaIcon from "./components/socialMedia-icon/socialMedia-icon";
@@ -143,7 +144,7 @@ export default function Home() {
               }}
             />
 
-            <CTAButton title="VIEW ALL" link="/portfolio" />
+            <CTAButton title="VIEW ALL" link="/servicess" />
           </div>
         </div>
       </section>
@@ -343,7 +344,13 @@ export default function Home() {
 
       <EnquirySect />
       <InstaFeeds />
-      <GradientLights count={13} />
+      <GradientLights customCounts={{
+        xl: 13,  // Rich visual experience for extra large screens
+        lg: 13,  // Substantial gradients for large screens
+        md: 13,  // Balanced for medium screens
+        sm: 11,  // Moderate for tablets
+        xs: 12   // Minimal but visible on mobile
+      }} />
     </>
   );
 }

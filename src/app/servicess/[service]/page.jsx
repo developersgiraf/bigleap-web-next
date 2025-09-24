@@ -2,6 +2,7 @@ import styles from "./service-detail.module.scss";
 import TitleDescription from "../components/title-description/titleDes";
 import TitleBanner from "../../components/title-banner/titleBannerr";
 import GradientLights from "../../components/gradient-lights/gradient";
+import { GRADIENT_PRESETS } from "../../components/gradient-lights/gradientConfig";
 import ListServices from "../components/list/list";
 import EnquirySect from "@/app/components/enquiry/enquiry";
 const data = {
@@ -18,7 +19,11 @@ const data = {
       subhead2:
       "Brand Awareness and Recall",
       subdes2:
-      "Visually compelling animated content is more likely to be remembered and shared by the audience. Unique visual styles will always be associated with the brand, thereby enhancing brand recall. "
+      "Visually compelling animated content is more likely to be remembered and shared by the audience. Unique visual styles will always be associated with the brand, thereby enhancing brand recall. ",
+      subhead3:
+      "Versatility Across Platforms",
+      subdes3:
+      "2D animation can be easily adapted to various platforms such as mobile apps, social media, and websites. It can be easily viewed and shared across these diverse platforms, which helps businesses to reach their target audience effectively. "
       
   },
   "3danimation": {
@@ -51,12 +56,12 @@ export default function Services({ params }) {
       <section className={styles.serDetail}>
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-xl-10 col-lg-11">
+            <div className="col-xl-10 col-lg-6 col-md-12 col-12">
               <div
                 className={`row justify-content-center align-items-center ${styles.detail}`}
               >
                 <div
-                  className={`col-xl-4 col-lg-5 col-md-6 d-flex ${styles.imgs}`}
+                  className={`col-xl-4 col-lg-5 col-md-12 col-12 d-flex ${styles.imgs}`}
                 >
                   <img
                     className={styles.image}
@@ -65,7 +70,7 @@ export default function Services({ params }) {
                   />
                 </div>
                 <div
-                  className={`col-xl-8 col-lg-7 col-md-6 d-flex align-items-center ${styles.des}`}
+                  className={`col-xl-8 col-lg-7 col-md-12 col-12d-flex align-items-center ${styles.des}`}
                 >
                   <div>
                     <h4>{serviceData.heading}</h4>
@@ -91,30 +96,28 @@ export default function Services({ params }) {
             }
             description={
               <span className={styles.paraColor}>
-                2D animation involves creating motion in a two-dimensional space, using flat images to get the illusion of motion. A sequence of individual images slightly different from each other is played in quick succession, which will in turn appear to move.  <br />
+                2D animation involves creating motion in a two-dimensional space, using flat images to get the illusion of motion. A sequence of individual images slightly different from each other is played in quick succession, which will in turn appear to move. 
                  Advanced tools may come and go, but 2D animation remains a timeless and popular choice.
               </span>
             }
-            subhead1={
-              <>
-                    <h4>{serviceData.subhead1}</h4>
-                    <p>{serviceData.subdes1}</p>
-                  
-              </>
-            }
-            subhead2={
-              <>
-              <h4>{serviceData.subhead2}</h4>
-                    <p>{serviceData.subdes2}</p>
-              </>
-              
-            }
+            subhead1={serviceData.subhead1}
+            subdes1={serviceData.subdes1}
+            subhead2={serviceData.subhead2}
+            subdes2={serviceData.subdes2}
+            subhead3={serviceData.subhead3}
+            subdes3={serviceData.subdes3}
           />
         </div>
       </section>
       <ListServices />
       <EnquirySect />
-      <GradientLights count={5} />
+      <GradientLights customCounts={{
+        xl: 8,  // Rich visual experience for extra large screens
+        lg: 5,  // Substantial gradients for large screens
+        md: 6,  // Balanced for medium screens
+        sm: 5,  // Moderate for tablets
+        xs: 5   // Minimal but visible on mobile
+      }} />
     </>
   );
 }

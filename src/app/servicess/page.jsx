@@ -6,6 +6,8 @@ import Industries from "../components/industries/industries.jsx";
 import EnquirySect from "../components/enquiry/enquiry.jsx";
 import TitleDescription from "./components/title-description/titleDes.jsx";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
+import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
+
 export default function ServicesPage() {
   return (
     <>
@@ -44,7 +46,7 @@ export default function ServicesPage() {
 
       <section className={styles.serviceCollect}>
         <Image
-          src="/ser-back.png"
+          src="/Services.png"
           alt="Services Background"
           fill
           priority
@@ -93,7 +95,13 @@ export default function ServicesPage() {
       <Industries />
       
       <EnquirySect />
-      <GradientLights count={7} />
+      <GradientLights customCounts={{
+        xl: 7,  // Rich visual experience for extra large screens
+        lg: 7,  // Substantial gradients for large screens
+        md: 13,  // Balanced for medium screens
+        sm: 12,  // Moderate for tablets
+        xs: 11   // Minimal but visible on mobile
+      }} />
     </>
   );
 }

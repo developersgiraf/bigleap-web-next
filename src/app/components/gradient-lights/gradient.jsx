@@ -1,10 +1,22 @@
-import styles from "./gradient.module.scss";
+"use client";
 
-export default function GradientLights({ count = 2 }) {
+import styles from "./gradient.module.scss";
+import useResponsiveGradientCount from "./useResponsiveGradientCount";
+
+export default function GradientLights({ 
+  count, // Optional static count (if provided, overrides responsive behavior)
+  customCounts, // Custom counts for different breakpoints
+  enableResponsive = true // Enable/disable responsive behavior
+}) {
+  const { gradientCount, currentBreakpoint } = useResponsiveGradientCount(customCounts);
+  
+  // Use static count if provided, otherwise use responsive count
+  const finalCount = count !== undefined ? count : (enableResponsive ? gradientCount : 2);
+
   return (
     <>
-      <div className={styles["gradient-lights"]}>
-        {Array.from({ length: count }).map((_, index) => {
+      <div className={styles["gradient-lights"]} data-breakpoint={currentBreakpoint}>
+        {Array.from({ length: finalCount }).map((_, index) => {
           let position = index % 2 === 0 ? "left" : "right";
           return (
             <div

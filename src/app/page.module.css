@@ -213,5 +213,8 @@ a.secondary {
     box-shadow: 0 0 40px 20px rgba(15, 18, 24, 0.7);
  
 }
+.contentWrapper {
+    padding: 0 0px !important;
+  }
 
 }

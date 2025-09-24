@@ -33,9 +33,9 @@ export default function Industries() {
         <h2>INDUSTRIES WE SERVE</h2>
         <p>At Big Leap, from scribble to motion, we don’t just animate, we bring life to narratives that create an impact.</p>
         <div className="container">
-          <div className="row contents">
+          <div className={`row ${styles.contents}`}>
             {list.map((item, index) => (
-              <div key={index} className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+              <div key={index} className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                 <ListIndustry
                   industries={[
                     item.li1,

@@ -1,5 +1,6 @@
 import TitleBanner from "@/app/components/title-banner/titleBannerr";
 import GradientLights from "@/app/components/gradient-lights/gradient";
+import { GRADIENT_PRESETS } from "@/app/components/gradient-lights/gradientConfig.js";
 import styles from "../[blogdetail]/blog-details.module.scss";
 import Image from "next/image";
 
@@ -70,7 +71,13 @@ export default function BlogDetailPage({ params }) {
           <p className={styles.description}>{blogsData.description}</p>
         </div>
       </div>
-      <GradientLights count={3} />
+      <GradientLights customCounts={{
+        xl: 8,  // Rich visual experience for extra large screens
+        lg: 2,  // Substantial gradients for large screens
+        md: 3,  // Balanced for medium screens
+        sm: 3,  // Moderate for tablets
+        xs: 3   // Minimal but visible on mobile
+      }} />
     </>
   );
 }
