@@ -37,6 +37,7 @@ export default function Home() {
             priority
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 100vw"
           />
+
           {/* <img id="img360" src="360.png" alt="360image" /> */}
           <motion.div
             id="character-img"
