@@ -54,15 +54,15 @@ export default function Home() {
               rotateZ: 45,
               transition: {
                 type: "spring",
-                stiffness: 150,  // Faster animation
-                damping: 10,     // Less bouncy
+                stiffness: 30,  // Faster animation
+                damping: 2,     // Less bouncy
               }
             }}
             animate={{ rotateZ: 0 }}
             transition={{
               type: "spring",
-              stiffness: 150,
-              damping: 10,
+              stiffness: 30,
+              damping: 2,
             }}
           >
             <Image
