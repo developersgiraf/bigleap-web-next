@@ -19,3 +19,35 @@
     }
   }
 }
+
+// Responsive styles
+
+@media (max-width:1370px){
+
+}
+@media (max-width:1024px){
+.ContactBanner{
+  ul{
+    gap: 70px;
+  }
+}
+}
+@media (max-width:992px){
+.ContactBanner{
+  ul{
+    gap: 30px;
+  }
+}
+}
+
+@media (max-width:767px){
+.ContactBanner{
+  // justify-content: flex-start;
+  ul{
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+}

@@ -256,7 +256,7 @@
 }
 @media (max-width: 992px) {
   .teamSlider{
-    min-height: 100vh !important;
+    min-height: 60vh !important;
   }
 }
 @media (max-width: 767px) {

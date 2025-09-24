@@ -8,9 +8,18 @@ const data = {
   "2danimation": {
     image: "/servicess/detail-image.png",
     heading:
-      "A dynamic studio focused on crafting engaging 3D mascot animations that transform concepts into vibrant visuals.",
+      "The Dynamic Studio That Brings Ideas To Life With Remarkable 2D Animations ",
     description:
-      "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt Ut labore et dolore magna aliqua. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua .",
+      "Thinking of incorporating 2D animation into your marketing strategy? We are the trusted 2D animation company in Dubai that offers the best animating services that will enhance your brand presence. When it comes to animation that stands out, Big Leap leads the way. As a renowned animation studio trusted by companies across Dubai, our 2D animation services go beyond expectations, crafted to captivate and connect with the audience.",
+      subhead1:
+      "Enhanced Audience Engagement",
+      subdes1:
+      "2D animation will make the content more visually appealing, comprehensible, and engaging by simplifying the complex concepts. The visual representation of the content, combining the dynamic characters and interesting storyline, will hook their attention. ",
+      subhead2:
+      "Brand Awareness and Recall",
+      subdes2:
+      "Visually compelling animated content is more likely to be remembered and shared by the audience. Unique visual styles will always be associated with the brand, thereby enhancing brand recall. "
+      
   },
   "3danimation": {
     image: "/servicess/red-machine.png",
@@ -76,30 +85,29 @@ export default function Services({ params }) {
           <TitleDescription
             title={
               <>
-                Readt to Bring Your Brand to Life with a  <span className={styles.textColor}>Unique  Mascot?</span>{" "}
+               When Visuals Speak: Why 2D Animation Is  <span className={styles.textColor}>The Best Choice</span>{" "}
                
               </>
             }
             description={
               <span className={styles.paraColor}>
-                lorem ipsum dolor sit amet consectetur adipiscing elit. lorem
-                ipsum dolor sit amet consectetur adipiscing elit. lorem ipsum
-                dolor sit amet consectetur adipiscing elit. lorem ipsum dolor
-                sit amet consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. <br />
-                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
-                dolores, quasi porro ducimus inventore corporis maxime commodi
-                quo optio nemo aliquam officia recusandae consequatur ipsa
-                dolorum blanditiis vitae placeat delectus!Lorem, ipsum dolor sit
-                amet consectetur adipisicing elit. Modi dolores, quasi porro
-                ducimus inventore corporis maxime commodi quo optio nemo aliquam
-                officia recusandae consequatur ipsa dolorum blanditiis vitae
-                placeat delectus!
+                2D animation involves creating motion in a two-dimensional space, using flat images to get the illusion of motion. A sequence of individual images slightly different from each other is played in quick succession, which will in turn appear to move.  <br />
+                 Advanced tools may come and go, but 2D animation remains a timeless and popular choice.
               </span>
+            }
+            subhead1={
+              <>
+                    <h4>{serviceData.subhead1}</h4>
+                    <p>{serviceData.subdes1}</p>
+                  
+              </>
+            }
+            subhead2={
+              <>
+              <h4>{serviceData.subhead2}</h4>
+                    <p>{serviceData.subdes2}</p>
+              </>
+              
             }
           />
         </div>
