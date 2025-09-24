@@ -49,7 +49,7 @@ export default function Home() {
               right: 0,
               margin: "0 auto"
             }}
-            initial={{ rotateZ: 0 }}
+            initial={{ rotateZ: -40 }}
             whileHover={{ 
               rotateZ: 45,
               transition: {
