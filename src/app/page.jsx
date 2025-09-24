@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 // import styles from "./page.module.css";
 import styles from "./index.module.scss";
 import pageStyles from "./page.module.css";
@@ -36,15 +38,45 @@ export default function Home() {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 100vw"
           />
           {/* <img id="img360" src="360.png" alt="360image" /> */}
-          <Image
+          <motion.div
             id="character-img"
-            src="/character.png"
-            alt="Character Image"
-            width={1200}
-            height={1666}
             className={styles.characterimage}
-            sizes="(max-width: 360px) 50vw, (max-width: 480px) 60vw, (max-width: 768px) 70vw, (max-width: 1024px) 80vw, 1200px"
-          />
+            style={{ 
+              transformOrigin: "center center",
+              position: "absolute",
+              left: 0,
+              right: 0,
+              margin: "0 auto"
+            }}
+            initial={{ rotateZ: 0 }}
+            whileHover={{ 
+              rotateZ: 45,
+              transition: {
+                type: "spring",
+                stiffness: 150,  // Faster animation
+                damping: 10,     // Less bouncy
+              }
+            }}
+            animate={{ rotateZ: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 150,
+              damping: 10,
+            }}
+          >
+            <Image
+              src="/character.png"
+              alt="Character Image"
+              width={1200}
+              height={1666}
+              style={{ 
+                display: "block",
+                width: "100%",
+                height: "auto"
+              }}
+              sizes="(max-width: 360px) 50vw, (max-width: 480px) 60vw, (max-width: 768px) 70vw, (max-width: 1024px) 80vw, 1200px"
+            />
+          </motion.div>
         </div>
       </section>
       {/* HERO SECTION END */}
