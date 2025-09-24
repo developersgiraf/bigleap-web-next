@@ -58,7 +58,7 @@ export default function Home() {
                 damping: 2,     // Less bouncy
               }
             }}
-            animate={{ rotateZ: 0 }}
+            animate={{ rotateZ: 10 }}
             transition={{
               type: "spring",
               stiffness: 30,
