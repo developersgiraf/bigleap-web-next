@@ -4,7 +4,7 @@ import Image from "next/image";
 import ServiceImage from "../components/services-sect/servicesImage.jsx";
 import Industries from "../components/industries/industries.jsx";
 import EnquirySect from "../components/enquiry/enquiry.jsx";
-import TitleDescription from "./components/title-description/titleDes.jsx";
+import TitleDescriptionMain from "./components/title-description/titleDesMain.jsx";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
 import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
 
@@ -58,7 +58,7 @@ export default function ServicesPage() {
 
       <section className={styles.titledes}>
         <div className="container">
-          <TitleDescription
+          <TitleDescriptionMain
             title={
               <>
                 Do You Want to <span className={styles.textColor}>Create</span>{" "}
