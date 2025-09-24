@@ -135,12 +135,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: none !important;
   }
   .footerArea .content .bigleapCnt h2 {
     line-height: 80px;
     font-size: 40px;
-    margin: 0 0 40px 0;
+    margin: 0 0 40px 20px !important;
   }
   .footerArea .footerList .subcol {
     padding-left: 20px;

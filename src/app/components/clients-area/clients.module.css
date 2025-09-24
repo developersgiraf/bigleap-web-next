@@ -31,6 +31,11 @@
     line-height: 60px !important;
   }
 }
+@media (max-width: 992px) {
+  .client-section {
+    padding: 70px 0 50px 0 !important;
+  }
+}
 @media (max-width: 767px) {
   .client-section h2 {
     font-size: 35px !important;

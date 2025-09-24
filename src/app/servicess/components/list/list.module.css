@@ -21,4 +21,46 @@
   font-size: 16px;
   line-height: 125%;
   font-family: "montserrat", sans-serif !important;
+}
+
+@media (max-width: 1024px) {
+  .listSection {
+    padding: 140px 0 80px !important;
+  }
+  .listStyle {
+    padding: 0 20px !important;
+  }
+  .listStyle h3 {
+    font-size: 25px !important;
+    padding: 10px 0 !important;
+  }
+  .listStyle p {
+    font-size: 12px !important;
+  }
+}
+@media (max-width: 992px) {
+  .listSection {
+    padding: 130px 0 40px 0;
+  }
+  .listSection .all {
+    padding: 0 0px;
+  }
+}
+@media (max-width: 767px) {
+  .listSection {
+    padding: 50px 0 40px 0;
+  }
+  .listSection .all {
+    padding: 0 0px;
+  }
+  .listSection .all .listStyle {
+    padding: 0 10px;
+  }
+  .listSection .all .listStyle h3 {
+    font-size: 24px;
+  }
+  .listSection .all .listStyle p {
+    font-size: 14px;
+    text-align: left;
+  }
 }/*# sourceMappingURL=list.module.css.map */

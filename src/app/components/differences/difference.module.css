@@ -17,7 +17,7 @@
 .test .diff p {
   width: 48%;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   line-height: 125%;
   padding-top: 16px;
   color: #fdfdfd;
@@ -54,7 +54,7 @@
   color: #fdfdfd;
   font-size: 16px;
   line-height: 125%;
-  text-align: justify;
+  text-align: left;
 }
 
 @media (max-width: 1024px) {
@@ -117,7 +117,6 @@
     width: 90% !important;
     font-size: 14px !important;
     line-height: 20px !important;
-    text-align: justify !important;
   }
   .all {
     flex-direction: column !important;
@@ -132,7 +131,6 @@
   }
   .each p {
     font-size: 14px !important;
-    text-align: left !important;
     line-height: 20px !important;
   }
 }/*# sourceMappingURL=difference.module.css.map */

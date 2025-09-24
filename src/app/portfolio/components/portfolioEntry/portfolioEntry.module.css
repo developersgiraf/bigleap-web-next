@@ -99,4 +99,19 @@
   transform: translateY(-50%);
   margin-right: 50px;
   z-index: 100;
+}
+
+@media (max-width: 1370px) {
+  .content {
+    padding: 90px 50px !important;
+  }
+  .open {
+    min-width: 310px !important;
+  }
+  .unfocused .portfolio-image {
+    right: -60px !important;
+  }
+  .unfocused .portfolio-entry {
+    height: 53dvh !important;
+  }
 }/*# sourceMappingURL=portfolioEntry.module.css.map */

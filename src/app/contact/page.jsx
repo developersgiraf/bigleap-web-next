@@ -27,9 +27,9 @@ export default function ContactPage() {
       <GradientLights customCounts={{
         xl: 4, // More gradients for visual appeal on large screens
         lg: 4, // Current count maintained for large screens
-        md: 3, // Balanced for medium screens
-        sm: 2, // Reduced for tablets
-        xs: 1  // Single gradient for mobile
+        md: 4, // Balanced for medium screens
+        sm: 4, // Reduced for tablets
+        xs: 4  // Single gradient for mobile
       }} />
     </>
   );

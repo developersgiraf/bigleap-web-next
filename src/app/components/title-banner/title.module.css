@@ -34,6 +34,11 @@
     font-weight: 400 !important;
     line-height: 70px !important;
   }
+  .title-banner p {
+    padding-top: 50px;
+    width: 60%;
+    font-size: 16px;
+  }
 }
 @media (max-width: 992px) {
   .title-banner h1 {
@@ -46,5 +51,9 @@
     width: 80% !important;
     line-height: 35px !important;
     font-size: 24px !important;
+  }
+  .title-banner p {
+    font-size: 12px !important;
+    width: 80% !important;
   }
 }/*# sourceMappingURL=title.module.css.map */

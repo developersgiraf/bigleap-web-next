@@ -6,9 +6,8 @@
   overflow: hidden;
   padding: 120px 0 220px 0;
 
-@media (max-width:1024) {
+@media (max-width: 1024px) {
   padding: 120px 0 0px 0;
-
 }
 
   &::before {
@@ -43,7 +42,7 @@
   h4 {
     text-align: center;
     color: #ffffff;
-    font-size: 3rem;
+    font-size: 34px;
     font-weight: 600;
     margin-bottom: 10px;
     font-family: "Boldonse", system-ui !important;
@@ -80,6 +79,7 @@
         width: 100%;
         opacity: 0.6;
         background: rgba(255, 255, 255, 0.05);
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 30px;
@@ -117,12 +117,12 @@
   
 
 // RESPONSIVE STYLES
-@media (max-width:1370px) {
+@media (max-width: 1370px) {
     .formBackground{
     height: 80%;
 }
 }
-@media (max-width:1024) {
+@media (max-width: 1024px) {
   
   .contactForm {
       padding: 30px 100px;  
@@ -143,6 +143,9 @@ flex-direction: column;
   .formContent{
     p{
       font-size: 12px;
+    }
+    h4{
+      font-size: 30px;
     }
   }
   h5 {

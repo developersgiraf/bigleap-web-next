@@ -38,16 +38,9 @@ export default function Testimonials({
         description:
           "Adipiscing elit, sed do eiusmod tempord minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
+      
       {
         id: 4,
-        image: "/team/anu.jpg",
-        name: "Anu",
-        title: "Animator",
-        description:
-          "Adipiscing elit, sed do eiusmod tempor incididuad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      },
-      {
-        id: 5,
         image: "/team/sreerag.jpg",
         name: "Sreerag",
         title: "Video Editor",
@@ -55,7 +48,7 @@ export default function Testimonials({
           "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
       {
-        id: 6,
+        id: 5,
         image: "/team/hadi.jpg",
         name: "Hadi",
         title: "Graphic Designer",

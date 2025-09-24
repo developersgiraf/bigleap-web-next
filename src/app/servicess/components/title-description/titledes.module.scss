@@ -72,6 +72,20 @@ font-family: "monserrat", system-ui, sans-serif !important;
     
   }
   .subdes3{
+    font-family: "monserrat", system-ui, sans-serif !important;
+    color: #fdfdfd;
+    font-size: 16px;
+
+    
+  }
+  .subhead4{
+    color: #ed2428;
+    font-family: "Boldonse", system-ui, sans-serif !important;
+    font-size: 20px;
+
+    
+  }
+  .subdes4{
 font-family: "monserrat", system-ui, sans-serif !important;
     color: #fdfdfd;
     font-size: 16px;
@@ -190,6 +204,19 @@ font-family: "monserrat", system-ui, sans-serif !important;
   }
 }
 
+.highlight {
+  color: #f8240c;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
+}
+
+.paraColor{
+  font-family: "monserrat", system-ui, sans-serif !important;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fdfdfd;
+}
+
 
 // Responsive adjustments
 @media (max-width: 1370px) {
@@ -205,6 +232,9 @@ font-family: "monserrat", system-ui, sans-serif !important;
    .subdes3{
         padding: 0 50px !important;
   }
+    .subdes4{
+          padding: 0 50px !important;
+    }
 }
 @media(max-width: 1024px){
   .title{
@@ -233,18 +263,28 @@ font-family: "monserrat", system-ui, sans-serif !important;
   }
   .subdes1{
     text-align: left !important;
+    padding: 0 10px !important;
   }
   .subhead2{
     text-align: left !important;
   }
   .subdes2{
     text-align: left !important;
+    padding: 0 10px !important;
   }
   .subhead3{
     text-align: left !important;
   }
   .subdes3{
     text-align: left !important;
+    padding: 0 10px !important;
+  }
+  .subhead4{
+    text-align: left !important;
+  }
+  .subdes4{
+    text-align: left !important;
+    padding: 0 10px !important;
   }
 
 }
@@ -268,20 +308,34 @@ font-family: "monserrat", system-ui, sans-serif !important;
 
   .subhead1{
         font-size: 16px !important;
+        line-height: 23px !important;
+        padding-left: 10px !important;
   }
   .subdes1{
         padding: 0 10px !important;
   }
   .subhead2{
         font-size: 16px !important;
+        padding-left: 10px !important;
+
   }
   .subdes2{
         padding: 0 10px !important;
   }
   .subhead3{
         font-size: 16px !important;
+        padding-left: 10px !important;
+
   }
   .subdes3{
+        padding: 0 10px !important;
+  }
+  .subhead4{
+        font-size: 16px !important;
+        padding-left: 10px !important;
+
+  }
+  .subdes4{
         padding: 0 10px !important;
   }
 }

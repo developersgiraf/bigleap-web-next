@@ -1,1 +1,174 @@
-/*# sourceMappingURL=video.module.css.map */
+.videoSwiperContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 70px;
+}
+
+.videoSlide {
+  position: relative;
+  overflow: hidden;
+}
+.videoSlide:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.videoElement {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiperButtonNext,
+.swiperButtonPrev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(237, 33, 36, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+.swiperButtonNext::after,
+.swiperButtonPrev::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+.swiperButtonNext:hover,
+.swiperButtonPrev:hover {
+  background: rgb(237, 33, 36);
+  transform: translateY(-50%) scale(1.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.swiperButtonNext:active,
+.swiperButtonPrev:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.swiperButtonNext {
+  right: 20px;
+}
+.swiperButtonNext::after {
+  transform: rotate(45deg);
+  margin-left: -2px;
+}
+
+.swiperButtonPrev {
+  left: 20px;
+}
+.swiperButtonPrev::after {
+  transform: rotate(-135deg);
+  margin-right: -2px;
+}
+
+.swiperPagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 10;
+}
+.swiperPagination :global(.swiper-pagination-bullet) {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  transition: all 0.3s ease-in-out;
+}
+.swiperPagination :global(.swiper-pagination-bullet).swiper-pagination-bullet-active {
+  background: #ed2124;
+  transform: scale(1.2);
+}
+
+@media (max-width: 1370px) {
+  .videoSwiperContainer {
+    margin-top: 230px;
+  }
+  .videoElement {
+    height: 300px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+@media (max-width: 1024px) {
+  .videoElement {
+    height: 250px;
+  }
+  .videoSwiperContainer {
+    margin-top: 130px;
+  }
+}
+@media (max-width: 992px) {
+  .videoElement {
+    height: 300px;
+  }
+  .swiperButtonNext,
+  .swiperButtonPrev {
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+  .swiperButtonNext::after,
+  .swiperButtonPrev::after {
+    width: 10px;
+    height: 10px;
+  }
+  .swiperPagination {
+    display: block;
+  }
+  .videoSwiperContainer {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 767px) {
+  .videoSwiperContainer {
+    order: 2;
+    width: 100%;
+    margin-top: 0;
+  }
+  .videoSlide {
+    margin: 0 10px;
+  }
+  .videoElement {
+    height: 250px;
+  }
+  .swiperButtonNext,
+  .swiperButtonPrev {
+    width: 35px;
+    height: 35px;
+  }
+  .swiperButtonNext::after,
+  .swiperButtonPrev::after {
+    width: 8px;
+    height: 8px;
+  }
+  .swiperButtonNext {
+    right: 10px;
+  }
+  .swiperButtonPrev {
+    left: 10px;
+  }
+  .swiperPagination {
+    bottom: 15px;
+  }
+  .swiperPagination :global(.swiper-pagination-bullet) {
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+  }
+}/*# sourceMappingURL=video.module.css.map */

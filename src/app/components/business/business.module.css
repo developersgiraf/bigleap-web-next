@@ -29,6 +29,11 @@
     padding: 0 20px !important;
   }
 }
+@media (max-width: 767px) {
+  .businessArea .business-list .heading {
+    padding: 0 10px !important;
+  }
+}
 .businessArea .business-list .heading h2 {
   color: #fff;
   font-size: 64px;
