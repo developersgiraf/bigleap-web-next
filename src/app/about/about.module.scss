@@ -35,12 +35,19 @@
         padding-top: 10px;
         p {
           text-align: justify;
-          color: #dedede;
+          color: #fdfdfd;
           font-family: "montserrat", sans-serif !important;
           font-weight: 400;
         font-size: 16px;
         line-height: 125%;
         // padding-top: 15px;
+      }
+      .aboutList{
+        li{
+          color: #fdfdfd;
+          font-family: "montserrat", sans-serif !important;
+
+        }
       }
     }
   }

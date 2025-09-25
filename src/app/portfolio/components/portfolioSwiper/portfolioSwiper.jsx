@@ -1,6 +1,8 @@
 "use client";
 
 import SwiperSlider from "@/app/components/swiper-slider/SwiperSlider";
+import CTAButton from "@/app/components/ctaButton/ctabtn";
+import ButtonCTA from "@/app/components/ctaButton/buttoncta";
 import styles from "./portfolioSwiper.module.scss";
 
 const portfolioSlides = [
@@ -10,9 +12,10 @@ const portfolioSlides = [
         alt: "Animation Portfolio",
         title: "Animation",
         description: "Creative animations that bring stories to life with stunning visual effects and motion graphics.",
-        button: {
-            text: "View Project",
-            onClick: () => window.open("/portfolio/portfolio1", "_self")
+        background: "linear-gradient(to bottom, #28002A, #000000)",
+        ctaButton: {
+            title: "Explore More",
+            link: "/portfolio/animation"
         }
     },
     {
@@ -21,9 +24,10 @@ const portfolioSlides = [
         alt: "Web & App Portfolio",
         title: "Web & App",
         description: "Modern web applications and mobile apps designed with cutting-edge technology and user experience.",
-        button: {
-            text: "View Project",
-            onClick: () => window.open("/portfolio/portfolio2", "_self")
+        background: "linear-gradient(to bottom, #00062A, #000000)",
+        ctaButton: {
+            title: "Explore More",
+            link: "/portfolio/web-app"
         }
     },
     {
@@ -32,9 +36,10 @@ const portfolioSlides = [
         alt: "Graphic Design Portfolio",
         title: "Graphic Design",
         description: "Bold and creative graphic designs that communicate your brand's message effectively.",
-        button: {
-            text: "View Project",
-            onClick: () => window.open("/portfolio/portfolio3", "_self")
+        background: "linear-gradient(to bottom, #102A00, #000000)",
+        ctaButton: {
+            title: "Explore More",
+            link: "/portfolio/graphic-design"
         }
     },
     {
@@ -42,10 +47,11 @@ const portfolioSlides = [
         src: "/portfolio/last.png",
         alt: "SEO/SEM Portfolio",
         title: "SEO/SEM",
-        description: "Strategic digital marketing campaigns that drive traffic and boost your online presence.",
-        button: {
-            text: "View Project",
-            onClick: () => window.open("/portfolio/portfolio4", "_self")
+        description: "Strategic digital marketing campaigns that drive traffic and boost your online presence.",        
+        background: "linear-gradient(to bottom, #2A2500, #000000)",
+        ctaButton: {
+            title: "Explore More",
+            link: "/portfolio/seo-sem"
         }
     }
 ];
@@ -56,7 +62,7 @@ export default function PortfolioSwiper() {
         slidesPerView: 1,
         loop: true,
         speed: 800,
-        showCounter: true,
+        showCounter: false,
         breakpoints: {
             320: {
                 slidesPerView: 1,
@@ -79,16 +85,18 @@ export default function PortfolioSwiper() {
 
     const navigationConfig = {
         enabled: true,
+        prevEl: ".portfolio-nav-prev",
+        nextEl: ".portfolio-nav-next",
     };
 
     const paginationConfig = {
-        enabled: true,
+        enabled: false,
         clickable: true,
         dynamicBullets: true,
     };
 
     const autoplayConfig = {
-        enabled: true,
+        enabled: false,
         delay: 4000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
@@ -101,26 +109,85 @@ export default function PortfolioSwiper() {
         priority: true,
     };
 
+    // Custom render function to use CTAButton component
+    const renderSlide = (slide, index) => {
+        return (
+            <div className={styles.portfolioSlideWrapper}>
+                <div className={`${styles.portfolioSlide} imageSlide`} style={{ height: "400px" }}>
+                    <img
+                        src={slide.src}
+                        alt={slide.alt || slide.title || `Slide ${index + 1}`}
+                        className="slideImage"
+                        style={{ 
+                            width: "100%", 
+                            height: "100%", 
+                            objectFit: "cover",
+                            borderRadius: "12px" 
+                        }}
+                    />
+                    <div className="slideContent">
+                        {slide.title && (
+                            <h3 className="slideTitle">{slide.title}</h3>
+                        )}
+                        {slide.description && (
+                            <p className="slideDescription">{slide.description}</p>
+                        )}
+                        {slide.background && (
+                            <div 
+                                className="slideBackground" 
+                                style={{ background: slide.background }}
+                            />
+                        )}
+                        {slide.ctaButton && (
+                            <CTAButton 
+                                title={slide.ctaButton.title}
+                                link={slide.ctaButton.link}
+                            />
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
     return (
         <div className={styles.portfolioSwiperContainer}>
             <div className="container">
-                <div className={styles.swiperHeader}>
+                {/*<div className={styles.swiperHeader}>
                     <h2 className={styles.swiperTitle}>Our Portfolio</h2>
                     <p className={styles.swiperSubtitle}>
                         Explore our diverse range of creative projects and successful campaigns
                     </p>
+                </div>*/}
+
+                <div style={{ position: 'relative' }}>
+                    <div className={styles.portfolioNavigation}>
+                        <div className="portfolio-nav-prev">
+                            <ButtonCTA  
+                                title="‹"
+                                type="button"
+                            />
+                        </div>
+                        <div className="portfolio-nav-next">
+                            <ButtonCTA 
+                                title="›"
+                                type="button"
+                            />
+                        </div>
+                    </div>
+
+                    <SwiperSlider
+                        slides={portfolioSlides}
+                        swiperConfig={swiperConfig}
+                        navigationConfig={navigationConfig}
+                        paginationConfig={paginationConfig}
+                        autoplayConfig={autoplayConfig}
+                        imageConfig={imageConfig}
+                        renderSlide={renderSlide}
+                        className={styles.portfolioSwiper}
+                        height="400px"
+                    />
                 </div>
-                
-                <SwiperSlider
-                    slides={portfolioSlides}
-                    swiperConfig={swiperConfig}
-                    navigationConfig={navigationConfig}
-                    paginationConfig={paginationConfig}
-                    autoplayConfig={autoplayConfig}
-                    imageConfig={imageConfig}
-                    className={styles.portfolioSwiper}
-                    height="400px"
-                />
             </div>
         </div>
     );

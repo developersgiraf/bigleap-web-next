@@ -2,7 +2,7 @@ import TitleBanner from "../../components/title-banner/titleBannerr";
 import styles from "./portfolioDetail.module.scss";
 import Image from "next/image";
 import MotionGraphics from "./components/motionGraphics/motionGraphics";
-import TitleDescription from "../../servicess/components/title-description/titleDes.jsx";
+import TitleDescriptionMain from "../../servicess/components/title-description/titleDesMain";
 import GradientLights from "../../components/gradient-lights/gradient";
 import VideoSwiper from "./components/VideoSwiper";
 
@@ -127,7 +127,7 @@ export default function PortfolioDetail({ params }) {
       </section>
 
       <section className={styles.titleDescriptionSection}>
-        <TitleDescription
+        <TitleDescriptionMain
           title={portfolio.titleDescription}
         />
       </section>

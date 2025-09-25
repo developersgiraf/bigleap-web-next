@@ -83,17 +83,6 @@
   display: none;
   z-index: 10;
 }
-.swiperPagination :global(.swiper-pagination-bullet) {
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  margin: 0 5px;
-  transition: all 0.3s ease-in-out;
-}
-.swiperPagination :global(.swiper-pagination-bullet).swiper-pagination-bullet-active {
-  background: #ed2124;
-  transform: scale(1.2);
-}
 
 @media (max-width: 1370px) {
   .videoSwiperContainer {
@@ -165,10 +154,5 @@
   }
   .swiperPagination {
     bottom: 15px;
-  }
-  .swiperPagination :global(.swiper-pagination-bullet) {
-    width: 10px;
-    height: 10px;
-    margin: 0 4px;
   }
 }/*# sourceMappingURL=video.module.css.map */

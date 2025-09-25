@@ -29,7 +29,7 @@
 }
 
 .textColor {
-  color: #e9250f !important;
+  color: #ed2428 !important;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
 }
@@ -97,7 +97,7 @@
   line-height: 95px;
 }
 .animatedDes .allDes h2 .colordText {
-  color: #ed2124;
+  color: #ed2428;
 }
 .animatedDes .allDes .aniContent {
   padding-top: 30px;

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import PortfolioEntry from "../portfolioEntry/portfolioEntry";
-import styles from "../../portfolio.module.css";
+import styles from "../../portfolio.module.scss";
 
 const data = [
     {

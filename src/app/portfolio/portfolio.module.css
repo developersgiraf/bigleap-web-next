@@ -2,4 +2,9 @@
   display: flex;
   gap: 0;
   flex-wrap: no-wrap;
+}
+@media (max-width: 767px) {
+  .portfolioEntryContainer {
+    display: none;
+  }
 }/*# sourceMappingURL=portfolio.module.css.map */

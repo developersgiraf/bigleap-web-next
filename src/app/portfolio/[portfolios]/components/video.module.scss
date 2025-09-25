@@ -87,19 +87,6 @@
   transform: translateX(-50%);
   display: none;
   z-index: 10;
-  
-  :global(.swiper-pagination-bullet) {
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.5);
-    margin: 0 5px;
-    transition: all 0.3s ease-in-out;
-    
-    &.swiper-pagination-bullet-active {
-      background: #ed2124;
-      transform: scale(1.2);
-    }
-  }
 }
 
 // Responsive Styles
@@ -183,12 +170,6 @@
   
   .swiperPagination {
     bottom: 15px;
-    
-    :global(.swiper-pagination-bullet) {
-      width: 10px;
-      height: 10px;
-      margin: 0 4px;
-    }
   }
 }
 

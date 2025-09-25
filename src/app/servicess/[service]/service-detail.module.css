@@ -5,7 +5,7 @@
 }
 
 .textColor {
-  color: #f8240c;
+  color: #ed2428;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
 }
@@ -15,6 +15,73 @@
   font-weight: 400;
   font-size: 16px;
   color: #fdfdfd;
+}
+@media (max-width: 767px) {
+  .paraColor {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+  }
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .listContainer {
+    justify-content: left;
+    align-items: left;
+  }
+}
+.listContainer .listHead {
+  font-family: "Boldonse", system-ui, sans-serif !important;
+  color: #ed2428;
+  font-size: 45px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 250px;
+  padding: 0 270px;
+  line-height: 80px;
+}
+@media (max-width: 1370px) {
+  .listContainer .listHead {
+    padding: 0 0px !important;
+    margin-top: 100px !important;
+  }
+}
+@media (max-width: 1024px) {
+  .listContainer .listHead {
+    margin-top: 60px !important;
+    font-size: 30px !important;
+    padding: 0 0px !important;
+  }
+}
+@media (max-width: 992px) {
+  .listContainer .listHead {
+    padding: 0 0px !important;
+    font-size: 30px !important;
+    text-align: left !important;
+    margin-top: 30px !important;
+  }
+}
+@media (max-width: 767px) {
+  .listContainer .listHead {
+    margin-top: 50px;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: left;
+    padding: 0 20px;
+  }
+}
+.listContainer .listPara {
+  color: #fdfdfd;
+  text-align: center;
+  font-size: 16px;
+  font-family: "monserrat", system-ui, sans-serif !important;
+  width: 60%;
 }
 
 .container {
@@ -38,12 +105,6 @@
   order: 1;
 }
 
-.media :global(img) {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .copy {
   max-width: 58ch;
 }
@@ -64,7 +125,7 @@
 
 /* Text Color Styles */
 .textColor {
-  color: #f12913;
+  color: #ed2428;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
   transition: all 0.3s ease;
@@ -77,7 +138,7 @@
 .paraColor {
   color: #fdfdfd;
   line-height: 1.7;
-  margin: 0 0 0.9rem;
+  margin-top: 30px;
 }
 
 /* Additional color variations */
@@ -102,7 +163,7 @@
 }
 
 .serDetail {
-  padding: 320px 0;
+  padding: 390px 0;
 }
 .serDetail .detail {
   max-width: 1000px;

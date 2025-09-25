@@ -45,7 +45,7 @@ export default function AboutPage() {
                       
                     </p>
                     <p>When we say 360 degree animation, yes, we got you covered from start to finish. The spectrum of animation services include:</p>
-                    <ul>
+                    <ul className={styles["aboutList"]}>
                       <li>2D&3D Animation</li>
                       <li>white board animation</li>
                       <li>motion graphics</li>

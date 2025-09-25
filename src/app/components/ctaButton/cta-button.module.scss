@@ -54,5 +54,5 @@
 
     .btn{
         position: relative;
-        z-index: 100;
+        z-index: 100; // High z-index to ensure button is always clickable
     }

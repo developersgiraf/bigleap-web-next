@@ -79,44 +79,6 @@
         font-family: "montserrat", sans-serif !important;
     }
 
-    // Swiper specific styles
-    :global(.swiper-slide) {
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    :global(.swiper-button-next),
-    :global(.swiper-button-prev) {
-        color: #ff4444;
-        background: rgba(255, 68, 68, 0.1);
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 2px solid #ff4444;
-        margin-top: -25px;
-        transition: all 0.3s ease;
-
-        &:hover {
-            background: #ff4444;
-            color: white;
-        }
-
-        &:after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    }
-
-    :global(.swiper-pagination) {
-        display: none;
-    }
-
-    :global(.swiper-wrapper) {
-        align-items: center;
-    }
-
     // Media queries
     
     @media (max-width: 1024px) {
