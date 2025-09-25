@@ -46,7 +46,7 @@ export default function ServicesPage() {
 
       <section className={styles.serviceCollect}>
         <Image
-          src="/Services.png"
+          src="/Sersess.png"
           alt="Services Background"
           fill
           priority

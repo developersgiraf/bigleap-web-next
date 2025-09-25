@@ -1,6 +1,7 @@
 import styles from "./service-detail.module.scss";
 import TitleDescription from "../components/title-description/titleDes";
 import TitleBanner from "../../components/title-banner/titleBannerr";
+import FAQSection from "../../components/faq/faq";
 import GradientLights from "../../components/gradient-lights/gradient";
 import { GRADIENT_PRESETS } from "../../components/gradient-lights/gradientConfig";
 import ListServices from "../components/list/list";
@@ -19,11 +20,22 @@ export default function Services({ params }) {
   const { service } = params;
   const serviceData = servicesData[service];
 
+  // Fallback if service data is not found
+  if (!serviceData) {
+    return (
+      <>
+        <TitleBanner
+          title="Service Not Found"
+          sub="The requested service page could not be found."
+        />
+      </>
+    );
+  }
+
   return (
     <>
       <TitleBanner
-        title="Imagination Unleashed:
-      A Journey Beyond Reality"
+        title={serviceData.bannerTitle || "Imagination Unleashed: A Journey Beyond Reality"}
         sub=""
       />
 
@@ -79,12 +91,17 @@ export default function Services({ params }) {
           />
         </div>
       </section>
-      <h1>{serviceData.listHead}</h1>
+      <div className={styles.listContainer}>
+       <h2 className={styles.listHead}>{serviceData.listHead}</h2>
+      <p className={styles.listPara}>{serviceData.listPara}</p>
+      </div>
+     
       <ListServices listItems={serviceData.list} />
+      {/* <FAQSection /> */}
       <EnquirySect />
       <GradientLights
         customCounts={{
-          xl: 8, // Rich visual experience for extra large screens
+          xl: 5, // Rich visual experience for extra large screens
           lg: 5, // Substantial gradients for large screens
           md: 5, // Balanced for medium screens
           sm: 4, // Moderate for tablets

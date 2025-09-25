@@ -188,7 +188,7 @@ export default function Home() {
       >
         <div className={pageStyles.backgroundWrapper}>
           <Image
-            src="/video-bg.png"
+            src="/watch-bg.png"
             alt="Background"
             fill
             priority
@@ -227,7 +227,7 @@ export default function Home() {
                 <div className={styles["second-video"]}>
                   <div className={styles.content}>
                     <p> Our Portfolio</p>
-                    <h2>Lorem ipsum </h2>
+                    <h2>Explore our creative works and see how we made an impact. </h2>
                     <CTAButton title="WATCH MORE" link="#" />
                   </div>
 
@@ -262,7 +262,7 @@ export default function Home() {
                   sub: "key projects",
                   caption: "Lorem ipsum dolor sit amet.",
                   paragraph:
-                    "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
+                    "Explore our key projects created for clients across the globe.",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",

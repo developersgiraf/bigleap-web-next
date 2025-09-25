@@ -10,7 +10,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/two-d-animation",
+    link: "/servicess/twoDanimation",
   },
   {
     image: "/servicess/3danimation.png",
@@ -18,7 +18,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "/servicess/three-d-animation",
+    link: "/servicess/threeDanimation",
   },
   {
     image: "/servicess/Whiteboard Animation.png",
@@ -50,7 +50,7 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#",
+    link: "/servicess/product-animation",
   },
   {
     image: "/servicess/VFX & Post Production.png",
@@ -58,20 +58,20 @@ const defaultData = [
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
     sub3: "Lorem ipsum dolor sit",
-    link: "#",
+    link: "/servicess/vfx-post-production",
   },
   {
     image: "/servicess/video.png",
     caption: "Video Editing & Post Production",
     sub1: "Lorem ipsum dolor sit",
-    link: "#",
+    link: "/servicess/video-editing-post-production",
   },
   {
     image: "/servicess/storytelling.png",
     caption: "Storyboarding & Post Production",
     sub1: "Lorem ipsum dolor sit",
     sub2: "Lorem ipsum dolor sit",
-    link: "#",
+    link: "/servicess/storyboarding-design",
   },
 ];
 export default function ServiceImage({

@@ -13,6 +13,8 @@ $sunset-pink: #e91e63;
   display: flex;
   flex-direction: column;
   padding: 0 160px;
+  
+  
 
   .title {
     font-family: "Boldonse", system-ui, sans-serif !important;
@@ -95,28 +97,9 @@ font-family: "monserrat", system-ui, sans-serif !important;
 }
 
 .highlight {
-  font-weight: 700;
-  transition: all 0.3s ease;
+  
 
-  &:hover {
-    transform: scale(1.05);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
 
-  &.primary {
-    color: $primary-red;
-    text-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
-  }
-
-  &.secondary {
-    color: $professional-blue;
-    text-shadow: 0 1px 3px rgba(52, 152, 219, 0.3);
-  }
-
-  &.accent {
-    color: $vibrant-orange;
-    text-shadow: 0 1px 3px rgba(243, 156, 18, 0.3);
-  }
 
   &.gradient {
     background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
@@ -205,17 +188,24 @@ font-family: "monserrat", system-ui, sans-serif !important;
 }
 
 .highlight {
-  color: #f8240c;
-  font-weight: 700;
+  color: #ed2428;
   text-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
+   font-family: "Boldonse", system-ui, sans-serif !important;
+    font-size: 64px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+   
 }
 
 .paraColor{
-  font-family: "monserrat", system-ui, sans-serif !important;
+     font-family: "Boldonse", system-ui, sans-serif !important;
   font-weight: 400;
-  font-size: 16px;
+     font-size: 64px;
   color: #fdfdfd;
+  line-height: 100px;
+  
 }
+
 
 
 // Responsive adjustments
@@ -242,11 +232,22 @@ font-family: "monserrat", system-ui, sans-serif !important;
     line-height: 60px !important;
     
   }
+  .highlight{
+  font-size: 34px !important;
+    text-align: left !important;
+  }
+ 
+  .paraColor{
+    font-size: 34px !important;
+    line-height: 60px !important;
+  }
  
 }
 @media(max-width: 992px){
   .titleDescription{
     padding: 0 10px !important;
+    text-align: left !important;
+
   }
  .title{
     font-size: 45px !important;
@@ -286,11 +287,23 @@ font-family: "monserrat", system-ui, sans-serif !important;
     text-align: left !important;
     padding: 0 10px !important;
   }
+  .highlight{
+  font-size: 30px !important;
+    text-align: left !important;
+  }
+ 
+  .paraColor{
+    font-size: 40px !important;
+    line-height: 60px !important;
+    text-align: left !important;
+  }
 
 }
 @media (max-width: 767px) {
   .titleDescription{
     padding: 0 0px !important;
+    text-align: left !important;
+
   }
   .description {
           font-size: 14px !important;
@@ -307,35 +320,52 @@ font-family: "monserrat", system-ui, sans-serif !important;
   }
 
   .subhead1{
-        font-size: 16px !important;
+        font-size: 14px !important;
         line-height: 23px !important;
         padding-left: 10px !important;
   }
   .subdes1{
         padding: 0 10px !important;
+        font-size: 14px !important;
+
   }
   .subhead2{
-        font-size: 16px !important;
+        font-size: 14px !important;
         padding-left: 10px !important;
 
   }
   .subdes2{
         padding: 0 10px !important;
+        font-size: 14px !important;
+
   }
   .subhead3{
-        font-size: 16px !important;
+        font-size: 14px !important;
         padding-left: 10px !important;
 
   }
   .subdes3{
         padding: 0 10px !important;
+        font-size: 14px !important;
+
   }
   .subhead4{
-        font-size: 16px !important;
+        font-size: 14px !important;
         padding-left: 10px !important;
 
   }
   .subdes4{
         padding: 0 10px !important;
+        font-size: 14px !important;
+
+  }
+  .highlight{
+  font-size: 30px !important;
+    text-align: left !important;
+  }
+  .paraColor{
+ font-size: 30px !important;
+    line-height: 50px !important;
+    text-align: left !important;
   }
 }
