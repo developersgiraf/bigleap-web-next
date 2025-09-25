@@ -75,12 +75,12 @@ const portfolioData = {
 };
 
 export default function PortfolioDetail({ params }) {
-  const portfolioId = params.portfolios;
-  const portfolio = portfolioData[portfolioId] || portfolioData.portfolio1;
-  
+  const { portfolios } = params;
+  const portfolio = portfolioData[portfolios] || portfolioData.portfolio1;
+
   return (
     <>
-       <TitleBanner title={portfolio.subtitle} sub=""/>
+      <TitleBanner title={portfolio.subtitle} sub="" />
 
       <>
         <section className={styles.videoSwiper}>

@@ -122,54 +122,6 @@
   overflow: hidden;
   border-radius: 12px;
 }
-.portfolioSwiper :global(.swiper-button-next),
-.portfolioSwiper :global(.swiper-button-prev) {
-  color: #ff0096;
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  transition: all 0.3s ease;
-}
-.portfolioSwiper :global(.swiper-button-next):hover,
-.portfolioSwiper :global(.swiper-button-prev):hover {
-  background: rgba(255, 0, 150, 0.2);
-  transform: scale(1.1);
-}
-.portfolioSwiper :global(.swiper-button-next)::after,
-.portfolioSwiper :global(.swiper-button-prev)::after {
-  font-size: 18px;
-  font-weight: bold;
-}
-.portfolioSwiper :global(.swiper-pagination) {
-  bottom: -50px !important;
-}
-.portfolioSwiper :global(.swiper-pagination) :global(.swiper-pagination-bullet) {
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  width: 12px;
-  height: 12px;
-}
-.portfolioSwiper :global(.swiper-pagination) :global(.swiper-pagination-bullet):global(.swiper-pagination-bullet-active) {
-  opacity: 1;
-  transform: scale(1.2);
-}
-.portfolioSwiper :global(.slideCounter) {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  z-index: 10;
-}
 
 @media (max-width: 767px) {
   .portfolioSwiperContainer {
@@ -184,32 +136,5 @@
   }
   .swiperHeader .swiperSubtitle {
     font-size: 1rem;
-  }
-  .portfolioSwiper :global(.swiper-button-next),
-  .portfolioSwiper :global(.swiper-button-prev) {
-    width: 40px;
-    height: 40px;
-  }
-  .portfolioSwiper :global(.swiper-button-next)::after,
-  .portfolioSwiper :global(.swiper-button-prev)::after {
-    font-size: 14px;
-  }
-  .portfolioSwiper .portfolioSlideWrapper .portfolioSlide :global(.slideContent) {
-    padding: 20px 15px 15px;
-  }
-  .portfolioSwiper .portfolioSlideWrapper .portfolioSlide :global(.slideContent) :global(.slideTitle) {
-    font-size: 1.3rem;
-  }
-  .portfolioSwiper .portfolioSlideWrapper .portfolioSlide :global(.slideContent) :global(.slideDescription) {
-    font-size: 0.9rem;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-  }
-  .portfolioSwiper .portfolioSlideWrapper .portfolioSlide :global(.slideContent) :global(.btn) :global(a) {
-    padding: 8px 18px !important;
-    font-size: 0.85rem !important;
-  }
-  .portfolioSwiper :global(.slideImage) {
-    height: 280px;
   }
 }/*# sourceMappingURL=portfolioSwiper.module.css.map */
