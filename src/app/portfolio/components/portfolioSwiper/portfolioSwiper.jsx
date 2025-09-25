@@ -12,10 +12,10 @@ const portfolioSlides = [
         alt: "Animation Portfolio",
         title: "Animation",
         description: "Creative animations that bring stories to life with stunning visual effects and motion graphics.",
-        background: "linear-gradient(to bottom, #28002A, #000000)",
+        // background: "linear-gradient(to bottom, #28002A, #000000)",
         ctaButton: {
             title: "Explore More",
-            link: "/portfolio/animation"
+            link: "/portfolio/portfolio1"
         }
     },
     {
@@ -24,10 +24,10 @@ const portfolioSlides = [
         alt: "Web & App Portfolio",
         title: "Web & App",
         description: "Modern web applications and mobile apps designed with cutting-edge technology and user experience.",
-        background: "linear-gradient(to bottom, #00062A, #000000)",
+        // background: "linear-gradient(to bottom, #00062A, #000000)",
         ctaButton: {
             title: "Explore More",
-            link: "/portfolio/web-app"
+            link: "/portfolio/portfolio2"
         }
     },
     {
@@ -36,10 +36,10 @@ const portfolioSlides = [
         alt: "Graphic Design Portfolio",
         title: "Graphic Design",
         description: "Bold and creative graphic designs that communicate your brand's message effectively.",
-        background: "linear-gradient(to bottom, #102A00, #000000)",
+        // background: "linear-gradient(to bottom, #102A00, #000000)",
         ctaButton: {
             title: "Explore More",
-            link: "/portfolio/graphic-design"
+            link: "/portfolio/portfolio3"
         }
     },
     {
@@ -48,10 +48,10 @@ const portfolioSlides = [
         alt: "SEO/SEM Portfolio",
         title: "SEO/SEM",
         description: "Strategic digital marketing campaigns that drive traffic and boost your online presence.",        
-        background: "linear-gradient(to bottom, #2A2500, #000000)",
+        // background: "linear-gradient(to bottom, #2A2500, #000000)",
         ctaButton: {
             title: "Explore More",
-            link: "/portfolio/seo-sem"
+            link: "/portfolio/portfolio4"
         }
     }
 ];
@@ -113,28 +113,23 @@ export default function PortfolioSwiper() {
     const renderSlide = (slide, index) => {
         return (
             <div className={styles.portfolioSlideWrapper}>
-                <div className={`${styles.portfolioSlide} imageSlide`} style={{ height: "400px" }}>
+                <div className={`${styles.portfolioSlide} portfolioSlide imageSlide`}>
                     <img
                         src={slide.src}
                         alt={slide.alt || slide.title || `Slide ${index + 1}`}
-                        className="slideImage"
-                        style={{ 
-                            width: "100%", 
-                            height: "100%", 
-                            objectFit: "cover",
-                            borderRadius: "12px" 
-                        }}
+                        className={`slideImage ${styles.slideImage}`}
+                        
                     />
-                    <div className="slideContent">
+                    <div className={styles.portfolioContent}>
                         {slide.title && (
-                            <h3 className="slideTitle">{slide.title}</h3>
+                            <h3 className={styles.portfolioTitle}>{slide.title}</h3>
                         )}
                         {slide.description && (
-                            <p className="slideDescription">{slide.description}</p>
+                            <p className={styles.portfolioDescription}>{slide.description}</p>
                         )}
                         {slide.background && (
                             <div 
-                                className="slideBackground" 
+                                className={styles.portfolioBackground} 
                                 style={{ background: slide.background }}
                             />
                         )}
@@ -160,7 +155,7 @@ export default function PortfolioSwiper() {
                     </p>
                 </div>*/}
 
-                <div style={{ position: 'relative' }}>
+                <div className={styles.swiperWrapper}>
                     <div className={styles.portfolioNavigation}>
                         <div className="portfolio-nav-prev">
                             <ButtonCTA  

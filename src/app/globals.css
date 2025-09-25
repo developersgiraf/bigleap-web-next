@@ -312,10 +312,14 @@ p {
 
 .slideImage {
   width: 100% !important;
-  height: auto !important;
+  /* height: auto !important; */
   object-fit: contain !important;
   padding: 0 !important;
   margin: 0 !important;
+
+  /* @media(max-width: 767px) {
+    height: 100px !important;
+  } */
 }
 
 .swiper-slide {
@@ -485,13 +489,14 @@ p {
 
 .portfolioSlide .slideTitle {
   color: #ffffff !important;
-  font-size: 1.5rem !important;
+  font-size: 64px !important;
   font-weight: 600 !important;
   margin-bottom: 8px !important;
-  text-transform: uppercase;
   letter-spacing: 1px;
   display: block !important;
   visibility: visible !important;
+
+  
 }
 
 .portfolioSlide .slideDescription {
@@ -596,12 +601,16 @@ p {
   }
 
   .portfolioSlide .slideTitle {
-    font-size: 1.3rem !important;
+    font-size: 20px !important;
+    font-family: "boldonse", system-ui !important;
+
   }
 
   .portfolioSlide .slideDescription {
-    font-size: 0.9rem !important;
+    font-size: 14px !important;
     -webkit-line-clamp: 3;
+     font-family: "montserrat", sans-serif !important;
+
     line-clamp: 3;
   }
 
