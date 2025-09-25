@@ -1,8 +1,1 @@
-/* Center align the heading for blog page only */
-.blogPageWrapper :global(.headings) {
-  justify-content: center !important;
-}
-
-.blogPageWrapper :global(.headings h2) {
-  text-align: center !important;
-}
+/* Center align the heading for blog page only - moved to globals.css */

@@ -614,3 +614,15 @@ p {
     height: 280px;
   }
 }
+
+/* ========================================
+   BLOG PAGE GLOBAL STYLES
+   ======================================== */
+/* Blog page heading alignment - moved from blog.module.css */
+.blogPageWrapper .headings {
+  justify-content: center !important;
+}
+
+.blogPageWrapper .headings h2 {
+  text-align: center !important;
+}
