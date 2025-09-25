@@ -46,32 +46,6 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-
-        :global(.btn) {
-            margin: 0 !important;
-
-            :global(button) {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                min-width: 50px;
-                height: 50px;
-                border-radius: 50% !important;
-                font-size: 24px !important;
-                font-weight: bold !important;
-                padding: 0 !important;
-                transition: all 0.3s ease;
-                
-                &:hover {
-                    transform: scale(1.1);
-                    box-shadow: -3px 3px 15px 3px #ed232a !important;
-                }
-
-                &:active {
-                    transform: scale(0.95);
-                }
-            }
-        }
     }
 
     .portfolio-nav-prev {
@@ -147,12 +121,6 @@
     position: relative;
     z-index: 3;
 
-    :global(.swiper-slide) {
-        height: auto;
-        display: flex;
-        align-items: stretch;
-    }
-
     // Portfolio Slide Wrapper
     .portfolioSlideWrapper {
         width: 100%;
@@ -165,133 +133,10 @@
             height: 100%;
             overflow: hidden;
             border-radius: 12px;
-            
-            :global(.slideImage) {
-                border-radius: 12px;
-                transition: all 0.3s ease;
-            }
-
-            :global(.slideContent) {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
-                padding: 30px 20px 20px;
-                border-radius: 0 0 12px 12px;
-                transform: translateY(0);
-                transition: all 0.3s ease;
-                opacity: 1;
-                z-index: 10;
-                min-height: 120px;
-
-                :global(.slideTitle) {
-                    color: #ffffff !important;
-                    font-size: 1.5rem !important;
-                    font-weight: 600 !important;
-                    margin-bottom: 8px !important;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    display: block !important;
-                    visibility: visible !important;
-                }
-
-                :global(.slideDescription) {
-                    color: #cccccc !important;
-                    font-size: 0.9rem !important;
-                    line-height: 1.4 !important;
-                    margin-bottom: 15px !important;
-                    display: block !important;
-                    visibility: visible !important;
-                    max-height: none;
-                    overflow: visible;
-                }
-
-                // CTA Button specific styling
-                :global(.btn) {
-                    margin: 10px 0 0 0 !important;
-                    
-                    :global(a) {
-                        padding: 8px 20px !important;
-                        font-size: 0.9rem !important;
-                        text-transform: uppercase;
-                        letter-spacing: 0.5px;
-                        box-shadow: -1px 1px 0px 1px #fff !important;
-                        
-                        &:hover {
-                            transform: translateY(-2px);
-                            box-shadow: -2px 2px 12px 2px #ed232a !important;
-                        }
-                    }
-                }
-            }
-
-            &:hover {
-                :global(.slideContent) {
-                    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 100%);
-                    padding: 35px 25px 25px;
-                }
-
-                :global(.slideImage) {
-                    transform: scale(1.05);
-                }
-            }
         }
     }
+}
 
-    :global(.swiper-button-next),
-    :global(.swiper-button-prev) {
-        color: #ff0096;
-        background: rgba(255, 255, 255, 0.1);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        transition: all 0.3s ease;
-
-        &:hover {
-            background: rgba(255, 0, 150, 0.2);
-            transform: scale(1.1);
-        }
-
-        &::after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    }
-
-    :global(.swiper-pagination) {
-        bottom: -50px !important;
-
-        :global(.swiper-pagination-bullet) {
-            opacity: 0.7;
-            transition: all 0.3s ease;
-            width: 12px;
-            height: 12px;
-
-            &:global(.swiper-pagination-bullet-active) {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-        }
-    }
-
-    // Slide counter styling
-    :global(.slideCounter) {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        padding: 8px 12px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        z-index: 10;
-    }
 }
 
 // Mobile-specific styling (since this component only shows on mobile)
@@ -310,48 +155,6 @@
         
         .swiperSubtitle {
             font-size: 1rem;
-        }
-    }
-
-    .portfolioSwiper {
-        :global(.swiper-button-next),
-        :global(.swiper-button-prev) {
-            width: 40px;
-            height: 40px;
-
-            &::after {
-                font-size: 14px;
-            }
-        }
-
-        .portfolioSlideWrapper {
-            .portfolioSlide {
-                :global(.slideContent) {
-                    padding: 20px 15px 15px;
-
-                    :global(.slideTitle) {
-                        font-size: 1.3rem;
-                    }
-
-                    :global(.slideDescription) {
-                        font-size: 0.9rem;
-                        -webkit-line-clamp: 3;
-                        line-clamp: 3;
-                    }
-
-                    // Mobile CTA Button styling
-                    :global(.btn) {
-                        :global(a) {
-                            padding: 8px 18px !important;
-                            font-size: 0.85rem !important;
-                        }
-                    }
-                }
-            }
-        }
-
-        :global(.slideImage) {
-            height: 280px;
         }
     }
 }
