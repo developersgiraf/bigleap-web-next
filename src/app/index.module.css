@@ -92,6 +92,7 @@
   .hero .hanging .characterimage {
     width: 70% !important;
     top: -90% !important;
+    max-width: 1050px !important;
   }
 }
 @media (max-width: 1024px) {
