@@ -11,13 +11,13 @@ import { servicesData } from "./data/ServicePageData.js";
 
 
 
-export default function Services({ params }) {
+export default async function Services({ params }) {
   
   const metadata = {
   title: "Services - Big Leap",
   description: "Explore our range of creative services designed to elevate your brand.",
 };
-  const { service } = params;
+  const { service } = await params;
   const serviceData = servicesData[service];
 
   // Fallback if service data is not found
