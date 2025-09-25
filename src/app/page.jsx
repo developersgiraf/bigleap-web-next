@@ -37,7 +37,16 @@ export default function Home() {
             priority
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 100vw"
           />
-
+          <Image
+            id="digital360-img"
+            src="/digital360.png"
+            alt="digital360"
+            width={599}
+            height={353}
+            className={styles.digital360}
+            priority
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 100vw"
+          />
           {/* <img id="img360" src="360.png" alt="360image" /> */}
           <motion.div
             id="character-img"
@@ -49,20 +58,20 @@ export default function Home() {
               right: 0,
               margin: "0 auto"
             }}
-            initial={{ rotateZ: -40 }}
+            initial={{ rotateZ: 0 }}
             whileHover={{ 
               rotateZ: 45,
               transition: {
                 type: "spring",
-                stiffness: 30,  // Faster animation
-                damping: 2,     // Less bouncy
+                stiffness: 150,  // Faster animation
+                damping: 10,     // Less bouncy
               }
             }}
-            animate={{ rotateZ: 10 }}
+            animate={{ rotateZ: 0 }}
             transition={{
               type: "spring",
-              stiffness: 30,
-              damping: 2,
+              stiffness: 150,
+              damping: 10,
             }}
           >
             <Image
@@ -188,7 +197,7 @@ export default function Home() {
       >
         <div className={pageStyles.backgroundWrapper}>
           <Image
-            src="/watch-bg.png"
+            src="/video-bg.png"
             alt="Background"
             fill
             priority
@@ -226,8 +235,8 @@ export default function Home() {
               <div className="col-xl-6 col-lg-6 col-md-12 col-12 odr">
                 <div className={styles["second-video"]}>
                   <div className={styles.content}>
-                    <p>Portfolio</p>
-                    <h2>Explore our creative works and see how we made an impact. </h2>
+                    <p> Our Portfolio</p>
+                    <h2>Lorem ipsum </h2>
                     <CTAButton title="WATCH MORE" link="#" />
                   </div>
 
@@ -260,9 +269,9 @@ export default function Home() {
               datas={[
                 {
                   sub: "key projects",
-                  caption: "Our Client Projects.",
+                  caption: "Lorem ipsum dolor sit amet.",
                   paragraph:
-                    "Explore our key projects crafted for clients, each aligned their vision. ",
+                    "Take a deep dive into some of our favorite projects. From established corporations to startups gearing to launch, we’ve seen a lot of our partners win – and we're excited to see you thrive too.",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",
