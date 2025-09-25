@@ -226,7 +226,7 @@ export default function Home() {
               <div className="col-xl-6 col-lg-6 col-md-12 col-12 odr">
                 <div className={styles["second-video"]}>
                   <div className={styles.content}>
-                    <p> Our Portfolio</p>
+                    <p>Portfolio</p>
                     <h2>Explore our creative works and see how we made an impact. </h2>
                     <CTAButton title="WATCH MORE" link="#" />
                   </div>
@@ -260,9 +260,9 @@ export default function Home() {
               datas={[
                 {
                   sub: "key projects",
-                  caption: "Lorem ipsum dolor sit amet.",
+                  caption: "Our Client Projects.",
                   paragraph:
-                    "Explore our key projects created for clients across the globe.",
+                    "Explore our key projects crafted for clients, each aligned their vision. ",
                   iframe:
                     "https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo",
                   idname: "VDOSlider",

@@ -528,11 +528,11 @@
 .watch-area .watch .second-video .content h2 {
   color: #fdfdfd;
   font-family: "Boldonse", system-ui !important;
-  font-size: 64px;
+  font-size: 34px;
   font-weight: 400;
   letter-spacing: 0%;
   font-style: regular;
-  line-height: 90%;
+  line-height: 140%;
 }
 @media (max-width: 1024px) {
   .watch-area .watch .second-video .content h2 {
