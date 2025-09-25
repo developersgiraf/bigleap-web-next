@@ -326,3 +326,100 @@ p {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+/* ========================================
+   TIMELINE SLIDER SWIPER GLOBAL STYLES
+   ======================================== */
+/* Timeline swiper specific styles - moved from timeLineSlider.module.scss */
+.timelineSlider .swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timelineSlider .swiper-button-next,
+.timelineSlider .swiper-button-prev {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ff4444;
+  margin-top: -25px;
+  transition: all 0.3s ease;
+}
+
+.timelineSlider .swiper-button-next:hover,
+.timelineSlider .swiper-button-prev:hover {
+  background: #ff4444;
+  color: white;
+}
+
+.timelineSlider .swiper-button-next:after,
+.timelineSlider .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.timelineSlider .swiper-pagination {
+  display: none;
+}
+
+.timelineSlider .swiper-wrapper {
+  align-items: center;
+}
+
+/* ========================================
+   SERVICE DETAIL GLOBAL STYLES
+   ======================================== */
+/* Service detail media images - moved from service-detail.module.scss */
+.media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================================
+   SWIPER SLIDER GLOBAL STYLES
+   ======================================== */
+/* Swiper pagination bullet styles - moved from SwiperSlider.module.scss */
+.swiperPagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.swiperPagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #ed232a;
+  transform: scale(1.2);
+}
+
+/* ========================================
+   VIDEO SWIPER GLOBAL STYLES
+   ======================================== */
+/* Video swiper pagination bullet styles - moved from video.module.scss */
+.swiperPagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiperPagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #ed2124;
+  transform: scale(1.2);
+}
+
+/* Mobile responsive styles for video swiper pagination */
+@media (max-width: 767px) {
+  .swiperPagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+  }
+}
