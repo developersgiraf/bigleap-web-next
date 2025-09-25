@@ -10,9 +10,10 @@ subhead2, subdes2,subhead3, subdes3, subhead4, subdes4 }) {
   const titleEnd = titleEnds ? titleEnds[1] : null;
   return (
     <div className={styles.titleDescription}>
+    <div className={styles.mainTitle}>
       <h2 className={styles.paraColor}>{titleWhite}</h2>
       {titleHighlight && <span className={styles.highlight}>{titleHighlight}</span>}
-      {titleEnd && <span className={styles.paraColor}>{titleEnd}</span>}
+      {titleEnd && <span className={styles.paraColor}>{titleEnd}</span>}</div>
       <p className={styles.description}>{description}</p>
       <h4 className={styles.subhead1}>{subhead1}</h4>
       <p className={styles.subdes1}>{subdes1}</p>

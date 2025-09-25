@@ -41,43 +41,25 @@ export default function AboutPage() {
                   </h4>
                   <div className={styles["aboutContent"]}>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Sunt debitis beatae voluptatem libero impedit iusto
-                      maiores quaerat magnam expedita odit natus fugit quasi
-                      accusamus veritatis, nemo delectus cupiditate perferendis
-                      eligendi.Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Sunt debitis beatae voluptatem libero
-                      impedit iusto maiores quaerat magnam expedita odit natus
-                      fugit quasi accusamus veritatis, nemo delectus cupiditate
-                      perferendis eligendi.Lorem ipsum dolor sit amet
-                      consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero impedit iusto maiores quaerat magnam
-                      expedita odit natus fugit quasi accusamus veritatis, nemo
-                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero impedit iusto maiores quaerat magnam
-                      expedita odit natus fugit quasi accusamus veritatis, nemo
-                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero impedit iusto maiores quaerat magnam
-                      expedita odit natus fugit quasi accusamus veritatis, nemo
-                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero impedit iusto maiores quaerat magnam
-                      expedita odit natus fugit quasi accusamus veritatis, nemo
-                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero impedit iusto maiores quaerat magnam
-                      expedita odit natus fugit quasi accusamus veritatis, nemo
-                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero impedit iusto maiores quaerat magnam
-                      expedita odit natus fugit quasi accusamus veritatis, nemo
-                      delectus cupiditate perferendis eligendi.Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Sunt debitis beatae
-                      voluptatem libero
+                      Ready to expand your brand beyond limits? At Big Leap, we don’t just create animated videos, we create narratives that reflect your vision. Where creativity meets purpose, our dynamic team is by your side, at each step, to build your brand identity brick by brick. We evolve along with the changing trends, adapting to innovations and expanding our expertise in animated video production. 
+                      
                     </p>
-                    
+                    <p>When we say 360 degree animation, yes, we got you covered from start to finish. The spectrum of animation services include:</p>
+                    <ul>
+                      <li>2D&3D Animation</li>
+                      <li>white board animation</li>
+                      <li>motion graphics</li>
+                      <li>VFX and post production</li>
+                      <li>product animation</li>
+                      <li>character designing</li>
+                      <li>Storyboarding</li>
+                      <li>video editing</li>
+                    </ul>
+                    <p>
+                    Whether it's a product explanatory video or a full service animation, we aim to produce engaging, quality video content that will help your brand to connect with your target audience, converting viewers into loyal customers.
+                    </p>
+                    <p>Our services are tailored to boost your online presence and maximize ROI, all at a competitive price. </p>
+                    <p>Your success is our win, because we are here to help you take that Big Leap!</p>
                   </div>
                 </div>
               </div>

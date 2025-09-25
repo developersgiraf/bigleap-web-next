@@ -1,9 +1,13 @@
 .listSection {
-  padding: 350px 0 80px 0;
+  padding: 0px 0 80px 0;
   .all {
     padding: 0 50px;
     .listStyle {
       padding: 0 40px;
+      h2{
+        font-family: "Boldonse", system-ui, sans-serif !important;
+        color: #fdfdfd;
+      }
       h3 {
         color: #fdfdfd;
         padding: 20px 0;
@@ -29,7 +33,7 @@
 }
 @media (max-width: 1024px) {
   .listSection{
-        padding: 140px 0 80px !important;
+        padding: 20px 0 80px !important;
   }
  .listStyle {
       padding: 0 20px !important;
@@ -44,7 +48,7 @@
 }
 @media (max-width: 992px) {
   .listSection {
-    padding: 130px 0 40px 0;
+    padding: 0px 0 40px 0 !important;
     .all {
       padding: 0 0px;
     }
@@ -53,11 +57,11 @@
 
 @media (max-width: 767px) {
   .listSection {
-    padding: 50px 0 40px 0;
+    padding: 0px 0 40px 0 !important;
     .all {
       padding: 0 0px;
       .listStyle {
-        padding: 0 10px;
+        padding: 0 10px !important;
         h3 {
           font-size: 24px;
         }

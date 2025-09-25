@@ -82,7 +82,8 @@ export default function SwiperSlider({
   };
 
   // Merge configurations
-  const finalConfig = { ...defaultConfig, ...swiperConfig };
+  const { showCounter, ...cleanSwiperConfig } = swiperConfig;
+  const finalConfig = { ...defaultConfig, ...cleanSwiperConfig };
 
   // Configure modules
   const modules = [Navigation, Pagination];
@@ -283,7 +284,7 @@ export default function SwiperSlider({
       )}
 
       {/* Slide Counter */}
-      {swiperConfig.showCounter && (
+      {showCounter && (
         <div className={styles.slideCounter}>
           {currentSlide + 1} / {slides.length}
         </div>
