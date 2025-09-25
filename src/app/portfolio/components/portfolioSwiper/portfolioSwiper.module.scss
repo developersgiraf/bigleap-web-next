@@ -64,27 +64,25 @@
         right: 10px; // Position on right side
     }
 
-    // Mobile styling - show navigation below slider
+    // Mobile styling - keep buttons on sides but prevent overlay
     @media (max-width: 767px) {
-        position: static; // Remove absolute positioning to avoid overlay
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        transform: none;
-        width: 100%;
-        height: auto;
-        justify-content: space-between;
-        gap: 20px;
-        margin-top: 20px;
-        pointer-events: all;
-        display: flex;
-        flex-direction: row;
-
+        pointer-events: none; // Disable pointer events on container
+        
         .portfolio-nav-prev,
         .portfolio-nav-next {
-            position: static;
-            transform: translate(0, 0);
+            pointer-events: all; // Enable only on buttons
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20; // Higher than content z-index
+        }
+
+        .portfolio-nav-prev {
+            left: 10px;
+        }
+
+        .portfolio-nav-next {
+            right: 10px;
         }
     }
 }
@@ -186,11 +184,6 @@
 // Wrapper for positioning navigation
 .swiperWrapper {
     position: relative;
-    
-    // On mobile, add space for navigation below
-    @media (max-width: 767px) {
-        margin-bottom: 60px; // Provide space for navigation buttons
-    }
 }
 
 

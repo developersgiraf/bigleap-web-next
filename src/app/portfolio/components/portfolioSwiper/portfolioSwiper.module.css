@@ -59,25 +59,21 @@
 }
 @media (max-width: 767px) {
   .portfolioNavigation {
-    position: static;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    transform: none;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
-    pointer-events: all;
-    display: flex;
-    flex-direction: row;
+    pointer-events: none;
   }
   .portfolioNavigation .portfolio-nav-prev,
   .portfolioNavigation .portfolio-nav-next {
-    position: static;
-    transform: translate(0, 0);
+    pointer-events: all;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+  .portfolioNavigation .portfolio-nav-prev {
+    left: 10px;
+  }
+  .portfolioNavigation .portfolio-nav-next {
+    right: 10px;
   }
 }
 
@@ -167,11 +163,6 @@
 
 .swiperWrapper {
   position: relative;
-}
-@media (max-width: 767px) {
-  .swiperWrapper {
-    margin-bottom: 60px;
-  }
 }
 
 @media (max-width: 767px) {
