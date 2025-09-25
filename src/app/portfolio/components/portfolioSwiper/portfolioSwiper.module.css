@@ -59,11 +59,11 @@
 }
 @media (max-width: 767px) {
   .portfolioNavigation {
-    top: 0;
-    position: absolute;
+    position: static;
+    top: auto;
     left: auto;
     right: auto;
-    bottom: 0;
+    bottom: auto;
     transform: none;
     width: 100%;
     height: auto;
@@ -71,11 +71,13 @@
     gap: 20px;
     margin-top: 20px;
     pointer-events: all;
+    display: flex;
+    flex-direction: row;
   }
   .portfolioNavigation .portfolio-nav-prev,
   .portfolioNavigation .portfolio-nav-next {
     position: static;
-    transform: none;
+    transform: translate(0, 0);
   }
 }
 
@@ -137,7 +139,7 @@
   right: 0;
   padding: 2rem 1.5rem 1.5rem;
   color: white;
-  z-index: 5;
+  z-index: 15;
 }
 .portfolioSwiper .portfolioSlideWrapper .portfolioSlide .portfolioContent .portfolioTitle {
   font-size: 1.8rem;
@@ -165,6 +167,11 @@
 
 .swiperWrapper {
   position: relative;
+}
+@media (max-width: 767px) {
+  .swiperWrapper {
+    margin-bottom: 60px;
+  }
 }
 
 @media (max-width: 767px) {
