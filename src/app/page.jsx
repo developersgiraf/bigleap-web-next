@@ -27,11 +27,7 @@ export default function Home() {
 
       <section className={styles.hero}> 
         <div className={styles.hanging}>
-        <motion.div
-            id="yeeha-img"
-            className={styles.yeehaimage}
-            style={{}}
-          >
+        
           <Image
             id="yeeha-img"
             src="/Yeeha.png"
@@ -41,8 +37,7 @@ export default function Home() {
             className={styles.yeehaimage}
             priority
           />
-          </motion.div>
-         <Image
+        { false && <Image
             id="yeeha-img"
             src="/digital360.png"
             alt="yeeha"
@@ -50,7 +45,7 @@ export default function Home() {
             height={353}
             className={styles.image360}
             priority
-          />
+          />}
           {/* <img id="img360" src="360.png" alt="360image" /> */}
           <motion.div
             id="character-img"
