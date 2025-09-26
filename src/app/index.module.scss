@@ -1,15 +1,23 @@
 /* INDEX PAGE CSS */
 
 .hero {
-  height: 90vh;
+  height: 80vh;
   position: relative;
   overflow: hidden;
-@media (max-width: 1366px) {
-    height: 70vh !important;
+@media (max-width: 1370px) {
+    height: 100vh !important;
   }
   @media (max-width: 1199px) {
+    height: 80vh !important;
+
   }
+  // @media (max-width: 1119px) {
+  //   height: 80vh !important;
+
+  // }
   @media (max-width: 1024px) {
+    height: 80vh !important;
+
   }
 @media (max-width: 992px) {
     height: 70vh !important;
@@ -324,7 +332,7 @@
     padding: 0 0 80px 0 !important;
   }
 .contentWrapper{
-  @media (max-width: 1366px) {
+  @media (max-width: 1370px) {
          padding: 0 40px !important;
 
       }
@@ -422,8 +430,11 @@
       height: 100%;
 
       @media (max-width: 1024px) {
-        flex-direction: column-reverse !important;
+        flex-direction: column !important;
         padding-top: 0 !important;
+      }
+      @media (max-width: 992px) {
+        flex-direction: column-reverse !important;
       }
       @media (max-width: 767px) {
         flex-direction: column-reverse !important;
@@ -436,11 +447,11 @@
         flex-direction: column;
         align-items: flex-start;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1370px) {
           padding: 20px 0 0 20px !important;
         }
         @media (max-width: 1024px) {
-          padding: 10px 0 0 0 !important;
+          padding: 50px 0 0 0 !important;
         }
         @media (max-width: 767px) {
           padding: 10px 0 0 10px !important;
@@ -472,10 +483,13 @@
           line-height: 140%;
 
           @media (max-width: 1024px) {
-            font-size: 36px !important;
+            font-size: 24px !important;
+          }
+           @media (max-width: 992px) {
+            font-size: 24px !important;
           }
           @media (max-width: 767px) {
-            font-size: 35px !important;
+            font-size: 18px !important;
           }
         }
       }
