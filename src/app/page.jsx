@@ -233,7 +233,7 @@ export default function Home() {
                   <div className={styles.content}>
                     <p> Our Portfolio</p>
                     <h2>Explore our creative works and see how we made an impact.</h2>
-                    <CTAButton title="WATCH MORE" link="#" />
+                    <CTAButton title="WATCH MORE" link="/portfolio" />
                   </div>
 
                   <div className={styles.video3}>

@@ -38,7 +38,7 @@ const list = {
 };
 export default function BlogDetailPage({ params }) {
   const { blogdetail } = params;
-  const blogsData = list[blogdetail];
+  const blogsData = list[blogdetail] || list["3danimation"];
 
   if (!blogsData) {
     return (

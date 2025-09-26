@@ -18,7 +18,7 @@ export default async function Services({ params }) {
   description: "Explore our range of creative services designed to elevate your brand.",
 };
   const { service } = await params;
-  const serviceData = servicesData[service];
+  const serviceData = servicesData[service] || servicesData["threeDanimation"];
 
   // Fallback if service data is not found
   if (!serviceData) {
