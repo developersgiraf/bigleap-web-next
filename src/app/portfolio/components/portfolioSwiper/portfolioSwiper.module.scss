@@ -12,9 +12,13 @@
     display: none; // Hide by default on desktop
     
     // Show only on mobile devices (768px and below)
+    @media (max-width: 1024px) {
+        display: block;
+    }
     @media (max-width: 767px) {
         display: block;
     }
+    
 
     &::before {
         content: '';

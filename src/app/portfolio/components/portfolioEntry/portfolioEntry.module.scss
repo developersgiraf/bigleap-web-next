@@ -135,3 +135,11 @@ padding: 90px 50px !important;
     }
 }
 }
+@media (max-width: 1370px) {
+    .portfolio-entry{
+        height: 60dvh!important;
+    }
+    .portfolio-image{
+        right: 0 !important;
+    }
+}

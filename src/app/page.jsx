@@ -48,7 +48,7 @@ export default function Home() {
               right: 0,
               margin: "0 auto"
             }}
-            initial={{ rotateZ: 0 }}
+            initial={{ rotateZ: -20 }}
             whileHover={{ 
               rotateZ: 45,
               transition: {
@@ -164,7 +164,7 @@ export default function Home() {
               loop={true}
               imageSize={160}
               navPos={180}
-              autoplay={true}
+              autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 3, spaceBetween: 80 },
