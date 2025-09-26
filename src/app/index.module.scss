@@ -81,16 +81,22 @@
       //   width: 70% ;
       //   top: -90% ;
       // }
-      @media (max-width: 1560px) {
+      @media (min-width: 1281px) and (max-width: 1560px) {
         width: 70% ;
         top: -90% ;
         opacity: .4;
       }
-      @media (max-width: 1024px) {
+      @media (min-width:1025px) and (max-width: 1280px) {
+        width: 70% ;
+        top: -90% ;
+        transform: scale(.2);
+        
+      }
+      @media (min-width:993px) and (max-width: 1024px) {
         top: -90% !important;
         width: 70% !important;
       }
-      @media (max-width: 992px) {
+      @media (min-width:768px) and (max-width: 992px) {
         top: -60% !important;
         width: 90% !important;
       }
