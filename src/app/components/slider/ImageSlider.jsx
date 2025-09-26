@@ -38,7 +38,7 @@ export default function ImageSlider({
     1024: { slidesPerView: 3, spaceBetween: 1 },
     1366: { slidesPerView: 4, spaceBetween: 20 },
   },
-  autoplay = { delay: 2500, disableOnInteraction: false },
+  autoplay = { delay: 2500, disableOnInteraction: true },
   navButtons = true,
   imageSize = 100,
   navPos = 0,

@@ -108,7 +108,7 @@ export function ProductCarousel() {
         },
       }}
       navigationConfig={{ enabled: true }}
-      autoplayConfig={{ enabled: false }}
+      autoplayConfig={{ enabled: true }}
       height="350px"
       imageConfig={{
         width: 400,

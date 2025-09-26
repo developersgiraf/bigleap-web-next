@@ -38,7 +38,7 @@ export default function SwiperSlider({
   swiperConfig = {},
   navigationConfig = { enabled: true, prevEl: null, nextEl: null },
   paginationConfig = { enabled: false, clickable: true },
-  autoplayConfig = { enabled: true, delay: 3000, disableOnInteraction: false },
+  autoplayConfig = { enabled: true, delay: 3000, disableOnInteraction: true },
   effect = "slide",
   className = "",
   onSlideChange = null,

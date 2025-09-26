@@ -164,7 +164,7 @@ export default function Home() {
               loop={true}
               imageSize={160}
               navPos={180}
-              autoplay={false}
+              autoplay={true}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 3, spaceBetween: 80 },
@@ -287,7 +287,7 @@ export default function Home() {
               imageSize={100}
               loop={true}
               navPos={-20}
-              autoplay={false}
+              autoplay={true}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 1, spaceBetween: 15 },
@@ -344,7 +344,7 @@ export default function Home() {
               spaceBetween={50}
               slidesPerView={3}
               navPos={20}
-              autoplay={false}
+              autoplay={true}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 1, spaceBetween: 50 },
