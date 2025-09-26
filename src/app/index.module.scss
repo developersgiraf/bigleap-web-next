@@ -1,9 +1,9 @@
 /* INDEX PAGE CSS */
 
 .hero {
-  height: 80vh;
+  height: 93vh;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 @media (max-width: 1370px) {
     height: 100vh !important;
   }
@@ -44,7 +44,8 @@
       margin: 0 auto;
       width: 100%;
       height: auto;
-      max-width: 1850px;
+      max-width: 100vw;
+
       @media (max-width: 1370px) {
         height: 50vh !important;
         max-width: 100% !important;

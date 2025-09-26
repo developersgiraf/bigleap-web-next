@@ -25,7 +25,7 @@ export default function Home() {
     <>
       {/* HERO SECTION START */}
 
-      <section className={styles.hero}>
+      <section className={styles.hero}> 
         <div className={styles.hanging}>
           <Image
             id="yeeha-img"
@@ -77,6 +77,7 @@ export default function Home() {
             <Image
               src="/character.png"
               alt="Character Image"
+              fit="contain"
               width={1200}
               height={1666}
               style={{ 
