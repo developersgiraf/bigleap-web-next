@@ -34,6 +34,7 @@ export default function Slider({
   navPos = 0,
   videoAspect = '16/9',
   videoWidth = "100%",
+  customSelector= "cstm"
 }) {
   const isVideoSlides = datas.length > 0 && datas[0].iframe;
 
@@ -48,6 +49,7 @@ export default function Slider({
         navPos={navPos}
         videoAspect={videoAspect}
         videoWidth={videoWidth}
+        customSelector={customSelector}
       />
     );
   }
@@ -63,6 +65,7 @@ export default function Slider({
       navButtons={navButtons}
       imageSize={imageSize}
       navPos={navPos}
+      customSelector={customSelector}
     />
   );
 }

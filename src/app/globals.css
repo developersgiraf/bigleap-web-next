@@ -635,3 +635,17 @@ p {
 .blogPageWrapper .headings h2 {
   text-align: center !important;
 }
+
+
+
+.videoSliderSection button.circle-nav-btn{
+position: absolute;
+top: 90%;
+}
+.videoSliderSection button.circle-nav-btn.left{
+  left: 30px;
+  
+}
+.videoSliderSection button.circle-nav-btn.right{
+  left: 100px;
+}

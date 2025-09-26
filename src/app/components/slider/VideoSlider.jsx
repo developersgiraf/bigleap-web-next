@@ -22,6 +22,7 @@ export default function VideoSlider({
   navPos = 0,
   videoAspect = '16/9',
   videoWidth = "100%",
+  customSelector= "cstm"
 }) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,7 +35,7 @@ export default function VideoSlider({
   };
 
   return (
-    <div className={styles.sliderWrapper}>
+    <div className={`${styles.sliderWrapper} ${customSelector}`}>
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
@@ -51,6 +52,7 @@ export default function VideoSlider({
         breakpoints={videoBreakpoints}
         modules={[Autoplay, Pagination, Navigation]}
         className={styles.mySwiper}
+        
       >
         {videos.map((item, idx) => (
           <SwiperSlide

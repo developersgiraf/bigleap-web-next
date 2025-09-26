@@ -27,6 +27,11 @@ export default function Home() {
 
       <section className={styles.hero}> 
         <div className={styles.hanging}>
+        <motion.div
+            id="yeeha-img"
+            className={styles.yeehaimage}
+            style={{}}
+          >
           <Image
             id="yeeha-img"
             src="/Yeeha.png"
@@ -36,7 +41,16 @@ export default function Home() {
             className={styles.yeehaimage}
             priority
           />
-         
+          </motion.div>
+         <Image
+            id="yeeha-img"
+            src="/digital360.png"
+            alt="yeeha"
+            width={599}
+            height={353}
+            className={styles.image360}
+            priority
+          />
           {/* <img id="img360" src="360.png" alt="360image" /> */}
           <motion.div
             id="character-img"
@@ -96,7 +110,7 @@ export default function Home() {
               <div className={styles["about-secont-box"]}>
                 <h4>
                   {" "}
-                 At Big Leap we believe that imagination has no limits. Where creativity meets motion, we provide a complete suite of animation and production services. From 2D and 3D animation to VFX, motion graphics, storyboarding and beyond, we turn your vision into engaging visuals.
+                At Big Leap we believe that imagination has no limits. We provide a complete suite of animation and production service from 2D and 3D animation to VFX, motion graphics, storyboarding and beyond, transforming your vision into engaging visuals. 
                 </h4>
 
                 <CTAButton title="ABOUT US" link="/about" />
@@ -296,6 +310,7 @@ export default function Home() {
               }}
               aspectRatio={"16/9"}
               videoWidth={"80%"}
+              customSelector={"videoSliderSection"}
             />
           </div>
         </div>
