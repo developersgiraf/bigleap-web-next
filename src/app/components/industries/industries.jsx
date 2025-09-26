@@ -8,23 +8,20 @@ export default function Industries() {
       li3: "Education",
       li4: "Finance",
       li5: "Entertainment",
-      li6: "Real Estate",
     },
     {
-      li1: "Real Estate",
-      li2: "Healthcare",
-      li3: "Education",
-      li4: "Finance",
-      li5: "Entertainment",
-      li6: "Real Estate",
+      li1: "Technology",
+      li2: "Retail & E-Commerce",
+      li3: "Manufacturing",
+      li4: "Automotive",
+      li5: "Hospitality & Tourism",
     },
     {
-      li1: "Real Estate",
-      li2: "Healthcare",
-      li3: "Education",
-      li4: "Finance",
-      li5: "Entertainment",
-      li6: "Real Estate",
+      li1: "Media & Advertising",
+      li2: "Energy & Utilities",
+      li3: "Education & E-Learning",
+      li4: "Technology & Startups",
+      
     },
   ];
   return (
@@ -43,7 +40,6 @@ export default function Industries() {
                     item.li3,
                     item.li4,
                     item.li5,
-                    item.li6,
                   ]}
                 />
               </div>

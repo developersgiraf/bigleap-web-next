@@ -3,15 +3,15 @@ import BusinessArea from "./business-area";
 export default function BusinessItems({ title, sub }) {
     const list = [
   {
-    title: "Strengthening brand identity",
+    title: "Strengthening Brand Identity",
     sub: "Custom animated videos make all the difference by anchoring your unique brand identity, that will leave your mark in the competitive edge.",
   },
   {
-    title: "Simplifying complex ideas",
+    title: "Simplifying Complex Ideas",
     sub: "Complex concepts can be simplified with the help of engaging animation, that will effectively communicate your idea..",
   },
   {
-    title: "Strengthening brand identity",
+    title: "Strengthening Brand Identity",
     sub: "Utilize the innovations of animation and create enthralling content that will lead to customer engagement, resulting in more leads and increase in sales.",
   },
 ];

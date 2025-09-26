@@ -35,18 +35,8 @@ export default function Home() {
             height={655}
             className={styles.yeehaimage}
             priority
-            sizes="(max-width: 480px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 100vw"
           />
-          <Image
-            id="digital360-img"
-            src="/digital360.png"
-            alt="digital360"
-            width={599}
-            height={353}
-            className={styles.digital360}
-            priority
-            sizes="(max-width: 480px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 100vw"
-          />
+         
           {/* <img id="img360" src="360.png" alt="360image" /> */}
           <motion.div
             id="character-img"
@@ -85,7 +75,6 @@ export default function Home() {
                 width: "100%",
                 height: "auto"
               }}
-              sizes="(max-width: 360px) 50vw, (max-width: 480px) 60vw, (max-width: 768px) 70vw, (max-width: 1024px) 80vw, 1200px"
             />
           </motion.div>
         </div>
@@ -107,10 +96,7 @@ export default function Home() {
               <div className={styles["about-secont-box"]}>
                 <h4>
                   {" "}
-                  Bigleap is a digital product design agency thatturns complex
-                  technology into intuitive, usable interfaces. We work with
-                  forward-thinking teams to create market-ready digital products
-                  that areeasy to use and hard to ignore.
+                 At Big Leap we believe that imagination has no limits. Where creativity meets motion, we provide a complete suite of animation and production services. From 2D and 3D animation to VFX, motion graphics, storyboarding and beyond, we turn your vision into engaging visuals.
                 </h4>
 
                 <CTAButton title="ABOUT US" link="/about" />

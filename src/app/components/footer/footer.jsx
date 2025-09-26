@@ -31,27 +31,28 @@ export default function Footer() {
             <div className="col-xl-8 col-lg-7 col-md-12 col-12">
               <div className={styles.content}>
                 <div className={styles.bigleapCnt}>
-                  <h2>Let's Starts from a 'Hi'</h2>
+                  <h2>Are you ready to take the Big Leap?</h2>
                 </div>
 
                 <div className={styles.footerList}>
                   <div className="row">
                     <div className="col-xl-3 col-lg-3 col-md-4 col-6">
                       <div className={styles.subcol}>
-                        <h5>Socials</h5>
+                        <h5>Services</h5>
                         <ul>
                           <li>
-                            <Link href="">facebook</Link>
+                            <Link href="">2D Animation</Link>
                           </li>
                           <li>
-                            <Link href="">LinkedIn</Link>
+                            <Link href="">3D Animation</Link>
                           </li>
                           <li>
-                            <Link href="">instagram</Link>
+                            <Link href="">Whiteboard Animation</Link>
                           </li>
                           <li>
-                            <Link href="">twitter</Link>
+                            <Link href="">Character Design</Link>
                           </li>
+                          
                         </ul>
                       </div>
                     </div>
