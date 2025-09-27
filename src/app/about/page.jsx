@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles["about-sect"]}>
             <div className="row">
-              <div className="col-xxl-col-xl-5 col-lg-5 col-md-12 col-12">
+              <div className="col-xl-5 col-lg-6 col-md-12 col-12">
                 <div className={styles["abt-img"]}>
                   <Image
                     src="/comic.png"
@@ -33,7 +33,7 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              <div className="col-xl-7 col-lg-7 col-md-12 col-12">
+              <div className="col-xl-7 col-lg-6 col-md-12 col-12">
                 <div className={styles["abt-cnt"]}>
                   <h4>
                     A creative studio specializing in the production of

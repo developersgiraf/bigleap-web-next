@@ -41,16 +41,16 @@ export default function Footer() {
                         <h5>Services</h5>
                         <ul>
                           <li>
-                            <Link href="">2D Animation</Link>
+                            <Link href="/services/twoDanimation">2D Animation</Link>
                           </li>
                           <li>
-                            <Link href="">3D Animation</Link>
+                            <Link href="/services/threeDanimation">3D Animation</Link>
                           </li>
                           <li>
-                            <Link href="">Whiteboard Animation</Link>
+                            <Link href="/services/whiteboard-animation">Whiteboard Animation</Link>
                           </li>
                           <li>
-                            <Link href="">Character Design</Link>
+                            <Link href="/servicess/character-design">Character Design</Link>
                           </li>
                           
                         </ul>
