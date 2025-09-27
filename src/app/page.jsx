@@ -296,7 +296,7 @@ export default function Home() {
               imageSize={100}
               loop={true}
               navPos={-20}
-              autoplay={true}
+              autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 1, spaceBetween: 15 },

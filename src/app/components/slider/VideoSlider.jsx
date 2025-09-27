@@ -17,7 +17,7 @@ export default function VideoSlider({
   videos = [],
   spaceBetween = 20,
   loop = true,
-  autoplay = { delay: 10000, disableOnInteraction: true },
+  autoplay = { delay: 2500, disableOnInteraction: false },
   navButtons = true,
   navPos = 0,
   videoAspect = '16/9',
