@@ -72,7 +72,8 @@
     }
 .image360{
   position: absolute;
-  right: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ;
+  right: 170px;
+top: 120px;
 }
     .characterimage {
       display: block;
@@ -485,7 +486,10 @@
         align-items: flex-start;
 
         @media (min-width:1371px) and (max-width: 1560px) {
-          padding: 20px 0 0 20px !important;
+         padding-top: 80px;
+        }
+        @media (min-width:1025px) and (max-width: 1370px) {
+          padding: 0 0 50px !important;
         }
         @media (min-width:993px) and (max-width: 1024px) {
           padding: 10px 0 0 0 !important;

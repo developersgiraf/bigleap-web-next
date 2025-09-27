@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 // import styles from "./page.module.css";
@@ -21,6 +22,7 @@ import SocialMediaIcon from "./components/socialMedia-icon/socialMedia-icon";
 import { FALSE } from "sass";
 
 export default function Home() {
+  const [isCharacterHovered, setIsCharacterHovered] = useState(false);
   return (
     <>
       {/* HERO SECTION START */}
@@ -28,24 +30,57 @@ export default function Home() {
       <section className={styles.hero}> 
         <div className={styles.hanging}>
         
-          <Image
-            id="yeeha-img"
-            src="/Yeeha.png"
-            alt="yeeha"
-            width={1711}
-            height={655}
+          <motion.div
             className={styles.yeehaimage}
-            priority
-          />
-        { false && <Image
-            id="yeeha-img"
-            src="/digital360.png"
-            alt="yeeha"
-            width={599}
-            height={353}
+            animate={{
+              x: isCharacterHovered ? "150vw" : 0,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 12,
+              mass: 0.8
+            }}
+          >
+            <Image
+              id="yeeha-img"
+              src="/Yeeha.png"
+              alt="yeeha"
+              width={1711}
+              height={655}
+              priority
+              style={{
+                width: "100%",
+                height: "auto"
+              }}
+            />
+          </motion.div>
+        { true && <motion.div
             className={styles.image360}
-            priority
-          />}
+            initial={{ x: "50vw" }}
+            animate={{
+              x: isCharacterHovered ? 0 : "50vw",
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 12,
+              mass: 0.8
+            }}
+          >
+            <Image
+              id="three60-img"
+              src="/digital360.png"
+              alt="three60"
+              width={599}
+              height={353}
+              priority
+              style={{
+                width: "100%",
+                height: "auto"
+              }}
+            />
+          </motion.div>}
           {/* <img id="img360" src="360.png" alt="360image" /> */}
           <motion.div
             id="character-img"
@@ -72,6 +107,8 @@ export default function Home() {
               stiffness: 150,
               damping: 10,
             }}
+            onMouseEnter={() => setIsCharacterHovered(true)}
+            onMouseLeave={() => setIsCharacterHovered(false)}
           >
             <Image
               src="/character.png"
