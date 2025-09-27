@@ -12,6 +12,11 @@
   overflow: hidden;
   display: none;
 }
+@media (max-width: 1024px) {
+  .portfolioSwiperContainer {
+    display: block;
+  }
+}
 @media (max-width: 767px) {
   .portfolioSwiperContainer {
     display: block;

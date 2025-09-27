@@ -25,7 +25,6 @@
 }
 .portfolio-entry .fullContent .portfolio-image {
   width: auto;
-  height: 23%;
   max-height: 700px !important;
   min-height: 600px !important;
   margin-top: 10px;
@@ -62,7 +61,6 @@
   position: absolute;
   bottom: 0;
   right: 80px !important;
-  height: 90% !important;
   width: auto !important;
 }
 .unfocused h3 {
@@ -113,5 +111,13 @@
   }
   .unfocused .portfolio-entry {
     height: 53dvh !important;
+  }
+}
+@media (max-width: 1370px) {
+  .portfolio-entry {
+    height: 60dvh !important;
+  }
+  .portfolio-image {
+    right: 0 !important;
   }
 }/*# sourceMappingURL=portfolioEntry.module.css.map */

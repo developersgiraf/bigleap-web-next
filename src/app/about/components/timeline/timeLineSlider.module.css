@@ -1,7 +1,7 @@
 .timelineSlider {
   padding: 40px 20px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 @media (max-width: 1370px) {
   .timelineSlider {

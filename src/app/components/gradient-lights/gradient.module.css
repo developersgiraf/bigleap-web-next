@@ -59,22 +59,17 @@
   /* Tablet responsiveness */
   /* Mobile responsiveness */
 }
-@media (max-width: 1370px) {
+@media (min-width: 1281px) and (max-width: 1560px) {
   .right {
     right: 100px;
   }
 }
-@media (max-width: 1199px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .right {
     right: 100px;
   }
 }
-@media (max-width: 1024px) {
-  .right {
-    right: 100px;
-  }
-}
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .right {
     right: 120px;
   }

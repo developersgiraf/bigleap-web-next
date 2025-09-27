@@ -1,15 +1,15 @@
 /* INDEX PAGE CSS */
 .hero {
-  height: 90vh;
+  height: 93vh;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
-@media (max-width: 1366px) {
+@media (min-width: 1281px) and (max-width: 1560px) {
   .hero {
-    height: 70vh !important;
+    height: 80vh;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .hero {
     height: 70vh !important;
   }
@@ -34,15 +34,14 @@
   margin: 0 auto;
   width: 100%;
   height: auto;
-  max-width: 1850px;
+  max-width: 100vw;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1281px) and (max-width: 1560px) {
   .hero .hanging .yeehaimage {
-    height: 50vh !important;
-    max-width: 100% !important;
+    max-width: 100vw !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .hero .hanging .yeehaimage {
     width: 100% !important;
     height: 50vh !important;
@@ -59,15 +58,9 @@
        object-fit: contain !important;
   }
 }
-.hero .hanging .digital360 {
-  width: 100%;
-  height: 40vh;
-  -o-object-fit: contain;
-     object-fit: contain;
-  left: 350px;
+.hero .hanging .image360 {
+  position: absolute;
   right: 0;
-  top: 170px;
-  position: relative;
 }
 .hero .hanging .characterimage {
   display: block;
@@ -82,26 +75,25 @@
   max-width: 1200px;
   height: auto;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1281px) and (max-width: 1560px) {
+  .hero .hanging .characterimage {
+    width: 70%;
+    top: -150%;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
   .hero .hanging .characterimage {
     width: 70%;
     top: -90%;
   }
 }
-@media (max-width: 1199px) {
-  .hero .hanging .characterimage {
-    width: 70% !important;
-    top: -90% !important;
-    max-width: 1050px !important;
-  }
-}
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .hero .hanging .characterimage {
     top: -90% !important;
     width: 70% !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .hero .hanging .characterimage {
     top: -60% !important;
     width: 90% !important;
@@ -266,12 +258,12 @@
   margin: 0px 0px 30px 0;
   font-style: regular;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1281px) and (max-width: 1560px) {
   .slide-head .special-head h2 {
-    margin: 0 0 40px 0 !important;
+    font-size: 74px;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .slide-head .special-head h2 {
     font-size: 65px !important;
     margin: 0px 0px 20px 0 !important;
@@ -293,19 +285,13 @@
   width: 90%;
   line-height: 125%;
 }
-@media (max-width: 1370px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .slide-head .special-head p {
     width: 80% !important;
     font-size: 14px !important;
   }
 }
-@media (max-width: 1024px) {
-  .slide-head .special-head p {
-    width: 80% !important;
-    font-size: 14px !important;
-  }
-}
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .slide-head .special-head p {
     padding: 0 65px !important;
     font-size: 14px !important;
@@ -319,17 +305,12 @@
     width: 90% !important;
   }
 }
-@media (max-width: 1370px) {
-  .slide-head .specialslide {
-    padding: 0 80px !important;
-  }
-}
-@media (max-width: 1024px) {
+@media (min-width: 1025px) and (max-width: 1024px) {
   .slide-head .specialslide {
     padding: 0 40px !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .slide-head .specialslide {
     padding: 0 80px !important;
   }
@@ -360,32 +341,22 @@
   position: relative;
   padding: 120px 0 80px 0;
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .watch-area {
     padding: 0 0 80px 0 !important;
   }
 }
-@media (max-width: 1366px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .contentWrapper {
     padding: 0 40px !important;
   }
 }
-@media (max-width: 1024px) {
-  .watch-area .contentWrapper {
-    padding: 0 40px !important;
-  }
-}
-@media (max-width: 1370px) {
-  .watch-area .watch {
-    padding: 0 40px !important;
-  }
-}
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .watch {
     padding: 0 0px !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .watch-area .watch {
     padding: 0 0px !important;
   }
@@ -401,7 +372,7 @@
   align-items: flex-end;
   gap: 20px;
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .watch .first-video {
     gap: 0px !important;
   }
@@ -419,17 +390,17 @@
   width: 100%;
   height: 400px;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1281px) and (max-width: 1560px) {
   .watch-area .watch .first-video .video1 iframe {
-    height: 350px !important;
+    height: 415px;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .watch .first-video .video1 iframe {
     height: 260px !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .watch-area .watch .first-video .video1 iframe {
     height: 390px !important;
   }
@@ -457,17 +428,17 @@
   width: 100%;
   height: 300px;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1281px) and (max-width: 1560px) {
   .watch-area .watch .first-video .video2 iframe {
-    height: 250px !important;
+    height: 290px;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .watch .first-video .video2 iframe {
     height: 260px !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .watch-area .watch .first-video .video2 iframe {
     height: 390px !important;
   }
@@ -562,17 +533,17 @@
   width: 100%;
   height: 400px;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1281px) and (max-width: 1560px) {
   .watch-area .watch .second-video .video3 iframe {
-    height: 350px !important;
+    height: 415px;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .watch .second-video .video3 iframe {
     height: 260px !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .watch-area .watch .second-video .video3 iframe {
     height: 390px !important;
   }

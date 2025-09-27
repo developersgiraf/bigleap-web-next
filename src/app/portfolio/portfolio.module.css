@@ -7,4 +7,9 @@
   .portfolioEntryContainer {
     display: none;
   }
+}
+@media (max-width: 1024px) {
+  .portfolioEntryContainer {
+    display: none;
+  }
 }/*# sourceMappingURL=portfolio.module.css.map */
