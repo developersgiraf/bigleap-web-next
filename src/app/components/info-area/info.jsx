@@ -7,8 +7,8 @@ export default function InfoArea() {
       <section className={styles["header-top-area"]}>
         <div className="container">
           <div className="row">
-            <div className="col-xxl-8 col-xl-6 col-lg-6 col-md-12 col-12"></div>
-            <div className="col-xxl-4 col-xl-6 col-lg-6 col-md-12 col-12">
+            <div className="col-xxl-8 col-xl-7 col-lg-6 col-md-12 col-12"></div>
+            <div className="col-xxl-4 col-xl-5 col-lg-6 col-md-12 col-12">
               <div className={styles["head-top-contacts"]}>
                 <ul>
                   <li>

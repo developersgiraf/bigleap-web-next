@@ -180,7 +180,7 @@
 /* Background Image */
 .backgroundImage {
   object-fit: cover;
-  z-index: 0;
+  z-index: -3;
   position: absolute;
   top: 0;
   left: 0;
@@ -189,10 +189,17 @@
   pointer-events: none;
 
   
+  /* Soft vertical alpha falloff using mask-image */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, black 80px, black calc(100% - 500px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0px, black 80px, black calc(100% - 500px), transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .testimonialImage{
 position: absolute;
-    height: auto;
+    height: auto !important;
     width: 100%;
     inset: 0px;
     color: transparent;

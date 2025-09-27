@@ -84,7 +84,7 @@
 @media (min-width: 1025px) and (max-width: 1370px) {
   .hero .hanging .characterimage {
     width: 70% !important;
-    top: -120% !important;
+    top: -140% !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -177,12 +177,12 @@
   align-items: flex-start;
   width: 80%;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1025px) and (max-width: 1370px) {
   .about-area .about-row .about-secont-box {
     width: 90% !important;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .about-area .about-row .about-secont-box {
     width: 100% !important;
   }
@@ -200,12 +200,12 @@
   font-size: 30px;
   text-align: justify;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1025px) and (max-width: 1370px) {
   .about-area .about-row .about-secont-box h4 {
     width: 100% !important;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .about-area .about-row .about-secont-box h4 {
     font-size: 16px !important;
     text-align: left !important;
@@ -227,12 +227,12 @@
 .slide-head {
   padding: 200px 320px;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1025px) and (max-width: 1370px) {
   .slide-head {
     padding: 150px 0 !important;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .slide-head {
     padding: 150px 0 !important;
   }

@@ -24,12 +24,17 @@
   color: #fdfdfd;
 }
 
-@media (min-width: 1281px) and (max-width: 1560px) {
+@media (min-width: 1371px) and (max-width: 1560px) {
   .header-top-area .head-top-contacts ul {
     width: -moz-fit-content;
     width: fit-content;
     margin: 0 0 0 0;
     padding: 20px 12px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .head-top-contacts ul {
+    margin: 0 0 0 10px !important;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {

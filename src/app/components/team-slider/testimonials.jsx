@@ -110,8 +110,8 @@ export default function Testimonials({
           priority
           className={styles.backgroundImage}
         />
-        
       )}
+      
       <Image
           src="/testimonial.png"
           alt="Testimonials Background"
