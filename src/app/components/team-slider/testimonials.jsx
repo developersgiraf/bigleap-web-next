@@ -104,13 +104,21 @@ export default function Testimonials({
       {/* Background Image (conditionally rendered) */}
       {!hideBackground && (
         <Image
-          src="/testimonials.png"
+          src="/sersess.png"
           alt="Testimonials Background"
           fill
           priority
           className={styles.backgroundImage}
         />
+        
       )}
+      <Image
+          src="/testimonial.png"
+          alt="Testimonials Background"
+          fill
+          priority
+          className={styles.testimonialImage}
+        />
       {/* Centered Content overlays the background */}
       <div className={styles.contentWrapper}>
         <div className={styles.sliderContainer}>

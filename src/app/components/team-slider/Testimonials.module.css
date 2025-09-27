@@ -190,6 +190,15 @@
 
   
 }
+.testimonialImage{
+position: absolute;
+    height: auto;
+    width: 100%;
+    inset: 0px;
+    color: transparent;
+    opacity: 0.1;
+    margin: auto;
+}
 
 /* Content Wrapper */
 .contentWrapper {
