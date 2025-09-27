@@ -37,8 +37,8 @@ export default function Home() {
             }}
             transition={{
               type: "spring",
-              stiffness: 120,
-              damping: 12,
+              stiffness: 30,
+              damping: 2,
               mass: 0.8
             }}
           >
@@ -57,14 +57,14 @@ export default function Home() {
           </motion.div>
         { true && <motion.div
             className={styles.image360}
-            initial={{ x: "50vw" }}
+            initial={{ x: "500vw" }}
             animate={{
               x: isCharacterHovered ? 0 : "50vw",
             }}
             transition={{
               type: "spring",
-              stiffness: 120,
-              damping: 12,
+              stiffness: 40,
+              damping: 1,
               mass: 0.8
             }}
           >
@@ -97,15 +97,15 @@ export default function Home() {
               rotateZ: 45,
               transition: {
                 type: "spring",
-                stiffness: 150,  // Faster animation
-                damping: 10,     // Less bouncy
+                stiffness: 30,  // Faster animation
+                damping: 2,     // Less bouncy
               }
             }}
             animate={{ rotateZ: 0 }}
             transition={{
               type: "spring",
-              stiffness: 150,
-              damping: 10,
+              stiffness: 30,
+              damping: 2,
             }}
             onMouseEnter={() => setIsCharacterHovered(true)}
             onMouseLeave={() => setIsCharacterHovered(false)}
