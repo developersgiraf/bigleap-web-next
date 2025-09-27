@@ -42,6 +42,8 @@ export default function ImageSlider({
   navButtons = true,
   imageSize = 100,
   navPos = 0,
+  customSelector= "cstm"
+
 }) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);

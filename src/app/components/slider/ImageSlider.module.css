@@ -44,6 +44,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+
 }
 
 .slideImage {
@@ -152,4 +154,11 @@
 .swiper {
   width: 100%;
   height: 100%;
+}
+
+
+@media (min-width: 1281px) and (max-width: 1560px) {
+  .imageContainer{
+    width: 90%;
+  }
 }

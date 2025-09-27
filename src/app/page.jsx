@@ -354,7 +354,7 @@ export default function Home() {
               spaceBetween={50}
               slidesPerView={3}
               navPos={20}
-              autoplay={true}
+              autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 1, spaceBetween: 50 },
@@ -363,6 +363,8 @@ export default function Home() {
                 1366: { slidesPerView: 3, spaceBetween: 10 },
               }}
               imageSize={400}
+              customSelector={"imageBtnSliderSection"}
+
             />
           </div>
         </div>
