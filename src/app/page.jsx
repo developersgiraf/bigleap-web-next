@@ -109,7 +109,7 @@ export default function Home() {
               loop={true}
               imageSize={160}
               navPos={180}
-              autoplay={false}
+              autoplay={true}
               customSelector={"imageBtnSliderSection abc"}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
