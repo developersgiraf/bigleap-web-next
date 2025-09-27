@@ -143,7 +143,7 @@ body {
 
 body {
   color: var(--foreground);
-  background: rgb(0, 0, 0) !important;
+  background: #151010 !important;
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
