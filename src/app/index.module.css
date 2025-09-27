@@ -347,11 +347,6 @@
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
-  .watch-area .contentWrapper {
-    padding: 0 40px !important;
-  }
-}
-@media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .watch {
     padding: 0 0px !important;
   }
