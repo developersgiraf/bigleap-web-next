@@ -387,7 +387,7 @@
 }
 @media (min-width: 1281px) and (max-width: 1560px) {
   .watch-area .watch .first-video .video1 iframe {
-    height: 415px;
+    height: 400px;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -425,7 +425,7 @@
 }
 @media (min-width: 1281px) and (max-width: 1560px) {
   .watch-area .watch .first-video .video2 iframe {
-    height: 290px;
+    height: 280px;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -530,7 +530,7 @@
 }
 @media (min-width: 1281px) and (max-width: 1560px) {
   .watch-area .watch .second-video .video3 iframe {
-    height: 415px;
+    height: 400px;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {

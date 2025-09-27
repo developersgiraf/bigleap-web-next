@@ -643,9 +643,9 @@ position: absolute;
 top: 90%;
 }
 .videoSliderSection button.circle-nav-btn.left{
-  left: 30px;
+  left: 40px;
   
 }
 .videoSliderSection button.circle-nav-btn.right{
-  left: 100px;
+  left: 120px;
 }
