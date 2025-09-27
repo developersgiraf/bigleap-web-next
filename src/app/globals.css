@@ -160,6 +160,7 @@ body {
     /* max-width: 1340px !important; */
     margin: 0 auto;
     padding: 0 20px;
+    
 }
 
 
@@ -649,7 +650,6 @@ p {
 .imageBtnSliderSection button.circle-nav-btn.right{
 }
 
-
 .videoSliderSection button.circle-nav-btn{
 position: absolute;
 top: 90%;
@@ -667,6 +667,10 @@ top: 90%;
   left: 50px !important;
   
 }
+
+.abc.imageBtnSliderSection.sliderWrapper.slideImage{
+  width: 90%;
+}
 .videoSliderSection button.circle-nav-btn{
 top: 95%;
 }
@@ -680,3 +684,6 @@ top: 95%;
       }
   @media (max-width: 767px) {
   }
+.clientsArea.clientSliderPage.client-border{
+width: 80%;
+}

@@ -104,7 +104,7 @@
   color: #ed2124;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .bigleapCnt h2 {
     font-size: 30px !important;
     line-height: 30px !important;
@@ -113,7 +113,7 @@
     padding: 0 0 0 90px !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .footerArea {
     padding: 120px 0 0 0;
   }

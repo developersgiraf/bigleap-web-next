@@ -49,7 +49,7 @@ export default function ImageSlider({
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className={styles.sliderWrapper}>
+    <div className={`${styles.sliderWrapper} ${customSelector}`}>
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;

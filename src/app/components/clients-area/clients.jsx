@@ -31,6 +31,7 @@ export default function ClientsArea() {
         navButtons={false}
         autoplay={false}
         loop={true}
+        customSelector={"clientSliderPage clientsArea"}
         breakpoints={{
           320: { slidesPerView: 3, spaceBetween: 0 },
           640: { slidesPerView: 5, spaceBetween: 0 },
