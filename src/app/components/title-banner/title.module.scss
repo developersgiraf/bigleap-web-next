@@ -22,17 +22,18 @@
     
   }
 }
-
-@media (max-width: 1370px) {
+@media (min-width:1371px) and (max-width: 1560px) {
+}
+@media (min-width:1025px) and (max-width: 1370px) {
       .title-banner {
         h1 {
           width: 70% !important;
-          line-height: 10px !important;
+          line-height:100px !important;
         }
       }
     }
 
-    @media (max-width: 1024px) {
+    @media (min-width:993px) and (max-width: 1024px) {
       .title-banner {
         h1 {
           width: 80% !important;
