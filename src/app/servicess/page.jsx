@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <section className={styles["service-main-area"]}>
         <div className="container">
           <div className={`row ${styles.serviceBox}`}>
-            <div className="col-xl-3 col-lg-5 col-md-12 col-12">
+            <div className="col-xxl-3 col-xl-3 col-lg-5 col-md-12 col-12">
               <div className={styles.image}>
                 <Image
                   src="/servicess/comic-book.png"
@@ -28,15 +28,13 @@ export default function ServicesPage() {
                 />
               </div>
             </div>
-            <div className="col-xl-6 col-lg-7 col-md-12 col-12">
+            <div className="col-xxl-6 col-xl-6 col-lg-7 col-md-12 col-12">
               <div className={styles.content}>
                 <h4>
-                  A creative studio specializing in the production of
-                  captivating animation videos that bring ideas to life.
+                  You dream it,  We animate it.
                 </h4>
                 <p>
-                  Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt <br />
-                 Ut labore et dolore magna aliqua. Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua .
+                Every idea deserves a creative expression, so we make sure that it comes alive with stunning visuals. We offer diverse animation services ranging from 2D and 3D animation, motion graphics, VFX, story boarding and many more. Explore our 360° animation services and join us in setting your story in motion. 
                 </p>
               </div>
             </div>
