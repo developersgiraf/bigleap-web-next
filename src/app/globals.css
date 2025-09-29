@@ -261,12 +261,12 @@ p {
 }
 @media (max-width: 767px) {
   .circle-nav-btn.left {
-    left: -30px !important;
+    left: 0px !important;
     z-index: 1000 !important;
   }
   
   .circle-nav-btn.right {
-    right: -33px !important;
+    right: -4px !important;
     z-index: 1000 !important;
   }
 }
