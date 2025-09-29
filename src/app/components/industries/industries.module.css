@@ -35,9 +35,6 @@
 
 @media (min-width: 1025px) and (max-width: 1370px) {
   .contents {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
     padding: 0 110px !important;
   }
 }
