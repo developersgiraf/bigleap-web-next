@@ -4,6 +4,8 @@
   display: flex;
   align-items: center;
   margin: 330px 0 80px 0;
+
+  
   .sliderText {
     padding: 50px;
     color: #fdfdfd;
@@ -125,18 +127,21 @@
 
 @media (min-width: 1025px) and (max-width: 1370px) {
   .videoSwiper {
-    height:70vh !important;
-  }
-  .portVideos{
-    padding: 0 50px !important;
-  iframe{
-    height: 77vh !important;
-  }
-}
-.sliderText{
+    height: 70vh !important;
+    background-color: #ed2124 !important;
+    .sliderText {
       padding: 50px 0 50px 30px !important;
-    margin-top: 36px !important;
-}
+      margin-top: 36px !important;
+    }
+  }
+  
+  .portVideos {
+    padding: 0 50px !important;
+    
+    iframe {
+      height: 77vh !important;
+    }
+  }
 }
 
 
