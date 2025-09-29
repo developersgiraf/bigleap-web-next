@@ -97,6 +97,7 @@ export default function HeroSection() {
             fit="contain"
             width={1200}
             height={1666}
+            priority
             style={{ 
               display: "block",
               width: "100%",

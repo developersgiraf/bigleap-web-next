@@ -159,16 +159,16 @@
   justify-self: flex-end;
   align-items: center;
 }
-.about-area .about-row .about-first-box img {
+.about-area .about-row .about-first-box .aboutImg {
   width: 100%;
 }
 @media (max-width: 1370px) {
-  .about-area .about-row .about-first-box img {
+  .about-area .about-row .about-first-box .aboutImg {
     width: 90% !important;
   }
 }
 @media (max-width: 767px) {
-  .about-area .about-row .about-first-box img {
+  .about-area .about-row .about-first-box .aboutImg {
     width: 100% !important;
   }
 }

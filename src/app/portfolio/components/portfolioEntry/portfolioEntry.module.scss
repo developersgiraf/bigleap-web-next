@@ -123,7 +123,11 @@
 @media (min-width: 1371px) and (max-width: 1560px) {
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
-    
+    .content{
+        h3{
+            font-size: 44px !important;
+        }
+    }
     .portfolio-entry{
         height: 40dvh !important;
     }
@@ -146,14 +150,18 @@
     .content{
         padding: 220px 0 0 0 !important;
     }
+    h3{
+            font-size: 34px !important;
+
+    }
 }
     .portfolio-image{
         right: 0px !important;
-            min-height: 500px !important;
-            max-height: 500px !important;
+            min-height: 530px !important;
+            max-height: 540px !important;
     }
     .portfolio-entry{
-        height: 50dvh!important;
+        height: 55dvh!important;
     }
     .content{
       padding: 60px 50px !important;

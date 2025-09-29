@@ -156,7 +156,7 @@ export default function PortfolioSwiper() {
                 </div>*/}
 
                 <div className={styles.swiperWrapper}>
-                    {false ?? <div className={styles.portfolioNavigation}>
+                    {false && <div className={styles.portfolioNavigation}>
                         <div className="portfolio-nav-prev">
                             <ButtonCTA  
                                 title="‹"

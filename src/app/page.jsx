@@ -33,7 +33,7 @@ export default function Home() {
           <div className={`row align-items-center ${styles["about-row"]}`}>
             <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-12">
               <div className={styles["about-first-box"]}>
-                <img src="Scate.png" alt="" />
+                <Image src="/Scate.png" alt="" width={441} height={404} className={styles.aboutImg}/>
               </div>
             </div>
 
