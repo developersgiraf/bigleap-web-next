@@ -74,8 +74,8 @@ const portfolioData = {
   }
 };
 
-export default function PortfolioDetail({ params }) {
-  const { portfolios } = params;
+export default async function PortfolioDetail({ params }) {
+  const { portfolios } = await params;
   const portfolio = portfolioData[portfolios] || portfolioData.portfolio1;
 
   return (

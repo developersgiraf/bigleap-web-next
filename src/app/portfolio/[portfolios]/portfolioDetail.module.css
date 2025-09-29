@@ -112,16 +112,6 @@
   .videoSwiper {
     height: 70vh !important;
   }
-  .portVideos {
-    padding: 0 50px !important;
-  }
-  .portVideos iframe {
-    height: 77vh !important;
-  }
-  .sliderText {
-    padding: 50px 0 50px 30px !important;
-    margin-top: 36px !important;
-  }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
   .videoSwiper {
