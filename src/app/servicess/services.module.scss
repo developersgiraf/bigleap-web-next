@@ -141,6 +141,19 @@
       }
 }
 @media (min-width:1025) and (max-width: 1370px) {
+  
+  .serviceBox{
+  padding: 0px 20px !important;
+  }
+  .image {
+      .comicImg {
+       height: 50vh !important;
+    }
+  }
+   .serviceCollect{
+    padding: 0 0 80px 0 !important;
+  }
+  
 }
 @media (min-width:993) and (max-width: 1024px) {
   .service-main-area{
