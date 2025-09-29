@@ -90,7 +90,7 @@
 }
 
 // Responsive Styles
-@media (max-width: 1370px) {
+@media (min-width: 1025px) and (max-width: 1370px) {
   .videoSwiperContainer{
     margin-top: 230px;
   }
