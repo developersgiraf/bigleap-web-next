@@ -184,20 +184,29 @@
   }
 }
 @media (max-width: 767px) {
+  .footerArea {
+    padding: 70px 0 80px;
+  }
   .footerArea .firstcol {
     padding: 0 35px !important;
     flex-direction: column !important;
     align-items: flex-start !important;
   }
+  .footerArea .firstcol .bigleap .footerImage {
+    height: 22vh !important;
+  }
+  .footerArea .firstcol .address h6 {
+    font-size: 14px !important;
+  }
   .footerArea .content {
     padding: 0 0 0 10px !important;
   }
   .footerArea .content .bigleapCnt {
-    padding-top: 10px;
+    padding-top: 0px;
   }
   .footerArea .content .bigleapCnt h2 {
     line-height: 55px !important;
-    font-size: 27px !important;
+    font-size: 16px !important;
     margin: 10px 10px !important;
   }
   .footerArea .footerList .subcol {

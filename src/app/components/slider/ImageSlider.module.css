@@ -53,7 +53,7 @@
   width: 100%;
  
   @media (max-width: 767px) {
-   height: 20vh !important;
+   height: 30vh !important;
   }
 }
 

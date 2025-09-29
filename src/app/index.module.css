@@ -16,7 +16,7 @@
 }
 @media (max-width: 767px) {
   .hero {
-    height: 45vh !important;
+    height: 35vh !important;
   }
 }
 .hero .hanging {
@@ -63,6 +63,12 @@
   right: 170px;
   top: 120px;
 }
+@media (max-width: 767px) {
+  .hero .hanging .image360 {
+    top: 20px;
+    right: -100px;
+  }
+}
 .hero .hanging .characterimage {
   display: block;
   margin: 0 auto;
@@ -102,8 +108,8 @@
 }
 @media (max-width: 767px) {
   .hero .hanging .characterimage {
-    top: -35% !important;
-    width: 70% !important;
+    width: 100% !important;
+    top: -115% !important;
   }
 }
 
@@ -170,6 +176,8 @@
 @media (max-width: 767px) {
   .about-area .about-row .about-first-box .aboutImg {
     width: 100% !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
   }
 }
 .about-area .about-row .about-secont-box {
@@ -403,7 +411,7 @@
 }
 @media (max-width: 767px) {
   .watch-area .watch .first-video .video1 iframe {
-    height: 200px !important;
+    height: 210px !important;
     padding: 0 10px !important;
   }
 }
@@ -441,7 +449,7 @@
 }
 @media (max-width: 767px) {
   .watch-area .watch .first-video .video2 iframe {
-    height: 200px !important;
+    height: 210px !important;
     padding: 0 10px !important;
   }
 }
@@ -524,7 +532,7 @@
 }
 @media (max-width: 767px) {
   .watch-area .watch .second-video .content h2 {
-    font-size: 35px !important;
+    font-size: 22px !important;
   }
 }
 .watch-area .watch .second-video .video3 {
@@ -540,18 +548,18 @@
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
-  .watch-area .watch .second-video .video3 {
+  .watch-area .watch .second-video .video3 iframe {
     height: 260px !important;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
-  .watch-area .watch .second-video .video3 {
+  .watch-area .watch .second-video .video3 iframe {
     height: 390px !important;
   }
 }
 @media (max-width: 767px) {
-  .watch-area .watch .second-video .video3 {
-    height: 200px !important;
+  .watch-area .watch .second-video .video3 iframe {
+    height: 212px !important;
     padding: 0 10px !important;
   }
 }
@@ -653,6 +661,11 @@
     padding: 0px 0 80px 0 !important;
   }
 }
+@media (max-width: 768px) {
+  .motion-graphics {
+    padding: 70px 0 80px 0 !important;
+  }
+}
 .motion-graphics .motion-graphics-content {
   display: flex;
   align-items: center;
@@ -708,8 +721,8 @@
 }
 @media (max-width: 767px) {
   .motion-graphics .motion-graphics-content h2 {
-    font-size: 25px !important;
-    line-height: 36px !important;
+    font-size: 20px !important;
+    line-height: 30px !important;
     text-align: left !important;
   }
 }

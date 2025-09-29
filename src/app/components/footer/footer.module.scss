@@ -246,7 +246,7 @@ line-height: 30px !important;
 
 @media (max-width: 767px) {
   .footerArea {
-  
+      padding: 70px 0 80px;
 
   .firstcol {
     padding: 0 35px !important;
@@ -256,24 +256,24 @@ line-height: 30px !important;
       
 
       .footerImage {
-        
+        height: 22vh !important;
       }
     }
 
     .address {
       // padding-top: 90px;
       h6 {
-       
+       font-size: 14px !important;
       }
     }
   }
   .content {
       padding: 0 0 0 10px !important;
        .bigleapCnt {
-        padding-top: 10px;
+        padding-top: 0px;
       h2 {
         line-height: 55px !important; 
-        font-size: 27px !important;
+        font-size: 16px !important;
         margin: 10px 10px !important;
       }
     }

@@ -20,7 +20,7 @@
 
       }
   @media (max-width: 767px) {
-    height: 45vh !important;
+    height: 35vh !important;
   }
 
 
@@ -73,8 +73,14 @@
 .image360{
   position: absolute;
   right: 170px;
-top: 120px;
+  top: 120px;
+  @media (max-width: 767px) {
+
+    top: 20px;
+    right: -100px;
+      }
 }
+
     .characterimage {
       display: block;
       margin: 0 auto;
@@ -110,8 +116,9 @@ top: 120px;
         width: 90% !important;
       }
       @media (max-width: 767px) {
-        top: -35% !important;
-        width: 70% !important;
+        width: 100% !important;
+        top: -115% !important;
+    
       }
 
       
@@ -168,6 +175,7 @@ top: 120px;
             }
             @media (max-width: 767px) {
               width: 100% !important;
+              object-fit: contain !important;
             }
       }
     }
@@ -423,7 +431,7 @@ top: 120px;
           }
 
           @media (max-width: 767px) {
-            height: 200px !important;
+            height: 210px !important;
             padding: 0 10px !important;
           }
         }
@@ -458,7 +466,7 @@ top: 120px;
             height: 390px !important;
           }
           @media (max-width: 767px) {
-            height: 200px !important;
+            height: 210px !important;
             padding: 0 10px !important;
           }
         }
@@ -529,7 +537,7 @@ top: 120px;
             font-size: 36px !important;
           }
           @media (max-width: 767px) {
-            font-size: 35px !important;
+            font-size: 22px !important;
           }
         }
       }
@@ -550,7 +558,6 @@ top: 120px;
           @media (min-width:1025px) and (max-width: 1370px) {
 
           }
-      }
           @media (min-width:993px) and (max-width: 1024px) {
             height: 260px !important;
           }
@@ -558,9 +565,11 @@ top: 120px;
             height: 390px !important;
           }
           @media (max-width: 767px) {
-            height: 200px !important;
+            height: 212px !important;
             padding: 0 10px !important;
           }
+      }
+          
         }
       }
     }
@@ -676,6 +685,12 @@ top: 120px;
        padding: 0px 0 80px 0 !important;
 
     }
+    @media (max-width: 768px) {
+       padding: 70px 0 80px 0 !important;
+
+    }
+
+
   .motion-graphics-content {
     display: flex;
     align-items: center;
@@ -725,8 +740,8 @@ top: 120px;
       }
 
       @media (max-width: 767px) {
-        font-size: 25px !important;
-        line-height: 36px !important;
+        font-size: 20px !important;
+        line-height: 30px !important;
         text-align: left !important;
       }
     }

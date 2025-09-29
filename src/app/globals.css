@@ -261,12 +261,12 @@ p {
 }
 @media (max-width: 767px) {
   .circle-nav-btn.left {
-    left: 10px !important;
+    left: -30px !important;
     z-index: 1000 !important;
   }
   
   .circle-nav-btn.right {
-    right: 10px !important;
+    right: -33px !important;
     z-index: 1000 !important;
   }
 }
@@ -683,7 +683,17 @@ top: 95%;
 
       }
   @media (max-width: 767px) {
+    .videoSliderSection button.circle-nav-btn{
+      top: 93% !important;
+      
+    }
+    .videoSliderSection button.circle-nav-btn.left{
+       left: 20px !important; 
+    }
+.videoSliderSection button.circle-nav-btn.right{
+  left: 70px !important;
+}
   }
 .clientsArea.clientSliderPage.client-border{
-width: 80%;
+width: 80% !important;
 }

@@ -30,7 +30,7 @@
   }
 
   @media (max-width: 767px) {
-    min-height: 400px !important;
+    min-height: 430px !important;
     flex-direction: column !important;
     padding: 0 0 !important;
 
@@ -138,6 +138,8 @@
     margin-bottom: 0 !important;
     font-size: 14px !important;
     order: 1 !important;
+    padding: 6px 20px !important;
+
   }
 
  
