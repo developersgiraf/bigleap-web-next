@@ -123,8 +123,12 @@
 @media (min-width:1561px) {
 }
 @media (min-width:1371px) and (max-width: 1560px) {
-  
-}
+  .videoSwiper {
+           height: 80vh !important;
+        object-fit: contain;
+    }
+  }
+
 
 @media (min-width: 1025px) and (max-width: 1370px) {
   .videoSwiper {
