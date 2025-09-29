@@ -60,7 +60,8 @@
 }
 .hero .hanging .image360 {
   position: absolute;
-  right: 0;
+  right: 170px;
+  top: 120px;
 }
 .hero .hanging .characterimage {
   display: block;
@@ -229,7 +230,7 @@
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .slide-head {
-    padding: 150px 0 !important;
+    padding: 150px 120px !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -383,7 +384,7 @@
 }
 .watch-area .watch .first-video .video1 iframe {
   width: 100%;
-  height: 400px;
+  height: 414px;
 }
 @media (min-width: 1371px) and (max-width: 1560px) {
   .watch-area .watch .first-video .video1 iframe {
@@ -421,7 +422,7 @@
 }
 .watch-area .watch .first-video .video2 iframe {
   width: 100%;
-  height: 300px;
+  height: 290px;
 }
 @media (min-width: 1371px) and (max-width: 1560px) {
   .watch-area .watch .first-video .video2 iframe {
@@ -471,7 +472,12 @@
 }
 @media (min-width: 1371px) and (max-width: 1560px) {
   .watch-area .watch .second-video .content {
-    padding: 20px 0 0 20px !important;
+    padding-top: 80px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .watch-area .watch .second-video .content {
+    padding: 0 0 50px !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -526,7 +532,7 @@
 }
 .watch-area .watch .second-video .video3 iframe {
   width: 100%;
-  height: 400px;
+  height: 414px;
 }
 @media (min-width: 1371px) and (max-width: 1560px) {
   .watch-area .watch .second-video .video3 iframe {

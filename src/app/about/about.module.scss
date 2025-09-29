@@ -89,10 +89,11 @@
 }
 
 // responsive
-
-@media (max-width: 1370px) {
+@media (min-width: 1371px) and (max-width: 1560px) {
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
    .about-main-section {
-    padding: 260px 0 40px 0 !important;
+    padding: 100px 0 40px 0 !important;
    }
     .abt-cnt {
         width: 100% !important;
@@ -101,7 +102,7 @@
       width: 90% !important;
       }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .about-main-section {
     padding: 220px 0 40px 0 !important;
 
@@ -152,7 +153,7 @@
   }
 
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .about-main-section {
     padding: 0px 0 40px 0;
 

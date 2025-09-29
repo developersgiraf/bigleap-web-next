@@ -72,7 +72,26 @@
 
 
 // responsive styles
-@media (max-width: 1024px) {
+@media (min-width: 1371px) and (max-width: 1560px) {
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .test {
+    .diff {
+      
+      p {
+       text-align: center !important;
+       width: 70% !important;
+      }
+    }
+    .all {
+     
+
+      .each {
+      }
+    }
+  }
+}
+@media (min-width: 993px) and (max-width: 1024px) {
   .test {
     padding: 180px 0 60px !important;
     .diff {
@@ -101,7 +120,7 @@
     }
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .test {
     padding: 180px 0 60px !important;
     .diff {

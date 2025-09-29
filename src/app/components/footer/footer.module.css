@@ -30,8 +30,8 @@
 .footerArea .content .bigleapCnt h2 {
   margin: 0 0 50px 0;
   color: #fdfdfd;
-  line-height: 90px;
-  font-size: 64px;
+  line-height: 30px;
+  font-size: 44px;
   font-weight: 400;
   font-family: "Boldonse", system-ui !important;
 }
@@ -104,10 +104,16 @@
   color: #ed2124;
 }
 
-@media (min-width: 1281px) and (max-width: 1560px) {
+@media (min-width: 1371px) and (max-width: 1560px) {
   .bigleapCnt h2 {
     font-size: 40px !important;
     line-height: 60px !important;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .bigleapCnt h2 {
+    font-size: 30px !important;
+    line-height: 20px !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {

@@ -57,7 +57,13 @@
   text-align: left;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .test .diff p {
+    text-align: center !important;
+    width: 70% !important;
+  }
+}
+@media (min-width: 993px) and (max-width: 1024px) {
   .test {
     padding: 180px 0 60px !important;
   }
@@ -83,7 +89,7 @@
     text-align: left !important;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .test {
     padding: 180px 0 60px !important;
   }
