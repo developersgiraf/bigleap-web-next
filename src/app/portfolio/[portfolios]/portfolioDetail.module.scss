@@ -127,6 +127,13 @@
            height: 80vh !important;
         object-fit: contain;
     }
+    .portVideos {
+    padding: 0 100px !important;
+    iframe {
+      height: 750px !important;
+    width: 100% !important;
+    }
+  }
   }
 
 

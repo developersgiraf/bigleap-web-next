@@ -114,6 +114,13 @@
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .portVideos {
+    padding: 0 100px !important;
+  }
+  .portVideos iframe {
+    height: 750px !important;
+    width: 100% !important;
+  }
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .videoSwiper {

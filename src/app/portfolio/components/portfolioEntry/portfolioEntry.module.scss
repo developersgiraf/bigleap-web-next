@@ -121,9 +121,7 @@
 @media (min-width: 1561px)  {
 }
 @media (min-width: 1371px) and (max-width: 1560px) {
-}
-@media (min-width: 1025px) and (max-width: 1370px) {
-    .content{
+     .content{
         h3{
             font-size: 44px !important;
         }
@@ -131,11 +129,18 @@
     .portfolio-entry{
         height: 40dvh !important;
     }
-  
 }
-
+@media (min-width: 1025px) and (max-width: 1370px) {
+   
+  
+ .content{
+        h3{
+            font-size: 44px !important;
+        
+    }
+ }
    .open{
-    min-width: 250px !important;
+    min-width: 310px !important;
 }
 
 .buttonWrapper{
@@ -151,7 +156,7 @@
         padding: 220px 0 0 0 !important;
     }
     h3{
-            font-size: 34px !important;
+            font-size: 31px !important;
 
     }
 }
@@ -161,12 +166,12 @@
             max-height: 540px !important;
     }
     .portfolio-entry{
-        height: 55dvh!important;
+        height: 57dvh!important;
     }
     .content{
       padding: 60px 50px !important;
 
-
+    }
 }
 @media (max-width: 1024px) {
     .portfolio-entry{
