@@ -185,7 +185,7 @@
 }
 @media (max-width: 767px) {
   .footerArea {
-    padding: 70px 0 80px;
+    padding: 0px 0 0px !important;
   }
   .footerArea .firstcol {
     padding: 0 35px !important;

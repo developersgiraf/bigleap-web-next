@@ -58,7 +58,7 @@ export default async function Services({ params }) {
                 <div
                   className={`col-xl-8 col-lg-8 col-md-12 col-12 d-flex align-items-center ${styles.des}`}
                 >
-                  <div>
+                  <div className={styles.textContent}>
                     <h4>{serviceData.section01.heading}</h4>
                     <p className={styles.description}>
                       {serviceData.section01.description}
@@ -105,7 +105,7 @@ export default async function Services({ params }) {
           lg: 5, // Substantial gradients for large screens
           md: 5, // Balanced for medium screens
           sm: 4, // Moderate for tablets
-          xs: 5, // Minimal but visible on mobile
+          xs: 4, // Minimal but visible on mobile
         }}
       />
     </>

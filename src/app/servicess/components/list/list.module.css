@@ -61,7 +61,8 @@
     padding: 0 10px !important;
   }
   .listSection .all .listStyle h3 {
-    font-size: 24px;
+    font-size: 20px !important;
+    padding: 0px 0 !important;
   }
   .listSection .all .listStyle p {
     font-size: 14px;

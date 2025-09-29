@@ -98,7 +98,7 @@ export default function ServicesPage() {
         lg: 7,  // Substantial gradients for large screens
         md: 13,  // Balanced for medium screens
         sm: 12,  // Moderate for tablets
-        xs: 11   // Minimal but visible on mobile
+        xs: 10   // Minimal but visible on mobile
       }} />
     </>
   );

@@ -122,7 +122,7 @@
     gap: 0;
   }
   .contactFormArea .contactFormArea {
-    padding: 30px 15px;
+    padding: 50px 0 !important;
   }
   .contactFormArea .formContent p {
     font-size: 12px;

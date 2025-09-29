@@ -206,9 +206,9 @@
   }
   .headings {
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 0 !important;
+    align-items: flex-start !important;
+    justify-content: left !important;
+    padding: 0 20px !important;
   }
   .headings select {
     padding: 8px 0px !important;
@@ -218,5 +218,11 @@
     font-size: 20px !important;
     line-height: 34px !important;
     text-align: center !important;
+  }
+  .serimgs {
+    padding-top: 0px !important;
+  }
+  .servicepage {
+    padding-top: 20px;
   }
 }/*# sourceMappingURL=ser.module.css.map */

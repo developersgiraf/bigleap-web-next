@@ -313,10 +313,10 @@ font-family: "monserrat", system-ui, sans-serif !important;
 
   }
    .title{
-    font-size: 22px !important;
-    line-height: 35px !important;
-    text-align: left !important;
-    padding-left: 10px !important;
+    font-size: 18px !important;
+    line-height: 30px !important;
+    text-align: center !important;
+    padding-left: 0px !important;
   }
 
   .subhead1{
@@ -359,13 +359,16 @@ font-family: "monserrat", system-ui, sans-serif !important;
         font-size: 14px !important;
 
   }
+  .mainTitle{
+    padding: 0 10px !important;
+  }
   .highlight{
-  font-size: 30px !important;
+  font-size: 17px !important;
     text-align: left !important;
   }
   .paraColor{
- font-size: 30px !important;
-    line-height: 50px !important;
+ font-size: 17px !important;
+    line-height: 20px !important;
     text-align: left !important;
   }
 }

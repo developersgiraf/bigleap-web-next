@@ -61,11 +61,11 @@
 
   }
   @media (max-width: 767px) {
-  margin-top: 50px;
-  font-size: 16px;
-    line-height: 28px;
-  text-align: left;
-  padding: 0 20px;
+  margin-top: 0px !important;
+  font-size: 17px !important;
+    line-height: 28px !important;
+  text-align: left !important;
+  padding: 0 20px !important;
 
 
 
@@ -229,16 +229,19 @@ width: 60%;
 
 @media (max-width: 767px) {
   .serDetail {
+    padding: 0px 0 !important;
     .detail {
+          padding: 20px 0 !important;
       .des {
         padding: 0px 10px !important;
 h4{
           font-size: 20px !important;
+          text-align: center !important;
 }
         .description {
           font-size: 14px;
           line-height: 1.7;
-          text-align: left;
+          text-align: justify !important;
         }
       }
     }
@@ -248,5 +251,14 @@ h4{
         max-width: 400px;
       }
     }
+  }
+
+  .textContent{
+    padding: 20px 0px !important;
+  }
+  .listPara{
+    text-align: left !important;
+    width: 90% !important;
+    font-size: 14px !important;
   }
 }

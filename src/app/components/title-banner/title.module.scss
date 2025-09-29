@@ -59,10 +59,12 @@
     }
     @media (max-width: 767px) {
       .title-banner {
+            padding: 80px 0 80px !important;
         h1 {
-          width: 80% !important;
-          line-height: 35px !important;
-          font-size: 24px !important;
+          width: 90% !important;
+          font-size: 26px !important;
+        line-height: 44px !important;
+    
         }
         p{
           font-size: 12px !important;

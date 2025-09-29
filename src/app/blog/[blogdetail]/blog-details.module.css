@@ -65,15 +65,18 @@
   }
 }
 @media (max-width: 767px) {
+  .imageContainer {
+    padding-top: 0px;
+  }
   .imageContainer .image {
-    width: 100%;
+    width: 90%;
     height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .imageContainer .description {
-    width: 100%;
+    width: 90%;
     font-size: 14px;
-    text-align: left;
+    text-align: justify;
   }
 }/*# sourceMappingURL=blog-details.module.css.map */
