@@ -10,7 +10,7 @@ export const servicesData = {
         "Thinking of incorporating 2D animation into your marketing strategy? We are the trusted 2D animation company in Dubai that offers the best animating services that will enhance your brand presence. When it comes to animation that stands out, Big Leap leads the way. As a renowned animation studio trusted by companies across Dubai, our 2D animation services go beyond expectations, crafted to captivate and connect with the audience.",
     },
     section02: {
-      DescTitle: "When Visuals Speak: Why 2D Animation Is {{The Best Choice}}",
+      DescTitle: "When Visuals Speak: Why 2D Animation Is ||The Best Choice",
       Descpara:
         "2D animation involves creating motion in a two-dimensional space, using flat images to get the illusion of motion. A sequence of individual images slightly different from each other is played in quick succession, which will in turn appear to move. Advanced tools may come and go, but 2D animation remains a timeless and popular choice.",
       subhead1: "Enhanced Audience Engagement",
@@ -56,7 +56,7 @@ export const servicesData = {
         "Ready to unfold your story in motion? Elevate your brand with realistic and immersive 3D animation that will bring your vision to life. At Big Leap, we create innovative content that best reflects your brand value, enhancing your online presence. From ideation to the final execution, we convert your ideas into spectacular visual narratives. Leveraging 3D Animation, our creative team ensures that your business ideals are well explained with the perfect graphics and illustrations that will resonate with the audience.",
     },
     section02: {
-      DescTitle: "3D Animation:{{Transforming Ideas}}",
+      DescTitle: "3D Animation:|| Transforming Ideas",
       Descpara:
         "3D animation presents a more realistic depiction of ideas. It involves creating the digital models, rigging them to enable movement and animating them with realistic motion. It is a crucial technology, especially in gaming and VFX, where 3D animation is used to create realistic and immersive environments, CGI, and simulations. ",
       subhead1: "Effective Communication of Complex Ideas",
@@ -110,7 +110,7 @@ export const servicesData = {
         "Sometimes a simple sketch can speak volumes than a thousand words combined. Wait till you see the impact of whiteboard animation. At Big Leap, we animate with strategy. Our whiteboard animation services are crafted to deliver your brand message most effectively and engagingly in a way that will resonate with the audience. We make sure that your unique voice will cut through the noise and stand out in the competitive edge.",
     },
     section02: {
-      DescTitle: "Drawing On Board: {{ Engaging Whiteboard Animation}}",
+      DescTitle: "Drawing On Board: || Engaging Whiteboard Animation",
       Descpara:
         "Whiteboard animation is a form of video that illustrates the process of someone drawing on a whiteboard. It involves hand-drawn sketches and a voiceover that explains the concept or narrates the story.Whiteboard animations are the most preferred formats for explanatory videos or educational content as they can effectively break down complex ideas and deliver them through simple and engaging visuals. This will help the audience to understand the process way easier.",
       subhead1: "Audience Engagement",
@@ -154,7 +154,7 @@ export const servicesData = {
         "Bring your characters to life with expert character designing and rigging. At Big Leap, we turn concepts into reality, animating characters to motion. Adding charm and personality, our team will craft the character that will align with your vision, embodying the vibrance, emotional appeal, and realism.",
     },
     section02: {
-      DescTitle: "{{Designing}} And {{Rigging}}",
+      DescTitle: "||Designing And ||Rigging",
       Descpara:
         "Character designing is the visual creation of a character, which includes the appearance, personality, expressions, and behaviour. The character thus designed will embody the brand identity and value.The mesh or the designed 3D model is bound to a skeleton, the interconnected part or joints. This rigging process allows the animators to give dynamics to the character. ",
       subhead1: "Realistic Movements ",
@@ -195,7 +195,7 @@ export const servicesData = {
         "Bringing stories to life through motion, we are the leading motion graphics company trusted by top brands across Dubai. We deliver high-impact and compelling animated graphics that will place your narrative on a different scale enhancing brand marketing.",
     },
     section02: {
-      DescTitle: "Motion Graphics:{{ The Arc Of Animation}} ",
+      DescTitle: "Motion Graphics:|| The Arc Of Animation ",
       Descpara:
         "In simple terms motion graphics creates moving visual elements to convey information in an engaging and concise way. Images, texts, icons and other static designs are brought to motion adding visual interest to the content. Motion graphics have diverse applications. For instance, on television, motion graphics are used for opening credits, it serves as a branding tool for the channel and also introduces characters and other information with lower-thirds and bumpers.Motion graphics are utilized in UI and UX animation in order to create an enhanced interface experience, particularly in apps and websites. It also serves best in advertising and social media, as it helps in the creation of interactive ads and posts that will help companies break through the noise.",
       subhead1: "",
@@ -251,7 +251,7 @@ export const servicesData = {
         "Looking for the perfect product animation video to showcase and explain your product to your clients and customers? Big Leap delivers the best product animation services, crafting an ideal explainer video that is compelling, engaging and informative. With close attention to detail, we ensure that your product is well demonstrated and the key features highlighted. ",
     },
     section02: {
-      DescTitle: "Products Animation: {{ Why It Matters}} ",
+      DescTitle: "Products Animation: || Why It Matters ",
       Descpara:
         "Product animation is the process of creating a video that demonstrates your product with the aim of informing and educating the customers.  Using CGI the animators create a comprehensive and dynamic 360° product video that highlights every angle and explains in detail what the product is and what its specifications are. Product animation videos are an important marketing strategy for any business that wants to promote its products in the most creative and engaging way. ",
       subhead1: "Proper Demonstration",
@@ -297,7 +297,7 @@ export const servicesData = {
         "Want to create stunning visuals that will leave your audience in awe? At Big Leap, we bring your vision to life. We are your creative partner in developing spectacular visuals that will give an immersive experience to your audience. ",
     },
     section02: {
-      DescTitle: "Crafting Reality: {{ VFX And Post Production}} ",
+      DescTitle: "Crafting Reality: || VFX And Post Production ",
       Descpara:
         "VFX (Visual Effects) involves utilizing CGI to create or manipulate images or footage to enhance the visual elements in a scene. It often involves incorporating objects, phenomena and characters that exist outside reality and blending them effectively to create a captivating experience. The scenes which require VFX are shot on green screens and the effects are integrated later. Post-production is the process of finalizing the filming process and involves the following steps such as editing, sound design and mixing, compositing, colour correction and grading, VFX and title and credits.",
       subhead1: "Enhanced Visual Appeal",
@@ -347,7 +347,7 @@ export const servicesData = {
         "When it comes to the flawless completion of your project, Big Leap leads the way by delivering video editing and post production services that refine your content, transforming it into a cohesive visual narrative. Whether it’s social media video editing or corporate video editing, our professional video editing services make sure that you stand out amongst the competitors. ",
     },
     section02: {
-      DescTitle: "Edits And Cuts:{{ Post Production Explained}} ",
+      DescTitle: "Edits And Cuts:|| Post Production Explained ",
       Descpara:
         "Post production essentially is the final stage of the video production. Once the primary production of your content is ready it undergoes edits and refinements. Post production comprises a variety of processes such as organizing the raw footages, rough cut to bring the core of the content, sound editing which includes eliminating unwanted noises and synchronising the sounds, sound mixing which is adding the music score that matches your narrative, adding visual effects, colour correction and grading to maintain the consistency across the exposure, colour and contrast, creating titles and motion graphics, followed by review and exporting the final video into the required format. Post production is the final step before the distribution of the video content, where the raw footage is transformed into the organized, visually appealing final product",
 
@@ -394,7 +394,7 @@ export const servicesData = {
         "From concept to storyboarding, Big Leap transforms your story into compelling visual narratives. Mapping out the details shot-by-shot and frame-by-frame, our storyboarding and pre-production services sets the ground for a smooth production process. ",
     },
     section02: {
-      DescTitle: "Laying The Groundwork:{{ Storyboarding And Preproduction}} ",
+      DescTitle: "Laying The Groundwork:|| Storyboarding And Preproduction ",
       Descpara:
         "Storyboarding refers to the visual representation of your storyline, arranged scene by scene. This is an important phase in the pre-production alongside other essential steps such as idea formulation, story creation, scriptwriting, animatics and designing. Story boarding is the combination of several elements such as illustrations, descriptions of the scenes, shot sequences that show the trajectory of the animation, timing or duration of each shot and finally the suggestions from the directors or other team members. Pre-production refers to the entire process that builds the concept or the story into a meaningful and coherent visual representation. Once the script is outlined the next step is designing the character and the surrounding environment, which is then followed by its illustration scene by scene.A rough animation of the storyboard is done. Then taking into consideration the technical aspects and budget requirements, the full fledged animation is according to the demands of the project.",
 

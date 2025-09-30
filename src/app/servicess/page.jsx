@@ -4,7 +4,7 @@ import Image from "next/image";
 import ServiceImage from "../components/services-sect/servicesImage.jsx";
 import Industries from "../components/industries/industries.jsx";
 import EnquirySect from "../components/enquiry/enquiry.jsx";
-import TitleDescriptionMain from "./components/title-description/titleDesMain.jsx";
+import TitleDescription from "./components/title-description/titleDes.jsx";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
 import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
 
@@ -56,16 +56,8 @@ export default function ServicesPage() {
 
       <section className={styles.titledes}>
         <div className="container">
-          <TitleDescriptionMain
-            title={
-              <>
-                Do You Want to <span className={styles.textColor}>Create</span>{" "}
-                an 
-                <span className={styles.textColor}> Impact</span> with a
-                Professional & Effective{" "}
-                <span className={styles.textColor}>Animated Video</span> ?{" "}
-              </>
-            }
+          <TitleDescription
+            title={'Do You Want to|| Create|| an|| Impact|| with a Professional & Effective|| Animated Video'}
             description={
               <span className={styles.paraColor}>
                 lorem ipsum dolor sit amet consectetur adipiscing elit. lorem

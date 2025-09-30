@@ -64,7 +64,7 @@
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .test {
-    padding: 0px 0 30px !important;
+    padding: 150px 0 30px !important;
   }
   .test .diff h2 {
     font-size: 44px !important;

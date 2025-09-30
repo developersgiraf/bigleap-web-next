@@ -2,7 +2,7 @@ import TitleBanner from "../../components/title-banner/titleBannerr";
 import styles from "./portfolioDetail.module.scss";
 import Image from "next/image";
 import MotionGraphics from "./components/motionGraphics/motionGraphics";
-import TitleDescriptionMain from "../../servicess/components/title-description/titleDesMain";
+import TitleDescription from "../../servicess/components/title-description/titleDes";
 import GradientLights from "../../components/gradient-lights/gradient";
 import VideoSwiper from "./components/VideoSwiper";
 
@@ -14,15 +14,7 @@ const portfolioData = {
     description: "Watch Our Animation Showreel",
     content: "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.",
     videoUrl: "geMtgE6RmTQ",
-    titleDescription: (
-      <>
-        Over the years,{" "}
-        <span className={styles.textColor}>our animation project</span> has
-        thrived at the intersection of
-        <span className={styles.textColor}> Imagination </span> and{" "}
-        <span className={styles.textColor}>innovation.</span>
-      </>
-    )
+    titleDescription: ("Over the years,|| our animation project|| has thrived at the intersection of|| Imagination || and|| innovation.")
   },
   portfolio2: {
     title: "Web & App Portfolio", 
@@ -30,15 +22,7 @@ const portfolioData = {
     description: "Watch Our Web & App Showreel",
     content: "Innovative web and mobile applications designed to deliver exceptional user experiences.",
     videoUrl: "geMtgE6RmTQ",
-    titleDescription: (
-      <>
-        Over the years,{" "}
-        <span className={styles.textColor}>our web development</span> has
-        thrived at the intersection of
-        <span className={styles.textColor}> Technology </span> and{" "}
-        <span className={styles.textColor}>user experience.</span>
-      </>
-    )
+    titleDescription: ("Over the years,|| our web development|| has thrived at the intersection of|| Technology || and|| user experience.")
   },
   portfolio3: {
     title: "Graphic Design Portfolio",
@@ -46,15 +30,7 @@ const portfolioData = {
     description: "Watch Our Design Showreel",
     content: "Creative graphic design solutions that communicate your brand's unique story.",
     videoUrl: "geMtgE6RmTQ",
-    titleDescription: (
-      <>
-        Over the years,{" "}
-        <span className={styles.textColor}>our design work</span> has
-        thrived at the intersection of
-        <span className={styles.textColor}> Art </span> and{" "}
-        <span className={styles.textColor}>communication.</span>
-      </>
-    )
+    titleDescription: ("Over the years,|| our design work|| has thrived at the intersection of|| Art || and|| communication.")
   },
   portfolio4: {
     title: "SEO SEM Portfolio",
@@ -62,15 +38,7 @@ const portfolioData = {
     description: "Watch Our SEO SEM Results",
     content: "Strategic search engine optimization and marketing that delivers measurable results.",
     videoUrl: "geMtgE6RmTQ", 
-    titleDescription: (
-      <>
-        Over the years,{" "}
-        <span className={styles.textColor}>our SEO strategies</span> have
-        thrived at the intersection of
-        <span className={styles.textColor}> Analytics </span> and{" "}
-        <span className={styles.textColor}>growth.</span>
-      </>
-    )
+    titleDescription: ("Over the years,|| our SEO strategies|| have thrived at the intersection of|| Analytics || and|| growth.")
   }
 };
 
@@ -127,7 +95,7 @@ export default async function PortfolioDetail({ params }) {
       </section>
 
       <section className={styles.titleDescriptionSection}>
-        <TitleDescriptionMain
+        <TitleDescription
           title={portfolio.titleDescription}
         />
       </section>

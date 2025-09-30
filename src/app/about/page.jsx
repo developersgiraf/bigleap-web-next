@@ -1,4 +1,4 @@
-import styles from "./about.module.scss";
+import styles from "./about.module.css";
 import Image from "next/image";
 import CreativeTeam from "../components/creative-team/creative";
 import FAQSection from "../components/faq/faq";
@@ -91,10 +91,10 @@ export default function AboutPage() {
       <Difference />
       <GradientLights customCounts={{
         xl: 8,  // Rich visual experience for extra large screens
-        lg: 8,  // Substantial gradients for large screens
-        md: 8,  // Balanced for medium screens
-        sm:8,  // Moderate for tablets
-        xs: 10   // Minimal but visible on mobile
+        lg: 7,  // Substantial gradients for large screens
+        md: 7,  // Balanced for medium screens
+        sm:7,  // Moderate for tablets
+        xs: 9   // Minimal but visible on mobile
       }} />
     </>
   );

@@ -106,7 +106,7 @@
 @media (min-width: 1025px) and (max-width: 1370px) {
   .hero .hanging .characterimage {
     width: 70% !important;
-    top: -138% !important;
+    top: -178% !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
