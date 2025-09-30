@@ -15,9 +15,9 @@
   text-align: center;
 }
 .test .diff p {
-  width: 48%;
+  width: 60%;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   line-height: 125%;
   padding-top: 16px;
   color: #fdfdfd;
@@ -57,10 +57,21 @@
   text-align: left;
 }
 
+@media (min-width: 1371px) and (max-width: 1560px) {
+  .test {
+    padding: 160px 0 30px !important;
+  }
+}
 @media (min-width: 1025px) and (max-width: 1370px) {
+  .test {
+    padding: 0px 0 30px !important;
+  }
+  .test .diff h2 {
+    font-size: 44px !important;
+  }
   .test .diff p {
     text-align: center !important;
-    width: 70% !important;
+    width: 50% !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {

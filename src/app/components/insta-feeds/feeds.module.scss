@@ -95,6 +95,14 @@
 }
 
 // Responsive styles
+@media (min-width: 1025px) and (max-width: 1370px) {
+.instaFeeds {
+  padding: 20px 0;
+}
+.stikyImage {
+  height: 90% !important;
+}
+}
 @media (min-width: 993px) and (max-width: 1024px) {
 .instaFeeds {
     // padding: 0px 0 !important;

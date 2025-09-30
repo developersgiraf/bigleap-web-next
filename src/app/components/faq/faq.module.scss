@@ -99,6 +99,16 @@
 }
   // Responsive styles
 
+   @media (min-width:1371px) and (max-width: 1560px) {
+    .faqSection {
+      padding: 90px 0 60px 0 !important;
+    }
+  }
+  @media (min-width:1025px) and (max-width: 1370px) {
+    .faqSection {
+      padding: 90px 0 60px 0 !important;
+    }
+  }
   @media (min-width: 993px) and (max-width: 1024px) {
     .faqSection{
       padding: 80px 0 60px 0;

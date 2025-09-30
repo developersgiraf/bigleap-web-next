@@ -22,9 +22,17 @@
   padding: 10px 0;
 }
 
+@media (min-width: 1371px) and (max-width: 1560px) {
+  .client-section {
+    padding: 60px 0 50px 0 !important;
+  }
+}
 @media (min-width: 1025px) and (max-width: 1370px) {
   .client-section {
     padding: 60px 0 50px 0 !important;
+  }
+  .client-content h2 {
+    font-size: 44px !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {

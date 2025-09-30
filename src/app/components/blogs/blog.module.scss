@@ -79,12 +79,23 @@
 }
 
 //mobile responsive
-@media (max-width: 1370px) {
-    .blogrow{
-            img {
-                height: 30vh !important;
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .bloghead {
+                h2{
+                    font-size: 44px !important;
+                }
             }
-}
+            .blogrow{
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    padding: 0 20px;
+
+                
+                img {
+                    height: 30vh !important;
+                    object-fit: contain !important;
+                }
+            }
 }
 @media (max-width: 1024px) {
     .blogsection {

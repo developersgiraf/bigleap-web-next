@@ -68,6 +68,11 @@
   padding: 45px 200px;
 }
 
+@media (min-width: 1371px) and (max-width: 1560px) {
+  .about-main-section {
+    padding: 170px 0 40px 0 !important;
+  }
+}
 @media (min-width: 1025px) and (max-width: 1370px) {
   .about-main-section {
     padding: 100px 0 40px 0 !important;

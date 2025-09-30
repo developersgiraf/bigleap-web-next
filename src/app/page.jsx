@@ -331,7 +331,7 @@ export default function Home() {
       <InstaFeeds />
       <GradientLights customCounts={{
         xl: 13,  // Rich visual experience for extra large screens
-        lg: 13,  // Substantial gradients for large screens
+        lg: 11,  // Substantial gradients for large screens
         md: 12,  // Balanced for medium screens
         sm: 11,  // Moderate for tablets
         xs: 12   // Minimal but visible on mobile

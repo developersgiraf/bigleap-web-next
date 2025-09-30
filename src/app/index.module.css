@@ -6,7 +6,12 @@
 }
 @media (min-width: 1371px) and (max-width: 1560px) {
   .hero {
-    height: 80vh;
+    height: 80vh !important;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .hero {
+    height: 50vh !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -101,7 +106,7 @@
 @media (min-width: 1025px) and (max-width: 1370px) {
   .hero .hanging .characterimage {
     width: 70% !important;
-    top: -140% !important;
+    top: -111% !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -124,7 +129,7 @@
 }
 
 .about-area {
-  padding: 180px 0 120px 0;
+  padding: 0px 0 120px 0;
 }
 @media (max-width: 1370px) {
   .about-area {
@@ -181,7 +186,8 @@
   }
 }
 .about-area .about-row .about-first-box .aboutImg {
-  width: 100%;
+  width: 80%;
+  height: auto;
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .about-area .about-row .about-first-box .aboutImg {
@@ -449,6 +455,11 @@
     height: 400px;
   }
 }
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .watch-area .watch .first-video .video1 iframe {
+    height: 360px;
+  }
+}
 @media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .watch .first-video .video1 iframe {
     height: 260px !important;
@@ -485,6 +496,11 @@
 @media (min-width: 1371px) and (max-width: 1560px) {
   .watch-area .watch .first-video .video2 iframe {
     height: 280px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .watch-area .watch .first-video .video2 iframe {
+    height: 250px;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -541,7 +557,7 @@
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .watch-area .watch .second-video .content {
-    padding: 0 0 50px !important;
+    padding: 80px 0 0px !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -586,6 +602,11 @@
   font-style: regular;
   line-height: 140%;
 }
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .watch-area .watch .second-video .content h2 {
+    font-size: 24px;
+  }
+}
 @media (min-width: 993px) and (max-width: 1024px) {
   .watch-area .watch .second-video .content h2 {
     font-size: 26px !important;
@@ -611,6 +632,11 @@
 @media (min-width: 1371px) and (max-width: 1560px) {
   .watch-area .watch .second-video .video3 iframe {
     height: 400px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .watch-area .watch .second-video .video3 iframe {
+    height: 360px;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
