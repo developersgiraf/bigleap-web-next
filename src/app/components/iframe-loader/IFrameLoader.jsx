@@ -43,6 +43,8 @@ const IFrameLoader = ({
       scrollListenerRef.current = () => {
         if (!userHasScrolled) {
           setUserHasScrolled(true);
+          // Load immediately when user scrolls (even if not visible)
+          loadIframe();
         }
       };
       
@@ -55,10 +57,8 @@ const IFrameLoader = ({
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // Load immediately if user has scrolled, or if loadOnScroll is false
-              if (userHasScrolled || !loadOnScroll) {
-                loadIframe();
-              }
+              // Load when visible (regardless of scroll state)
+              loadIframe();
             }
           });
         },
@@ -74,26 +74,6 @@ const IFrameLoader = ({
       loadIframe();
     }
 
-    // If loadOnScroll is false, load when in view regardless of scroll state
-    if (!loadOnScroll) {
-      const checkVisibility = () => {
-        const rect = container.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-        if (isVisible) {
-          loadIframe();
-        }
-      };
-
-      // Check immediately and on scroll
-      checkVisibility();
-      const visibilityListener = () => checkVisibility();
-      window.addEventListener('scroll', visibilityListener, { passive: true });
-      
-      return () => {
-        window.removeEventListener('scroll', visibilityListener);
-      };
-    }
-
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
@@ -102,7 +82,7 @@ const IFrameLoader = ({
         window.removeEventListener('scroll', scrollListenerRef.current);
       }
     };
-  }, [userHasScrolled, threshold, rootMargin, loadOnScroll]);
+  }, [threshold, rootMargin, loadOnScroll]);
 
   return (
     <div 
