@@ -3,6 +3,7 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperNavigation from "./SwiperNavigation";
+import IFrameLoader from "../iframe-loader";
 import styles from "./VideoSlider.module.css";
 
 // Import Swiper styles
@@ -66,16 +67,22 @@ export default function VideoSlider({
             }
           >
             <div className={styles.video}>
-              <iframe
-                src={`${item.iframe}&mute=1&showinfo=0&controls=0&disablekb=1&modestbranding=1&rel=0`}
-                title={item.caption || `Video Slide ${idx + 1}`}
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className={styles.videoIframe}
-                style={{ aspectRatio: videoAspect, width: videoWidth }}
-              />
+              <IFrameLoader
+                threshold={0.2}
+                rootMargin="100px"
+                loadOnScroll={true}
+              >
+                <iframe
+                  src={`${item.iframe}&mute=1&showinfo=0&controls=0&disablekb=1&modestbranding=1&rel=0`}
+                  title={item.caption || `Video Slide ${idx + 1}`}
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className={styles.videoIframe}
+                  style={{ aspectRatio: videoAspect, width: videoWidth }}
+                />
+              </IFrameLoader>
               <div className={styles.contentWrapper}>
                 {item.sub && (
                   <div className={styles.videoSub}>{item.sub}</div>

@@ -16,6 +16,7 @@ import { GRADIENT_PRESETS } from "./components/gradient-lights/gradientConfig.js
 import InstaFeeds from "./components/insta-feeds/feeds";
 import CounterSect from "./components/counter/counter.jsx";
 import SocialMediaIcon from "./components/socialMedia-icon/socialMedia-icon";
+import IFrameLoader from "./components/iframe-loader";
 import { FALSE } from "sass";
 import HeroSection from "./components/hero/hero-section.jsx";
 
@@ -144,24 +145,28 @@ export default function Home() {
               <div className="col-xl-6 col-lg-6 col-md-12 col-12">
                 <div className={styles["first-video"]}>
                   <div className={styles.video1}>
-                    <iframe
-                      src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="autoplay; encrypted-media"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    ></iframe>
+                    <IFrameLoader>
+                      <iframe
+                        src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
+                    </IFrameLoader>
                   </div>
                   <div className={styles.video2}>
-                    <iframe
-                      src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="autoplay; encrypted-media"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    ></iframe>
+                    <IFrameLoader>
+                      <iframe
+                        src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
+                    </IFrameLoader>
                   </div>
                 </div>
               </div>
@@ -174,14 +179,16 @@ export default function Home() {
                   </div>
 
                   <div className={styles.video3}>
-                    <iframe
-                      src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="autoplay; encrypted-media"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    ></iframe>
+                    <IFrameLoader>
+                      <iframe
+                        src="https://www.youtube.com/embed/xiW4HMDR1eo?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0&playlist=xiW4HMDR1eo"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
+                    </IFrameLoader>
                   </div>
                 </div>
               </div>
