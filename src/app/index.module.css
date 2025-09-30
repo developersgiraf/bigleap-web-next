@@ -9,9 +9,9 @@
     height: 80vh !important;
   }
 }
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1025px) and (max-width: 1370px) {
   .hero {
-    height: 50vh !important;
+    height: 80vh !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -106,7 +106,7 @@
 @media (min-width: 1025px) and (max-width: 1370px) {
   .hero .hanging .characterimage {
     width: 70% !important;
-    top: -111% !important;
+    top: -138% !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -191,7 +191,7 @@
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .about-area .about-row .about-first-box .aboutImg {
-    width: 100% !important;
+    width: 80% !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -319,7 +319,12 @@
 }
 @media (min-width: 1371px) and (max-width: 1560px) {
   .slide-head .special-head h2 {
-    font-size: 74px;
+    font-size: 74px !important;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .slide-head .special-head h2 {
+    font-size: 86px !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
