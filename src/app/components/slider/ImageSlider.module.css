@@ -5,13 +5,13 @@
 .mySwiper {
   padding: 30px 0px;
 
-  @media (max-width: 1024px) {
-    padding: 20px 100px !important;
+  @media (min-width: 993px) and (max-width: 1024px) {
+    padding: 20px 70px !important;
 
   }
 
-  @media (max-width: 992px) {
-    padding: 20px 50px !important;
+  @media (min-width: 768px) and (max-width: 992px) {
+    padding: 20px 0px !important;
 
   }
   @media (max-width: 767px) {
@@ -99,11 +99,15 @@
   line-height: 93%;
   letter-spacing: 0%;
 
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
     font-size: 18px !important;
     margin-top: 6px !important;
   }
-
+ @media (min-width: 768px) and (max-width: 993px) {
+    font-size: 16px !important;
+  line-height: 113% !important;
+    margin-top: 6px !important;
+  }
   @media (max-width: 767px) {
     font-size: 18px !important;
     margin-top: 6px !important;

@@ -130,7 +130,7 @@
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .footerArea {
-    padding: 120px 0 0 0;
+    padding: 0px 0 0 0;
   }
   .footerArea .firstcol {
     display: flex;
@@ -153,8 +153,8 @@
     align-items: none !important;
   }
   .footerArea .content .bigleapCnt h2 {
-    line-height: 80px;
-    font-size: 40px;
+    line-height: 20px;
+    font-size: 25px;
     margin: 0 0 40px 20px !important;
   }
   .footerArea .footerList .subcol {

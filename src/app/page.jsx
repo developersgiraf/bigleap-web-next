@@ -31,13 +31,13 @@ export default function Home() {
       <section className={styles["about-area"]}>
         <div className="container">
           <div className={`row align-items-center ${styles["about-row"]}`}>
-            <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-12">
+            <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
               <div className={styles["about-first-box"]}>
                 <Image src="/Scate.png" alt="" width={441} height={404} className={styles.aboutImg}/>
               </div>
             </div>
 
-            <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-12">
+            <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
               <div className={styles["about-secont-box"]}>
                 <h4>
                   {" "}
@@ -109,12 +109,12 @@ export default function Home() {
               loop={true}
               imageSize={160}
               navPos={180}
-              autoplay={true}
+              autoplay={false}
               customSelector={"imageBtnSliderSection abc"}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
-                640: { slidesPerView: 3, spaceBetween: 80 },
-                1024: { slidesPerView: 3, spaceBetween: 100 },
+                640: { slidesPerView: 3, spaceBetween: 50 },
+                1024: { slidesPerView: 3, spaceBetween: 50 },
                 1366: { slidesPerView: 4, spaceBetween: 10 },
               }}
             />
@@ -296,7 +296,7 @@ export default function Home() {
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 1, spaceBetween: 50 },
                 992: { slidesPerView: 2, spaceBetween: 40 },
-                1024: { slidesPerView: 2, spaceBetween: 100 },
+                1024: { slidesPerView: 2, spaceBetween: 70 },
                 1366: { slidesPerView: 3, spaceBetween: 10 },
               }}
               imageSize={400}
