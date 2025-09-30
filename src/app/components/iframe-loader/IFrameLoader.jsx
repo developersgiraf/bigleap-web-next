@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import styles from './IFrameLoader.module.css';
 
 const IFrameLoader = ({ 
@@ -18,25 +18,27 @@ const IFrameLoader = ({
   const observerRef = useRef(null);
   const scrollListenerRef = useRef(null);
 
+  // Memoize the loadIframe function to ensure stable reference
+  const loadIframe = useCallback(() => {
+    setIsLoaded(true);
+    
+    // Clean up observers and listeners
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+      observerRef.current = null;
+    }
+    
+    if (scrollListenerRef.current) {
+      window.removeEventListener('scroll', scrollListenerRef.current);
+      scrollListenerRef.current = null;
+    }
+  }, []);
+
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || isLoaded) return;
 
-    // Function to load the iframe
-    const loadIframe = () => {
-      setIsLoaded(true);
-      
-      // Clean up observers and listeners
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-        observerRef.current = null;
-      }
-      
-      if (scrollListenerRef.current) {
-        window.removeEventListener('scroll', scrollListenerRef.current);
-        scrollListenerRef.current = null;
-      }
-    };
+    if (!container || isLoaded) return;
 
     // Scroll listener for detecting user interaction
     if (loadOnScroll) {
@@ -82,7 +84,7 @@ const IFrameLoader = ({
         window.removeEventListener('scroll', scrollListenerRef.current);
       }
     };
-  }, [threshold, rootMargin, loadOnScroll]);
+  }, [threshold, rootMargin, loadOnScroll, isLoaded, userHasScrolled, loadIframe]);
 
   return (
     <div 
