@@ -75,7 +75,7 @@ export default function ImageSlider({
             }
           >
             <div className={styles.slideContent}>
-              <div className={styles.imageContainer}>
+              <div className={`${styles.imageContainer} imagesContainer`}>
                 <Image
                   className={styles.slideImage}
                   src={item.img}

@@ -89,7 +89,7 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
   .stikyimg {
     width: 70px !important;
     height: 70px !important;

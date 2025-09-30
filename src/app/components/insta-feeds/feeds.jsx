@@ -71,7 +71,7 @@ export default function InstaFeeds() {
                 spaceBetween: 0,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 7,
                 spaceBetween: 0,
               },
               1200: {

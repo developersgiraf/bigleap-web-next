@@ -680,9 +680,7 @@ top: 90%;
   
 }
 
-.abc.imageBtnSliderSection.sliderWrapper.slideImage{
-  width: 90%;
-}
+
 .videoSliderSection button.circle-nav-btn{
 top: 95%;
 }
@@ -703,6 +701,17 @@ top: 80%;
 }
 .abc.imageBtnSliderSection.mySwiper{
   padding: 0 0 !important;
+}
+.clientsArea.clientSliderPage .swiper{
+width: 100% !important;
+padding: 0 0 !important;
+}
+.clientsArea.clientSliderPage.mySwiper{
+
+}
+.clientsArea.clientSliderPage .imagesContainer{
+width: 100% !important;
+padding: 0 0 !important;
 }
   }
 
@@ -736,4 +745,8 @@ top: 95%;
   }
 .clientsArea.clientSliderPage.client-border{
 width: 80% !important;
+}
+
+.abc.imageBtnSliderSection img{
+  width: 90%;
 }

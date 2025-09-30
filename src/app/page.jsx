@@ -332,7 +332,7 @@ export default function Home() {
       <GradientLights customCounts={{
         xl: 13,  // Rich visual experience for extra large screens
         lg: 13,  // Substantial gradients for large screens
-        md: 13,  // Balanced for medium screens
+        md: 12,  // Balanced for medium screens
         sm: 11,  // Moderate for tablets
         xs: 12   // Minimal but visible on mobile
       }} />

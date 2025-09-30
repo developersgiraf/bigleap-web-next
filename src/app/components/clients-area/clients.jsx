@@ -29,14 +29,14 @@ export default function ClientsArea() {
         slidesPerView={11}
         imageSize={180}
         navButtons={false}
-        autoplay={true}
+        autoplay={false}
         loop={true}
         customSelector={"clientSliderPage clientsArea"}
         breakpoints={{
           320: { slidesPerView: 3, spaceBetween: 0 },
           640: { slidesPerView: 5, spaceBetween: 0 },
           992: { slidesPerView: 8, spaceBetween: 0 },
-          1024: { slidesPerView: 7, spaceBetween: 0 },
+          1024: { slidesPerView: 9, spaceBetween: 0 },
           1366: { slidesPerView: 11, spaceBetween: 0 },
         }}
       />
