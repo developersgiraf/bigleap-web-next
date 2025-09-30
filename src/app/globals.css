@@ -673,6 +673,7 @@ top: 90%;
   left: 130px;
 }
 
+
 @media (min-width: 1281px) and (max-width: 1560px) {
   .videoSliderSection button.circle-nav-btn.left{
   left: 50px !important;
@@ -688,8 +689,10 @@ top: 95%;
   }
   @media (min-width:1025px) and (max-width: 1280px) {
   }
+
+
   @media (min-width:993px) and (max-width: 1024px) {
-        .videoSliderSection button.circle-nav-btn{
+  .videoSliderSection button.circle-nav-btn{
 top: 80%;
 }
 .videoSliderSection button.circle-nav-btn.left{
@@ -698,7 +701,12 @@ top: 80%;
  .videoSliderSection button.circle-nav-btn.right{
   left: 80px !important;
 }
+.abc.imageBtnSliderSection.mySwiper{
+  padding: 0 0 !important;
+}
   }
+
+
   @media (min-width:768px) and (max-width: 992px) {
     .videoSliderSection button.circle-nav-btn{
 top: 95%;
@@ -712,6 +720,8 @@ top: 95%;
 }
 
       }
+
+
   @media (max-width: 767px) {
     .videoSliderSection button.circle-nav-btn{
       top: 93% !important;

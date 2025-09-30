@@ -296,7 +296,7 @@ export default function Home() {
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 1, spaceBetween: 50 },
                 992: { slidesPerView: 2, spaceBetween: 40 },
-                1024: { slidesPerView: 2, spaceBetween: 70 },
+                1024: { slidesPerView: 2, spaceBetween: 50 },
                 1366: { slidesPerView: 3, spaceBetween: 10 },
               }}
               imageSize={400}

@@ -161,7 +161,17 @@
 }
 
 
-@media (min-width: 1281px) and (max-width: 1560px) {
+@media (min-width: 1371px) and (max-width: 1560px) {
+  .imageContainer{
+    width: 90%;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .imageContainer{
+    width: 90%;
+  }
+}
+@media (min-width: 993px) and (max-width: 1024px) {
   .imageContainer{
     width: 90%;
   }

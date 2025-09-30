@@ -2,6 +2,9 @@
 
 .businessArea {
   padding: 120px 0 80px 0;
+  @media (min-width:993px) and (max-width: 1370px) {
+      padding: 30px 0 20px 0 !important;
+    }
   @media (min-width:768px) and (max-width: 992px) {
       padding: 20px 0 20px 0 !important;
     }
