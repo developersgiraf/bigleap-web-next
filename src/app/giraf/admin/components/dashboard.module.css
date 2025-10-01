@@ -1,6 +1,6 @@
 .dashboard {
   display: flex;
-  min-height: 100%;
+  min-height: 100vh;
   background: linear-gradient(135deg, #1a1a1a, #2d0404);
   font-family: 'Montserrat', sans-serif;
   flex-wrap: wrap;
@@ -16,7 +16,6 @@
   flex-direction: column;
   position: sticky;
   top: 0;
-  height: 100%;
   min-height: 100vh;
   overflow-y: auto;
   box-shadow: 4px 0 20px rgba(237, 35, 42, 0.1);
