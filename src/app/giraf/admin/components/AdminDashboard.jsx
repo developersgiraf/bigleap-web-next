@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useAuth } from '../../../../contexts/AuthContext';
 import styles from './dashboard.module.css';
 import ServicesManager from './ServicesManager';
+import DatabaseManager from './DatabaseManager';
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth();
@@ -19,6 +20,7 @@ const AdminDashboard = () => {
     { id: 'portfolio', label: 'Portfolio', icon: '💼' },
     { id: 'blog', label: 'Blog', icon: '📝' },
     { id: 'clients', label: 'Clients', icon: '👥' },
+    { id: 'database', label: 'Database', icon: '🗄️' },
     { id: 'settings', label: 'Settings', icon: '⚙️' }
   ];
 
@@ -102,6 +104,8 @@ const AdminDashboard = () => {
             </div>
           </div>
         );
+      case 'database':
+        return <DatabaseManager />;
       case 'settings':
         return (
           <div className={styles.section}>
