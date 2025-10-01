@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { uploadImage, deleteImage } from '../../../../lib/image-storage';
+import DeleteConfirmationModal from './DeleteConfirmationModal';
+import Toast from './Toast';
 import styles from './image-upload.module.css';
 
 const ImageUpload = ({ 
@@ -16,6 +18,9 @@ const ImageUpload = ({
   const [showGallery, setShowGallery] = useState(false);
   const [existingImages, setExistingImages] = useState([]);
   const [loadingGallery, setLoadingGallery] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteModalData, setDeleteModalData] = useState(null);
+  const [toast, setToast] = useState(null);
   const fileInputRef = useRef(null);
 
   // Fetch existing images for gallery
@@ -62,50 +67,32 @@ const ImageUpload = ({
       const usageData = await response.json();
       
       if (!usageData.success) {
-        alert('Failed to check image usage. Please try again.');
+        setToast({ message: 'Failed to check image usage. Please try again.', type: 'error' });
         return;
       }
 
-      const { services, portfolio, blog, totalUsage } = usageData.data;
-      
-      let confirmMessage = `Are you sure you want to delete "${imageName}"?`;
-      
-      if (totalUsage > 0) {
-        confirmMessage += `\n\n⚠️ WARNING: This image is currently being used by:`;
-        
-        if (services.length > 0) {
-          confirmMessage += `\n\n📋 Services (${services.length}):`;
-          services.forEach(service => {
-            confirmMessage += `\n• ${service.title}${service.archived ? ' (Archived)' : ''}`;
-          });
-        }
-        
-        if (portfolio.length > 0) {
-          confirmMessage += `\n\n🎨 Portfolio (${portfolio.length}):`;
-          portfolio.forEach(item => {
-            confirmMessage += `\n• ${item.title}`;
-          });
-        }
-        
-        if (blog.length > 0) {
-          confirmMessage += `\n\n📝 Blog Posts (${blog.length}):`;
-          blog.forEach(post => {
-            confirmMessage += `\n• ${post.title}`;
-          });
-        }
-        
-        confirmMessage += `\n\n🔄 These items will revert to default images if you proceed.`;
-      }
-      
-      if (confirm(confirmMessage)) {
-        await deleteImage(imageUrl);
-        // Refresh the gallery
-        await fetchExistingImages();
-        alert('Image deleted successfully!');
-      }
+      // Show the styled modal instead of native confirm
+      setDeleteModalData({
+        imageUrl,
+        imageName,
+        usageData: usageData.data
+      });
+      setShowDeleteModal(true);
+    } catch (err) {
+      console.error('Error checking image usage:', err);
+      setToast({ message: 'Failed to check image usage. Please try again.', type: 'error' });
+    }
+  };
+
+  const confirmDelete = async () => {
+    try {
+      await deleteImage(deleteModalData.imageUrl);
+      // Refresh the gallery
+      await fetchExistingImages();
+      setToast({ message: 'Image deleted successfully!', type: 'success' });
     } catch (err) {
       console.error('Error deleting image:', err);
-      alert('Failed to delete image. Please try again.');
+      setToast({ message: 'Failed to delete image. Please try again.', type: 'error' });
     }
   };
 
@@ -303,6 +290,24 @@ const ImageUpload = ({
             Remove
           </button>
         </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      <DeleteConfirmationModal
+        isOpen={showDeleteModal}
+        onClose={() => setShowDeleteModal(false)}
+        imageName={deleteModalData?.imageName}
+        usageData={deleteModalData?.usageData}
+        onConfirm={confirmDelete}
+      />
+
+      {/* Toast Notifications */}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
       )}
     </div>
   );
