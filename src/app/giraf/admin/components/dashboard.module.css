@@ -1,6 +1,6 @@
 .dashboard {
   display: flex;
-  min-height: 100vh;
+  min-height: 100%;
   background: linear-gradient(135deg, #1a1a1a, #2d0404);
   font-family: 'Montserrat', sans-serif;
   flex-wrap: wrap;
@@ -9,13 +9,14 @@
 .sidebar {
   width: clamp(250px, 25vw, 320px);
   min-width: 250px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d0404 50%, #ed232a 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d0404 50%, #3b0002 100%);
   color: white;
   display: flex;
   flex-direction: column;
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   overflow-y: auto;
   box-shadow: 4px 0 20px rgba(237, 35, 42, 0.1);
   flex-shrink: 0;
