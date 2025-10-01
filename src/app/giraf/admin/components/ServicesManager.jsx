@@ -1,69 +1,183 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import styles from './services-manager.module.css';
 import { servicesAPI } from '../../../../lib/services-api';
+
+// Optimized Image Component with proper error handling
+const ServiceImage = ({ src, alt, archived }) => {
+  const [imageSrc, setImageSrc] = useState(src || '/servicess/default-image.png');
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    if (src && src !== imageSrc && !hasError) {
+      setImageSrc(src);
+    }
+  }, [src, imageSrc, hasError]);
+
+  const handleError = useCallback(() => {
+    if (!hasError) {
+      setHasError(true);
+      setImageSrc('/servicess/default-image.png');
+    }
+  }, [hasError]);
+
+  return (
+    <div className={styles.serviceImage}>
+      <img 
+        src={imageSrc}
+        alt={alt}
+        onError={handleError}
+        loading="lazy"
+        style={{ objectFit: 'cover' }}
+      />
+      {archived && (
+        <div className={styles.archivedBadge}>Archived</div>
+      )}
+    </div>
+  );
+};
+
+// Service Card Component
+const ServiceCard = ({ service, onEdit, onArchive, onDelete }) => {
+  return (
+    <div key={service.id} className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''}`}>
+      <ServiceImage 
+        src={service.section01?.image} 
+        alt={service.title || service.bannerTitle}
+        archived={service.archived}
+      />
+      
+      <div className={styles.serviceContent}>
+        <div className={styles.serviceHeader}>
+          <h3>{service.title || service.bannerTitle}</h3>
+          <div className={styles.status}>
+            {service.archived ? (
+              <span className={styles.statusArchived}>Archived</span>
+            ) : (
+              <span className={styles.statusActive}>Active</span>
+            )}
+          </div>
+        </div>
+        
+        <p className={styles.serviceDescription}>
+          {service.section01?.description?.substring(0, 150) || 'No description available'}...
+        </p>
+        
+        <div className={styles.serviceFooter}>
+          <div className={styles.actions}>
+            <button 
+              className={styles.editBtn}
+              onClick={() => onEdit(service)}
+            >
+              Edit
+            </button>
+            <button 
+              className={service.archived ? styles.unarchiveBtn : styles.archiveBtn}
+              onClick={() => onArchive(service.id, service.archived)}
+            >
+              {service.archived ? 'Unarchive' : 'Archive'}
+            </button>
+            <button 
+              className={styles.deleteBtn}
+              onClick={() => onDelete(service.id)}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const ServicesManager = () => {
   const [services, setServices] = useState([]);
   const [selectedService, setSelectedService] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
   const [filter, setFilter] = useState('all');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [stats, setStats] = useState({ total: 0, active: 0, archived: 0, draft: 0 });
+  const [stats, setStats] = useState({ total: 0, active: 0, archived: 0 });
 
-  // Load services data
-  const loadServices = async () => {
+  // Debounce search term to prevent excessive API calls
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+    }, 300); // 300ms delay
+
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  // Load services data with caching
+  const loadServices = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
       
       let response;
-      if (searchTerm.trim()) {
-        response = await servicesAPI.search(searchTerm);
+      if (debouncedSearchTerm.trim()) {
+        response = await servicesAPI.search(debouncedSearchTerm);
       } else {
         response = await servicesAPI.getAll();
       }
       
       setServices(response.data);
       
-      // Load stats
-      const statsResponse = await servicesAPI.getStats();
-      setStats(statsResponse.data);
+      // Load stats only if not searching (search results don't need stats)
+      if (!debouncedSearchTerm.trim()) {
+        try {
+          const statsResponse = await servicesAPI.getStats();
+          setStats(statsResponse.data);
+        } catch (statsError) {
+          console.warn('Failed to load stats:', statsError);
+          // Don't fail the whole load just for stats
+        }
+      }
     } catch (err) {
       console.error('Error loading services:', err);
       setError('Failed to load services. Please try again.');
     } finally {
       setLoading(false);
     }
-  };
+  }, [debouncedSearchTerm]);
 
-  // Filter services based on current filter
-  const filteredServices = services.filter(service => {
-    if (filter === 'active') return !service.archived;
-    if (filter === 'archived') return service.archived;
-    return true; // 'all'
-  });
-
-  // Calculate stats from current services
-  const currentStats = {
-    total: services.length,
-    active: services.filter(s => !s.archived).length,
-    archived: services.filter(s => s.archived).length
-  };
-
+  // Load services when debounced search term changes
   useEffect(() => {
     loadServices();
-  }, [searchTerm]);
+  }, [loadServices]);
 
-  const handleEdit = (service) => {
+  // Filter services based on current filter (memoized for performance)
+  const filteredServices = useMemo(() => {
+    return services.filter(service => {
+      if (filter === 'active') return !service.archived;
+      if (filter === 'archived') return service.archived;
+      return true; // 'all'
+    });
+  }, [services, filter]);
+
+  // Calculate stats from current services (memoized for performance)
+  const currentStats = useMemo(() => {
+    if (debouncedSearchTerm.trim()) {
+      // For search results, calculate from filtered data
+      return {
+        total: services.length,
+        active: services.filter(s => !s.archived).length,
+        archived: services.filter(s => s.archived).length
+      };
+    }
+    // Use API stats for full data
+    return stats;
+  }, [services, stats, debouncedSearchTerm]);
+
+  const handleEdit = useCallback((service) => {
     setSelectedService(service);
     setIsEditing(true);
-  };
+  }, []);
 
-  const handleArchive = async (serviceId, currentArchiveState) => {
+  const handleArchive = useCallback(async (serviceId, currentArchiveState) => {
     try {
       await servicesAPI.update(serviceId, { archived: !currentArchiveState });
       await loadServices(); // Refresh the list
@@ -71,9 +185,9 @@ const ServicesManager = () => {
       console.error('Error archiving/unarchiving service:', err);
       alert('Failed to update service status. Please try again.');
     }
-  };
+  }, [loadServices]);
 
-  const handleDelete = async (serviceId) => {
+  const handleDelete = useCallback(async (serviceId) => {
     if (confirm('Are you sure you want to permanently delete this service?')) {
       try {
         await servicesAPI.delete(serviceId);
@@ -83,16 +197,24 @@ const ServicesManager = () => {
         alert('Failed to delete service. Please try again.');
       }
     }
-  };
+  }, [loadServices]);
 
-  const handleSave = async (serviceData) => {
+  const handleSave = useCallback(async (serviceData) => {
     try {
+      let result;
       if (selectedService) {
         // Update existing service
-        await servicesAPI.update(selectedService.id, serviceData);
+        result = await servicesAPI.update(selectedService.id, serviceData);
+        
+        // If slug changed, the API returns the new ID
+        if (result.slugChanged && result.data.id !== selectedService.id) {
+          console.log(`Service slug changed from ${selectedService.id} to ${result.data.id}`);
+          // The service now has a new ID/slug
+          setSelectedService(null); // Clear selection since the ID changed
+        }
       } else {
         // Create new service
-        await servicesAPI.create(serviceData);
+        result = await servicesAPI.create(serviceData);
       }
       
       setIsEditing(false);
@@ -102,17 +224,19 @@ const ServicesManager = () => {
       console.error('Error saving service:', err);
       alert('Failed to save service. Please try again.');
     }
-  };
+  }, [selectedService, loadServices]);
+
+  const handleCancel = useCallback(() => {
+    setIsEditing(false);
+    setSelectedService(null);
+  }, []);
 
   if (isEditing) {
     return (
       <ServiceEditor 
         service={selectedService}
         onSave={handleSave}
-        onCancel={() => {
-          setIsEditing(false);
-          setSelectedService(null);
-        }}
+        onCancel={handleCancel}
       />
     );
   }
@@ -183,60 +307,13 @@ const ServicesManager = () => {
 
       <div className={styles.servicesList}>
         {filteredServices.map(service => (
-          <div key={service.id} className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''}`}>
-            <div className={styles.serviceImage}>
-              <img 
-                src={service.section01?.image || '/servicess/default-image.png'} 
-                alt={service.title || service.bannerTitle}
-                onError={(e) => {
-                  e.target.src = '/servicess/default-image.png';
-                }}
-              />
-              {service.archived && (
-                <div className={styles.archivedBadge}>Archived</div>
-              )}
-            </div>
-            
-            <div className={styles.serviceContent}>
-              <div className={styles.serviceHeader}>
-                <h3>{service.title || service.bannerTitle}</h3>
-                <div className={styles.status}>
-                  {service.archived ? (
-                    <span className={styles.statusArchived}>Archived</span>
-                  ) : (
-                    <span className={styles.statusActive}>Active</span>
-                  )}
-                </div>
-              </div>
-              
-              <p className={styles.serviceDescription}>
-                {service.section01?.description?.substring(0, 150) || 'No description available'}...
-              </p>
-              
-              <div className={styles.serviceFooter}>
-                <div className={styles.actions}>
-                  <button 
-                    className={styles.editBtn}
-                    onClick={() => handleEdit(service)}
-                  >
-                    Edit
-                  </button>
-                  <button 
-                    className={service.archived ? styles.unarchiveBtn : styles.archiveBtn}
-                    onClick={() => handleArchive(service.id, service.archived)}
-                  >
-                    {service.archived ? 'Unarchive' : 'Archive'}
-                  </button>
-                  <button 
-                    className={styles.deleteBtn}
-                    onClick={() => handleDelete(service.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ServiceCard
+            key={service.id}
+            service={service}
+            onEdit={handleEdit}
+            onArchive={handleArchive}
+            onDelete={handleDelete}
+          />
         ))}
       </div>
 
@@ -273,6 +350,7 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
   const [formData, setFormData] = useState({
     title: '',
     bannerTitle: '',
+    customSlug: '', // For custom slug editing
     archived: false,
     section01: {
       image: '',
@@ -296,9 +374,45 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
     list: []
   });
 
+  const [useCustomSlug, setUseCustomSlug] = useState(false);
+
+  // Generate ID preview from banner title
+  const generateIdPreview = (bannerTitle) => {
+    if (!bannerTitle) return '';
+    
+    let slug = bannerTitle
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .trim();
+    
+    // Ensure slug doesn't start with a number (add prefix if needed)
+    if (/^[0-9]/.test(slug)) {
+      slug = 'service-' + slug;
+    }
+    
+    return slug;
+  };
+
+  // Validate custom slug format
+  const validateSlug = (slug) => {
+    if (!slug) return false;
+    // Must start with letter, can contain letters, numbers, hyphens
+    return /^[a-z][a-z0-9-]*$/.test(slug);
+  };
+
+  const currentId = service 
+    ? service.id 
+    : useCustomSlug && formData.customSlug 
+      ? formData.customSlug 
+      : generateIdPreview(formData.bannerTitle);
+
   useEffect(() => {
     if (service) {
       setFormData(service);
+      // If editing existing service, allow custom slug editing
+      setUseCustomSlug(true);
+      setFormData(prev => ({ ...prev, customSlug: service.id }));
     }
   }, [service]);
 
@@ -341,7 +455,25 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave({ ...formData, lastModified: new Date().toISOString().split('T')[0] });
+    
+    // Validate custom slug if being used
+    if (useCustomSlug && formData.customSlug && !validateSlug(formData.customSlug)) {
+      alert('Invalid slug format. Slug must start with a letter and contain only lowercase letters, numbers, and hyphens.');
+      return;
+    }
+    
+    // Prepare data for submission
+    const submitData = { 
+      ...formData, 
+      lastModified: new Date().toISOString().split('T')[0]
+    };
+    
+    // Add custom slug if specified
+    if (useCustomSlug && formData.customSlug) {
+      submitData.customSlug = formData.customSlug;
+    }
+    
+    onSave(submitData);
   };
 
   return (
@@ -385,7 +517,62 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
           </div>
           <div className={styles.formRow}>
             <div className={styles.formField}>
-              <label className={styles.checkboxLabel}>
+              <label>Service ID / URL Slug</label>
+              <div className={styles.slugSection}>
+                <div className={styles.slugPreview}>
+                  <span className={styles.urlPrefix}>bigleap.ae/services/</span>
+                  <span className={styles.idDisplay}>{currentId || 'enter-title-or-custom-slug'}</span>
+                </div>
+                
+                <div className={styles.slugControls}>
+                  <label className={styles.checkboxLabel}>
+                    <input
+                      type="checkbox"
+                      checked={useCustomSlug}
+                      onChange={(e) => setUseCustomSlug(e.target.checked)}
+                    />
+                    Use custom slug
+                  </label>
+                  
+                  {useCustomSlug && (
+                    <div className={styles.customSlugInputContainer}>
+                      <input
+                        type="text"
+                        value={formData.customSlug}
+                        onChange={(e) => handleInputChange('customSlug', e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, ''))}
+                        placeholder="custom-service-slug"
+                        pattern="^[a-z][a-z0-9-]*$"
+                        className={`${styles.customSlugInput} ${formData.customSlug && !validateSlug(formData.customSlug) ? styles.invalidInput : ''}`}
+                      />
+                      {formData.customSlug && !validateSlug(formData.customSlug) && (
+                        <small className={styles.errorNote}>
+                          Slug must start with a letter and contain only lowercase letters, numbers, and hyphens.
+                        </small>
+                      )}
+                      {(!formData.customSlug || validateSlug(formData.customSlug)) && (
+                        <small className={styles.slugNote}>
+                          Custom URL will be: /servicess/{formData.customSlug || 'your-custom-slug'}
+                        </small>
+                      )}
+                    </div>
+                  )}
+                </div>
+                
+                {!useCustomSlug && !service && (
+                  <small className={styles.idNote}>
+                    Automatically generated from banner title. Check "Use custom slug" to customize.
+                  </small>
+                )}
+                {service && (
+                  <small className={styles.idNote}>
+                    ⚠️ Changing the slug will update the service URL. Make sure to update any existing links.
+                  </small>
+                )}
+              </div>
+            </div>
+            
+            <div className={styles.archiveSection}>
+              <label className={styles.archiveToggle}>
                 <input
                   type="checkbox"
                   checked={formData.archived || false}
@@ -393,9 +580,9 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
                 />
                 Archive this service
               </label>
-              <small className={styles.fieldNote}>
+              <div className={styles.archiveNote}>
                 Archived services are hidden from the public website but can be restored later.
-              </small>
+              </div>
             </div>
           </div>
         </div>

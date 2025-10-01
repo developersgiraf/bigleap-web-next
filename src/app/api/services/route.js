@@ -61,12 +61,30 @@ export async function POST(request) {
       currentData = docSnap.data();
     }
     
-    // Generate slug from title
-    const slug = serviceData.bannerTitle
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .trim();
+    // Generate or use custom slug
+    let slug;
+    if (serviceData.customSlug) {
+      // Validate custom slug format
+      if (!/^[a-z][a-z0-9-]*$/.test(serviceData.customSlug)) {
+        return NextResponse.json({
+          success: false,
+          error: 'Invalid slug format. Slug must start with a letter and contain only lowercase letters, numbers, and hyphens.'
+        }, { status: 400 });
+      }
+      slug = serviceData.customSlug;
+    } else {
+      // Generate slug from banner title
+      slug = serviceData.bannerTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .trim();
+      
+      // Ensure slug doesn't start with a number (add prefix if needed)
+      if (/^[0-9]/.test(slug)) {
+        slug = 'service-' + slug;
+      }
+    }
     
     // Check if service already exists
     if (currentData[slug]) {

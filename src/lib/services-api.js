@@ -1,5 +1,8 @@
 // Comprehensive API Client for Website Data Management
 // This utility provides clean interfaces to interact with all website data APIs
+// Now with intelligent caching for optimal performance
+
+import { servicesCache } from './cache-manager';
 
 // Helper function to handle API responses
 const handleResponse = async (response) => {
@@ -12,53 +15,49 @@ const handleResponse = async (response) => {
   return data;
 };
 
-// Services API Client
+// Services API Client with Caching
 export const servicesAPI = {
-  // Get all services
+  // Get all services (cached)
   getAll: async () => {
     try {
-      const response = await fetch('/api/services');
-      return await handleResponse(response);
+      return await servicesCache.getServices();
     } catch (error) {
       console.error('Error fetching all services:', error);
       throw error;
     }
   },
 
-  // Get single service by ID
+  // Get single service by ID (cached)
   getById: async (id) => {
     try {
-      const response = await fetch(`/api/services/${id}`);
-      return await handleResponse(response);
+      return await servicesCache.getService(id);
     } catch (error) {
       console.error(`Error fetching service ${id}:`, error);
       throw error;
     }
   },
 
-  // Search services
+  // Search services (cached)
   search: async (query) => {
     try {
-      const response = await fetch(`/api/services/search?q=${encodeURIComponent(query)}`);
-      return await handleResponse(response);
+      return await servicesCache.search(query);
     } catch (error) {
       console.error('Error searching services:', error);
       throw error;
     }
   },
 
-  // Get services statistics
+  // Get services statistics (cached)
   getStats: async () => {
     try {
-      const response = await fetch('/api/services/stats');
-      return await handleResponse(response);
+      return await servicesCache.getStats();
     } catch (error) {
       console.error('Error fetching service stats:', error);
       throw error;
     }
   },
 
-  // Create new service
+  // Create new service (invalidates cache)
   create: async (serviceData) => {
     try {
       const response = await fetch('/api/services', {
@@ -68,14 +67,19 @@ export const servicesAPI = {
         },
         body: JSON.stringify(serviceData),
       });
-      return await handleResponse(response);
+      const result = await handleResponse(response);
+      
+      // Invalidate cache after successful creation
+      servicesCache.invalidate();
+      
+      return result;
     } catch (error) {
       console.error('Error creating service:', error);
       throw error;
     }
   },
 
-  // Update existing service
+  // Update existing service (invalidates cache)
   update: async (id, serviceData) => {
     try {
       const response = await fetch(`/api/services/${id}`, {
@@ -85,20 +89,30 @@ export const servicesAPI = {
         },
         body: JSON.stringify(serviceData),
       });
-      return await handleResponse(response);
+      const result = await handleResponse(response);
+      
+      // Invalidate cache after successful update
+      servicesCache.invalidate();
+      
+      return result;
     } catch (error) {
       console.error(`Error updating service ${id}:`, error);
       throw error;
     }
   },
 
-  // Delete service
+  // Delete service (invalidates cache)
   delete: async (id) => {
     try {
       const response = await fetch(`/api/services/${id}`, {
         method: 'DELETE',
       });
-      return await handleResponse(response);
+      const result = await handleResponse(response);
+      
+      // Invalidate cache after successful deletion
+      servicesCache.invalidate();
+      
+      return result;
     } catch (error) {
       console.error(`Error deleting service ${id}:`, error);
       throw error;

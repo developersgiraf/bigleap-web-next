@@ -51,11 +51,17 @@ export async function POST(request) {
       }, { status: 400 });
     }
     
-    // Generate client ID from name (similar to services)
-    const clientId = clientData.name
+    // Generate client ID from name
+    let clientId = clientData.name
       .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '');
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .trim();
+    
+    // Ensure ID doesn't start with a number (add prefix if needed)
+    if (/^[0-9]/.test(clientId)) {
+      clientId = 'client-' + clientId;
+    }
     
     const clientsDoc = doc(db, WEBSITE_DATA_COLLECTION, 'clients');
     const docSnap = await getDoc(clientsDoc);

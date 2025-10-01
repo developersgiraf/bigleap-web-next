@@ -62,11 +62,16 @@ export async function POST(request) {
     }
     
     // Generate slug from title
-    const slug = blogData.title
+    let slug = blogData.title
       .toLowerCase()
       .replace(/[^a-z0-9\s-]/g, '')
       .replace(/\s+/g, '-')
       .trim();
+    
+    // Ensure slug doesn't start with a number (add prefix if needed)
+    if (/^[0-9]/.test(slug)) {
+      slug = 'post-' + slug;
+    }
     
     // Check if blog post already exists
     if (currentData[slug]) {

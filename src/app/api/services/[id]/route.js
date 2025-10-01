@@ -69,28 +69,82 @@ export async function PUT(request, { params }) {
         error: 'Service not found'
       }, { status: 404 });
     }
+
+    // Determine the final slug/id to use
+    let finalSlug = id; // Default to current id
+    let slugChanged = false;
+
+    if (serviceData.customSlug) {
+      // Validate custom slug format
+      const slugPattern = /^[a-z][a-z0-9-]*$/;
+      if (!slugPattern.test(serviceData.customSlug)) {
+        return NextResponse.json({
+          success: false,
+          error: 'Custom slug must start with a letter and contain only lowercase letters, numbers, and hyphens'
+        }, { status: 400 });
+      }
+
+      finalSlug = serviceData.customSlug;
+      slugChanged = finalSlug !== id;
+
+      // Check if the new slug already exists (only if it's different from current)
+      if (slugChanged && currentData[finalSlug]) {
+        return NextResponse.json({
+          success: false,
+          error: 'A service with this slug already exists'
+        }, { status: 409 });
+      }
+    } else {
+      // Auto-generate slug from bannerTitle if no custom slug provided
+      if (serviceData.bannerTitle) {
+        const generatedSlug = generateServiceId(serviceData.bannerTitle);
+        finalSlug = generatedSlug;
+        slugChanged = finalSlug !== id;
+
+        // Check if the new slug already exists (only if it's different from current)
+        if (slugChanged && currentData[finalSlug]) {
+          return NextResponse.json({
+            success: false,
+            error: 'A service with this auto-generated slug already exists'
+          }, { status: 409 });
+        }
+      }
+    }
     
-    // Update the service
+    // Update the service with new data
     const updatedService = {
       ...currentData[id],
-      ...serviceData
+      ...serviceData,
+      slug: finalSlug // Store the slug in the service data
     };
-    
-    const updatedData = {
-      ...currentData,
-      [id]: updatedService
-    };
+
+    let updatedData;
+
+    if (slugChanged) {
+      // Create new entry with new slug and remove old entry
+      updatedData = { ...currentData };
+      updatedData[finalSlug] = updatedService;
+      delete updatedData[id];
+    } else {
+      // Just update the existing entry
+      updatedData = {
+        ...currentData,
+        [id]: updatedService
+      };
+    }
     
     await setDoc(servicesDoc, updatedData);
     
     return NextResponse.json({
       success: true,
       data: {
-        id,
-        title: updatedService.bannerTitle || id,
+        id: finalSlug,
+        oldId: slugChanged ? id : undefined,
+        title: updatedService.bannerTitle || finalSlug,
         ...updatedService
       },
-      message: 'Service updated successfully'
+      message: 'Service updated successfully',
+      slugChanged
     });
   } catch (error) {
     console.error('Error updating service:', error);

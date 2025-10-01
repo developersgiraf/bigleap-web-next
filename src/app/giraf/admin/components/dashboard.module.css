@@ -4,6 +4,7 @@
   background: linear-gradient(135deg, #1a1a1a, #2d0404);
   font-family: 'Montserrat', sans-serif;
   flex-wrap: wrap;
+  color: #fff;
 }
 
 .sidebar {
