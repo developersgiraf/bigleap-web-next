@@ -382,14 +382,7 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
     section02: {
       DescTitle: '',
       Descpara: '',
-      subhead1: '',
-      subdes1: '',
-      subhead2: '',
-      subdes2: '',
-      subhead3: '',
-      subdes3: '',
-      subhead4: '',
-      subdes4: ''
+      subsections: []
     },
     listHead: '',
     listPara: '',
@@ -431,7 +424,40 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
 
   useEffect(() => {
     if (service) {
-      setFormData(service);
+      // Handle both old and new data formats
+      const serviceData = { ...service };
+      
+      // Convert old subsection format to new format if needed
+      if (serviceData.section02 && !serviceData.section02.subsections) {
+        const subsections = [];
+        
+        // Convert old subhead/subdes pairs to new format
+        for (let i = 1; i <= 4; i++) {
+          const heading = serviceData.section02[`subhead${i}`];
+          const description = serviceData.section02[`subdes${i}`];
+          
+          if (heading && heading.trim()) {
+            subsections.push({
+              heading: heading.trim(),
+              description: description ? description.trim() : ''
+            });
+          }
+        }
+        
+        // Remove old fields and add new subsections
+        const { subhead1, subdes1, subhead2, subdes2, subhead3, subdes3, subhead4, subdes4, ...cleanSection02 } = serviceData.section02;
+        serviceData.section02 = {
+          ...cleanSection02,
+          subsections
+        };
+      }
+      
+      // Ensure subsections array exists
+      if (!serviceData.section02.subsections) {
+        serviceData.section02.subsections = [];
+      }
+      
+      setFormData(serviceData);
       // If editing existing service, allow custom slug editing
       setUseCustomSlug(true);
       setFormData(prev => ({ ...prev, customSlug: service.id }));
@@ -472,6 +498,39 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
     setFormData(prev => ({
       ...prev,
       list: prev.list.filter((_, i) => i !== index)
+    }));
+  };
+
+  // Subsection management functions
+  const handleSubsectionChange = (index, field, value) => {
+    const newSubsections = [...formData.section02.subsections];
+    newSubsections[index] = { ...newSubsections[index], [field]: value };
+    setFormData(prev => ({
+      ...prev,
+      section02: {
+        ...prev.section02,
+        subsections: newSubsections
+      }
+    }));
+  };
+
+  const addSubsection = () => {
+    setFormData(prev => ({
+      ...prev,
+      section02: {
+        ...prev.section02,
+        subsections: [...prev.section02.subsections, { heading: '', description: '' }]
+      }
+    }));
+  };
+
+  const removeSubsection = (index) => {
+    setFormData(prev => ({
+      ...prev,
+      section02: {
+        ...prev.section02,
+        subsections: prev.section02.subsections.filter((_, i) => i !== index)
+      }
     }));
   };
 
@@ -664,28 +723,42 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
           </div>
 
           <div className={styles.subSections}>
-            {[1, 2, 3, 4].map(num => (
-              <div key={num} className={styles.subSection}>
-                <h4>Sub-section {num}</h4>
-                <div className={styles.formRow}>
-                  <div className={styles.formField}>
-                    <label>Sub Heading {num}</label>
-                    <input
-                      type="text"
-                      value={formData.section02[`subhead${num}`]}
-                      onChange={(e) => handleInputChange(`subhead${num}`, e.target.value, 'section02')}
-                      placeholder={`Sub heading ${num}`}
-                    />
-                  </div>
-                  <div className={styles.formField}>
-                    <label>Sub Description {num}</label>
-                    <textarea
-                      value={formData.section02[`subdes${num}`]}
-                      onChange={(e) => handleInputChange(`subdes${num}`, e.target.value, 'section02')}
-                      placeholder={`Sub description ${num}`}
-                      rows={2}
-                    />
-                  </div>
+            <div className={styles.listHeader}>
+              <h4>Sub-sections</h4>
+              <button type="button" onClick={addSubsection} className={styles.addItemBtn}>
+                + Add Subsection
+              </button>
+            </div>
+
+            {formData.section02.subsections.map((subsection, index) => (
+              <div key={index} className={styles.listItem}>
+                <div className={styles.listItemHeader}>
+                  <h5>Subsection {index + 1}</h5>
+                  <button 
+                    type="button" 
+                    onClick={() => removeSubsection(index)}
+                    className={styles.removeItemBtn}
+                  >
+                    Remove
+                  </button>
+                </div>
+                <div className={styles.formField}>
+                  <label>Heading</label>
+                  <input
+                    type="text"
+                    value={subsection.heading}
+                    onChange={(e) => handleSubsectionChange(index, 'heading', e.target.value)}
+                    placeholder="Subsection heading"
+                  />
+                </div>
+                <div className={styles.formField}>
+                  <label>Description</label>
+                  <textarea
+                    value={subsection.description}
+                    onChange={(e) => handleSubsectionChange(index, 'description', e.target.value)}
+                    placeholder="Subsection description"
+                    rows={3}
+                  />
                 </div>
               </div>
             ))}
