@@ -1,35 +1,46 @@
 .dashboard {
   display: flex;
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .sidebar {
   width: 280px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d0404 50%, #ed232a 100%);
   color: white;
   display: flex;
   flex-direction: column;
   position: fixed;
   height: 100vh;
   overflow-y: auto;
+  box-shadow: 4px 0 20px rgba(237, 35, 42, 0.1);
 }
 
 .sidebarHeader {
-  padding: 30px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 35px 25px;
+  border-bottom: 1px solid rgba(237, 35, 42, 0.3);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .sidebarHeader h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #fff 0%, #ffcccb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 .sidebarHeader p {
-  opacity: 0.8;
-  font-size: 0.9rem;
+  opacity: 0.9;
+  font-size: 0.85rem;
   margin: 0;
+  color: #ffcccb;
+  font-weight: 500;
 }
 
 .navigation {
@@ -41,46 +52,60 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 15px 25px;
+  padding: 16px 25px;
   background: none;
   border: none;
-  color: white;
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
   text-align: left;
+  border-left: 3px solid transparent;
 }
 
 .navItem:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(237, 35, 42, 0.2);
+  color: white;
+  border-left-color: rgba(255, 255, 255, 0.5);
+  transform: translateX(5px);
 }
 
 .navItem.active {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-right: 4px solid white;
+  background: rgba(237, 35, 42, 0.4);
+  border-left-color: #fff;
+  color: white;
+  box-shadow: inset 0 0 20px rgba(237, 35, 42, 0.3);
 }
 
 .navIcon {
-  margin-right: 12px;
-  font-size: 1.2rem;
+  margin-right: 15px;
+  font-size: 1.3rem;
+  width: 20px;
+  text-align: center;
 }
 
 .sidebarFooter {
-  padding: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-top: 1px solid rgba(237, 35, 42, 0.3);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .userInfo {
   margin-bottom: 15px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 12px;
+  background: rgba(237, 35, 42, 0.1);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(237, 35, 42, 0.2);
 }
 
 .userInfo p {
   margin: 0;
   opacity: 0.9;
+  color: #ffcccb;
+  font-weight: 500;
 }
 
 .logoutButton {
@@ -108,37 +133,44 @@
 
 .quickLogout {
   width: 100%;
-  padding: 10px;
-  background: rgba(255, 193, 7, 0.8);
-  border: 1px solid rgba(255, 193, 7, 0.5);
-  color: #333;
-  border-radius: 6px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #ed232a, #db210c);
+  border: 1px solid rgba(237, 35, 42, 0.5);
+  color: white;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 8px;
-  transition: background-color 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 12px rgba(237, 35, 42, 0.3);
 }
 
 .quickLogout:hover {
-  background: rgba(255, 193, 7, 1);
+  background: linear-gradient(135deg, #ff4043, #ed232a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(237, 35, 42, 0.4);
 }
 
 .clearSession {
   width: 100%;
-  padding: 8px;
-  background: rgba(108, 117, 125, 0.8);
-  border: 1px solid rgba(108, 117, 125, 0.5);
-  color: white;
-  border-radius: 6px;
+  padding: 10px 16px;
+  background: rgba(45, 4, 4, 0.8);
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  color: #ffcccb;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  transition: background-color 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
 }
 
 .clearSession:hover {
-  background: rgba(108, 117, 125, 1);
+  background: rgba(45, 4, 4, 1);
+  border-color: rgba(237, 35, 42, 0.5);
+  color: white;
 }
 
 .mainContent {
@@ -146,13 +178,20 @@
   flex: 1;
   padding: 30px;
   overflow-y: auto;
+  background: linear-gradient(135deg, #1a1a1a, #2d0404);
+  min-height: 100vh;
 }
 
 .overview h2 {
-  color: #333;
+  color: white;
   margin-bottom: 30px;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ed232a, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .statsGrid {
@@ -163,59 +202,74 @@
 }
 
 .statCard {
-  background: white;
+  background: linear-gradient(135deg, rgba(237, 35, 42, 0.1), rgba(45, 4, 4, 0.8));
+  border: 1px solid rgba(237, 35, 42, 0.3);
   padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .statCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  border-color: rgba(237, 35, 42, 0.6);
+  box-shadow: 0 15px 40px rgba(237, 35, 42, 0.2);
 }
 
 .statIcon {
   font-size: 2.5rem;
   margin-right: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ed232a, #db210c);
   border-radius: 12px;
   width: 60px;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(237, 35, 42, 0.3);
 }
 
 .statInfo h3 {
   margin: 0 0 8px 0;
-  color: #666;
+  color: #ffcccb;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  opacity: 0.9;
 }
 
 .statNumber {
   margin: 0 0 4px 0;
   font-size: 2rem;
   font-weight: 700;
-  color: #333;
+  color: #ed232a;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .statLabel {
   margin: 0;
-  color: #999;
-  font-size: 0.8rem;
+  color: #ffcccb;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.8;
 }
 
 .section {
-  background: white;
-  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(237, 35, 42, 0.05), rgba(45, 4, 4, 0.6));
+  border: 1px solid rgba(237, 35, 42, 0.2);
+  border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .sectionHeader {
@@ -224,45 +278,56 @@
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(237, 35, 42, 0.3);
 }
 
 .sectionHeader h2 {
   margin: 0;
-  color: #333;
+  color: white;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ed232a, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ed232a, #db210c);
   color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 15px rgba(237, 35, 42, 0.3);
 }
 
 .primaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #ff4043, #ed232a);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(237, 35, 42, 0.4);
 }
 
 .placeholder {
   text-align: center;
   padding: 60px 20px;
-  color: #666;
-  background: #f8f9fa;
-  border-radius: 10px;
-  border: 2px dashed #ddd;
+  color: #ffcccb;
+  background: rgba(237, 35, 42, 0.05);
+  border-radius: 12px;
+  border: 2px dashed rgba(237, 35, 42, 0.3);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .placeholder p {
   margin: 0;
   font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
