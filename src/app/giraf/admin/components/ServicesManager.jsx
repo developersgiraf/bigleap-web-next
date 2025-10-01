@@ -128,15 +128,13 @@ const ServicesManager = () => {
       console.log('DEBUG: Services loaded from API:', response.data);
       setServices(response.data);
       
-      // Load stats only if not searching (search results don't need stats)
-      if (!debouncedSearchTerm.trim()) {
-        try {
-          const statsResponse = await servicesAPI.getStats();
-          setStats(statsResponse.data);
-        } catch (statsError) {
-          console.warn('Failed to load stats:', statsError);
-          // Don't fail the whole load just for stats
-        }
+      // Always load stats for header display (independent of search)
+      try {
+        const statsResponse = await servicesAPI.getStats();
+        setStats(statsResponse.data);
+      } catch (statsError) {
+        console.warn('Failed to load stats:', statsError);
+        // Don't fail the whole load just for stats
       }
     } catch (err) {
       console.error('Error loading services:', err);
@@ -162,17 +160,9 @@ const ServicesManager = () => {
 
   // Calculate stats from current services (memoized for performance)
   const currentStats = useMemo(() => {
-    if (debouncedSearchTerm.trim()) {
-      // For search results, calculate from filtered data
-      return {
-        total: services.length,
-        active: services.filter(s => !s.archived).length,
-        archived: services.filter(s => s.archived).length
-      };
-    }
-    // Use API stats for full data
+    // Always use API stats for header display (shows total counts, not search results)
     return stats;
-  }, [services, stats, debouncedSearchTerm]);
+  }, [stats]);
 
   const handleEdit = useCallback((service) => {
     setSelectedService(service);

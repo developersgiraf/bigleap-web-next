@@ -12,12 +12,12 @@ export async function GET() {
     
     if (docSnap.exists()) {
       const servicesData = docSnap.data();
-      const services = Object.keys(servicesData);
+      const services = Object.values(servicesData); // Get service objects, not just keys
       
       const stats = {
         total: services.length,
-        active: services.length, // Since we don't have status, all are active
-        archived: 0,
+        active: services.filter(service => !service.archived).length,
+        archived: services.filter(service => service.archived).length,
         draft: 0
       };
       
