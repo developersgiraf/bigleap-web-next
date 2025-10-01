@@ -44,7 +44,7 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete }) => {
   return (
     <div key={service.id} className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''}`}>
       <ServiceImage 
-        src={service.section01?.image} 
+        src={service.thumbnail || service.section01?.image} 
         alt={service.title || service.bannerTitle}
         archived={service.archived}
       />
@@ -374,6 +374,7 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
     bannerTitle: '',
     customSlug: '', // For custom slug editing
     archived: false,
+    thumbnail: '', // Separate thumbnail image for card display
     section01: {
       image: '',
       heading: '',
@@ -455,6 +456,11 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
       // Ensure subsections array exists
       if (!serviceData.section02.subsections) {
         serviceData.section02.subsections = [];
+      }
+      
+      // Ensure thumbnail field exists (backward compatibility)
+      if (!serviceData.thumbnail) {
+        serviceData.thumbnail = '';
       }
       
       setFormData(serviceData);
@@ -595,6 +601,18 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
                 required
               />
             </div>
+          </div>
+          <div className={styles.formField}>
+            <label>Thumbnail Image</label>
+            <ImageUpload
+              value={formData.thumbnail}
+              onChange={(url) => handleInputChange('thumbnail', url)}
+              folder="services"
+              placeholder="Upload thumbnail image for card display"
+            />
+            <small className={styles.fieldNote}>
+              This image will be used for the service card thumbnail. Recommended size: 400x300px.
+            </small>
           </div>
           <div className={styles.formRow}>
             <div className={styles.formField}>

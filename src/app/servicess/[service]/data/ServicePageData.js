@@ -1,7 +1,6 @@
 export const servicesData = {
   "twoDanimation": {
     bannerTitle: "2D Animation",
-   
     section01: {
       image: "/servicess/detail-image.png",
       heading:
