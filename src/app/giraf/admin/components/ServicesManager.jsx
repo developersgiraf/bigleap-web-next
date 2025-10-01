@@ -40,7 +40,7 @@ const ServiceImage = ({ src, alt, archived }) => {
 };
 
 // Service Card Component
-const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, totalServices }) => {
+const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, totalServices, onDragStart, onDragOver, onDrop, draggedIndex }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
   
@@ -68,7 +68,7 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, tota
   };
 
   const handleIncrement = async () => {
-    const newIndex = Math.min((service.index || 0) + 1, totalServices - 1);
+    const newIndex = Math.min((service.index || 0) + 1, totalServices);
     if (newIndex !== service.index) {
       await onIndexChange(service.id, newIndex);
     }
@@ -81,8 +81,38 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, tota
     }
   };
 
+  const handleDragStart = (e) => {
+    onDragStart(service.index, service.id);
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    onDragOver(service.index);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    onDrop(service.index);
+  };
+
+  const isDraggedOver = draggedIndex !== null && draggedIndex !== service.index;
+  const isBeingDragged = draggedIndex === service.index;
+
   return (
-    <div key={service.id} className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''}`}>
+    <div 
+      key={service.id} 
+      className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''} ${isBeingDragged ? styles.dragging : ''} ${isDraggedOver ? styles.dragOver : ''}`}
+      draggable={true}
+      onDragStart={handleDragStart}
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+    >
+      <div className={styles.dragHandle} title="Drag to reorder">
+        <span>⋮⋮</span>
+      </div>
+      
       <ServiceImage 
         src={service.thumbnail || service.section01?.image} 
         alt={service.title || service.bannerTitle}
@@ -103,10 +133,10 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, tota
                 </span>
                 {showDropdown && (
                   <div className={styles.indexDropdown}>
-                    {Array.from({ length: totalServices }, (_, i) => (
+                    {Array.from({ length: totalServices + 1 }, (_, i) => (
                       <div
                         key={i}
-                        className={`${styles.dropdownItem} ${i === service.index ? styles.currentIndex : ''}`}
+                        className={`${styles.dropdownItem} ${i === (service.index || 0) ? styles.currentIndex : ''}`}
                         onClick={() => handleIndexSelect(i)}
                       >
                         #{i}
@@ -127,7 +157,7 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, tota
                 <button
                   className={styles.indexBtn}
                   onClick={handleIncrement}
-                  disabled={(service.index || 0) >= totalServices - 1}
+                  disabled={(service.index || 0) >= totalServices}
                   title="Move down"
                 >
                   ↓
@@ -186,6 +216,10 @@ const ServicesManager = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [stats, setStats] = useState({ total: 0, active: 0, archived: 0 });
+  
+  // Drag and drop state
+  const [draggedService, setDraggedService] = useState(null);
+  const [draggedIndex, setDraggedIndex] = useState(null);
 
   // Debounce search term to prevent excessive API calls
   useEffect(() => {
@@ -195,6 +229,47 @@ const ServicesManager = () => {
 
     return () => clearTimeout(timer);
   }, [searchTerm]);
+
+  // Function to ensure unique indexes and fix duplicates
+  const ensureUniqueIndexes = useCallback(async (servicesList) => {
+    const indexMap = new Map();
+    const duplicates = [];
+    
+    // Find duplicates
+    servicesList.forEach(service => {
+      const index = service.index || 0;
+      if (indexMap.has(index)) {
+        duplicates.push(service);
+      } else {
+        indexMap.set(index, service);
+      }
+    });
+    
+    // Fix duplicates by assigning new indexes
+    if (duplicates.length > 0) {
+      console.log('Found duplicate indexes, fixing...', duplicates);
+      
+      for (const service of duplicates) {
+        let newIndex = 0;
+        while (indexMap.has(newIndex)) {
+          newIndex++;
+        }
+        
+        try {
+          await servicesAPI.update(service.id, { index: newIndex });
+          indexMap.set(newIndex, service);
+          console.log(`Fixed duplicate index for service ${service.id}: assigned index ${newIndex}`);
+        } catch (err) {
+          console.error(`Failed to fix index for service ${service.id}:`, err);
+        }
+      }
+      
+      // Reload services after fixing duplicates
+      return true;
+    }
+    
+    return false;
+  }, []);
 
   // Load services data with caching
   const loadServices = useCallback(async () => {
@@ -210,6 +285,16 @@ const ServicesManager = () => {
       }
       
       console.log('DEBUG: Services loaded from API:', response.data);
+      
+      // Check for duplicate indexes and fix them
+      const needsReload = await ensureUniqueIndexes(response.data);
+      
+      if (needsReload) {
+        // Reload data after fixing duplicates
+        response = await servicesAPI.getAll();
+        console.log('DEBUG: Services reloaded after fixing duplicates:', response.data);
+      }
+      
       setServices(response.data);
       
       // Always load stats for header display (independent of search)
@@ -226,7 +311,7 @@ const ServicesManager = () => {
     } finally {
       setLoading(false);
     }
-  }, [debouncedSearchTerm]);
+  }, [debouncedSearchTerm, ensureUniqueIndexes]);
 
   // Load services when debounced search term changes
   useEffect(() => {
@@ -307,6 +392,48 @@ const ServicesManager = () => {
       alert('Failed to update service order. Please try again.');
     }
   }, [services, loadServices]);
+
+  // Drag and drop handlers
+  const handleDragStart = useCallback((index, serviceId) => {
+    setDraggedIndex(index);
+    setDraggedService(serviceId);
+  }, []);
+
+  const handleDragOver = useCallback((index) => {
+    // Visual feedback could be added here if needed
+  }, []);
+
+  const handleDrop = useCallback(async (targetIndex) => {
+    if (draggedIndex !== null && draggedIndex !== targetIndex && draggedService) {
+      try {
+        // Get the services at both positions
+        const draggedServiceObj = services.find(s => s.index === draggedIndex);
+        const targetServiceObj = services.find(s => s.index === targetIndex);
+        
+        if (draggedServiceObj) {
+          if (targetServiceObj) {
+            // Swap the indexes
+            await servicesAPI.update(draggedServiceObj.id, { index: targetIndex });
+            await servicesAPI.update(targetServiceObj.id, { index: draggedIndex });
+          } else {
+            // Just move to the empty position
+            await servicesAPI.update(draggedServiceObj.id, { index: targetIndex });
+          }
+          
+          // Force cache invalidation and reload
+          servicesAPI.invalidateCache();
+          await loadServices();
+        }
+      } catch (err) {
+        console.error('Error during drag and drop:', err);
+        alert('Failed to reorder services. Please try again.');
+      }
+    }
+    
+    // Reset drag state
+    setDraggedIndex(null);
+    setDraggedService(null);
+  }, [draggedIndex, draggedService, services, loadServices]);
 
   const handleSave = useCallback(async (serviceData) => {
     try {
@@ -449,6 +576,10 @@ const ServicesManager = () => {
             onDelete={handleDelete}
             onIndexChange={handleIndexChange}
             totalServices={services.length}
+            onDragStart={handleDragStart}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+            draggedIndex={draggedIndex}
           />
         ))}
       </div>
