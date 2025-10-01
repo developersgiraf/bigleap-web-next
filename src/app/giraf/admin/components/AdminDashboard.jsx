@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useAuth } from '../../../../contexts/AuthContext';
 import styles from './dashboard.module.css';
+import ServicesManager from './ServicesManager';
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth();
@@ -64,17 +65,7 @@ const AdminDashboard = () => {
           </div>
         );
       case 'services':
-        return (
-          <div className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2>Services Management</h2>
-              <button className={styles.primaryButton}>Add New Service</button>
-            </div>
-            <div className={styles.placeholder}>
-              <p>Service content management - Specialized services, motion graphics, business benefits</p>
-            </div>
-          </div>
-        );
+        return <ServicesManager />;
       case 'portfolio':
         return (
           <div className={styles.section}>
