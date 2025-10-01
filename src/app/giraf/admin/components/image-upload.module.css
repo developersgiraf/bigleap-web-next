@@ -5,12 +5,39 @@
 
 .uploadSection {
   margin-bottom: 15px;
+  position: relative;
 }
 
 .inputGroup {
   display: flex;
   gap: 8px;
   align-items: stretch;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 4px;
+}
+
+.galleryButton {
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+}
+
+.galleryButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
 }
 
 .urlInput {
@@ -170,4 +197,168 @@
     width: 150px;
     height: 100px;
   }
+  
+  .buttonGroup {
+    flex-direction: row;
+  }
+  
+  .galleryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+}
+
+/* Gallery Styles */
+.gallery {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(20, 20, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  z-index: 1000;
+  max-height: 400px;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.galleryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.galleryHeader h4 {
+  margin: 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.galleryContent {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  padding: 15px;
+}
+
+.galleryItem {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.galleryItem:hover {
+  transform: translateY(-2px);
+  border-color: #ed232a;
+  box-shadow: 0 4px 15px rgba(237, 35, 42, 0.3);
+}
+
+.galleryImageContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.galleryImageContainer:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+.galleryDeleteButton {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(220, 38, 38, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: white;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.galleryItem:hover .galleryDeleteButton {
+  opacity: 1;
+}
+
+.galleryDeleteButton:hover {
+  background: rgba(185, 28, 28, 1);
+  transform: scale(1.1);
+}
+
+.galleryImageInfo {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.galleryImageName {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.galleryImageSize {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.7rem;
+}
+
+.galleryLoading,
+.galleryEmpty {
+  padding: 40px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.galleryEmpty {
+  color: rgba(255, 255, 255, 0.5);
 }
