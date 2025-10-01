@@ -114,7 +114,7 @@ const AdminDashboard = () => {
 
   return (
     <div className={styles.dashboard}>
-      {/* Sidebar */}
+      {/* Desktop Sidebar */}
       <div className={styles.sidebar}>
         <div className={styles.sidebarHeader}>
           <h1>BigLeap Admin</h1>
@@ -139,33 +139,9 @@ const AdminDashboard = () => {
             <p>👤 {user?.displayName || user?.email}</p>
           </div>
           
-          {/* Big prominent logout button */}
+          {/* Main logout button */}
           <button onClick={handleLogout} className={styles.logoutButton}>
             🚪 LOGOUT
-          </button>
-          
-          {/* Alternative logout methods */}
-          <button 
-            onClick={() => {
-              logout();
-              window.location.reload();
-            }}
-            className={styles.quickLogout}
-            title="Force Logout"
-          >
-            ⚡ FORCE LOGOUT
-          </button>
-          
-          <button 
-            onClick={() => {
-              localStorage.clear();
-              sessionStorage.clear();
-              window.location.href = '/giraf/admin';
-            }}
-            className={styles.clearSession}
-            title="Clear All Data"
-          >
-            🗑️ CLEAR ALL
           </button>
         </div>
       </div>
@@ -173,6 +149,28 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <div className={styles.mainContent}>
         {renderContent()}
+      </div>
+
+      {/* Mobile Tab Bar */}
+      <div className={styles.mobileTabBar}>
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={`${styles.mobileTabItem} ${activeTab === tab.id ? styles.active : ''}`}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            <span className={styles.mobileTabIcon}>{tab.icon}</span>
+            <span className={styles.mobileTabLabel}>{tab.label.split(' ')[0]}</span>
+          </button>
+        ))}
+        <button
+          className={styles.mobileTabItem}
+          onClick={handleLogout}
+          title="Logout"
+        >
+          <span className={styles.mobileTabIcon}>🚪</span>
+          <span className={styles.mobileTabLabel}>Logout</span>
+        </button>
       </div>
     </div>
   );

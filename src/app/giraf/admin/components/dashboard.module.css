@@ -1,30 +1,34 @@
 .dashboard {
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #1a1a1a, #2d0404);
   font-family: 'Montserrat', sans-serif;
+  flex-wrap: wrap;
 }
 
 .sidebar {
-  width: 280px;
+  width: clamp(250px, 25vw, 320px);
+  min-width: 250px;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d0404 50%, #ed232a 100%);
   color: white;
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: sticky;
+  top: 0;
   height: 100vh;
   overflow-y: auto;
   box-shadow: 4px 0 20px rgba(237, 35, 42, 0.1);
+  flex-shrink: 0;
 }
 
 .sidebarHeader {
-  padding: 35px 25px;
+  padding: clamp(20px, 4vw, 35px) clamp(15px, 3vw, 25px);
   border-bottom: 1px solid rgba(237, 35, 42, 0.3);
   background: rgba(0, 0, 0, 0.2);
 }
 
 .sidebarHeader h1 {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   font-weight: 800;
   margin-bottom: 10px;
   font-family: 'Montserrat', sans-serif;
@@ -37,7 +41,7 @@
 
 .sidebarHeader p {
   opacity: 0.9;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   margin: 0;
   color: #ffcccb;
   font-weight: 500;
@@ -45,18 +49,18 @@
 
 .navigation {
   flex: 1;
-  padding: 20px 0;
+  padding: clamp(15px, 3vw, 20px) 0;
 }
 
 .navItem {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 16px 25px;
+  padding: clamp(12px, 2vw, 16px) clamp(15px, 3vw, 25px);
   background: none;
   border: none;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
@@ -80,24 +84,24 @@
 }
 
 .navIcon {
-  margin-right: 15px;
-  font-size: 1.3rem;
-  width: 20px;
+  margin-right: clamp(10px, 2vw, 15px);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  width: clamp(16px, 3vw, 20px);
   text-align: center;
 }
 
 .sidebarFooter {
-  padding: 25px;
+  padding: clamp(15px, 3vw, 25px);
   border-top: 1px solid rgba(237, 35, 42, 0.3);
   background: rgba(0, 0, 0, 0.2);
 }
 
 .userInfo {
   margin-bottom: 15px;
-  padding: 12px;
+  padding: clamp(10px, 2vw, 12px);
   background: rgba(237, 35, 42, 0.1);
   border-radius: 10px;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   border: 1px solid rgba(237, 35, 42, 0.2);
 }
 
@@ -174,9 +178,9 @@
 }
 
 .mainContent {
-  margin-left: 280px;
   flex: 1;
-  padding: 30px;
+  min-width: 0;
+  padding: clamp(20px, 4vw, 30px);
   overflow-y: auto;
   background: linear-gradient(135deg, #1a1a1a, #2d0404);
   min-height: 100vh;
@@ -184,8 +188,8 @@
 
 .overview h2 {
   color: white;
-  margin-bottom: 30px;
-  font-size: 2.2rem;
+  margin-bottom: clamp(20px, 4vw, 30px);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #ed232a, #ff6b6b);
@@ -196,15 +200,15 @@
 
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 25vw, 280px), 1fr));
+  gap: clamp(20px, 3vw, 30px);
+  margin-bottom: clamp(30px, 5vw, 40px);
 }
 
 .statCard {
   background: linear-gradient(135deg, rgba(237, 35, 42, 0.1), rgba(45, 4, 4, 0.8));
   border: 1px solid rgba(237, 35, 42, 0.3);
-  padding: 25px;
+  padding: clamp(20px, 3vw, 25px);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -212,6 +216,9 @@
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  flex-direction: column;
+  text-align: center;
+  gap: clamp(10px, 2vw, 15px);
 }
 
 .statCard:hover {
@@ -221,23 +228,24 @@
 }
 
 .statIcon {
-  font-size: 2.5rem;
-  margin-right: 20px;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-right: 0;
   background: linear-gradient(135deg, #ed232a, #db210c);
   border-radius: 12px;
-  width: 60px;
-  height: 60px;
+  width: clamp(50px, 8vw, 60px);
+  height: clamp(50px, 8vw, 60px);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   box-shadow: 0 4px 15px rgba(237, 35, 42, 0.3);
+  margin-bottom: clamp(8px, 2vw, 12px);
 }
 
 .statInfo h3 {
   margin: 0 0 8px 0;
   color: #ffcccb;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -247,7 +255,7 @@
 
 .statNumber {
   margin: 0 0 4px 0;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
   color: #ed232a;
   font-family: 'Montserrat', sans-serif;
@@ -256,7 +264,7 @@
 .statLabel {
   margin: 0;
   color: #ffcccb;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   font-weight: 500;
   font-family: 'Montserrat', sans-serif;
   opacity: 0.8;
@@ -266,7 +274,7 @@
   background: linear-gradient(135deg, rgba(237, 35, 42, 0.05), rgba(45, 4, 4, 0.6));
   border: 1px solid rgba(237, 35, 42, 0.2);
   border-radius: 16px;
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -276,15 +284,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
+  margin-bottom: clamp(20px, 4vw, 30px);
+  padding-bottom: clamp(15px, 3vw, 20px);
   border-bottom: 1px solid rgba(237, 35, 42, 0.3);
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 15px);
 }
 
 .sectionHeader h2 {
   margin: 0;
   color: white;
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #ed232a, #ff6b6b);
@@ -297,14 +307,15 @@
   background: linear-gradient(135deg, #ed232a, #db210c);
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: clamp(10px, 2vw, 12px) clamp(18px, 3vw, 24px);
   border-radius: 10px;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: 0 4px 15px rgba(237, 35, 42, 0.3);
+  white-space: nowrap;
 }
 
 .primaryButton:hover {
@@ -315,7 +326,7 @@
 
 .placeholder {
   text-align: center;
-  padding: 60px 20px;
+  padding: clamp(40px, 8vw, 60px) clamp(15px, 3vw, 20px);
   color: #ffcccb;
   background: rgba(237, 35, 42, 0.05);
   border-radius: 12px;
@@ -325,21 +336,25 @@
 
 .placeholder p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   font-weight: 500;
   opacity: 0.9;
 }
 
 @media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+    padding-bottom: 80px; /* Space for bottom tab bar */
+  }
+  
   .sidebar {
-    width: 100%;
-    position: relative;
-    height: auto;
+    display: none; /* Hide desktop sidebar on mobile */
   }
   
   .mainContent {
     margin-left: 0;
-    padding: 20px;
+    padding: 15px;
+    width: 100%;
   }
   
   .statsGrid {
@@ -350,5 +365,110 @@
     flex-direction: column;
     gap: 15px;
     align-items: stretch;
+    text-align: center;
+  }
+  
+  .primaryButton {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .statCard {
+    flex-direction: row;
+    text-align: left;
+    gap: 15px;
+  }
+  
+  .statIcon {
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    padding: 10px 0;
+  }
+  
+  .navItem {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .sidebarHeader h1 {
+    font-size: 1.3rem;
+  }
+  
+  .mainContent {
+    padding: 10px;
+  }
+  
+  .statCard {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .statIcon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile Tab Bar Styles */
+.mobileTabBar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileTabBar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0404 50%, #ed232a 100%);
+    border-top: 2px solid rgba(237, 35, 42, 0.4);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    height: 70px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  
+  .mobileTabItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 4px;
+    border-radius: 8px;
+    min-width: 50px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .mobileTabItem.active {
+    color: #ed232a;
+    background: rgba(237, 35, 42, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .mobileTabIcon {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+  }
+  
+  .mobileTabLabel {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1;
   }
 }
