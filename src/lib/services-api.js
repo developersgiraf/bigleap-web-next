@@ -118,6 +118,12 @@ export const servicesAPI = {
       throw error;
     }
   },
+
+  // Cache invalidation method
+  invalidateCache: () => {
+    servicesCache.invalidate();
+    console.log('Services cache invalidated manually');
+  },
 };
 
 // Portfolio API Client

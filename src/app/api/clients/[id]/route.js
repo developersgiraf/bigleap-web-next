@@ -7,7 +7,7 @@ const WEBSITE_DATA_COLLECTION = 'WebsiteDatas';
 // GET - Get single client by ID
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     
     const clientsDoc = doc(db, WEBSITE_DATA_COLLECTION, 'clients');
     const docSnap = await getDoc(clientsDoc);

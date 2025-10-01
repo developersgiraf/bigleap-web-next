@@ -7,7 +7,7 @@ const WEBSITE_DATA_COLLECTION = 'WebsiteDatas';
 // GET - Get single blog post by ID
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     
     const blogDoc = doc(db, WEBSITE_DATA_COLLECTION, 'blog');
     const docSnap = await getDoc(blogDoc);

@@ -125,6 +125,7 @@ const ServicesManager = () => {
         response = await servicesAPI.getAll();
       }
       
+      console.log('DEBUG: Services loaded from API:', response.data);
       setServices(response.data);
       
       // Load stats only if not searching (search results don't need stats)
@@ -189,9 +190,14 @@ const ServicesManager = () => {
   }, [loadServices]);
 
   const handleDelete = useCallback(async (serviceId) => {
+    console.log('DEBUG: Attempting to delete service with ID:', serviceId);
     if (confirm('Are you sure you want to permanently delete this service?')) {
       try {
+        // Force cache clear before deletion
+        servicesAPI.invalidateCache();
         await servicesAPI.delete(serviceId);
+        // Force cache clear after deletion and reload
+        servicesAPI.invalidateCache();
         await loadServices(); // Refresh the list
       } catch (err) {
         console.error('Error deleting service:', err);
@@ -210,6 +216,8 @@ const ServicesManager = () => {
         // If slug changed, the API returns the new ID
         if (result.slugChanged && result.data.id !== selectedService.id) {
           console.log(`Service slug changed from ${selectedService.id} to ${result.data.id}`);
+          // Force cache invalidation for the old service ID
+          servicesAPI.invalidateCache();
           // The service now has a new ID/slug
           setSelectedService(null); // Clear selection since the ID changed
         }
@@ -218,6 +226,8 @@ const ServicesManager = () => {
         result = await servicesAPI.create(serviceData);
       }
       
+      // Force cache invalidation and reload
+      servicesAPI.invalidateCache();
       setIsEditing(false);
       setSelectedService(null);
       await loadServices(); // Refresh the list
@@ -269,17 +279,38 @@ const ServicesManager = () => {
         <div className={styles.headerContent}>
           <h2>Services Management</h2>
           <div className={styles.stats}>
-            <span className={styles.stat}>Total: {currentStats.total}</span>
-            <span className={styles.stat}>Active: {currentStats.active}</span>
-            <span className={styles.stat}>Archived: {currentStats.archived}</span>
+            <span className={styles.stat}>
+              <span className={styles.statLabel}>Total:</span>
+              <span className={styles.statValue}>{currentStats.total}</span>
+            </span>
+            <span className={styles.stat}>
+              <span className={styles.statLabel}>Active:</span>
+              <span className={styles.statValue}>{currentStats.active}</span>
+            </span>
+            <span className={styles.stat}>
+              <span className={styles.statLabel}>Archived:</span>
+              <span className={styles.statValue}>{currentStats.archived}</span>
+            </span>
           </div>
         </div>
-        <button 
-          className={styles.addButton}
-          onClick={() => setIsEditing(true)}
-        >
-          + Add New Service
-        </button>
+        <div className={styles.headerActions}>
+          <button 
+            className={styles.refreshButton}
+            onClick={() => {
+              servicesAPI.invalidateCache();
+              loadServices();
+            }}
+            title="Force refresh data"
+          >
+            Refresh
+          </button>
+          <button 
+            className={styles.addButton}
+            onClick={() => setIsEditing(true)}
+          >
+            + Add New Service
+          </button>
+        </div>
       </div>
 
       <div className={styles.controls}>

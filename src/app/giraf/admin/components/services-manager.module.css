@@ -8,14 +8,19 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 30px;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
 }
 
-.header h2 {
-  margin: 0;
+.headerContent {
+  flex: 1;
+  min-width: 300px;
+}
+
+.headerContent h2 {
+  margin: 0 0 12px 0;
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -24,6 +29,107 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.statValue {
+  font-size: 0.9rem;
+  color: #ed232a;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.refreshButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+}
+
+.refreshButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .headerContent {
+    min-width: auto;
+  }
+  
+  .stats {
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  
+  .stat {
+    padding: 4px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .headerActions {
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .addButton {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .refreshButton {
+    min-width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
 }
 
 .addButton {

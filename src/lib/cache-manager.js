@@ -61,9 +61,11 @@ class CacheManager {
 
   // Clear all cache
   clear() {
+    console.log('Clearing all cache - before:', this.cache.size, 'entries');
     this.cache.clear();
     this.timestamps.clear();
     this.subscribers.clear();
+    console.log('Clearing all cache - after:', this.cache.size, 'entries');
   }
 
   // Invalidate cache by pattern
@@ -216,7 +218,9 @@ export const servicesCache = {
 
   // Invalidate services cache (call after create/update/delete)
   invalidate: () => {
-    cacheManager.invalidatePattern('^services:');
+    console.log('Invalidating services cache...');
+    cacheManager.clear(); // Clear ALL cache instead of just patterns
+    console.log('All cache cleared');
   }
 };
 

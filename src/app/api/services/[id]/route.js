@@ -7,7 +7,7 @@ const WEBSITE_DATA_COLLECTION = 'WebsiteDatas';
 // GET - Get single service by ID
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     
     const servicesDoc = doc(db, WEBSITE_DATA_COLLECTION, 'services');
     const docSnap = await getDoc(servicesDoc);
@@ -48,8 +48,11 @@ export async function GET(request, { params }) {
 // PUT - Update existing service
 export async function PUT(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const serviceData = await request.json();
+    
+    console.log('PUT request for service ID:', id);
+    console.log('Service data received:', { bannerTitle: serviceData.bannerTitle, customSlug: serviceData.customSlug });
     
     const servicesDoc = doc(db, WEBSITE_DATA_COLLECTION, 'services');
     const docSnap = await getDoc(servicesDoc);
@@ -63,7 +66,10 @@ export async function PUT(request, { params }) {
     
     const currentData = docSnap.data();
     
+    console.log('Available services:', Object.keys(currentData || {}));
+    
     if (!currentData[id]) {
+      console.log(`Service '${id}' not found in database`);
       return NextResponse.json({
         success: false,
         error: 'Service not found'
@@ -158,7 +164,7 @@ export async function PUT(request, { params }) {
 // DELETE - Delete service
 export async function DELETE(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     
     const servicesDoc = doc(db, WEBSITE_DATA_COLLECTION, 'services');
     const docSnap = await getDoc(servicesDoc);

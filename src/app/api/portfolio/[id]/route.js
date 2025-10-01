@@ -7,7 +7,7 @@ const WEBSITE_DATA_COLLECTION = 'WebsiteDatas';
 // GET - Get single portfolio item by ID
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     
     const portfolioDoc = doc(db, WEBSITE_DATA_COLLECTION, 'portfolio');
     const docSnap = await getDoc(portfolioDoc);
