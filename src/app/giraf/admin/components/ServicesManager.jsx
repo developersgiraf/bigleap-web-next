@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import styles from './services-manager.module.css';
 import { servicesAPI } from '../../../../lib/services-api';
 import ImageUpload from './ImageUpload';
@@ -40,7 +40,47 @@ const ServiceImage = ({ src, alt, archived }) => {
 };
 
 // Service Card Component
-const ServiceCard = ({ service, onEdit, onArchive, onDelete }) => {
+const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, totalServices }) => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
+  
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    if (showDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }
+  }, [showDropdown]);
+  
+  const handleIndexSelect = async (newIndex) => {
+    if (newIndex !== service.index) {
+      await onIndexChange(service.id, newIndex);
+    }
+    setShowDropdown(false);
+  };
+
+  const handleIncrement = async () => {
+    const newIndex = Math.min((service.index || 0) + 1, totalServices - 1);
+    if (newIndex !== service.index) {
+      await onIndexChange(service.id, newIndex);
+    }
+  };
+
+  const handleDecrement = async () => {
+    const newIndex = Math.max((service.index || 0) - 1, 0);
+    if (newIndex !== service.index) {
+      await onIndexChange(service.id, newIndex);
+    }
+  };
+
   return (
     <div key={service.id} className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''}`}>
       <ServiceImage 
@@ -51,7 +91,51 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete }) => {
       
       <div className={styles.serviceContent}>
         <div className={styles.serviceHeader}>
-          <h3>{service.title || service.bannerTitle}</h3>
+          <div className={styles.serviceTitleGroup}>
+            <div className={styles.indexControls}>
+              <div className={styles.indexBadgeContainer} ref={dropdownRef}>
+                <span 
+                  className={styles.serviceIndex}
+                  onClick={() => setShowDropdown(!showDropdown)}
+                  title="Click to change order"
+                >
+                  #{service.index || 0}
+                </span>
+                {showDropdown && (
+                  <div className={styles.indexDropdown}>
+                    {Array.from({ length: totalServices }, (_, i) => (
+                      <div
+                        key={i}
+                        className={`${styles.dropdownItem} ${i === service.index ? styles.currentIndex : ''}`}
+                        onClick={() => handleIndexSelect(i)}
+                      >
+                        #{i}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div className={styles.indexButtons}>
+                <button
+                  className={styles.indexBtn}
+                  onClick={handleDecrement}
+                  disabled={(service.index || 0) <= 0}
+                  title="Move up"
+                >
+                  ↑
+                </button>
+                <button
+                  className={styles.indexBtn}
+                  onClick={handleIncrement}
+                  disabled={(service.index || 0) >= totalServices - 1}
+                  title="Move down"
+                >
+                  ↓
+                </button>
+              </div>
+            </div>
+            <h3>{service.title || service.bannerTitle}</h3>
+          </div>
           <div className={styles.status}>
             {service.archived ? (
               <span className={styles.statusArchived}>Archived</span>
@@ -151,11 +235,13 @@ const ServicesManager = () => {
 
   // Filter services based on current filter (memoized for performance)
   const filteredServices = useMemo(() => {
-    return services.filter(service => {
-      if (filter === 'active') return !service.archived;
-      if (filter === 'archived') return service.archived;
-      return true; // 'all'
-    });
+    return services
+      .filter(service => {
+        if (filter === 'active') return !service.archived;
+        if (filter === 'archived') return service.archived;
+        return true; // 'all'
+      })
+      .sort((a, b) => (a.index || 0) - (b.index || 0)); // Sort by index
   }, [services, filter]);
 
   // Calculate stats from current services (memoized for performance)
@@ -195,6 +281,32 @@ const ServicesManager = () => {
       }
     }
   }, [loadServices]);
+
+  const handleIndexChange = useCallback(async (serviceId, newIndex) => {
+    try {
+      // Find the service that currently has the target index
+      const currentServiceAtIndex = services.find(s => s.index === newIndex);
+      const serviceToMove = services.find(s => s.id === serviceId);
+      
+      if (!serviceToMove) return;
+
+      // If there's a service at the target index, swap their positions
+      if (currentServiceAtIndex && currentServiceAtIndex.id !== serviceId) {
+        // Swap indexes
+        await servicesAPI.update(currentServiceAtIndex.id, { index: serviceToMove.index || 0 });
+      }
+      
+      // Update the moved service's index
+      await servicesAPI.update(serviceId, { index: newIndex });
+      
+      // Force cache invalidation and reload
+      servicesAPI.invalidateCache();
+      await loadServices();
+    } catch (err) {
+      console.error('Error changing service index:', err);
+      alert('Failed to update service order. Please try again.');
+    }
+  }, [services, loadServices]);
 
   const handleSave = useCallback(async (serviceData) => {
     try {
@@ -335,6 +447,8 @@ const ServicesManager = () => {
             onEdit={handleEdit}
             onArchive={handleArchive}
             onDelete={handleDelete}
+            onIndexChange={handleIndexChange}
+            totalServices={services.length}
           />
         ))}
       </div>
@@ -374,6 +488,7 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
     bannerTitle: '',
     customSlug: '', // For custom slug editing
     archived: false,
+    index: 0, // Display order index
     thumbnail: '', // Separate thumbnail image for card display
     section01: {
       image: '',
@@ -461,6 +576,11 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
       // Ensure thumbnail field exists (backward compatibility)
       if (!serviceData.thumbnail) {
         serviceData.thumbnail = '';
+      }
+      
+      // Ensure index field exists (backward compatibility)
+      if (typeof serviceData.index === 'undefined') {
+        serviceData.index = 0;
       }
       
       setFormData(serviceData);
@@ -600,6 +720,21 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
                 placeholder="Title for banner section"
                 required
               />
+            </div>
+            <div className={styles.formField}>
+              <label>Display Order</label>
+              <input
+                type="number"
+                value={formData.index}
+                onChange={(e) => handleInputChange('index', parseInt(e.target.value) || 0)}
+                placeholder="0"
+                min="0"
+                max="999"
+                className={styles.indexInput}
+              />
+              <small className={styles.fieldNote}>
+                Services will be displayed in ascending order (0, 1, 2, etc.). Lower numbers appear first.
+              </small>
             </div>
           </div>
           <div className={styles.formField}>

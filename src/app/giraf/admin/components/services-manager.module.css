@@ -248,6 +248,107 @@
   margin-bottom: 15px;
 }
 
+.serviceTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.indexControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.indexBadgeContainer {
+  position: relative;
+}
+
+.serviceIndex {
+  background: linear-gradient(135deg, #ed232a, #ff6b6b);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 35px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.serviceIndex:hover {
+  background: linear-gradient(135deg, #ff6b6b, #ed232a);
+  transform: scale(1.05);
+}
+
+.indexDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 100px;
+  max-height: 200px;
+  overflow-y: auto;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.dropdownItem {
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.dropdownItem:hover {
+  background: rgba(237, 35, 42, 0.2);
+}
+
+.currentIndex {
+  background: rgba(237, 35, 42, 0.3);
+  color: #ff6b6b;
+}
+
+.indexButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.indexBtn {
+  background: rgba(237, 35, 42, 0.2);
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  color: white;
+  width: 20px;
+  height: 18px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.indexBtn:hover:not(:disabled) {
+  background: rgba(237, 35, 42, 0.4);
+  border-color: #ed232a;
+}
+
+.indexBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 .serviceHeader h3 {
   margin: 0;
   color: white;
@@ -525,6 +626,12 @@
   outline: none;
   border-color: #ed232a;
   box-shadow: 0 0 0 2px rgba(237, 35, 42, 0.2);
+}
+
+.indexInput {
+  max-width: 120px;
+  text-align: center;
+  font-weight: 600;
 }
 
 .subSections {

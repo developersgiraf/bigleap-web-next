@@ -28,6 +28,7 @@ export default function DynamicServiceImage({
           // Convert Firebase data to the format expected by the component
           const formattedServices = Object.values(allServices)
             .filter(service => !service.archived) // Only show non-archived services
+            .sort((a, b) => (a.index || 0) - (b.index || 0)) // Sort by index, default to 0 if undefined
             .map(service => ({
               image: service.thumbnail || service.section01?.image || "/servicess/default-image.png",
               caption: service.title,
@@ -35,6 +36,7 @@ export default function DynamicServiceImage({
               sub2: service.bannerTitle || "",
               sub3: service.section01?.heading || "",
               link: `/servicess/${service.customSlug || service.slug || service.id}`,
+              index: service.index || 0, // Include index for debugging
             }));
           
           setServicesData(formattedServices);
