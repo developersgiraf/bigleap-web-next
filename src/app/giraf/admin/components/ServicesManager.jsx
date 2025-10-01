@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import styles from './services-manager.module.css';
 import { servicesAPI } from '../../../../lib/services-api';
+import ImageUpload from './ImageUpload';
 
 // Optimized Image Component with proper error handling
 const ServiceImage = ({ src, alt, archived }) => {
@@ -590,12 +591,12 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
         <div className={styles.formSection}>
           <h3>Section 1 - Main Content</h3>
           <div className={styles.formField}>
-            <label>Image URL</label>
-            <input
-              type="text"
+            <label>Service Image</label>
+            <ImageUpload
               value={formData.section01.image}
-              onChange={(e) => handleInputChange('image', e.target.value, 'section01')}
-              placeholder="/servicess/image.png"
+              onChange={(url) => handleInputChange('image', url, 'section01')}
+              folder="services"
+              placeholder="Upload service image or enter URL"
             />
           </div>
           <div className={styles.formField}>
