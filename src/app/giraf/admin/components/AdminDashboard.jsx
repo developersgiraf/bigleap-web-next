@@ -14,9 +14,10 @@ const AdminDashboard = () => {
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: '📊' },
-    { id: 'blogs', label: 'Blog Posts', icon: '📝' },
-    { id: 'portfolio', label: 'Portfolio', icon: '🎨' },
-    { id: 'content', label: 'Website Content', icon: '🌐' },
+    { id: 'services', label: 'Services', icon: '🎨' },
+    { id: 'portfolio', label: 'Portfolio', icon: '💼' },
+    { id: 'blog', label: 'Blog', icon: '📝' },
+    { id: 'clients', label: 'Clients', icon: '👥' },
     { id: 'settings', label: 'Settings', icon: '⚙️' }
   ];
 
@@ -28,15 +29,15 @@ const AdminDashboard = () => {
             <h2>Dashboard Overview</h2>
             <div className={styles.statsGrid}>
               <div className={styles.statCard}>
-                <div className={styles.statIcon}>📝</div>
+                <div className={styles.statIcon}>🎨</div>
                 <div className={styles.statInfo}>
-                  <h3>Blog Posts</h3>
+                  <h3>Services</h3>
                   <p className={styles.statNumber}>12</p>
-                  <p className={styles.statLabel}>Published</p>
+                  <p className={styles.statLabel}>Active</p>
                 </div>
               </div>
               <div className={styles.statCard}>
-                <div className={styles.statIcon}>🎨</div>
+                <div className={styles.statIcon}>💼</div>
                 <div className={styles.statInfo}>
                   <h3>Portfolio Items</h3>
                   <p className={styles.statNumber}>24</p>
@@ -44,33 +45,33 @@ const AdminDashboard = () => {
                 </div>
               </div>
               <div className={styles.statCard}>
-                <div className={styles.statIcon}>👥</div>
+                <div className={styles.statIcon}>�</div>
                 <div className={styles.statInfo}>
-                  <h3>Page Views</h3>
-                  <p className={styles.statNumber}>1,234</p>
-                  <p className={styles.statLabel}>This month</p>
+                  <h3>Blog Posts</h3>
+                  <p className={styles.statNumber}>8</p>
+                  <p className={styles.statLabel}>Published</p>
                 </div>
               </div>
               <div className={styles.statCard}>
-                <div className={styles.statIcon}>📧</div>
+                <div className={styles.statIcon}>�</div>
                 <div className={styles.statInfo}>
-                  <h3>Inquiries</h3>
-                  <p className={styles.statNumber}>56</p>
-                  <p className={styles.statLabel}>Pending</p>
+                  <h3>Clients</h3>
+                  <p className={styles.statNumber}>65</p>
+                  <p className={styles.statLabel}>Total</p>
                 </div>
               </div>
             </div>
           </div>
         );
-      case 'blogs':
+      case 'services':
         return (
           <div className={styles.section}>
             <div className={styles.sectionHeader}>
-              <h2>Blog Management</h2>
-              <button className={styles.primaryButton}>Add New Post</button>
+              <h2>Services Management</h2>
+              <button className={styles.primaryButton}>Add New Service</button>
             </div>
             <div className={styles.placeholder}>
-              <p>Blog management interface will be implemented here</p>
+              <p>Service content management - Specialized services, motion graphics, business benefits</p>
             </div>
           </div>
         );
@@ -82,28 +83,43 @@ const AdminDashboard = () => {
               <button className={styles.primaryButton}>Add New Project</button>
             </div>
             <div className={styles.placeholder}>
-              <p>Portfolio management interface will be implemented here</p>
+              <p>Portfolio content - Videos, client projects, showcases, and project galleries</p>
             </div>
           </div>
         );
-      case 'content':
+      case 'blog':
         return (
           <div className={styles.section}>
             <div className={styles.sectionHeader}>
-              <h2>Website Content</h2>
-              <button className={styles.primaryButton}>Edit Content</button>
+              <h2>Blog Management</h2>
+              <button className={styles.primaryButton}>Add New Post</button>
             </div>
             <div className={styles.placeholder}>
-              <p>Website content management interface will be implemented here</p>
+              <p>Blog post creation, editing, and content management</p>
+            </div>
+          </div>
+        );
+      case 'clients':
+        return (
+          <div className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <h2>Clients & Testimonials</h2>
+              <button className={styles.primaryButton}>Add New Client</button>
+            </div>
+            <div className={styles.placeholder}>
+              <p>Client information, logos, testimonials, and team member profiles</p>
             </div>
           </div>
         );
       case 'settings':
         return (
           <div className={styles.section}>
-            <h2>Settings</h2>
+            <div className={styles.sectionHeader}>
+              <h2>Site Settings</h2>
+              <button className={styles.primaryButton}>Update Settings</button>
+            </div>
             <div className={styles.placeholder}>
-              <p>Settings interface will be implemented here</p>
+              <p>Counter statistics, company info, contact details, and configuration</p>
             </div>
           </div>
         );
