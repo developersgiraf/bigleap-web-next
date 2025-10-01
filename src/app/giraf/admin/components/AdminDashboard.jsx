@@ -135,8 +135,37 @@ const AdminDashboard = () => {
         </nav>
         
         <div className={styles.sidebarFooter}>
+          <div className={styles.userInfo}>
+            <p>👤 {user?.displayName || user?.email}</p>
+          </div>
+          
+          {/* Big prominent logout button */}
           <button onClick={handleLogout} className={styles.logoutButton}>
-            🚪 Logout
+            🚪 LOGOUT
+          </button>
+          
+          {/* Alternative logout methods */}
+          <button 
+            onClick={() => {
+              logout();
+              window.location.reload();
+            }}
+            className={styles.quickLogout}
+            title="Force Logout"
+          >
+            ⚡ FORCE LOGOUT
+          </button>
+          
+          <button 
+            onClick={() => {
+              localStorage.clear();
+              sessionStorage.clear();
+              window.location.href = '/giraf/admin';
+            }}
+            className={styles.clearSession}
+            title="Clear All Data"
+          >
+            🗑️ CLEAR ALL
           </button>
         </div>
       </div>

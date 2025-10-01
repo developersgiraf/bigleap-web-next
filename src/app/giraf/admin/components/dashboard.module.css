@@ -70,20 +70,75 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.userInfo {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.userInfo p {
+  margin: 0;
+  opacity: 0.9;
+}
+
 .logoutButton {
   width: 100%;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  background: #ed232a;
+  border: 2px solid #db210c;
   color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 15px rgba(237, 35, 42, 0.3);
 }
 
 .logoutButton:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #db210c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(237, 35, 42, 0.5);
+}
+
+.quickLogout {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 193, 7, 0.8);
+  border: 1px solid rgba(255, 193, 7, 0.5);
+  color: #333;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.quickLogout:hover {
+  background: rgba(255, 193, 7, 1);
+}
+
+.clearSession {
+  width: 100%;
+  padding: 8px;
+  background: rgba(108, 117, 125, 0.8);
+  border: 1px solid rgba(108, 117, 125, 0.5);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.clearSession:hover {
+  background: rgba(108, 117, 125, 1);
 }
 
 .mainContent {
