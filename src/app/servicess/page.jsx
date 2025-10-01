@@ -2,6 +2,7 @@ import TitleBanner from "../components/title-banner/titleBannerr";
 import styles from "./services.module.scss";
 import Image from "next/image";
 import ServiceImage from "../components/services-sect/servicesImage.jsx";
+import DynamicServiceImage from "./components/DynamicServiceImage.jsx";
 import Industries from "../components/industries/industries.jsx";
 import EnquirySect from "../components/enquiry/enquiry.jsx";
 import TitleDescription from "./components/title-description/titleDes.jsx";
@@ -51,7 +52,7 @@ export default function ServicesPage() {
           className={styles.bgImage}
           quality={95}
         />
-        <ServiceImage head="Services We Provide" />
+        <DynamicServiceImage head="Services We Provide" />
       </section>
 
       <section className={styles.titledes}>

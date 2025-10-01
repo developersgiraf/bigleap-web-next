@@ -1,9 +1,23 @@
 import styles from "./titledes.module.scss";
 
-export default function TitleDescription({ title, description, subhead1, subdes1,
-subhead2, subdes2,subhead3, subdes3, subhead4, subdes4 }) {
+export default function TitleDescription({ 
+  title, 
+  description, 
+  subsections = [],
+  // Legacy props for backward compatibility
+  subhead1, subdes1, subhead2, subdes2, subhead3, subdes3, subhead4, subdes4 
+}) {
 
   const titleSplit = title.includes("||") ? title.split("||") : null;
+
+  // Use subsections if available, otherwise fall back to legacy format
+  const sectionsToRender = subsections.length > 0 ? subsections : [
+    ...(subhead1 && subdes1 ? [{ heading: subhead1, description: subdes1 }] : []),
+    ...(subhead2 && subdes2 ? [{ heading: subhead2, description: subdes2 }] : []),
+    ...(subhead3 && subdes3 ? [{ heading: subhead3, description: subdes3 }] : []),
+    ...(subhead4 && subdes4 ? [{ heading: subhead4, description: subdes4 }] : [])
+  ];
+
   return (
     <div className={styles.titleDescription}>
     <div className={styles.mainTitle}>
@@ -14,14 +28,14 @@ subhead2, subdes2,subhead3, subdes3, subhead4, subdes4 }) {
        )}
 
       <p className={styles.description}>{description}</p>
-      <h4 className={styles.subhead1}>{subhead1}</h4>
-      <p className={styles.subdes1}>{subdes1}</p>
-     <h4 className={styles.subhead2}>{subhead2}</h4>
-      <p className={styles.subdes2}>{subdes2}</p>
-      <h4 className={styles.subhead3}>{subhead3}</h4>
-      <p className={styles.subdes3}>{subdes3}</p>
-      <h4 className={styles.subhead4}>{subhead4}</h4>
-      <p className={styles.subdes4}>{subdes4}</p>
+      
+      {/* Dynamic subsections rendering */}
+      {sectionsToRender.map((section, index) => (
+        <div key={index}>
+          <h4 className={styles[`subhead${index + 1}`] || styles.subhead1}>{section.heading}</h4>
+          <p className={styles[`subdes${index + 1}`] || styles.subdes1}>{section.description}</p>
+        </div>
+      ))}
     </div>
     </div>
   );

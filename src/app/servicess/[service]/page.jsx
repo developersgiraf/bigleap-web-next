@@ -6,19 +6,55 @@ import GradientLights from "../../components/gradient-lights/gradient";
 import { GRADIENT_PRESETS } from "../../components/gradient-lights/gradientConfig";
 import ListServices from "../components/list/list";
 import EnquirySect from "@/app/components/enquiry/enquiry";
+import { fetchServiceData, getAllServiceSlugs } from "./utils/fetchServiceData";
 import { servicesData } from "./data/ServicePageData.js";
 
+export async function generateStaticParams() {
+  try {
+    const serviceSlugs = await getAllServiceSlugs();
+    return serviceSlugs;
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    // Fallback to static service slugs
+    return [
+      { service: 'twoDanimation' },
+      { service: 'threeDanimation' },
+      { service: 'whiteboard-animation' },
+      { service: 'character-design' },
+      { service: 'motion-graphics' },
+      { service: 'product-animation' },
+      { service: 'vfx-post-production' },
+      { service: 'video-editing-post-production' },
+      { service: 'storytelling' }
+    ];
+  }
+}
 
-
+export async function generateMetadata({ params }) {
+  const { service } = await params;
+  const serviceData = await fetchServiceData(service);
+  
+  return {
+    title: serviceData?.title ? `${serviceData.title} - Big Leap` : "Services - Big Leap",
+    description: serviceData?.section01?.description || "Explore our range of creative services designed to elevate your brand.",
+    openGraph: {
+      title: serviceData?.title ? `${serviceData.title} - Big Leap` : "Services - Big Leap",
+      description: serviceData?.section01?.description || "Explore our range of creative services designed to elevate your brand.",
+      images: serviceData?.thumbnail ? [serviceData.thumbnail] : ['/servicess/default-image.png'],
+    },
+  };
+}
 
 export default async function Services({ params }) {
-  
-  const metadata = {
-  title: "Services - Big Leap",
-  description: "Explore our range of creative services designed to elevate your brand.",
-};
   const { service } = await params;
-  const serviceData = servicesData[service] || servicesData["threeDanimation"];
+  
+  // Try to fetch from Firebase first, fallback to static data
+  let serviceData = await fetchServiceData(service);
+  
+  // If not found in Firebase, try static data as fallback
+  if (!serviceData) {
+    serviceData = servicesData[service] || servicesData["threeDanimation"];
+  }
 
   // Fallback if service data is not found
   if (!serviceData) {
@@ -51,7 +87,7 @@ export default async function Services({ params }) {
                 >
                   <img
                     className={styles.image}
-                    src={serviceData.section01.image}
+                    src={serviceData.section01?.image}
                     alt={service}
                   />
                 </div>
@@ -59,9 +95,9 @@ export default async function Services({ params }) {
                   className={`col-xl-8 col-lg-8 col-md-12 col-12 d-flex align-items-center ${styles.des}`}
                 >
                   <div className={styles.textContent}>
-                    <h4>{serviceData.section01.heading}</h4>
+                    <h4>{serviceData.section01?.heading}</h4>
                     <p className={styles.description}>
-                      {serviceData.section01.description}
+                      {serviceData.section01?.description}
                     </p>
                   </div>
                 </div>
@@ -74,20 +110,22 @@ export default async function Services({ params }) {
       <section className={styles.detailHead}>
         <div className="container">
           <TitleDescription
-            title={serviceData.section02.DescTitle}
+            title={serviceData.section02?.DescTitle}
             description={
               <span className={styles.paraColor}>
-                {serviceData.section02.Descpara}
+                {serviceData.section02?.Descpara}
               </span>
             }
-            subhead1={serviceData.section02.subhead1}
-            subdes1={serviceData.section02.subdes1}
-            subhead2={serviceData.section02.subhead2}
-            subdes2={serviceData.section02.subdes2}
-            subhead3={serviceData.section02.subhead3}
-            subdes3={serviceData.section02.subdes3}
-            subhead4={serviceData.section02.subhead4}
-            subdes4={serviceData.section02.subdes4}
+            subsections={serviceData.section02?.subsections}
+            // Legacy fallback props for backward compatibility
+            subhead1={serviceData.section02?.subhead1}
+            subdes1={serviceData.section02?.subdes1}
+            subhead2={serviceData.section02?.subhead2}
+            subdes2={serviceData.section02?.subdes2}
+            subhead3={serviceData.section02?.subhead3}
+            subdes3={serviceData.section02?.subdes3}
+            subhead4={serviceData.section02?.subhead4}
+            subdes4={serviceData.section02?.subdes4}
           />
         </div>
       </section>
