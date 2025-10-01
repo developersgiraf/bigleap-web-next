@@ -82,11 +82,11 @@ export async function PUT(request, { params }) {
 
     if (serviceData.customSlug) {
       // Validate custom slug format
-      const slugPattern = /^[a-z][a-z0-9-]*$/;
+      const slugPattern = /^[a-zA-Z][a-zA-Z0-9-_]*$/;
       if (!slugPattern.test(serviceData.customSlug)) {
         return NextResponse.json({
           success: false,
-          error: 'Custom slug must start with a letter and contain only lowercase letters, numbers, and hyphens'
+          error: 'Custom slug must start with a letter and contain only letters, numbers, hyphens, and underscores'
         }, { status: 400 });
       }
 

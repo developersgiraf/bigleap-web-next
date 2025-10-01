@@ -65,10 +65,10 @@ export async function POST(request) {
     let slug;
     if (serviceData.customSlug) {
       // Validate custom slug format
-      if (!/^[a-z][a-z0-9-]*$/.test(serviceData.customSlug)) {
+      if (!/^[a-zA-Z][a-zA-Z0-9-_]*$/.test(serviceData.customSlug)) {
         return NextResponse.json({
           success: false,
-          error: 'Invalid slug format. Slug must start with a letter and contain only lowercase letters, numbers, and hyphens.'
+          error: 'Invalid slug format. Slug must start with a letter and contain only letters, numbers, hyphens, and underscores.'
         }, { status: 400 });
       }
       slug = serviceData.customSlug;

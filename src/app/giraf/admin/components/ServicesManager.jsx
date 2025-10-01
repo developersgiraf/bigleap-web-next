@@ -413,8 +413,8 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
   // Validate custom slug format
   const validateSlug = (slug) => {
     if (!slug) return false;
-    // Must start with letter, can contain letters, numbers, hyphens
-    return /^[a-z][a-z0-9-]*$/.test(slug);
+    // Must start with letter, can contain letters (uppercase/lowercase), numbers, hyphens, underscores
+    return /^[a-zA-Z][a-zA-Z0-9-_]*$/.test(slug);
   };
 
   const currentId = service 
@@ -545,7 +545,7 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
     
     // Validate custom slug if being used
     if (useCustomSlug && formData.customSlug && !validateSlug(formData.customSlug)) {
-      alert('Invalid slug format. Slug must start with a letter and contain only lowercase letters, numbers, and hyphens.');
+      alert('Invalid slug format. Slug must start with a letter and contain only letters, numbers, hyphens, and underscores.');
       return;
     }
     
@@ -638,19 +638,19 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
                       <input
                         type="text"
                         value={formData.customSlug}
-                        onChange={(e) => handleInputChange('customSlug', e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, ''))}
-                        placeholder="custom-service-slug"
-                        pattern="^[a-z][a-z0-9-]*$"
+                        onChange={(e) => handleInputChange('customSlug', e.target.value.replace(/[^a-zA-Z0-9-_]/g, ''))}
+                        placeholder="Custom_Service-Slug"
+                        pattern="^[a-zA-Z][a-zA-Z0-9-_]*$"
                         className={`${styles.customSlugInput} ${formData.customSlug && !validateSlug(formData.customSlug) ? styles.invalidInput : ''}`}
                       />
                       {formData.customSlug && !validateSlug(formData.customSlug) && (
                         <small className={styles.errorNote}>
-                          Slug must start with a letter and contain only lowercase letters, numbers, and hyphens.
+                          Slug must start with a letter and contain only letters, numbers, hyphens, and underscores.
                         </small>
                       )}
                       {(!formData.customSlug || validateSlug(formData.customSlug)) && (
                         <small className={styles.slugNote}>
-                          Custom URL will be: /servicess/{formData.customSlug || 'your-custom-slug'}
+                          Custom URL will be: /servicess/{formData.customSlug || 'Your_Custom-Slug'}
                         </small>
                       )}
                     </div>
