@@ -100,6 +100,17 @@
   box-shadow: 0 10px 30px rgba(237, 35, 42, 0.2);
 }
 
+.archivedCard {
+  opacity: 0.7;
+  background: linear-gradient(135deg, rgba(128, 128, 128, 0.05), rgba(64, 64, 64, 0.6));
+  border-color: rgba(128, 128, 128, 0.2);
+}
+
+.archivedCard:hover {
+  border-color: rgba(128, 128, 128, 0.4);
+  box-shadow: 0 10px 30px rgba(128, 128, 128, 0.2);
+}
+
 .serviceImage {
   height: 200px;
   overflow: hidden;
@@ -145,6 +156,32 @@
   letter-spacing: 0.5px;
 }
 
+.statusActive {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.statusArchived {
+  background: rgba(128, 128, 128, 0.2);
+  color: #808080;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.archivedBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(128, 128, 128, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .status.active {
   background: rgba(76, 175, 80, 0.2);
   color: #4caf50;
@@ -185,7 +222,7 @@
   flex-wrap: wrap;
 }
 
-.editBtn, .archiveBtn, .deleteBtn {
+.editBtn, .archiveBtn, .unarchiveBtn, .deleteBtn {
   padding: 6px 12px;
   border: none;
   border-radius: 6px;
@@ -213,6 +250,16 @@
 
 .archiveBtn:hover {
   background: #ff9800;
+  transform: translateY(-1px);
+}
+
+.unarchiveBtn {
+  background: rgba(76, 175, 80, 0.8);
+  color: white;
+}
+
+.unarchiveBtn:hover {
+  background: #4caf50;
   transform: translateY(-1px);
 }
 
@@ -460,6 +507,54 @@
 
 .removeItemBtn:hover {
   background: #f44336;
+}
+
+/* Archive and Filter Styles */
+.checkboxLabel {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 8px !important;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: auto !important;
+  margin: 0 !important;
+  accent-color: #ed232a;
+}
+
+.fieldNote {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 4px;
+  display: block;
+}
+
+.emptyActions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.clearSearchBtn, .clearFilterBtn {
+  background: rgba(237, 35, 42, 0.8);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.clearSearchBtn:hover, .clearFilterBtn:hover {
+  background: #ed232a;
+  transform: translateY(-1px);
 }
 
 /* Responsive Design */

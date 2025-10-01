@@ -40,6 +40,20 @@ const ServicesManager = () => {
     }
   };
 
+  // Filter services based on current filter
+  const filteredServices = services.filter(service => {
+    if (filter === 'active') return !service.archived;
+    if (filter === 'archived') return service.archived;
+    return true; // 'all'
+  });
+
+  // Calculate stats from current services
+  const currentStats = {
+    total: services.length,
+    active: services.filter(s => !s.archived).length,
+    archived: services.filter(s => s.archived).length
+  };
+
   useEffect(() => {
     loadServices();
   }, [searchTerm]);
@@ -47,6 +61,16 @@ const ServicesManager = () => {
   const handleEdit = (service) => {
     setSelectedService(service);
     setIsEditing(true);
+  };
+
+  const handleArchive = async (serviceId, currentArchiveState) => {
+    try {
+      await servicesAPI.update(serviceId, { archived: !currentArchiveState });
+      await loadServices(); // Refresh the list
+    } catch (err) {
+      console.error('Error archiving/unarchiving service:', err);
+      alert('Failed to update service status. Please try again.');
+    }
   };
 
   const handleDelete = async (serviceId) => {
@@ -120,7 +144,9 @@ const ServicesManager = () => {
         <div className={styles.headerContent}>
           <h2>Services Management</h2>
           <div className={styles.stats}>
-            <span className={styles.stat}>Total: {stats.total}</span>
+            <span className={styles.stat}>Total: {currentStats.total}</span>
+            <span className={styles.stat}>Active: {currentStats.active}</span>
+            <span className={styles.stat}>Archived: {currentStats.archived}</span>
           </div>
         </div>
         <button 
@@ -141,11 +167,23 @@ const ServicesManager = () => {
             className={styles.searchInput}
           />
         </div>
+        
+        <div className={styles.filterBox}>
+          <select 
+            value={filter} 
+            onChange={(e) => setFilter(e.target.value)}
+            className={styles.filterSelect}
+          >
+            <option value="all">All Services</option>
+            <option value="active">Active Only</option>
+            <option value="archived">Archived Only</option>
+          </select>
+        </div>
       </div>
 
       <div className={styles.servicesList}>
-        {services.map(service => (
-          <div key={service.id} className={styles.serviceCard}>
+        {filteredServices.map(service => (
+          <div key={service.id} className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''}`}>
             <div className={styles.serviceImage}>
               <img 
                 src={service.section01?.image || '/servicess/default-image.png'} 
@@ -154,11 +192,21 @@ const ServicesManager = () => {
                   e.target.src = '/servicess/default-image.png';
                 }}
               />
+              {service.archived && (
+                <div className={styles.archivedBadge}>Archived</div>
+              )}
             </div>
             
             <div className={styles.serviceContent}>
               <div className={styles.serviceHeader}>
                 <h3>{service.title || service.bannerTitle}</h3>
+                <div className={styles.status}>
+                  {service.archived ? (
+                    <span className={styles.statusArchived}>Archived</span>
+                  ) : (
+                    <span className={styles.statusActive}>Active</span>
+                  )}
+                </div>
               </div>
               
               <p className={styles.serviceDescription}>
@@ -174,6 +222,12 @@ const ServicesManager = () => {
                     Edit
                   </button>
                   <button 
+                    className={service.archived ? styles.unarchiveBtn : styles.archiveBtn}
+                    onClick={() => handleArchive(service.id, service.archived)}
+                  >
+                    {service.archived ? 'Unarchive' : 'Archive'}
+                  </button>
+                  <button 
                     className={styles.deleteBtn}
                     onClick={() => handleDelete(service.id)}
                   >
@@ -186,16 +240,28 @@ const ServicesManager = () => {
         ))}
       </div>
 
-      {services.length === 0 && !loading && (
+      {filteredServices.length === 0 && !loading && (
         <div className={styles.emptyState}>
           <p>No services found matching your criteria.</p>
-          {searchTerm && (
-            <button 
-              onClick={() => setSearchTerm('')}
-              className={styles.clearSearchBtn}
-            >
-              Clear Search
-            </button>
+          {(searchTerm || filter !== 'all') && (
+            <div className={styles.emptyActions}>
+              {searchTerm && (
+                <button 
+                  onClick={() => setSearchTerm('')}
+                  className={styles.clearSearchBtn}
+                >
+                  Clear Search
+                </button>
+              )}
+              {filter !== 'all' && (
+                <button 
+                  onClick={() => setFilter('all')}
+                  className={styles.clearFilterBtn}
+                >
+                  Show All Services
+                </button>
+              )}
+            </div>
           )}
         </div>
       )}
@@ -207,6 +273,7 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
   const [formData, setFormData] = useState({
     title: '',
     bannerTitle: '',
+    archived: false,
     section01: {
       image: '',
       heading: '',
@@ -314,6 +381,21 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
                 placeholder="Title for banner section"
                 required
               />
+            </div>
+          </div>
+          <div className={styles.formRow}>
+            <div className={styles.formField}>
+              <label className={styles.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  checked={formData.archived || false}
+                  onChange={(e) => handleInputChange('archived', e.target.checked)}
+                />
+                Archive this service
+              </label>
+              <small className={styles.fieldNote}>
+                Archived services are hidden from the public website but can be restored later.
+              </small>
             </div>
           </div>
         </div>
