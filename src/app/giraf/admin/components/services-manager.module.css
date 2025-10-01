@@ -143,6 +143,34 @@
     flex-direction: column;
     gap: 15px;
   }
+
+  /* Disable drag functionality on mobile */
+  .serviceCard {
+    cursor: default !important;
+  }
+
+  .serviceCard:hover {
+    cursor: default !important;
+  }
+
+  .dragHandle {
+    display: none !important;
+  }
+}
+
+/* Additional mobile touch device detection */
+@media (hover: none) and (pointer: coarse) {
+  .serviceCard {
+    cursor: default !important;
+  }
+
+  .serviceCard:hover {
+    cursor: default !important;
+  }
+
+  .dragHandle {
+    display: none !important;
+  }
 }
 
 @media (max-width: 480px) {

@@ -5,6 +5,18 @@ import styles from './services-manager.module.css';
 import { servicesAPI } from '../../../../lib/services-api';
 import ImageUpload from './ImageUpload';
 
+// Mobile detection utility
+const isMobileDevice = () => {
+  if (typeof window === 'undefined') return false;
+  
+  return (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+    ('ontouchstart' in window) ||
+    (navigator.maxTouchPoints > 0) ||
+    window.innerWidth <= 768
+  );
+};
+
 // Optimized Image Component with proper error handling
 const ServiceImage = ({ src, alt, archived }) => {
   const [imageSrc, setImageSrc] = useState(src || '/servicess/default-image.png');
@@ -42,7 +54,19 @@ const ServiceImage = ({ src, alt, archived }) => {
 // Service Card Component
 const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, totalServices, onDragStart, onDragOver, onDrop, draggedIndex }) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const dropdownRef = useRef(null);
+  
+  // Check if device is mobile on mount and window resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(isMobileDevice());
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -82,17 +106,32 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, tota
   };
 
   const handleDragStart = (e) => {
+    // Prevent drag on mobile devices
+    if (isMobile) {
+      e.preventDefault();
+      return;
+    }
     onDragStart(service.index, service.id);
     e.dataTransfer.effectAllowed = 'move';
   };
 
   const handleDragOver = (e) => {
+    // Prevent drag over on mobile devices
+    if (isMobile) {
+      e.preventDefault();
+      return;
+    }
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
     onDragOver(service.index);
   };
 
   const handleDrop = (e) => {
+    // Prevent drop on mobile devices
+    if (isMobile) {
+      e.preventDefault();
+      return;
+    }
     e.preventDefault();
     onDrop(service.index);
   };
@@ -104,14 +143,16 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, tota
     <div 
       key={service.id} 
       className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''} ${isBeingDragged ? styles.dragging : ''} ${isDraggedOver ? styles.dragOver : ''}`}
-      draggable={true}
+      draggable={!isMobile}
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
-      <div className={styles.dragHandle} title="Drag to reorder">
-        <span>⋮⋮</span>
-      </div>
+      {!isMobile && (
+        <div className={styles.dragHandle} title="Drag to reorder">
+          <span>⋮⋮</span>
+        </div>
+      )}
       
       <ServiceImage 
         src={service.thumbnail || service.section01?.image} 

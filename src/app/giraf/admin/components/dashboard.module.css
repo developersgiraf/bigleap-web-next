@@ -433,10 +433,26 @@
     z-index: 1000;
     height: 70px;
     align-items: center;
-    justify-content: space-around;
     padding: 0 10px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 5px;
+    /* Custom scrollbar for mobile */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .mobileTabBar::-webkit-scrollbar {
+    display: none;
+  }
+
+  
+  @keyframes scrollHint {
+    0%, 100% { opacity: 0.6; transform: translateY(-50%) translateX(0); }
+    50% { opacity: 1; transform: translateY(-50%) translateX(3px); }
   }
   
   .mobileTabItem {
@@ -449,10 +465,13 @@
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 8px 4px;
+    padding: 8px 6px;
     border-radius: 8px;
-    min-width: 50px;
+    min-width: 60px;
+    max-width: 70px;
     font-family: 'Montserrat', sans-serif;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
   
   .mobileTabItem.active {
@@ -462,14 +481,16 @@
   }
   
   .mobileTabIcon {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 2px;
   }
   
   .mobileTabLabel {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-align: center;
     line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
