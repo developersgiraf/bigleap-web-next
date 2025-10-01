@@ -475,6 +475,7 @@ const ServicesManager = () => {
     return (
       <ServiceEditor 
         service={selectedService}
+        services={services}
         onSave={handleSave}
         onCancel={handleCancel}
       />
@@ -613,13 +614,13 @@ const ServicesManager = () => {
   );
 };
 
-const ServiceEditor = ({ service, onSave, onCancel }) => {
+const ServiceEditor = ({ service, services, onSave, onCancel }) => {
   const [formData, setFormData] = useState({
     title: '',
     bannerTitle: '',
     customSlug: '', // For custom slug editing
     archived: false,
-    index: 0, // Display order index
+    index: 0, // Will be auto-assigned for new services
     thumbnail: '', // Separate thumbnail image for card display
     section01: {
       image: '',
@@ -720,6 +721,15 @@ const ServiceEditor = ({ service, onSave, onCancel }) => {
       setFormData(prev => ({ ...prev, customSlug: service.id }));
     }
   }, [service]);
+
+  // Auto-assign next available index for new services
+  useEffect(() => {
+    if (!service && services && services.length > 0) {
+      const maxIndex = Math.max(...services.map(s => s.index || 0));
+      const nextIndex = maxIndex + 1;
+      setFormData(prev => ({ ...prev, index: nextIndex }));
+    }
+  }, [service, services]);
 
   const handleInputChange = (field, value, section = null) => {
     if (section) {
