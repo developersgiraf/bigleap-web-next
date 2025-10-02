@@ -63,50 +63,7 @@ export default function HeroSection() {
           />
         </motion.div>}
         {/* <img id="img360" src="360.png" alt="360image" /> */}
-        <motion.div
-          id="character-img"
-          className={styles.characterimage}
-          style={{ 
-            transformOrigin: "center center",
-            position: "absolute",
-            left: 0,
-            right: 0,
-            margin: "0 auto"
-          }}
-          initial={{ rotateZ: 0 }}
-          whileHover={{ 
-            rotateZ: 45,
-            transition: {
-              type: "spring",
-              stiffness: 30,  // Faster animation
-              damping: 2,     // Less bouncy
-            }
-          }}
-          animate={{ rotateZ: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 30,
-            damping: 2,
-          }}
-          onMouseEnter={() => setIsCharacterHovered(true)}
-          onMouseLeave={() => setIsCharacterHovered(false)}
-        >
-          {false &&<Image
-            src="/characterr.png"
-            alt="Character Image"
-            fit="contain"
-            width={911}
-            height={944}
-            priority
-            style={{ 
-              display: "block",
-              width: "100%",
-              height: "auto"
-            }}
-          />}
-
-
-        </motion.div>
+        
         <motion.div 
         className={styles.hangAnchor}
         initial={{ rotateZ: -20 }}
