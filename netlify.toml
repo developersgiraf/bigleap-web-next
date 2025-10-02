@@ -1,5 +1,5 @@
 [build]
-  command = "node scripts/netlify-build.js"
+  command = "npm run clean && npm run build"
   publish = ".next"
 
 [build.environment]

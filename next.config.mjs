@@ -12,12 +12,14 @@ const nextConfig = {
   // Experimental features for optimization
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'swiper', 'bootstrap'],
-    turbo: {
-      rules: {
-        '*.css': {
-          loaders: ['css-loader'],
-          as: '*.css',
-        },
+  },
+  
+  // Turbopack configuration (moved from experimental.turbo)
+  turbopack: {
+    rules: {
+      '*.css': {
+        loaders: ['css-loader'],
+        as: '*.css',
       },
     },
   },
@@ -73,9 +75,6 @@ const nextConfig = {
   
   // Compress responses
   compress: true,
-  
-  // Optimize fonts
-  optimizeFonts: true,
   
   // Disable source maps in production to reduce size
   productionBrowserSourceMaps: false,
