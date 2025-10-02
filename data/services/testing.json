@@ -1,0 +1,24 @@
+{
+  "title": "Test",
+  "bannerTitle": "Testing",
+  "customSlug": "",
+  "archived": false,
+  "index": 10,
+  "thumbnail": "/uploads/services/d74da601fe34fc43fd074481b96fa75f227e2736_1759394886463.png",
+  "section01": {
+    "image": "/uploads/services/blessent_1759394916956.jpg",
+    "heading": "sfdgsfg",
+    "description": "sgdhdsghgdsb"
+  },
+  "section02": {
+    "DescTitle": "",
+    "Descpara": "",
+    "subsections": []
+  },
+  "listHead": "",
+  "listPara": "",
+  "list": [],
+  "lastModified": "2025-10-02T18:21:35.916Z",
+  "id": "testing",
+  "createdAt": "2025-10-02T18:21:35.916Z"
+}

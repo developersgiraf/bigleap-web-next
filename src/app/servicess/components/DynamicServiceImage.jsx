@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from '@/firebase';
 import styles from "../../components/services-sect/ser.module.css";
 import Animation from "../../components/services-sect/animation";
 
@@ -19,31 +17,32 @@ export default function DynamicServiceImage({
   useEffect(() => {
     async function fetchServices() {
       try {
-        const docRef = doc(db, 'WebsiteDatas', 'services');
-        const docSnap = await getDoc(docRef);
+        const response = await fetch('/api/services');
         
-        if (docSnap.exists()) {
-          const allServices = docSnap.data();
-          
-          // Convert Firebase data to the format expected by the component
-          const formattedServices = Object.values(allServices)
-            .filter(service => !service.archived) // Only show non-archived services
-            .sort((a, b) => (a.index || 0) - (b.index || 0)) // Sort by index, default to 0 if undefined
-            .map(service => ({
-              image: service.thumbnail || service.section01?.image || "/servicess/default-image.png",
-              caption: service.title,
-              sub1: service.listHead || "Professional service",
-              sub2: service.bannerTitle || "",
-              sub3: service.section01?.heading || "",
-              link: `/servicess/${service.customSlug || service.slug || service.id}`,
-              index: service.index || 0, // Include index for debugging
-            }));
-          
-          setServicesData(formattedServices);
+        if (!response.ok) {
+          throw new Error('Failed to fetch services');
         }
+        
+        const allServices = await response.json();
+        
+        // Convert API data to the format expected by the component
+        const formattedServices = allServices
+          .filter(service => !service.archived) // Only show non-archived services
+          .sort((a, b) => (a.index || 0) - (b.index || 0)) // Sort by index, default to 0 if undefined
+          .map(service => ({
+            image: service.thumbnail || service.section01?.image || "/servicess/default-image.png",
+            caption: service.title,
+            sub1: service.listHead || "Professional service",
+            sub2: service.bannerTitle || "",
+            sub3: service.section01?.heading || "",
+            link: `/servicess/${service.customSlug || service.slug || service.id}`,
+            index: service.index || 0, // Include index for debugging
+          }));
+        
+        setServicesData(formattedServices);
       } catch (error) {
         console.error('Error fetching services:', error);
-        // Fallback to default data if Firebase fails
+                // Fallback to default data if API fails
         setServicesData(getDefaultData());
       } finally {
         setLoading(false);
