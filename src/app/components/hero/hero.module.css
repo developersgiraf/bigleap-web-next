@@ -1,11 +1,11 @@
 .hero {
   height: 93vh;
-  position: relative;
+  position: static;
   overflow: visible;
 
 }
   .hanging {
-    position: relative;
+    position: static;
     height: 100%;
   }
     .yeehaimage {
@@ -43,18 +43,19 @@
     }
 
     .hangAnchor {
-        width: clamp(1px, 1%, 10px);
+        width: min(1%, 10px);
         height: 10px;
         background-color: aqua;
         position: absolute;
         left : 50%;
-        top: -20%;
+        top: -10px;
         overflow: visible;
+        transform: translateX(-50%);
     }
     .hangAnchor img{
         width: 1000%;
         height: auto;
-        transform: scale(100) translateY(50%);
+        transform: scale(80) translateY(50%);
     }
   
 
