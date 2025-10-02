@@ -1,5 +1,5 @@
 import TitleBanner from "../components/title-banner/titleBannerr";
-import styles from "./services.module.scss";
+import styles from "./services.module.css";
 import Image from "next/image";
 import ServiceImage from "../components/services-sect/servicesImage.jsx";
 import DynamicServiceImage from "./components/DynamicServiceImage.jsx";

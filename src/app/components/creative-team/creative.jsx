@@ -1,5 +1,5 @@
 import Profile from "./profile";
-import styles from "./creative.module.scss";
+import styles from "./creative.module.css";
 export default function CreativeTeam() {
   const list = [
     {

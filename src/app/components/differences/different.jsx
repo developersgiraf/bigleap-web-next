@@ -1,4 +1,4 @@
-import styles from "./difference.module.scss";
+import styles from "./difference.module.css";
 import Items from "./item";
 export default function Difference() {
   const list = [

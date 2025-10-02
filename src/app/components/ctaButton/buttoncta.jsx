@@ -1,4 +1,4 @@
-import styles from "./cta-button.module.scss";
+import styles from "./cta-button.module.css";
 
 export default function ButtonCTA({
   title = "Default Title",

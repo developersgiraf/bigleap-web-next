@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
-import styles from "../../components/services-sect/ser.module.scss";
+import styles from "../../components/services-sect/ser.module.css";
 import Animation from "../../components/services-sect/animation";
 
 export default function DynamicServiceImage({

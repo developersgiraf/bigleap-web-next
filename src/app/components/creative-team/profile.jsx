@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./creative.module.scss";
+import styles from "./creative.module.css";
 
 export default function Profile({ image, name, status }) {
   return (

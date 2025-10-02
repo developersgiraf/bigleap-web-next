@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./ser.module.scss";
+import styles from "./ser.module.css";
 import Animation from "./animation";
 import React from "react";
 const defaultData = [

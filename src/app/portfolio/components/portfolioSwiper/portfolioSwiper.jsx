@@ -3,7 +3,7 @@
 import SwiperSlider from "@/app/components/swiper-slider/SwiperSlider";
 import CTAButton from "@/app/components/ctaButton/ctabtn";
 import ButtonCTA from "@/app/components/ctaButton/buttoncta";
-import styles from "./portfolioSwiper.module.scss";
+import styles from "./portfolioSwiper.module.css";
 
 const portfolioSlides = [
     {

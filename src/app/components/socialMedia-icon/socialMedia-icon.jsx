@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./icon.module.scss";
+import styles from "./icon.module.css";
 import Image from "next/image";
 
 export default function SocialMediaIcon() {

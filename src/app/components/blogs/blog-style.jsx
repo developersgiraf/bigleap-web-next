@@ -1,4 +1,4 @@
-import styles from './blog.module.scss';
+import styles from './blog.module.css';
 
 export default function BlogStyle({ image, title, date, about }) {
 

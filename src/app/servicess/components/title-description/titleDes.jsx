@@ -1,4 +1,4 @@
-import styles from "./titledes.module.scss";
+import styles from "./titledes.module.css";
 
 export default function TitleDescription({ 
   title, 

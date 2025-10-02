@@ -1,5 +1,5 @@
 import TitleBanner from "../../components/title-banner/titleBannerr";
-import styles from "./portfolioDetail.module.scss";
+import styles from "./portfolioDetail.module.css";
 import Image from "next/image";
 import MotionGraphics from "./components/motionGraphics/motionGraphics";
 import TitleDescription from "../../servicess/components/title-description/titleDes";

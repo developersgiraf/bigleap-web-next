@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import styles from "../../index.module.scss";
+import styles from "./hero.module.css";
 
 export default function HeroSection() {
   const [isCharacterHovered, setIsCharacterHovered] = useState(false);
@@ -92,11 +92,11 @@ export default function HeroSection() {
           onMouseLeave={() => setIsCharacterHovered(false)}
         >
           <Image
-            src="/character.png"
+            src="/characterr.png"
             alt="Character Image"
             fit="contain"
-            width={1200}
-            height={1666}
+            width={911}
+            height={944}
             priority
             style={{ 
               display: "block",

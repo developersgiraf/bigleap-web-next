@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import styles from './faq.module.scss';
+import styles from './faq.module.css';
 
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState(0); // First item open by default

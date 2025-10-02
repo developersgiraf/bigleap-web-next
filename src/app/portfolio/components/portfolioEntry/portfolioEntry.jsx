@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./portfolioEntry.module.scss";
+import styles from "./portfolioEntry.module.css";
 import ButtonCTA from "@/app/components/ctaButton/buttoncta";
 import CTAButton from "@/app/components/ctaButton/ctabtn";
 

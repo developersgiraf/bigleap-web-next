@@ -18,7 +18,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/effect-coverflow";
 
-import styles from "./SwiperSlider.module.scss";
+import styles from "./SwiperSlider.module.css";
 
 /**
  * Flexible Swiper Slider Component

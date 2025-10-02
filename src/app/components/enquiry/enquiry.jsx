@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import styles from "../enquiry/enquiry.module.scss";
+import styles from "../enquiry/enquiry.module.css";
 import Image from "next/image";
 import CTAButton from "../ctaButton/ctabtn.jsx";
 

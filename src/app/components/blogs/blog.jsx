@@ -1,4 +1,4 @@
-import styles from "./blog.module.scss";
+import styles from "./blog.module.css";
 import CTAButton from "../ctaButton/ctabtn.jsx";
 export default function BlogSection() {
   const list = [

@@ -1,5 +1,5 @@
 import Items from "../differences/item";
-import styles from "./ser.module.scss";
+import styles from "./ser.module.css";
 import Image from "next/image";
 import CTAButton from "../ctaButton/ctabtn";
 

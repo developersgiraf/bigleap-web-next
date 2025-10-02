@@ -1,4 +1,4 @@
-import styles from "./service-detail.module.scss";
+import styles from "./service-detail.module.css";
 import TitleDescription from "../components/title-description/titleDes";
 import TitleBanner from "../../components/title-banner/titleBannerr";
 import FAQSection from "../../components/faq/faq";

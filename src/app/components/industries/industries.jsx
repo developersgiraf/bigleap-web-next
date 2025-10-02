@@ -1,4 +1,4 @@
-import styles from "./industries.module.scss";
+import styles from "./industries.module.css";
 import ListIndustry from "./list-industry";
 export default function Industries() {
   const list = [

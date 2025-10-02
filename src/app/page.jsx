@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import styles from "./page.module.css";
-import styles from "./index.module.scss";
+import styles from "./index.module.css";
 import pageStyles from "./page.module.css";
 import Slider from "./components/slider/slider.jsx";
 import BusinessItems from "./components/business/business-items";

@@ -1,5 +1,5 @@
 import CounterJs from './counter.js'
-import styles from './counter.module.scss'
+import styles from './counter.module.css'
 
 export default function CounterSect() {
   return (

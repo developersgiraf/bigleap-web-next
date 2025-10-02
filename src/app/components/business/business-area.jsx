@@ -1,4 +1,4 @@
-import styles from "./business.module.scss";
+import styles from "./business.module.css";
 export default function BusinessArea({ title, sub }) {
     return (
         <>

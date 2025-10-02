@@ -1,4 +1,4 @@
-import styles from './faq.module.scss';
+import styles from './faq.module.css';
 
 export default function FaqList({ title, sub }) {
     return (

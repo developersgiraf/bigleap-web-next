@@ -1,4 +1,4 @@
-import styles from "./list.module.scss";
+import styles from "./list.module.css";
 import ListItem from "./listItems";
 export default function ListServices({ listItems = [] }) {
   

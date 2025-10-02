@@ -1,4 +1,4 @@
-import styles from "./contactBanner.module.scss";
+import styles from "./contactBanner.module.css";
 import Link from "next/link";
 export default function ContactBanner() {
   return (

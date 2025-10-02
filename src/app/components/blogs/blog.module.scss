@@ -92,12 +92,12 @@
 
                 
                 img {
-                    height: 30vh !important;
+                    height: 40vh !important;
                     object-fit: contain !important;
                 }
             }
 }
-@media (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
     .blogsection {
         padding: 100px 0 60px 0;
 
@@ -137,7 +137,7 @@
         }
     }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
     .blogsection {
         padding: 100px 0 60px 0;
 

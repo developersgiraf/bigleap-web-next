@@ -1,4 +1,4 @@
-import styles from "./business.module.scss";
+import styles from "./business.module.css";
 import BusinessArea from "./business-area";
 export default function BusinessItems({ title, sub }) {
     const list = [

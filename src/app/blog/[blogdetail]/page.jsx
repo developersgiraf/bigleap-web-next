@@ -1,7 +1,7 @@
 import TitleBanner from "@/app/components/title-banner/titleBannerr";
 import GradientLights from "@/app/components/gradient-lights/gradient";
 import { GRADIENT_PRESETS } from "@/app/components/gradient-lights/gradientConfig.js";
-import styles from "../[blogdetail]/blog-details.module.scss";
+import styles from "../[blogdetail]/blog-details.module.css";
 import Image from "next/image";
 
 const list = {

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./feeds.module.scss";
+import styles from "./feeds.module.css";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";

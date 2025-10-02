@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./cta-button.module.scss";
+import styles from "./cta-button.module.css";
 
 export default function CTAButton({
   title = "Default Title",

@@ -1,5 +1,5 @@
 import Slider from "../slider/slider.jsx";
-import styles from "./clients.module.scss";
+import styles from "./clients.module.css";
 export default function ClientsArea() {
   return (
     <section className={styles["client-section"]}>

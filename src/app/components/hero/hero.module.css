@@ -1,0 +1,167 @@
+.hero {
+  height: 93vh;
+  position: relative;
+  overflow: visible;
+
+}
+  .hanging {
+    position: relative;
+    height: 100%;
+  }
+    .yeehaimage {
+      display: block;
+      margin: 0 auto;
+      transform-origin: top center;
+      filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.15));
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+      max-width: 100vw;
+    }
+.image360{
+  position: absolute;
+  right: 170px;
+  top: 120px;
+}
+
+    .characterimage {
+      display: block;
+      margin: 0 auto;
+      transform-origin: top center;
+      filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.15));
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: -32%;
+      max-width: 1200px;
+      height: auto;
+      width: 5;
+
+    }
+  
+
+
+    /* responsive style start here */
+
+    @media (min-width: 1561px) and (max-width:1900px) {
+ .characterimage {
+    width: 70% !important;
+    top: -100% !important;
+  }
+  
+}
+
+/* Large Desktop: 1371px - 1560px */
+@media (min-width: 1371px) and (max-width: 1560px) {
+  .hero {
+    height: 80vh !important;
+  }
+  
+  .yeehaimage {
+    max-width: 100vw !important;
+  }
+  
+  .characterimage {
+    width: 70% !important;
+    top: -120% !important;
+  }
+  
+  
+}
+
+/* Medium Large Desktop: 1025px - 1370px */
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .hero {
+    height: 80vh !important;
+  }
+  
+  .characterimage {
+    width: 70% !important;
+    top: -178% !important;
+  }
+  
+
+    
+}
+
+/* Small Desktop/Large Tablet: 993px - 1024px */
+@media (min-width: 993px) and (max-width: 1024px) {
+  .hero {
+    height: 50vh !important;
+  }
+  
+  .characterimage {
+    top: -170% !important;
+    width: 70% !important;
+  }
+ 
+}
+
+/* Medium Tablet: 768px - 992px */
+@media (min-width: 768px) and (max-width: 992px) {
+  .hero {
+    height: 50vh !important;
+  }
+  
+  .yeehaimage {
+    width: 100% !important;
+    height: 50vh !important;
+    object-fit: contain !important;
+    max-width: 970px !important;
+  }
+  
+  .image360 {
+    right: 30%;
+  }
+  
+  .characterimage {
+    top: -120% !important;
+    width: 90% !important;
+  }
+  
+  
+    
+  
+      
+ 
+    
+   
+  
+}
+
+/* Mobile: 767px and below */
+@media (max-width: 767px) {
+  .hero {
+    height: 35vh !important;
+  }
+  
+  .yeehaimage {
+    width: 100% !important;
+    height: 30vh !important;
+    object-fit: contain !important;
+  }
+  
+  .image360 {
+    top: 20px;
+    right: -100px;
+  }
+  
+  .characterimage {
+    width: 100% !important;
+    top: -115% !important;
+  }
+  
+  
+ 
+   
+      
+    
+ 
+  
+ 
+
+    }

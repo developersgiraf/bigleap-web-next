@@ -1,5 +1,5 @@
 
-import styles from './title.module.scss';
+import styles from './title.module.css';
 export default function TitleBanner({ title = "Default", sub="Sample" }) {
     return (
         <section className={styles['title-banner']}>

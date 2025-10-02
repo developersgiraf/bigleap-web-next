@@ -1,6 +1,6 @@
 import GradientLights from "../components/gradient-lights/gradient.jsx";
 import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
-import styles from "./contact.module.scss";
+import styles from "./contact.module.css";
 import TitleBanner from "../components/title-banner/titleBannerr";
 import ContactBanner from "./components/contactDetails/contactBanner.jsx";
 import ContactForm from "./components/contactDetails/contactForm/form.jsx";

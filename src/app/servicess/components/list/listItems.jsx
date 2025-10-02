@@ -1,4 +1,4 @@
-import styles from "./list.module.scss";
+import styles from "./list.module.css";
 export default function ListItem({listHead, listPara, title, description }) {
   return (
     <div className="col-xl-6 col-lg-6 col-md-12 ">

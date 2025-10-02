@@ -1,5 +1,5 @@
 import CTAButton from "../../../../components/ctaButton/ctabtn";
-import styles from "./form.module.scss";
+import styles from "./form.module.css";
 import Image from "next/image";
 export default function ContactForm() {
   return (

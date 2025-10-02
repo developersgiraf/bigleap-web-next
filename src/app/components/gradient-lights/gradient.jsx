@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./gradient.module.scss";
+import styles from "./gradient.module.css";
 import useResponsiveGradientCount from "./useResponsiveGradientCount";
 
 export default function GradientLights({ 
