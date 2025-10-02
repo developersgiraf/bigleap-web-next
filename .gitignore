@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# Exclude large cache files that cause Netlify function size issues
+/.next/cache/
+/.next/standalone/node_modules/
+
 # production
 /build
 
