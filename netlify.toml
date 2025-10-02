@@ -5,15 +5,14 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Function configuration to reduce size
+# Simple function configuration to avoid 250MB limit
 [functions]
-  external_node_modules = ["firebase", "firebase-admin"]
+  external_node_modules = ["firebase", "firebase-admin", "sharp", "canvas"]
   
+# Exclude large files from functions
 [functions.excluded_files]
-  # Exclude large cache and build artifacts that cause 250MB limit issues
   ".next/cache/**" = true
   ".next/standalone/**" = true
-  "node_modules/**" = true
 
 # Redirects for Next.js app router
 [[redirects]]
