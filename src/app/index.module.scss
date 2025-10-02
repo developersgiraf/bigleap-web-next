@@ -41,6 +41,7 @@
       top: -112%;
       max-width: 1200px;
       height: auto;
+
     }
   }
 }
@@ -353,20 +354,16 @@
    ================================================ */
 
 /* Extra Large Desktop: 1561px and above */
-@media (min-width: 1561px) {
-  // .hero {
-  //   height: 70vh !important;
-  // }
-  
-  // .yeehaimage {
-  //   height: 50vh;
-  //   max-width: 100% !important;
-  // }
-  
-  // .characterimage {
-  //   width: 70%;
-  //   top: -90%;
-  // }
+@media (min-width: 1561px) and (max-width:1900px) {
+ .characterimage {
+    width: 70% !important;
+    top: -100% !important;
+  }
+   .slide-head {
+    .special-head h2 {
+      font-size: 76px !important;
+    }
+  }
 }
 
 /* Large Desktop: 1371px - 1560px */
@@ -381,12 +378,12 @@
   
   .characterimage {
     width: 70% !important;
-    top: -150% !important;
+    top: -120% !important;
   }
   
   .slide-head {
     .special-head h2 {
-      font-size: 74px !important;
+      font-size: 64px !important;
     }
   }
   
@@ -454,7 +451,7 @@
     padding: 150px 120px !important;
     
     .special-head h2 {
-      font-size: 86px !important;
+      font-size: 66px !important;
     }
     
     .specialslide {
