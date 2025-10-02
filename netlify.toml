@@ -1,5 +1,5 @@
 [build]
-  command = "npm run clean && npm run build"
+  command = "npm run clean && npm run build && node scripts/post-build-cleanup.js"
   publish = ".next"
 
 [build.environment]
@@ -27,23 +27,12 @@
 [functions."*"]
   timeout = 30
 
-# Image optimization
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
 # Redirects for Next.js app router
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/___netlify-handler"
   status = 200
   force = false
-
-# Image optimization redirects
-[[redirects]]
-  from = "/_next/image*"
-  to = "/.netlify/images?url=:url&w=:width&q=:quality"
-  status = 200
-  query = {url = ":url", w = ":width", q = ":quality"}
 
 # Headers for static assets - better caching
 [[headers]]
