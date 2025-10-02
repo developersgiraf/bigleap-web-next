@@ -1,35 +1,86 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Optimize for Netlify deployment
-  output: 'standalone',
+  // Remove standalone output for Netlify - this was causing the 250MB issue
+  // output: 'standalone', // This creates large function bundles
   
   // Optimize images
   images: {
-    unoptimized: true, // Required for static export compatibility
+    unoptimized: true,
+    domains: [], // Add any external image domains here
   },
   
-  // Minimize function size
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      // Reduce server bundle size
+  // Experimental features for optimization
+  experimental: {
+    optimizePackageImports: ['react', 'react-dom', 'swiper', 'bootstrap'],
+    turbo: {
+      rules: {
+        '*.css': {
+          loaders: ['css-loader'],
+          as: '*.css',
+        },
+      },
+    },
+  },
+  
+  // Webpack optimizations for smaller bundles
+  webpack: (config, { dev, isServer }) => {
+    // Optimize for production builds
+    if (!dev) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        // Reduce bundle size by aliasing heavy modules
+        'react/jsx-runtime': 'react/jsx-runtime',
+        'react/jsx-dev-runtime': 'react/jsx-dev-runtime',
+      };
+      
+      // Split large libraries into separate chunks
       config.optimization.splitChunks = {
         chunks: 'all',
         cacheGroups: {
-          default: false,
-          vendors: false,
-          // Create smaller chunks for server-side code
+          // Separate Bootstrap and Swiper into their own chunks
           vendor: {
-            name: 'vendor',
+            test: /[\\/]node_modules[\\/](swiper|bootstrap)[\\/]/,
+            name: 'vendor-ui',
             chunks: 'all',
-            test: /node_modules/,
+          },
+          // Motion library
+          motion: {
+            test: /[\\/]node_modules[\\/](motion)[\\/]/,
+            name: 'vendor-motion',
+            chunks: 'all',
+          },
+          // React/Next.js core
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom|next)[\\/]/,
+            name: 'vendor-react',
+            chunks: 'all',
           },
         },
       };
     }
+    
+    // Reduce bundle size for server
+    if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push({
+        'sharp': 'commonjs sharp',
+        'canvas': 'commonjs canvas',
+      });
+    }
+    
     return config;
   },
   
-  // Reduce build cache size
+  // Compress responses
+  compress: true,
+  
+  // Optimize fonts
+  optimizeFonts: true,
+  
+  // Disable source maps in production to reduce size
+  productionBrowserSourceMaps: false,
+  
+  // Reduce the number of pages that can be open simultaneously
   onDemandEntries: {
     maxInactiveAge: 25 * 1000,
     pagesBufferLength: 2,

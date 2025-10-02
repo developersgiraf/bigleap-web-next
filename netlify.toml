@@ -1,26 +1,49 @@
 [build]
-  command = "npm run build"
+  command = "node scripts/netlify-build.js"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
+  # Optimize build for smaller functions
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
-# Simple function configuration to avoid 250MB limit
+# Enhanced function configuration to reduce size
 [functions]
-  external_node_modules = ["sharp", "canvas", "bcryptjs", "next-auth"]
+  # External modules to reduce function bundle size
+  external_node_modules = ["sharp", "canvas", "bcryptjs", "next-auth", "swiper", "bootstrap"]
+  # Set a more aggressive timeout for faster builds
+  timeout = 30
   
-# Exclude large files from functions
+# Exclude more files to reduce function size
 [functions.excluded_files]
   ".next/cache/**" = true
   ".next/standalone/**" = true
+  ".next/static/**" = true
+  "node_modules/**" = true
+  "*.map" = true
+  "*.md" = true
+  ".git/**" = true
+  "public/**" = true
+
+# Image optimization
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 # Redirects for Next.js app router
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/___netlify-handler"
   status = 200
+  force = false
 
-# Headers for static assets
+# Image optimization redirects
+[[redirects]]
+  from = "/_next/image*"
+  to = "/.netlify/images?url=:url&w=:width&q=:quality"
+  status = 200
+  query = {url = ":url", w = ":width", q = ":quality"}
+
+# Headers for static assets - better caching
 [[headers]]
   for = "/static/*"
   [headers.values]
@@ -30,3 +53,14 @@
   for = "/_next/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Headers for images
+[[headers]]
+  for = "/public/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
