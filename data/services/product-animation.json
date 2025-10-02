@@ -1,0 +1,49 @@
+{
+  "id": "product-animation",
+  "title": "Product Animation",
+  "bannerTitle": "Product Animation",
+  "archived": false,
+  "index": 5,
+  "thumbnail": "/servicess/default-image.png",
+  "section01": {
+    "image": "/servicess/default-image.png",
+    "heading": "Product Animation",
+    "description": "Want to showcase your product in a way that will capture your audience's attention? We help you create compelling product animations that highlight features, demonstrate functionality, and drive sales. We create realistic 3D product demonstrations that will leave a lasting impression."
+  },
+  "section02": {
+    "DescTitle": "Products Animation: || Why It Matters",
+    "Descpara": "Product animation is the process of creating a video that demonstrates your product with the aim of informing and educating the customers.  Using CGI the animators create a comprehensive and dynamic 360° product video that highlights every angle and explains in detail what the product is and what its specifications are. Product animation videos are an important marketing strategy for any business that wants to promote its products in the most creative and engaging way.",
+    "subsections": [
+      {
+        "heading": "Proper Demonstration",
+        "description": "A 360° product animation video properly demonstrates the product from every angle, zooms on the details and explains its operational characteristics. A well-explained video helps the audience to get a better understanding of the product, capturing their attention."
+      },
+      {
+        "heading": "Prospect For Sales",
+        "description": "A well-engaging and informative product animation video will likely boost sales. As the video showcases the products in action, it will retain the audience and convince them to buy it"
+      },
+      {
+        "heading": "Enhanced Brand Image",
+        "description": "A well-crafted product animation video that details all the nuances regarding the product showcases the company's keen focus on accuracy. This authenticity combined with the apt visual representation will create an engaging experience, strengthening the brand image"
+      }
+    ]
+  },
+  "listHead": "Product Animation: The Services We Provide",
+  "listPara": "",
+  "list": [
+    {
+      "title": "360° Product Visualization",
+      "description": "Showcase your product from every angle with comprehensive 360° animations that highlight design details, materials, and functionality."
+    },
+    {
+      "title": "Product Demo Videos",
+      "description": "Create engaging demonstration videos that show your product in action, explaining features and benefits in an easy-to-understand format."
+    },
+    {
+      "title": "Exploded View Animations",
+      "description": "Break down complex products with exploded view animations that show internal components and assembly processes."
+    }
+  ],
+  "createdAt": "2025-10-02T17:38:44.566Z",
+  "lastModified": "2025-10-02T17:38:44.566Z"
+}

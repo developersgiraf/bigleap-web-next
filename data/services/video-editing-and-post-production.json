@@ -1,0 +1,40 @@
+{
+  "id": "video-editing-and-post-production",
+  "title": "Video Editing And Post Production",
+  "bannerTitle": "Video Editing And Post Production",
+  "archived": false,
+  "index": 9,
+  "thumbnail": "/servicess/video.png",
+  "section01": {
+    "image": "/servicess/video.png",
+    "heading": "Video Editing And Post Production",
+    "description": "Transform your raw footage into polished, professional content with our comprehensive video editing and post-production services. From concept to final delivery, we enhance every frame to tell your story with impact."
+  },
+  "section02": {
+    "DescTitle": "Edits And Cuts:|| Post Production Explained",
+    "Descpara": "Post production essentially is the final stage of the video production. Once the primary production of your content is ready it undergoes edits and refinements. Post production comprises a variety of processes such as organizing the raw footages, rough cut to bring the core of the content, sound editing which includes eliminating unwanted noises and synchronising the sounds, sound mixing which is adding the music score that matches your narrative, adding visual effects, colour correction and grading to maintain the consistency across the exposure, colour and contrast, creating titles and motion graphics, followed by review and exporting the final video into the required format. Post production is the final step before the distribution of the video content, where the raw footage is transformed into the organized, visually appealing final product",
+    "subsections": []
+  },
+  "listHead": "Post Production Services That We Provide Promo Videos",
+  "listPara": "Looking for that sharp promo video to market your product or brand? Big Leap ensures that your promotional video comes out exactly the way you want it to be; detailed, compelling and graphically rich.",
+  "list": [
+    {
+      "title": "Social Media Edits",
+      "description": "Cut through the noise of social media with our immaculate post-production services that catches and retains the attention of the viewers. We ensure that your content is tailored according to the specific social media platform that you target, incorporating the sound effects, music and graphics, creating an engaging experience for the audience."
+    },
+    {
+      "description": "We elevate your corporate video to the next level by delivering benchmark corporate video editing services. Our team will refine the raw footage and transform it into an engaging and informative video content that communicates your brand values and services.The result is a compelling corporate video that captures the essence of your brand, alongside driving customer retention and lasting engagement.",
+      "title": "Corporate Video Editing"
+    },
+    {
+      "description": "At Big Leap we deliver the best colour grading and sound designing services enhancing the visual and emotional impact of your video. With our top-tier colour grading and sound effects we ensure that your video looks and sounds exceptional in all ways.",
+      "title": "Color Grading and Sound Design"
+    },
+    {
+      "title": "Promotional Videos",
+      "description": "Create compelling promotional content that showcases your brand, products, or services with professional editing and post-production techniques."
+    }
+  ],
+  "createdAt": "2025-10-02T17:38:44.586Z",
+  "lastModified": "2025-10-02T17:38:44.586Z"
+}

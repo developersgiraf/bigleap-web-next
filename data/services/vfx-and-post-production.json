@@ -1,0 +1,53 @@
+{
+  "id": "vfx-and-post-production",
+  "title": "VFX And Post Production",
+  "bannerTitle": "VFX And Post Production",
+  "archived": false,
+  "index": 4,
+  "thumbnail": "/servicess/red-machine.png",
+  "section01": {
+    "image": "/servicess/red-machine.png",
+    "heading": "VFX And Post Production",
+    "description": "Want to create stunning visuals that will leave your audience in awe? At Big Leap, we bring your vision to life. We are your creative partner in developing spectacular visuals that will give an immersive experience to your audience."
+  },
+  "section02": {
+    "DescTitle": "Crafting Reality: || VFX And Post Production",
+    "Descpara": "VFX (Visual Effects) involves utilizing CGI to create or manipulate images or footage to enhance the visual elements in a scene. It often involves incorporating objects, phenomena and characters that exist outside reality and blending them effectively to create a captivating experience. The scenes which require VFX are shot on green screens and the effects are integrated later. Post-production is the process of finalizing the filming process and involves the following steps such as editing, sound design and mixing, compositing, colour correction and grading, VFX and title and credits.",
+    "subsections": [
+      {
+        "heading": "Enhanced Visual Appeal",
+        "description": "Your story would be more visually appealing as VFX and Post-production would add depth and richness with curated colour grading, sound design and visual effects. The superficial elements will be blended in such a way that the audience will be left wondering what's real and what's digitally generated."
+      },
+      {
+        "heading": "Transforming Creativity To Reality",
+        "description": "Give your creative imagination the perfect outlet through advanced visual effects. Heighten the impact of your story telling with stunning visuals that pushes the boundary of reality."
+      },
+      {
+        "heading": "Efficient and Cost-effective",
+        "description": "In cases where the practical incorporation of elements or phenomena is either too costly or quite impossible,VFX offers the practical and budget-friendly alternative."
+      }
+    ]
+  },
+  "listHead": "Linking Imagination To Reality: VFX And Post-production Services That We Provide",
+  "listPara": "",
+  "list": [
+    {
+      "description": "Compositing involves combining different visual elements such as the live-action footage, graphics, 3D animation and other elements to form a single, cohesive scene that would appear as if it were filmed together. Rotoscoping involves the process of isolating objects, characters or elements from a footage, frame by frame and placing them in an entirely different background. Our skilled team ensures that each stage of these processes are done with precision and close attention to detail.",
+      "title": "Compositing and Rotoscoping"
+    },
+    {
+      "description": "The meticulous removal of the green background and replacing it with an entirely different background, thereby isolating the subject. That's how it's done and we make sure it is accurately done.",
+      "title": "Green Screen Removal"
+    },
+    {
+      "description": "We create the best visual effects for films and ads, ensuring that your message is visually compelling and accurate enough to resonate with your target audience.",
+      "title": "Visual Effects For Films And Ads"
+    },
+    {
+      "title": " Clean-up and Paint",
+      "description": "We don't just add elements and create, we refine the footage by reviewing it in detail, rectifying imperfections and removing the unwanted elements, ensuring the flawless final product."
+    }
+  ],
+  "createdAt": "2025-10-02T17:38:44.561Z",
+  "lastModified": "2025-10-02T17:38:44.561Z"
+}

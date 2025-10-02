@@ -1,7 +1,95 @@
 {
-  "services": [],
-  "total": 0,
-  "active": 0,
+  "services": [
+    {
+      "id": "3d-animation",
+      "title": "3D Animation",
+      "bannerTitle": "3D Animation",
+      "archived": false,
+      "index": 0,
+      "thumbnail": "/servicess/red-machine.png",
+      "lastModified": "2025-10-02T17:38:44.549Z"
+    },
+    {
+      "id": "2d-animation",
+      "title": "2D Animation",
+      "bannerTitle": "2D Animation",
+      "archived": false,
+      "index": 1,
+      "thumbnail": "/servicess/detail-image.png",
+      "lastModified": "2025-10-02T17:38:44.552Z"
+    },
+    {
+      "id": "sdgsgdsfg",
+      "archived": false,
+      "index": 2,
+      "lastModified": "2025-10-02T17:39:22.436Z"
+    },
+    {
+      "id": "character-design",
+      "title": "Character Design",
+      "bannerTitle": "Character Design",
+      "archived": false,
+      "index": 3,
+      "thumbnail": "/servicess/Character.png",
+      "lastModified": "2025-10-02T17:38:44.558Z"
+    },
+    {
+      "id": "vfx-and-post-production",
+      "title": "VFX And Post Production",
+      "bannerTitle": "VFX And Post Production",
+      "archived": false,
+      "index": 4,
+      "thumbnail": "/servicess/red-machine.png",
+      "lastModified": "2025-10-02T17:38:44.561Z"
+    },
+    {
+      "id": "product-animation",
+      "title": "Product Animation",
+      "bannerTitle": "Product Animation",
+      "archived": false,
+      "index": 5,
+      "thumbnail": "/servicess/default-image.png",
+      "lastModified": "2025-10-02T17:38:44.566Z"
+    },
+    {
+      "id": "storytelling",
+      "title": "Storytelling",
+      "bannerTitle": "Storytelling",
+      "archived": false,
+      "index": 6,
+      "thumbnail": "/servicess/storytelling.png",
+      "lastModified": "2025-10-02T17:38:44.571Z"
+    },
+    {
+      "id": "motion-graphics",
+      "title": "Motion Graphics",
+      "bannerTitle": "Motion Graphics",
+      "archived": false,
+      "index": 7,
+      "thumbnail": "/servicess/motion-graphics.png",
+      "lastModified": "2025-10-02T17:38:44.576Z"
+    },
+    {
+      "id": "whiteboard-animation",
+      "title": "Whiteboard Animation",
+      "bannerTitle": "Whiteboard Animation",
+      "archived": false,
+      "index": 8,
+      "thumbnail": "/servicess/Whiteboard Animation.png",
+      "lastModified": "2025-10-02T17:38:44.581Z"
+    },
+    {
+      "id": "video-editing-and-post-production",
+      "title": "Video Editing And Post Production",
+      "bannerTitle": "Video Editing And Post Production",
+      "archived": false,
+      "index": 9,
+      "thumbnail": "/servicess/video.png",
+      "lastModified": "2025-10-02T17:38:44.586Z"
+    }
+  ],
+  "total": 10,
+  "active": 10,
   "archived": 0,
-  "lastUpdated": "2025-10-02T00:00:00Z"
+  "lastUpdated": "2025-10-02T17:39:22.441Z"
 }
