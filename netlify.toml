@@ -11,8 +11,6 @@
 [functions]
   # External modules to reduce function bundle size
   external_node_modules = ["sharp", "canvas", "bcryptjs", "next-auth", "swiper", "bootstrap"]
-  # Set a more aggressive timeout for faster builds
-  timeout = 30
   
 # Exclude more files to reduce function size
 [functions.excluded_files]
@@ -24,6 +22,10 @@
   "*.md" = true
   ".git/**" = true
   "public/**" = true
+
+# Function timeout configuration
+[functions."*"]
+  timeout = 30
 
 # Image optimization
 [[plugins]]
