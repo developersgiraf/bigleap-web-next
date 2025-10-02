@@ -1,40 +1,27 @@
 import { NextResponse } from 'next/server';
-import { db } from '../../../../firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { servicesAPI } from '../../../../lib/services-simple.js';
 
 export async function GET() {
   try {
-    // Get all documents from WebsiteDatas collection
-    const websiteDataRef = collection(db, 'WebsiteDatas');
-    const snapshot = await getDocs(websiteDataRef);
+    // Get all services from JSON files
+    const services = await servicesAPI.getAll();
     
-    if (snapshot.empty) {
-      return NextResponse.json({
-        WebsiteDatas: {},
-        exportInfo: {
-          timestamp: new Date().toISOString(),
-          totalDocuments: 0,
-          collections: ['WebsiteDatas']
-        }
-      });
-    }
-
-    // Build the backup data structure
+    // Build the backup data structure (maintaining Firebase-like format for compatibility)
     const backupData = {
-      WebsiteDatas: {},
+      WebsiteDatas: {
+        services: {}
+      },
       exportInfo: {
         timestamp: new Date().toISOString(),
-        totalDocuments: snapshot.size,
-        collections: ['WebsiteDatas']
+        totalDocuments: services.length,
+        collections: ['WebsiteDatas'],
+        source: 'JSON Files'
       }
     };
 
-    // Add each document to the backup
-    snapshot.forEach((doc) => {
-      backupData.WebsiteDatas[doc.id] = {
-        id: doc.id,
-        ...doc.data()
-      };
+    // Convert services array back to object format for backup compatibility
+    services.forEach(service => {
+      backupData.WebsiteDatas.services[service.id] = service;
     });
 
     return NextResponse.json(backupData);

@@ -7,7 +7,7 @@
 
 # Simple function configuration to avoid 250MB limit
 [functions]
-  external_node_modules = ["firebase", "firebase-admin", "sharp", "canvas"]
+  external_node_modules = ["sharp", "canvas", "bcryptjs", "next-auth"]
   
 # Exclude large files from functions
 [functions.excluded_files]
