@@ -73,7 +73,7 @@ export default function HeroSection() {
             right: 0,
             margin: "0 auto"
           }}
-          initial={{ rotateZ: -20 }}
+          initial={{ rotateZ: 0 }}
           whileHover={{ 
             rotateZ: 45,
             transition: {
@@ -91,7 +91,7 @@ export default function HeroSection() {
           onMouseEnter={() => setIsCharacterHovered(true)}
           onMouseLeave={() => setIsCharacterHovered(false)}
         >
-          <Image
+          {false &&<Image
             src="/characterr.png"
             alt="Character Image"
             fit="contain"
@@ -103,8 +103,26 @@ export default function HeroSection() {
               width: "100%",
               height: "auto"
             }}
-          />
+          />}
+
+
         </motion.div>
+        <div className={styles.hangAnchor}>
+          {true &&<Image
+            src="/characterr.png"
+            alt="Character Image"
+            fit="contain"
+            width={911}
+            height={944}
+            priority
+            style={{ 
+              display: "block",
+              width: "100%",
+              height: "auto"
+            }}
+          />}
+        </div>
+          
       </div>
     </section>
   );
