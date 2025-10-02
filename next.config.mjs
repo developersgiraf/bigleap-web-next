@@ -1,3 +1,9 @@
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Remove standalone output for Netlify - this was causing the 250MB issue
@@ -5,8 +11,11 @@ const nextConfig = {
   
   // Optimize images
   images: {
-    unoptimized: true,
-    domains: [], // Add any external image domains here
+    unoptimized: false, // Enable optimization for better performance
+    formats: ['image/webp', 'image/avif'], // Use modern image formats
+    domains: ['img.youtube.com', 'i.ytimg.com'], // Allow YouTube thumbnails
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   
   // Experimental features for optimization
@@ -59,6 +68,10 @@ const nextConfig = {
           },
         },
       };
+      
+      // Additional optimizations
+      config.optimization.usedExports = true;
+      config.optimization.sideEffects = false;
     }
     
     // Reduce bundle size for server
@@ -86,4 +99,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

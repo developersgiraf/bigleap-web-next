@@ -22,6 +22,48 @@
   transition: all 0.3s ease-in-out;
 }
 
+/* Placeholder styles for lazy loading */
+.videoPlaceholder {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.placeholderContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #666;
+  text-align: center;
+}
+
+.placeholderContent p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #ed2124;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .swiperButtonNext,
 .swiperButtonPrev {
   position: absolute;
@@ -88,7 +130,8 @@
   .videoSwiperContainer {
     margin-top: 230px;
   }
-  .videoElement {
+  .videoElement,
+  .videoPlaceholder {
     height: 300px;
     -o-object-fit: contain;
        object-fit: contain;
@@ -98,14 +141,16 @@
   .videoSwiperContainer {
     margin-top: 230px;
   }
-  .videoElement {
+  .videoElement,
+  .videoPlaceholder {
     height: 300px;
     -o-object-fit: contain;
        object-fit: contain;
   }
 }
 @media (max-width: 1024px) {
-  .videoElement {
+  .videoElement,
+  .videoPlaceholder {
     height: 250px;
   }
   .videoSwiperContainer {
@@ -113,7 +158,8 @@
   }
 }
 @media (max-width: 992px) {
-  .videoElement {
+  .videoElement,
+  .videoPlaceholder {
     height: 300px;
   }
   .swiperButtonNext,
@@ -143,7 +189,8 @@
   .videoSlide {
     margin: 0 10px;
   }
-  .videoElement {
+  .videoElement,
+  .videoPlaceholder {
     height: 250px;
   }
   .swiperButtonNext,
