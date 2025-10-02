@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.7",
-    "firebase": "^12.3.0",
     "motion": "^12.23.21",
     "next": "^15.4.6",
     "next-auth": "^4.24.11",
