@@ -23,15 +23,8 @@ const nextConfig = {
     optimizePackageImports: ['react', 'react-dom', 'swiper', 'bootstrap'],
   },
   
-  // Turbopack configuration (moved from experimental.turbo)
-  turbopack: {
-    rules: {
-      '*.css': {
-        loaders: ['css-loader'],
-        as: '*.css',
-      },
-    },
-  },
+  // Turbopack configuration - using built-in CSS handling
+  // No custom CSS loader needed as Next.js handles CSS natively
   
   // Webpack optimizations for smaller bundles
   webpack: (config, { dev, isServer }) => {
