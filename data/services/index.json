@@ -79,26 +79,20 @@
       "lastModified": "2025-10-02T17:38:44.581Z"
     },
     {
-      "id": "video-editing-and-post-production",
-      "title": "Video Editing And Post Production",
-      "bannerTitle": "Video Editing And Post Production",
+      "id": "testing",
       "archived": false,
       "index": 9,
-      "thumbnail": "/servicess/video.png",
-      "lastModified": "2025-10-02T17:38:44.586Z"
+      "lastModified": "2025-10-02T19:24:25.397Z"
     },
     {
-      "id": "testing",
-      "title": "Test",
-      "bannerTitle": "Testing",
+      "id": "video-editing-and-post-production",
       "archived": false,
       "index": 10,
-      "thumbnail": "/uploads/services/d74da601fe34fc43fd074481b96fa75f227e2736_1759394886463.png",
-      "lastModified": "2025-10-02T18:21:35.916Z"
+      "lastModified": "2025-10-02T19:24:25.465Z"
     }
   ],
   "total": 11,
   "active": 11,
   "archived": 0,
-  "lastUpdated": "2025-10-02T18:21:36.331Z"
+  "lastUpdated": "2025-10-02T19:24:25.470Z"
 }
