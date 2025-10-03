@@ -115,13 +115,13 @@
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .enquiry-section .image {
-    height: 70vh !important;
+    height: 80vh !important;
   }
   .enquiry-section .buttonContainer {
     top: 50% !important;
   }
   .modalContent {
-    height: 55vh !important;
+    height: 65vh !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
