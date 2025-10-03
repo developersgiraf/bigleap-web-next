@@ -32,7 +32,7 @@
         height: 10px;
         position: absolute;
         left : 50%;
-        top: 0;
+        top: -20px;
         overflow: visible;
         transform: translateX(-50%);
         /* background-color: aqua; */
@@ -42,6 +42,8 @@
         height: auto;
         transform: scale(80) translateY(50%);
     }
+
+  
   
     .textsWrapper{
         position: relative;
@@ -50,3 +52,10 @@
         overflow: hidden;
     }
 
+
+
+    @media (min-width: 1025px) and (max-width: 1370px) {
+      .hangAnchor img {
+        transform: scale(60) translateY(45%);
+      }
+    }
