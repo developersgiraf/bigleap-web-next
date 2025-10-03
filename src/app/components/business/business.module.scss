@@ -2,82 +2,35 @@
 
 .businessArea {
   padding: 120px 0 80px 0;
-  @media (min-width:993px) and (max-width: 1370px) {
-      padding: 30px 0 20px 0 !important;
-    }
-  @media (min-width:768px) and (max-width: 992px) {
-      padding: 20px 0 20px 0 !important;
-    }
-@media(max-width: 767px) {
-      padding: 40px 0 80px 0 !important;
-    }
+  
   .business-list {
     padding: 0 110px;
-    @media(max-width: 1370px) {
-      padding: 0 30px !important;
-    }
-    @media(max-width: 1024px) {
-      padding: 0 20px !important;
-    }
-     @media(max-width: 992px) {
-      padding: 0 0 !important;
-    }
-    @media(max-width: 767px) {
-      padding: 0 0 !important;
-    }
+    
     .heading {
-       @media(max-width: 1024px) {
-    padding: 0 20px !important;
-    }
-      @media(max-width: 767px) {
-        padding: 0 10px !important;
-      }
       h2 {
         color: #fff;
         font-size: 64px;
         font-weight: 400;
         line-height: 90px;
         font-family: "Boldonse", system-ui !important;
-
-        @media(max-width: 1024px) {
-      font-size: 32px !important;
-      line-height: 60px !important;
-    }
-        @media (max-width: 767px) {
-          font-size: 25px !important;
-          line-height: 36px !important;
-        }
       }
 
       .list {
         color: #fff;
         font-weight: 400;
         font-size: 16px;
-        // box-sizing: border-box;
         line-height: 125%;
         font-style: regular;
         font-family: "Montserrat", sans-serif;
-
-        @media (max-width: 767px) {
-          padding-top: 10px !important;
-          font-size: 14px !important;
-        }
       }
     }
 
     .lists {
       padding-left: 45px;
- @media(max-width: 1024px) {
-      padding-left: 10px !important;
-    }
-      @media (max-width: 767px) {
-        padding-left: 0px !important;
-      }
     }
   }
 
   // BUSINESS AREA ITEMS CSS
-
   .buscol {
     .businessHead {
       padding-top: 15px;
@@ -89,10 +42,6 @@
         font-weight: 700;
         line-height: 125%;
         font-family: "Montserrat", sans-serif !important;
-
-        @media (max-width: 767px) {
-          font-size: 16px !important;
-        }
       }
 
       .listcontent {
@@ -101,8 +50,107 @@
         line-height: 125%;
         font-size: 16px;
         font-family: "Montserrat", sans-serif !important;
+      }
+    }
+  }
+}
 
-        @media (max-width: 767px) {
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Large Desktop */
+@media (max-width: 1370px) {
+  .businessArea {
+    .business-list {
+      padding: 0 30px !important;
+    }
+  }
+}
+
+/* Medium Desktop */
+@media (min-width: 993px) and (max-width: 1370px) {
+  .businessArea {
+    padding: 30px 0 20px 0 !important;
+  }
+}
+
+/* Small Desktop / Large Tablet */
+@media (max-width: 1024px) {
+  .businessArea {
+    .business-list {
+      padding: 0 20px !important;
+      
+      .heading {
+        padding: 0 20px !important;
+        
+        h2 {
+          font-size: 32px !important;
+          line-height: 60px !important;
+        }
+      }
+      
+      .lists {
+        padding-left: 10px !important;
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 992px) {
+  .businessArea {
+    padding: 20px 0 20px 0 !important;
+    
+    .business-list {
+      padding: 0 0 !important;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+  .businessArea {
+    .business-list {
+      padding: 0 0 !important;
+    }
+  }
+}
+
+/* Mobile Specific */
+@media (max-width: 767px) {
+  .businessArea {
+    padding: 2px 0 80px 0 !important;
+    
+    .business-list {
+      padding: 0 0 !important;
+      
+      .heading {
+        padding: 0 10px !important;
+        
+        h2 {
+          font-size: 16px !important;
+          line-height: 6px !important;
+        }
+        
+        .list {
+          padding-top: 10px !important;
+          font-size: 14px !important;
+        }
+      }
+      
+      .lists {
+        padding-left: 0px !important;
+      }
+    }
+    
+    .buscol {
+      .businessHead {
+        h5 {
+          font-size: 16px !important;
+        }
+        
+        .listcontent {
           font-size: 14px !important;
         }
       }

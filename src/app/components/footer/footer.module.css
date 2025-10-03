@@ -224,6 +224,9 @@
   .footerArea .footerList .subcol {
     padding-left: 20px !important;
   }
+  .footerArea .footerList .subcol ul li a {
+    font-size: 14px !important;
+  }
   .footerArea .footer-bottom {
     padding: 10px 0 !important;
   }

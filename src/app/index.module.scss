@@ -570,32 +570,32 @@
       justify-content: center;
       
       .aboutImg {
-        width: 60% !important;
+        width: 100% !important;
       }
     }
     
     .about-secont-box {
       width: 100% !important;
-      padding: 0 20px !important;
+      padding: 0 0px !important;
       
       h4 {
-        font-size: 20px !important;
+        font-size: 18px !important;
       }
     }
   }
   
   .slide-head {
-    padding: 150px 0 !important;
+    padding: 120px 0 !important;
     
     .special-head {
       h2 {
-        font-size: 56px !important;
+        font-size: 50px !important;
       }
       
       p {
-        padding: 0 65px !important;
+        padding: 0 0px !important;
         font-size: 12px !important;
-        width: 100% !important;
+        width: 80% !important;
       }
     }
     
@@ -605,14 +605,18 @@
   }
   
   .watch-area {
+        padding: 0px 0 80px !important;
     .first-video .video1 iframe {
-      height: 390px !important;
+      height: 41vh important;
     }
     
     .first-video .video2 iframe {
-      height: 390px !important;
+      height: 41vh !important;
+      object-fit: contain !important;
     }
-    
+     .video2{
+        width: 100% !important;
+      }
     .second-video {
       flex-direction: column-reverse !important;
       padding: 20px 0 !important;
@@ -624,9 +628,9 @@
           font-size: 26px !important;
         }
       }
-      
+     
       .video3 iframe {
-        height: 390px !important;
+        height: 41vh !important;
       }
     }
   }
@@ -645,6 +649,7 @@
     .specialslides {
       padding: 0 80px !important;
     }
+    
   }
 }
 
@@ -653,20 +658,21 @@
   
   
   .about-area {
-    padding: 0 0 120px 0 !important;
+    padding: 0 0 40px 0 !important;
     
     .about-row {
       padding: 0 0 !important;
     }
-    
+    .about-first-box {
+      justify-content: center !important;
+    }
     .about-first-box .aboutImg {
-      width: 100% !important;
-      object-fit: contain !important;
+      width: 70% !important;
     }
     
     .about-secont-box {
       width: 100% !important;
-      text-align: left !important;
+      text-align: center !important;
       
       h4 {
         text-align: left !important;
@@ -683,7 +689,7 @@
     .special-head {
       h2 {
         font-size: 30px !important;
-        line-height: 40px !important;
+        line-height: 20px !important;
       }
       
       p {
@@ -698,8 +704,11 @@
       padding: 0 0px !important;
     }
   }
-  
+  // .watch{
+  //   padding: 0 20px !important;
+  // }
   .watch-area {
+    padding: 50px 0 80px !important;
     .first-video {
       gap: 10px !important;
       
@@ -707,7 +716,9 @@
         height: 210px !important;
         padding: 0 10px !important;
       }
-      
+      .video2{
+        width: 100% !important;
+      }
       .video2 iframe {
         width: 100% !important;
         height: 210px !important;
@@ -727,28 +738,26 @@
         }
         
         h2 {
-          font-size: 22px !important;
+          font-size: 18px !important;
         }
       }
       
       .video3 iframe {
-        height: 212px !important;
+        height: 210px !important;
         padding: 0 10px !important;
       }
     }
   }
   
   .video-slider {
-    padding: 60px 0 40px 0 !important;
+    padding: 20px 0 40px 0 !important;
     
     .vdo {
-      padding: 0 10px !important;
-      
+      padding: 0 30px !important;
+    }
       iframe {
-        width: 90% !important;
+        width: 100% !important;
         max-width: 100% !important;
-        border-radius: 8px !important;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
       }
       
       .video-content {
@@ -760,25 +769,27 @@
         border-radius: 8px !important;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
       }
-    }
+    
   }
   
   .motion-graphics {
-    padding: 70px 0 80px 0 !important;
+    padding: 10px 0 20px 0 !important;
     
     .motion-graphics-content {
       align-items: flex-start !important;
-      padding-left: 20px !important;
-      
+      padding-left: 0px !important;
+      h6{
+        font-size: 14px !important;
+      }
       h2 {
-        font-size: 20px !important;
+        font-size: 16px !important;
         line-height: 30px !important;
         text-align: left !important;
       }
     }
     
     .specialslides {
-      padding: 0 40px !important;
+      padding: 20px 40px !important;
     }
   }
   

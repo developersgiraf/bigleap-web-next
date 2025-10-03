@@ -103,12 +103,20 @@
     height: 70px !important;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .stikyImage {
+    height: 60% !important;
+  }
+  .feedItem {
+    height: 200px !important;
+  }
+}
 @media (max-width: 767px) {
   .instaFeeds {
     padding: 0px 0 !important;
   }
   .feedItem {
-    height: 300px;
+    height: 200px !important;
   }
   .feedSwiper .swiper-button-next,
   .feedSwiper .swiper-button-prev {

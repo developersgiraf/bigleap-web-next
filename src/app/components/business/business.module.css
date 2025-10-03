@@ -1,53 +1,8 @@
 .businessArea {
   padding: 120px 0 80px 0;
 }
-@media (min-width: 993px) and (max-width: 1370px) {
-  .businessArea {
-    padding: 30px 0 20px 0 !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .businessArea {
-    padding: 20px 0 20px 0 !important;
-  }
-}
-@media (max-width: 767px) {
-  .businessArea {
-    padding: 40px 0 80px 0 !important;
-  }
-}
 .businessArea .business-list {
   padding: 0 110px;
-}
-@media (max-width: 1370px) {
-  .businessArea .business-list {
-    padding: 0 30px !important;
-  }
-}
-@media (max-width: 1024px) {
-  .businessArea .business-list {
-    padding: 0 20px !important;
-  }
-}
-@media (max-width: 992px) {
-  .businessArea .business-list {
-    padding: 0 0 !important;
-  }
-}
-@media (max-width: 767px) {
-  .businessArea .business-list {
-    padding: 0 0 !important;
-  }
-}
-@media (max-width: 1024px) {
-  .businessArea .business-list .heading {
-    padding: 0 20px !important;
-  }
-}
-@media (max-width: 767px) {
-  .businessArea .business-list .heading {
-    padding: 0 10px !important;
-  }
 }
 .businessArea .business-list .heading h2 {
   color: #fff;
@@ -55,18 +10,6 @@
   font-weight: 400;
   line-height: 90px;
   font-family: "Boldonse", system-ui !important;
-}
-@media (max-width: 1024px) {
-  .businessArea .business-list .heading h2 {
-    font-size: 32px !important;
-    line-height: 60px !important;
-  }
-}
-@media (max-width: 767px) {
-  .businessArea .business-list .heading h2 {
-    font-size: 25px !important;
-    line-height: 36px !important;
-  }
 }
 .businessArea .business-list .heading .list {
   color: #fff;
@@ -76,24 +19,8 @@
   font-style: regular;
   font-family: "Montserrat", sans-serif;
 }
-@media (max-width: 767px) {
-  .businessArea .business-list .heading .list {
-    padding-top: 10px !important;
-    font-size: 14px !important;
-  }
-}
 .businessArea .business-list .lists {
   padding-left: 45px;
-}
-@media (max-width: 1024px) {
-  .businessArea .business-list .lists {
-    padding-left: 10px !important;
-  }
-}
-@media (max-width: 767px) {
-  .businessArea .business-list .lists {
-    padding-left: 0px !important;
-  }
 }
 .businessArea .buscol .businessHead {
   padding-top: 15px;
@@ -106,11 +33,6 @@
   line-height: 125%;
   font-family: "Montserrat", sans-serif !important;
 }
-@media (max-width: 767px) {
-  .businessArea .buscol .businessHead h5 {
-    font-size: 16px !important;
-  }
-}
 .businessArea .buscol .businessHead .listcontent {
   color: #fff;
   font-weight: 400;
@@ -118,7 +40,78 @@
   font-size: 16px;
   font-family: "Montserrat", sans-serif !important;
 }
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+/* Large Desktop */
+@media (max-width: 1370px) {
+  .businessArea .business-list {
+    padding: 0 30px !important;
+  }
+}
+/* Medium Desktop */
+@media (min-width: 993px) and (max-width: 1370px) {
+  .businessArea {
+    padding: 30px 0 20px 0 !important;
+  }
+}
+/* Small Desktop / Large Tablet */
+@media (max-width: 1024px) {
+  .businessArea .business-list {
+    padding: 0 20px !important;
+  }
+  .businessArea .business-list .heading {
+    padding: 0 20px !important;
+  }
+  .businessArea .business-list .heading h2 {
+    font-size: 32px !important;
+    line-height: 60px !important;
+  }
+  .businessArea .business-list .lists {
+    padding-left: 10px !important;
+  }
+}
+/* Tablet */
+@media (min-width: 768px) and (max-width: 992px) {
+  .businessArea {
+    padding: 20px 0 20px 0 !important;
+  }
+  .businessArea .business-list {
+    padding: 0 0 !important;
+  }
+}
+/* Mobile */
+@media (max-width: 992px) {
+  .businessArea .business-list {
+    padding: 0 0 !important;
+  }
+}
+/* Mobile Specific */
 @media (max-width: 767px) {
+  .businessArea {
+    padding: 2px 0 80px 0 !important;
+  }
+  .businessArea .business-list {
+    padding: 0 0 !important;
+  }
+  .businessArea .business-list .heading {
+    padding: 0 10px !important;
+  }
+  .businessArea .business-list .heading h2 {
+    font-size: 16px !important;
+    line-height: 6px !important;
+  }
+  .businessArea .business-list .heading .list {
+    padding-top: 10px !important;
+    font-size: 14px !important;
+  }
+  .businessArea .business-list .lists {
+    padding-left: 0px !important;
+  }
+  .businessArea .buscol .businessHead h5 {
+    font-size: 16px !important;
+  }
   .businessArea .buscol .businessHead .listcontent {
     font-size: 14px !important;
   }

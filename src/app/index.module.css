@@ -443,34 +443,42 @@
     justify-content: center;
   }
   .about-area .about-first-box .aboutImg {
-    width: 60% !important;
+    width: 100% !important;
   }
   .about-area .about-secont-box {
     width: 100% !important;
-    padding: 0 20px !important;
+    padding: 0 0px !important;
   }
   .about-area .about-secont-box h4 {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   .slide-head {
-    padding: 150px 0 !important;
+    padding: 120px 0 !important;
   }
   .slide-head .special-head h2 {
-    font-size: 56px !important;
+    font-size: 50px !important;
   }
   .slide-head .special-head p {
-    padding: 0 65px !important;
+    padding: 0 0px !important;
     font-size: 12px !important;
-    width: 100% !important;
+    width: 80% !important;
   }
   .slide-head .specialslide {
     padding: 0 65px !important;
   }
+  .watch-area {
+    padding: 0px 0 80px !important;
+  }
   .watch-area .first-video .video1 iframe {
-    height: 390px !important;
+    height: 41vh important;
   }
   .watch-area .first-video .video2 iframe {
-    height: 390px !important;
+    height: 41vh !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+  }
+  .watch-area .video2 {
+    width: 100% !important;
   }
   .watch-area .second-video {
     flex-direction: column-reverse !important;
@@ -483,7 +491,7 @@
     font-size: 26px !important;
   }
   .watch-area .second-video .video3 iframe {
-    height: 390px !important;
+    height: 41vh !important;
   }
   .video-slider {
     padding: 0px 0 0px 0 !important;
@@ -501,19 +509,20 @@
 /* Mobile: 767px and below */
 @media (max-width: 767px) {
   .about-area {
-    padding: 0 0 120px 0 !important;
+    padding: 0 0 40px 0 !important;
   }
   .about-area .about-row {
     padding: 0 0 !important;
   }
+  .about-area .about-first-box {
+    justify-content: center !important;
+  }
   .about-area .about-first-box .aboutImg {
-    width: 100% !important;
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    width: 70% !important;
   }
   .about-area .about-secont-box {
     width: 100% !important;
-    text-align: left !important;
+    text-align: center !important;
   }
   .about-area .about-secont-box h4 {
     text-align: left !important;
@@ -526,7 +535,7 @@
   }
   .slide-head .special-head h2 {
     font-size: 30px !important;
-    line-height: 40px !important;
+    line-height: 20px !important;
   }
   .slide-head .special-head p {
     padding: 0 0px !important;
@@ -537,12 +546,18 @@
   .slide-head .specialslide {
     padding: 0 0px !important;
   }
+  .watch-area {
+    padding: 50px 0 80px !important;
+  }
   .watch-area .first-video {
     gap: 10px !important;
   }
   .watch-area .first-video .video1 iframe {
     height: 210px !important;
     padding: 0 10px !important;
+  }
+  .watch-area .first-video .video2 {
+    width: 100% !important;
   }
   .watch-area .first-video .video2 iframe {
     width: 100% !important;
@@ -560,46 +575,47 @@
     font-size: 14px !important;
   }
   .watch-area .second-video .content h2 {
-    font-size: 22px !important;
+    font-size: 18px !important;
   }
   .watch-area .second-video .video3 iframe {
-    height: 212px !important;
+    height: 210px !important;
     padding: 0 10px !important;
   }
   .video-slider {
-    padding: 60px 0 40px 0 !important;
+    padding: 20px 0 40px 0 !important;
   }
   .video-slider .vdo {
-    padding: 0 10px !important;
+    padding: 0 30px !important;
   }
-  .video-slider .vdo iframe {
-    width: 90% !important;
+  .video-slider iframe {
+    width: 100% !important;
     max-width: 100% !important;
-    border-radius: 8px !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
   }
-  .video-slider .vdo .video-content {
+  .video-slider .video-content {
     max-width: 90% !important;
   }
-  .video-slider .vdo .video-wrapper {
+  .video-slider .video-wrapper {
     width: 90% !important;
     border-radius: 8px !important;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
   }
   .motion-graphics {
-    padding: 70px 0 80px 0 !important;
+    padding: 10px 0 20px 0 !important;
   }
   .motion-graphics .motion-graphics-content {
     align-items: flex-start !important;
-    padding-left: 20px !important;
+    padding-left: 0px !important;
+  }
+  .motion-graphics .motion-graphics-content h6 {
+    font-size: 14px !important;
   }
   .motion-graphics .motion-graphics-content h2 {
-    font-size: 20px !important;
+    font-size: 16px !important;
     line-height: 30px !important;
     text-align: left !important;
   }
   .motion-graphics .specialslides {
-    padding: 0 40px !important;
+    padding: 20px 40px !important;
   }
   .video-responsive {
     width: 90% !important;
