@@ -14,7 +14,7 @@ export default function SocialMediaIcon() {
          <Link href="#"> <Image src="/socialIcons/youtube.png" alt="" width={21} height={21} className={styles.image}/></Link>
 
 
-      </div>
+        </div>
         </>
     )
 }

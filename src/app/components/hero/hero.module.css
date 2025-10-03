@@ -1,6 +1,6 @@
 .hero {
   height: 93vh;
-  position: relative;
+  position: static;
   overflow: visible;
   padding-top: 20px;
 }
