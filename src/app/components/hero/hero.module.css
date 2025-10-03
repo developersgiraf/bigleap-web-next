@@ -52,7 +52,16 @@
         overflow: hidden;
     }
 
-
+/* .textsWrapper{
+  h1{
+    color: #fdfdfd;
+    font-size: 96px;
+  }
+  h4{
+    color: #fdfdfd;
+    font-size: 96px;
+  }
+} */
 
     @media (min-width: 1025px) and (max-width: 1560px) {
       .hangAnchor img {

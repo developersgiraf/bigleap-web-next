@@ -51,6 +51,7 @@ export default function HeroSection() {
           />
         </motion.div>
         { true && <motion.div
+        
           className={styles.image360}
           initial={{ x: "150vw" }}
           animate={{
@@ -63,7 +64,13 @@ export default function HeroSection() {
             mass: 0.8
           }}
         >
-          <Image
+          <div className={styles.textsWrapper}>
+          <h1>360°</h1>
+          <h4>DIGITAL MARKETING</h4>
+         <h4>COMPANY IN UAE</h4>
+          </div>
+
+          {false && <Image
             id="three60-img"
             src="/digital360.png"
             alt="three60"
@@ -74,7 +81,7 @@ export default function HeroSection() {
               width: "100%",
               height: "auto"
             }}
-          />
+          />}
         </motion.div>
         }
       </div>
