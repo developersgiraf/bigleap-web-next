@@ -55,7 +55,7 @@
 }
 
 .right {
-  right: -100px;
+  right: 100px;
   /* Tablet responsiveness */
   /* Mobile responsiveness */
 }
@@ -76,7 +76,7 @@
 }
 @media (max-width: 767px) {
   .right {
-    right: 20px;
+    right: 100px;
   }
 }
 
@@ -93,10 +93,8 @@
   z-index: -1;
   /* Tablet responsiveness */
   /* Mobile responsiveness */
-  /* Small mobile responsiveness */
-  /* Extra small mobile */
 }
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .halftoneDots {
     background-size: 80%;
   }
@@ -105,18 +103,6 @@
   .halftoneDots {
     background-size: 60%;
     opacity: 0.8;
-  }
-}
-@media (max-width: 480px) {
-  .halftoneDots {
-    background-size: 50%;
-    opacity: 0.6;
-  }
-}
-@media (max-width: 360px) {
-  .halftoneDots {
-    background-size: 40%;
-    opacity: 0.5;
   }
 }
 

@@ -24,3 +24,4 @@ class CacheManager {
 const cacheManager = new CacheManager();
 
 export default cacheManager;
+
