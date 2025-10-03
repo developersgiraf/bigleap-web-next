@@ -1,6 +1,7 @@
 [build]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   command = "npm run build"
 =======
   command = "npm run clean && npm run build && node scripts/post-build-cleanup.js"
@@ -8,12 +9,18 @@
 =======
   command = "npm run clean && npm run build && node scripts/post-build-cleanup.js"
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+  command = "npm run build"
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
 
 # Simple function configuration to avoid 250MB limit
 [functions]
@@ -23,6 +30,7 @@
 [functions.excluded_files]
   ".next/cache/**" = true
   ".next/standalone/**" = true
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
@@ -52,12 +60,15 @@
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
 =======
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
 
 # Redirects for Next.js app router
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/___netlify-handler"
   status = 200
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -72,6 +83,10 @@
 
 # Headers for static assets - better caching
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+
+# Headers for static assets
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
 [[headers]]
   for = "/static/*"
   [headers.values]
@@ -80,6 +95,7 @@
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     Cache-Control = "public, max-age=31536000, immutable"
@@ -103,3 +119,6 @@
 =======
     Cache-Control = "public, max-age=31536000"
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+    Cache-Control = "public, max-age=31536000, immutable"
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
