@@ -59,7 +59,7 @@
   z-index: 10;
 
   /* Tablet responsiveness */
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (max-width: 1024px) {
     width: 50px !important;
     height: 50px !important;
     padding: 12px 16px !important;

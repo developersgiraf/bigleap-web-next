@@ -44,27 +44,3 @@
     }
   
 
-@media (min-width: 1561px) and (max-width:1900px) {
-
-}
-@media (min-width: 1281px) and (max-width: 1560px) {
-  }
-  @media (min-width:1025px) and (max-width: 1280px) {
-  }
-  @media (min-width:993px) and (max-width: 1024px) {
-  }
-  @media (min-width:768px) and  (max-width: 992px) {
-  }
-
-  /* Mobile responsiveness */
-  @media (max-width: 767px) {
-    .hanging {
-    position: relative !important;
-  }
-  .hero {
-  height: 23vh !important;
- 
-
-}
-  }
-
