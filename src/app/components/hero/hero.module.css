@@ -54,7 +54,7 @@
 
 
 
-    @media (min-width: 1025px) and (max-width: 1370px) {
+    @media (min-width: 1025px) and (max-width: 1560px) {
       .hangAnchor img {
         transform: scale(60) translateY(45%);
       }
