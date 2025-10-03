@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "admin1",
+      "email": "admin@bigleap.com",
+      "name": "Admin User",
+      "password": "$2b$10$Y6dmgh4jx6upS6tNGfKx3ONKGcqRHOvWYaTdMm7irQe1k6Ue0ooDG",
+      "role": "admin",
+      "createdAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": "admin2",
+      "email": "basilgiraf@gmail.com",
+      "name": "Basil Admin",
+      "role": "admin",
+      "createdAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": "admin3", 
+      "email": "bigleapdubai@bigleap.com",
+      "name": "BigLeap Admin",
+      "role": "admin",
+      "createdAt": "2025-10-02T00:00:00.000Z"
+    }
+  ]
+}

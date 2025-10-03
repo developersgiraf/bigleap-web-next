@@ -4,21 +4,28 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "npm run clean && next build",
+    "build:netlify": "npm run clean && next build",
+    "build:analyze": "npm run clean && ANALYZE=true next build",
+    "clean": "rm -rf .next || del /q /s .next 2>nul || true",
+    "clean:cache": "rm -rf .next/cache || del /q /s .next\\cache 2>nul || true",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.7",
-    "firebase": "^12.3.0",
     "motion": "^12.23.21",
     "next": "^15.4.6",
+    "next-auth": "^4.24.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.5.4",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "sass": "^1.90.0"
