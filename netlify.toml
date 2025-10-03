@@ -1,6 +1,10 @@
 [build]
 <<<<<<< HEAD
+<<<<<<< HEAD
   command = "npm run build"
+=======
+  command = "npm run clean && npm run build && node scripts/post-build-cleanup.js"
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
 =======
   command = "npm run clean && npm run build && node scripts/post-build-cleanup.js"
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
@@ -8,6 +12,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 # Simple function configuration to avoid 250MB limit
@@ -19,6 +24,8 @@
   ".next/cache/**" = true
   ".next/standalone/**" = true
 =======
+=======
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
   # Optimize build for smaller functions
   NODE_OPTIONS = "--max-old-space-size=4096"
 
@@ -41,6 +48,9 @@
 # Function timeout configuration
 [functions."*"]
   timeout = 30
+<<<<<<< HEAD
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
 
 # Redirects for Next.js app router
@@ -49,8 +59,14 @@
   to = "/.netlify/functions/___netlify-handler"
   status = 200
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # Headers for static assets
+=======
+  force = false
+
+# Headers for static assets - better caching
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
 =======
   force = false
 
@@ -65,8 +81,11 @@
   for = "/_next/static/*"
   [headers.values]
 <<<<<<< HEAD
+<<<<<<< HEAD
     Cache-Control = "public, max-age=31536000, immutable"
 =======
+=======
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
@@ -78,5 +97,9 @@
 [[headers]]
   for = "/public/*"
   [headers.values]
+<<<<<<< HEAD
+    Cache-Control = "public, max-age=31536000"
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
     Cache-Control = "public, max-age=31536000"
 >>>>>>> parent of 9311b77 (removed netlify dependancies)
