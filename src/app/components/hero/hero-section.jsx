@@ -11,8 +11,8 @@ export default function HeroSection() {
   const getRotationValue = () => {
     if (typeof window !== 'undefined') {
       const width = window.innerWidth;
-      if (width <= 768) return 30; // Mobile
-      if (width <= 1024) return 40; // Tablet
+      //if (width <= 768) return 20; // Mobile
+      if (width <= 1024) return 20; // Tablet
       return 45; // Desktop
     }
     return 45; // Default for SSR
