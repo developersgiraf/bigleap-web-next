@@ -86,7 +86,7 @@ export default function HeroSection() {
         className={styles.hangAnchor}
         initial={{ rotateZ: -20 }}
           animate={{ 
-            rotateZ: isCharacterHovered ? getRotationValue() : 0,
+            rotateZ: isCharacterHovered ? 45 : 0,
           }}
           transition={{
             type: "spring",
