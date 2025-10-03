@@ -5,7 +5,6 @@ import MainHeader from "./components/header/header";
 import InfoArea from "./components/info-area/info";
 import Footer from "./components/footer/footer";
 import ConditionalLayout from "./components/ConditionalLayout";
-import Providers from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,16 +31,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Providers>
-          <ConditionalLayout excludeComponents={['info']}>
-            <InfoArea />
-          </ConditionalLayout>
-          <MainHeader />
-          {children}
-          <ConditionalLayout excludeComponents={['footer']}>
-            <Footer />
-          </ConditionalLayout>
-        </Providers>
+        <ConditionalLayout excludeComponents={['info']}>
+          <InfoArea />
+        </ConditionalLayout>
+        <MainHeader />
+        {children}
+        <ConditionalLayout excludeComponents={['footer']}>
+          <Footer />
+        </ConditionalLayout>
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

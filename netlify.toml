@@ -1,0 +1,32 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Simple function configuration to avoid 250MB limit
+[functions]
+  external_node_modules = ["firebase", "firebase-admin", "sharp", "canvas"]
+  
+# Exclude large files from functions
+[functions.excluded_files]
+  ".next/cache/**" = true
+  ".next/standalone/**" = true
+
+# Redirects for Next.js app router
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/___netlify-handler"
+  status = 200
+
+# Headers for static assets
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

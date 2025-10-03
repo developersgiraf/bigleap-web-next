@@ -1,61 +1,67 @@
 import { NextResponse } from 'next/server';
-import { servicesAPI } from '../../../../lib/services-simple.js';
+import { db } from '../../../../firebase';
+import { collection, doc, setDoc, getDocs, deleteDoc, writeBatch } from 'firebase/firestore';
 
 export async function POST(request) {
   try {
     const backupData = await request.json();
 
     // Validate the backup data structure
-    if (!backupData.WebsiteDatas?.services) {
+    if (!backupData.WebsiteDatas) {
       return NextResponse.json(
-        { error: 'Invalid backup data: Missing WebsiteDatas.services collection' },
+        { error: 'Invalid backup data: Missing WebsiteDatas collection' },
         { status: 400 }
       );
     }
 
-    // Get current services count
-    const currentServices = await servicesAPI.getAll();
-    const currentCount = currentServices.length;
+    const websiteDataRef = collection(db, 'WebsiteDatas');
 
-    // Convert backup services object to array format
-    const backupServices = Object.values(backupData.WebsiteDatas.services);
+    // Get current documents to delete them first
+    const currentSnapshot = await getDocs(websiteDataRef);
+    
+    // Use batched writes for better performance and atomicity
+    const batch = writeBatch(db);
+    
+    // Delete existing documents
+    currentSnapshot.forEach((document) => {
+      const docRef = doc(db, 'WebsiteDatas', document.id);
+      batch.delete(docRef);
+    });
+
+    // Add new documents from backup
+    const backupEntries = Object.entries(backupData.WebsiteDatas);
     let updatedCount = 0;
 
-    // Clear existing services and restore from backup
-    try {
-      // Clear all existing services
-      for (const service of currentServices) {
-        await servicesAPI.delete(service.id);
-      }
-
-      // Add services from backup
-      for (const serviceData of backupServices) {
-        await servicesAPI.create(serviceData);
-        updatedCount++;
-      }
-
-      // Rebuild index
-      await servicesAPI.rebuildIndex();
-
-      return NextResponse.json({
-        success: true,
-        message: 'Database restored successfully from JSON backup',
-        updatedCount,
-        deletedCount: currentCount,
-        timestamp: new Date().toISOString(),
-        source: 'JSON Files'
-      });
-
-    } catch (serviceError) {
-      console.error('Error during service restoration:', serviceError);
-      return NextResponse.json(
-        { 
-          error: 'Failed to restore services',
-          details: serviceError.message 
-        },
-        { status: 500 }
-      );
+    for (const [docId, docData] of backupEntries) {
+      // Remove the 'id' field if it exists to avoid duplication
+      const { id, ...dataWithoutId } = docData;
+      
+      const docRef = doc(db, 'WebsiteDatas', docId);
+      batch.set(docRef, dataWithoutId);
+      updatedCount++;
     }
+
+    // Commit the batch
+    await batch.commit();
+
+    // Clear any cache if needed
+    try {
+      await fetch('/api/cache/clear', { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pattern: 'services*' })
+      });
+    } catch (cacheError) {
+      console.log('Cache clear failed (non-critical):', cacheError);
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Database restored successfully',
+      updatedCount,
+      deletedCount: currentSnapshot.size,
+      timestamp: new Date().toISOString()
+    });
 
   } catch (error) {
     console.error('Error restoring database:', error);
