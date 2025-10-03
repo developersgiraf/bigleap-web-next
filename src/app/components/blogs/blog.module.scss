@@ -179,24 +179,27 @@
 }
 @media (max-width: 767px) {
     .blogsection {
+        padding: 20px 0 60px 0;
 
     .blogcontent {
 
         .bloghead {
             
             h2 {
-                font-size: 35px !important;
+                font-size: 25px !important;
                 line-height: 55px !important;
                 text-align: center !important;
             }
         }
 
         .blogimages {
+                padding: 0px 0 !important;
             .blogrow{
                     padding: 0 10px !important;
 
 
             img {
+                object-fit: contain !important;
                 height: 30vh !important;
                 margin-top: 20px !important;
                

@@ -4,21 +4,6 @@
 
 .mySwiper {
   padding: 30px 0px;
-
-  @media (min-width: 993px) and (max-width: 1024px) {
-    padding: 20px 70px !important;
-
-  }
-
-  @media (min-width: 768px) and (max-width: 992px) {
-    padding: 20px 0px !important;
-
-  }
-  @media (max-width: 767px) {
-    padding: 10px 0px !important;
-  }
-
- 
 }
 
 .slideContent {
@@ -28,15 +13,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  /* @media (max-width: 1370px) {
-    padding: 0 20px !important;
-  } */
-  @media (max-width: 767px) {
-    padding: 0 !important;
-  }
-
-  
 }
 
 .imageContainer {
@@ -44,17 +20,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .slideImage {
   object-fit: contain;
   width: 100%;
- 
-  @media (max-width: 767px) {
-   height: 30vh !important;
-  }
 }
 
 .client {
@@ -79,13 +49,6 @@
   display: flex;
   gap: 20px;
   padding-top: 10px;
-
-  @media (max-width: 767px) {
-    gap: 15px !important;
-    padding-top: 8px !important;
-  }
-
-  
 }
 
 .caption {
@@ -98,22 +61,6 @@
   text-align: center;
   line-height: 93%;
   letter-spacing: 0%;
-
-@media (min-width: 993px) and (max-width: 1024px) {
-    font-size: 18px !important;
-    margin-top: 6px !important;
-  }
- @media (min-width: 768px) and (max-width: 993px) {
-    font-size: 16px !important;
-  line-height: 113% !important;
-    margin-top: 6px !important;
-  }
-  @media (max-width: 767px) {
-    font-size: 18px !important;
-    margin-top: 6px !important;
-  }
-
- 
 }
 
 .readbtn {
@@ -128,17 +75,6 @@
   font-family: 'Roboto', sans-serif !important;
   color: #ed2124;
   cursor: pointer;
-
-  @media (max-width: 1024px) {
-    font-size: 17px !important;
-    margin-top: 6px !important;
-  }
-  @media (max-width: 767px) {
-    font-size: 12px !important;
-    margin-top: 6px !important;
-  }
-
-  
 }
 
 .readbtn:hover {
@@ -160,19 +96,89 @@
   height: 100%;
 }
 
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
 
+/* Extra Large Desktop */
 @media (min-width: 1371px) and (max-width: 1560px) {
-  .imageContainer{
+  .imageContainer {
     width: 90%;
   }
 }
+
+/* Large Desktop */
 @media (min-width: 1025px) and (max-width: 1370px) {
-  .imageContainer{
+  .imageContainer {
     width: 90%;
   }
 }
+
+/* Medium Desktop */
 @media (min-width: 993px) and (max-width: 1024px) {
-  .imageContainer{
+  .mySwiper {
+    padding: 20px 70px !important;
+  }
+  
+  .imageContainer {
     width: 90%;
+  }
+  
+  .caption {
+    font-size: 18px !important;
+    margin-top: 6px !important;
+  }
+  
+  .readbtn {
+    font-size: 17px !important;
+    margin-top: 6px !important;
+  }
+}
+
+
+
+
+/* Mobile */
+/* Tablet */
+@media (min-width: 768px) and (max-width: 992px) {
+  .mySwiper {
+    padding: 20px 0px !important;
+  }
+  
+  .caption {
+    font-size: 16px !important;
+    line-height: 113% !important;
+    margin-top: 6px !important;
+  }
+}
+@media (max-width: 767px) {
+  .mySwiper {
+    padding: 10px 0px !important;
+  }
+  
+  .slideContent {
+    padding: 0 !important;
+  }
+  
+  .slideImage {
+    height: 30vh !important;
+  }
+  
+  .clientDate {
+    gap: 15px !important;
+    padding-top: 8px !important;
+  }
+  
+  .caption {
+    font-size: 16px !important;
+    margin-top: 6px !important;
+  }
+  
+  .readbtn {
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+  .client {
+    font-size: 14px !important;
   }
 }

@@ -32,13 +32,13 @@ export default function Home() {
       <section className={styles["about-area"]}>
         <div className="container">
           <div className={`row align-items-center ${styles["about-row"]}`}>
-            <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
+            <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-4 col-12">
               <div className={styles["about-first-box"]}>
                 <Image src="/Scate.png" alt="" width={441} height={404} className={styles.aboutImg}/>
               </div>
             </div>
 
-            <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+            <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-8 col-12">
               <div className={styles["about-secont-box"]}>
                 <h4>
                   {" "}
@@ -111,7 +111,7 @@ export default function Home() {
               imageSize={160}
               navPos={180}
               autoplay={false}
-              customSelector={"imageBtnSliderSection abc"}
+              customSelector={"imageSliderSection abc"}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 3, spaceBetween: 50 },
@@ -301,7 +301,7 @@ export default function Home() {
               autoplay={false}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
-                640: { slidesPerView: 1, spaceBetween: 50 },
+                640: { slidesPerView: 2, spaceBetween: 50 },
                 992: { slidesPerView: 2, spaceBetween: 40 },
                 1024: { slidesPerView: 2, spaceBetween: 50 },
                 1366: { slidesPerView: 3, spaceBetween: 10 },
@@ -333,8 +333,8 @@ export default function Home() {
         xl: 13,  // Rich visual experience for extra large screens
         lg: 11,  // Substantial gradients for large screens
         md: 12,  // Balanced for medium screens
-        sm: 11,  // Moderate for tablets
-        xs: 12   // Minimal but visible on mobile
+        sm: 10,  // Moderate for tablets
+        xs: 10   // Minimal but visible on mobile
       }} />
     </>
   );
