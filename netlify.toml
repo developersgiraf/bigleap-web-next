@@ -1,9 +1,14 @@
 [build]
+<<<<<<< HEAD
   command = "npm run build"
+=======
+  command = "npm run clean && npm run build && node scripts/post-build-cleanup.js"
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
+<<<<<<< HEAD
 
 # Simple function configuration to avoid 250MB limit
 [functions]
@@ -13,14 +18,44 @@
 [functions.excluded_files]
   ".next/cache/**" = true
   ".next/standalone/**" = true
+=======
+  # Optimize build for smaller functions
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
+# Enhanced function configuration to reduce size
+[functions]
+  # External modules to reduce function bundle size
+  external_node_modules = ["sharp", "canvas", "bcryptjs", "next-auth", "swiper", "bootstrap"]
+  
+# Exclude more files to reduce function size
+[functions.excluded_files]
+  ".next/cache/**" = true
+  ".next/standalone/**" = true
+  ".next/static/**" = true
+  "node_modules/**" = true
+  "*.map" = true
+  "*.md" = true
+  ".git/**" = true
+  "public/**" = true
+
+# Function timeout configuration
+[functions."*"]
+  timeout = 30
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
 
 # Redirects for Next.js app router
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/___netlify-handler"
   status = 200
+<<<<<<< HEAD
 
 # Headers for static assets
+=======
+  force = false
+
+# Headers for static assets - better caching
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
 [[headers]]
   for = "/static/*"
   [headers.values]
@@ -29,4 +64,19 @@
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
+<<<<<<< HEAD
     Cache-Control = "public, max-age=31536000, immutable"
+=======
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Headers for images
+[[headers]]
+  for = "/public/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+>>>>>>> parent of 9311b77 (removed netlify dependancies)

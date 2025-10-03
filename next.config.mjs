@@ -5,7 +5,15 @@ const nextConfig = {
   
   // Optimize images
   images: {
+<<<<<<< HEAD
     unoptimized: true, // Required for static export compatibility
+=======
+    unoptimized: false, // Enable optimization for better performance
+    formats: ['image/webp', 'image/avif'], // Use modern image formats
+    domains: ['img.youtube.com', 'i.ytimg.com'], // Allow YouTube thumbnails
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
   },
   
   // Minimize function size
