@@ -3,7 +3,7 @@
   "title": "3D Animation",
   "bannerTitle": "3D Animation",
   "archived": false,
-  "index": 0,
+  "index": 1,
   "thumbnail": "/servicess/3danimation.png",
   "section01": {
     "image": "/servicess/red-machine.png",
@@ -12,7 +12,7 @@
   },
   "section02": {
     "DescTitle": "3D Animation:|| Transforming Ideas",
-    "Descpara": "3D animation presents a more realistic depiction of ideas. It involves creating the digital models, rigging them to enable movement and animating them with realistic motion. It is a crucial technology, especially in gaming and VFX, where 3D animation is used to create realistic and immersive environments, CGI, and simulations. ",
+    "Descpara": "3D animation presents a more realistic depiction of ideas. It involves creating the digital models, rigging them to enable movement and animating them with realistic motion. It is a crucial technology, especially in gaming and VFX, where 3D animation is used to create realistic and immersive environments, CGI, and simulations.",
     "subsections": [
       {
         "heading": "Effective Communication of Complex Ideas",
@@ -36,27 +36,27 @@
   "listPara": "",
   "list": [
     {
-      "description": "Got an idea of how your product will be? Then leave the rest to Big Leap. We ensure that you get a detailed product visualization, creating high-quality and detailed images and animations that will help your clients to understand the product, its design, dimensions, and textures.",
-      "title": "Product Visualization"
+      "title": "Product Visualization",
+      "description": "Got an idea of how your product will be? Then leave the rest to Big Leap. We ensure that you get a detailed product visualization, creating high-quality and detailed images and animations that will help your clients to understand the product, its design, dimensions, and textures."
     },
     {
-      "description": "Ready to bring your digital characters to life? At Big Leap, we transform your vision into reality. Whether it's a dynamic mascot for your product or a character that represents your brand vision, our 3D animation services have got you covered. From modeling to rigging, texturing, and animating it to create realistic movements, we ensure that you get it right at each step.",
-      "title": "Character Animation"
+      "title": "Character Animation",
+      "description": "Ready to bring your digital characters to life? At Big Leap, we transform your vision into reality. Whether it's a dynamic mascot for your product or a character that represents your brand vision, our 3D animation services have got you covered. From modeling to rigging, texturing, and animating it to create realistic movements, we ensure that you get it right at each step."
     },
     {
-      "description": "Do you want to explain complex medical procedures or concepts in a way everyone can understand? We are here to deliver compelling solutions. Our medical animation services will break down complex procedures into more easily grasped content. Whether it is for patient education, pharmaceutical marketing, or medical training, we ensure that you get the perfect content.",
-      "title": "Medical Animation"
+      "title": "Medical Animation",
+      "description": "Do you want to explain complex medical procedures or concepts in a way everyone can understand? We are here to deliver compelling solutions. Our medical animation services will break down complex procedures into more easily grasped content. Whether it is for patient education, pharmaceutical marketing, or medical training, we ensure that you get the perfect content."
     },
     {
-      "description": "We provide top-tier industrial and engineering animating services that deliver the realistic moving visuals of industrial equipment,designs, and processes that will help to break down complex information into simple and engaging visuals. By using advanced 3D modelling software we simplify the presentation of technical information.",
-      "title": " Industrial and Engineering Animation"
+      "title": "Industrial and Engineering Animation",
+      "description": "We provide top-tier industrial and engineering animating services that deliver the realistic moving visuals of industrial equipment,designs, and processes that will help to break down complex information into simple and engaging visuals. By using advanced 3D modelling software we simplify the presentation of technical information."
     },
     {
-      "description": "Enhance your brand value and brand recall with 3D commercials. We will help you create a realistic depiction of products and services. Such immersive content will foster interactivity, building trust.",
-      "title": "3D Commercials "
+      "title": "3D Commercials",
+      "description": "Enhance your brand value and brand recall with 3D commercials. We will help you create a realistic depiction of products and services. Such immersive content will foster interactivity, building trust."
     }
   ],
+  "customSlug": "threeDanimation",
   "createdAt": "2025-10-02T17:38:44.549Z",
-  "lastModified": "2025-10-05T13:43:30.651Z",
-  "customSlug": "threeDanimation"
+  "lastModified": "2025-10-05T13:47:41.130Z"
 }
