@@ -90,6 +90,84 @@
   flex: 1;
 }
 
+/* Radio Button Options */
+.backupOptions, .restoreOptions {
+  width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.optionRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.optionRow:hover {
+  background: rgba(237, 35, 42, 0.05);
+  border-color: rgba(237, 35, 42, 0.2);
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 0;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.radioLabel input[type="radio"] {
+  display: none;
+}
+
+.radioCustom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.radioLabel input[type="radio"]:checked + .radioCustom {
+  border-color: #ed232a;
+  background: #ed232a;
+}
+
+.radioLabel input[type="radio"]:checked + .radioCustom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+.optionDesc {
+  font-size: 0.85rem;
+  color: #888;
+  flex: 1;
+  text-align: left;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 .downloadButton, .uploadButton {
   background: linear-gradient(135deg, #ed232a, #ff6b6b);
   color: white;
@@ -359,5 +437,21 @@
   .cancelButton, .confirmButton {
     width: 100%;
     justify-content: center;
+  }
+  
+  .optionRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .radioLabel {
+    min-width: auto;
+  }
+  
+  .optionDesc {
+    margin-left: 2.25rem;
+    padding-left: 0.5rem;
   }
 }

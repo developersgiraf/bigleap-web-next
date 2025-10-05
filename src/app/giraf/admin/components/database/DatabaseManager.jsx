@@ -11,6 +11,9 @@ const DatabaseManager = () => {
   const [isClearingCache, setIsClearingCache] = useState(false);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedBackupType, setSelectedBackupType] = useState('all');
+  const [selectedRestoreType, setSelectedRestoreType] = useState('auto');
+  const [backupFileType, setBackupFileType] = useState(null);
   const [toast, setToast] = useState(null);
 
   const showToast = (message, type = 'success') => {
@@ -18,11 +21,11 @@ const DatabaseManager = () => {
     setTimeout(() => setToast(null), 3000);
   };
 
-  const handleDownloadDatabase = async () => {
+  const handleDownloadDatabase = async (backupType = selectedBackupType) => {
     try {
       setIsDownloading(true);
       
-      const response = await fetch('/api/database/backup');
+      const response = await fetch(`/api/database/backup-enhanced?type=${backupType}`);
       
       if (!response.ok) {
         throw new Error('Failed to download database backup');
@@ -38,13 +41,14 @@ const DatabaseManager = () => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `bigleap-database-backup-${new Date().toISOString().split('T')[0]}.json`;
+      const typeLabel = backupType === 'all' ? 'master' : backupType;
+      link.download = `bigleap-${typeLabel}-backup-${new Date().toISOString().split('T')[0]}.json`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
       
-      showToast('Database backup downloaded successfully!');
+      showToast(`${backupType === 'all' ? 'Master' : capitalize(backupType)} backup downloaded successfully!`);
     } catch (error) {
       console.error('Error downloading database:', error);
       showToast('Failed to download database backup', 'error');
@@ -53,10 +57,27 @@ const DatabaseManager = () => {
     }
   };
 
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
     if (file && file.type === 'application/json') {
       setSelectedFile(file);
+      
+      // Try to detect backup type from filename
+      const filename = file.name.toLowerCase();
+      if (filename.includes('service')) {
+        setBackupFileType('services');
+      } else if (filename.includes('portfolio')) {
+        setBackupFileType('portfolios');
+      } else if (filename.includes('blog')) {
+        setBackupFileType('blogs');
+      } else if (filename.includes('master') || filename.includes('all')) {
+        setBackupFileType('all');
+      } else {
+        setBackupFileType('auto');
+      }
+      
       setShowUploadModal(true);
     } else {
       showToast('Please select a valid JSON file', 'error');
@@ -73,21 +94,52 @@ const DatabaseManager = () => {
       const data = JSON.parse(text);
       
       // Validate the data structure
-      if (!data.WebsiteDatas?.services) {
-        throw new Error('Invalid backup file: Missing WebsiteDatas.services collection');
+      if (!data.WebsiteDatas) {
+        throw new Error('Invalid backup file: Missing WebsiteDatas');
       }
       
-      // Count services in backup (excluding the "id": "services" entry)
-      const servicesObject = data.WebsiteDatas.services;
-      const serviceCount = Object.keys(servicesObject).filter(key => 
-        key !== 'id' && typeof servicesObject[key] === 'object' && servicesObject[key].id
-      ).length;
+      // Count total items in backup
+      const collections = [];
+      let totalCount = 0;
       
-      if (serviceCount === 0) {
-        throw new Error('Invalid backup file: No services found in backup data');
+      if (data.WebsiteDatas.services) {
+        const servicesObject = data.WebsiteDatas.services;
+        const serviceCount = Object.keys(servicesObject).filter(key => 
+          key !== 'id' && typeof servicesObject[key] === 'object' && servicesObject[key].id
+        ).length;
+        if (serviceCount > 0) {
+          collections.push(`${serviceCount} services`);
+          totalCount += serviceCount;
+        }
       }
       
-      const response = await fetch('/api/database/restore', {
+      if (data.WebsiteDatas.portfolios) {
+        const portfoliosObject = data.WebsiteDatas.portfolios;
+        const portfolioCount = Object.keys(portfoliosObject).filter(key => 
+          key !== 'id' && typeof portfoliosObject[key] === 'object' && portfoliosObject[key].id
+        ).length;
+        if (portfolioCount > 0) {
+          collections.push(`${portfolioCount} portfolios`);
+          totalCount += portfolioCount;
+        }
+      }
+      
+      if (data.WebsiteDatas.blogs) {
+        const blogsObject = data.WebsiteDatas.blogs;
+        const blogCount = Object.keys(blogsObject).filter(key => 
+          key !== 'id' && typeof blogsObject[key] === 'object' && blogsObject[key].id
+        ).length;
+        if (blogCount > 0) {
+          collections.push(`${blogCount} blogs`);
+          totalCount += blogCount;
+        }
+      }
+      
+      if (totalCount === 0) {
+        throw new Error('Invalid backup file: No valid data found in backup');
+      }
+      
+      const response = await fetch(`/api/database/restore-enhanced?type=${selectedRestoreType}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,9 +153,10 @@ const DatabaseManager = () => {
       
       const result = await response.json();
       
-      showToast(`Database restored successfully! Updated ${result.updatedCount} records.`);
+      showToast(`Database restored successfully! Updated ${result.updatedCount} items across ${result.restoredCollections.join(', ')}.`);
       setShowUploadModal(false);
       setSelectedFile(null);
+      setBackupFileType(null);
       
     } catch (error) {
       console.error('Error uploading database:', error);
@@ -141,6 +194,7 @@ const DatabaseManager = () => {
   const handleModalClose = () => {
     setShowUploadModal(false);
     setSelectedFile(null);
+    setBackupFileType(null);
   };
 
   return (
@@ -156,10 +210,73 @@ const DatabaseManager = () => {
             <div className={styles.cardIcon}>⬇️</div>
             <div className={styles.cardContent}>
               <h3>Download Database Backup</h3>
-              <p>Download your entire services database as a unified JSON file. This includes all service details, images, descriptions, and metadata in a single structured format.</p>
+              <p>Download your website data as structured JSON files. Choose what to backup:</p>
+              
+              <div className={styles.backupOptions}>
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="backupType" 
+                      value="services" 
+                      checked={selectedBackupType === 'services'}
+                      onChange={(e) => setSelectedBackupType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    Services Only
+                  </label>
+                  <span className={styles.optionDesc}>All service details and metadata</span>
+                </div>
+                
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="backupType" 
+                      value="portfolios" 
+                      checked={selectedBackupType === 'portfolios'}
+                      onChange={(e) => setSelectedBackupType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    Portfolios Only
+                  </label>
+                  <span className={styles.optionDesc}>All portfolio projects and details</span>
+                </div>
+                
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="backupType" 
+                      value="blogs" 
+                      checked={selectedBackupType === 'blogs'}
+                      onChange={(e) => setSelectedBackupType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    Blogs Only
+                  </label>
+                  <span className={styles.optionDesc}>All blog posts and content</span>
+                </div>
+                
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="backupType" 
+                      value="all" 
+                      checked={selectedBackupType === 'all'}
+                      onChange={(e) => setSelectedBackupType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    Master Backup
+                  </label>
+                  <span className={styles.optionDesc}>Complete website data backup</span>
+                </div>
+              </div>
+              
               <button 
                 className={styles.downloadButton}
-                onClick={handleDownloadDatabase}
+                onClick={() => handleDownloadDatabase(selectedBackupType)}
                 disabled={isDownloading}
               >
                 {isDownloading ? (
@@ -170,7 +287,7 @@ const DatabaseManager = () => {
                 ) : (
                   <>
                     <span>📥</span>
-                    Download Backup
+                    Download {selectedBackupType === 'all' ? 'Master' : capitalize(selectedBackupType)} Backup
                   </>
                 )}
               </button>
@@ -183,7 +300,85 @@ const DatabaseManager = () => {
             <div className={styles.cardIcon}>⬆️</div>
             <div className={styles.cardContent}>
               <h3>Upload Database Backup</h3>
-              <p>Replace your current services database with a backup file. The system will automatically convert the unified format back to individual service files.</p>
+              <p>Replace your current website data with a backup file. The system will automatically detect the backup type and restore accordingly.</p>
+              
+              <div className={styles.restoreOptions}>
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="restoreType" 
+                      value="auto" 
+                      checked={selectedRestoreType === 'auto'}
+                      onChange={(e) => setSelectedRestoreType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    Auto-Detect
+                  </label>
+                  <span className={styles.optionDesc}>Automatically detect and restore backup content</span>
+                </div>
+                
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="restoreType" 
+                      value="services" 
+                      checked={selectedRestoreType === 'services'}
+                      onChange={(e) => setSelectedRestoreType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    Services Only
+                  </label>
+                  <span className={styles.optionDesc}>Restore only services data</span>
+                </div>
+                
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="restoreType" 
+                      value="portfolios" 
+                      checked={selectedRestoreType === 'portfolios'}
+                      onChange={(e) => setSelectedRestoreType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    Portfolios Only
+                  </label>
+                  <span className={styles.optionDesc}>Restore only portfolios data</span>
+                </div>
+                
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="restoreType" 
+                      value="blogs" 
+                      checked={selectedRestoreType === 'blogs'}
+                      onChange={(e) => setSelectedRestoreType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    Blogs Only
+                  </label>
+                  <span className={styles.optionDesc}>Restore only blogs data</span>
+                </div>
+                
+                <div className={styles.optionRow}>
+                  <label className={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name="restoreType" 
+                      value="all" 
+                      checked={selectedRestoreType === 'all'}
+                      onChange={(e) => setSelectedRestoreType(e.target.value)}
+                    />
+                    <span className={styles.radioCustom}></span>
+                    All Data
+                  </label>
+                  <span className={styles.optionDesc}>Restore all available data from backup</span>
+                </div>
+              </div>
+              
               <label className={styles.uploadButton}>
                 <span>📤</span>
                 Select Backup File
@@ -231,8 +426,11 @@ const DatabaseManager = () => {
             <div className={styles.warningContent}>
               <h3>Important Notes</h3>
               <ul>
-                <li>Always download a backup before uploading a new one</li>
-                <li>Uploading will completely replace your current database</li>
+                <li>Always download a current backup before uploading a new one</li>
+                <li>Uploading will replace data in the selected collections only</li>
+                <li>Master backup includes services, portfolios, and blogs</li>
+                <li>Auto-detect mode will restore all available data from the backup</li>
+                <li>Specific restore modes will only restore the selected data type</li>
                 <li>This action cannot be undone without a backup</li>
                 <li>Make sure your backup file is valid JSON format</li>
               </ul>
@@ -251,18 +449,20 @@ const DatabaseManager = () => {
         >
           <div className={styles.modalContent}>
             <div className={styles.confirmationWarning}>
-              <p><strong>⚠️ Warning: This action will completely replace your current database!</strong></p>
+              <p><strong>⚠️ Warning: This action will replace your current website data!</strong></p>
               <p>Selected file: <strong>{selectedFile?.name}</strong></p>
               <p>File size: <strong>{(selectedFile?.size / 1024).toFixed(2)} KB</strong></p>
-              <p>Backup format: <strong>Unified JSON Structure</strong></p>
+              <p>Detected type: <strong>{backupFileType ? capitalize(backupFileType === 'auto' ? 'Mixed/Unknown' : backupFileType) : 'Unknown'}</strong></p>
+              <p>Restore mode: <strong>{capitalize(selectedRestoreType === 'auto' ? 'Auto-Detect' : selectedRestoreType)}</strong></p>
             </div>
             
             <div className={styles.confirmationText}>
               <p>Are you absolutely sure you want to proceed? This will:</p>
               <ul>
-                <li>Delete all current website data</li>
+                <li>Delete current data in the selected collections</li>
                 <li>Replace it with the backup file data</li>
-                <li>This action cannot be undone</li>
+                <li>Rebuild all indexes and references</li>
+                <li>This action cannot be undone without another backup</li>
               </ul>
             </div>
             
