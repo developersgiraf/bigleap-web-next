@@ -1,0 +1,30 @@
+{
+  "id": "animation",
+  "slug": "animation",
+  "title": "Animation Portfolio",
+  "subtitle": "Our creativity begins where reality ends",
+  "description": "Watch Our Animation Showreel",
+  "content": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.",
+  "videoUrl": "geMtgE6RmTQ",
+  "titleDescription": "Over the years,|| our animation project|| has thrived at the intersection of|| Imagination || and|| innovation.",
+  "cardData": {
+    "title": "Animation",
+    "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "/portfolio/portfolio1.png",
+    "readbtn": "Explore More",
+    "background": "linear-gradient(to bottom, #28002A, #000000)",
+    "link": "/portfolio/animation"
+  },
+  "seo": {
+    "metaTitle": "Animation Portfolio - BigLeap Creative Studios",
+    "metaDescription": "Explore our stunning animation portfolio showcasing creative projects at the intersection of imagination and innovation.",
+    "keywords": ["animation", "portfolio", "creative", "motion graphics", "2D animation", "3D animation"]
+  },
+  "status": "active",
+  "featured": true,
+  "order": 1,
+  "category": "Creative",
+  "tags": ["animation", "motion-graphics", "creative", "video"],
+  "createdDate": "2024-01-01",
+  "lastModified": "2025-10-06"
+}
