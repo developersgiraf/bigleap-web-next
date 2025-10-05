@@ -333,7 +333,6 @@ const ServicesManager = () => {
       if (needsReload) {
         // Reload data after fixing duplicates
         response = await servicesAPI.getAll();
-        console.log('DEBUG: Services reloaded after fixing duplicates:', response.data);
       }
       
       setServices(response.data);
