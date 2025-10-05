@@ -3,10 +3,10 @@
   "title": "Mastering Visual Effects: The Art of VFX & Post Production",
   "slug": "vfx-post-production",
   "image": "/servicess/VFX & Post Production.png",
-  "caption": "VFX & Post Production",
+  "caption": "VFX & Post Production 02",
   "description": "Visual effects and post-production are the invisible magic that transforms raw footage into cinematic masterpieces. Our VFX team specializes in creating seamless integrations of digital elements with live-action footage, from subtle enhancements to spectacular fantasy sequences. Using industry-standard software and cutting-edge techniques, we deliver professional-quality visual effects that enhance storytelling and captivate audiences.",
   "publishedDate": "2024-10-07",
-  "lastModified": "2024-10-07",
+  "lastModified": "2025-10-05",
   "category": "Post Production",
   "tags": [
     "vfx",
@@ -14,7 +14,7 @@
     "post-production",
     "compositing"
   ],
-  "featured": false,
+  "featured": true,
   "status": "published",
   "index": 7,
   "author": "BigLeap Team",
@@ -28,5 +28,6 @@
       "compositing",
       "motion graphics"
     ]
-  }
+  },
+  "customSlug": ""
 }
