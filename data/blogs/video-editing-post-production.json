@@ -4,46 +4,29 @@
   "slug": "video-editing-post-production",
   "image": "/servicess/video.png",
   "caption": "Video Editing & Post Production",
-  "excerpt": "Professional video editing and post-production services.",
   "description": "Video editing and post-production are where raw footage transforms into compelling stories. Our experienced editors combine technical expertise with creative vision to craft videos that engage, inform, and inspire. From corporate presentations to creative content, we handle every aspect of post-production including editing, color correction, audio mixing, and final delivery in any format required.",
-  "content": {
-    "sections": [
-      {
-        "type": "hero",
-        "heading": "Where Stories Come Together",
-        "content": "Video editing is the art of storytelling through motion pictures. It's where raw footage becomes a cohesive narrative, where pacing creates emotion, and where technical skill meets creative vision to produce content that resonates with audiences."
-      },
-      {
-        "type": "text",
-        "heading": "Comprehensive Post-Production Services",
-        "content": "Our post-production workflow encompasses every stage from initial footage review to final delivery. We use professional-grade software including Avid Media Composer, Adobe Premiere Pro, and DaVinci Resolve to ensure the highest quality output for any project size or budget."
-      },
-      {
-        "type": "list",
-        "heading": "Our Video Editing Services:",
-        "items": [
-          "Professional Video Editing",
-          "Color Correction & Grading",
-          "Audio Mixing & Sound Design",
-          "Motion Graphics Integration",
-          "Multi-format Delivery",
-          "Archive & Asset Management"
-        ]
-      }
-    ]
-  },
   "publishedDate": "2024-10-08",
   "lastModified": "2024-10-08",
   "category": "Post Production",
-  "tags": ["video-editing", "post-production", "color-grading", "audio-mixing"],
+  "tags": [
+    "video-editing",
+    "post-production",
+    "color-grading",
+    "audio-mixing"
+  ],
   "featured": false,
   "status": "draft",
   "index": 8,
   "author": "BigLeap Team",
-  "readTime": 6,
   "seo": {
     "metaTitle": "Video Editing & Post Production Services - Professional Storytelling",
     "metaDescription": "Professional video editing and post-production services transforming raw footage into compelling stories with expert technical and creative skills.",
-    "keywords": ["video editing", "post production", "color grading", "audio mixing", "video production"]
+    "keywords": [
+      "video editing",
+      "post production",
+      "color grading",
+      "audio mixing",
+      "video production"
+    ]
   }
 }

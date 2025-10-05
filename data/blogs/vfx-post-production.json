@@ -4,46 +4,29 @@
   "slug": "vfx-post-production",
   "image": "/servicess/VFX & Post Production.png",
   "caption": "VFX & Post Production",
-  "excerpt": "Advanced visual effects and post-production techniques.",
   "description": "Visual effects and post-production are the invisible magic that transforms raw footage into cinematic masterpieces. Our VFX team specializes in creating seamless integrations of digital elements with live-action footage, from subtle enhancements to spectacular fantasy sequences. Using industry-standard software and cutting-edge techniques, we deliver professional-quality visual effects that enhance storytelling and captivate audiences.",
-  "content": {
-    "sections": [
-      {
-        "type": "hero",
-        "heading": "The Magic Behind the Screen",
-        "content": "Visual effects have become an integral part of modern filmmaking and content creation. From blockbuster movies to social media content, VFX enhances storytelling by creating impossible worlds, creatures, and scenarios that captivate audiences and bring creative visions to life."
-      },
-      {
-        "type": "text",
-        "heading": "Professional VFX Pipeline",
-        "content": "Our VFX process follows industry-standard pipelines, beginning with pre-visualization and planning, moving through compositing and effects creation, and finishing with color grading and final output. We use software like After Effects, Nuke, Houdini, and Maya to achieve professional results."
-      },
-      {
-        "type": "list",
-        "heading": "Our VFX Services Include:",
-        "items": [
-          "Compositing & Integration",
-          "Motion Tracking & Matchmoving",
-          "Digital Matte Painting",
-          "Particle Effects & Simulations",
-          "Color Grading & Correction",
-          "Green Screen & Chroma Keying"
-        ]
-      }
-    ]
-  },
   "publishedDate": "2024-10-07",
   "lastModified": "2024-10-07",
   "category": "Post Production",
-  "tags": ["vfx", "visual-effects", "post-production", "compositing"],
+  "tags": [
+    "vfx",
+    "visual-effects",
+    "post-production",
+    "compositing"
+  ],
   "featured": false,
   "status": "draft",
   "index": 7,
   "author": "BigLeap Team",
-  "readTime": 8,
   "seo": {
     "metaTitle": "VFX & Post Production Services - Professional Visual Effects",
     "metaDescription": "Professional VFX and post-production services creating seamless visual effects and enhancing storytelling through advanced techniques.",
-    "keywords": ["vfx", "visual effects", "post production", "compositing", "motion graphics"]
+    "keywords": [
+      "vfx",
+      "visual effects",
+      "post production",
+      "compositing",
+      "motion graphics"
+    ]
   }
 }

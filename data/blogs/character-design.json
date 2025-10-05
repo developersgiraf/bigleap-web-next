@@ -4,46 +4,28 @@
   "slug": "character-design",
   "image": "/servicess/character.png",
   "caption": "Character Design",
-  "excerpt": "Create unique, expressive characters that connect with audiences.",
   "description": "Character design is the foundation of memorable storytelling and brand identity. Our talented designers create unique, expressive characters that connect with audiences and bring your stories to life. From initial concept sketches to final polished designs, we develop characters with distinct personalities, visual appeal, and emotional depth. Whether for animation, games, marketing, or publishing, our character designs are crafted to be both visually striking and functionally effective for your project needs.",
-  "content": {
-    "sections": [
-      {
-        "type": "hero",
-        "heading": "The Soul of Every Great Story",
-        "content": "Great characters are the heart of memorable stories. They connect with audiences on an emotional level, drive narratives forward, and become iconic symbols that represent brands and ideas. Character design is where art meets psychology, creating beings that feel real and relatable."
-      },
-      {
-        "type": "text",
-        "heading": "Our Character Design Process",
-        "content": "We begin every character design project with deep research into your story, brand, and target audience. Our process includes concept development, mood boards, initial sketches, refinement phases, and final production-ready designs. Each character is crafted with attention to personality, functionality, and visual appeal."
-      },
-      {
-        "type": "list",
-        "heading": "Character Design Services:",
-        "items": [
-          "Concept Art & Development",
-          "Character Sheets & Turnarounds",
-          "Expression Studies",
-          "Mascot Design",
-          "Game Character Design",
-          "Brand Character Development"
-        ]
-      }
-    ]
-  },
   "publishedDate": "2024-10-04",
   "lastModified": "2024-10-04",
   "category": "Design",
-  "tags": ["character-design", "concept-art", "mascot-design", "brand-identity"],
+  "tags": [
+    "character-design",
+    "concept-art",
+    "mascot-design",
+    "brand-identity"
+  ],
   "featured": true,
   "status": "published",
   "index": 4,
   "author": "BigLeap Team",
-  "readTime": 5,
   "seo": {
     "metaTitle": "Character Design Services - Bringing Stories to Life",
     "metaDescription": "Professional character design services creating unique, expressive characters for animation, games, and branding projects.",
-    "keywords": ["character design", "concept art", "mascot design", "character development"]
+    "keywords": [
+      "character design",
+      "concept art",
+      "mascot design",
+      "character development"
+    ]
   }
 }

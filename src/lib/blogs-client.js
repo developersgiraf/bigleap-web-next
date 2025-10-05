@@ -207,6 +207,70 @@ class BlogsAPI {
       return { success: false, error: error.message };
     }
   }
+
+  // Get all available tags
+  async getTags() {
+    const cacheKey = 'blog_tags';
+    const cached = this.getCache(cacheKey);
+    
+    if (cached) {
+      console.log('Returning cached blog tags');
+      return { success: true, data: cached };
+    }
+
+    try {
+      const response = await fetch('/api/blogs/tags');
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        this.setCache(cacheKey, data.data);
+        console.log('Blog tags loaded and cached');
+        return data;
+      } else {
+        throw new Error(data.error || 'Failed to fetch tags');
+      }
+    } catch (error) {
+      console.error('Error fetching blog tags:', error);
+      return { success: false, error: error.message };
+    }
+  }
+
+  // Get blogs by tag
+  async getByTag(tag) {
+    const cacheKey = `blogs_tag_${tag}`;
+    const cached = this.getCache(cacheKey);
+    
+    if (cached) {
+      console.log(`Returning cached blogs for tag: ${tag}`);
+      return { success: true, data: cached };
+    }
+
+    try {
+      const response = await fetch(`/api/blogs/tags/${encodeURIComponent(tag)}`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        this.setCache(cacheKey, data.data);
+        console.log(`Blogs for tag "${tag}" loaded and cached`);
+        return data;
+      } else {
+        throw new Error(data.error || 'Failed to fetch blogs by tag');
+      }
+    } catch (error) {
+      console.error(`Error fetching blogs for tag "${tag}":`, error);
+      return { success: false, error: error.message };
+    }
+  }
 }
 
 // Create and export singleton instance

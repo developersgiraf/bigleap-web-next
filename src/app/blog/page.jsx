@@ -3,6 +3,7 @@ import GradientLights from "../components/gradient-lights/gradient";
 import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
 import TitleBanner from "../components/title-banner/titleBannerr";
 import styles from "./blog.module.css";
+import CollapsibleTagCloud from "./components/CollapsibleTagCloud";
 import fs from 'fs';
 import path from 'path';
 
@@ -38,17 +39,72 @@ async function getPublishedBlogs() {
   }
 }
 
+// Server-side function to get all tags
+async function getAllTags() {
+  try {
+    const blogsDir = path.join(process.cwd(), 'data', 'blogs');
+    const indexFile = path.join(blogsDir, 'index.json');
+    
+    if (!fs.existsSync(indexFile)) {
+      return [];
+    }
+    
+    const indexData = fs.readFileSync(indexFile, 'utf8');
+    const blogsIndex = JSON.parse(indexData);
+    
+    // Get published blogs only
+    const publishedBlogs = blogsIndex.filter(blog => blog.status === 'published');
+    
+    const allTags = new Set();
+    const tagCounts = {};
+    
+    // Read each blog file and collect tags
+    for (const blog of publishedBlogs) {
+      try {
+        const blogFile = path.join(blogsDir, `${blog.id}.json`);
+        if (fs.existsSync(blogFile)) {
+          const fileContent = fs.readFileSync(blogFile, 'utf8');
+          const blogData = JSON.parse(fileContent);
+          if (blogData.tags) {
+            blogData.tags.forEach(tag => {
+              allTags.add(tag);
+              tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+            });
+          }
+        }
+      } catch (error) {
+        console.error(`Error reading blog file ${blog.id}:`, error.message);
+        // Continue with next blog instead of crashing
+      }
+    }
+    
+    return Array.from(allTags).map(tag => ({
+      name: tag,
+      count: tagCounts[tag],
+      displayName: tag.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+    })).sort((a, b) => b.count - a.count);
+  } catch (error) {
+    console.error('Error reading tags:', error);
+    return [];
+  }
+}
+
 export default async function BlogPage() {
   let blogData = [];
+  let allTags = [];
   
   try {
     // Fetch published blogs from server
     const publishedBlogs = await getPublishedBlogs();
     blogData = transformBlogData(publishedBlogs);
+    
+    // Get all available tags
+    allTags = await getAllTags();
   } catch (error) {
     console.error('Error loading blogs:', error);
     // Fallback to empty array
   }
+
   return (
     <>
       <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" sub=""/>
@@ -60,13 +116,26 @@ export default async function BlogPage() {
           anim="x"
           showSelect={false}
         />
+
+        {/* Tag Navigation */}
+        {allTags.length > 0 && (
+          <div className={styles.tagNavigation}>
+            <div className="container">
+              <div className={styles.tagHeader}>
+                <h2>Browse by Tags</h2>
+              </div>
+              
+              <CollapsibleTagCloud tags={allTags.map(tag => tag.name)} />
+            </div>
+          </div>
+        )}
       </div>
       <GradientLights customCounts={{
-        xl: 4,  // Rich visual experience for extra large screens
-        lg: 4,  // Substantial gradients for large screens
-        md: 6,  // Balanced for medium screens
-        sm: 8,  // Moderate for tablets
-        xs: 8   // Minimal but visible on mobile
+        xl: 2,  // Subtle gradients for extra large screens
+        lg: 2,  // Minimal gradients for large screens
+        md: 3,  // Light gradients for medium screens
+        sm: 2,  // Very subtle for tablets
+        xs: 1   // Minimal on mobile
       }} />
     </>
   );

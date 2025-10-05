@@ -3,6 +3,7 @@ import GradientLights from "@/app/components/gradient-lights/gradient";
 import { GRADIENT_PRESETS } from "@/app/components/gradient-lights/gradientConfig.js";
 import styles from "../[blogdetail]/blog-details.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
@@ -78,6 +79,44 @@ export default async function BlogDetailPage({ params }) {
             className={styles.image}
           />
           <p className={styles.description}>{blogsData.description}</p>
+          
+          {/* Blog Metadata */}
+          <div className={styles.blogMeta}>
+            {blogsData.publishedDate && (
+              <div className={styles.metaItem}>
+                <strong>Published:</strong> {new Date(blogsData.publishedDate).toLocaleDateString()}
+              </div>
+            )}
+            {blogsData.lastModified && (
+              <div className={styles.metaItem}>
+                <strong>Last Modified:</strong> {new Date(blogsData.lastModified).toLocaleDateString()}
+              </div>
+            )}
+            {blogsData.category && (
+              <div className={styles.metaItem}>
+                <strong>Category:</strong> {blogsData.category}
+              </div>
+            )}
+            {blogsData.author && (
+              <div className={styles.metaItem}>
+                <strong>Author:</strong> {blogsData.author}
+              </div>
+            )}
+          </div>
+          
+          {/* Tags */}
+          {blogsData.tags && blogsData.tags.length > 0 && (
+            <div className={styles.tagsSection}>
+              <strong>Tags:</strong>
+              <div className={styles.tagsList}>
+                {blogsData.tags.map((tag, index) => (
+                  <Link key={index} href={`/blog/tags/${tag}`} className={styles.tag}>
+                    {tag.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <GradientLights customCounts={{
