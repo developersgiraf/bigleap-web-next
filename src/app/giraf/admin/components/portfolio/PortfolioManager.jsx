@@ -161,6 +161,26 @@ export default function PortfolioManager() {
     }
   });
 
+  // Helper functions for gradient colors
+  const extractGradientColors = (gradientString) => {
+    const match = gradientString.match(/#[a-fA-F0-9]{6}/g);
+    return match && match.length >= 2 ? match : ['#000000', '#000000'];
+  };
+
+  const getGradientColors = () => {
+    return extractGradientColors(formData.cardData.background);
+  };
+
+  const updateGradientColor = (colorIndex, newColor) => {
+    const colors = getGradientColors();
+    colors[colorIndex] = newColor;
+    const newGradient = `linear-gradient(to bottom, ${colors[0]}, ${colors[1]})`;
+    setFormData(prev => ({ 
+      ...prev, 
+      cardData: { ...prev.cardData, background: newGradient }
+    }));
+  };
+
   // Load portfolios
   const loadPortfolios = useCallback(async () => {
     try {
@@ -600,15 +620,55 @@ export default function PortfolioManager() {
                 
                 <div className={styles.formGroup}>
                   <label>Background Gradient</label>
-                  <input
-                    type="text"
-                    value={formData.cardData.background}
-                    onChange={(e) => setFormData(prev => ({ 
-                      ...prev, 
-                      cardData: { ...prev.cardData, background: e.target.value }
-                    }))}
-                    placeholder="linear-gradient(to bottom, #000000, #000000)"
-                  />
+                  <div className={styles.gradientControls}>
+                    <div className={styles.colorPickerGroup}>
+                      <label>Top Color</label>
+                      <div className={styles.colorInputWrapper}>
+                        <input
+                          type="color"
+                          value={getGradientColors()[0]}
+                          onChange={(e) => updateGradientColor(0, e.target.value)}
+                          className={styles.colorPicker}
+                        />
+                        <input
+                          type="text"
+                          value={getGradientColors()[0]}
+                          onChange={(e) => updateGradientColor(0, e.target.value)}
+                          className={styles.colorCode}
+                          placeholder="#000000"
+                          pattern="#[a-fA-F0-9]{6}"
+                          maxLength="7"
+                        />
+                      </div>
+                    </div>
+                    <div className={styles.colorPickerGroup}>
+                      <label>Bottom Color</label>
+                      <div className={styles.colorInputWrapper}>
+                        <input
+                          type="color"
+                          value={getGradientColors()[1]}
+                          onChange={(e) => updateGradientColor(1, e.target.value)}
+                          className={styles.colorPicker}
+                        />
+                        <input
+                          type="text"
+                          value={getGradientColors()[1]}
+                          onChange={(e) => updateGradientColor(1, e.target.value)}
+                          className={styles.colorCode}
+                          placeholder="#000000"
+                          pattern="#[a-fA-F0-9]{6}"
+                          maxLength="7"
+                        />
+                      </div>
+                    </div>
+                    <div className={styles.gradientPreview}>
+                      <div 
+                        className={styles.previewBox}
+                        style={{ background: formData.cardData.background }}
+                      ></div>
+                      <span className={styles.gradientValue}>{formData.cardData.background}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
