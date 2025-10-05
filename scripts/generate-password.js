@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 
-// Default admin password - change this!
-const password = 'admin123';
+// New secure admin password - change this to your desired password!
+const password = '2255';
 
 bcrypt.hash(password, 10, (err, hash) => {
   if (err) {
@@ -13,3 +13,5 @@ bcrypt.hash(password, 10, (err, hash) => {
   console.log('Hashed password:', hash);
   console.log('\nUpdate your data/users/index.json with this hash.');
 });
+
+// run : node scripts/generate-password.js
