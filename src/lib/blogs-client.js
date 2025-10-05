@@ -271,6 +271,130 @@ class BlogsAPI {
       return { success: false, error: error.message };
     }
   }
+
+  // Admin Methods - Create, Update, Delete operations
+  
+  // Create new blog
+  async create(blogData) {
+    try {
+      const response = await fetch('/api/blogs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(blogData)
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        // Invalidate cache after creation
+        this.invalidateCache();
+        console.log('Blog created successfully');
+        return data;
+      } else {
+        throw new Error(data.error || 'Failed to create blog');
+      }
+    } catch (error) {
+      console.error('Error creating blog:', error);
+      return { success: false, error: error.message };
+    }
+  }
+
+  // Update existing blog
+  async update(id, blogData) {
+    try {
+      const response = await fetch(`/api/blogs/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(blogData)
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        // Invalidate cache after update
+        this.invalidateCache();
+        console.log(`Blog ${id} updated successfully`);
+        return data;
+      } else {
+        throw new Error(data.error || 'Failed to update blog');
+      }
+    } catch (error) {
+      console.error(`Error updating blog ${id}:`, error);
+      return { success: false, error: error.message };
+    }
+  }
+
+  // Delete blog
+  async delete(id) {
+    try {
+      const response = await fetch(`/api/blogs/${id}`, {
+        method: 'DELETE',
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        // Invalidate cache after deletion
+        this.invalidateCache();
+        console.log(`Blog ${id} deleted successfully`);
+        return data;
+      } else {
+        throw new Error(data.error || 'Failed to delete blog');
+      }
+    } catch (error) {
+      console.error(`Error deleting blog ${id}:`, error);
+      return { success: false, error: error.message };
+    }
+  }
+
+  // Toggle blog status (publish/draft)
+  async toggleStatus(id, status) {
+    return this.update(id, { status });
+  }
+
+  // Toggle blog featured status
+  async toggleFeatured(id, featured) {
+    return this.update(id, { featured });
+  }
+
+  // Search all blogs (including drafts) - Admin only
+  async searchAll(query) {
+    try {
+      const result = await this.getAll();
+      if (result.success) {
+        const searchResults = result.data.filter(blog => {
+          const searchText = query.toLowerCase();
+          return (
+            blog.title.toLowerCase().includes(searchText) ||
+            (blog.description && blog.description.toLowerCase().includes(searchText)) ||
+            blog.category.toLowerCase().includes(searchText) ||
+            (blog.tags && blog.tags.some(tag => tag.toLowerCase().includes(searchText)))
+          );
+        });
+        return { success: true, data: searchResults };
+      }
+      return result;
+    } catch (error) {
+      console.error(`Error searching all blogs with query "${query}":`, error);
+      return { success: false, error: error.message };
+    }
+  }
 }
 
 // Create and export singleton instance

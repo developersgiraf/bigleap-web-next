@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useAuth } from '../../../../contexts/AuthContext';
 import styles from './dashboard.module.css';
 import ServicesManager from './ServicesManager';
+import BlogManager from './BlogManager';
 import DatabaseManager from './DatabaseManager';
 
 const AdminDashboard = () => {
@@ -81,17 +82,7 @@ const AdminDashboard = () => {
           </div>
         );
       case 'blog':
-        return (
-          <div className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2>Blog Management</h2>
-              <button className={styles.primaryButton}>Add New Post</button>
-            </div>
-            <div className={styles.placeholder}>
-              <p>Blog post creation, editing, and content management</p>
-            </div>
-          </div>
-        );
+        return <BlogManager />;
       case 'clients':
         return (
           <div className={styles.section}>
