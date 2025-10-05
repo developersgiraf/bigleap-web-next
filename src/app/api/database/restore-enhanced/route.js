@@ -5,7 +5,9 @@ import { blogsAPI } from '../../../../lib/blogs-simple.js';
 
 export async function POST(request) {
   try {
-    const backupData = await request.json();
+    const requestData = await request.json();
+    const backupData = { ...requestData };
+    const selectedConflicts = requestData.selectedConflicts || {};
 
     // Get query parameters to determine restore type
     const { searchParams } = new URL(request.url);
@@ -55,9 +57,18 @@ export async function POST(request) {
         const backupServices = [];
         
         // Convert backup services object to array, filtering out the collection identifier
+        // and only including selected items if conflicts are specified
         for (const [key, value] of Object.entries(servicesObject)) {
           if (key !== 'id' && typeof value === 'object' && value.id) {
-            backupServices.push(value);
+            // If selectedConflicts is provided, only include selected items
+            if (Object.keys(selectedConflicts).length > 0) {
+              if (selectedConflicts[`services-${value.id}`]) {
+                backupServices.push(value);
+              }
+            } else {
+              // No conflict selection, include all
+              backupServices.push(value);
+            }
           }
         }
 
@@ -106,9 +117,18 @@ export async function POST(request) {
         const backupPortfolios = [];
         
         // Convert backup portfolios object to array, filtering out the collection identifier
+        // and only including selected items if conflicts are specified
         for (const [key, value] of Object.entries(portfoliosObject)) {
           if (key !== 'id' && typeof value === 'object' && value.id) {
-            backupPortfolios.push(value);
+            // If selectedConflicts is provided, only include selected items
+            if (Object.keys(selectedConflicts).length > 0) {
+              if (selectedConflicts[`portfolios-${value.id}`]) {
+                backupPortfolios.push(value);
+              }
+            } else {
+              // No conflict selection, include all
+              backupPortfolios.push(value);
+            }
           }
         }
 
@@ -157,9 +177,18 @@ export async function POST(request) {
         const backupBlogs = [];
         
         // Convert backup blogs object to array, filtering out the collection identifier
+        // and only including selected items if conflicts are specified
         for (const [key, value] of Object.entries(blogsObject)) {
           if (key !== 'id' && typeof value === 'object' && value.id) {
-            backupBlogs.push(value);
+            // If selectedConflicts is provided, only include selected items
+            if (Object.keys(selectedConflicts).length > 0) {
+              if (selectedConflicts[`blogs-${value.id}`]) {
+                backupBlogs.push(value);
+              }
+            } else {
+              // No conflict selection, include all
+              backupBlogs.push(value);
+            }
           }
         }
 

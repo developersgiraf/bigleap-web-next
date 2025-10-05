@@ -15,6 +15,10 @@ const DatabaseManager = () => {
   const [selectedRestoreType, setSelectedRestoreType] = useState('auto');
   const [backupFileType, setBackupFileType] = useState(null);
   const [toast, setToast] = useState(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [backupComparison, setBackupComparison] = useState(null);
+  const [selectedConflicts, setSelectedConflicts] = useState({});
+  const [showDetailedComparison, setShowDetailedComparison] = useState(false);
 
   const showToast = (message, type = 'success') => {
     setToast({ message, type });
@@ -59,7 +63,7 @@ const DatabaseManager = () => {
 
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
-  const handleFileSelect = (event) => {
+  const handleFileSelect = async (event) => {
     const file = event.target.files[0];
     if (file && file.type === 'application/json') {
       setSelectedFile(file);
@@ -78,19 +82,20 @@ const DatabaseManager = () => {
         setBackupFileType('auto');
       }
       
+      // Analyze backup file and compare with current data
+      await analyzeBackupFile(file);
+      
       setShowUploadModal(true);
     } else {
       showToast('Please select a valid JSON file', 'error');
     }
   };
 
-  const handleUploadDatabase = async () => {
-    if (!selectedFile) return;
-
+  const analyzeBackupFile = async (file) => {
     try {
-      setIsUploading(true);
+      setIsAnalyzing(true);
       
-      const text = await selectedFile.text();
+      const text = await file.text();
       const data = JSON.parse(text);
       
       // Validate the data structure
@@ -98,53 +103,68 @@ const DatabaseManager = () => {
         throw new Error('Invalid backup file: Missing WebsiteDatas');
       }
       
-      // Count total items in backup
-      const collections = [];
-      let totalCount = 0;
+      // Send data to comparison API
+      const response = await fetch('/api/database/compare', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
       
-      if (data.WebsiteDatas.services) {
-        const servicesObject = data.WebsiteDatas.services;
-        const serviceCount = Object.keys(servicesObject).filter(key => 
-          key !== 'id' && typeof servicesObject[key] === 'object' && servicesObject[key].id
-        ).length;
-        if (serviceCount > 0) {
-          collections.push(`${serviceCount} services`);
-          totalCount += serviceCount;
-        }
+      if (!response.ok) {
+        throw new Error('Failed to analyze backup file');
       }
       
-      if (data.WebsiteDatas.portfolios) {
-        const portfoliosObject = data.WebsiteDatas.portfolios;
-        const portfolioCount = Object.keys(portfoliosObject).filter(key => 
-          key !== 'id' && typeof portfoliosObject[key] === 'object' && portfoliosObject[key].id
-        ).length;
-        if (portfolioCount > 0) {
-          collections.push(`${portfolioCount} portfolios`);
-          totalCount += portfolioCount;
-        }
+      const result = await response.json();
+      
+      if (result.success) {
+        setBackupComparison(result.comparison);
+        // Initialize conflict selections (all conflicts selected by default)
+        const conflicts = {};
+        ['services', 'portfolios', 'blogs'].forEach(collection => {
+          result.comparison[collection].modified.forEach(item => {
+            conflicts[`${collection}-${item.id}`] = true;
+          });
+          result.comparison[collection].new.forEach(item => {
+            conflicts[`${collection}-${item.id}`] = true;
+          });
+        });
+        setSelectedConflicts(conflicts);
+      } else {
+        throw new Error(result.error || 'Failed to analyze backup');
       }
       
-      if (data.WebsiteDatas.blogs) {
-        const blogsObject = data.WebsiteDatas.blogs;
-        const blogCount = Object.keys(blogsObject).filter(key => 
-          key !== 'id' && typeof blogsObject[key] === 'object' && blogsObject[key].id
-        ).length;
-        if (blogCount > 0) {
-          collections.push(`${blogCount} blogs`);
-          totalCount += blogCount;
-        }
-      }
+    } catch (error) {
+      console.error('Error analyzing backup file:', error);
+      showToast('Failed to analyze backup file: ' + error.message, 'error');
+      setBackupComparison(null);
+    } finally {
+      setIsAnalyzing(false);
+    }
+  };
+
+  const handleUploadDatabase = async () => {
+    if (!selectedFile || !backupComparison) return;
+
+    try {
+      setIsUploading(true);
       
-      if (totalCount === 0) {
-        throw new Error('Invalid backup file: No valid data found in backup');
-      }
+      const text = await selectedFile.text();
+      const data = JSON.parse(text);
+      
+      // Filter data based on selected conflicts
+      const filteredData = {
+        ...data,
+        selectedConflicts
+      };
       
       const response = await fetch(`/api/database/restore-enhanced?type=${selectedRestoreType}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(filteredData),
       });
       
       if (!response.ok) {
@@ -157,6 +177,8 @@ const DatabaseManager = () => {
       setShowUploadModal(false);
       setSelectedFile(null);
       setBackupFileType(null);
+      setBackupComparison(null);
+      setSelectedConflicts({});
       
     } catch (error) {
       console.error('Error uploading database:', error);
@@ -191,10 +213,36 @@ const DatabaseManager = () => {
     }
   };
 
+  const handleConflictToggle = (conflictKey) => {
+    setSelectedConflicts(prev => ({
+      ...prev,
+      [conflictKey]: !prev[conflictKey]
+    }));
+  };
+
+  const handleSelectAllConflicts = (collection, type) => {
+    const newSelections = { ...selectedConflicts };
+    backupComparison[collection][type].forEach(item => {
+      newSelections[`${collection}-${item.id}`] = true;
+    });
+    setSelectedConflicts(newSelections);
+  };
+
+  const handleDeselectAllConflicts = (collection, type) => {
+    const newSelections = { ...selectedConflicts };
+    backupComparison[collection][type].forEach(item => {
+      newSelections[`${collection}-${item.id}`] = false;
+    });
+    setSelectedConflicts(newSelections);
+  };
+
   const handleModalClose = () => {
     setShowUploadModal(false);
     setSelectedFile(null);
     setBackupFileType(null);
+    setBackupComparison(null);
+    setSelectedConflicts({});
+    setShowDetailedComparison(false);
   };
 
   return (
@@ -444,27 +492,188 @@ const DatabaseManager = () => {
         <Modal
           isOpen={showUploadModal}
           onClose={handleModalClose}
-          title="Restore Database"
+          title="Restore Database - Data Analysis"
           type="danger"
         >
           <div className={styles.modalContent}>
-            <div className={styles.confirmationWarning}>
-              <p><strong>⚠️ Warning: This action will replace your current website data!</strong></p>
-              <p>Selected file: <strong>{selectedFile?.name}</strong></p>
-              <p>File size: <strong>{(selectedFile?.size / 1024).toFixed(2)} KB</strong></p>
-              <p>Detected type: <strong>{backupFileType ? capitalize(backupFileType === 'auto' ? 'Mixed/Unknown' : backupFileType) : 'Unknown'}</strong></p>
-              <p>Restore mode: <strong>{capitalize(selectedRestoreType === 'auto' ? 'Auto-Detect' : selectedRestoreType)}</strong></p>
-            </div>
-            
-            <div className={styles.confirmationText}>
-              <p>Are you absolutely sure you want to proceed? This will:</p>
-              <ul>
-                <li>Delete current data in the selected collections</li>
-                <li>Replace it with the backup file data</li>
-                <li>Rebuild all indexes and references</li>
-                <li>This action cannot be undone without another backup</li>
-              </ul>
-            </div>
+            {isAnalyzing ? (
+              <div className={styles.analyzeLoader}>
+                <div className={styles.spinner}></div>
+                <p>Analyzing backup file and comparing with current data...</p>
+              </div>
+            ) : backupComparison ? (
+              <>
+                <div className={styles.backupSummary}>
+                  <h4>📁 Backup File Analysis</h4>
+                  <div className={styles.fileInfo}>
+                    <p>File: <strong>{selectedFile?.name}</strong></p>
+                    <p>Size: <strong>{(selectedFile?.size / 1024).toFixed(2)} KB</strong></p>
+                    <p>Type: <strong>{backupFileType ? capitalize(backupFileType === 'auto' ? 'Mixed/Unknown' : backupFileType) : 'Unknown'}</strong></p>
+                    <p>Collections: <strong>{backupComparison.summary.collections.join(', ')}</strong></p>
+                  </div>
+                </div>
+
+                <div className={styles.comparisonSummary}>
+                  <h4>📊 Impact Summary</h4>
+                  <div className={styles.summaryGrid}>
+                    <div className={styles.summaryItem}>
+                      <span className={styles.summaryNumber}>{backupComparison.summary.totalNew}</span>
+                      <span className={styles.summaryLabel}>New Items</span>
+                    </div>
+                    <div className={styles.summaryItem}>
+                      <span className={styles.summaryNumber}>{backupComparison.summary.totalModified}</span>
+                      <span className={styles.summaryLabel}>Modified Items</span>
+                    </div>
+                    <div className={styles.summaryItem}>
+                      <span className={styles.summaryNumber}>{backupComparison.summary.totalUnchanged}</span>
+                      <span className={styles.summaryLabel}>Unchanged Items</span>
+                    </div>
+                    <div className={styles.summaryItem}>
+                      <span className={styles.summaryNumber}>{backupComparison.summary.totalToBeDeleted}</span>
+                      <span className={styles.summaryLabel}>Items to Delete</span>
+                    </div>
+                  </div>
+                </div>
+
+                {!showDetailedComparison ? (
+                  <div className={styles.quickActions}>
+                    <button 
+                      className={styles.detailButton}
+                      onClick={() => setShowDetailedComparison(true)}
+                    >
+                      🔍 View Detailed Comparison & Select Items
+                    </button>
+                  </div>
+                ) : (
+                  <div className={styles.detailedComparison}>
+                    <div className={styles.comparisonHeader}>
+                      <h4>📋 Detailed Comparison - Select Items to Restore</h4>
+                      <button 
+                        className={styles.collapseButton}
+                        onClick={() => setShowDetailedComparison(false)}
+                      >
+                        ⬆️ Collapse
+                      </button>
+                    </div>
+
+                    {['services', 'portfolios', 'blogs'].map(collection => {
+                      const collectionData = backupComparison[collection];
+                      const hasData = collectionData.new.length > 0 || collectionData.modified.length > 0 || collectionData.toBeDeleted.length > 0;
+                      
+                      if (!hasData) return null;
+
+                      return (
+                        <div key={collection} className={styles.collectionSection}>
+                          <h5>📂 {capitalize(collection)}</h5>
+                          
+                          {collectionData.new.length > 0 && (
+                            <div className={styles.changeGroup}>
+                              <div className={styles.changeHeader}>
+                                <span className={styles.changeIcon}>➕</span>
+                                <span className={styles.changeTitle}>New {capitalize(collection)} ({collectionData.new.length})</span>
+                                <div className={styles.batchActions}>
+                                  <button onClick={() => handleSelectAllConflicts(collection, 'new')}>Select All</button>
+                                  <button onClick={() => handleDeselectAllConflicts(collection, 'new')}>Deselect All</button>
+                                </div>
+                              </div>
+                              <div className={styles.itemsList}>
+                                {collectionData.new.map(item => (
+                                  <div key={item.id} className={styles.itemRow}>
+                                    <label className={styles.checkboxLabel}>
+                                      <input 
+                                        type="checkbox" 
+                                        checked={selectedConflicts[`${collection}-${item.id}`] || false}
+                                        onChange={() => handleConflictToggle(`${collection}-${item.id}`)}
+                                      />
+                                      <span className={styles.itemTitle}>{item.title}</span>
+                                      <span className={styles.itemId}>({item.id})</span>
+                                    </label>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {collectionData.modified.length > 0 && (
+                            <div className={styles.changeGroup}>
+                              <div className={styles.changeHeader}>
+                                <span className={styles.changeIcon}>✏️</span>
+                                <span className={styles.changeTitle}>Modified {capitalize(collection)} ({collectionData.modified.length})</span>
+                                <div className={styles.batchActions}>
+                                  <button onClick={() => handleSelectAllConflicts(collection, 'modified')}>Select All</button>
+                                  <button onClick={() => handleDeselectAllConflicts(collection, 'modified')}>Deselect All</button>
+                                </div>
+                              </div>
+                              <div className={styles.itemsList}>
+                                {collectionData.modified.map(item => (
+                                  <div key={item.id} className={styles.itemRow}>
+                                    <label className={styles.checkboxLabel}>
+                                      <input 
+                                        type="checkbox" 
+                                        checked={selectedConflicts[`${collection}-${item.id}`] || false}
+                                        onChange={() => handleConflictToggle(`${collection}-${item.id}`)}
+                                      />
+                                      <div className={styles.itemDetails}>
+                                        <span className={styles.itemTitle}>{item.title}</span>
+                                        <span className={styles.itemId}>({item.id})</span>
+                                        <div className={styles.changeDetails}>
+                                          <span className={styles.dateInfo}>
+                                            Current: {item.currentLastModified} → Backup: {item.backupLastModified}
+                                          </span>
+                                          {item.changes && item.changes.length > 0 && (
+                                            <div className={styles.fieldChanges}>
+                                              {item.changes.slice(0, 2).map((change, idx) => (
+                                                <span key={idx} className={styles.fieldChange}>
+                                                  {change.field} changed
+                                                </span>
+                                              ))}
+                                              {item.changes.length > 2 && (
+                                                <span className={styles.moreChanges}>
+                                                  +{item.changes.length - 2} more changes
+                                                </span>
+                                              )}
+                                            </div>
+                                          )}
+                                        </div>
+                                      </div>
+                                    </label>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {collectionData.toBeDeleted.length > 0 && (
+                            <div className={styles.changeGroup}>
+                              <div className={styles.changeHeader}>
+                                <span className={styles.changeIcon}>❌</span>
+                                <span className={styles.changeTitle}>Will be Deleted ({collectionData.toBeDeleted.length})</span>
+                              </div>
+                              <div className={styles.itemsList}>
+                                {collectionData.toBeDeleted.map(item => (
+                                  <div key={item.id} className={styles.itemRow}>
+                                    <span className={styles.itemTitle}>{item.title}</span>
+                                    <span className={styles.itemId}>({item.id})</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                <div className={styles.finalWarning}>
+                  <p><strong>⚠️ Final Warning:</strong> This will permanently modify your website data based on your selections above.</p>
+                </div>
+              </>
+            ) : (
+              <div className={styles.errorMessage}>
+                <p>❌ Failed to analyze backup file. Please check the file format and try again.</p>
+              </div>
+            )}
             
             <div className={styles.modalActions}>
               <button 
@@ -477,15 +686,15 @@ const DatabaseManager = () => {
               <button 
                 className={styles.confirmButton}
                 onClick={handleUploadDatabase}
-                disabled={isUploading}
+                disabled={isUploading || isAnalyzing || !backupComparison}
               >
                 {isUploading ? (
                   <span className={styles.loading}>
                     <span className={styles.spinner}></span>
-                    Restoring...
+                    Restoring Selected Items...
                   </span>
                 ) : (
-                  'Yes, Restore Database'
+                  `Restore Selected Items (${Object.values(selectedConflicts).filter(Boolean).length})`
                 )}
               </button>
             </div>
