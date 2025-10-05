@@ -164,7 +164,7 @@ export default async function BlogTagPage({ params }) {
             </div>
             
             <CollapsibleTagCloud 
-              tags={allTags.map(t => t.name)} 
+              tags={allTags} 
               activeTag={tag} 
             />
           </div>

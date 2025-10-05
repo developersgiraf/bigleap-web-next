@@ -125,7 +125,7 @@ export default async function BlogPage() {
                 <h2>Browse by Tags</h2>
               </div>
               
-              <CollapsibleTagCloud tags={allTags.map(tag => tag.name)} />
+              <CollapsibleTagCloud tags={allTags} />
             </div>
           </div>
         )}

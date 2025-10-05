@@ -13,9 +13,14 @@ const CollapsibleTagCloud = ({ tags, activeTag = null }) => {
     visibleTags = tags;
   } else {
     const firstSix = tags.slice(0, 6);
-    if (activeTag && !firstSix.includes(activeTag)) {
-      // Replace the 6th tag with the active tag to ensure it's visible
-      visibleTags = [...firstSix.slice(0, 5), activeTag];
+    if (activeTag && !firstSix.find(tag => tag.name === activeTag)) {
+      // Find the active tag object and replace the 6th tag with it
+      const activeTagObj = tags.find(tag => tag.name === activeTag);
+      if (activeTagObj) {
+        visibleTags = [...firstSix.slice(0, 5), activeTagObj];
+      } else {
+        visibleTags = firstSix;
+      }
     } else {
       visibleTags = firstSix;
     }
@@ -31,11 +36,11 @@ const CollapsibleTagCloud = ({ tags, activeTag = null }) => {
       <div className={`${styles.tagCloud} ${isExpanded ? styles.tagCloudExpanded : styles.tagCloudCollapsed}`}>
         {visibleTags.map((tag) => (
           <Link 
-            key={tag}
-            href={`/blog/tags/${tag}`}
-            className={`${styles.tagLink} ${tag === activeTag ? styles.activeTag : ''}`}
+            key={tag.name}
+            href={`/blog/tags/${tag.name}`}
+            className={`${styles.tagLink} ${tag.name === activeTag ? styles.activeTag : ''}`}
           >
-            {tag.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+            {tag.displayName} ({tag.count})
           </Link>
         ))}
       </div>
