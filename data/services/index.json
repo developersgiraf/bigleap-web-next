@@ -7,7 +7,7 @@
       "archived": false,
       "index": 0,
       "thumbnail": "/servicess/2danimation.png",
-      "lastModified": "2025-10-05T15:17:42.228Z"
+      "lastModified": "2025-10-05T21:28:01.490Z"
     },
     {
       "id": "threeDanimation",
@@ -16,7 +16,7 @@
       "archived": false,
       "index": 1,
       "thumbnail": "/servicess/3danimation.png",
-      "lastModified": "2025-10-05T14:19:16.915Z"
+      "lastModified": "2025-10-05T21:28:01.816Z"
     },
     {
       "id": "whiteboard-animation",
@@ -85,5 +85,5 @@
   "total": 9,
   "active": 9,
   "archived": 0,
-  "lastUpdated": "2025-10-05T15:17:42.241Z"
+  "lastUpdated": "2025-10-05T21:28:01.825Z"
 }

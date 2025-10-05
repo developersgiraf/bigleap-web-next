@@ -171,8 +171,8 @@ const ManagerCard = ({
     onDrop(currentIndex);
   };
 
-  const isDraggedOver = draggedIndex !== null && draggedIndex !== currentIndex;
-  const isBeingDragged = draggedIndex === currentIndex;
+  const isDraggedOver = draggable && draggedIndex !== null && draggedIndex !== undefined && draggedIndex !== currentIndex;
+  const isBeingDragged = draggable && draggedIndex !== null && draggedIndex !== undefined && draggedIndex === currentIndex;
 
   const cardClasses = [
     styles.managerCard,

@@ -7,6 +7,7 @@ import ImageUpload from '../shared/ImageUpload';
 import GradientColorPicker from '../shared/GradientColorPicker';
 import ManagerHeader from '../shared/elements/ManagerHeader';
 import ActionButtons from '../shared/elements/ActionButtons';
+import ManagerCard from '../shared/elements/ManagerCard';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -21,107 +22,7 @@ const isMobileDevice = () => {
 };
 
 // Portfolio Image Component
-const PortfolioImage = ({ src, alt, status }) => {
-  const [imageSrc, setImageSrc] = useState(src || '/servicess/default-image.png');
-  const [hasError, setHasError] = useState(false);
-
-  useEffect(() => {
-    if (src && src !== imageSrc && !hasError) {
-      setImageSrc(src);
-    }
-  }, [src, imageSrc, hasError]);
-
-  const handleError = useCallback(() => {
-    if (!hasError) {
-      setHasError(true);
-      setImageSrc('/servicess/default-image.png');
-    }
-  }, [hasError]);
-
-  return (
-    <div className={styles.portfolioImage}>
-      <img 
-        src={imageSrc}
-        alt={alt}
-        onError={handleError}
-        loading="lazy"
-        style={{ objectFit: 'cover' }}
-      />
-      {status === 'draft' && (
-        <div className={styles.draftBadge}>Draft</div>
-      )}
-      {status === 'active' && (
-        <div className={styles.activeBadge}>Active</div>
-      )}
-      {status === 'archived' && (
-        <div className={styles.archivedBadge}>Archived</div>
-      )}
-    </div>
-  );
-};
-
-// Portfolio Card Component
-const PortfolioCard = ({ portfolio, onEdit, onDelete, onDuplicate }) => {
-  const handleDeleteClick = useCallback((e) => {
-    e.stopPropagation();
-    if (window.confirm(`Are you sure you want to delete "${portfolio.title}"?`)) {
-      onDelete(portfolio.id);
-    }
-  }, [portfolio.id, portfolio.title, onDelete]);
-
-  const handleDuplicateClick = useCallback((e) => {
-    e.stopPropagation();
-    onDuplicate(portfolio);
-  }, [portfolio, onDuplicate]);
-
-  return (
-    <div className={styles.portfolioCard} onClick={() => onEdit(portfolio)}>
-      <PortfolioImage 
-        src={portfolio.cardData?.image} 
-        alt={portfolio.title}
-        status={portfolio.status}
-      />
-      <div className={styles.portfolioCardContent}>
-        <div className={styles.portfolioHeader}>
-          <h3>{portfolio.title}</h3>
-          <div className={styles.portfolioMeta}>
-            <span className={styles.category}>{portfolio.category}</span>
-            <span className={styles.order}>#{portfolio.order}</span>
-          </div>
-        </div>
-        <p className={styles.portfolioSubtitle}>{portfolio.subtitle}</p>
-        <div className={styles.portfolioStats}>
-          <span>{portfolio.projectGallery?.projects?.length || 0} Projects</span>
-          <span>{portfolio.tags?.length || 0} Tags</span>
-        </div>
-        <ActionButtons
-          size="medium"
-          gap="normal"
-          buttons={[
-            {
-              type: 'edit',
-              label: 'Edit',
-              action: 'edit',
-              onClick: (e) => { e.stopPropagation(); onEdit(portfolio); }
-            },
-            {
-              type: 'duplicate',
-              label: 'Duplicate',
-              action: 'duplicate',
-              onClick: handleDuplicateClick
-            },
-            {
-              type: 'delete',
-              label: 'Delete',
-              action: 'delete',
-              onClick: handleDeleteClick
-            }
-          ]}
-        />
-      </div>
-    </div>
-  );
-};
+// Portfolio card components replaced with shared ManagerCard component
 
 export default function PortfolioManager() {
   const [portfolios, setPortfolios] = useState([]);
@@ -447,12 +348,39 @@ export default function PortfolioManager() {
       {/* Portfolio Grid */}
       <div className={styles.portfolioGrid}>
         {filteredAndSortedPortfolios.map(portfolio => (
-          <PortfolioCard
+          <ManagerCard
             key={portfolio.id}
-            portfolio={portfolio}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-            onDuplicate={handleDuplicate}
+            item={portfolio}
+            title={portfolio.title}
+            subtitle={portfolio.subtitle}
+            image={portfolio.cardData?.image}
+            status={portfolio.status}
+            metadata={[
+              { label: 'Category', value: portfolio.category },
+              { label: 'Order', value: `#${portfolio.order}` }
+            ]}
+            stats={[
+              { label: 'Projects', value: portfolio.projectGallery?.projects?.length || 0 },
+              { label: 'Tags', value: portfolio.tags?.length || 0 }
+            ]}
+            onCardClick={() => handleEdit(portfolio)}
+            actionButtons={[
+              {
+                type: 'edit',
+                label: 'Edit',
+                onClick: () => handleEdit(portfolio)
+              },
+              {
+                type: 'duplicate',
+                label: 'Duplicate',
+                onClick: () => handleDuplicate(portfolio)
+              },
+              {
+                type: 'delete',
+                label: 'Delete',
+                onClick: () => handleDelete(portfolio.id)
+              }
+            ]}
           />
         ))}
       </div>
