@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { uploadImage, deleteImage } from '../../../../lib/image-storage';
+import { uploadImage, deleteImage } from '../../../../../lib/image-storage';
 import DeleteConfirmationModal from './DeleteConfirmationModal';
 import Toast from './Toast';
 import styles from './image-upload.module.css';

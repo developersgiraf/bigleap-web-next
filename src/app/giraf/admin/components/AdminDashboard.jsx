@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import { useAuth } from '../../../../contexts/AuthContext';
 import styles from './dashboard.module.css';
-import ServicesManager from './ServicesManager';
-import BlogManager from './BlogManager';
-import PortfolioManager from './PortfolioManager';
-import DatabaseManager from './DatabaseManager';
+import ServicesManager from './shared/ServicesManager';
+import BlogManager from './blog/BlogManager';
+import PortfolioManager from './portfolio/PortfolioManager';
+import DatabaseManager from './database/DatabaseManager';
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth();

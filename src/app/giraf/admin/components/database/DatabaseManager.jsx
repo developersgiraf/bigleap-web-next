@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import styles from './database.module.css';
-import Modal from './Modal';
-import Toast from './Toast';
+import Modal from '../shared/Modal';
+import Toast from '../shared/Toast';
 
 const DatabaseManager = () => {
   const [isDownloading, setIsDownloading] = useState(false);

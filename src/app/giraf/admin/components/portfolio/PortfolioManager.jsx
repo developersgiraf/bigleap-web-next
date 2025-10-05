@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import styles from './portfolio-manager.module.css';
-import { portfolioAdminAPI } from '../../../../lib/portfolio-admin-client';
-import ImageUpload from './ImageUpload';
+import { portfolioAdminAPI } from '../../../../../lib/portfolio-admin-client';
+import ImageUpload from '../shared/ImageUpload';
 
 // Mobile detection utility
 const isMobileDevice = () => {

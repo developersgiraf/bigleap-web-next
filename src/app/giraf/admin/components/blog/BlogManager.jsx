@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import styles from './blog-manager.module.css';
-import { blogsAPI } from '../../../../lib/blogs-client';
-import ImageUpload from './ImageUpload';
+import { blogsAPI } from '../../../../../lib/blogs-client';
+import ImageUpload from '../shared/ImageUpload';
 
 // Mobile detection utility
 const isMobileDevice = () => {
