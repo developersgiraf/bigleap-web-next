@@ -7,8 +7,19 @@ import styles from '../blog.module.css';
 const CollapsibleTagCloud = ({ tags, activeTag = null }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   
-  // Show top 6 tags when collapsed
-  const visibleTags = isExpanded ? tags : tags.slice(0, 6);
+  // Show top 6 tags when collapsed, but always include activeTag if it exists
+  let visibleTags;
+  if (isExpanded) {
+    visibleTags = tags;
+  } else {
+    const firstSix = tags.slice(0, 6);
+    if (activeTag && !firstSix.includes(activeTag)) {
+      // Replace the 6th tag with the active tag to ensure it's visible
+      visibleTags = [...firstSix.slice(0, 5), activeTag];
+    } else {
+      visibleTags = firstSix;
+    }
+  }
   const hasMoreTags = tags.length > 6;
   
   const toggleExpanded = () => {
