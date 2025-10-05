@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import styles from './portfolio-manager.module.css';
 import { portfolioAdminAPI } from '../../../../../lib/portfolio-admin-client';
 import ImageUpload from '../shared/ImageUpload';
+import GradientColorPicker from '../shared/GradientColorPicker';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -161,25 +162,7 @@ export default function PortfolioManager() {
     }
   });
 
-  // Helper functions for gradient colors
-  const extractGradientColors = (gradientString) => {
-    const match = gradientString.match(/#[a-fA-F0-9]{6}/g);
-    return match && match.length >= 2 ? match : ['#000000', '#000000'];
-  };
 
-  const getGradientColors = () => {
-    return extractGradientColors(formData.cardData.background);
-  };
-
-  const updateGradientColor = (colorIndex, newColor) => {
-    const colors = getGradientColors();
-    colors[colorIndex] = newColor;
-    const newGradient = `linear-gradient(to bottom, ${colors[0]}, ${colors[1]})`;
-    setFormData(prev => ({ 
-      ...prev, 
-      cardData: { ...prev.cardData, background: newGradient }
-    }));
-  };
 
   // Load portfolios
   const loadPortfolios = useCallback(async () => {
@@ -619,56 +602,14 @@ export default function PortfolioManager() {
                 </div>
                 
                 <div className={styles.formGroup}>
-                  <label>Background Gradient</label>
-                  <div className={styles.gradientControls}>
-                    <div className={styles.colorPickerGroup}>
-                      <label>Top Color</label>
-                      <div className={styles.colorInputWrapper}>
-                        <input
-                          type="color"
-                          value={getGradientColors()[0]}
-                          onChange={(e) => updateGradientColor(0, e.target.value)}
-                          className={styles.colorPicker}
-                        />
-                        <input
-                          type="text"
-                          value={getGradientColors()[0]}
-                          onChange={(e) => updateGradientColor(0, e.target.value)}
-                          className={styles.colorCode}
-                          placeholder="#000000"
-                          pattern="#[a-fA-F0-9]{6}"
-                          maxLength="7"
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.colorPickerGroup}>
-                      <label>Bottom Color</label>
-                      <div className={styles.colorInputWrapper}>
-                        <input
-                          type="color"
-                          value={getGradientColors()[1]}
-                          onChange={(e) => updateGradientColor(1, e.target.value)}
-                          className={styles.colorPicker}
-                        />
-                        <input
-                          type="text"
-                          value={getGradientColors()[1]}
-                          onChange={(e) => updateGradientColor(1, e.target.value)}
-                          className={styles.colorCode}
-                          placeholder="#000000"
-                          pattern="#[a-fA-F0-9]{6}"
-                          maxLength="7"
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.gradientPreview}>
-                      <div 
-                        className={styles.previewBox}
-                        style={{ background: formData.cardData.background }}
-                      ></div>
-                      <span className={styles.gradientValue}>{formData.cardData.background}</span>
-                    </div>
-                  </div>
+                  <GradientColorPicker
+                    label="Background Gradient"
+                    value={formData.cardData.background}
+                    onChange={(newGradient) => setFormData(prev => ({ 
+                      ...prev, 
+                      cardData: { ...prev.cardData, background: newGradient }
+                    }))}
+                  />
                 </div>
               </div>
 
