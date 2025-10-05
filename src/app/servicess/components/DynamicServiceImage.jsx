@@ -23,7 +23,14 @@ export default function DynamicServiceImage({
           throw new Error('Failed to fetch services');
         }
         
-        const allServices = await response.json();
+        const apiResponse = await response.json();
+        
+        // Check if the API response is successful and has data
+        if (!apiResponse.success || !Array.isArray(apiResponse.data)) {
+          throw new Error('Invalid API response format');
+        }
+        
+        const allServices = apiResponse.data;
         
         // Convert API data to the format expected by the component
         const formattedServices = allServices

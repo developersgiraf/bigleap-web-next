@@ -716,6 +716,24 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
       // Handle both old and new data formats
       const serviceData = { ...service };
       
+      // Ensure section01 exists
+      if (!serviceData.section01) {
+        serviceData.section01 = {
+          image: '',
+          heading: '',
+          description: ''
+        };
+      }
+      
+      // Ensure section02 exists
+      if (!serviceData.section02) {
+        serviceData.section02 = {
+          DescTitle: '',
+          Descpara: '',
+          subsections: []
+        };
+      }
+      
       // Convert old subsection format to new format if needed
       if (serviceData.section02 && !serviceData.section02.subsections) {
         const subsections = [];
@@ -746,12 +764,36 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
         serviceData.section02.subsections = [];
       }
       
-      // Ensure thumbnail field exists (backward compatibility)
+      // Ensure list array exists (backward compatibility)
+      if (!Array.isArray(serviceData.list)) {
+        serviceData.list = [];
+      }
+      
+      // Ensure other fields exist (backward compatibility)
+      if (!serviceData.title) {
+        serviceData.title = '';
+      }
+      
+      if (!serviceData.bannerTitle) {
+        serviceData.bannerTitle = '';
+      }
+      
       if (!serviceData.thumbnail) {
         serviceData.thumbnail = '';
       }
       
-      // Ensure index field exists (backward compatibility)
+      if (!serviceData.listHead) {
+        serviceData.listHead = '';
+      }
+      
+      if (!serviceData.listPara) {
+        serviceData.listPara = '';
+      }
+      
+      if (typeof serviceData.archived === 'undefined') {
+        serviceData.archived = false;
+      }
+      
       if (typeof serviceData.index === 'undefined') {
         serviceData.index = 0;
       }
@@ -777,7 +819,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
       setFormData(prev => ({
         ...prev,
         [section]: {
-          ...prev[section],
+          ...(prev[section] || {}),
           [field]: value
         }
       }));
@@ -790,7 +832,8 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
   };
 
   const handleListItemChange = (index, field, value) => {
-    const newList = [...formData.list];
+    const currentList = formData.list || [];
+    const newList = [...currentList];
     newList[index] = { ...newList[index], [field]: value };
     setFormData(prev => ({ ...prev, list: newList }));
   };
@@ -798,20 +841,21 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
   const addListItem = () => {
     setFormData(prev => ({
       ...prev,
-      list: [...prev.list, { title: '', description: '' }]
+      list: [...(prev.list || []), { title: '', description: '' }]
     }));
   };
 
   const removeListItem = (index) => {
     setFormData(prev => ({
       ...prev,
-      list: prev.list.filter((_, i) => i !== index)
+      list: (prev.list || []).filter((_, i) => i !== index)
     }));
   };
 
   // Subsection management functions
   const handleSubsectionChange = (index, field, value) => {
-    const newSubsections = [...formData.section02.subsections];
+    const currentSubsections = formData.section02?.subsections || [];
+    const newSubsections = [...currentSubsections];
     newSubsections[index] = { ...newSubsections[index], [field]: value };
     setFormData(prev => ({
       ...prev,
@@ -827,7 +871,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
       ...prev,
       section02: {
         ...prev.section02,
-        subsections: [...prev.section02.subsections, { heading: '', description: '' }]
+        subsections: [...(prev.section02?.subsections || []), { heading: '', description: '' }]
       }
     }));
   };
@@ -837,7 +881,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
       ...prev,
       section02: {
         ...prev.section02,
-        subsections: prev.section02.subsections.filter((_, i) => i !== index)
+        subsections: (prev.section02?.subsections || []).filter((_, i) => i !== index)
       }
     }));
   };
@@ -846,7 +890,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
     e.preventDefault();
     
     // Validate custom slug if being used
-    if (useCustomSlug && formData.customSlug && !validateSlug(formData.customSlug)) {
+    if (useCustomSlug && (formData.customSlug || '') && !validateSlug(formData.customSlug || '')) {
       alert('Invalid slug format. Slug must start with a letter and contain only letters, numbers, hyphens, and underscores.');
       return;
     }
@@ -858,8 +902,8 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
     };
     
     // Add custom slug if specified
-    if (useCustomSlug && formData.customSlug) {
-      submitData.customSlug = formData.customSlug;
+    if (useCustomSlug && (formData.customSlug || '')) {
+      submitData.customSlug = formData.customSlug || '';
     }
     
     onSave(submitData);
@@ -887,7 +931,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
               <label>Service Title</label>
               <input
                 type="text"
-                value={formData.title}
+                value={formData.title || ''}
                 onChange={(e) => handleInputChange('title', e.target.value)}
                 placeholder="e.g., 2D Animation"
                 required
@@ -897,7 +941,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
               <label>Banner Title</label>
               <input
                 type="text"
-                value={formData.bannerTitle}
+                value={formData.bannerTitle || ''}
                 onChange={(e) => handleInputChange('bannerTitle', e.target.value)}
                 placeholder="Title for banner section"
                 required
@@ -907,7 +951,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
               <label>Display Order</label>
               <input
                 type="number"
-                value={formData.index}
+                value={formData.index || 0}
                 onChange={(e) => handleInputChange('index', parseInt(e.target.value) || 0)}
                 placeholder="0"
                 min="0"
@@ -922,7 +966,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
           <div className={styles.formField}>
             <label>Thumbnail Image</label>
             <ImageUpload
-              value={formData.thumbnail}
+              value={formData.thumbnail || ''}
               onChange={(url) => handleInputChange('thumbnail', url)}
               folder="services"
               placeholder="Upload thumbnail image for card display"
@@ -954,20 +998,20 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
                     <div className={styles.customSlugInputContainer}>
                       <input
                         type="text"
-                        value={formData.customSlug}
+                        value={formData.customSlug || ''}
                         onChange={(e) => handleInputChange('customSlug', e.target.value.replace(/[^a-zA-Z0-9-_]/g, ''))}
                         placeholder="Custom_Service-Slug"
                         pattern="^[a-zA-Z][a-zA-Z0-9-_]*$"
-                        className={`${styles.customSlugInput} ${formData.customSlug && !validateSlug(formData.customSlug) ? styles.invalidInput : ''}`}
+                        className={`${styles.customSlugInput} ${(formData.customSlug || '') && !validateSlug(formData.customSlug || '') ? styles.invalidInput : ''}`}
                       />
-                      {formData.customSlug && !validateSlug(formData.customSlug) && (
+                      {(formData.customSlug || '') && !validateSlug(formData.customSlug || '') && (
                         <small className={styles.errorNote}>
                           Slug must start with a letter and contain only letters, numbers, hyphens, and underscores.
                         </small>
                       )}
-                      {(!formData.customSlug || validateSlug(formData.customSlug)) && (
+                      {(!(formData.customSlug || '') || validateSlug(formData.customSlug || '')) && (
                         <small className={styles.slugNote}>
-                          Custom URL will be: /servicess/{formData.customSlug || 'Your_Custom-Slug'}
+                          Custom URL will be: /servicess/{(formData.customSlug || '') || 'Your_Custom-Slug'}
                         </small>
                       )}
                     </div>
@@ -1008,7 +1052,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
           <div className={styles.formField}>
             <label>Service Image</label>
             <ImageUpload
-              value={formData.section01.image}
+              value={formData.section01?.image || ''}
               onChange={(url) => handleInputChange('image', url, 'section01')}
               folder="services"
               placeholder="Upload service image or enter URL"
@@ -1018,7 +1062,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
             <label>Heading</label>
             <input
               type="text"
-              value={formData.section01.heading}
+              value={formData.section01?.heading || ''}
               onChange={(e) => handleInputChange('heading', e.target.value, 'section01')}
               placeholder="Main heading for the service"
               required
@@ -1027,7 +1071,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
           <div className={styles.formField}>
             <label>Description</label>
             <textarea
-              value={formData.section01.description}
+              value={formData.section01?.description || ''}
               onChange={(e) => handleInputChange('description', e.target.value, 'section01')}
               placeholder="Detailed description of the service"
               rows={4}
@@ -1042,7 +1086,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
             <label>Description Title</label>
             <input
               type="text"
-              value={formData.section02.DescTitle}
+              value={formData.section02?.DescTitle || ''}
               onChange={(e) => handleInputChange('DescTitle', e.target.value, 'section02')}
               placeholder="Title for detailed section"
             />
@@ -1050,7 +1094,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
           <div className={styles.formField}>
             <label>Description Paragraph</label>
             <textarea
-              value={formData.section02.Descpara}
+              value={formData.section02?.Descpara || ''}
               onChange={(e) => handleInputChange('Descpara', e.target.value, 'section02')}
               placeholder="Detailed explanation"
               rows={4}
@@ -1065,7 +1109,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
               </button>
             </div>
 
-            {formData.section02.subsections.map((subsection, index) => (
+            {(formData.section02?.subsections || []).map((subsection, index) => (
               <div key={index} className={styles.listItem}>
                 <div className={styles.listItemHeader}>
                   <h5>Subsection {index + 1}</h5>
@@ -1107,7 +1151,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
               <label>List Heading</label>
               <input
                 type="text"
-                value={formData.listHead}
+                value={formData.listHead || ''}
                 onChange={(e) => handleInputChange('listHead', e.target.value)}
                 placeholder="Heading for services list"
               />
@@ -1115,7 +1159,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
             <div className={styles.formField}>
               <label>List Paragraph</label>
               <textarea
-                value={formData.listPara}
+                value={formData.listPara || ''}
                 onChange={(e) => handleInputChange('listPara', e.target.value)}
                 placeholder="Description for services list"
                 rows={2}
@@ -1131,7 +1175,7 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
               </button>
             </div>
 
-            {formData.list.map((item, index) => (
+            {(formData.list || []).map((item, index) => (
               <div key={index} className={styles.listItem}>
                 <div className={styles.listItemHeader}>
                   <h5>Item {index + 1}</h5>
