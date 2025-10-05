@@ -5,6 +5,7 @@ import styles from './services-manager.module.css';
 import { servicesAPI } from '../../../../../lib/services-client';
 import ImageUpload from '../shared/ImageUpload';
 import ManagerHeader from '../shared/ManagerHeader';
+import ActionButtons from '../shared/ActionButtons';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -222,26 +223,25 @@ const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, tota
         </p>
         
         <div className={styles.serviceFooter}>
-          <div className={styles.actions}>
-            <button 
-              className={styles.editBtn}
-              onClick={() => onEdit(service)}
-            >
-              Edit
-            </button>
-            <button 
-              className={service.archived ? styles.unarchiveBtn : styles.archiveBtn}
-              onClick={() => onArchive(service.id, service.archived)}
-            >
-              {service.archived ? 'Unarchive' : 'Archive'}
-            </button>
-            <button 
-              className={styles.deleteBtn}
-              onClick={() => onDelete(service.id)}
-            >
-              Delete
-            </button>
-          </div>
+          <ActionButtons 
+            buttons={[
+              {
+                type: 'edit',
+                label: 'Edit',
+                onClick: () => onEdit(service)
+              },
+              {
+                type: service.archived ? 'publish' : 'archive',
+                label: service.archived ? 'Unarchive' : 'Archive',
+                onClick: () => onArchive(service.id, service.archived)
+              },
+              {
+                type: 'delete',
+                label: 'Delete',
+                onClick: () => onDelete(service.id)
+              }
+            ]}
+          />
         </div>
       </div>
     </div>

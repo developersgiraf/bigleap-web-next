@@ -5,6 +5,7 @@ import styles from './blog-manager.module.css';
 import { blogsAPI } from '../../../../../lib/blogs-client';
 import ImageUpload from '../shared/ImageUpload';
 import ManagerHeader from '../shared/ManagerHeader';
+import ActionButtons from '../shared/ActionButtons';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -103,32 +104,30 @@ const BlogCard = ({ blog, onEdit, onDelete, onToggleStatus, onToggleFeatured }) 
         </div>
       )}
       <div className={styles.blogFooter}>
-        <div className={styles.actions}>
-          <button 
-            className={styles.editBtn}
-            onClick={() => onEdit(blog)}
-          >
-            Edit
-          </button>
-          <button 
-            className={blog.status === 'published' ? styles.draftBtn : styles.publishBtn}
-            onClick={() => onToggleStatus(blog.id, blog.status === 'published' ? 'draft' : 'published')}
-          >
-            {blog.status === 'published' ? 'Make Draft' : 'Publish'}
-          </button>
-          <button 
-            className={blog.featured ? styles.unfeaturedBtn : styles.featuredBtn}
-            onClick={() => onToggleFeatured(blog.id, !blog.featured)}
-          >
-            {blog.featured ? 'Unfeature' : 'Feature'}
-          </button>
-          <button 
-            className={styles.deleteBtn}
-            onClick={() => onDelete(blog.id)}
-          >
-            Delete
-          </button>
-        </div>
+        <ActionButtons 
+          buttons={[
+            {
+              type: 'edit',
+              label: 'Edit',
+              onClick: () => onEdit(blog)
+            },
+            {
+              type: blog.status === 'published' ? 'archive' : 'publish',
+              label: blog.status === 'published' ? 'Make Draft' : 'Publish',
+              onClick: () => onToggleStatus(blog.id, blog.status === 'published' ? 'draft' : 'published')
+            },
+            {
+              type: blog.featured ? 'archive' : 'publish',
+              label: blog.featured ? 'Unfeature' : 'Feature',
+              onClick: () => onToggleFeatured(blog.id, !blog.featured)
+            },
+            {
+              type: 'delete',
+              label: 'Delete',
+              onClick: () => onDelete(blog.id)
+            }
+          ]}
+        />
       </div>
     </div>
   </div>

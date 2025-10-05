@@ -6,6 +6,7 @@ import { portfolioAdminAPI } from '../../../../../lib/portfolio-admin-client';
 import ImageUpload from '../shared/ImageUpload';
 import GradientColorPicker from '../shared/GradientColorPicker';
 import ManagerHeader from '../shared/ManagerHeader';
+import ActionButtons from '../shared/ActionButtons';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -93,26 +94,30 @@ const PortfolioCard = ({ portfolio, onEdit, onDelete, onDuplicate }) => {
           <span>{portfolio.projectGallery?.projects?.length || 0} Projects</span>
           <span>{portfolio.tags?.length || 0} Tags</span>
         </div>
-        <div className={styles.portfolioActions}>
-          <button 
-            className={styles.editButton}
-            onClick={(e) => { e.stopPropagation(); onEdit(portfolio); }}
-          >
-            Edit
-          </button>
-          <button 
-            className={styles.duplicateButton}
-            onClick={handleDuplicateClick}
-          >
-            Duplicate
-          </button>
-          <button 
-            className={styles.deleteButton}
-            onClick={handleDeleteClick}
-          >
-            Delete
-          </button>
-        </div>
+        <ActionButtons
+          size="medium"
+          gap="normal"
+          buttons={[
+            {
+              type: 'edit',
+              label: 'Edit',
+              action: 'edit',
+              onClick: (e) => { e.stopPropagation(); onEdit(portfolio); }
+            },
+            {
+              type: 'duplicate',
+              label: 'Duplicate',
+              action: 'duplicate',
+              onClick: handleDuplicateClick
+            },
+            {
+              type: 'delete',
+              label: 'Delete',
+              action: 'delete',
+              onClick: handleDeleteClick
+            }
+          ]}
+        />
       </div>
     </div>
   );
