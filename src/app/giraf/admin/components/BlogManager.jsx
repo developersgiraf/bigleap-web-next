@@ -507,6 +507,11 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
 
   const [useCustomSlug, setUseCustomSlug] = useState(false);
   const [tagInput, setTagInput] = useState('');
+  const [showTagSuggestions, setShowTagSuggestions] = useState(false);
+  const [availableTags, setAvailableTags] = useState([]);
+  const [availableCategories, setAvailableCategories] = useState([]);
+  const [showAddCategory, setShowAddCategory] = useState(false);
+  const [newCategory, setNewCategory] = useState('');
 
   // Generate ID preview from title
   const generateSlugPreview = (title) => {
@@ -534,8 +539,13 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
       : generateSlugPreview(formData.title);
 
   useEffect(() => {
+    // Get current date in YYYY-MM-DD format
+    const getCurrentDate = () => {
+      return new Date().toISOString().split('T')[0];
+    };
+
     if (blog) {
-      // Ensure all fields exist with defaults
+      // For existing blogs, preserve original publishedDate, only update lastModified
       const blogData = {
         title: blog.title || '',
         slug: blog.slug || '',
@@ -543,8 +553,8 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
         image: blog.image || '',
         caption: blog.caption || '',
         description: blog.description || '',
-        publishedDate: blog.publishedDate || '',
-        lastModified: blog.lastModified || '',
+        publishedDate: blog.publishedDate || '', // Keep original date, don't auto-fill
+        lastModified: getCurrentDate(), // Always update to current date on edit
         category: blog.category || '',
         tags: Array.isArray(blog.tags) ? blog.tags : [],
         featured: Boolean(blog.featured),
@@ -558,8 +568,26 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
       };
       setFormData(blogData);
       setUseCustomSlug(false); // For existing blogs, disable custom slug
+    } else {
+      // For new blogs, auto-fill with current date
+      setFormData(prev => ({
+        ...prev,
+        publishedDate: getCurrentDate(),
+        lastModified: getCurrentDate()
+      }));
     }
   }, [blog]);
+
+  // Extract available categories and tags from existing blogs
+  useEffect(() => {
+    if (blogs && blogs.length > 0) {
+      const categories = [...new Set(blogs.map(b => b.category).filter(Boolean))];
+      const tags = [...new Set(blogs.flatMap(b => b.tags || []).filter(Boolean))];
+      
+      setAvailableCategories(categories);
+      setAvailableTags(tags);
+    }
+  }, [blogs]);
 
 
   const handleInputChange = (field, value, section = null) => {
@@ -579,14 +607,30 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
     }
   };
 
-  const handleAddTag = () => {
-    if (tagInput.trim() && !formData.tags.includes(tagInput.trim())) {
+  const handleAddTag = (tag = null) => {
+    const tagToAdd = tag || tagInput.trim();
+    if (tagToAdd && !formData.tags.includes(tagToAdd)) {
+      const formattedTag = tagToAdd.toLowerCase().replace(/\s+/g, '-');
       setFormData(prev => ({
         ...prev,
-        tags: [...prev.tags, tagInput.trim().toLowerCase().replace(/\s+/g, '-')]
+        tags: [...prev.tags, formattedTag]
       }));
       setTagInput('');
+      setShowTagSuggestions(false);
     }
+  };
+
+  const handleTagInputChange = (value) => {
+    setTagInput(value);
+    setShowTagSuggestions(value.length > 0);
+  };
+
+  const getFilteredTagSuggestions = () => {
+    if (!tagInput.trim()) return [];
+    return availableTags.filter(tag => 
+      tag.toLowerCase().includes(tagInput.toLowerCase()) && 
+      !formData.tags.includes(tag)
+    );
   };
 
   const handleRemoveTag = (tagToRemove) => {
@@ -594,6 +638,19 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
       ...prev,
       tags: prev.tags.filter(tag => tag !== tagToRemove)
     }));
+  };
+
+  const handleAddCategory = () => {
+    if (newCategory.trim() && !availableCategories.includes(newCategory.trim())) {
+      const categoryToAdd = newCategory.trim();
+      setAvailableCategories(prev => [...prev, categoryToAdd]);
+      setFormData(prev => ({
+        ...prev,
+        category: categoryToAdd
+      }));
+      setNewCategory('');
+      setShowAddCategory(false);
+    }
   };
 
   const handleKeywordAdd = () => {
@@ -708,19 +765,49 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
           <div className={styles.formRow}>
             <div className={styles.formField}>
               <label>Category</label>
-              <select
-                value={formData.category}
-                onChange={(e) => handleInputChange('category', e.target.value)}
-                required
-              >
-                <option value="">Select Category</option>
-                <option value="Animation">Animation</option>
-                <option value="Design">Design</option>
-                <option value="Post Production">Post Production</option>
-                <option value="Technology">Technology</option>
-                <option value="Industry News">Industry News</option>
-                <option value="Tutorials">Tutorials</option>
-              </select>
+              <div className={styles.categoryInputContainer}>
+                <select
+                  value={formData.category}
+                  onChange={(e) => handleInputChange('category', e.target.value)}
+                  required
+                >
+                  <option value="">Select Category</option>
+                  {availableCategories.map(category => (
+                    <option key={category} value={category}>{category}</option>
+                  ))}
+                  <option value="Animation">Animation</option>
+                  <option value="Design">Design</option>
+                  <option value="Post Production">Post Production</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Industry News">Industry News</option>
+                  <option value="Tutorials">Tutorials</option>
+                </select>
+                <button 
+                  type="button" 
+                  onClick={() => setShowAddCategory(!showAddCategory)}
+                  className={styles.addCategoryBtn}
+                >
+                  + Add New Category
+                </button>
+                {showAddCategory && (
+                  <div style={{ marginTop: '8px', display: 'flex', gap: '8px' }}>
+                    <input
+                      type="text"
+                      value={newCategory}
+                      onChange={(e) => setNewCategory(e.target.value)}
+                      placeholder="Enter new category"
+                      style={{ flex: 1 }}
+                    />
+                    <button 
+                      type="button" 
+                      onClick={handleAddCategory}
+                      className={styles.addCategoryBtn}
+                    >
+                      Add
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
             <div className={styles.formField}>
               <label>Author</label>
@@ -733,16 +820,22 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
             </div>
           </div>
 
-          <div className={styles.formRow}>
-            <div className={styles.formField}>
-              <label>Published Date</label>
-              <input
-                type="date"
-                value={formData.publishedDate}
-                onChange={(e) => handleInputChange('publishedDate', e.target.value)}
-              />
+          {/* Only show published date field for NEW blogs */}
+          {!blog && (
+            <div className={styles.formRow}>
+              <div className={styles.formField}>
+                <label>Published Date</label>
+                <input
+                  type="date"
+                  value={formData.publishedDate}
+                  onChange={(e) => handleInputChange('publishedDate', e.target.value)}
+                />
+                <small className={styles.fieldNote}>
+                  This date will be preserved once the blog is created
+                </small>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className={styles.formSection}>
@@ -850,17 +943,34 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
           <h3>Tags & Settings</h3>
           <div className={styles.formField}>
             <label>Tags</label>
-            <div className={styles.tagInput}>
-              <input
-                type="text"
-                value={tagInput}
-                onChange={(e) => setTagInput(e.target.value)}
-                placeholder="Enter tag and press Add"
-                onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddTag())}
-              />
-              <button type="button" onClick={handleAddTag} className={styles.addTagBtn}>
-                Add Tag
-              </button>
+            <div className={styles.tagSuggestions}>
+              <div className={styles.tagInput}>
+                <input
+                  type="text"
+                  value={tagInput}
+                  onChange={(e) => handleTagInputChange(e.target.value)}
+                  placeholder="Enter tag and press Add"
+                  onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddTag())}
+                  onFocus={() => setShowTagSuggestions(tagInput.length > 0)}
+                  onBlur={() => setTimeout(() => setShowTagSuggestions(false), 200)}
+                />
+                <button type="button" onClick={() => handleAddTag()} className={styles.addTagBtn}>
+                  Add Tag
+                </button>
+              </div>
+              {showTagSuggestions && getFilteredTagSuggestions().length > 0 && (
+                <div className={styles.tagSuggestionsDropdown}>
+                  {getFilteredTagSuggestions().map(tag => (
+                    <div
+                      key={tag}
+                      className={styles.tagSuggestion}
+                      onClick={() => handleAddTag(tag)}
+                    >
+                      {tag.replace(/-/g, ' ')}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
             <div className={styles.tagsList}>
               {formData.tags.map((tag, index) => (
@@ -870,31 +980,38 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
                 </span>
               ))}
             </div>
+            <small className={styles.fieldNote}>
+              Start typing to see suggestions from existing tags
+            </small>
           </div>
 
           <div className={styles.formRow}>
-            <div className={styles.statusSection}>
-              <label>Publication Status</label>
-              <select
-                value={formData.status}
-                onChange={(e) => handleInputChange('status', e.target.value)}
-              >
-                <option value="draft">Draft</option>
-                <option value="published">Published</option>
-              </select>
+            <div className={styles.formField}>
+              <div className={styles.statusSection}>
+                <label>Publication Status</label>
+                <select
+                  value={formData.status}
+                  onChange={(e) => handleInputChange('status', e.target.value)}
+                >
+                  <option value="draft">Draft</option>
+                  <option value="published">Published</option>
+                </select>
+              </div>
             </div>
             
-            <div className={styles.featuredSection}>
-              <label className={styles.featuredToggle}>
-                <input
-                  type="checkbox"
-                  checked={formData.featured}
-                  onChange={(e) => handleInputChange('featured', e.target.checked)}
-                />
-                Featured blog post
-              </label>
-              <div className={styles.featuredNote}>
-                Featured posts are highlighted on the blog homepage.
+            <div className={styles.formField}>
+              <div className={styles.featuredSection}>
+                <label className={styles.featuredToggle}>
+                  <input
+                    type="checkbox"
+                    checked={formData.featured}
+                    onChange={(e) => handleInputChange('featured', e.target.checked)}
+                  />
+                  Featured blog post
+                </label>
+                <div className={styles.featuredNote}>
+                  Featured posts are highlighted on the blog homepage.
+                </div>
               </div>
             </div>
           </div>
