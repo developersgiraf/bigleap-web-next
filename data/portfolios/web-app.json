@@ -1,6 +1,6 @@
 {
   "id": "web-app",
-  "slug": "web-app", 
+  "slug": "web-app",
   "title": "Web & App Portfolio",
   "subtitle": "Digital solutions that make a difference",
   "description": "Watch Our Web & App Showreel",
@@ -18,13 +18,25 @@
   "seo": {
     "metaTitle": "Web & App Development Portfolio - BigLeap",
     "metaDescription": "Discover our innovative web and mobile application portfolio featuring cutting-edge digital solutions and exceptional user experiences.",
-    "keywords": ["web development", "mobile app", "portfolio", "user experience", "technology", "digital solutions"]
+    "keywords": [
+      "web development",
+      "mobile app",
+      "portfolio",
+      "user experience",
+      "technology",
+      "digital solutions"
+    ]
   },
   "status": "active",
   "featured": true,
   "order": 2,
   "category": "Development",
-  "tags": ["web-development", "mobile-app", "technology", "ux-ui"],
+  "tags": [
+    "web-development",
+    "mobile-app",
+    "technology",
+    "ux-ui"
+  ],
   "createdDate": "2024-01-01",
   "lastModified": "2025-10-06",
   "projectGallery": {

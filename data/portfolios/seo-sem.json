@@ -18,13 +18,27 @@
   "seo": {
     "metaTitle": "SEO & SEM Portfolio - BigLeap",
     "metaDescription": "Discover our strategic SEO and SEM portfolio showcasing successful digital marketing campaigns and search optimization results.",
-    "keywords": ["SEO", "SEM", "portfolio", "digital marketing", "search optimization", "analytics", "traffic growth"]
+    "keywords": [
+      "SEO",
+      "SEM",
+      "portfolio",
+      "digital marketing",
+      "search optimization",
+      "analytics",
+      "traffic growth"
+    ]
   },
   "status": "active",
   "featured": true,
   "order": 4,
   "category": "Marketing",
-  "tags": ["seo", "sem", "digital-marketing", "analytics", "search-optimization"],
+  "tags": [
+    "seo",
+    "sem",
+    "digital-marketing",
+    "analytics",
+    "search-optimization"
+  ],
   "createdDate": "2024-01-01",
   "lastModified": "2025-10-06",
   "projectGallery": {

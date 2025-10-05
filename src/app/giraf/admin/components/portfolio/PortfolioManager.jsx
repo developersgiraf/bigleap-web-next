@@ -35,6 +35,10 @@ export default function PortfolioManager() {
   const [showForm, setShowForm] = useState(false);
   const [editingPortfolio, setEditingPortfolio] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Drag and drop state
+  const [draggedIndex, setDraggedIndex] = useState(null);
+  const [draggedId, setDraggedId] = useState(null);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -86,9 +90,63 @@ export default function PortfolioManager() {
     }
   }, []);
 
+  // Function to ensure unique orders and fix duplicates with consecutive numbering
+  const ensureUniqueOrders = useCallback(async (portfoliosList) => {
+    const orderMap = new Map();
+    const duplicates = [];
+    let needsReordering = false;
+    
+    // Sort portfolios by order to maintain relative positions
+    const sortedPortfolios = [...portfoliosList].sort((a, b) => (a.order || 0) - (b.order || 0));
+    
+    // Find duplicates and check for non-consecutive numbering
+    sortedPortfolios.forEach((portfolio, index) => {
+      const order = portfolio.order || 0;
+      const expectedOrder = index + 1; // Orders should start from 1
+      
+      if (orderMap.has(order)) {
+        duplicates.push(portfolio);
+      } else {
+        orderMap.set(order, portfolio);
+      }
+      
+      // Check if order is not consecutive
+      if (order !== expectedOrder) {
+        needsReordering = true;
+      }
+    });
+
+    // Fix duplicates and ensure consecutive numbering
+    if (duplicates.length > 0 || needsReordering) {
+      try {
+        // Reassign consecutive orders starting from 1
+        for (let i = 0; i < sortedPortfolios.length; i++) {
+          const portfolio = sortedPortfolios[i];
+          const newOrder = i + 1;
+          
+          if (portfolio.order !== newOrder) {
+            await portfolioAdminAPI.updatePortfolio(portfolio.id, { ...portfolio, order: newOrder });
+          }
+        }
+        
+        // Reload after fixing
+        await loadPortfolios();
+      } catch (error) {
+        console.error('Error fixing portfolio orders:', error);
+      }
+    }
+  }, [loadPortfolios]);
+
   useEffect(() => {
     loadPortfolios();
   }, [loadPortfolios]);
+
+  // Ensure unique orders when portfolios are loaded
+  useEffect(() => {
+    if (portfolios.length > 0) {
+      ensureUniqueOrders(portfolios);
+    }
+  }, [portfolios, ensureUniqueOrders]);
 
   // Filter and sort portfolios
   const filteredAndSortedPortfolios = useMemo(() => {
@@ -291,6 +349,72 @@ export default function PortfolioManager() {
     loadPortfolios();
   };
 
+  // Drag and Drop Handlers
+  const handleDragStart = (order, id) => {
+    setDraggedIndex(order);
+    setDraggedId(id);
+  };
+
+  const handleDragOver = (order) => {
+    // Visual feedback during drag over
+  };
+
+  const handleDrop = async (targetOrder) => {
+    if (draggedIndex !== null && draggedIndex !== targetOrder && draggedId) {
+      try {
+        // Get the portfolios at both positions
+        const draggedPortfolio = portfolios.find(p => p.order === draggedIndex);
+        const targetPortfolio = portfolios.find(p => p.order === targetOrder);
+        
+        if (draggedPortfolio) {
+          if (targetPortfolio) {
+            // Swap the orders
+            await portfolioAdminAPI.updatePortfolio(draggedPortfolio.id, { ...draggedPortfolio, order: targetOrder });
+            await portfolioAdminAPI.updatePortfolio(targetPortfolio.id, { ...targetPortfolio, order: draggedIndex });
+          } else {
+            // Just move to the empty position
+            await portfolioAdminAPI.updatePortfolio(draggedPortfolio.id, { ...draggedPortfolio, order: targetOrder });
+          }
+          
+          // Reload portfolios to reflect changes
+          await loadPortfolios();
+        }
+      } catch (error) {
+        console.error('Error updating portfolio order:', error);
+        alert('Failed to reorder portfolios. Please try again.');
+      }
+    }
+    
+    setDraggedIndex(null);
+    setDraggedId(null);
+  };
+
+  // Index Change Handler
+  const handleIndexChange = async (portfolioId, newOrder) => {
+    try {
+      // Find the portfolio that currently has the target order
+      const currentPortfolioAtOrder = portfolios.find(p => p.order === newOrder);
+      const portfolioToMove = portfolios.find(p => p.id === portfolioId);
+      
+      if (!portfolioToMove) return;
+
+      // If there's a portfolio at the target order, swap their positions
+      if (currentPortfolioAtOrder && currentPortfolioAtOrder.id !== portfolioId) {
+        // Swap orders
+        await portfolioAdminAPI.updatePortfolio(currentPortfolioAtOrder.id, { ...currentPortfolioAtOrder, order: portfolioToMove.order || 0 });
+      }
+      
+      // Update the moved portfolio's order
+      await portfolioAdminAPI.updatePortfolio(portfolioId, { ...portfolioToMove, order: newOrder });
+      
+      // Reload portfolios to reflect changes
+      await loadPortfolios();
+    } catch (error) {
+      console.error('Error updating portfolio order:', error);
+      alert('Failed to update portfolio order. Please try again.');
+    }
+  };
+
   // Prepare filter options for portfolio
   const categoryOptions = [
     { value: '', label: 'All Categories' },
@@ -355,9 +479,17 @@ export default function PortfolioManager() {
             subtitle={portfolio.subtitle}
             image={portfolio.cardData?.image}
             status={portfolio.status}
+            showIndexControls={true}
+            currentIndex={portfolio.order}
+            totalItems={portfolios.length}
+            onIndexChange={handleIndexChange}
+            draggable={true}
+            onDragStart={handleDragStart}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+            draggedIndex={draggedIndex}
             metadata={[
-              { label: 'Category', value: portfolio.category },
-              { label: 'Order', value: `#${portfolio.order}` }
+              { label: 'Category', value: portfolio.category }
             ]}
             stats={[
               { label: 'Projects', value: portfolio.projectGallery?.projects?.length || 0 },

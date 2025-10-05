@@ -1,7 +1,7 @@
 {
   "id": "graphic-design",
   "slug": "graphic-design",
-  "title": "Graphic Design Portfolio", 
+  "title": "Graphic Design Portfolio",
   "subtitle": "Visual stories that captivate",
   "description": "Watch Our Graphic Design Showreel",
   "content": "Creative graphic design solutions that communicate your brand message with impact and style.",
@@ -18,13 +18,25 @@
   "seo": {
     "metaTitle": "Graphic Design Portfolio - BigLeap",
     "metaDescription": "Explore our creative graphic design portfolio featuring innovative visual solutions and brand communication designs.",
-    "keywords": ["graphic design", "portfolio", "visual design", "branding", "creativity", "brand communication"]
+    "keywords": [
+      "graphic design",
+      "portfolio",
+      "visual design",
+      "branding",
+      "creativity",
+      "brand communication"
+    ]
   },
   "status": "active",
   "featured": true,
   "order": 3,
   "category": "Design",
-  "tags": ["graphic-design", "branding", "visual-design", "creativity"],
+  "tags": [
+    "graphic-design",
+    "branding",
+    "visual-design",
+    "creativity"
+  ],
   "createdDate": "2024-01-01",
   "lastModified": "2025-10-06",
   "projectGallery": {

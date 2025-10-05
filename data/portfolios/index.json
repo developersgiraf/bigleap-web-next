@@ -15,7 +15,7 @@
     "title": "Web & App",
     "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "/portfolio/blue.png",
-    "readbtn": "Explore More", 
+    "readbtn": "Explore More",
     "background": "linear-gradient(to bottom, #00062A, #000000)",
     "link": "/portfolio/web-app",
     "order": 2,
@@ -27,19 +27,19 @@
     "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "/portfolio/black.png",
     "readbtn": "Explore More",
-    "background": "linear-gradient(to bottom, #102A00, #000000)", 
+    "background": "linear-gradient(to bottom, #102A00, #000000)",
     "link": "/portfolio/graphic-design",
     "order": 3,
     "status": "active"
   },
   {
     "id": "seo-sem",
-    "title": "SEO/SEM",
+    "title": "SEO & SEM",
     "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "/portfolio/last.png",
     "readbtn": "Explore More",
     "background": "linear-gradient(to bottom, #2A2500, #000000)",
-    "link": "/portfolio/seo-sem", 
+    "link": "/portfolio/seo-sem",
     "order": 4,
     "status": "active"
   }

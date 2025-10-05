@@ -18,13 +18,25 @@
   "seo": {
     "metaTitle": "Animation Portfolio - BigLeap Creative Studios",
     "metaDescription": "Explore our stunning animation portfolio showcasing creative projects at the intersection of imagination and innovation.",
-    "keywords": ["animation", "portfolio", "creative", "motion graphics", "2D animation", "3D animation"]
+    "keywords": [
+      "animation",
+      "portfolio",
+      "creative",
+      "motion graphics",
+      "2D animation",
+      "3D animation"
+    ]
   },
   "status": "active",
   "featured": true,
   "order": 1,
   "category": "Creative",
-  "tags": ["animation", "motion-graphics", "creative", "video"],
+  "tags": [
+    "animation",
+    "motion-graphics",
+    "creative",
+    "video"
+  ],
   "createdDate": "2024-01-01",
   "lastModified": "2025-10-06",
   "projectGallery": {
