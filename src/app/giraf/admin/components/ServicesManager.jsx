@@ -1116,6 +1116,23 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
               💡 <strong>Styling Tip:</strong> Use "||" to split text for alternating colors. 
               Example: "Our ||Creative||Process" will style "Our","Process" white and "Creative" red.
             </small>
+            {formData.section02?.DescTitle && formData.section02.DescTitle.includes('||') && (
+              <div className={styles.colorPreview}>
+                <strong>Preview: </strong>
+                {formData.section02.DescTitle.split('||').map((part, index) => (
+                  <span 
+                    key={index} 
+                    style={{ 
+                      color: index % 2 === 0 ? '#fdfdfd' : '#ed2428',
+                    }}
+                  >
+                    {part}
+                  </span>
+                  
+                ))}
+              </div>
+            )}
+            <br />
           </div>
           <div className={styles.formField}>
             <label>Description Paragraph</label>
