@@ -10,9 +10,9 @@
   "cardData": {
     "title": "Graphic Design",
     "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "image": "/portfolio/last.png",
+    "image": "/portfolio/black.png",
     "readbtn": "Explore More",
-    "background": "linear-gradient(to bottom, #8B4513, #000000)",
+    "background": "linear-gradient(to bottom, #102A00, #000000)",
     "link": "/portfolio/graphic-design"
   },
   "seo": {

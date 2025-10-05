@@ -10,9 +10,9 @@
   "cardData": {
     "title": "SEO & SEM",
     "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "image": "/portfolio/black.png",
+    "image": "/portfolio/last.png",
     "readbtn": "Explore More",
-    "background": "linear-gradient(to bottom, #2C2C2C, #000000)",
+    "background": "linear-gradient(to bottom, #2A2500, #000000)",
     "link": "/portfolio/seo-sem"
   },
   "seo": {
