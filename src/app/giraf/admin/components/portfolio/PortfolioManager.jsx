@@ -5,6 +5,7 @@ import styles from './portfolio-manager.module.css';
 import { portfolioAdminAPI } from '../../../../../lib/portfolio-admin-client';
 import ImageUpload from '../shared/ImageUpload';
 import GradientColorPicker from '../shared/GradientColorPicker';
+import ManagerHeader from '../shared/ManagerHeader';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -372,38 +373,28 @@ export default function PortfolioManager() {
     return <div className={styles.error}>Error: {error}</div>;
   }
 
+  const headerStats = [
+    { label: 'Total', value: stats.total },
+    { label: 'Active', value: stats.active },
+    { label: 'Draft', value: stats.draft },
+    { label: 'Featured', value: stats.featured }
+  ];
+
+  const handleRefresh = () => {
+    // Add refresh functionality if needed
+    loadPortfolios();
+  };
+
   return (
     <div className={styles.portfolioManager}>
-      <div className={styles.header}>
-        <div className={styles.headerContent}>
-          <h2>Portfolio Manager</h2>
-          <div className={styles.stats}>
-            <div className={styles.stat}>
-              <span className={styles.statIcon}>📊</span>
-              <span>Total: {stats.total}</span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statIcon}>✅</span>
-              <span>Active: {stats.active}</span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statIcon}>📝</span>
-              <span>Draft: {stats.draft}</span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statIcon}>⭐</span>
-              <span>Featured: {stats.featured}</span>
-            </div>
-          </div>
-        </div>
-        
-        <button 
-          className={styles.addButton}
-          onClick={handleAdd}
-        >
-          Add Portfolio
-        </button>
-      </div>
+      <ManagerHeader
+        title="Portfolio Management"
+        stats={headerStats}
+        onRefresh={handleRefresh}
+        onAdd={handleAdd}
+        addButtonText="+ Add New Portfolio"
+        refreshTitle="Refresh portfolio data"
+      />
 
       {/* Filters */}
       <div className={styles.filters}>

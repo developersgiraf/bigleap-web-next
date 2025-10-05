@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import styles from './blog-manager.module.css';
 import { blogsAPI } from '../../../../../lib/blogs-client';
 import ImageUpload from '../shared/ImageUpload';
+import ManagerHeader from '../shared/ManagerHeader';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -372,49 +373,32 @@ const BlogManager = () => {
     );
   }
 
+  const headerStats = [
+    { label: 'Total', value: currentStats.total },
+    { label: 'Published', value: currentStats.published },
+    { label: 'Drafts', value: currentStats.draft },
+    { label: 'Featured', value: currentStats.featured }
+  ];
+
+  const handleRefresh = () => {
+    blogsAPI.invalidateCache();
+    loadBlogs();
+  };
+
+  const handleAdd = () => {
+    setIsEditing(true);
+  };
+
   return (
     <div className={styles.blogManager}>
-      <div className={styles.header}>
-        <div className={styles.headerContent}>
-          <h2>Blog Management</h2>
-          <div className={styles.stats}>
-            <span className={styles.stat}>
-              <span className={styles.statLabel}>Total:</span>
-              <span className={styles.statValue}>{currentStats.total}</span>
-            </span>
-            <span className={styles.stat}>
-              <span className={styles.statLabel}>Published:</span>
-              <span className={styles.statValue}>{currentStats.published}</span>
-            </span>
-            <span className={styles.stat}>
-              <span className={styles.statLabel}>Drafts:</span>
-              <span className={styles.statValue}>{currentStats.draft}</span>
-            </span>
-            <span className={styles.stat}>
-              <span className={styles.statLabel}>Featured:</span>
-              <span className={styles.statValue}>{currentStats.featured}</span>
-            </span>
-          </div>
-        </div>
-        <div className={styles.headerActions}>
-          <button 
-            className={styles.refreshButton}
-            onClick={() => {
-              blogsAPI.invalidateCache();
-              loadBlogs();
-            }}
-            title="Force refresh data"
-          >
-            Refresh
-          </button>
-          <button 
-            className={styles.addButton}
-            onClick={() => setIsEditing(true)}
-          >
-            + Add New Blog Post
-          </button>
-        </div>
-      </div>
+      <ManagerHeader
+        title="Blog Management"
+        stats={headerStats}
+        onRefresh={handleRefresh}
+        onAdd={handleAdd}
+        addButtonText="+ Add New Blog Post"
+        refreshTitle="Force refresh data"
+      />
 
       <div className={styles.controls}>
         <div className={styles.searchBox}>

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useAuth } from '../../../../contexts/AuthContext';
 import styles from './dashboard.module.css';
-import ServicesManager from './shared/ServicesManager';
+import ServicesManager from './services/ServicesManager';
 import BlogManager from './blog/BlogManager';
 import PortfolioManager from './portfolio/PortfolioManager';
 import DatabaseManager from './database/DatabaseManager';
