@@ -14,8 +14,7 @@
 
 .headerContent {
   flex: 1;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
+  min-width: -webkit-fill-available;
   min-width: fit-content;
 }
 

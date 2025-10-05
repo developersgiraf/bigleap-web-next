@@ -54,232 +54,84 @@ const BlogImage = ({ src, alt, status }) => {
   );
 };
 
-// Blog Card Component
-const BlogCard = ({ blog, onEdit, onDelete, onToggleStatus, onToggleFeatured, onIndexChange, totalBlogs, onDragStart, onDragOver, onDrop, draggedIndex }) => {
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const dropdownRef = useRef(null);
-  
-  // Check if device is mobile on mount and window resize
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(isMobileDevice());
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowDropdown(false);
-      }
-    };
-
-    if (showDropdown) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }
-  }, [showDropdown]);
-  
-  const handleIndexSelect = async (newIndex) => {
-    if (newIndex !== blog.index) {
-      await onIndexChange(blog.id, newIndex);
-    }
-    setShowDropdown(false);
-  };
-
-  const handleIncrement = async () => {
-    const newIndex = Math.min((blog.index || 0) + 1, totalBlogs);
-    if (newIndex !== blog.index) {
-      await onIndexChange(blog.id, newIndex);
-    }
-  };
-
-  const handleDecrement = async () => {
-    const newIndex = Math.max((blog.index || 0) - 1, 0);
-    if (newIndex !== blog.index) {
-      await onIndexChange(blog.id, newIndex);
-    }
-  };
-
-  const handleDragStart = (e) => {
-    // Prevent drag on mobile devices
-    if (isMobile) {
-      e.preventDefault();
-      return;
-    }
-    onDragStart(blog.index, blog.id);
-    e.dataTransfer.effectAllowed = 'move';
-  };
-
-  const handleDragOver = (e) => {
-    // Prevent drag over on mobile devices
-    if (isMobile) {
-      e.preventDefault();
-      return;
-    }
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-    onDragOver(blog.index);
-  };
-
-  const handleDrop = (e) => {
-    // Prevent drop on mobile devices
-    if (isMobile) {
-      e.preventDefault();
-      return;
-    }
-    e.preventDefault();
-    onDrop(blog.index);
-  };
-
-  const isDraggedOver = draggedIndex !== null && draggedIndex !== blog.index;
-  const isBeingDragged = draggedIndex === blog.index;
-
-  return (
-    <div 
-      key={blog.id} 
-      className={`${styles.blogCard} ${blog.status === 'draft' ? styles.draftCard : ''} ${isBeingDragged ? styles.dragging : ''} ${isDraggedOver ? styles.dragOver : ''}`}
-      draggable={!isMobile}
-      onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      onDrop={handleDrop}
-    >
-      {!isMobile && (
-        <div className={styles.dragHandle} title="Drag to reorder">
-          <span>⋮⋮</span>
+// Blog Card Component (no index/drag)
+const BlogCard = ({ blog, onEdit, onDelete, onToggleStatus, onToggleFeatured }) => (
+  <div className={styles.blogCard}>
+    <BlogImage 
+      src={blog.image} 
+      alt={blog.title}
+      status={blog.status}
+    />
+    <div className={styles.blogContent}>
+      <div className={styles.blogHeader}>
+        <div className={styles.blogTitleGroup}>
+          <h3>{blog.title}</h3>
+        </div>
+        <div className={styles.statusGroup}>
+          <div className={styles.status}>
+            {blog.status === 'published' ? (
+              <span className={styles.statusPublished}>Published</span>
+            ) : (
+              <span className={styles.statusDraft}>Draft</span>
+            )}
+          </div>
+          {blog.featured && (
+            <div className={styles.featuredBadge}>Featured</div>
+          )}
+        </div>
+      </div>
+      <div className={styles.blogMeta}>
+        <span className={styles.category}>{blog.category}</span>
+        <span className={styles.publishDate}>
+          {blog.publishedDate ? new Date(blog.publishedDate).toLocaleDateString() : 'No date'}
+        </span>
+      </div>
+      <p className={styles.blogDescription}>
+        {blog.description?.substring(0, 150) || 'No description available'}...
+      </p>
+      {blog.tags && blog.tags.length > 0 && (
+        <div className={styles.tagsPreview}>
+          {blog.tags.slice(0, 3).map((tag, index) => (
+            <span key={index} className={styles.tag}>
+              {tag.replace(/-/g, ' ')}
+            </span>
+          ))}
+          {blog.tags.length > 3 && (
+            <span className={styles.moreTagsIndicator}>+{blog.tags.length - 3} more</span>
+          )}
         </div>
       )}
-      
-      <BlogImage 
-        src={blog.image} 
-        alt={blog.title}
-        status={blog.status}
-      />
-      
-      <div className={styles.blogContent}>
-        <div className={styles.blogHeader}>
-          <div className={styles.blogTitleGroup}>
-            <div className={styles.indexControls}>
-              <div className={styles.indexBadgeContainer} ref={dropdownRef}>
-                <span 
-                  className={styles.blogIndex}
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  title="Click to change order"
-                >
-                  #{blog.index || 0}
-                </span>
-                {showDropdown && (
-                  <div className={styles.indexDropdown}>
-                    {Array.from({ length: totalBlogs + 1 }, (_, i) => (
-                      <div
-                        key={i}
-                        className={`${styles.dropdownItem} ${i === (blog.index || 0) ? styles.currentIndex : ''}`}
-                        onClick={() => handleIndexSelect(i)}
-                      >
-                        #{i}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className={styles.indexButtons}>
-                <button
-                  className={styles.indexBtn}
-                  onClick={handleDecrement}
-                  disabled={(blog.index || 0) <= 0}
-                  title="Move up"
-                >
-                  ↑
-                </button>
-                <button
-                  className={styles.indexBtn}
-                  onClick={handleIncrement}
-                  disabled={(blog.index || 0) >= totalBlogs}
-                  title="Move down"
-                >
-                  ↓
-                </button>
-              </div>
-            </div>
-            <h3>{blog.title}</h3>
-          </div>
-          <div className={styles.statusGroup}>
-            <div className={styles.status}>
-              {blog.status === 'published' ? (
-                <span className={styles.statusPublished}>Published</span>
-              ) : (
-                <span className={styles.statusDraft}>Draft</span>
-              )}
-            </div>
-            {blog.featured && (
-              <div className={styles.featuredBadge}>Featured</div>
-            )}
-          </div>
-        </div>
-        
-        <div className={styles.blogMeta}>
-          <span className={styles.category}>{blog.category}</span>
-          <span className={styles.publishDate}>
-            {blog.publishedDate ? new Date(blog.publishedDate).toLocaleDateString() : 'No date'}
-          </span>
-        </div>
-        
-        <p className={styles.blogDescription}>
-          {blog.description?.substring(0, 150) || 'No description available'}...
-        </p>
-        
-        {blog.tags && blog.tags.length > 0 && (
-          <div className={styles.tagsPreview}>
-            {blog.tags.slice(0, 3).map((tag, index) => (
-              <span key={index} className={styles.tag}>
-                {tag.replace(/-/g, ' ')}
-              </span>
-            ))}
-            {blog.tags.length > 3 && (
-              <span className={styles.moreTagsIndicator}>+{blog.tags.length - 3} more</span>
-            )}
-          </div>
-        )}
-        
-        <div className={styles.blogFooter}>
-          <div className={styles.actions}>
-            <button 
-              className={styles.editBtn}
-              onClick={() => onEdit(blog)}
-            >
-              Edit
-            </button>
-            <button 
-              className={blog.status === 'published' ? styles.draftBtn : styles.publishBtn}
-              onClick={() => onToggleStatus(blog.id, blog.status === 'published' ? 'draft' : 'published')}
-            >
-              {blog.status === 'published' ? 'Make Draft' : 'Publish'}
-            </button>
-            <button 
-              className={blog.featured ? styles.unfeaturedBtn : styles.featuredBtn}
-              onClick={() => onToggleFeatured(blog.id, !blog.featured)}
-            >
-              {blog.featured ? 'Unfeature' : 'Feature'}
-            </button>
-            <button 
-              className={styles.deleteBtn}
-              onClick={() => onDelete(blog.id)}
-            >
-              Delete
-            </button>
-          </div>
+      <div className={styles.blogFooter}>
+        <div className={styles.actions}>
+          <button 
+            className={styles.editBtn}
+            onClick={() => onEdit(blog)}
+          >
+            Edit
+          </button>
+          <button 
+            className={blog.status === 'published' ? styles.draftBtn : styles.publishBtn}
+            onClick={() => onToggleStatus(blog.id, blog.status === 'published' ? 'draft' : 'published')}
+          >
+            {blog.status === 'published' ? 'Make Draft' : 'Publish'}
+          </button>
+          <button 
+            className={blog.featured ? styles.unfeaturedBtn : styles.featuredBtn}
+            onClick={() => onToggleFeatured(blog.id, !blog.featured)}
+          >
+            {blog.featured ? 'Unfeature' : 'Feature'}
+          </button>
+          <button 
+            className={styles.deleteBtn}
+            onClick={() => onDelete(blog.id)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 const BlogManager = () => {
   const [blogs, setBlogs] = useState([]);
@@ -292,9 +144,6 @@ const BlogManager = () => {
   const [error, setError] = useState(null);
   const [stats, setStats] = useState({ total: 0, published: 0, draft: 0, featured: 0 });
   
-  // Drag and drop state
-  const [draggedBlog, setDraggedBlog] = useState(null);
-  const [draggedIndex, setDraggedIndex] = useState(null);
 
   // Debounce search term to prevent excessive API calls
   useEffect(() => {
@@ -305,76 +154,22 @@ const BlogManager = () => {
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
-  // Function to ensure unique indexes and fix duplicates
-  const ensureUniqueIndexes = useCallback(async (blogsList) => {
-    const indexMap = new Map();
-    const duplicates = [];
-    
-    // Find duplicates
-    blogsList.forEach(blog => {
-      const index = blog.index || 0;
-      if (indexMap.has(index)) {
-        duplicates.push(blog);
-      } else {
-        indexMap.set(index, blog);
-      }
-    });
-    
-    // Fix duplicates by assigning new indexes
-    if (duplicates.length > 0) {
-      console.log('Found duplicate indexes, fixing...', duplicates);
-      
-      for (const blog of duplicates) {
-        let newIndex = 0;
-        while (indexMap.has(newIndex)) {
-          newIndex++;
-        }
-        
-        try {
-          await blogsAPI.update(blog.id, { index: newIndex });
-          indexMap.set(newIndex, blog);
-          console.log(`Fixed duplicate index for blog ${blog.id}: assigned index ${newIndex}`);
-        } catch (err) {
-          console.error(`Failed to fix index for blog ${blog.id}:`, err);
-        }
-      }
-      
-      // Reload blogs after fixing duplicates
-      return true;
-    }
-    
-    return false;
-  }, []);
 
   // Load blogs data with caching
   const loadBlogs = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
-      
       let response;
       if (debouncedSearchTerm.trim()) {
         response = await blogsAPI.searchAll(debouncedSearchTerm);
       } else {
         response = await blogsAPI.getAll();
       }
-      
       if (!response.success) {
         throw new Error(response.error);
       }
-      
-      console.log('DEBUG: Blogs loaded from API:', response.data);
-      
-      // Check for duplicate indexes and fix them
-      const needsReload = await ensureUniqueIndexes(response.data);
-      
-      if (needsReload) {
-        // Reload data after fixing duplicates
-        response = await blogsAPI.getAll();
-      }
-      
       setBlogs(response.data);
-      
       // Always load stats for header display (independent of search)
       try {
         const statsResponse = await blogsAPI.getStats();
@@ -383,7 +178,6 @@ const BlogManager = () => {
         }
       } catch (statsError) {
         console.warn('Failed to load stats:', statsError);
-        // Don't fail the whole load just for stats
       }
     } catch (err) {
       console.error('Error loading blogs:', err);
@@ -391,14 +185,14 @@ const BlogManager = () => {
     } finally {
       setLoading(false);
     }
-  }, [debouncedSearchTerm, ensureUniqueIndexes]);
+  }, [debouncedSearchTerm]);
 
   // Load blogs when debounced search term changes
   useEffect(() => {
     loadBlogs();
   }, [loadBlogs]);
 
-  // Filter blogs based on current filter (memoized for performance)
+  // Filter and sort blogs: featured first, then publishedDate desc, then lastModified desc
   const filteredBlogs = useMemo(() => {
     return blogs
       .filter(blog => {
@@ -407,7 +201,22 @@ const BlogManager = () => {
         if (filter === 'featured') return blog.featured;
         return true; // 'all'
       })
-      .sort((a, b) => (a.index || 0) - (b.index || 0)); // Sort by index
+      .sort((a, b) => {
+        // Featured first
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
+        // Newest publishedDate first
+        const dateA = a.publishedDate ? new Date(a.publishedDate) : new Date(0);
+        const dateB = b.publishedDate ? new Date(b.publishedDate) : new Date(0);
+        if (dateA > dateB) return -1;
+        if (dateA < dateB) return 1;
+        // Newest lastModified first
+        const modA = a.lastModified ? new Date(a.lastModified) : new Date(0);
+        const modB = b.lastModified ? new Date(b.lastModified) : new Date(0);
+        if (modA > modB) return -1;
+        if (modA < modB) return 1;
+        return 0;
+      });
   }, [blogs, filter]);
 
   // Calculate stats from current blogs (memoized for performance)
@@ -487,73 +296,9 @@ const BlogManager = () => {
     }
   }, [loadBlogs]);
 
-  const handleIndexChange = useCallback(async (blogId, newIndex) => {
-    try {
-      // Find the blog that currently has the target index
-      const currentBlogAtIndex = blogs.find(s => s.index === newIndex);
-      const blogToMove = blogs.find(s => s.id === blogId);
-      
-      if (!blogToMove) return;
 
-      // If there's a blog at the target index, swap their positions
-      if (currentBlogAtIndex && currentBlogAtIndex.id !== blogId) {
-        // Swap indexes
-        await blogsAPI.update(currentBlogAtIndex.id, { index: blogToMove.index || 0 });
-      }
-      
-      // Update the moved blog's index
-      await blogsAPI.update(blogId, { index: newIndex });
-      
-      // Force cache invalidation and reload
-      blogsAPI.invalidateCache();
-      await loadBlogs();
-    } catch (err) {
-      console.error('Error changing blog index:', err);
-      alert('Failed to update blog order. Please try again.');
-    }
-  }, [blogs, loadBlogs]);
 
-  // Drag and drop handlers
-  const handleDragStart = useCallback((index, blogId) => {
-    setDraggedIndex(index);
-    setDraggedBlog(blogId);
-  }, []);
 
-  const handleDragOver = useCallback((index) => {
-    // Visual feedback could be added here if needed
-  }, []);
-
-  const handleDrop = useCallback(async (targetIndex) => {
-    if (draggedIndex !== null && draggedIndex !== targetIndex && draggedBlog) {
-      try {
-        // Get the blogs at both positions
-        const draggedBlogObj = blogs.find(s => s.index === draggedIndex);
-        const targetBlogObj = blogs.find(s => s.index === targetIndex);
-        
-        if (draggedBlogObj) {
-          if (targetBlogObj) {
-            // Swap the indexes
-            await blogsAPI.update(draggedBlogObj.id, { index: targetIndex });
-            await blogsAPI.update(targetBlogObj.id, { index: draggedIndex });
-          } else {
-            // Just move to the empty position
-            await blogsAPI.update(draggedBlogObj.id, { index: targetIndex });
-          }
-          
-          // Force cache invalidation and reload
-          blogsAPI.invalidateCache();
-          await loadBlogs();
-        }
-      } catch (err) {
-        console.error('Error during drag and drop:', err);
-        alert('Failed to reorder blogs. Please try again.');
-      }
-    }
-    
-    // Reset drag state
-    setDraggedIndex(null);
-    setDraggedBlog(null);
-  }, [draggedIndex, draggedBlog, blogs, loadBlogs]);
 
   const handleSave = useCallback(async (blogData) => {
     try {
@@ -705,12 +450,6 @@ const BlogManager = () => {
             onDelete={handleDelete}
             onToggleStatus={handleToggleStatus}
             onToggleFeatured={handleToggleFeatured}
-            onIndexChange={handleIndexChange}
-            totalBlogs={blogs.length}
-            onDragStart={handleDragStart}
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-            draggedIndex={draggedIndex}
           />
         ))}
       </div>
@@ -758,7 +497,6 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
     tags: [],
     featured: false,
     status: 'draft',
-    index: 0,
     author: 'BigLeap Team',
     seo: {
       metaTitle: '',
@@ -811,7 +549,6 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
         tags: Array.isArray(blog.tags) ? blog.tags : [],
         featured: Boolean(blog.featured),
         status: blog.status || 'draft',
-        index: blog.index || 0,
         author: blog.author || 'BigLeap Team',
         seo: {
           metaTitle: blog.seo?.metaTitle || '',
@@ -819,20 +556,11 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
           keywords: Array.isArray(blog.seo?.keywords) ? blog.seo.keywords : []
         }
       };
-      
       setFormData(blogData);
       setUseCustomSlug(false); // For existing blogs, disable custom slug
     }
   }, [blog]);
 
-  // Auto-assign next available index for new blogs
-  useEffect(() => {
-    if (!blog && blogs && blogs.length > 0) {
-      const maxIndex = Math.max(...blogs.map(s => s.index || 0));
-      const nextIndex = maxIndex + 1;
-      setFormData(prev => ({ ...prev, index: nextIndex }));
-    }
-  }, [blog, blogs]);
 
   const handleInputChange = (field, value, section = null) => {
     if (section) {
@@ -1013,21 +741,6 @@ const BlogEditor = ({ blog, blogs, onSave, onCancel }) => {
                 value={formData.publishedDate}
                 onChange={(e) => handleInputChange('publishedDate', e.target.value)}
               />
-            </div>
-            <div className={styles.formField}>
-              <label>Display Order</label>
-              <input
-                type="number"
-                value={formData.index}
-                onChange={(e) => handleInputChange('index', parseInt(e.target.value) || 0)}
-                placeholder="0"
-                min="0"
-                max="999"
-                className={styles.indexInput}
-              />
-              <small className={styles.fieldNote}>
-                Blog posts will be displayed in ascending order (0, 1, 2, etc.). Lower numbers appear first.
-              </small>
             </div>
           </div>
         </div>

@@ -32,42 +32,39 @@ class BlogsAPI {
     this.cacheExpiry.clear();
   }
 
-  // Get all blogs with caching
+  // Get all blogs with caching (strip index if present)
   async getAll() {
     const cacheKey = 'blogs_all';
     const cached = this.getCache(cacheKey);
-    
     if (cached) {
       console.log('Returning cached blogs data');
       return { success: true, data: cached };
     }
-
     try {
       const response = await fetch('/api/blogs');
-      
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
       const data = await response.json();
-      
       if (data.success) {
-        this.setCache(cacheKey, data.data);
+        // Remove index from each blog if present
+        const blogs = Array.isArray(data.data)
+          ? data.data.map(({ index, ...rest }) => rest)
+          : data.data;
+        this.setCache(cacheKey, blogs);
         console.log('Blogs data loaded and cached');
-        return data;
+        return { success: true, data: blogs };
       } else {
         throw new Error(data.error || 'Failed to fetch blogs');
       }
     } catch (error) {
       console.error('Error fetching blogs:', error);
-      
       // Try to return stale cache if available
       const staleCache = this.cache.get(cacheKey);
       if (staleCache) {
         console.warn('Returning stale cache due to error');
         return { success: true, data: staleCache };
       }
-      
       return { success: false, error: error.message };
     }
   }
@@ -274,23 +271,22 @@ class BlogsAPI {
 
   // Admin Methods - Create, Update, Delete operations
   
-  // Create new blog
+  // Create new blog (no index)
   async create(blogData) {
     try {
+      // Remove index if present
+      const { index, ...dataToSend } = blogData;
       const response = await fetch('/api/blogs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(blogData)
+        body: JSON.stringify(dataToSend)
       });
-      
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
       const data = await response.json();
-      
       if (data.success) {
         // Invalidate cache after creation
         this.invalidateCache();
@@ -305,23 +301,22 @@ class BlogsAPI {
     }
   }
 
-  // Update existing blog
+  // Update existing blog (no index)
   async update(id, blogData) {
     try {
+      // Remove index if present
+      const { index, ...dataToSend } = blogData;
       const response = await fetch(`/api/blogs/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(blogData)
+        body: JSON.stringify(dataToSend)
       });
-      
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
       const data = await response.json();
-      
       if (data.success) {
         // Invalidate cache after update
         this.invalidateCache();
@@ -373,7 +368,7 @@ class BlogsAPI {
     return this.update(id, { featured });
   }
 
-  // Search all blogs (including drafts) - Admin only
+  // Search all blogs (including drafts) - Admin only (strip index if present)
   async searchAll(query) {
     try {
       const result = await this.getAll();
@@ -387,7 +382,9 @@ class BlogsAPI {
             (blog.tags && blog.tags.some(tag => tag.toLowerCase().includes(searchText)))
           );
         });
-        return { success: true, data: searchResults };
+        // Remove index from each blog if present
+        const cleanedResults = searchResults.map(({ index, ...rest }) => rest);
+        return { success: true, data: cleanedResults };
       }
       return result;
     } catch (error) {
