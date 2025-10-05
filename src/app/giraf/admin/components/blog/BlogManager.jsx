@@ -389,6 +389,13 @@ const BlogManager = () => {
     setIsEditing(true);
   };
 
+  const filterOptions = [
+    { value: 'all', label: 'All Posts' },
+    { value: 'published', label: 'Published Only' },
+    { value: 'draft', label: 'Drafts Only' },
+    { value: 'featured', label: 'Featured Only' }
+  ];
+
   return (
     <div className={styles.blogManager}>
       <ManagerHeader
@@ -398,32 +405,13 @@ const BlogManager = () => {
         onAdd={handleAdd}
         addButtonText="+ Add New Blog Post"
         refreshTitle="Force refresh data"
+        searchValue={searchTerm}
+        onSearchChange={setSearchTerm}
+        searchPlaceholder="Search blog posts..."
+        filterValue={filter}
+        onFilterChange={setFilter}
+        filterOptions={filterOptions}
       />
-
-      <div className={styles.controls}>
-        <div className={styles.searchBox}>
-          <input
-            type="text"
-            placeholder="Search blog posts..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className={styles.searchInput}
-          />
-        </div>
-        
-        <div className={styles.filterBox}>
-          <select 
-            value={filter} 
-            onChange={(e) => setFilter(e.target.value)}
-            className={styles.filterSelect}
-          >
-            <option value="all">All Posts</option>
-            <option value="published">Published Only</option>
-            <option value="draft">Drafts Only</option>
-            <option value="featured">Featured Only</option>
-          </select>
-        </div>
-      </div>
 
       <div className={styles.blogsList}>
         {filteredBlogs.map(blog => (

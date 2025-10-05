@@ -385,6 +385,45 @@ export default function PortfolioManager() {
     loadPortfolios();
   };
 
+  // Prepare filter options for portfolio
+  const categoryOptions = [
+    { value: '', label: 'All Categories' },
+    ...categories.map(category => ({ value: category, label: category }))
+  ];
+
+  const statusOptions = [
+    { value: '', label: 'All Status' },
+    { value: 'active', label: 'Active' },
+    { value: 'draft', label: 'Draft' },
+    { value: 'archived', label: 'Archived' }
+  ];
+
+  const sortOptions = [
+    { value: 'order', label: 'Sort by Order' },
+    { value: 'title', label: 'Sort by Title' },
+    { value: 'category', label: 'Sort by Category' },
+    { value: 'lastModified', label: 'Sort by Last Modified' },
+    { value: 'featured', label: 'Sort by Featured' }
+  ];
+
+  const additionalFilters = [
+    {
+      value: filterCategory,
+      onChange: setFilterCategory,
+      options: categoryOptions
+    },
+    {
+      value: filterStatus,
+      onChange: setFilterStatus,
+      options: statusOptions
+    },
+    {
+      value: sortBy,
+      onChange: setSortBy,
+      options: sortOptions
+    }
+  ];
+
   return (
     <div className={styles.portfolioManager}>
       <ManagerHeader
@@ -394,54 +433,11 @@ export default function PortfolioManager() {
         onAdd={handleAdd}
         addButtonText="+ Add New Portfolio"
         refreshTitle="Refresh portfolio data"
+        searchValue={searchTerm}
+        onSearchChange={setSearchTerm}
+        searchPlaceholder="Search portfolios..."
+        additionalFilters={additionalFilters}
       />
-
-      {/* Filters */}
-      <div className={styles.filters}>
-        <div className={styles.searchBox}>
-          <input
-            type="text"
-            placeholder="Search portfolios..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className={styles.searchInput}
-          />
-        </div>
-        
-        <select
-          value={filterCategory}
-          onChange={(e) => setFilterCategory(e.target.value)}
-          className={styles.filterSelect}
-        >
-          <option value="">All Categories</option>
-          {categories.map(category => (
-            <option key={category} value={category}>{category}</option>
-          ))}
-        </select>
-
-        <select
-          value={filterStatus}
-          onChange={(e) => setFilterStatus(e.target.value)}
-          className={styles.filterSelect}
-        >
-          <option value="">All Status</option>
-          <option value="active">Active</option>
-          <option value="draft">Draft</option>
-          <option value="archived">Archived</option>
-        </select>
-
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          className={styles.sortSelect}
-        >
-          <option value="order">Sort by Order</option>
-          <option value="title">Sort by Title</option>
-          <option value="category">Sort by Category</option>
-          <option value="lastModified">Sort by Last Modified</option>
-          <option value="featured">Sort by Featured</option>
-        </select>
-      </div>
 
       {/* Portfolio Grid */}
       <div className={styles.portfolioGrid}>

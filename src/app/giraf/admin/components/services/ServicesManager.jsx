@@ -576,6 +576,12 @@ const ServicesManager = () => {
     setIsEditing(true);
   };
 
+  const filterOptions = [
+    { value: 'all', label: 'All Services' },
+    { value: 'active', label: 'Active Only' },
+    { value: 'archived', label: 'Archived Only' }
+  ];
+
   return (
     <div className={styles.servicesManager}>
       <ManagerHeader
@@ -585,31 +591,13 @@ const ServicesManager = () => {
         onAdd={handleAdd}
         addButtonText="+ Add New Service"
         refreshTitle="Force refresh data"
+        searchValue={searchTerm}
+        onSearchChange={setSearchTerm}
+        searchPlaceholder="Search services..."
+        filterValue={filter}
+        onFilterChange={setFilter}
+        filterOptions={filterOptions}
       />
-
-      <div className={styles.controls}>
-        <div className={styles.searchBox}>
-          <input
-            type="text"
-            placeholder="Search services..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className={styles.searchInput}
-          />
-        </div>
-        
-        <div className={styles.filterBox}>
-          <select 
-            value={filter} 
-            onChange={(e) => setFilter(e.target.value)}
-            className={styles.filterSelect}
-          >
-            <option value="all">All Services</option>
-            <option value="active">Active Only</option>
-            <option value="archived">Archived Only</option>
-          </select>
-        </div>
-      </div>
 
       <div className={styles.servicesList}>
         {filteredServices.map(service => (
