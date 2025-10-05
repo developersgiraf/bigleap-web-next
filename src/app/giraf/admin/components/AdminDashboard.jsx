@@ -5,6 +5,7 @@ import { useAuth } from '../../../../contexts/AuthContext';
 import styles from './dashboard.module.css';
 import ServicesManager from './ServicesManager';
 import BlogManager from './BlogManager';
+import PortfolioManager from './PortfolioManager';
 import DatabaseManager from './DatabaseManager';
 
 const AdminDashboard = () => {
@@ -70,17 +71,7 @@ const AdminDashboard = () => {
       case 'services':
         return <ServicesManager />;
       case 'portfolio':
-        return (
-          <div className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2>Portfolio Management</h2>
-              <button className={styles.primaryButton}>Add New Project</button>
-            </div>
-            <div className={styles.placeholder}>
-              <p>Portfolio content - Videos, client projects, showcases, and project galleries</p>
-            </div>
-          </div>
-        );
+        return <PortfolioManager />;
       case 'blog':
         return <BlogManager />;
       case 'clients':

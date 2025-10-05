@@ -1,7 +1,7 @@
 import TitleBanner from "../../components/title-banner/titleBannerr";
 import styles from "./portfolioDetail.module.css";
 import Image from "next/image";
-import MotionGraphics from "./components/motionGraphics/motionGraphics";
+import PortfolioGallery from "./components/portfolioGallery/portfolioGallery";
 import TitleDescription from "../../servicess/components/title-description/titleDes";
 import GradientLights from "../../components/gradient-lights/gradient";
 import VideoSwiper from "./components/VideoSwiper";
@@ -89,7 +89,7 @@ export default async function PortfolioDetail({ params }) {
         />
       </section>
 
-      <MotionGraphics />
+      <PortfolioGallery projectGallery={portfolio.projectGallery} />
 
       <GradientLights count={6} />
     </>

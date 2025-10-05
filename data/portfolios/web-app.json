@@ -26,5 +26,53 @@
   "category": "Development",
   "tags": ["web-development", "mobile-app", "technology", "ux-ui"],
   "createdDate": "2024-01-01",
-  "lastModified": "2025-10-06"
+  "lastModified": "2025-10-06",
+  "projectGallery": {
+    "title": "Web & App Development",
+    "subtitle": "Innovative Digital Solutions",
+    "projects": [
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "E-commerce Platform",
+        "date": "Sep 01 2025",
+        "about": "Full-stack React Application",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "Mobile App",
+        "date": "Aug 20 2025",
+        "about": "React Native iOS/Android",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "SaaS Dashboard",
+        "date": "Jul 15 2025",
+        "about": "Next.js Enterprise Solution",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "Progressive Web App",
+        "date": "Jun 30 2025",
+        "about": "Modern PWA Development",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "API Integration",
+        "date": "May 25 2025",
+        "about": "RESTful Services Backend",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "Cloud Deployment",
+        "date": "Apr 12 2025",
+        "about": "AWS Infrastructure Setup",
+        "link": "#"
+      }
+    ]
+  }
 }

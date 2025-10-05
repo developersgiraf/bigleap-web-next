@@ -26,5 +26,53 @@
   "category": "Design",
   "tags": ["graphic-design", "branding", "visual-design", "creativity"],
   "createdDate": "2024-01-01",
-  "lastModified": "2025-10-06"
+  "lastModified": "2025-10-06",
+  "projectGallery": {
+    "title": "Graphic Design",
+    "subtitle": "Visual Stories That Captivate",
+    "projects": [
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Brand Identity",
+        "date": "Sep 05 2025",
+        "about": "Complete Corporate Branding",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Print Design",
+        "date": "Aug 18 2025",
+        "about": "Marketing Collateral Design",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Logo Design",
+        "date": "Jul 28 2025",
+        "about": "Modern Logo Creation",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Packaging Design",
+        "date": "Jun 22 2025",
+        "about": "Product Packaging Solutions",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Digital Graphics",
+        "date": "May 15 2025",
+        "about": "Social Media Visuals",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Illustration",
+        "date": "Apr 08 2025",
+        "about": "Custom Illustration Work",
+        "link": "#"
+      }
+    ]
+  }
 }
