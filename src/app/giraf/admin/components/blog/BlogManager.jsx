@@ -6,6 +6,7 @@ import { blogsAPI } from '../../../../../lib/blogs-client';
 import ImageUpload from '../shared/ImageUpload';
 import ManagerHeader from '../shared/elements/ManagerHeader';
 import ActionButtons from '../shared/elements/ActionButtons';
+import ManagerCard from '../shared/elements/ManagerCard';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -414,13 +415,41 @@ const BlogManager = () => {
 
       <div className={styles.blogsList}>
         {filteredBlogs.map(blog => (
-          <BlogCard
+          <ManagerCard
             key={blog.id}
-            blog={blog}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-            onToggleStatus={handleToggleStatus}
-            onToggleFeatured={handleToggleFeatured}
+            item={blog}
+            title={blog.title}
+            description={blog.excerpt || `${blog.content?.substring(0, 150) || 'No content available'}...`}
+            image={blog.image}
+            status={blog.status}
+            featured={blog.featured}
+            metadata={[
+              { label: 'Category', value: blog.category },
+              { label: 'Published', value: blog.publishedDate ? new Date(blog.publishedDate).toLocaleDateString() : 'No date' }
+            ]}
+            onCardClick={() => handleEdit(blog)}
+            actionButtons={[
+              {
+                type: 'edit',
+                label: 'Edit',
+                onClick: () => handleEdit(blog)
+              },
+              {
+                type: blog.status === 'published' ? 'archive' : 'publish',
+                label: blog.status === 'published' ? 'Make Draft' : 'Publish',
+                onClick: () => handleToggleStatus(blog.id, blog.status === 'published' ? 'draft' : 'published')
+              },
+              {
+                type: blog.featured ? 'archive' : 'publish',
+                label: blog.featured ? 'Unfeature' : 'Feature',
+                onClick: () => handleToggleFeatured(blog.id, !blog.featured)
+              },
+              {
+                type: 'delete',
+                label: 'Delete',
+                onClick: () => handleDelete(blog.id)
+              }
+            ]}
           />
         ))}
       </div>

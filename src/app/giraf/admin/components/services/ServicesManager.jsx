@@ -6,6 +6,7 @@ import { servicesAPI } from '../../../../../lib/services-client';
 import ImageUpload from '../shared/ImageUpload';
 import ManagerHeader from '../shared/elements/ManagerHeader';
 import ActionButtons from '../shared/elements/ActionButtons';
+import ManagerCard from '../shared/elements/ManagerCard';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -19,234 +20,7 @@ const isMobileDevice = () => {
   );
 };
 
-// Optimized Image Component with proper error handling
-const ServiceImage = ({ src, alt, archived }) => {
-  const [imageSrc, setImageSrc] = useState(src || '/servicess/default-image.png');
-  const [hasError, setHasError] = useState(false);
-
-  useEffect(() => {
-    if (src && src !== imageSrc && !hasError) {
-      setImageSrc(src);
-    }
-  }, [src, imageSrc, hasError]);
-
-  const handleError = useCallback(() => {
-    if (!hasError) {
-      setHasError(true);
-      setImageSrc('/servicess/default-image.png');
-    }
-  }, [hasError]);
-
-  return (
-    <div className={styles.serviceImage}>
-      <img 
-        src={imageSrc}
-        alt={alt}
-        onError={handleError}
-        loading="lazy"
-        style={{ objectFit: 'cover' }}
-      />
-      {archived && (
-        <div className={styles.archivedBadge}>Archived</div>
-      )}
-    </div>
-  );
-};
-
-// Service Card Component
-const ServiceCard = ({ service, onEdit, onArchive, onDelete, onIndexChange, totalServices, onDragStart, onDragOver, onDrop, draggedIndex }) => {
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const dropdownRef = useRef(null);
-  
-  // Check if device is mobile on mount and window resize
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(isMobileDevice());
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowDropdown(false);
-      }
-    };
-
-    if (showDropdown) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }
-  }, [showDropdown]);
-  
-  const handleIndexSelect = async (newIndex) => {
-    if (newIndex !== service.index) {
-      await onIndexChange(service.id, newIndex);
-    }
-    setShowDropdown(false);
-  };
-
-  const handleIncrement = async () => {
-    const newIndex = Math.min((service.index || 0) + 1, totalServices);
-    if (newIndex !== service.index) {
-      await onIndexChange(service.id, newIndex);
-    }
-  };
-
-  const handleDecrement = async () => {
-    const newIndex = Math.max((service.index || 0) - 1, 0);
-    if (newIndex !== service.index) {
-      await onIndexChange(service.id, newIndex);
-    }
-  };
-
-  const handleDragStart = (e) => {
-    // Prevent drag on mobile devices
-    if (isMobile) {
-      e.preventDefault();
-      return;
-    }
-    onDragStart(service.index, service.id);
-    e.dataTransfer.effectAllowed = 'move';
-  };
-
-  const handleDragOver = (e) => {
-    // Prevent drag over on mobile devices
-    if (isMobile) {
-      e.preventDefault();
-      return;
-    }
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-    onDragOver(service.index);
-  };
-
-  const handleDrop = (e) => {
-    // Prevent drop on mobile devices
-    if (isMobile) {
-      e.preventDefault();
-      return;
-    }
-    e.preventDefault();
-    onDrop(service.index);
-  };
-
-  const isDraggedOver = draggedIndex !== null && draggedIndex !== service.index;
-  const isBeingDragged = draggedIndex === service.index;
-
-  return (
-    <div 
-      key={service.id} 
-      className={`${styles.serviceCard} ${service.archived ? styles.archivedCard : ''} ${isBeingDragged ? styles.dragging : ''} ${isDraggedOver ? styles.dragOver : ''}`}
-      draggable={!isMobile}
-      onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      onDrop={handleDrop}
-    >
-      {!isMobile && (
-        <div className={styles.dragHandle} title="Drag to reorder">
-          <span>⋮⋮</span>
-        </div>
-      )}
-      
-      <ServiceImage 
-        src={service.thumbnail || service.section01?.image} 
-        alt={service.title || service.bannerTitle}
-        archived={service.archived}
-      />
-      
-      <div className={styles.serviceContent}>
-        <div className={styles.serviceHeader}>
-          <div className={styles.serviceTitleGroup}>
-            <div className={styles.indexControls}>
-              <div className={styles.indexBadgeContainer} ref={dropdownRef}>
-                <span 
-                  className={styles.serviceIndex}
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  title="Click to change order"
-                >
-                  #{service.index || 0}
-                </span>
-                {showDropdown && (
-                  <div className={styles.indexDropdown}>
-                    {Array.from({ length: totalServices + 1 }, (_, i) => (
-                      <div
-                        key={i}
-                        className={`${styles.dropdownItem} ${i === (service.index || 0) ? styles.currentIndex : ''}`}
-                        onClick={() => handleIndexSelect(i)}
-                      >
-                        #{i}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className={styles.indexButtons}>
-                <button
-                  className={styles.indexBtn}
-                  onClick={handleDecrement}
-                  disabled={(service.index || 0) <= 0}
-                  title="Move up"
-                >
-                  ↑
-                </button>
-                <button
-                  className={styles.indexBtn}
-                  onClick={handleIncrement}
-                  disabled={(service.index || 0) >= totalServices}
-                  title="Move down"
-                >
-                  ↓
-                </button>
-              </div>
-            </div>
-            <h3>{service.title || service.bannerTitle}</h3>
-          </div>
-          <div className={styles.status}>
-            {service.archived ? (
-              <span className={styles.statusArchived}>Archived</span>
-            ) : (
-              <span className={styles.statusActive}>Active</span>
-            )}
-          </div>
-        </div>
-        
-        <p className={styles.serviceDescription}>
-          {service.section01?.description?.substring(0, 150) || 'No description available'}...
-        </p>
-        
-        <div className={styles.serviceFooter}>
-          <ActionButtons 
-            buttons={[
-              {
-                type: 'edit',
-                label: 'Edit',
-                onClick: () => onEdit(service)
-              },
-              {
-                type: service.archived ? 'publish' : 'archive',
-                label: service.archived ? 'Unarchive' : 'Archive',
-                onClick: () => onArchive(service.id, service.archived)
-              },
-              {
-                type: 'delete',
-                label: 'Delete',
-                onClick: () => onDelete(service.id)
-              }
-            ]}
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
+// Service card components replaced with shared ManagerCard component
 
 const ServicesManager = () => {
   const [services, setServices] = useState([]);
@@ -601,18 +375,39 @@ const ServicesManager = () => {
 
       <div className={styles.servicesList}>
         {filteredServices.map(service => (
-          <ServiceCard
+          <ManagerCard
             key={service.id}
-            service={service}
-            onEdit={handleEdit}
-            onArchive={handleArchive}
-            onDelete={handleDelete}
+            item={service}
+            title={service.title || service.bannerTitle}
+            description={`${service.section01?.description?.substring(0, 150) || 'No description available'}...`}
+            image={service.thumbnail || service.section01?.image}
+            archived={service.archived}
+            showIndexControls={true}
+            currentIndex={service.index}
+            totalItems={services.length}
             onIndexChange={handleIndexChange}
-            totalServices={services.length}
+            draggable={true}
             onDragStart={handleDragStart}
             onDragOver={handleDragOver}
             onDrop={handleDrop}
             draggedIndex={draggedIndex}
+            actionButtons={[
+              {
+                type: 'edit',
+                label: 'Edit',
+                onClick: () => handleEdit(service)
+              },
+              {
+                type: service.archived ? 'publish' : 'archive',
+                label: service.archived ? 'Unarchive' : 'Archive',
+                onClick: () => handleArchive(service.id, service.archived)
+              },
+              {
+                type: 'delete',
+                label: 'Delete',
+                onClick: () => handleDelete(service.id)
+              }
+            ]}
           />
         ))}
       </div>
