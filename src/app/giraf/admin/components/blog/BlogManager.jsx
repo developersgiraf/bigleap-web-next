@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import styles from './blog-manager.module.css';
 import { blogsAPI } from '../../../../../lib/blogs-client';
 import ImageUpload from '../shared/ImageUpload';
-import ManagerHeader from '../shared/ManagerHeader';
-import ActionButtons from '../shared/ActionButtons';
+import ManagerHeader from '../shared/elements/ManagerHeader';
+import ActionButtons from '../shared/elements/ActionButtons';
 
 // Mobile detection utility
 const isMobileDevice = () => {

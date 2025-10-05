@@ -5,8 +5,8 @@ import styles from './portfolio-manager.module.css';
 import { portfolioAdminAPI } from '../../../../../lib/portfolio-admin-client';
 import ImageUpload from '../shared/ImageUpload';
 import GradientColorPicker from '../shared/GradientColorPicker';
-import ManagerHeader from '../shared/ManagerHeader';
-import ActionButtons from '../shared/ActionButtons';
+import ManagerHeader from '../shared/elements/ManagerHeader';
+import ActionButtons from '../shared/elements/ActionButtons';
 
 // Mobile detection utility
 const isMobileDevice = () => {

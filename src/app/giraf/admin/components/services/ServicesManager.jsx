@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import styles from './services-manager.module.css';
 import { servicesAPI } from '../../../../../lib/services-client';
 import ImageUpload from '../shared/ImageUpload';
-import ManagerHeader from '../shared/ManagerHeader';
-import ActionButtons from '../shared/ActionButtons';
+import ManagerHeader from '../shared/elements/ManagerHeader';
+import ActionButtons from '../shared/elements/ActionButtons';
 
 // Mobile detection utility
 const isMobileDevice = () => {
