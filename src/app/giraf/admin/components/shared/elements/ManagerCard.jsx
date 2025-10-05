@@ -129,14 +129,14 @@ const ManagerCard = ({
   };
 
   const handleIncrement = async () => {
-    const newIndex = Math.min((currentIndex || 0) + 1, totalItems);
+    const newIndex = Math.min((currentIndex || 1) + 1, totalItems);
     if (newIndex !== currentIndex && onIndexChange) {
       await onIndexChange(item.id, newIndex);
     }
   };
 
   const handleDecrement = async () => {
-    const newIndex = Math.max((currentIndex || 0) - 1, 0);
+    const newIndex = Math.max((currentIndex || 1) - 1, 1);
     if (newIndex !== currentIndex && onIndexChange) {
       await onIndexChange(item.id, newIndex);
     }
@@ -227,15 +227,21 @@ const ManagerCard = ({
                   </span>
                   {showDropdown && (
                     <div className={styles.indexDropdown}>
-                      {Array.from({ length: totalItems + 1 }, (_, i) => (
-                        <div
-                          key={i}
-                          className={`${styles.dropdownItem} ${i === (currentIndex || 0) ? styles.currentIndex : ''}`}
-                          onClick={() => handleIndexSelect(i)}
-                        >
-                          #{i}
-                        </div>
-                      ))}
+                      {Array.from({ length: totalItems }, (_, i) => {
+                        const orderValue = i + 1; // Start from 1 instead of 0
+                        return (
+                          <div
+                            key={orderValue}
+                            className={`${styles.dropdownItem} ${orderValue === (currentIndex || 1) ? styles.currentIndex : ''}`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleIndexSelect(orderValue);
+                            }}
+                          >
+                            #{orderValue}
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -246,7 +252,7 @@ const ManagerCard = ({
                       e.stopPropagation();
                       handleDecrement();
                     }}
-                    disabled={(currentIndex || 0) <= 0}
+                    disabled={(currentIndex || 1) <= 1}
                     title="Move up"
                   >
                     ↑
@@ -257,7 +263,7 @@ const ManagerCard = ({
                       e.stopPropagation();
                       handleIncrement();
                     }}
-                    disabled={(currentIndex || 0) >= totalItems}
+                    disabled={(currentIndex || 1) >= totalItems}
                     title="Move down"
                   >
                     ↓
