@@ -3,56 +3,52 @@ import GradientLights from "../components/gradient-lights/gradient";
 import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
 import TitleBanner from "../components/title-banner/titleBannerr";
 import styles from "./blog.module.css";
+import fs from 'fs';
+import path from 'path';
 
-const blogData = [
-  {
-    image: "/servicess/2danimation.png",
-    caption: "2D Animation",
-    link: "/blog/2danimation",
-  },
-  {
-    image: "/servicess/3danimation.png",
-    caption: "3D Animation",
-    link: "/blog/3danimation",
-  },
-  {
-    image: "/servicess/Whiteboard Animation.png",
-    caption: "Whiteboard Animation",
-    link: "/blog/whiteboard-animation",
-  },
-  {
-    image: "/servicess/character.png",
-    caption: "Character Design",
-    link: "/blog/character-design",
-  },
-  {
-    image: "/servicess/comic-book.png",
-    caption: "Comic Book",
-    link: "/blog/comic-book",
-  },
-  {
-    image: "/servicess/red-machine.png",
-    caption: "red machine",
-    link: "#",
-  },
-  {
-    image: "/servicess/VFX & Post Production.png",
-    caption: "VFX & Post Production",
-    link: "#",
-  },
-  {
-    image: "/servicess/video.png",
-    caption: "Video Editing & Post Production",
-    link: "#",
-  },
-  {
-    image: "/servicess/Whiteboard Animation.png",
-    caption: "white board",
-    link: "#",
-  },
-];
+// Function to transform blog data for ServiceImage component
+function transformBlogData(blogs) {
+  return blogs.map(blog => ({
+    image: blog.image,
+    caption: blog.caption || blog.title,
+    link: blog.status === 'published' ? `/blog/${blog.slug}` : "#"
+  }));
+}
 
-export default function BlogPage() {
+// Server-side function to read blogs
+async function getPublishedBlogs() {
+  try {
+    const blogsDir = path.join(process.cwd(), 'data', 'blogs');
+    const indexFile = path.join(blogsDir, 'index.json');
+    
+    if (!fs.existsSync(indexFile)) {
+      return [];
+    }
+    
+    const data = fs.readFileSync(indexFile, 'utf8');
+    const blogs = JSON.parse(data);
+    
+    // Filter published blogs and sort by index
+    return blogs
+      .filter(blog => blog.status === 'published')
+      .sort((a, b) => (a.index || 0) - (b.index || 0));
+  } catch (error) {
+    console.error('Error reading blogs:', error);
+    return [];
+  }
+}
+
+export default async function BlogPage() {
+  let blogData = [];
+  
+  try {
+    // Fetch published blogs from server
+    const publishedBlogs = await getPublishedBlogs();
+    blogData = transformBlogData(publishedBlogs);
+  } catch (error) {
+    console.error('Error loading blogs:', error);
+    // Fallback to empty array
+  }
   return (
     <>
       <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" sub=""/>
