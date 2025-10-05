@@ -7,7 +7,7 @@
       "archived": false,
       "index": 0,
       "thumbnail": "/servicess/2danimation.png",
-      "lastModified": "2025-10-05T13:58:29.220Z"
+      "lastModified": "2025-10-05T14:19:16.911Z"
     },
     {
       "id": "threeDanimation",
@@ -16,7 +16,7 @@
       "archived": false,
       "index": 1,
       "thumbnail": "/servicess/3danimation.png",
-      "lastModified": "2025-10-05T13:58:29.540Z"
+      "lastModified": "2025-10-05T14:19:16.915Z"
     },
     {
       "id": "character-design",
@@ -25,7 +25,7 @@
       "archived": false,
       "index": 3,
       "thumbnail": "/servicess/Character.png",
-      "lastModified": "2025-10-02T17:38:44.558Z"
+      "lastModified": "2025-10-05T14:19:16.919Z"
     },
     {
       "id": "vfx-and-post-production",
@@ -34,7 +34,7 @@
       "archived": false,
       "index": 4,
       "thumbnail": "/servicess/VFX & Post Production.png",
-      "lastModified": "2025-10-02T17:38:44.561Z"
+      "lastModified": "2025-10-05T14:19:16.926Z"
     },
     {
       "id": "product-animation",
@@ -43,7 +43,7 @@
       "archived": false,
       "index": 5,
       "thumbnail": "/servicess/default-image.png",
-      "lastModified": "2025-10-02T17:38:44.566Z"
+      "lastModified": "2025-10-05T14:19:16.931Z"
     },
     {
       "id": "storytelling",
@@ -52,7 +52,7 @@
       "archived": false,
       "index": 6,
       "thumbnail": "/servicess/storytelling.png",
-      "lastModified": "2025-10-02T17:38:44.571Z"
+      "lastModified": "2025-10-05T14:19:16.938Z"
     },
     {
       "id": "motion-graphics",
@@ -61,7 +61,7 @@
       "archived": false,
       "index": 7,
       "thumbnail": "/servicess/motion-graphics.png",
-      "lastModified": "2025-10-02T17:38:44.576Z"
+      "lastModified": "2025-10-05T14:19:16.945Z"
     },
     {
       "id": "whiteboard-animation",
@@ -70,20 +70,20 @@
       "archived": false,
       "index": 8,
       "thumbnail": "/servicess/Whiteboard Animation.png",
-      "lastModified": "2025-10-02T17:38:44.581Z"
+      "lastModified": "2025-10-05T14:19:16.952Z"
     },
     {
-      "id": "video-editing-post-production",
+      "id": "video-editing-and-post-production",
       "title": "Video Editing And Post Production",
       "bannerTitle": "Video Editing And Post Production",
       "archived": false,
       "index": 9,
       "thumbnail": "/servicess/video.png",
-      "lastModified": "2025-10-05T15:00:00.000Z"
+      "lastModified": "2025-10-05T14:19:16.961Z"
     }
   ],
   "total": 9,
   "active": 9,
   "archived": 0,
-  "lastUpdated": "2025-10-05T13:58:29.550Z"
+  "lastUpdated": "2025-10-05T14:19:16.977Z"
 }

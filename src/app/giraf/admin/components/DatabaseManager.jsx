@@ -73,8 +73,18 @@ const DatabaseManager = () => {
       const data = JSON.parse(text);
       
       // Validate the data structure
-      if (!data.WebsiteDatas) {
-        throw new Error('Invalid backup file: Missing WebsiteDatas collection');
+      if (!data.WebsiteDatas?.services) {
+        throw new Error('Invalid backup file: Missing WebsiteDatas.services collection');
+      }
+      
+      // Count services in backup (excluding the "id": "services" entry)
+      const servicesObject = data.WebsiteDatas.services;
+      const serviceCount = Object.keys(servicesObject).filter(key => 
+        key !== 'id' && typeof servicesObject[key] === 'object' && servicesObject[key].id
+      ).length;
+      
+      if (serviceCount === 0) {
+        throw new Error('Invalid backup file: No services found in backup data');
       }
       
       const response = await fetch('/api/database/restore', {
@@ -146,7 +156,7 @@ const DatabaseManager = () => {
             <div className={styles.cardIcon}>⬇️</div>
             <div className={styles.cardContent}>
               <h3>Download Database Backup</h3>
-              <p>Download your entire WebsiteDatas collection as a JSON file. This includes all services, portfolio items, blog posts, and other content.</p>
+              <p>Download your entire services database as a unified JSON file. This includes all service details, images, descriptions, and metadata in a single structured format.</p>
               <button 
                 className={styles.downloadButton}
                 onClick={handleDownloadDatabase}
@@ -173,7 +183,7 @@ const DatabaseManager = () => {
             <div className={styles.cardIcon}>⬆️</div>
             <div className={styles.cardContent}>
               <h3>Upload Database Backup</h3>
-              <p>Replace your current database with a backup file. This will completely overwrite existing data.</p>
+              <p>Replace your current services database with a backup file. The system will automatically convert the unified format back to individual service files.</p>
               <label className={styles.uploadButton}>
                 <span>📤</span>
                 Select Backup File
@@ -244,6 +254,7 @@ const DatabaseManager = () => {
               <p><strong>⚠️ Warning: This action will completely replace your current database!</strong></p>
               <p>Selected file: <strong>{selectedFile?.name}</strong></p>
               <p>File size: <strong>{(selectedFile?.size / 1024).toFixed(2)} KB</strong></p>
+              <p>Backup format: <strong>Unified JSON Structure</strong></p>
             </div>
             
             <div className={styles.confirmationText}>
