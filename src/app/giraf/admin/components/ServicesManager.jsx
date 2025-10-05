@@ -1112,6 +1112,10 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
               onChange={(e) => handleInputChange('DescTitle', e.target.value, 'section02')}
               placeholder="Title for detailed section"
             />
+            <small className={styles.fieldNote}>
+              💡 <strong>Styling Tip:</strong> Use "||" to split text for alternating colors. 
+              Example: "Our ||Creative||Process" will style "Our","Process" white and "Creative" red.
+            </small>
           </div>
           <div className={styles.formField}>
             <label>Description Paragraph</label>
