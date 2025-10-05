@@ -1,10 +1,10 @@
 {
-  "id": "2d-animation",
+  "id": "twoDanimation",
   "title": "2D Animation",
   "bannerTitle": "2D Animation",
   "archived": false,
   "index": 1,
-  "thumbnail": "/servicess/detail-image.png",
+  "thumbnail": "/uploads/services/d74da601fe34fc43fd074481b96fa75f227e2736_1759394886463.png",
   "section01": {
     "image": "/servicess/detail-image.png",
     "heading": "The Dynamic Studio That Brings Ideas To Life With Remarkable 2D Animations ",
@@ -49,5 +49,6 @@
     }
   ],
   "createdAt": "2025-10-02T17:38:44.552Z",
-  "lastModified": "2025-10-02T17:38:44.552Z"
+  "lastModified": "2025-10-05T13:37:58.478Z",
+  "customSlug": "twoDanimation"
 }

@@ -1,22 +1,22 @@
 {
   "services": [
     {
-      "id": "3d-animation",
+      "id": "threeDanimation",
       "title": "3D Animation",
       "bannerTitle": "3D Animation",
       "archived": false,
       "index": 0,
-      "thumbnail": "/servicess/red-machine.png",
-      "lastModified": "2025-10-02T17:38:44.549Z"
+      "thumbnail": "/servicess/3danimation.png",
+      "lastModified": "2025-10-05T13:43:30.651Z"
     },
     {
-      "id": "2d-animation",
+      "id": "twoDanimation",
       "title": "2D Animation",
       "bannerTitle": "2D Animation",
       "archived": false,
       "index": 1,
-      "thumbnail": "/servicess/detail-image.png",
-      "lastModified": "2025-10-02T17:38:44.552Z"
+      "thumbnail": "/uploads/services/d74da601fe34fc43fd074481b96fa75f227e2736_1759394886463.png",
+      "lastModified": "2025-10-05T13:37:58.478Z"
     },
     {
       "id": "sdgsgdsfg",
@@ -77,22 +77,10 @@
       "index": 8,
       "thumbnail": "/servicess/Whiteboard Animation.png",
       "lastModified": "2025-10-02T17:38:44.581Z"
-    },
-    {
-      "id": "testing",
-      "archived": false,
-      "index": 9,
-      "lastModified": "2025-10-02T19:24:25.397Z"
-    },
-    {
-      "id": "video-editing-and-post-production",
-      "archived": false,
-      "index": 10,
-      "lastModified": "2025-10-02T19:24:25.465Z"
     }
   ],
-  "total": 11,
-  "active": 11,
+  "total": 9,
+  "active": 9,
   "archived": 0,
-  "lastUpdated": "2025-10-02T19:24:25.470Z"
+  "lastUpdated": "2025-10-05T13:43:30.662Z"
 }

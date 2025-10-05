@@ -1,10 +1,10 @@
 {
-  "id": "3d-animation",
+  "id": "threeDanimation",
   "title": "3D Animation",
   "bannerTitle": "3D Animation",
   "archived": false,
   "index": 0,
-  "thumbnail": "/servicess/red-machine.png",
+  "thumbnail": "/servicess/3danimation.png",
   "section01": {
     "image": "/servicess/red-machine.png",
     "heading": "The Creative Animation Studio That Brings Your Vision To Life.",
@@ -57,5 +57,6 @@
     }
   ],
   "createdAt": "2025-10-02T17:38:44.549Z",
-  "lastModified": "2025-10-02T17:38:44.549Z"
+  "lastModified": "2025-10-05T13:43:30.651Z",
+  "customSlug": "threeDanimation"
 }

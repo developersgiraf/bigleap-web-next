@@ -376,9 +376,26 @@ const ServicesManager = () => {
     return stats;
   }, [stats]);
 
-  const handleEdit = useCallback((service) => {
-    setSelectedService(service);
-    setIsEditing(true);
+  const handleEdit = useCallback(async (service) => {
+    try {
+      // Fetch the complete service data by ID
+      const response = await servicesAPI.getById(service.id);
+      
+      if (response.success) {
+        setSelectedService(response.data);
+        setIsEditing(true);
+      } else {
+        console.error('Failed to fetch service data:', response.error);
+        // Fallback to using the index data if full data fetch fails
+        setSelectedService(service);
+        setIsEditing(true);
+      }
+    } catch (error) {
+      console.error('Error fetching service for editing:', error);
+      // Fallback to using the index data if full data fetch fails
+      setSelectedService(service);
+      setIsEditing(true);
+    }
   }, []);
 
   const handleArchive = useCallback(async (serviceId, currentArchiveState) => {
@@ -799,9 +816,8 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
       }
       
       setFormData(serviceData);
-      // If editing existing service, allow custom slug editing
-      setUseCustomSlug(true);
-      setFormData(prev => ({ ...prev, customSlug: service.id }));
+      // For existing services, we don't allow slug editing
+      setUseCustomSlug(false);
     }
   }, [service]);
 
@@ -889,8 +905,8 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validate custom slug if being used
-    if (useCustomSlug && (formData.customSlug || '') && !validateSlug(formData.customSlug || '')) {
+    // Validate custom slug only for NEW services
+    if (!service && useCustomSlug && (formData.customSlug || '') && !validateSlug(formData.customSlug || '')) {
       alert('Invalid slug format. Slug must start with a letter and contain only letters, numbers, hyphens, and underscores.');
       return;
     }
@@ -901,8 +917,8 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
       lastModified: new Date().toISOString().split('T')[0]
     };
     
-    // Add custom slug if specified
-    if (useCustomSlug && (formData.customSlug || '')) {
+    // Add custom slug only for NEW services
+    if (!service && useCustomSlug && (formData.customSlug || '')) {
       submitData.customSlug = formData.customSlug || '';
     }
     
@@ -984,49 +1000,56 @@ const ServiceEditor = ({ service, services, onSave, onCancel }) => {
                   <span className={styles.idDisplay}>{currentId || 'enter-title-or-custom-slug'}</span>
                 </div>
                 
-                <div className={styles.slugControls}>
-                  <label className={styles.checkboxLabel}>
-                    <input
-                      type="checkbox"
-                      checked={useCustomSlug}
-                      onChange={(e) => setUseCustomSlug(e.target.checked)}
-                    />
-                    Use custom slug
-                  </label>
-                  
-                  {useCustomSlug && (
-                    <div className={styles.customSlugInputContainer}>
+                {/* Only show custom slug option for NEW services */}
+                {!service && (
+                  <div className={styles.slugControls}>
+                    <label className={styles.checkboxLabel}>
                       <input
-                        type="text"
-                        value={formData.customSlug || ''}
-                        onChange={(e) => handleInputChange('customSlug', e.target.value.replace(/[^a-zA-Z0-9-_]/g, ''))}
-                        placeholder="Custom_Service-Slug"
-                        pattern="^[a-zA-Z][a-zA-Z0-9-_]*$"
-                        className={`${styles.customSlugInput} ${(formData.customSlug || '') && !validateSlug(formData.customSlug || '') ? styles.invalidInput : ''}`}
+                        type="checkbox"
+                        checked={useCustomSlug}
+                        onChange={(e) => setUseCustomSlug(e.target.checked)}
                       />
-                      {(formData.customSlug || '') && !validateSlug(formData.customSlug || '') && (
-                        <small className={styles.errorNote}>
-                          Slug must start with a letter and contain only letters, numbers, hyphens, and underscores.
-                        </small>
-                      )}
-                      {(!(formData.customSlug || '') || validateSlug(formData.customSlug || '')) && (
-                        <small className={styles.slugNote}>
-                          Custom URL will be: /servicess/{(formData.customSlug || '') || 'Your_Custom-Slug'}
-                        </small>
-                      )}
-                    </div>
-                  )}
-                </div>
-                
-                {!useCustomSlug && !service && (
-                  <small className={styles.idNote}>
-                    Automatically generated from banner title. Check "Use custom slug" to customize.
-                  </small>
+                      Use custom slug
+                    </label>
+                    
+                    {useCustomSlug && (
+                      <div className={styles.customSlugInputContainer}>
+                        <input
+                          type="text"
+                          value={formData.customSlug || ''}
+                          onChange={(e) => handleInputChange('customSlug', e.target.value.replace(/[^a-zA-Z0-9-_]/g, ''))}
+                          placeholder="Custom_Service-Slug"
+                          pattern="^[a-zA-Z][a-zA-Z0-9-_]*$"
+                          className={`${styles.customSlugInput} ${(formData.customSlug || '') && !validateSlug(formData.customSlug || '') ? styles.invalidInput : ''}`}
+                        />
+                        {(formData.customSlug || '') && !validateSlug(formData.customSlug || '') && (
+                          <small className={styles.errorNote}>
+                            Slug must start with a letter and contain only letters, numbers, hyphens, and underscores.
+                          </small>
+                        )}
+                        {(!(formData.customSlug || '') || validateSlug(formData.customSlug || '')) && (
+                          <small className={styles.slugNote}>
+                            Custom URL will be: /servicess/{(formData.customSlug || '') || 'Your_Custom-Slug'}
+                          </small>
+                        )}
+                      </div>
+                    )}
+                    
+                    {!useCustomSlug && (
+                      <small className={styles.idNote}>
+                        Automatically generated from banner title. Check "Use custom slug" to customize.
+                      </small>
+                    )}
+                  </div>
                 )}
+                
+                {/* For existing services, show slug as read-only */}
                 {service && (
-                  <small className={styles.idNote}>
-                    ⚠️ Changing the slug will update the service URL. Make sure to update any existing links.
-                  </small>
+                  <div className={styles.slugInfo}>
+                    <small className={styles.idNote}>
+                      🔒 Service URL is fixed once created to prevent broken links.
+                    </small>
+                  </div>
                 )}
               </div>
             </div>
