@@ -7,7 +7,7 @@
       "archived": false,
       "index": 0,
       "thumbnail": "/servicess/2danimation.png",
-      "lastModified": "2025-10-05T13:47:40.806Z"
+      "lastModified": "2025-10-05T13:58:29.220Z"
     },
     {
       "id": "threeDanimation",
@@ -16,14 +16,14 @@
       "archived": false,
       "index": 1,
       "thumbnail": "/servicess/3danimation.png",
-      "lastModified": "2025-10-05T13:47:41.130Z"
+      "lastModified": "2025-10-05T13:58:29.540Z"
     },
     {
       "id": "character-design",
       "title": "Character Design",
       "bannerTitle": "Character Design",
       "archived": false,
-      "index": 2,
+      "index": 3,
       "thumbnail": "/servicess/Character.png",
       "lastModified": "2025-10-02T17:38:44.558Z"
     },
@@ -32,7 +32,7 @@
       "title": "VFX And Post Production",
       "bannerTitle": "VFX And Post Production",
       "archived": false,
-      "index": 3,
+      "index": 4,
       "thumbnail": "/servicess/VFX & Post Production.png",
       "lastModified": "2025-10-02T17:38:44.561Z"
     },
@@ -41,7 +41,7 @@
       "title": "Product Animation",
       "bannerTitle": "Product Animation",
       "archived": false,
-      "index": 4,
+      "index": 5,
       "thumbnail": "/servicess/default-image.png",
       "lastModified": "2025-10-02T17:38:44.566Z"
     },
@@ -50,7 +50,7 @@
       "title": "Storytelling",
       "bannerTitle": "Storytelling",
       "archived": false,
-      "index": 5,
+      "index": 6,
       "thumbnail": "/servicess/storytelling.png",
       "lastModified": "2025-10-02T17:38:44.571Z"
     },
@@ -59,7 +59,7 @@
       "title": "Motion Graphics",
       "bannerTitle": "Motion Graphics",
       "archived": false,
-      "index": 6,
+      "index": 7,
       "thumbnail": "/servicess/motion-graphics.png",
       "lastModified": "2025-10-02T17:38:44.576Z"
     },
@@ -68,7 +68,7 @@
       "title": "Whiteboard Animation",
       "bannerTitle": "Whiteboard Animation",
       "archived": false,
-      "index": 7,
+      "index": 8,
       "thumbnail": "/servicess/Whiteboard Animation.png",
       "lastModified": "2025-10-02T17:38:44.581Z"
     },
@@ -77,7 +77,7 @@
       "title": "Video Editing And Post Production",
       "bannerTitle": "Video Editing And Post Production",
       "archived": false,
-      "index": 8,
+      "index": 9,
       "thumbnail": "/servicess/video.png",
       "lastModified": "2025-10-05T15:00:00.000Z"
     }
@@ -85,5 +85,5 @@
   "total": 9,
   "active": 9,
   "archived": 0,
-  "lastUpdated": "2025-10-05T13:47:41.140Z"
+  "lastUpdated": "2025-10-05T13:58:29.550Z"
 }

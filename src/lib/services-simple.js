@@ -54,20 +54,35 @@ class ServicesAPI {
     }
   }
 
-  // Update service
-  async update(id, serviceData) {
+  // Update service (merge update with existing data)
+  async update(id, updateData) {
     try {
-      serviceData.id = id;
-      serviceData.lastModified = new Date().toISOString();
-
-      // Save service file
       const serviceFile = path.join(DATA_DIR, `${id}.json`);
-      await fs.writeFile(serviceFile, JSON.stringify(serviceData, null, 2));
+      // Read existing data
+      let existingData = {};
+      try {
+        const fileContent = await fs.readFile(serviceFile, 'utf8');
+        existingData = JSON.parse(fileContent);
+      } catch (readErr) {
+        // If file doesn't exist, treat as new (shouldn't happen for update)
+        console.warn(`Service file for update not found: ${id}`);
+      }
+
+      // Merge updateData into existingData
+      const mergedData = {
+        ...existingData,
+        ...updateData,
+        id: id,
+        lastModified: new Date().toISOString()
+      };
+
+      // Save merged data
+      await fs.writeFile(serviceFile, JSON.stringify(mergedData, null, 2));
 
       // Update index
       await this.updateIndex();
 
-      return { success: true, data: serviceData };
+      return { success: true, data: mergedData };
     } catch (error) {
       console.error(`Error updating service ${id}:`, error);
       return { success: false, error: 'Failed to update service' };
