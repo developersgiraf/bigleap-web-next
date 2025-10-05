@@ -1,34 +1,13 @@
-# Admin Users
+# Data Directory
 
-## Default Admin User
-- **Username:** `admin`
-- **Password:** `secret123`
-- **Email:** `admin@bigleap.ae`
+⚠️ **Note: This directory contains legacy user data that is no longer used.**
 
-## Adding New Users
-To add a new admin user:
+## Current Authentication System
 
-1. Generate a password hash:
-```javascript
-const bcrypt = require('bcrypt');
-const hashedPassword = await bcrypt.hash('your-password', 10);
-console.log(hashedPassword);
-```
+The project now uses environment variable-based authentication. See `ADMIN_AUTH_README.md` in the root directory for current setup.
 
-2. Add to `data/users.json`:
-```json
-{
-  "id": "unique-id",
-  "username": "newadmin",
-  "password": "hashed-password-here",
-  "name": "New Admin",
-  "email": "newadmin@bigleap.ae", 
-  "role": "admin",
-  "createdAt": "2025-10-02T00:00:00Z"
-}
-```
+## Legacy Files
 
-## Security Notes
-- Passwords are hashed using bcrypt
-- Default password should be changed after first login
-- Users.json should not be committed to version control in production
+- `users/index.json` - Old user system (deprecated)
+- `services/` - Service data files (still used)
+- `backups/` - Backup files
