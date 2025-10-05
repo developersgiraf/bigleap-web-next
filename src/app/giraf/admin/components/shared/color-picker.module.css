@@ -1,0 +1,423 @@
+/* Beautiful Custom Color Picker Component */
+.colorPicker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  color: #ffcccb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Color Button */
+.colorButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(237, 35, 42, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.colorButton:hover {
+  border-color: rgba(237, 35, 42, 0.5);
+  box-shadow: 0 0 0 3px rgba(237, 35, 42, 0.1);
+}
+
+.colorDisplay {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+  padding: 0 12px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.colorValue {
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+.dropdownIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
+}
+
+.colorButton:hover .dropdownIcon {
+  color: #ed232a;
+}
+
+/* Picker Panel */
+.pickerPanel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(237, 35, 42, 0.1));
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  min-width: 280px;
+}
+
+/* Color Area */
+.colorArea {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  cursor: crosshair;
+  margin-bottom: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.saturationOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, white, transparent);
+  border-radius: 6px;
+}
+
+.lightnessOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, black, transparent);
+  border-radius: 6px;
+}
+
+.colorThumb {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+/* Hue Slider */
+.hueSlider {
+  position: relative;
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to right, 
+    #ff0000 0%, #ffff00 17%, #00ff00 33%, 
+    #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hueInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.hueInput::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #333;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hueInput::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #333;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Color Input Section */
+.colorInputSection {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.colorInput {
+  flex: 1;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(237, 35, 42, 0.3);
+  border-radius: 6px;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.colorInput:focus {
+  outline: none;
+  border-color: #ed232a;
+  box-shadow: 0 0 0 3px rgba(237, 35, 42, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.addCustomButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(237, 35, 42, 0.2);
+  border: 1px solid rgba(237, 35, 42, 0.4);
+  border-radius: 6px;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addCustomButton:hover {
+  background: rgba(237, 35, 42, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Preset Colors */
+.presetSection {
+  margin-bottom: 15px;
+}
+
+.sectionLabel {
+  display: block;
+  color: #ffcccb;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 8px;
+}
+
+.presetGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+}
+
+.presetColor {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.presetColor:hover {
+  transform: scale(1.1);
+  border-color: rgba(237, 35, 42, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.presetColor.selected {
+  border-color: #ed232a;
+  box-shadow: 0 0 0 2px rgba(237, 35, 42, 0.3);
+}
+
+.presetColor.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Custom Colors */
+.customSection {
+  margin-bottom: 15px;
+}
+
+.customGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+}
+
+.customColor {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.customColor:hover {
+  transform: scale(1.1);
+  border-color: rgba(237, 35, 42, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.customColor.selected {
+  border-color: #ed232a;
+  box-shadow: 0 0 0 2px rgba(237, 35, 42, 0.3);
+}
+
+.customColor.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 15px;
+  border-top: 1px solid rgba(237, 35, 42, 0.3);
+}
+
+.cancelButton,
+.okButton {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid;
+}
+
+.cancelButton {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cancelButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.okButton {
+  background: rgba(237, 35, 42, 0.8);
+  border-color: #ed232a;
+  color: white;
+}
+
+.okButton:hover {
+  background: #ed232a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(237, 35, 42, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pickerPanel {
+    padding: 15px;
+    min-width: 260px;
+  }
+  
+  .colorArea {
+    height: 120px;
+  }
+  
+  .presetGrid,
+  .customGrid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+  
+  .presetColor,
+  .customColor {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .cancelButton,
+  .okButton {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pickerPanel {
+    padding: 12px;
+    min-width: 240px;
+  }
+  
+  .colorArea {
+    height: 100px;
+  }
+  
+  .presetGrid,
+  .customGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .colorInputSection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .addCustomButton {
+    width: 100%;
+    height: 40px;
+  }
+}

@@ -66,27 +66,6 @@
 .colorPickerSection {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.colorLabel {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #ffcccb;
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 8px;
-}
-
-.colorValue {
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(0, 0, 0, 0.3);
-  padding: 2px 6px;
-  border-radius: 4px;
 }
 
 /* Custom Color Picker */
