@@ -5,18 +5,18 @@
       "title": "2D Animation",
       "bannerTitle": "2D Animation",
       "archived": false,
-      "index": 0,
+      "index": 1,
       "thumbnail": "/servicess/2danimation.png",
-      "lastModified": "2025-10-05T21:28:01.490Z"
+      "lastModified": "2025-10-06T19:53:35.375Z"
     },
     {
       "id": "threeDanimation",
       "title": "3D Animation",
       "bannerTitle": "3D Animation",
       "archived": false,
-      "index": 1,
+      "index": 2,
       "thumbnail": "/servicess/3danimation.png",
-      "lastModified": "2025-10-06T07:30:49.431Z"
+      "lastModified": "2025-10-06T19:53:51.363Z"
     },
     {
       "id": "whiteboard-animation",
@@ -25,7 +25,7 @@
       "archived": false,
       "index": 3,
       "thumbnail": "/servicess/Whiteboard Animation.png",
-      "lastModified": "2025-10-06T07:30:48.966Z"
+      "lastModified": "2025-10-06T19:53:35.700Z"
     },
     {
       "id": "motion-graphics",
@@ -85,5 +85,5 @@
   "total": 9,
   "active": 9,
   "archived": 0,
-  "lastUpdated": "2025-10-06T07:30:49.441Z"
+  "lastUpdated": "2025-10-06T19:54:36.300Z"
 }
