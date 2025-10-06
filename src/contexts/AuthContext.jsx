@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import { useSession, signIn, signOut, getSession } from 'next-auth/react';
 
 const AuthContext = createContext({});
@@ -10,7 +10,11 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession({
+    // Only required for admin pages - don't refresh on window focus
+    required: false,
+    refetchOnWindowFocus: false
+  });
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -40,32 +44,29 @@ export const AuthProvider = ({ children }) => {
         return { success: false, error: result.error };
       }
 
-      // Get the updated session
-      const updatedSession = await getSession();
-      
+      // Don't manually call getSession - let useSession handle it
       return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
     }
   };
-
-
 
   const logout = async () => {
     try {
-      await signOut();
+      await signOut({ redirect: false });
       return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
     }
   };
 
-  const value = {
+  // Memoize the context value to prevent unnecessary re-renders
+  const value = useMemo(() => ({
     user,
     login,
     logout,
     loading
-  };
+  }), [user, loading]);
 
   return (
     <AuthContext.Provider value={value}>
