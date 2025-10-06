@@ -1,15 +1,7 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
-import { auth, googleProvider } from '../firebase';
-import { 
-  onAuthStateChanged, 
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-  User 
-} from 'firebase/auth';
-import { validateAdminAccess } from '../lib/adminAuth';
+import { createContext, useContext, useEffect, useState, useMemo } from 'react';
+import { useSession, signIn, signOut, getSession } from 'next-auth/react';
 
 const AuthContext = createContext({});
 
@@ -18,60 +10,42 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
+  const { data: session, status } = useSession({
+    // Only required for admin pages - don't refresh on window focus
+    required: false,
+    refetchOnWindowFocus: false
+  });
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        // Validate admin access
-        const validation = validateAdminAccess(user);
-        if (validation.isValid) {
-          setUser(user);
-        } else {
-          // User is not an admin, sign them out
-          await signOut(auth);
-          setUser(null);
-          console.warn(validation.message);
-        }
-      } else {
-        setUser(null);
-      }
-      setLoading(false);
-    });
+    if (status === 'loading') {
+      setLoading(true);
+      return;
+    }
 
-    return unsubscribe;
-  }, []);
+    if (session?.user) {
+      setUser(session.user);
+    } else {
+      setUser(null);
+    }
+    setLoading(false);
+  }, [session, status]);
 
   const login = async (email, password) => {
     try {
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      
-      // Validate admin access
-      const validation = validateAdminAccess(result.user);
-      if (!validation.isValid) {
-        await signOut(auth);
-        return { success: false, error: validation.message };
-      }
-      
-      return { success: true };
-    } catch (error) {
-      return { success: false, error: error.message };
-    }
-  };
+      const result = await signIn('credentials', {
+        email,
+        password,
+        redirect: false
+      });
 
-  const loginWithGoogle = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleProvider);
-      
-      // Validate admin access
-      const validation = validateAdminAccess(result.user);
-      if (!validation.isValid) {
-        await signOut(auth);
-        return { success: false, error: validation.message };
+      if (result?.error) {
+        return { success: false, error: result.error };
       }
-      
-      return { success: true, user: result.user };
+
+      // Don't manually call getSession - let useSession handle it
+      return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
     }
@@ -79,20 +53,20 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await signOut(auth);
+      await signOut({ redirect: false });
       return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
     }
   };
 
-  const value = {
+  // Memoize the context value to prevent unnecessary re-renders
+  const value = useMemo(() => ({
     user,
     login,
-    loginWithGoogle,
     logout,
     loading
-  };
+  }), [user, loading]);
 
   return (
     <AuthContext.Provider value={value}>

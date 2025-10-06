@@ -1,0 +1,89 @@
+{
+  "services": [
+    {
+      "id": "twoDanimation",
+      "title": "2D Animation",
+      "bannerTitle": "2D Animation",
+      "archived": false,
+      "index": 1,
+      "thumbnail": "/servicess/2danimation.png",
+      "lastModified": "2025-10-06T20:08:21.561Z"
+    },
+    {
+      "id": "threeDanimation",
+      "title": "3D Animation",
+      "bannerTitle": "3D Animation",
+      "archived": false,
+      "index": 2,
+      "thumbnail": "/servicess/3danimation.png",
+      "lastModified": "2025-10-06T20:14:01.305Z"
+    },
+    {
+      "id": "whiteboard-animation",
+      "title": "Whiteboard Animation",
+      "bannerTitle": "Whiteboard Animation",
+      "archived": false,
+      "index": 3,
+      "thumbnail": "/servicess/Whiteboard Animation.png",
+      "lastModified": "2025-10-06T20:08:21.565Z"
+    },
+    {
+      "id": "motion-graphics",
+      "title": "Motion Graphics",
+      "bannerTitle": "Motion Graphics",
+      "archived": false,
+      "index": 4,
+      "thumbnail": "/servicess/motion-graphics.png",
+      "lastModified": "2025-10-06T20:08:21.571Z"
+    },
+    {
+      "id": "vfx-and-post-production",
+      "title": "VFX And Post Production",
+      "bannerTitle": "VFX And Post Production",
+      "archived": false,
+      "index": 5,
+      "thumbnail": "/servicess/VFX & Post Production.png",
+      "lastModified": "2025-10-06T20:08:21.577Z"
+    },
+    {
+      "id": "product-animation",
+      "title": "Product Animation",
+      "bannerTitle": "Product Animation",
+      "archived": false,
+      "index": 6,
+      "thumbnail": "/servicess/red-machine.png",
+      "lastModified": "2025-10-06T20:08:21.583Z"
+    },
+    {
+      "id": "character-design",
+      "title": "Character Design",
+      "bannerTitle": "Character Design",
+      "archived": false,
+      "index": 7,
+      "thumbnail": "/servicess/Character.png",
+      "lastModified": "2025-10-06T20:08:21.592Z"
+    },
+    {
+      "id": "storytelling",
+      "title": "Storytelling",
+      "bannerTitle": "Storytelling",
+      "archived": false,
+      "index": 8,
+      "thumbnail": "/servicess/storytelling.png",
+      "lastModified": "2025-10-06T20:08:21.602Z"
+    },
+    {
+      "id": "video-editing-and-post-production",
+      "title": "Video Editing And Post Production",
+      "bannerTitle": "Video Editing And Post Production",
+      "archived": false,
+      "index": 9,
+      "thumbnail": "/servicess/video.png",
+      "lastModified": "2025-10-06T20:08:21.612Z"
+    }
+  ],
+  "total": 9,
+  "active": 9,
+  "archived": 0,
+  "lastUpdated": "2025-10-06T20:14:01.365Z"
+}

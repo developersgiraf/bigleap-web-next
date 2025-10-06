@@ -1,0 +1,788 @@
+/* Database Manager Styles */
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ed232a, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 2rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionCard {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(237, 35, 42, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sectionCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(237, 35, 42, 0.15);
+  border-color: rgba(237, 35, 42, 0.4);
+}
+
+.cardIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(237, 35, 42, 0.3));
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardContent h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* color: #333; */
+  margin-bottom: 1rem;
+}
+
+.cardContent p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+/* Radio Button Options */
+.backupOptions, .restoreOptions {
+  width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.optionRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.optionRow:hover {
+  background: rgba(237, 35, 42, 0.05);
+  border-color: rgba(237, 35, 42, 0.2);
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 0;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.radioLabel input[type="radio"] {
+  display: none;
+}
+
+.radioCustom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.radioLabel input[type="radio"]:checked + .radioCustom {
+  border-color: #ed232a;
+  background: #ed232a;
+}
+
+.radioLabel input[type="radio"]:checked + .radioCustom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+.optionDesc {
+  font-size: 0.85rem;
+  color: #888;
+  flex: 1;
+  text-align: left;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.downloadButton, .uploadButton {
+  background: linear-gradient(135deg, #ed232a, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.downloadButton:hover:not(:disabled), .uploadButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(237, 35, 42, 0.3);
+  background: linear-gradient(135deg, #ff6b6b, #ed232a);
+}
+
+.downloadButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.uploadButton {
+  cursor: pointer;
+}
+
+.cacheButton {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.cacheButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+  background: linear-gradient(135deg, #20c997, #28a745);
+}
+
+.cacheButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.warningSection {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+}
+
+.warningCard {
+  background: rgba(255, 193, 7, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.warningIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.warningContent h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.warningContent ul {
+  color: #666;
+  line-height: 1.6;
+  padding-left: 1.5rem;
+}
+
+.warningContent li {
+  margin-bottom: 0.5rem;
+}
+
+/* Modal Content Styles */
+.modalContent {
+  padding: 1rem 0;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Analysis Loader */
+.analyzeLoader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.analyzeLoader p {
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Backup Summary */
+.backupSummary {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(0, 123, 255, 0.1);
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  border-radius: 10px;
+}
+
+.backupSummary h4 {
+  margin: 0 0 1rem 0;
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.fileInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.fileInfo p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* Comparison Summary */
+.comparisonSummary {
+  margin-bottom: 1.5rem;
+}
+
+.comparisonSummary h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.summaryNumber {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ed232a;
+}
+
+.summaryLabel {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Quick Actions */
+.quickActions {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.detailButton {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.detailButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Detailed Comparison */
+.detailedComparison {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.comparisonHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.comparisonHeader h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.collapseButton {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #666;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Collection Sections */
+.collectionSection {
+  margin-bottom: 1.5rem;
+}
+
+.collectionSection h5 {
+  margin: 0 0 1rem 0;
+  color: #ed232a;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(237, 35, 42, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.changeGroup {
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.changeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.changeIcon {
+  font-size: 1rem;
+}
+
+.changeTitle {
+  flex: 1;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.batchActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.batchActions button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #666;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.batchActions button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.itemsList {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.itemRow {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.itemRow:last-child {
+  border-bottom: none;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.itemDetails {
+  flex: 1;
+}
+
+.itemTitle {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.itemId {
+  color: #888;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.changeDetails {
+  margin-top: 0.25rem;
+}
+
+.dateInfo {
+  font-size: 0.75rem;
+  color: #666;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.fieldChanges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.fieldChange {
+  background: rgba(237, 35, 42, 0.1);
+  color: #ed232a;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+
+.moreChanges {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+
+/* Final Warning */
+.finalWarning {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(237, 35, 42, 0.1);
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  border-radius: 10px;
+}
+
+.finalWarning p {
+  margin: 0;
+  color: #ed232a;
+  font-weight: 500;
+}
+
+/* Error Message */
+.errorMessage {
+  padding: 2rem;
+  text-align: center;
+}
+
+.errorMessage p {
+  margin: 0;
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.confirmationWarning {
+  background: rgba(237, 35, 42, 0.1);
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.confirmationWarning p {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.confirmationText {
+  margin-bottom: 2rem;
+}
+
+.confirmationText p {
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.confirmationText ul {
+  color: #666;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.confirmationText li {
+  margin-bottom: 0.5rem;
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  background: rgba(108, 117, 125, 0.1);
+  color: #6c757d;
+  border: 1px solid rgba(108, 117, 125, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: rgba(108, 117, 125, 0.2);
+  border-color: rgba(108, 117, 125, 0.5);
+}
+
+.confirmButton {
+  background: linear-gradient(135deg, #ed232a, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.confirmButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff6b6b, #ed232a);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(237, 35, 42, 0.3);
+}
+
+.confirmButton:disabled, .cancelButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .warningSection {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header h2 {
+    font-size: 2rem;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .sectionCard {
+    padding: 1.5rem;
+  }
+  
+  .cardIcon {
+    font-size: 2.5rem;
+  }
+  
+  .cardContent h3 {
+    font-size: 1.3rem;
+  }
+  
+  .downloadButton, .uploadButton, .cacheButton {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 160px;
+  }
+  
+  .warningCard {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .modalActions {
+    flex-direction: column;
+  }
+  
+  .cancelButton, .confirmButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .optionRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .radioLabel {
+    min-width: auto;
+  }
+  
+  .optionDesc {
+    margin-left: 2.25rem;
+    padding-left: 0.5rem;
+  }
+  
+  .fileInfo {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  
+  .summaryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .comparisonHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .changeHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .batchActions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .detailedComparison {
+    max-height: 300px;
+  }
+}

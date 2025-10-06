@@ -1,0 +1,32 @@
+{
+  "id": "video-editing-post-production",
+  "title": "Crafting Stories: Professional Video Editing & Post Production",
+  "slug": "video-editing-post-production",
+  "image": "/servicess/video.png",
+  "caption": "Video Editing & Post Production",
+  "description": "Video editing and post-production are where raw footage transforms into compelling stories. Our experienced editors combine technical expertise with creative vision to craft videos that engage, inform, and inspire. From corporate presentations to creative content, we handle every aspect of post-production including editing, color correction, audio mixing, and final delivery in any format required.",
+  "publishedDate": "2024-10-08",
+  "lastModified": "2024-10-08",
+  "category": "Post Production",
+  "tags": [
+    "video-editing",
+    "post-production",
+    "color-grading",
+    "audio-mixing"
+  ],
+  "featured": false,
+  "status": "published",
+  "index": 8,
+  "author": "BigLeap Team",
+  "seo": {
+    "metaTitle": "Video Editing & Post Production Services - Professional Storytelling",
+    "metaDescription": "Professional video editing and post-production services transforming raw footage into compelling stories with expert technical and creative skills.",
+    "keywords": [
+      "video editing",
+      "post production",
+      "color grading",
+      "audio mixing",
+      "video production"
+    ]
+  }
+}

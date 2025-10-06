@@ -1,0 +1,116 @@
+{
+  "id": "graphic-design",
+  "slug": "graphic-design",
+  "title": "Graphic Design Portfolio",
+  "subtitle": "Visual stories that captivate",
+  "description": "Watch Our Graphic Design Showreel",
+  "content": "Creative graphic design solutions that communicate your brand message with impact and style.",
+  "videoUrl": "geMtgE6RmTQ",
+  "videos": [
+    {
+      "id": "brand-identity-showcase",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Brand Identity Showcase",
+      "thumbnail": "/portfolio/black.png"
+    },
+    {
+      "id": "print-design-portfolio",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Print Design Portfolio",
+      "thumbnail": "/portfolio/black.png"
+    },
+    {
+      "id": "logo-design-collection",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Logo Design Collection",
+      "thumbnail": "/portfolio/black.png"
+    },
+    {
+      "id": "packaging-design-reel",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Packaging Design Reel",
+      "thumbnail": "/portfolio/black.png"
+    }
+  ],
+  "titleDescription": "Over the years,|| our graphic design|| has thrived at the intersection of|| Creativity || and|| brand communication.",
+  "cardData": {
+    "title": "Graphic Design",
+    "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "/portfolio/black.png",
+    "readbtn": "Explore More",
+    "background": "linear-gradient(to bottom, #102A00, #000000)",
+    "link": "/portfolio/graphic-design"
+  },
+  "seo": {
+    "metaTitle": "Graphic Design Portfolio - BigLeap",
+    "metaDescription": "Explore our creative graphic design portfolio featuring innovative visual solutions and brand communication designs.",
+    "keywords": [
+      "graphic design",
+      "portfolio",
+      "visual design",
+      "branding",
+      "creativity",
+      "brand communication"
+    ]
+  },
+  "status": "active",
+  "featured": true,
+  "order": 3,
+  "category": "Design",
+  "tags": [
+    "graphic-design",
+    "branding",
+    "visual-design",
+    "creativity"
+  ],
+  "createdDate": "2024-01-01",
+  "lastModified": "2025-10-06T20:01:31.129Z",
+  "projectGallery": {
+    "title": "Graphic Design",
+    "subtitle": "Visual Stories That Captivate",
+    "projects": [
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Brand Identity",
+        "date": "Sep 05 2025",
+        "about": "Complete Corporate Branding",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Print Design",
+        "date": "Aug 18 2025",
+        "about": "Marketing Collateral Design",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Logo Design",
+        "date": "Jul 28 2025",
+        "about": "Modern Logo Creation",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Packaging Design",
+        "date": "Jun 22 2025",
+        "about": "Product Packaging Solutions",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Digital Graphics",
+        "date": "May 15 2025",
+        "about": "Social Media Visuals",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/black.png",
+        "caption": "Illustration",
+        "date": "Apr 08 2025",
+        "about": "Custom Illustration Work",
+        "link": "#"
+      }
+    ]
+  }
+}

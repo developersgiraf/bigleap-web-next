@@ -1,0 +1,21 @@
+{
+  "id": "threeDanimation",
+  "title": "Where Imagination Takes Flight: The Art of 3D Animation",
+  "slug": "threeDanimation",
+  "image": "/servicess/3danimation.png",
+  "caption": "3D Animation",
+  "description": "3D animation offers unlimited creative possibilities with realistic characters, environments, and visual effects. Our skilled team uses cutting-edge software and techniques to create immersive animated experiences that captivate audiences. From product visualizations to character animations, we bring your ideas to life with stunning three-dimensional artistry. Our 3D animation services combine technical expertise with creative vision to deliver professional-quality content for various industries and applications.",
+  "publishedDate": "2024-10-02",
+  "lastModified": "2024-10-02",
+  "category": "Animation",
+  "tags": ["3d-animation", "3d-modeling", "visual-effects", "product-visualization"],
+  "featured": true,
+  "status": "published",
+  "index": 2,
+  "author": "BigLeap Team",
+  "seo": {
+    "metaTitle": "3D Animation Services - Unlimited Creative Possibilities",
+    "metaDescription": "Professional 3D animation services with cutting-edge technology. Create immersive experiences with realistic characters and environments.",
+    "keywords": ["3d animation", "3d modeling", "product visualization", "visual effects"]
+  }
+}

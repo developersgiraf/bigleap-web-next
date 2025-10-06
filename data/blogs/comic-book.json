@@ -1,0 +1,32 @@
+{
+  "id": "comic-book",
+  "title": "Visual Storytelling Mastery: The Art of Comic Book Creation",
+  "slug": "comic-book",
+  "image": "/servicess/comic-book.png",
+  "caption": "Comic Book",
+  "description": "Comic book creation combines visual artistry with compelling storytelling to create immersive reading experiences. Our team of artists and writers collaborate to produce professional-quality comics with dynamic artwork, engaging plots, and memorable characters. From concept development to final publication, we handle every aspect of comic book production including storyboarding, illustration, coloring, and lettering. Whether you're creating educational comics, marketing materials, or entertainment content, we deliver comics that captivate readers and effectively communicate your message",
+  "publishedDate": "2024-10-05",
+  "lastModified": "2025-10-06",
+  "category": "Design",
+  "tags": [
+    "comic-book",
+    "visual-storytelling",
+    "illustration",
+    "graphic-narrative"
+  ],
+  "featured": true,
+  "status": "published",
+  "index": 5,
+  "author": "BigLeap Team",
+  "seo": {
+    "metaTitle": "Comic Book Creation Services - Visual Storytelling Mastery",
+    "metaDescription": "Professional comic book creation services combining visual artistry with compelling storytelling for immersive reading experiences.",
+    "keywords": [
+      "comic book creation",
+      "visual storytelling",
+      "comic illustration",
+      "graphic narrative"
+    ]
+  },
+  "customSlug": ""
+}

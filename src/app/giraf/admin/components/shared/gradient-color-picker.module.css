@@ -1,0 +1,347 @@
+/* Beautiful Custom Gradient Color Picker Component */
+.gradientColorPicker {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mainLabel {
+  color: #ffcccb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.gradientControls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(237, 35, 42, 0.05));
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient Preview */
+.gradientPreview {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.previewBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewLabel {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Color Pickers Container */
+.colorPickersContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.colorPickerSection {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Color Picker */
+.customColorPicker {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.colorDisplay {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.colorDisplay:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  border-color: rgba(237, 35, 42, 0.5);
+}
+
+.colorOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+.colorDisplay:hover .colorOverlay {
+  opacity: 1;
+}
+
+.hiddenColorInput {
+  display: none;
+}
+
+.colorCodeInput {
+  flex: 1;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(237, 35, 42, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.colorCodeInput:focus {
+  outline: none;
+  border-color: #ed232a;
+  box-shadow: 0 0 0 3px rgba(237, 35, 42, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Preset Colors */
+.presetColors {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.presetColor {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.presetColor:hover {
+  transform: scale(1.1);
+  border-color: rgba(237, 35, 42, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Gradient Presets */
+.gradientPresets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.presetsLabel {
+  color: #ffcccb;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.presetGradients {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 12px;
+}
+
+.presetGradient {
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.presetGradient:hover {
+  transform: translateY(-2px);
+  border-color: rgba(237, 35, 42, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.presetGradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.presetGradient:hover::after {
+  opacity: 1;
+}
+
+/* CSS Output */
+.cssOutput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(237, 35, 42, 0.3);
+}
+
+.cssLabel {
+  color: #ffcccb;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cssValue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(237, 35, 42, 0.3);
+}
+
+.cssValue code {
+  flex: 1;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  word-break: break-all;
+  background: none;
+}
+
+.copyButton {
+  background: rgba(237, 35, 42, 0.2);
+  border: 1px solid rgba(237, 35, 42, 0.4);
+  color: #ff6b6b;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyButton:hover {
+  background: rgba(237, 35, 42, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gradientControls {
+    padding: 15px;
+    gap: 16px;
+  }
+  
+  .colorPickersContainer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .customColorPicker {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  
+  .colorDisplay {
+    width: 100%;
+    height: 40px;
+  }
+  
+  .presetColors {
+    justify-content: center;
+  }
+  
+  .presetGradients {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .presetGradient {
+    height: 35px;
+  }
+  
+  .cssValue {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .cssValue code {
+    text-align: center;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradientControls {
+    padding: 12px;
+  }
+  
+  .gradientPreview {
+    height: 60px;
+  }
+  
+  .previewLabel {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+  
+  .colorLabel {
+    font-size: 0.85rem;
+  }
+  
+  .colorValue {
+    font-size: 0.7rem;
+  }
+  
+  .presetColors {
+    gap: 6px;
+  }
+  
+  .presetColor {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect } from 'react';
-import { useAuth } from '../../../contexts/AuthContext';
-import LoginForm from './components/LoginForm';
+import { AuthProvider, useAuth } from '../../../contexts/AuthContext';
+import LoginForm from './components/auth/LoginForm';
 import AdminDashboard from './components/AdminDashboard';
 
-const AdminPage = () => {
+// Inner component that uses auth
+const AdminPageContent = () => {
   const { user, loading, logout } = useAuth();
 
   // Handle quick logout from URL parameter
@@ -34,6 +35,15 @@ const AdminPage = () => {
   }
 
   return user ? <AdminDashboard /> : <LoginForm />;
+};
+
+// Main component that provides auth context only for admin
+const AdminPage = () => {
+  return (
+    <AuthProvider>
+      <AdminPageContent />
+    </AuthProvider>
+  );
 };
 
 export default AdminPage;

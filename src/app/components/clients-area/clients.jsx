@@ -34,7 +34,7 @@ export default function ClientsArea() {
         customSelector={"clientSliderPage clientsArea"}
         breakpoints={{
           320: { slidesPerView: 4, spaceBetween: 0 },
-          640: { slidesPerView: 5, spaceBetween: 0 },
+          640: { slidesPerView: 6, spaceBetween: 0 },
           992: { slidesPerView: 8, spaceBetween: 0 },
           1024: { slidesPerView: 9, spaceBetween: 0 },
           1366: { slidesPerView: 12, spaceBetween: 0 },

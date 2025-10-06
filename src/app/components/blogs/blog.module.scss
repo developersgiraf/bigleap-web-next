@@ -79,6 +79,29 @@
 }
 
 //mobile responsive
+@media (min-width: 1025px) and (max-width: 1560px) {
+  .bloghead {
+                h2{
+                    font-size: 44px !important;
+                }
+            }
+            .blogimages {
+                padding: 0px !important;
+            .blogrow{
+                    flex-wrap: wrap !important;
+                    justify-content: center !important;
+                    padding: 0 50px !important;
+
+                
+                img {
+                    object-fit: contain !important;
+                }
+            }
+        }
+             .titleHead {
+                   padding-top: 0px !important;
+                }
+}
 @media (min-width: 1025px) and (max-width: 1370px) {
   .bloghead {
                 h2{
@@ -110,6 +133,7 @@
                     text-align: center !important;
                 }
             }
+           
 
             .blogimages {
                 .blogrow{
@@ -179,24 +203,27 @@
 }
 @media (max-width: 767px) {
     .blogsection {
+        padding: 20px 0 60px 0;
 
     .blogcontent {
 
         .bloghead {
             
             h2 {
-                font-size: 35px !important;
+                font-size: 25px !important;
                 line-height: 55px !important;
                 text-align: center !important;
             }
         }
 
         .blogimages {
+                padding: 0px 0 !important;
             .blogrow{
                     padding: 0 10px !important;
 
 
             img {
+                object-fit: contain !important;
                 height: 30vh !important;
                 margin-top: 20px !important;
                

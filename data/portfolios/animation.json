@@ -1,0 +1,120 @@
+{
+  "id": "animation",
+  "slug": "animation",
+  "title": "Animation",
+  "subtitle": "Our creativity begins where reality ends",
+  "description": "abcd efg lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "content": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.",
+  "videoUrl": "geMtgE6RmTQ",
+  "videos": [
+    {
+      "id": "animation-showreel",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Animation Showreel",
+      "thumbnail": "/gr-1.gif"
+    },
+    {
+      "id": "character-animation",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Character Animation",
+      "thumbnail": "/gr-2.gif"
+    },
+    {
+      "id": "motion-graphics",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Motion Graphics",
+      "thumbnail": "/gr-3.gif"
+    },
+    {
+      "id": "3d-animation",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "3D Animation",
+      "thumbnail": "/gr-1.gif"
+    }
+  ],
+  "titleDescription": "Over the years,|| our animation project|| has thrived at the intersection of|| Imagination || and|| innovation.",
+  "cardData": {
+    "title": "Animation",
+    "description": "abcd efg lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "/portfolio/portfolio1.png",
+    "readbtn": "Explore More",
+    "background": "linear-gradient(to bottom, #28002A, #000000)",
+    "link": "/portfolio/animation"
+  },
+  "seo": {
+    "metaTitle": "Animation Portfolio - BigLeap Creative Studios",
+    "metaDescription": "Explore our stunning animation portfolio showcasing creative projects at the intersection of imagination and innovation.",
+    "keywords": [
+      "animation",
+      "portfolio",
+      "creative",
+      "motion graphics",
+      "2D animation",
+      "3D animation"
+    ]
+  },
+  "status": "active",
+  "featured": true,
+  "order": 1,
+  "category": "Creative",
+  "tags": [
+    "animation",
+    "motion-graphics",
+    "creative",
+    "video"
+  ],
+  "createdDate": "2024-01-01",
+  "lastModified": "2025-10-06T20:01:34.139Z",
+  "projectGallery": {
+    "title": "Motion Graphics",
+    "subtitle": "Living. Breathing. Digital Experiences",
+    "projects": [
+      {
+        "image": "/gr-1.gif",
+        "caption": "2D Animation",
+        "date": "Sep 03 2025",
+        "about": "Character Animation Project",
+        "link": "#"
+      },
+      {
+        "image": "/gr-2.gif",
+        "caption": "Motion Graphics",
+        "date": "Aug 15 2025",
+        "about": "Brand Identity Animation",
+        "link": "#"
+      },
+      {
+        "image": "/gr-3.gif",
+        "caption": "3D Animation",
+        "date": "Jul 22 2025",
+        "about": "Product Visualization",
+        "link": "#"
+      },
+      {
+        "image": "/gr-1.gif",
+        "caption": "Explainer Video",
+        "date": "Jun 10 2025",
+        "about": "Educational Content Animation",
+        "link": "#"
+      },
+      {
+        "image": "/gr-2.gif",
+        "caption": "Logo Animation",
+        "date": "May 28 2025",
+        "about": "Corporate Branding",
+        "link": "#"
+      },
+      {
+        "image": "/gr-3.gif",
+        "caption": "VFX Compositing",
+        "date": "Apr 18 2025",
+        "about": "Visual Effects Production",
+        "link": "#"
+      }
+    ]
+  },
+  "image": "/portfolio/portfolio1.png",
+  "readbtn": "Explore More",
+  "background": "linear-gradient(to bottom, #28002A, #000000)",
+  "link": "/portfolio/animation"
+}

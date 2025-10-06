@@ -1,50 +1,46 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PortfolioEntry from "../portfolioEntry/portfolioEntry";
 import styles from "../../portfolio.module.css";
-
-const data = [
-    {
-        title: "Animation",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/portfolio/portfolio1.png",
-        readbtn: "Explore More",
-        background: "linear-gradient(to bottom, #28002A, #000000)",
-        link: "/portfolio/portfolio1"
-    },
-    {
-        title: "Web & App",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/portfolio/blue.png",
-        readbtn: "Explore More",
-        background: "linear-gradient(to bottom, #00062A, #000000)",
-        link: "/portfolio/portfolio2"
-
-    },
-    {
-        title: "Graphic Design",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/portfolio/black.png",
-        readbtn: "Explore More",
-        background: "linear-gradient(to bottom, #102A00, #000000)",
-        link: "/portfolio/portfolio3"
-
-    },
-    {
-        title: "SEO/SEM",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/portfolio/last.png",
-        readbtn: "Explore More",
-        background: "linear-gradient(to bottom, #2A2500, #000000)",
-        link: "/portfolio/portfolio4"
-
-    }
-];
+import { portfoliosClient } from "../../../../lib/portfolios-client";
 
 export default function PortfolioContainer() {
-  const [openStates, setOpenStates] = useState(data.map((_, index) => index < 1)); // Initialize based on data length
+  const [portfolios, setPortfolios] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [openStates, setOpenStates] = useState([]);
   const [focusedIndex, setFocusedIndex] = useState(null); // Track which entry is focused
+
+  useEffect(() => {
+    const loadPortfolios = async () => {
+      try {
+        setLoading(true);
+        const data = await portfoliosClient.getPortfolios();
+        
+        // Transform the data to match the expected structure
+        const transformedData = data.map(portfolio => ({
+          title: portfolio.cardData.title,
+          description: portfolio.cardData.description,
+          image: portfolio.cardData.image,
+          readbtn: portfolio.cardData.readbtn,
+          background: portfolio.cardData.background,
+          link: portfolio.cardData.link
+        }));
+
+        setPortfolios(transformedData);
+        setOpenStates(transformedData.map((_, index) => index < 1)); // Initialize based on data length
+        setError(null);
+      } catch (err) {
+        console.error('Error loading portfolios:', err);
+        setError('Failed to load portfolios');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPortfolios();
+  }, []);
 
   const handleNextOpen = (currentIndex) => {
     setOpenStates(prevStates => {
@@ -90,13 +86,29 @@ export default function PortfolioContainer() {
     return index === focusedIndex ? 'focused' : 'unfocused';
   };
 
+  if (loading) {
+    return (
+      <div className={styles.portfolioEntryContainer}>
+        <div className={styles.loading}>Loading portfolios...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.portfolioEntryContainer}>
+        <div className={styles.error}>Error: {error}</div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.portfolioEntryContainer}>
-      {data.map((item, index) => (
+      {portfolios.map((item, index) => (
         <PortfolioEntry 
           key={index}
           index={index}
-          data={data}
+          data={portfolios}
           open={openStates[index]}
           focusClass={getFocusClass(index)}
           buttonTitle={getArrowDirection(index)}

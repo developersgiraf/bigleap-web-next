@@ -30,8 +30,8 @@
 .footerArea .content .bigleapCnt h2 {
   margin: 0 0 50px 0;
   color: #fdfdfd;
-  line-height: 30px;
-  font-size: 44px;
+  line-height: 60px;
+  font-size: 34px;
   font-weight: 400;
   font-family: "Boldonse", system-ui !important;
 }
@@ -109,11 +109,14 @@
     font-size: 40px !important;
     line-height: 60px !important;
   }
+  .footerArea {
+    padding: 10px 0 0 0;
+  }
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .bigleapCnt h2 {
-    font-size: 30px !important;
-    line-height: 20px !important;
+    font-size: 20px !important;
+    line-height: 0px !important;
   }
   .footerArea {
     padding: 70px 0 0 0;
@@ -223,6 +226,9 @@
   }
   .footerArea .footerList .subcol {
     padding-left: 20px !important;
+  }
+  .footerArea .footerList .subcol ul li a {
+    font-size: 14px !important;
   }
   .footerArea .footer-bottom {
     padding: 10px 0 !important;

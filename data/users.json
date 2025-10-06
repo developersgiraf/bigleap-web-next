@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "username": "admin",
+      "password": "$2b$10$oA.AJy6U14AdHkq.H5E8ZuIONKpx4G3Nlq4Tch7UjXfSM48mMaXJ.",
+      "name": "Administrator",
+      "email": "admin@bigleap.ae",
+      "role": "admin",
+      "createdAt": "2025-10-02T00:00:00Z"
+    }
+  ],
+  "lastModified": "2025-10-05T00:00:00Z"
+}

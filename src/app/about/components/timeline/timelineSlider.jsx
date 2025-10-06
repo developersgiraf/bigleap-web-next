@@ -76,12 +76,12 @@ export default function TimelineSlider() {
                             spaceBetween: 10,
                         },
                         1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 5,
+                            slidesPerView: 5,
+                            spaceBetween: 0,
                         },
                         1200: {
-                            slidesPerView: 4,
-                            spaceBetween: 50,
+                            slidesPerView: 5,
+                            spaceBetween: 10,
                         },
                         1400: {
                             slidesPerView: 4,

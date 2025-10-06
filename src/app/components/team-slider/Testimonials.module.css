@@ -257,9 +257,26 @@ position: absolute;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (min-width: 1025px) and (max-width: 1370px) {
+  .circleNavLeft {
+    left: 55px !important;
+  }
+  
+  .circleNavRight {
+    right: -20px !important;
+  }
+}
+@media (min-width: 993px) and (max-width: 1024px) {
   .backgroundImage{
     object-fit: contain !important;
+
+    /* Soft vertical alpha falloff using mask-image */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, black 80px, black calc(100% - 500px), transparent 100%) !important;
+  mask-image: linear-gradient(to bottom, transparent 0px, black 80px, black calc(100% - 500px), transparent 100%);
+    -webkit-mask-size: 100% 100% !important;
+    mask-size: 100% 100% !important;
+  -webkit-mask-repeat: no-repeat  !important;
+  mask-repeat: no-repeat !important;
   }
   .sliderContainer{
     width: 80% !important;
@@ -269,10 +286,24 @@ position: absolute;
   margin-bottom: 0 !important;
 
   }
+  .circleNavLeft {
+    left: 55px !important;
+  }
+  
+  .circleNavRight {
+    right: -20px !important;
+  }
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .teamSlider{
     min-height: 60vh !important;
+  }
+   .circleNavLeft {
+    left: 55px !important;
+  }
+  
+  .circleNavRight {
+    right: 40px !important;
   }
 }
 @media (max-width: 767px) {

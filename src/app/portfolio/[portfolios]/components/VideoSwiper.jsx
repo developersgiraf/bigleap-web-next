@@ -4,12 +4,37 @@ import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import IFrameLoader from "../../../components/iframe-loader";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styles from "./video.module.css";
 
-export default function VideoSwiper({ styles: parentStyles }) {
+export default function VideoSwiper({ styles: parentStyles, portfolio }) {
+  // Create video data from portfolio information
+  const videoData = portfolio?.videos ? 
+    // Use the videos array if available
+    portfolio.videos :
+    // Fallback: create entries from the main video and project gallery
+    portfolio?.projectGallery?.projects ? 
+      portfolio.projectGallery.projects.slice(0, 4).map((project, index) => ({
+        id: `${portfolio.slug}-project-${index}`,
+        youtubeId: portfolio.videoUrl,
+        title: project.caption || `${portfolio.title} Project ${index + 1}`,
+        thumbnail: project.image,
+      })) :
+      // Final fallback: create multiple entries from the main video
+      Array.from({ length: 4 }, (_, index) => ({
+        id: `${portfolio?.slug || 'portfolio'}-${index}`,
+        youtubeId: portfolio?.videoUrl || "dQw4w9WgXcQ",
+        title: `${portfolio?.title || 'Portfolio'} Showreel ${index + 1}`,
+        thumbnail: null,
+      }));
+
+  // If no portfolio data is provided, return null or a fallback
+  if (!portfolio) {
+    return <div>Loading portfolio content...</div>;
+  }
   return (
     <Swiper
       modules={[Navigation, Autoplay, Pagination]}
@@ -54,69 +79,35 @@ export default function VideoSwiper({ styles: parentStyles }) {
       }}
       className={`${parentStyles?.videoSwiperSlider || ''} ${styles.videoSwiperContainer}`}
     >
-      <SwiperSlide>
-        <div className={styles.videoSlide}>
-          <video
-            src="/portfolio/biax.mp4"
-            autoPlay={true}
-            muted={true}
-            loop={true}
-            controls={false}
-            playsInline={true}
-            preload="metadata"
-            className={styles.videoElement}
-            title="Animation Showreel"
-          />
-        </div>
-      </SwiperSlide>
-      
-      <SwiperSlide>
-        <div className={styles.videoSlide}>
-          <video
-            src="/portfolio/seek.mp4"
-            autoPlay={true}
-            muted={true}
-            loop={true}
-            controls={false}
-            playsInline={true}
-            preload="metadata"
-            className={styles.videoElement}
-            title="Animation Showreel"
-          />
-        </div>
-      </SwiperSlide>
-      
-      <SwiperSlide>
-        <div className={styles.videoSlide}>
-          <video
-            src="/portfolio/biax.mp4"
-            autoPlay={true}
-            muted={true}
-            loop={true}
-            controls={false}
-            playsInline={true}
-            preload="metadata"
-            className={styles.videoElement}
-            title="Animation Showreel"
-          />
-        </div>
-      </SwiperSlide>
-      
-      <SwiperSlide>
-        <div className={styles.videoSlide}>
-          <video
-            src="/portfolio/seek.mp4"
-            autoPlay={true}
-            muted={true}
-            loop={true}
-            controls={false}
-            playsInline={true}
-            preload="metadata"
-            className={styles.videoElement}
-            title="Animation Showreel"
-          />
-        </div>
-      </SwiperSlide>
+      {/* Render video slides using dynamic data */}
+      {videoData.map((video, index) => (
+        <SwiperSlide key={`${video.id}-${index}`}>
+          <div className={styles.videoSlide}>
+            <IFrameLoader
+              threshold={0.1}
+              rootMargin="50px"
+              loadOnScroll={true}
+              fallback={
+                <div className={styles.videoPlaceholder}>
+                  <div className={styles.placeholderContent}>
+                    <div className={styles.spinner}></div>
+                    <p>Loading {video.title}...</p>
+                  </div>
+                </div>
+              }
+            >
+              <iframe
+                src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${video.youtubeId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+                title={video.title}
+                className={styles.videoElement}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </IFrameLoader>
+          </div>
+        </SwiperSlide>
+      ))}
 
       {/* Pagination for mobile */}
       <div className={styles.swiperPagination}></div>
