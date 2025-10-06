@@ -432,10 +432,14 @@
   
   
   .about-area {
-    padding: 100px 0 0 0 !important;
+    padding: 60px 0 0 0 !important;
     
     .about-row {
       padding: 0 0px !important;
+      width: 80% !important;
+    }
+    .aboutImg {
+    height: 30vh !important;
     }
     
     .about-first-box .aboutImg {
@@ -486,7 +490,7 @@
       }
       
       .video2 iframe {
-        height: 260px !important;
+        height: 190px !important;
       }
     }
     
