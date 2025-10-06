@@ -1,62 +1,50 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import SwiperSlider from "@/app/components/swiper-slider/SwiperSlider";
 import CTAButton from "@/app/components/ctaButton/ctabtn";
 import ButtonCTA from "@/app/components/ctaButton/buttoncta";
 import styles from "./portfolioSwiper.module.css";
-
-const portfolioSlides = [
-    {
-        id: 1,
-        src: "/portfolio/portfolio1.png",
-        alt: "Animation Portfolio",
-        title: "Animation",
-        description: "Creative animations that bring stories to life with stunning visual effects and motion graphics.",
-        // background: "linear-gradient(to bottom, #28002A, #000000)",
-        ctaButton: {
-            title: "Explore More",
-            link: "/portfolio/portfolio1"
-        }
-    },
-    {
-        id: 2,
-        src: "/portfolio/blue.png",
-        alt: "Web & App Portfolio",
-        title: "Web & App",
-        description: "Modern web applications and mobile apps designed with cutting-edge technology and user experience.",
-        // background: "linear-gradient(to bottom, #00062A, #000000)",
-        ctaButton: {
-            title: "Explore More",
-            link: "/portfolio/portfolio2"
-        }
-    },
-    {
-        id: 3,
-        src: "/portfolio/black.png",
-        alt: "Graphic Design Portfolio",
-        title: "Graphic Design",
-        description: "Bold and creative graphic designs that communicate your brand's message effectively.",
-        // background: "linear-gradient(to bottom, #102A00, #000000)",
-        ctaButton: {
-            title: "Explore More",
-            link: "/portfolio/portfolio3"
-        }
-    },
-    {
-        id: 4,
-        src: "/portfolio/last.png",
-        alt: "SEO/SEM Portfolio",
-        title: "SEO/SEM",
-        description: "Strategic digital marketing campaigns that drive traffic and boost your online presence.",        
-        // background: "linear-gradient(to bottom, #2A2500, #000000)",
-        ctaButton: {
-            title: "Explore More",
-            link: "/portfolio/portfolio4"
-        }
-    }
-];
+import { portfoliosClient } from "../../../../lib/portfolios-client";
 
 export default function PortfolioSwiper() {
+    const [portfolios, setPortfolios] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const loadPortfolios = async () => {
+            try {
+                setLoading(true);
+                const data = await portfoliosClient.getPortfolios();
+                
+                // Transform the data to match the swiper slide structure
+                const transformedData = data.map((portfolio, index) => ({
+                    id: index + 1,
+                    src: portfolio.cardData.image,
+                    alt: `${portfolio.cardData.title} Portfolio`,
+                    title: portfolio.cardData.title,
+                    description: portfolio.cardData.description,
+                    background: portfolio.cardData.background,
+                    ctaButton: {
+                        title: portfolio.cardData.readbtn,
+                        link: portfolio.cardData.link
+                    }
+                }));
+
+                setPortfolios(transformedData);
+                setError(null);
+            } catch (err) {
+                console.error('Error loading portfolios:', err);
+                setError('Failed to load portfolios');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadPortfolios();
+    }, []);
+
     const swiperConfig = {
         spaceBetween: 20,
         slidesPerView: 1,
@@ -127,7 +115,7 @@ export default function PortfolioSwiper() {
                         {slide.description && (
                             <p className={styles.portfolioDescription}>{slide.description}</p>
                         )}
-                        {slide.background && (
+                        {slide.background && false && (
                             <div 
                                 className={styles.portfolioBackground} 
                                 style={{ background: slide.background }}
@@ -144,6 +132,26 @@ export default function PortfolioSwiper() {
             </div>
         );
     };
+
+    if (loading) {
+        return (
+            <div className={styles.portfolioSwiperContainer}>
+                <div className="container">
+                    <div className={styles.loading}>Loading portfolios...</div>
+                </div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className={styles.portfolioSwiperContainer}>
+                <div className="container">
+                    <div className={styles.error}>Error: {error}</div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className={styles.portfolioSwiperContainer}>
@@ -172,7 +180,7 @@ export default function PortfolioSwiper() {
                     </div>}
 
                     <SwiperSlider
-                        slides={portfolioSlides}
+                        slides={portfolios}
                         swiperConfig={swiperConfig}
                         navigationConfig={navigationConfig}
                         paginationConfig={paginationConfig}

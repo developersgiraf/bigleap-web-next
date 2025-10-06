@@ -12,21 +12,24 @@ import styles from "./video.module.css";
 
 export default function VideoSwiper({ styles: parentStyles, portfolio }) {
   // Create video data from portfolio information
-  const videoData = portfolio?.projectGallery?.projects ? 
-    // If we have project gallery items, create video entries from them
-    portfolio.projectGallery.projects.slice(0, 4).map((project, index) => ({
-      id: `${portfolio.slug}-project-${index}`,
-      youtubeId: portfolio.videoUrl, // Use main video URL for now
-      title: project.caption || `${portfolio.title} Project ${index + 1}`,
-      thumbnail: project.image,
-    })) :
-    // Fallback: create multiple entries from the main video
-    Array.from({ length: 4 }, (_, index) => ({
-      id: `${portfolio?.slug || 'portfolio'}-${index}`,
-      youtubeId: portfolio?.videoUrl || "dQw4w9WgXcQ",
-      title: `${portfolio?.title || 'Portfolio'} Showreel ${index + 1}`,
-      thumbnail: null,
-    }));
+  const videoData = portfolio?.videos ? 
+    // Use the videos array if available
+    portfolio.videos :
+    // Fallback: create entries from the main video and project gallery
+    portfolio?.projectGallery?.projects ? 
+      portfolio.projectGallery.projects.slice(0, 4).map((project, index) => ({
+        id: `${portfolio.slug}-project-${index}`,
+        youtubeId: portfolio.videoUrl,
+        title: project.caption || `${portfolio.title} Project ${index + 1}`,
+        thumbnail: project.image,
+      })) :
+      // Final fallback: create multiple entries from the main video
+      Array.from({ length: 4 }, (_, index) => ({
+        id: `${portfolio?.slug || 'portfolio'}-${index}`,
+        youtubeId: portfolio?.videoUrl || "dQw4w9WgXcQ",
+        title: `${portfolio?.title || 'Portfolio'} Showreel ${index + 1}`,
+        thumbnail: null,
+      }));
 
   // If no portfolio data is provided, return null or a fallback
   if (!portfolio) {

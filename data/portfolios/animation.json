@@ -6,10 +6,36 @@
   "description": "Watch Our Animation Showreel",
   "content": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.",
   "videoUrl": "geMtgE6RmTQ",
+  "videos": [
+    {
+      "id": "animation-showreel",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Animation Showreel",
+      "thumbnail": "/gr-1.gif"
+    },
+    {
+      "id": "character-animation",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Character Animation",
+      "thumbnail": "/gr-2.gif"
+    },
+    {
+      "id": "motion-graphics",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Motion Graphics",
+      "thumbnail": "/gr-3.gif"
+    },
+    {
+      "id": "3d-animation",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "3D Animation",
+      "thumbnail": "/gr-1.gif"
+    }
+  ],
   "titleDescription": "Over the years,|| our animation project|| has thrived at the intersection of|| Imagination || and|| innovation.",
   "cardData": {
     "title": "Animation",
-    "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "abcd efg lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "/portfolio/portfolio1.png",
     "readbtn": "Explore More",
     "background": "linear-gradient(to bottom, #28002A, #000000)",
