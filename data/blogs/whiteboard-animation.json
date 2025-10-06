@@ -1,0 +1,31 @@
+{
+  "id": "whiteboard-animation",
+  "title": "Simplifying Complex Ideas: The Power of Whiteboard Animation",
+  "slug": "whiteboard-animation",
+  "image": "/servicess/Whiteboard Animation.png",
+  "caption": "Whiteboard Animation",
+  "description": "Whiteboard animation is a powerful communication tool that simplifies complex ideas through engaging visual storytelling. Our whiteboard animations combine clear narration with hand-drawn illustrations that appear to be created in real-time. This format is perfect for educational content, explainer videos, and presentations that need to convey information in an easily digestible format. We create compelling whiteboard animations that keep viewers engaged while effectively communicating your message.",
+  "publishedDate": "2024-10-03",
+  "lastModified": "2024-10-03",
+  "category": "Animation",
+  "tags": [
+    "whiteboard-animation",
+    "explainer-videos",
+    "educational-content",
+    "visual-storytelling"
+  ],
+  "featured": true,
+  "status": "published",
+  "index": 3,
+  "author": "BigLeap Team",
+  "seo": {
+    "metaTitle": "Whiteboard Animation Services - Simplify Complex Ideas",
+    "metaDescription": "Professional whiteboard animation services that transform complex concepts into engaging visual stories. Perfect for education and training.",
+    "keywords": [
+      "whiteboard animation",
+      "explainer videos",
+      "educational animation",
+      "visual communication"
+    ]
+  }
+}

@@ -3,6 +3,7 @@ import { servicesAPI } from '../../../../lib/services-simple.js';
 
 export async function POST(request) {
   try {
+    await servicesAPI.initialize();
     const backupData = await request.json();
 
     // Validate the backup data structure
@@ -14,34 +15,71 @@ export async function POST(request) {
     }
 
     // Get current services count
-    const currentServices = await servicesAPI.getAll();
-    const currentCount = currentServices.length;
+    const currentServicesResult = await servicesAPI.getAll();
+    const currentCount = currentServicesResult.success ? currentServicesResult.data.length : 0;
 
-    // Convert backup services object to array format
-    const backupServices = Object.values(backupData.WebsiteDatas.services);
+    // Extract services from backup (exclude the "id": "services" entry)
+    const servicesObject = backupData.WebsiteDatas.services;
+    const backupServices = [];
+    
+    // Convert backup services object to array, filtering out the collection identifier
+    for (const [key, value] of Object.entries(servicesObject)) {
+      if (key !== 'id' && typeof value === 'object' && value.id) {
+        backupServices.push(value);
+      }
+    }
+
+    if (backupServices.length === 0) {
+      return NextResponse.json(
+        { error: 'No valid services found in backup data' },
+        { status: 400 }
+      );
+    }
+
     let updatedCount = 0;
+    let deletedCount = 0;
 
     // Clear existing services and restore from backup
     try {
-      // Clear all existing services
-      for (const service of currentServices) {
-        await servicesAPI.delete(service.id);
+      // Clear all existing services if we have current services
+      if (currentServicesResult.success && currentServicesResult.data.length > 0) {
+        for (const service of currentServicesResult.data) {
+          try {
+            await servicesAPI.delete(service.id);
+            deletedCount++;
+          } catch (deleteError) {
+            console.warn(`Failed to delete service ${service.id}:`, deleteError);
+          }
+        }
       }
 
       // Add services from backup
       for (const serviceData of backupServices) {
-        await servicesAPI.create(serviceData);
-        updatedCount++;
+        try {
+          // Ensure the service has required fields
+          const serviceToRestore = {
+            ...serviceData,
+            createdAt: serviceData.createdAt || new Date().toISOString(),
+            lastModified: new Date().toISOString()
+          };
+
+          // Use preserveId = true to maintain original IDs from backup
+          await servicesAPI.create(serviceToRestore, true);
+          updatedCount++;
+          console.log(`Restored service: ${serviceData.id}`);
+        } catch (createError) {
+          console.error(`Failed to restore service ${serviceData.id}:`, createError);
+        }
       }
 
       // Rebuild index
-      await servicesAPI.rebuildIndex();
+      await servicesAPI.updateIndex();
 
       return NextResponse.json({
         success: true,
-        message: 'Database restored successfully from JSON backup',
+        message: 'Database restored successfully from backup',
         updatedCount,
-        deletedCount: currentCount,
+        deletedCount,
         timestamp: new Date().toISOString(),
         source: 'JSON Files'
       });

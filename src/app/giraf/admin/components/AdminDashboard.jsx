@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { useAuth } from '../../../../contexts/AuthContext';
 import styles from './dashboard.module.css';
-import ServicesManager from './ServicesManager';
-import DatabaseManager from './DatabaseManager';
+import ServicesManager from './services/ServicesManager';
+import BlogManager from './blog/BlogManager';
+import PortfolioManager from './portfolio/PortfolioManager';
+import DatabaseManager from './database/DatabaseManager';
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth();
@@ -69,29 +71,9 @@ const AdminDashboard = () => {
       case 'services':
         return <ServicesManager />;
       case 'portfolio':
-        return (
-          <div className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2>Portfolio Management</h2>
-              <button className={styles.primaryButton}>Add New Project</button>
-            </div>
-            <div className={styles.placeholder}>
-              <p>Portfolio content - Videos, client projects, showcases, and project galleries</p>
-            </div>
-          </div>
-        );
+        return <PortfolioManager />;
       case 'blog':
-        return (
-          <div className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2>Blog Management</h2>
-              <button className={styles.primaryButton}>Add New Post</button>
-            </div>
-            <div className={styles.placeholder}>
-              <p>Blog post creation, editing, and content management</p>
-            </div>
-          </div>
-        );
+        return <BlogManager />;
       case 'clients':
         return (
           <div className={styles.section}>

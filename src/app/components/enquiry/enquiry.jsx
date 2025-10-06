@@ -15,7 +15,6 @@ export default function EnquirySect() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-    console.log("Form Submitted:", data);
     // You can send `data` to your API here
   };
 

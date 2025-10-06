@@ -3,26 +3,56 @@ import { servicesAPI } from '../../../../lib/services-simple.js';
 
 export async function GET() {
   try {
-    // Get all services from JSON files
-    const services = await servicesAPI.getAll();
+    await servicesAPI.initialize();
     
-    // Build the backup data structure (maintaining Firebase-like format for compatibility)
+    // Get all services from index (lightweight data)
+    const indexResult = await servicesAPI.getAll();
+    
+    if (!indexResult.success) {
+      throw new Error('Failed to load services index');
+    }
+    
+    // Get full data for each service
+    const servicesWithFullData = {};
+    
+    for (const serviceIndex of indexResult.data) {
+      try {
+        const fullServiceResult = await servicesAPI.getById(serviceIndex.id);
+        if (fullServiceResult.success) {
+          // Add index data to full service data
+          const fullService = {
+            ...fullServiceResult.data,
+            index: serviceIndex.index, // Ensure index is included
+            archived: serviceIndex.archived // Ensure archived status is included
+          };
+          servicesWithFullData[serviceIndex.id] = fullService;
+        } else {
+          console.warn(`Failed to load full data for service: ${serviceIndex.id}`);
+          // Fallback to index data only
+          servicesWithFullData[serviceIndex.id] = serviceIndex;
+        }
+      } catch (serviceError) {
+        console.warn(`Error loading service ${serviceIndex.id}:`, serviceError);
+        // Fallback to index data only
+        servicesWithFullData[serviceIndex.id] = serviceIndex;
+      }
+    }
+    
+    // Build the backup data structure (matching the provided sample format)
     const backupData = {
       WebsiteDatas: {
-        services: {}
+        services: {
+          id: "services", // Add the services collection identifier
+          ...servicesWithFullData
+        }
       },
       exportInfo: {
         timestamp: new Date().toISOString(),
-        totalDocuments: services.length,
+        totalDocuments: Object.keys(servicesWithFullData).length,
         collections: ['WebsiteDatas'],
         source: 'JSON Files'
       }
     };
-
-    // Convert services array back to object format for backup compatibility
-    services.forEach(service => {
-      backupData.WebsiteDatas.services[service.id] = service;
-    });
 
     return NextResponse.json(backupData);
   } catch (error) {

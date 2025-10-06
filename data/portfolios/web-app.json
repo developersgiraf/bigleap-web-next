@@ -1,0 +1,90 @@
+{
+  "id": "web-app",
+  "slug": "web-app",
+  "title": "Web & App Portfolio",
+  "subtitle": "Digital solutions that make a difference",
+  "description": "Watch Our Web & App Showreel",
+  "content": "Innovative web and mobile applications designed to deliver exceptional user experiences.",
+  "videoUrl": "geMtgE6RmTQ",
+  "titleDescription": "Over the years,|| our web development|| has thrived at the intersection of|| Technology || and|| user experience.",
+  "cardData": {
+    "title": "Web & App",
+    "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "/portfolio/blue.png",
+    "readbtn": "Explore More",
+    "background": "linear-gradient(to bottom, #00062A, #000000)",
+    "link": "/portfolio/web-app"
+  },
+  "seo": {
+    "metaTitle": "Web & App Development Portfolio - BigLeap",
+    "metaDescription": "Discover our innovative web and mobile application portfolio featuring cutting-edge digital solutions and exceptional user experiences.",
+    "keywords": [
+      "web development",
+      "mobile app",
+      "portfolio",
+      "user experience",
+      "technology",
+      "digital solutions"
+    ]
+  },
+  "status": "active",
+  "featured": true,
+  "order": 2,
+  "category": "Development",
+  "tags": [
+    "web-development",
+    "mobile-app",
+    "technology",
+    "ux-ui"
+  ],
+  "createdDate": "2024-01-01",
+  "lastModified": "2025-10-06",
+  "projectGallery": {
+    "title": "Web & App Development",
+    "subtitle": "Innovative Digital Solutions",
+    "projects": [
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "E-commerce Platform",
+        "date": "Sep 01 2025",
+        "about": "Full-stack React Application",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "Mobile App",
+        "date": "Aug 20 2025",
+        "about": "React Native iOS/Android",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "SaaS Dashboard",
+        "date": "Jul 15 2025",
+        "about": "Next.js Enterprise Solution",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "Progressive Web App",
+        "date": "Jun 30 2025",
+        "about": "Modern PWA Development",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "API Integration",
+        "date": "May 25 2025",
+        "about": "RESTful Services Backend",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/blue.png",
+        "caption": "Cloud Deployment",
+        "date": "Apr 12 2025",
+        "about": "AWS Infrastructure Setup",
+        "link": "#"
+      }
+    ]
+  }
+}

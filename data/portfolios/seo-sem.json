@@ -1,0 +1,92 @@
+{
+  "id": "seo-sem",
+  "slug": "seo-sem",
+  "title": "SEO & SEM Portfolio",
+  "subtitle": "Digital marketing excellence",
+  "description": "Watch Our SEO & SEM Showreel",
+  "content": "Strategic SEO and SEM campaigns that drive traffic, boost rankings, and maximize your digital presence.",
+  "videoUrl": "geMtgE6RmTQ",
+  "titleDescription": "Over the years,|| our SEO & SEM strategies|| have thrived at the intersection of|| Analytics || and|| digital marketing.",
+  "cardData": {
+    "title": "SEO & SEM",
+    "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "/portfolio/last.png",
+    "readbtn": "Explore More",
+    "background": "linear-gradient(to bottom, #2A2500, #000000)",
+    "link": "/portfolio/seo-sem"
+  },
+  "seo": {
+    "metaTitle": "SEO & SEM Portfolio - BigLeap",
+    "metaDescription": "Discover our strategic SEO and SEM portfolio showcasing successful digital marketing campaigns and search optimization results.",
+    "keywords": [
+      "SEO",
+      "SEM",
+      "portfolio",
+      "digital marketing",
+      "search optimization",
+      "analytics",
+      "traffic growth"
+    ]
+  },
+  "status": "active",
+  "featured": true,
+  "order": 4,
+  "category": "Marketing",
+  "tags": [
+    "seo",
+    "sem",
+    "digital-marketing",
+    "analytics",
+    "search-optimization"
+  ],
+  "createdDate": "2024-01-01",
+  "lastModified": "2025-10-06",
+  "projectGallery": {
+    "title": "SEO & SEM Results",
+    "subtitle": "Data-Driven Marketing Success",
+    "projects": [
+      {
+        "image": "/portfolio/last.png",
+        "caption": "SEO Campaign",
+        "date": "Sep 10 2025",
+        "about": "Organic Traffic Growth +250%",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/last.png",
+        "caption": "Google Ads",
+        "date": "Aug 25 2025",
+        "about": "PPC Campaign Optimization",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/last.png",
+        "caption": "Local SEO",
+        "date": "Jul 30 2025",
+        "about": "Local Business Ranking #1",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/last.png",
+        "caption": "Content Strategy",
+        "date": "Jun 18 2025",
+        "about": "Content Marketing Campaign",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/last.png",
+        "caption": "Analytics Setup",
+        "date": "May 22 2025",
+        "about": "GA4 & Conversion Tracking",
+        "link": "#"
+      },
+      {
+        "image": "/portfolio/last.png",
+        "caption": "Social Media Ads",
+        "date": "Apr 16 2025",
+        "about": "Facebook & Instagram Campaigns",
+        "link": "#"
+      }
+    ]
+  }
+}

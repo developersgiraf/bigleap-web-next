@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useAuth } from '../../../contexts/AuthContext';
-import LoginForm from './components/LoginForm';
+import LoginForm from './components/auth/LoginForm';
 import AdminDashboard from './components/AdminDashboard';
 
 const AdminPage = () => {

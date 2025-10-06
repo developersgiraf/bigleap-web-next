@@ -1,26 +1,5 @@
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
-import GoogleProvider from "next-auth/providers/google"
-import fs from 'fs/promises'
-import path from 'path'
-import bcrypt from 'bcryptjs'
-
-const usersDataPath = path.join(process.cwd(), 'data', 'users', 'index.json')
-
-async function getUsers() {
-  try {
-    const data = await fs.readFile(usersDataPath, 'utf8')
-    return JSON.parse(data)
-  } catch (error) {
-    console.error('Error reading users data:', error)
-    return { users: [] }
-  }
-}
-
-async function findUserByEmail(email) {
-  const data = await getUsers()
-  return data.users.find(user => user.email.toLowerCase() === email.toLowerCase())
-}
 
 const handler = NextAuth({
   providers: [
@@ -38,15 +17,21 @@ const handler = NextAuth({
           return null
         }
 
-        const user = await findUserByEmail(credentials.email)
-        console.log('👤 User found:', user ? 'Yes' : 'No');
+        // Check against environment variables
+        const adminEmail = process.env.ADMIN_EMAIL
+        const adminPassword = process.env.ADMIN_PASSWORD
         
-        if (!user || !user.password) {
-          console.log('❌ No user or no password');
+        if (!adminEmail || !adminPassword) {
+          console.log('❌ Admin credentials not configured in environment');
           return null
         }
 
-        const isPasswordValid = await bcrypt.compare(credentials.password, user.password)
+        if (credentials.email.toLowerCase() !== adminEmail.toLowerCase()) {
+          console.log('❌ Email does not match admin email');
+          return null
+        }
+
+        const isPasswordValid = credentials.password === adminPassword
         console.log('🔑 Password valid:', isPasswordValid);
         
         if (!isPasswordValid) {
@@ -54,33 +39,17 @@ const handler = NextAuth({
           return null
         }
 
-        console.log('✅ Auth successful for:', user.email);
+        console.log('✅ Auth successful for:', credentials.email);
         return {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          role: user.role
+          id: '1',
+          email: credentials.email,
+          name: 'BigLeap Admin',
+          role: 'admin'
         }
       }
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     })
   ],
   callbacks: {
-    async signIn({ user, account }) {
-      // For Google sign-in, check if user email is in our admin list
-      if (account.provider === 'google') {
-        const adminUser = await findUserByEmail(user.email)
-        if (!adminUser) {
-          return false // Reject sign-in if not an admin
-        }
-        // Add role to user object
-        user.role = adminUser.role
-      }
-      return true
-    },
     async jwt({ token, user }) {
       if (user) {
         token.role = user.role

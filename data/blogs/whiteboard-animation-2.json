@@ -1,0 +1,31 @@
+{
+  "id": "whiteboard-animation-2",
+  "title": "Advanced Whiteboard Animation Techniques",
+  "slug": "whiteboard-animation-2",
+  "image": "/servicess/Whiteboard Animation.png",
+  "caption": "white board",
+  "description": "Explore advanced whiteboard animation techniques that take your visual storytelling to the next level. This comprehensive guide covers professional methods, advanced drawing techniques, and innovative approaches to whiteboard animation that captivate audiences and deliver complex information in an engaging format. Learn how to create dynamic whiteboard animations that stand out in today's competitive digital landscape.",
+  "publishedDate": "2024-10-09",
+  "lastModified": "2024-10-09",
+  "category": "Animation",
+  "tags": [
+    "whiteboard-animation",
+    "advanced-techniques",
+    "motion-graphics",
+    "digital-animation"
+  ],
+  "featured": false,
+  "status": "published",
+  "index": 9,
+  "author": "BigLeap Team",
+  "seo": {
+    "metaTitle": "Advanced Whiteboard Animation Techniques - Professional Methods",
+    "metaDescription": "Master advanced whiteboard animation techniques with professional methods, complex transitions, and innovative digital approaches.",
+    "keywords": [
+      "advanced whiteboard animation",
+      "professional animation",
+      "motion graphics",
+      "digital whiteboard"
+    ]
+  }
+}
