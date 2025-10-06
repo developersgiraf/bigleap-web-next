@@ -7,7 +7,7 @@
       "archived": false,
       "index": 1,
       "thumbnail": "/servicess/2danimation.png",
-      "lastModified": "2025-10-06T19:55:13.077Z"
+      "lastModified": "2025-10-06T20:08:21.561Z"
     },
     {
       "id": "threeDanimation",
@@ -16,7 +16,7 @@
       "archived": false,
       "index": 2,
       "thumbnail": "/servicess/3danimation.png",
-      "lastModified": "2025-10-06T19:53:51.363Z"
+      "lastModified": "2025-10-06T20:14:01.305Z"
     },
     {
       "id": "whiteboard-animation",
@@ -25,7 +25,7 @@
       "archived": false,
       "index": 3,
       "thumbnail": "/servicess/Whiteboard Animation.png",
-      "lastModified": "2025-10-06T19:53:35.700Z"
+      "lastModified": "2025-10-06T20:08:21.565Z"
     },
     {
       "id": "motion-graphics",
@@ -34,7 +34,7 @@
       "archived": false,
       "index": 4,
       "thumbnail": "/servicess/motion-graphics.png",
-      "lastModified": "2025-10-05T15:11:09.954Z"
+      "lastModified": "2025-10-06T20:08:21.571Z"
     },
     {
       "id": "vfx-and-post-production",
@@ -43,7 +43,7 @@
       "archived": false,
       "index": 5,
       "thumbnail": "/servicess/VFX & Post Production.png",
-      "lastModified": "2025-10-05T15:11:06.651Z"
+      "lastModified": "2025-10-06T20:08:21.577Z"
     },
     {
       "id": "product-animation",
@@ -52,7 +52,7 @@
       "archived": false,
       "index": 6,
       "thumbnail": "/servicess/red-machine.png",
-      "lastModified": "2025-10-05T15:11:24.538Z"
+      "lastModified": "2025-10-06T20:08:21.583Z"
     },
     {
       "id": "character-design",
@@ -61,7 +61,7 @@
       "archived": false,
       "index": 7,
       "thumbnail": "/servicess/Character.png",
-      "lastModified": "2025-10-05T15:11:28.072Z"
+      "lastModified": "2025-10-06T20:08:21.592Z"
     },
     {
       "id": "storytelling",
@@ -70,7 +70,7 @@
       "archived": false,
       "index": 8,
       "thumbnail": "/servicess/storytelling.png",
-      "lastModified": "2025-10-05T15:11:28.376Z"
+      "lastModified": "2025-10-06T20:08:21.602Z"
     },
     {
       "id": "video-editing-and-post-production",
@@ -79,11 +79,11 @@
       "archived": false,
       "index": 9,
       "thumbnail": "/servicess/video.png",
-      "lastModified": "2025-10-05T14:19:16.961Z"
+      "lastModified": "2025-10-06T20:08:21.612Z"
     }
   ],
   "total": 9,
   "active": 9,
   "archived": 0,
-  "lastUpdated": "2025-10-06T19:55:13.088Z"
+  "lastUpdated": "2025-10-06T20:14:01.365Z"
 }

@@ -40,7 +40,6 @@ export async function POST(request) {
     }
 
     let totalUpdated = 0;
-    let totalDeleted = 0;
     const restoredCollections = [];
 
     // Initialize APIs
@@ -69,20 +68,7 @@ export async function POST(request) {
         }
 
         if (backupServices.length > 0) {
-          // Get current services and clear them
-          const currentServicesResult = await servicesAPI.getAll();
-          if (currentServicesResult.success && currentServicesResult.data.length > 0) {
-            for (const service of currentServicesResult.data) {
-              try {
-                await servicesAPI.delete(service.id);
-                totalDeleted++;
-              } catch (deleteError) {
-                console.warn(`Failed to delete service ${service.id}:`, deleteError);
-              }
-            }
-          }
-
-          // Add services from backup
+          // Replace only the services that are in the backup data
           for (const serviceData of backupServices) {
             try {
               const serviceToRestore = {
@@ -91,6 +77,7 @@ export async function POST(request) {
                 lastModified: new Date().toISOString()
               };
 
+              // Force replace/create the service (overwrite if exists)
               await servicesAPI.create(serviceToRestore, true);
               totalUpdated++;
             } catch (createError) {
@@ -130,53 +117,31 @@ export async function POST(request) {
         }
 
         if (backupPortfolios.length > 0) {
-          // Clear existing portfolios
-          const indexPath = path.join(portfoliosDir, 'index.json');
-          if (fs.existsSync(indexPath)) {
-            const indexData = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
-            const portfolioRefs = Array.isArray(indexData) ? indexData : indexData.portfolios || [];
-            
-            for (const portfolioRef of portfolioRefs) {
-              try {
-                const portfolioPath = path.join(portfoliosDir, `${portfolioRef.id}.json`);
-                if (fs.existsSync(portfolioPath)) {
-                  fs.unlinkSync(portfolioPath);
-                  totalDeleted++;
-                }
-              } catch (error) {
-                console.warn(`Failed to delete portfolio ${portfolioRef.id}:`, error);
-              }
-            }
-          }
-
-          // Restore portfolios from backup
-          const newIndex = [];
+          // Merge portfolios from backup (no clearing of existing data)
           for (const portfolioData of backupPortfolios) {
             try {
               const portfolioPath = path.join(portfoliosDir, `${portfolioData.id}.json`);
-              fs.writeFileSync(portfolioPath, JSON.stringify(portfolioData, null, 2));
+              const portfolioToRestore = {
+                ...portfolioData,
+                lastModified: new Date().toISOString()
+              };
               
-              newIndex.push({
-                id: portfolioData.id,
-                title: portfolioData.cardData?.title || portfolioData.title,
-                description: portfolioData.cardData?.description || portfolioData.description || '',
-                image: portfolioData.cardData?.image || '',
-                readbtn: portfolioData.cardData?.readbtn || 'Explore More',
-                background: portfolioData.cardData?.background || 'linear-gradient(to bottom, #000000, #000000)',
-                link: portfolioData.cardData?.link || `/portfolio/${portfolioData.id}`,
-                order: portfolioData.order || 1,
-                status: portfolioData.status || 'active'
-              });
-              
+              // Write/overwrite the portfolio file
+              fs.writeFileSync(portfolioPath, JSON.stringify(portfolioToRestore, null, 2));
               totalUpdated++;
             } catch (error) {
               console.error(`Failed to restore portfolio ${portfolioData.id}:`, error);
             }
           }
 
-          // Update index
-          newIndex.sort((a, b) => (a.order || 0) - (b.order || 0));
-          fs.writeFileSync(indexPath, JSON.stringify(newIndex, null, 2));
+          // Rebuild index from all portfolio files (preserves existing + new ones)
+          try {
+            const { portfoliosAPI } = await import('../../../../lib/portfolios-simple.js');
+            await portfoliosAPI.initialize();
+            await portfoliosAPI.updateIndex();
+          } catch (indexError) {
+            console.warn('Failed to update portfolio index:', indexError);
+          }
           restoredCollections.push('portfolios');
         }
       } catch (portfoliosError) {
@@ -208,26 +173,7 @@ export async function POST(request) {
         }
 
         if (backupBlogs.length > 0) {
-          // Clear existing blogs
-          const indexPath = path.join(blogsDir, 'index.json');
-          if (fs.existsSync(indexPath)) {
-            const blogsIndex = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
-            
-            for (const blogRef of blogsIndex) {
-              try {
-                const blogPath = path.join(blogsDir, `${blogRef.id}.json`);
-                if (fs.existsSync(blogPath)) {
-                  fs.unlinkSync(blogPath);
-                  totalDeleted++;
-                }
-              } catch (error) {
-                console.warn(`Failed to delete blog ${blogRef.id}:`, error);
-              }
-            }
-          }
-
-          // Restore blogs from backup
-          const newIndex = [];
+          // Merge blogs from backup (no clearing of existing data)
           for (const blogData of backupBlogs) {
             try {
               const blogPath = path.join(blogsDir, `${blogData.id}.json`);
@@ -237,30 +183,22 @@ export async function POST(request) {
                 lastModified: new Date().toISOString().split('T')[0]
               };
               
+              // Write/overwrite the blog file
               fs.writeFileSync(blogPath, JSON.stringify(blogToRestore, null, 2));
-              
-              newIndex.push({
-                id: blogToRestore.id,
-                slug: blogToRestore.slug,
-                title: blogToRestore.title,
-                caption: blogToRestore.caption || '',
-                image: blogToRestore.image || '',
-                category: blogToRestore.category || '',
-                status: blogToRestore.status || 'draft',
-                featured: Boolean(blogToRestore.featured),
-                publishedDate: blogToRestore.publishedDate,
-                lastModified: blogToRestore.lastModified
-              });
-              
               totalUpdated++;
             } catch (error) {
               console.error(`Failed to restore blog ${blogData.id}:`, error);
             }
           }
 
-          // Update index
-          newIndex.sort((a, b) => (a.index || 0) - (b.index || 0));
-          fs.writeFileSync(indexPath, JSON.stringify(newIndex, null, 2));
+          // Rebuild index from all blog files (preserves existing + new ones)
+          try {
+            const { blogsAPI } = await import('../../../../lib/blogs-simple.js');
+            await blogsAPI.initialize();
+            await blogsAPI.updateIndex();
+          } catch (indexError) {
+            console.warn('Failed to update blog index:', indexError);
+          }
           restoredCollections.push('blogs');
         }
       } catch (blogsError) {
@@ -277,12 +215,13 @@ export async function POST(request) {
 
     return NextResponse.json({
       success: true,
-      message: `Database restored successfully from backup`,
+      message: `Database restored successfully - only changed files replaced (other data preserved)`,
       updatedCount: totalUpdated,
-      deletedCount: totalDeleted,
+      deletedCount: 0,
       restoredCollections,
       timestamp: new Date().toISOString(),
-      source: 'JSON Files'
+      source: 'JSON Files',
+      operation: 'selective-replace'
     });
 
   } catch (error) {
