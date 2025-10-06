@@ -288,24 +288,30 @@ export default function PortfolioManager() {
     }
   }, [loadPortfolios]);
 
-  const handleFormSubmit = useCallback(async (e) => {
-    e.preventDefault();
+  const handleFormSubmit = useCallback(async (dataOrEvent) => {
+    // Handle both event object (old form) and direct data (GenericEditor)
+    if (dataOrEvent && typeof dataOrEvent.preventDefault === 'function') {
+      dataOrEvent.preventDefault();
+    }
     if (isSubmitting) return;
 
     try {
       setIsSubmitting(true);
+
+      // Determine if data is passed directly (GenericEditor) or use formData state
+      const data = (dataOrEvent && typeof dataOrEvent.preventDefault !== 'function') ? dataOrEvent : formData;
 
       let portfolioData;
       
       if (editingPortfolio) {
         // When editing, preserve the original ID and slug
         portfolioData = {
-          ...formData,
+          ...data,
           id: editingPortfolio.id, // Keep original ID
           slug: editingPortfolio.slug, // Keep original slug
           cardData: {
-            ...formData.cardData,
-            title: formData.cardData.title || formData.title,
+            ...data.cardData,
+            title: data.cardData.title || data.title,
             link: `/portfolio/${editingPortfolio.slug}` // Use original slug for link
           },
           lastModified: new Date().toISOString().split('T')[0],
@@ -313,17 +319,17 @@ export default function PortfolioManager() {
         };
       } else {
         // For new portfolios, generate slug from title
-        const slug = formData.title.toLowerCase()
+        const slug = data.title.toLowerCase()
           .replace(/[^a-z0-9]+/g, '-')
           .replace(/(^-|-$)/g, '');
 
         portfolioData = {
-          ...formData,
+          ...data,
           slug,
           id: slug,
           cardData: {
-            ...formData.cardData,
-            title: formData.cardData.title || formData.title,
+            ...data.cardData,
+            title: data.cardData.title || data.title,
             link: `/portfolio/${slug}`
           },
           lastModified: new Date().toISOString().split('T')[0],
