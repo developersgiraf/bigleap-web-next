@@ -51,7 +51,12 @@ const GenericEditor = ({
     }
     
     // Initialize additional state
-    setAdditionalState(config.defaultState || {});
+    const defaultState = config.defaultState || {};
+    const initializedState = config.initializeState ? config.initializeState(items) : {};
+    setAdditionalState({
+      ...defaultState,
+      ...initializedState
+    });
   }, [item, items, config]);
 
   const handleInputChange = (field, value, section = null) => {

@@ -72,7 +72,7 @@ export const blogEditorConfig = {
             className="selectInput"
           >
             <option value="">Select Category</option>
-            {additionalState.availableCategories.map(category => (
+            {(additionalState.availableCategories || []).map(category => (
               <option key={category} value={category}>{category}</option>
             ))}
             <option value="Animation">Animation</option>
@@ -103,8 +103,8 @@ export const blogEditorConfig = {
                 type="button" 
                 onClick={() => {
                   const newCat = additionalState.newCategory.trim();
-                  if (newCat && !additionalState.availableCategories.includes(newCat)) {
-                    onStateChange('availableCategories', [...additionalState.availableCategories, newCat]);
+                  if (newCat && !(additionalState.availableCategories || []).includes(newCat)) {
+                    onStateChange('availableCategories', [...(additionalState.availableCategories || []), newCat]);
                     onChange(newCat);
                     onStateChange('newCategory', '');
                     onStateChange('showAddCategory', false);
@@ -228,5 +228,15 @@ export const blogEditorConfig = {
     }
     
     return submitData;
+  },
+
+  initializeState: (items) => {
+    const categories = [...new Set(items.map(b => b.category).filter(Boolean))];
+    const tags = [...new Set(items.flatMap(b => b.tags || []).filter(Boolean))];
+    
+    return {
+      availableCategories: categories,
+      availableTags: tags
+    };
   }
 };
