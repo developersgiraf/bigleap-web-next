@@ -8,6 +8,7 @@ import GradientColorPicker from '../shared/GradientColorPicker';
 import ManagerHeader from '../shared/elements/ManagerHeader';
 import ActionButtons from '../shared/elements/ActionButtons';
 import ManagerCard from '../shared/elements/ManagerCard';
+import PortfolioEditor from '../subComponents/portfolioEditor/PortfolioEditor';
 
 // Mobile detection utility
 const isMobileDevice = () => {
@@ -542,195 +543,14 @@ export default function PortfolioManager() {
         </div>
       )}
 
-      {/* Portfolio Form Modal */}
-      {showForm && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <div className={styles.modalHeader}>
-              <h3>{editingPortfolio ? 'Edit Portfolio' : 'Add Portfolio'}</h3>
-              <button 
-                className={styles.closeButton}
-                onClick={() => setShowForm(false)}
-              >
-                ×
-              </button>
-            </div>
-
-            <form onSubmit={handleFormSubmit} className={styles.form}>
-              {/* Basic Info Section */}
-              <div className={styles.formSection}>
-                <h4>Basic Information</h4>
-                <div className={styles.formGrid}>
-                  <div className={styles.formGroup}>
-                    <label>Title *</label>
-                    <input
-                      type="text"
-                      value={formData.title}
-                      onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
-                      required
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label>Subtitle</label>
-                    <input
-                      type="text"
-                      value={formData.subtitle}
-                      onChange={(e) => setFormData(prev => ({ ...prev, subtitle: e.target.value }))}
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label>Category</label>
-                    <input
-                      type="text"
-                      value={formData.category}
-                      onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
-                      placeholder="e.g., Creative, Development, Design, Marketing"
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label>Order</label>
-                    <input
-                      type="number"
-                      value={formData.order}
-                      onChange={(e) => setFormData(prev => ({ ...prev, order: parseInt(e.target.value) || 1 }))}
-                      min="1"
-                    />
-                  </div>
-                </div>
-                
-                <div className={styles.formGroup}>
-                  <label>Description</label>
-                  <textarea
-                    value={formData.description}
-                    onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
-                    rows="3"
-                  />
-                </div>
-                
-                <div className={styles.formGroup}>
-                  <label>Content</label>
-                  <textarea
-                    value={formData.content}
-                    onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
-                    rows="4"
-                  />
-                </div>
-              </div>
-
-              {/* Media Section */}
-              <div className={styles.formSection}>
-                <h4>Media</h4>
-                <div className={styles.formGroup}>
-                  <label>Video URL (YouTube ID)</label>
-                  <input
-                    type="text"
-                    value={formData.videoUrl}
-                    onChange={(e) => setFormData(prev => ({ ...prev, videoUrl: e.target.value }))}
-                    placeholder="e.g., geMtgE6RmTQ"
-                  />
-                </div>
-              </div>
-
-              {/* Card Data Section */}
-              <div className={styles.formSection}>
-                <h4>Card Display</h4>
-                <div className={styles.formGrid}>
-                  <div className={styles.formGroup}>
-                    <label>Card Title</label>
-                    <input
-                      type="text"
-                      value={formData.cardData.title}
-                      onChange={(e) => setFormData(prev => ({ 
-                        ...prev, 
-                        cardData: { ...prev.cardData, title: e.target.value }
-                      }))}
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label>Card Image URL</label>
-                    <input
-                      type="text"
-                      value={formData.cardData.image}
-                      onChange={(e) => setFormData(prev => ({ 
-                        ...prev, 
-                        cardData: { ...prev.cardData, image: e.target.value }
-                      }))}
-                    />
-                  </div>
-                </div>
-                
-                <div className={styles.formGroup}>
-                  <label>Card Description</label>
-                  <textarea
-                    value={formData.cardData.description}
-                    onChange={(e) => setFormData(prev => ({ 
-                      ...prev, 
-                      cardData: { ...prev.cardData, description: e.target.value }
-                    }))}
-                    rows="2"
-                  />
-                </div>
-                
-                <div className={styles.formGroup}>
-                  <GradientColorPicker
-                    label="Background Gradient"
-                    value={formData.cardData.background}
-                    onChange={(newGradient) => setFormData(prev => ({ 
-                      ...prev, 
-                      cardData: { ...prev.cardData, background: newGradient }
-                    }))}
-                  />
-                </div>
-              </div>
-
-              {/* Settings Section */}
-              <div className={styles.formSection}>
-                <h4>Settings</h4>
-                <div className={styles.formGrid}>
-                  <div className={styles.formGroup}>
-                    <label>Status</label>
-                    <select
-                      value={formData.status}
-                      onChange={(e) => setFormData(prev => ({ ...prev, status: e.target.value }))}
-                    >
-                      <option value="active">Active</option>
-                      <option value="draft">Draft</option>
-                      <option value="archived">Archived</option>
-                    </select>
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label className={styles.checkboxLabel}>
-                      <input
-                        type="checkbox"
-                        checked={formData.featured}
-                        onChange={(e) => setFormData(prev => ({ ...prev, featured: e.target.checked }))}
-                      />
-                      Featured Portfolio
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.formActions}>
-                <button 
-                  type="button" 
-                  className={styles.cancelButton}
-                  onClick={() => setShowForm(false)}
-                >
-                  Cancel
-                </button>
-                <button 
-                  type="submit" 
-                  className={styles.saveButton}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Saving...' : (editingPortfolio ? 'Update' : 'Create')}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+      {/* Portfolio Editor */}
+      <PortfolioEditor
+        isOpen={showForm}
+        portfolio={editingPortfolio}
+        portfolios={portfolios}
+        onSave={handleFormSubmit}
+        onCancel={() => setShowForm(false)}
+      />
     </div>
   );
 }
