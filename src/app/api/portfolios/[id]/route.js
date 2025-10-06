@@ -1,121 +1,54 @@
-import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+// Simple Individual Portfolio API - Much cleaner!
+import { portfoliosAPI } from '../../../../lib/portfolios-simple.js';
 
-const portfoliosDir = path.join(process.cwd(), 'data', 'portfolios');
-
-export async function GET(request, context) {
-  try {
-    const params = await context.params;
-    const { id } = params;
-    
-    const portfolioPath = path.join(portfoliosDir, `${id}.json`);
-    
-    if (!fs.existsSync(portfolioPath)) {
-      return NextResponse.json(
-        { error: 'Portfolio not found' },
-        { status: 404 }
-      );
-    }
-
-    const portfolioData = JSON.parse(fs.readFileSync(portfolioPath, 'utf8'));
-    return NextResponse.json(portfolioData);
-  } catch (error) {
-    console.error(`Error reading portfolio ${id}:`, error);
-    return NextResponse.json(
-      { error: 'Failed to load portfolio' },
-      { status: 500 }
+// GET - Get single portfolio
+export async function GET(request, { params }) {
+  const { id } = await params;
+  const result = await portfoliosAPI.getById(id);
+  
+  if (result.success) {
+    return Response.json(result.data);
+  } else {
+    return Response.json(
+      { error: 'Portfolio not found' },
+      { status: 404 }
     );
   }
 }
 
-export async function PUT(request, context) {
+// PUT - Update portfolio
+export async function PUT(request, { params }) {
   try {
-    const params = await context.params;
-    const { id } = params;
+    const { id } = await params;
     const portfolioData = await request.json();
+    const result = await portfoliosAPI.update(id, portfolioData);
     
-    const portfolioPath = path.join(portfoliosDir, `${id}.json`);
-    
-    if (!fs.existsSync(portfolioPath)) {
-      return NextResponse.json(
-        { error: 'Portfolio not found' },
-        { status: 404 }
+    if (result.success) {
+      return Response.json(result.data);
+    } else {
+      return Response.json(
+        { error: result.error },
+        { status: 400 }
       );
     }
-
-    // Update the portfolio file
-    fs.writeFileSync(portfolioPath, JSON.stringify(portfolioData, null, 2));
-
-    // Update index file
-    const indexPath = path.join(portfoliosDir, 'index.json');
-    if (fs.existsSync(indexPath)) {
-      let indexData = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
-      
-      const indexEntry = {
-        id: portfolioData.id,
-        title: portfolioData.cardData?.title || portfolioData.title,
-        description: portfolioData.cardData?.description || portfolioData.description || '',
-        image: portfolioData.cardData?.image || '',
-        readbtn: portfolioData.cardData?.readbtn || 'Explore More',
-        background: portfolioData.cardData?.background || 'linear-gradient(to bottom, #000000, #000000)',
-        link: portfolioData.cardData?.link || `/portfolio/${portfolioData.id}`,
-        order: portfolioData.order || 1,
-        status: portfolioData.status || 'active'
-      };
-
-      const existingIndex = indexData.findIndex(item => item.id === id);
-      if (existingIndex !== -1) {
-        indexData[existingIndex] = indexEntry;
-      } else {
-        indexData.push(indexEntry);
-      }
-      
-      indexData.sort((a, b) => (a.order || 0) - (b.order || 0));
-      fs.writeFileSync(indexPath, JSON.stringify(indexData, null, 2));
-    }
-
-    return NextResponse.json(portfolioData);
   } catch (error) {
-    console.error(`Error updating portfolio ${id}:`, error);
-    return NextResponse.json(
-      { error: 'Failed to update portfolio' },
-      { status: 500 }
-    );
+    return Response.json({ 
+      error: 'Invalid request data' 
+    }, { status: 400 });
   }
 }
 
-export async function DELETE(request, context) {
-  try {
-    const params = await context.params;
-    const { id } = params;
-    
-    const portfolioPath = path.join(portfoliosDir, `${id}.json`);
-    
-    if (!fs.existsSync(portfolioPath)) {
-      return NextResponse.json(
-        { error: 'Portfolio not found' },
-        { status: 404 }
-      );
-    }
-
-    // Delete the portfolio file
-    fs.unlinkSync(portfolioPath);
-
-    // Update index file
-    const indexPath = path.join(portfoliosDir, 'index.json');
-    if (fs.existsSync(indexPath)) {
-      let indexData = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
-      indexData = indexData.filter(item => item.id !== id);
-      fs.writeFileSync(indexPath, JSON.stringify(indexData, null, 2));
-    }
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error(`Error deleting portfolio ${id}:`, error);
-    return NextResponse.json(
-      { error: 'Failed to delete portfolio' },
-      { status: 500 }
+// DELETE - Delete portfolio
+export async function DELETE(request, { params }) {
+  const { id } = await params;
+  const result = await portfoliosAPI.delete(id);
+  
+  if (result.success) {
+    return Response.json({ success: true });
+  } else {
+    return Response.json(
+      { error: result.error },
+      { status: 400 }
     );
   }
 }

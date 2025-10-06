@@ -143,7 +143,7 @@ export async function GET() {
       availableActions: {
         migrate: "POST /api/migrate - Migrate Firebase JSON to split files",
         view: "GET /api/services - View current services",
-        stats: "GET /api/services/stats - View statistics"
+        stats: "GET /api/services?stats=true - View statistics"
       },
       dataLocation: "/data/services/"
     });

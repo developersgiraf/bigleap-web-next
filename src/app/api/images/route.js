@@ -76,7 +76,6 @@ export async function POST(request) {
       const usedByServices = [];
       
       if (!servicesResponse.success) {
-        console.error('Failed to load services:', servicesResponse.error);
         return NextResponse.json({
           success: false,
           error: 'Failed to load services data'
@@ -84,7 +83,6 @@ export async function POST(request) {
       }
       
       const allServices = servicesResponse.data || [];
-      console.log(`Checking image usage for ${imageUrl} across ${allServices.length} services`);
       
       // Load full service data for each service to check images
       for (const serviceIndex of allServices) {

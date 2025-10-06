@@ -82,8 +82,8 @@ Successfully enhanced the Database Manager with advanced data comparison and con
 
 ### **API Endpoints**
 1. **`/api/database/compare`** - Analyzes backup vs current data
-2. **`/api/database/backup-enhanced`** - Enhanced backup with types
-3. **`/api/database/restore-enhanced`** - Selective restore with conflicts
+2. **`/api/database/backup`** - Consolidated backup with types (supports ?type=services|portfolios|blogs|all)
+3. **`/api/database/restore`** - Consolidated restore with conflicts (supports ?type=services|portfolios|blogs|all|auto)
 
 ### **New State Management**
 ```javascript

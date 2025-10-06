@@ -180,6 +180,89 @@ class BlogsAPI {
       .trim() || `blog-${Date.now()}`;
   }
 
+  // Get tags
+  async getTags() {
+    try {
+      const indexResult = await this.getAll();
+      if (!indexResult.success) {
+        return { success: false, error: 'Failed to load blogs' };
+      }
+
+      const publishedBlogs = indexResult.data.filter(blog => blog.status === 'published');
+      const allTags = new Set();
+      const tagCounts = {};
+      
+      // Read each blog file and collect all tags
+      for (const blog of publishedBlogs) {
+        try {
+          const fullBlogResult = await this.getById(blog.id);
+          if (fullBlogResult.success && fullBlogResult.data.tags) {
+            fullBlogResult.data.tags.forEach(tag => {
+              allTags.add(tag);
+              tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+            });
+          }
+        } catch (error) {
+          console.warn(`Error reading blog ${blog.id} for tags:`, error);
+        }
+      }
+      
+      // Convert to array and add counts
+      const tagsWithCounts = Array.from(allTags).map(tag => ({
+        name: tag,
+        count: tagCounts[tag],
+        displayName: tag.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+      })).sort((a, b) => b.count - a.count); // Sort by count descending
+      
+      return {
+        success: true,
+        data: tagsWithCounts,
+        totalTags: tagsWithCounts.length
+      };
+    } catch (error) {
+      console.error('Error getting blog tags:', error);
+      return { success: false, error: 'Failed to get tags' };
+    }
+  }
+
+  // Get blogs by tag
+  async getByTag(tag) {
+    try {
+      const indexResult = await this.getAll();
+      if (!indexResult.success) {
+        return { success: false, error: 'Failed to load blogs' };
+      }
+
+      const publishedBlogs = indexResult.data.filter(blog => blog.status === 'published');
+      const taggedBlogs = [];
+      
+      for (const blog of publishedBlogs) {
+        try {
+          const fullBlogResult = await this.getById(blog.id);
+          if (fullBlogResult.success && fullBlogResult.data.tags && 
+              fullBlogResult.data.tags.includes(tag)) {
+            taggedBlogs.push({
+              ...blog,
+              tags: fullBlogResult.data.tags
+            });
+          }
+        } catch (error) {
+          console.warn(`Error reading blog ${blog.id} for tag filter:`, error);
+        }
+      }
+      
+      return {
+        success: true,
+        data: taggedBlogs,
+        count: taggedBlogs.length,
+        tag: tag
+      };
+    } catch (error) {
+      console.error(`Error getting blogs by tag ${tag}:`, error);
+      return { success: false, error: 'Failed to get blogs by tag' };
+    }
+  }
+
   // Get stats
   async getStats() {
     try {

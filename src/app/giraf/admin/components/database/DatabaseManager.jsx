@@ -29,7 +29,7 @@ const DatabaseManager = () => {
     try {
       setIsDownloading(true);
       
-      const response = await fetch(`/api/database/backup-enhanced?type=${backupType}`);
+      const response = await fetch(`/api/database/backup?type=${backupType}`);
       
       if (!response.ok) {
         throw new Error('Failed to download database backup');
@@ -159,7 +159,7 @@ const DatabaseManager = () => {
         selectedConflicts
       };
       
-      const response = await fetch(`/api/database/restore-enhanced?type=${selectedRestoreType}`, {
+      const response = await fetch(`/api/database/restore?type=${selectedRestoreType}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

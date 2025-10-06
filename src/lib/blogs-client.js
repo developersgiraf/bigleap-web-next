@@ -216,7 +216,7 @@ class BlogsAPI {
     }
 
     try {
-      const response = await fetch('/api/blogs/tags');
+      const response = await fetch('/api/blogs?tags=true');
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -248,7 +248,7 @@ class BlogsAPI {
     }
 
     try {
-      const response = await fetch(`/api/blogs/tags/${encodeURIComponent(tag)}`);
+      const response = await fetch(`/api/blogs?tag=${encodeURIComponent(tag)}`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
