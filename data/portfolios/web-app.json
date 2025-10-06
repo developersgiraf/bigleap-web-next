@@ -1,9 +1,9 @@
 {
   "id": "web-app",
   "slug": "web-app",
-  "title": "Web & App Portfolio",
+  "title": "Web & App",
   "subtitle": "Digital solutions that make a difference",
-  "description": "Watch Our Web & App Showreel",
+  "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "content": "Innovative web and mobile applications designed to deliver exceptional user experiences.",
   "videoUrl": "geMtgE6RmTQ",
   "videos": [
@@ -64,7 +64,7 @@
     "ux-ui"
   ],
   "createdDate": "2024-01-01",
-  "lastModified": "2025-10-06",
+  "lastModified": "2025-10-06T20:01:33.818Z",
   "projectGallery": {
     "title": "Web & App Development",
     "subtitle": "Innovative Digital Solutions",
@@ -112,5 +112,9 @@
         "link": "#"
       }
     ]
-  }
+  },
+  "image": "/portfolio/blue.png",
+  "readbtn": "Explore More",
+  "background": "linear-gradient(to bottom, #00062A, #000000)",
+  "link": "/portfolio/web-app"
 }

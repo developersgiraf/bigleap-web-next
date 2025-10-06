@@ -1,9 +1,9 @@
 {
   "id": "animation",
   "slug": "animation",
-  "title": "Animation Portfolio 02",
+  "title": "Animation",
   "subtitle": "Our creativity begins where reality ends",
-  "description": "Watch Our Animation Showreel",
+  "description": "abcd efg lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "content": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.",
   "videoUrl": "geMtgE6RmTQ",
   "videos": [
@@ -34,7 +34,7 @@
   ],
   "titleDescription": "Over the years,|| our animation project|| has thrived at the intersection of|| Imagination || and|| innovation.",
   "cardData": {
-    "title": "Animation 02",
+    "title": "Animation",
     "description": "abcd efg lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "/portfolio/portfolio1.png",
     "readbtn": "Explore More",
@@ -64,7 +64,7 @@
     "video"
   ],
   "createdDate": "2024-01-01",
-  "lastModified": "2025-10-06",
+  "lastModified": "2025-10-06T20:01:34.139Z",
   "projectGallery": {
     "title": "Motion Graphics",
     "subtitle": "Living. Breathing. Digital Experiences",
@@ -112,5 +112,9 @@
         "link": "#"
       }
     ]
-  }
+  },
+  "image": "/portfolio/portfolio1.png",
+  "readbtn": "Explore More",
+  "background": "linear-gradient(to bottom, #28002A, #000000)",
+  "link": "/portfolio/animation"
 }

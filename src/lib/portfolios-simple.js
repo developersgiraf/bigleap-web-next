@@ -20,6 +20,34 @@ class PortfoliosAPI {
     }
   }
 
+  // Get all portfolios (full data)
+  async getAllFull() {
+    try {
+      const files = await fs.readdir(DATA_DIR);
+      const portfolioFiles = files.filter(file => file.endsWith('.json') && file !== 'index.json');
+      
+      const portfolios = [];
+      for (const file of portfolioFiles) {
+        try {
+          const filePath = path.join(DATA_DIR, file);
+          const portfolioData = await fs.readFile(filePath, 'utf8');
+          const portfolio = JSON.parse(portfolioData);
+          portfolios.push(portfolio);
+        } catch (err) {
+          console.warn(`Skipping invalid portfolio file: ${file}`, err);
+        }
+      }
+
+      // Sort by order
+      portfolios.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+      return { success: true, data: portfolios };
+    } catch (error) {
+      console.error('Error reading full portfolios:', error);
+      return { success: false, error: 'Failed to load portfolios' };
+    }
+  }
+
   // Get single portfolio (full data)
   async getById(id) {
     try {

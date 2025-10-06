@@ -1,14 +1,15 @@
 [
   {
     "id": "animation",
-    "title": "Animation 02",
+    "title": "Animation",
     "description": "abcd efg lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "/portfolio/portfolio1.png",
     "readbtn": "Explore More",
     "background": "linear-gradient(to bottom, #28002A, #000000)",
     "link": "/portfolio/animation",
     "order": 1,
-    "status": "active"
+    "status": "active",
+    "lastModified": "2025-10-06T20:01:34.139Z"
   },
   {
     "id": "web-app",
@@ -19,28 +20,31 @@
     "background": "linear-gradient(to bottom, #00062A, #000000)",
     "link": "/portfolio/web-app",
     "order": 2,
-    "status": "active"
+    "status": "active",
+    "lastModified": "2025-10-06T20:01:33.818Z"
   },
   {
     "id": "graphic-design",
-    "title": "Graphic Design",
-    "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "title": "Graphic Design Portfolio",
+    "description": "Watch Our Graphic Design Showreel",
     "image": "/portfolio/black.png",
     "readbtn": "Explore More",
     "background": "linear-gradient(to bottom, #102A00, #000000)",
     "link": "/portfolio/graphic-design",
     "order": 3,
-    "status": "active"
+    "status": "active",
+    "lastModified": "2025-10-06T20:01:31.129Z"
   },
   {
     "id": "seo-sem",
-    "title": "SEO & SEM",
-    "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "title": "SEO & SEM Portfolio",
+    "description": "Watch Our SEO & SEM Showreel",
     "image": "/portfolio/last.png",
     "readbtn": "Explore More",
     "background": "linear-gradient(to bottom, #2A2500, #000000)",
     "link": "/portfolio/seo-sem",
     "order": 4,
-    "status": "active"
+    "status": "active",
+    "lastModified": "2025-10-06T20:01:28.591Z"
   }
 ]
