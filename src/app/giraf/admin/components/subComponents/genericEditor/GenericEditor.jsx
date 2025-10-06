@@ -35,8 +35,16 @@ const GenericEditor = ({
           if (!initialData[fieldKey] || typeof initialData[fieldKey] !== 'object') {
             initialData[fieldKey] = { ...field.defaultValue };
           } else {
-            // Merge with default values to ensure all section keys exist
-            initialData[fieldKey] = { ...field.defaultValue, ...initialData[fieldKey] };
+            // Only add missing keys from defaultValue, don't override existing data
+            const existingData = { ...initialData[fieldKey] };
+            if (field.defaultValue) {
+              Object.keys(field.defaultValue).forEach(key => {
+                if (existingData[key] === undefined) {
+                  existingData[key] = field.defaultValue[key];
+                }
+              });
+            }
+            initialData[fieldKey] = existingData;
           }
         }
       });

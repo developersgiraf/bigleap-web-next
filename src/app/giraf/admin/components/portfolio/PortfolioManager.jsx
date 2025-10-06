@@ -201,28 +201,6 @@ export default function PortfolioManager() {
   // Form handlers
   const handleEdit = useCallback((portfolio) => {
     setEditingPortfolio(portfolio);
-    setFormData({
-      ...portfolio,
-      tags: portfolio.tags || [],
-      cardData: portfolio.cardData || {
-        title: '',
-        description: '',
-        image: '',
-        readbtn: 'Explore More',
-        background: 'linear-gradient(to bottom, #000000, #000000)',
-        link: ''
-      },
-      projectGallery: portfolio.projectGallery || {
-        title: '',
-        subtitle: '',
-        projects: []
-      },
-      seo: portfolio.seo || {
-        metaTitle: '',
-        metaDescription: '',
-        keywords: []
-      }
-    });
     setShowForm(true);
   }, []);
 
