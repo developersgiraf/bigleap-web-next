@@ -109,6 +109,9 @@
     font-size: 40px !important;
     line-height: 60px !important;
   }
+  .footerArea {
+    padding: 10px 0 0 0;
+  }
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .bigleapCnt h2 {

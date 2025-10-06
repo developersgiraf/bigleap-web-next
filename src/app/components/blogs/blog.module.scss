@@ -79,6 +79,29 @@
 }
 
 //mobile responsive
+@media (min-width: 1025px) and (max-width: 1560px) {
+  .bloghead {
+                h2{
+                    font-size: 44px !important;
+                }
+            }
+            .blogimages {
+                padding: 0px !important;
+            .blogrow{
+                    flex-wrap: wrap !important;
+                    justify-content: center !important;
+                    padding: 0 50px !important;
+
+                
+                img {
+                    object-fit: contain !important;
+                }
+            }
+        }
+             .titleHead {
+                   padding-top: 0px !important;
+                }
+}
 @media (min-width: 1025px) and (max-width: 1370px) {
   .bloghead {
                 h2{
@@ -110,6 +133,7 @@
                     text-align: center !important;
                 }
             }
+           
 
             .blogimages {
                 .blogrow{

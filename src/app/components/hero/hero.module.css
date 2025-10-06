@@ -67,6 +67,9 @@
       .hangAnchor img {
         transform: scale(60) translateY(45%);
       }
+       .hero {
+        height: 73vh !important;
+     }
     }
     @media (min-width: 993px) and (max-width: 1024px) {
        .hero {

@@ -226,6 +226,17 @@ a.secondary {
            .contentWrapper {
          padding: 0 40px !important;
        }
+       .backgroundImage {
+ 
+
+    /* Soft vertical alpha falloff using mask-image */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, black 80px, black calc(100% - 500px), transparent 100%) !important;
+  mask-image: linear-gradient(to bottom, transparent 0px, black 80px, black calc(100% - 500px), transparent 100%) !important;
+  -webkit-mask-size: 100% 100% !important;
+  mask-size: 100% 70% !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+}
 
        }
        @media (min-width:768px) and (max-width: 992px) {

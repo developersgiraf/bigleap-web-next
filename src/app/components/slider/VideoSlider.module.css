@@ -87,7 +87,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
   @media (min-width: 993px) and (max-width: 1024px) {
-    margin-left: auto !important;
+    margin-left: 30% !important;
     width: 80% !important;
   }
   @media (min-width: 768px) and (max-width: 992px) {

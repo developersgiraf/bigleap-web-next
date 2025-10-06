@@ -324,12 +324,14 @@
   
   
   .slide-head {
+    padding: 200px 190px !important;
     .special-head h2 {
-      font-size: 64px !important;
+      font-size: 84px !important;
     }
   }
   
   .watch-area {
+    padding: 0 0 80px !important;
     .first-video .video1 iframe {
       height: 400px;
     }
@@ -428,8 +430,6 @@
 
 /* Small Desktop/Large Tablet: 993px - 1024px */
 @media (min-width: 993px) and (max-width: 1024px) {
-  
-  
   
   .about-area {
     padding: 60px 0 0 0 !important;

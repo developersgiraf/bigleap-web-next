@@ -264,8 +264,14 @@
 }
 /* Large Desktop: 1371px - 1560px */
 @media (min-width: 1371px) and (max-width: 1560px) {
+  .slide-head {
+    padding: 200px 190px !important;
+  }
   .slide-head .special-head h2 {
-    font-size: 64px !important;
+    font-size: 84px !important;
+  }
+  .watch-area {
+    padding: 0 0 80px !important;
   }
   .watch-area .first-video .video1 iframe {
     height: 400px;
@@ -337,10 +343,14 @@
 /* Small Desktop/Large Tablet: 993px - 1024px */
 @media (min-width: 993px) and (max-width: 1024px) {
   .about-area {
-    padding: 100px 0 0 0 !important;
+    padding: 60px 0 0 0 !important;
   }
   .about-area .about-row {
     padding: 0 0px !important;
+    width: 80% !important;
+  }
+  .about-area .aboutImg {
+    height: 30vh !important;
   }
   .about-area .about-first-box .aboutImg {
     height: 50vh !important;
@@ -380,7 +390,7 @@
     height: 260px !important;
   }
   .watch-area .first-video .video2 iframe {
-    height: 260px !important;
+    height: 190px !important;
   }
   .watch-area .second-video {
     flex-direction: column !important;

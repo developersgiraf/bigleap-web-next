@@ -303,8 +303,8 @@ export default function Home() {
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 50 },
                 992: { slidesPerView: 2, spaceBetween: 40 },
-                1024: { slidesPerView: 2, spaceBetween: 50 },
-                1366: { slidesPerView: 3, spaceBetween: 10 },
+                1024: { slidesPerView: 3, spaceBetween: 20 },
+                1366: { slidesPerView: 3, spaceBetween: 0 },
               }}
               imageSize={400}
               customSelector={"imageBtnSliderSection abc"}
@@ -330,7 +330,7 @@ export default function Home() {
       <EnquirySect />
       <InstaFeeds />
       <GradientLights customCounts={{
-        xl: 13,  // Rich visual experience for extra large screens
+        xl: 12,  // Rich visual experience for extra large screens
         lg: 11,  // Substantial gradients for large screens
         md: 12,  // Balanced for medium screens
         sm: 10,  // Moderate for tablets

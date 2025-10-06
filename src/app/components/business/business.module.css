@@ -45,6 +45,11 @@
    RESPONSIVE STYLES
    ============================================ */
 /* Large Desktop */
+@media (min-width: 1370px) and (max-width: 1560px) {
+  .heading h2 {
+    font-size: 54px !important;
+  }
+}
 @media (max-width: 1370px) {
   .businessArea .business-list {
     padding: 0 30px !important;
