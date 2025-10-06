@@ -63,7 +63,7 @@
   }
 } */
 
-    @media (min-width: 1025px) and (max-width: 1560px) {
+    /* @media (min-width: 1025px) and (max-width: 1560px) {
       .hangAnchor img {
         transform: scale(60) translateY(45%);
       }
@@ -91,4 +91,11 @@
      .hero {
         height: 30vh !important;
      }
-    }
+    } */
+
+@media screen and (aspect-ratio > 4/3) {
+  .hangAnchor{
+    width: min(1vh, 7px);
+  }
+  
+}
