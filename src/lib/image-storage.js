@@ -32,14 +32,14 @@ export const uploadImage = async (file, folder, fileName = null) => {
     }
 
     // Upload to server
-    const response = await fetch('/api/upload/image', {
+    const response = await fetch('/api/upload', {
       method: 'POST',
       body: formData,
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.error || 'Upload failed');
+      throw new Error(errorData.message || errorData.error || 'Upload failed');
     }
 
     const result = await response.json();
@@ -62,7 +62,7 @@ export const deleteImage = async (imageUrl) => {
       return; // Not a server upload, skip deletion
     }
 
-    const response = await fetch('/api/upload/delete', {
+    const response = await fetch('/api/upload', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export const deleteImage = async (imageUrl) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Error deleting image:', errorData.error);
+      console.error('Error deleting image:', errorData.message || errorData.error);
       return; // Don't throw error for deletion failures
     }
 

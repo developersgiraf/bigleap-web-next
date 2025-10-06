@@ -125,3 +125,8 @@ export async function DELETE(request) {
     }, { status: 500 });
   }
 }
+
+// Handle OPTIONS for CORS
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 200 });
+}

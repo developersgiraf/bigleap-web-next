@@ -12,6 +12,18 @@
     "lastModified": "2025-10-05"
   },
   {
+    "id": "comic-book",
+    "slug": "comic-book",
+    "title": "Visual Storytelling Mastery: The Art of Comic Book Creation",
+    "caption": "Comic Book",
+    "image": "/servicess/comic-book.png",
+    "category": "Design",
+    "status": "published",
+    "featured": true,
+    "publishedDate": "2024-10-05",
+    "lastModified": "2025-10-06"
+  },
+  {
     "id": "twoDanimation",
     "title": "2D Animation",
     "slug": "twoDanimation",
@@ -62,19 +74,6 @@
     "featured": true,
     "status": "published",
     "index": 4
-  },
-  {
-    "id": "comic-book",
-    "title": "Comic Book",
-    "slug": "comic-book",
-    "image": "/servicess/comic-book.png",
-    "caption": "Comic Book",
-    "excerpt": "Combine visual artistry with compelling storytelling in comic book creation.",
-    "publishedDate": "2024-10-05",
-    "category": "Design",
-    "featured": true,
-    "status": "published",
-    "index": 5
   },
   {
     "id": "red-machine",
