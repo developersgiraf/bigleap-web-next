@@ -294,23 +294,41 @@ export default function PortfolioManager() {
     try {
       setIsSubmitting(true);
 
-      // Generate slug from title
-      const slug = formData.title.toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)/g, '');
+      let portfolioData;
+      
+      if (editingPortfolio) {
+        // When editing, preserve the original ID and slug
+        portfolioData = {
+          ...formData,
+          id: editingPortfolio.id, // Keep original ID
+          slug: editingPortfolio.slug, // Keep original slug
+          cardData: {
+            ...formData.cardData,
+            title: formData.cardData.title || formData.title,
+            link: `/portfolio/${editingPortfolio.slug}` // Use original slug for link
+          },
+          lastModified: new Date().toISOString().split('T')[0],
+          createdDate: editingPortfolio.createdDate // Preserve original creation date
+        };
+      } else {
+        // For new portfolios, generate slug from title
+        const slug = formData.title.toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
 
-      const portfolioData = {
-        ...formData,
-        slug,
-        id: slug,
-        cardData: {
-          ...formData.cardData,
-          title: formData.cardData.title || formData.title,
-          link: `/portfolio/${slug}`
-        },
-        lastModified: new Date().toISOString().split('T')[0],
-        ...(editingPortfolio ? {} : { createdDate: new Date().toISOString().split('T')[0] })
-      };
+        portfolioData = {
+          ...formData,
+          slug,
+          id: slug,
+          cardData: {
+            ...formData.cardData,
+            title: formData.cardData.title || formData.title,
+            link: `/portfolio/${slug}`
+          },
+          lastModified: new Date().toISOString().split('T')[0],
+          createdDate: new Date().toISOString().split('T')[0]
+        };
+      }
 
       if (editingPortfolio) {
         await portfolioAdminAPI.updatePortfolio(editingPortfolio.id, portfolioData);
