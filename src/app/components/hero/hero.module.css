@@ -1,12 +1,19 @@
 .hero {
-  height: 93vh;
+  height: clamp(50vh, 75vh, 90dvh);
+  min-height: clamp(300px, 40vh, 500px);
   position: static;
   overflow: visible;
-  padding-top: 20px;
+  padding-top: clamp(5px, 1vw, 15px);
+  display: flex;
+  flex-direction: column;
 }
   .hanging {
     position: static;
     height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
     .yeehaimage {
       display: block;
@@ -23,12 +30,12 @@
     }
 .image360{
   position: absolute;
-  right: 170px;
-  top: 120px;
+  right: clamp(20px, 15vw, 170px);
+  top: clamp(60px, 12vh, 120px);
 }
 
     .hangAnchor {
-        width: min(1%, 10px);
+        width: min(1%, 7px);
         height: 10px;
         position: absolute;
         left : 50%;
@@ -52,50 +59,63 @@
         overflow: hidden;
     }
 
-/* .textsWrapper{
+.textsWrapper{
   h1{
     color: #fdfdfd;
-    font-size: 96px;
+    font-size: clamp(48px, 8vw, 96px);
   }
   h4{
     color: #fdfdfd;
-    font-size: 96px;
+    font-size: clamp(32px, 6vw, 72px);
   }
-} */
-
-    /* @media (min-width: 1025px) and (max-width: 1560px) {
-      .hangAnchor img {
-        transform: scale(60) translateY(45%);
-      }
-       .hero {
-        height: 73vh !important;
-     }
-    }
-    @media (min-width: 993px) and (max-width: 1024px) {
-       .hero {
-        height: 50vh !important;
-     }
-     .hangAnchor img {
-        transform: scale(60) translateY(40%);
-      }
-    }
-    @media (min-width: 768px) and (max-width: 992px) {
-       .hero {
-        height: 40vh !important;
-     }
-     .hangAnchor img {
-        transform: scale(60) translateY(45%);
-      }
-    }
-    @media (max-width: 767px) {
-     .hero {
-        height: 30vh !important;
-     }
-    } */
+}
 
 @media screen and (aspect-ratio > 4/3) {
   .hangAnchor{
     width: min(1vh, 7px);
   }
+
   
 }
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .hangAnchor{
+    width: min(1%, 10px);
+  }
+  
+  .hero {
+    height: clamp(40vh, 40vh, 80vh);
+    padding-top: clamp(5px, 1vh, 10px);
+  }
+  
+  .hanging {
+    justify-content: flex-start;
+    padding-top: 10vh;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-height: 700px) {
+  .hero {
+    height: clamp(65vh, 75vh, 85vh);
+    min-height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .hero {
+    height: clamp(30vh, 30vh, 75vh);
+    min-height: 280px;
+  }
+  
+  .hanging {
+    padding-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 766px) and (min-width: 564px) {
+  .hero {
+    height: clamp(65vh, 65vh, 90vh);
+    min-height: 250px;
+  }
+
+}
+
