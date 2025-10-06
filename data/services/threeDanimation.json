@@ -3,7 +3,7 @@
   "title": "3D Animation",
   "bannerTitle": "3D Animation",
   "archived": false,
-  "index": 2,
+  "index": 1,
   "thumbnail": "/servicess/3danimation.png",
   "section01": {
     "image": "/servicess/red-machine.png",
@@ -58,5 +58,5 @@
   ],
   "customSlug": "threeDanimation",
   "createdAt": "2025-10-05T14:10:58.507Z",
-  "lastModified": "2025-10-06T20:14:01.305Z"
+  "lastModified": "2025-10-06T21:32:05.803Z"
 }

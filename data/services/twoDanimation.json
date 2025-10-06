@@ -3,7 +3,7 @@
   "title": "2D Animation",
   "bannerTitle": "2D Animation",
   "archived": false,
-  "index": 1,
+  "index": 0,
   "thumbnail": "/servicess/2danimation.png",
   "section01": {
     "heading": "The Dynamic Studio That Brings Ideas To Life With Remarkable 2D Animations ",
@@ -49,6 +49,6 @@
     }
   ],
   "customSlug": "twoDanimation",
-  "lastModified": "2025-10-06T20:08:21.561Z",
+  "lastModified": "2025-10-06T21:32:05.787Z",
   "createdAt": "2025-10-05T14:17:29.395Z"
 }

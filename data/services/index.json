@@ -5,18 +5,18 @@
       "title": "2D Animation",
       "bannerTitle": "2D Animation",
       "archived": false,
-      "index": 1,
+      "index": 0,
       "thumbnail": "/servicess/2danimation.png",
-      "lastModified": "2025-10-06T20:08:21.561Z"
+      "lastModified": "2025-10-06T21:32:05.787Z"
     },
     {
       "id": "threeDanimation",
       "title": "3D Animation",
       "bannerTitle": "3D Animation",
       "archived": false,
-      "index": 2,
+      "index": 1,
       "thumbnail": "/servicess/3danimation.png",
-      "lastModified": "2025-10-06T20:14:01.305Z"
+      "lastModified": "2025-10-06T21:32:05.803Z"
     },
     {
       "id": "whiteboard-animation",
@@ -34,7 +34,7 @@
       "archived": false,
       "index": 4,
       "thumbnail": "/servicess/motion-graphics.png",
-      "lastModified": "2025-10-06T21:23:44.635Z"
+      "lastModified": "2025-10-06T21:31:01.762Z"
     },
     {
       "id": "vfx-and-post-production",
@@ -85,5 +85,5 @@
   "total": 9,
   "active": 9,
   "archived": 0,
-  "lastUpdated": "2025-10-06T21:23:44.646Z"
+  "lastUpdated": "2025-10-06T21:32:05.827Z"
 }

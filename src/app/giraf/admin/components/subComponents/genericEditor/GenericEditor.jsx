@@ -17,22 +17,27 @@ const GenericEditor = ({
   // Initialize form data based on config
   useEffect(() => {
     if (item) {
-      // Editing existing item
-      const initialData = { ...config.defaultData };
+      // Editing existing item - start with all original data to preserve fields not in config
+      const initialData = { ...item };
       
-      // Merge with existing item data
+      // Ensure all default data fields exist
+      Object.keys(config.defaultData).forEach(key => {
+        if (initialData[key] === undefined) {
+          initialData[key] = config.defaultData[key];
+        }
+      });
+      
+      // Handle sectioned fields properly
       Object.keys(config.fields).forEach(fieldKey => {
         const field = config.fields[fieldKey];
         if (field.sections) {
-          // Handle sectioned fields
-          initialData[fieldKey] = { ...field.defaultValue };
-          Object.keys(field.sections).forEach(sectionKey => {
-            if (item[fieldKey] && item[fieldKey][sectionKey] !== undefined) {
-              initialData[fieldKey][sectionKey] = item[fieldKey][sectionKey];
-            }
-          });
-        } else if (item[fieldKey] !== undefined) {
-          initialData[fieldKey] = item[fieldKey];
+          // Ensure sectioned field has proper structure
+          if (!initialData[fieldKey] || typeof initialData[fieldKey] !== 'object') {
+            initialData[fieldKey] = { ...field.defaultValue };
+          } else {
+            // Merge with default values to ensure all section keys exist
+            initialData[fieldKey] = { ...field.defaultValue, ...initialData[fieldKey] };
+          }
         }
       });
       

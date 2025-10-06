@@ -1,27 +1,27 @@
 [
   {
     "id": "animation",
-    "title": "Animation",
-    "description": "abcd efg lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "title": "Animation Portfolio",
+    "description": "Watch Our Animation Showreel",
     "image": "/portfolio/portfolio1.png",
     "readbtn": "Explore More",
     "background": "linear-gradient(to bottom, #28002A, #000000)",
     "link": "/portfolio/animation",
     "order": 1,
     "status": "active",
-    "lastModified": "2025-10-06T21:19:33.611Z"
+    "lastModified": "2025-10-06T21:32:05.828Z"
   },
   {
     "id": "web-app",
-    "title": "Web & App",
-    "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "title": "Web & App Portfolio",
+    "description": "Watch Our Web & App Showreel",
     "image": "/portfolio/blue.png",
     "readbtn": "Explore More",
     "background": "linear-gradient(to bottom, #00062A, #000000)",
     "link": "/portfolio/web-app",
     "order": 2,
     "status": "active",
-    "lastModified": "2025-10-06T21:22:52.762Z"
+    "lastModified": "2025-10-06T21:32:05.828Z"
   },
   {
     "id": "graphic-design",
@@ -33,7 +33,7 @@
     "link": "/portfolio/graphic-design",
     "order": 3,
     "status": "active",
-    "lastModified": "2025-10-06T20:01:31.129Z"
+    "lastModified": "2025-10-06T21:32:05.829Z"
   },
   {
     "id": "seo-sem",
@@ -45,6 +45,6 @@
     "link": "/portfolio/seo-sem",
     "order": 4,
     "status": "active",
-    "lastModified": "2025-10-06T20:01:28.591Z"
+    "lastModified": "2025-10-06T21:32:05.829Z"
   }
 ]
