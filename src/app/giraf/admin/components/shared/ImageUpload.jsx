@@ -27,7 +27,7 @@ const ImageUpload = ({
   const fetchExistingImages = async () => {
     setLoadingGallery(true);
     try {
-      const response = await fetch(`/api/uploads/images?folder=${folder}`);
+      const response = await fetch(`/api/images?folder=${folder}`);
       const data = await response.json();
       
       if (data.success) {
@@ -56,7 +56,7 @@ const ImageUpload = ({
   const handleImageDelete = async (imageUrl, imageName) => {
     try {
       // Check which services/content are using this image
-      const response = await fetch('/api/uploads/images/usage', {
+      const response = await fetch('/api/images', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -32,7 +32,7 @@ export const uploadImage = async (file, folder, fileName = null) => {
     }
 
     // Upload to server
-    const response = await fetch('/api/upload', {
+    const response = await fetch('/api/images', {
       method: 'POST',
       body: formData,
     });
@@ -62,7 +62,7 @@ export const deleteImage = async (imageUrl) => {
       return; // Not a server upload, skip deletion
     }
 
-    const response = await fetch('/api/upload', {
+    const response = await fetch('/api/images', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
