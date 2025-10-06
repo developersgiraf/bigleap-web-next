@@ -613,19 +613,19 @@
   .watch-area {
         padding: 0px 0 80px !important;
     .first-video .video1 iframe {
-      height: 41vh important;
+      height: 264px !important;
     }
     
     .first-video .video2 iframe {
-      height: 41vh !important;
+            height: 215px !important;
+
       object-fit: contain !important;
     }
      .video2{
-        width: 100% !important;
+        width: 80% !important;
       }
     .second-video {
-      flex-direction: column-reverse !important;
-      padding: 20px 0 !important;
+      padding: 0px 0 !important;
       
       .content {
         padding-top: 10px !important;
@@ -636,7 +636,8 @@
       }
      
       .video3 iframe {
-        height: 41vh !important;
+              height: 264px !important;
+
       }
     }
   }

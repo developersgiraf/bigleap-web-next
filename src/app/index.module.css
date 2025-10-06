@@ -482,19 +482,18 @@
     padding: 0px 0 80px !important;
   }
   .watch-area .first-video .video1 iframe {
-    height: 41vh important;
+    height: 264px !important;
   }
   .watch-area .first-video .video2 iframe {
-    height: 41vh !important;
+    height: 215px !important;
     -o-object-fit: contain !important;
        object-fit: contain !important;
   }
   .watch-area .video2 {
-    width: 100% !important;
+    width: 80% !important;
   }
   .watch-area .second-video {
-    flex-direction: column-reverse !important;
-    padding: 20px 0 !important;
+    padding: 0px 0 !important;
   }
   .watch-area .second-video .content {
     padding-top: 10px !important;
@@ -503,7 +502,7 @@
     font-size: 26px !important;
   }
   .watch-area .second-video .video3 iframe {
-    height: 41vh !important;
+    height: 264px !important;
   }
   .video-slider {
     padding: 0px 0 0px 0 !important;
