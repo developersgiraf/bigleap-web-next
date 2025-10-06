@@ -16,7 +16,7 @@
       "archived": false,
       "index": 1,
       "thumbnail": "/servicess/3danimation.png",
-      "lastModified": "2025-10-05T21:28:01.816Z"
+      "lastModified": "2025-10-06T07:30:49.431Z"
     },
     {
       "id": "whiteboard-animation",
@@ -25,7 +25,7 @@
       "archived": false,
       "index": 3,
       "thumbnail": "/servicess/Whiteboard Animation.png",
-      "lastModified": "2025-10-05T15:10:55.373Z"
+      "lastModified": "2025-10-06T07:30:48.966Z"
     },
     {
       "id": "motion-graphics",
@@ -85,5 +85,5 @@
   "total": 9,
   "active": 9,
   "archived": 0,
-  "lastUpdated": "2025-10-05T21:28:01.825Z"
+  "lastUpdated": "2025-10-06T07:30:49.441Z"
 }

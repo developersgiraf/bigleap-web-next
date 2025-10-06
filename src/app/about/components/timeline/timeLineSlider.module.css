@@ -72,6 +72,14 @@
   line-height: 93%;
   font-family: "montserrat", sans-serif !important;
 }
+@media (min-width: 1024px) and (max-width: 1370px) {
+  .timelineSlider .timelineTitle {
+    font-size: 12px !important;
+  }
+  .timelineSlider .timelineYear {
+    font-size: 12px !important;
+  }
+}
 @media (max-width: 1024px) {
   .timelineSlider .timelineWrapper {
     max-width: 980px;

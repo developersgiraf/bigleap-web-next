@@ -80,7 +80,14 @@
     }
 
     // Media queries
-    
+    @media (min-width: 1024px) and (max-width: 1370px) {
+          .timelineTitle {
+        font-size: 12px !important;
+    }
+    .timelineYear {
+        font-size: 12px !important;
+    }
+}
     @media (max-width: 1024px) {
           .timelineWrapper {
         max-width: 980px;

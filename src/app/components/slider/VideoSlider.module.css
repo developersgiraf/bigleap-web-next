@@ -28,7 +28,7 @@
     min-height: 510px !important;
   }
 @media (min-width: 768px) and (max-width: 992px) {
-    min-height: 790px !important;
+    min-height: 820px !important;
 
   }
   @media (max-width: 767px) {
@@ -53,13 +53,14 @@
   top: 30px;
   }
   @media (min-width:1025px) and (max-width: 1280px) {
+
   }
   @media (min-width:993px) and (max-width: 1024px) {
     top: 0px !important;
     left: 0 !important;
   }
   @media (min-width:768px) and (max-width: 992px) {
-    top: 430px !important;
+   top: 460px !important;
     left: 0 !important;
     right: 30px !important;
     bottom: auto !important;

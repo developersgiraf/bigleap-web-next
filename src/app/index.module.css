@@ -448,6 +448,7 @@
   }
   .about-area .about-row {
     padding: 0 0 !important;
+    width: 80% !important;
   }
   .about-area .about-first-box {
     justify-content: center;
@@ -467,6 +468,7 @@
   }
   .slide-head .special-head h2 {
     font-size: 50px !important;
+    margin: 0 0 20px 0 !important;
   }
   .slide-head .special-head p {
     padding: 0 0px !important;
@@ -474,7 +476,7 @@
     width: 80% !important;
   }
   .slide-head .specialslide {
-    padding: 0 65px !important;
+    padding: 0 100px !important;
   }
   .watch-area {
     padding: 0px 0 80px !important;

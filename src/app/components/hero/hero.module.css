@@ -81,8 +81,11 @@
     }
     @media (min-width: 768px) and (max-width: 992px) {
        .hero {
-        height: 50vh !important;
+        height: 40vh !important;
      }
+     .hangAnchor img {
+        transform: scale(60) translateY(45%);
+      }
     }
     @media (max-width: 767px) {
      .hero {

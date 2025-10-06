@@ -118,7 +118,7 @@
 }
 @media (min-width: 1025px) and (max-width: 1370px) {
   .enquiry-section .image {
-    height: 70vh !important;
+    height: 60vh !important;
   }
   .enquiry-section .buttonContainer {
     top: 50% !important;

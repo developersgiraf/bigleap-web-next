@@ -1,5 +1,4 @@
 import ServiceImage from "../../../../components/services-sect/servicesImage";
-import GradientLights from "../../../../components/gradient-lights/gradient";
 
 export default function PortfolioGallery({ projectGallery }) {
   // Fallback data if no projectGallery is provided
@@ -21,7 +20,6 @@ export default function PortfolioGallery({ projectGallery }) {
         showSelect={false}
         anim={false}
       />
-      <GradientLights />
     </>
   );
 }
