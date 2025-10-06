@@ -68,3 +68,18 @@
         transform: scale(60) translateY(45%);
       }
     }
+    @media (min-width: 1025px) and (max-width: 1560px) {
+      .hangAnchor img {
+        transform: scale(60) translateY(45%);
+      }
+    }
+    @media (min-width: 1025px) and (max-width: 1560px) {
+      .hangAnchor img {
+        transform: scale(60) translateY(45%);
+      }
+    }
+    @media (max-width: 767px) {
+     .hero {
+        height: 30vh !important;
+     }
+    }
