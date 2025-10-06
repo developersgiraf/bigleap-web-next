@@ -6,6 +6,32 @@
   "description": "Watch Our SEO & SEM Showreel",
   "content": "Strategic SEO and SEM campaigns that drive traffic, boost rankings, and maximize your digital presence.",
   "videoUrl": "geMtgE6RmTQ",
+  "videos": [
+    {
+      "id": "seo-campaign-results",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "SEO Campaign Results",
+      "thumbnail": "/portfolio/last.png"
+    },
+    {
+      "id": "google-ads-showcase",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Google Ads Showcase",
+      "thumbnail": "/portfolio/last.png"
+    },
+    {
+      "id": "local-seo-success",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Local SEO Success",
+      "thumbnail": "/portfolio/last.png"
+    },
+    {
+      "id": "content-marketing-reel",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Content Marketing Reel",
+      "thumbnail": "/portfolio/last.png"
+    }
+  ],
   "titleDescription": "Over the years,|| our SEO & SEM strategies|| have thrived at the intersection of|| Analytics || and|| digital marketing.",
   "cardData": {
     "title": "SEO & SEM",

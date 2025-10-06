@@ -92,18 +92,6 @@
   pointer-events: none;
   z-index: -1;
 
-  /* Tablet responsiveness */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    background-size: 80%;
-  }
-
-  /* Mobile responsiveness */
-  @media(max-width: 767px) {
-    background-size: 60%;
-    opacity: 0.8;
-  }
-
-
 }
 @keyframes move {
   0% {

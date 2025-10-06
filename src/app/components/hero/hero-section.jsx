@@ -1,11 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./hero.module.css";
 
 export default function HeroSection() {
   const [isCharacterHovered, setIsCharacterHovered] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect touch devices
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isMobileOrTablet = window.innerWidth <= 1024; // tablets and mobile
+      setIsTouchDevice(hasTouch && isMobileOrTablet);
+    };
+
+    checkTouchDevice();
+    window.addEventListener('resize', checkTouchDevice);
+    
+    return () => window.removeEventListener('resize', checkTouchDevice);
+  }, []);
 
   // Responsive rotation based on viewport width
   const getRotationValue = () => {
@@ -21,8 +36,8 @@ export default function HeroSection() {
   return (
     <section 
       className={styles.hero}
-      onMouseEnter={() => setIsCharacterHovered(true)}
-      onMouseLeave={() => setIsCharacterHovered(false)}
+      onMouseEnter={!isTouchDevice ? () => setIsCharacterHovered(true) : undefined}
+      onMouseLeave={!isTouchDevice ? () => setIsCharacterHovered(false) : undefined}
     > 
       <div className={styles.textsWrapper}>
         <motion.div
@@ -92,14 +107,22 @@ export default function HeroSection() {
         <motion.div 
         className={styles.hangAnchor}
         initial={{ rotateZ: -20 }}
-          animate={{ 
-            rotateZ: isCharacterHovered ? 45 : 0,
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 30,
-            damping: 2,
-          }}
+        animate={isTouchDevice ? {
+          // Automatic hanging animation for touch devices (10 degrees swing)
+          rotateZ: [5, -5, 5]
+        } : { 
+          rotateZ: isCharacterHovered ? 45 : 0,
+        }}
+        transition={isTouchDevice ? {
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut"
+        } : {
+          type: "spring",
+          stiffness: 30,
+          damping: 2,
+        }}
         >
           {true &&<Image
             src="/characterr.png"

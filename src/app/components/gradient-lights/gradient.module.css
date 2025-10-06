@@ -91,19 +91,6 @@
   background-size: auto;
   pointer-events: none;
   z-index: -1;
-  /* Tablet responsiveness */
-  /* Mobile responsiveness */
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .halftoneDots {
-    background-size: 80%;
-  }
-}
-@media (max-width: 767px) {
-  .halftoneDots {
-    background-size: 60%;
-    opacity: 0.8;
-  }
 }
 
 @keyframes move {

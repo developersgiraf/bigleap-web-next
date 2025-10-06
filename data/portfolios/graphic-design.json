@@ -6,6 +6,32 @@
   "description": "Watch Our Graphic Design Showreel",
   "content": "Creative graphic design solutions that communicate your brand message with impact and style.",
   "videoUrl": "geMtgE6RmTQ",
+  "videos": [
+    {
+      "id": "brand-identity-showcase",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Brand Identity Showcase",
+      "thumbnail": "/portfolio/black.png"
+    },
+    {
+      "id": "print-design-portfolio",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Print Design Portfolio",
+      "thumbnail": "/portfolio/black.png"
+    },
+    {
+      "id": "logo-design-collection",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Logo Design Collection",
+      "thumbnail": "/portfolio/black.png"
+    },
+    {
+      "id": "packaging-design-reel",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Packaging Design Reel",
+      "thumbnail": "/portfolio/black.png"
+    }
+  ],
   "titleDescription": "Over the years,|| our graphic design|| has thrived at the intersection of|| Creativity || and|| brand communication.",
   "cardData": {
     "title": "Graphic Design",

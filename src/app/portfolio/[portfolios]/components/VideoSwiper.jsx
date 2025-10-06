@@ -10,24 +10,31 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styles from "./video.module.css";
 
-// YouTube video configuration
-const videoData = [
-  {
-    id: "biax-animation",
-    // Replace these YouTube IDs with your actual video IDs
-    youtubeId: "dQw4w9WgXcQ", // Replace with your actual Biax video YouTube ID
-    title: "Biax Animation Showreel",
-    thumbnail: "/portfolio/biax-thumbnail.jpg", // Optional: custom thumbnail
-  },
-  {
-    id: "seek-animation", 
-    youtubeId: "dQw4w9WgXcQ", // Replace with your actual Seek video YouTube ID
-    title: "Seek Animation Showreel",
-    thumbnail: "/portfolio/seek-thumbnail.jpg", // Optional: custom thumbnail
-  }
-];
+export default function VideoSwiper({ styles: parentStyles, portfolio }) {
+  // Create video data from portfolio information
+  const videoData = portfolio?.videos ? 
+    // Use the videos array if available
+    portfolio.videos :
+    // Fallback: create entries from the main video and project gallery
+    portfolio?.projectGallery?.projects ? 
+      portfolio.projectGallery.projects.slice(0, 4).map((project, index) => ({
+        id: `${portfolio.slug}-project-${index}`,
+        youtubeId: portfolio.videoUrl,
+        title: project.caption || `${portfolio.title} Project ${index + 1}`,
+        thumbnail: project.image,
+      })) :
+      // Final fallback: create multiple entries from the main video
+      Array.from({ length: 4 }, (_, index) => ({
+        id: `${portfolio?.slug || 'portfolio'}-${index}`,
+        youtubeId: portfolio?.videoUrl || "dQw4w9WgXcQ",
+        title: `${portfolio?.title || 'Portfolio'} Showreel ${index + 1}`,
+        thumbnail: null,
+      }));
 
-export default function VideoSwiper({ styles: parentStyles }) {
+  // If no portfolio data is provided, return null or a fallback
+  if (!portfolio) {
+    return <div>Loading portfolio content...</div>;
+  }
   return (
     <Swiper
       modules={[Navigation, Autoplay, Pagination]}
@@ -72,8 +79,8 @@ export default function VideoSwiper({ styles: parentStyles }) {
       }}
       className={`${parentStyles?.videoSwiperSlider || ''} ${styles.videoSwiperContainer}`}
     >
-      {/* Render each video twice to create 4 slides */}
-      {[...videoData, ...videoData].map((video, index) => (
+      {/* Render video slides using dynamic data */}
+      {videoData.map((video, index) => (
         <SwiperSlide key={`${video.id}-${index}`}>
           <div className={styles.videoSlide}>
             <IFrameLoader

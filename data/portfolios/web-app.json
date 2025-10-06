@@ -6,6 +6,32 @@
   "description": "Watch Our Web & App Showreel",
   "content": "Innovative web and mobile applications designed to deliver exceptional user experiences.",
   "videoUrl": "geMtgE6RmTQ",
+  "videos": [
+    {
+      "id": "web-app-showcase",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Web App Showcase",
+      "thumbnail": "/portfolio/blue.png"
+    },
+    {
+      "id": "mobile-app-demo",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "Mobile App Demo",
+      "thumbnail": "/portfolio/blue.png"
+    },
+    {
+      "id": "saas-platform",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "SaaS Platform",
+      "thumbnail": "/portfolio/blue.png"
+    },
+    {
+      "id": "ecommerce-solution",
+      "youtubeId": "geMtgE6RmTQ",
+      "title": "E-commerce Solution",
+      "thumbnail": "/portfolio/blue.png"
+    }
+  ],
   "titleDescription": "Over the years,|| our web development|| has thrived at the intersection of|| Technology || and|| user experience.",
   "cardData": {
     "title": "Web & App",

@@ -51,7 +51,7 @@ export default async function PortfolioDetail({ params }) {
             </p>
           </div>
           
-          <VideoSwiper styles={styles} />
+          <VideoSwiper styles={styles} portfolio={portfolio} />
         </section>
       </>
 
