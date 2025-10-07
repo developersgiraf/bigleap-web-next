@@ -112,20 +112,20 @@
       }
       p {
         width: 60% !important;
-        font-size: 14px;
+        font-size: 12px !important;
         line-height: 20px !important;
         text-align: center;
       }
     }
     .all {
-      flex-wrap: wrap;
+      flex-wrap: wrap !important;
       padding: 20px 0px;
       gap: 20px !important;
 
       .each {
         height: auto !important;
         p{
-          font-size: 14px !important;
+          font-size: 12px !important;
           text-align: left !important;
         }
       }
@@ -142,7 +142,7 @@
       }
       p {
         width: 80% !important;
-        font-size: 14px;
+        font-size: 12px !important;
         line-height: 20px !important;
         text-align: center !important;
       }
@@ -154,7 +154,11 @@
 
       .each {
         height: auto !important;
+        p{
+          font-size: 12px !important;
+        }
       }
+      
     }
   }
 }
