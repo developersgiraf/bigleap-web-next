@@ -864,6 +864,9 @@ padding: 0 0 !important;
   width: 100% !important;
   height: auto !important;
   }
+  .abc.imageBtnSliderSection img{
+  height: 30vh !important;
+}
 }
 
 
