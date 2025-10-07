@@ -59,14 +59,19 @@
         overflow: hidden;
     }
 
-.textsWrapper{
+.textssWrapper{
   h1{
     color: #fdfdfd;
-    font-size: clamp(48px, 8vw, 96px);
+    /* font-size: clamp(48px, 8vw, 96px); */
+    font-family: 'Comics', sans-serif !important;
+font-size: 72px;
+text-align: center;
   }
   h4{
     color: #fdfdfd;
     font-size: clamp(32px, 6vw, 72px);
+    font-family: 'Comics', sans-serif !important;
+    text-align: center;
   }
 }
 
