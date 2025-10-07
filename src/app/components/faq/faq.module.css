@@ -104,6 +104,9 @@
     line-height: 80px !important;
     text-align: left !important;
   }
+  .faqrow {
+    
+  }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
   .faqSection {

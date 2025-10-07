@@ -107,7 +107,6 @@ export default async function BlogPage() {
 
   return (
     <>
-      <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" sub=""/>
 
       <div className={styles.blogPageWrapper}>
         <ServiceImage
