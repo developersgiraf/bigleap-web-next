@@ -1,4 +1,5 @@
-import { Geist, Geist_Mono, comics } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+// import url("https://use.typekit.net/jdv0uzk.css");
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainHeader from "./components/header/header";
@@ -29,6 +30,20 @@ export default function RootLayout({ children }) {
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        {/* Comic Book Fonts */}
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Fredoka+One&family=Kalam:wght@300;400;700&display=swap"
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>

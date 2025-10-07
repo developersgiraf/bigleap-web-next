@@ -113,6 +113,17 @@
     display: none;
   }
 }
+
+/* Hamburger icon styles */
+.hamburgerLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ddd6cb;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
 .nav a {
   font-family: "montserrat", sans-serif !important;
   height: 100%;
@@ -127,7 +138,122 @@
 }
 
 .nav a:hover {
-  color: red;
+  color: #ED2124;
+}
+
+/* ============================================
+   SERVICES DROPDOWN STYLES
+   ============================================ */
+.servicesDropdown {
+  position: relative;
+}
+
+.servicesLink {
+  display: block;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid #333;
+  border-radius: 8px;
+  min-width: 280px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 8px 0;
+  margin-top: 8px;
+}
+
+.servicesDropdown:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  display: block !important;
+  padding: 12px 20px !important;
+  color: #fdfdfd !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdownItem:hover {
+  background-color: rgba(255, 0, 0, 0.1) !important;
+  color: #ED2124 !important;
+  padding-left: 25px !important;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   OTHER SERVICES SUBMENU STYLES
+   ============================================ */
+.otherServicesContainer {
+  position: relative;
+}
+
+.otherServicesLabel {
+  display: block;
+  padding: 12px 20px;
+  color: #fdfdfd;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-top: 2px solid #333;
+  font-family: 'Montserrat', sans-serif !important;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.otherServicesLabel:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ED2124;
+  padding-left: 25px;
+}
+
+.otherServicesMenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid #333;
+  border-radius: 8px;
+  min-width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-15px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2001;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 8px 0;
+  margin-left: 5px;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.otherServicesContainer:hover .otherServicesMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 
 .active {
@@ -140,7 +266,7 @@
 .active:hover {
   background: none;
   -webkit-text-fill-color: initial;
-  color: red;
+  color: #ED2124;
 }
 
 .logo {
@@ -192,11 +318,174 @@
     font-size: 0.9rem;
     padding: 0.4rem 0.6rem;
   }
+
+  /* Mobile Dropdown Styles */
+  .dropdownMenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: rgba(17, 17, 17, 0.95);
+    border: none;
+    box-shadow: none;
+    min-width: auto;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .servicesDropdown:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdownItem {
+    padding: 8px 16px 8px 30px !important;
+    font-size: 0.85rem !important;
+    border-left: 3px solid #333 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .dropdownItem:hover {
+    padding-left: 35px !important;
+    background-color: rgba(255, 0, 0, 0.1) !important;
+  }
+
+  .otherServicesContainer {
+    border-top: 1px solid #444;
+    margin-top: 8px;
+  }
+
+  .otherServicesLabel {
+    padding: 10px 16px 10px 30px;
+    font-size: 0.85rem;
+    border-left: 3px solid #666;
+    border-top: none;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .otherServicesLabel:hover {
+    padding-left: 35px;
+  }
+
+  .otherServicesMenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: rgba(34, 34, 34, 0.95);
+    border: none;
+    box-shadow: none;
+    min-width: auto;
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .otherServicesContainer:hover .otherServicesMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .otherServicesMenu .dropdownItem {
+    padding: 8px 16px 8px 45px !important;
+    border-left: 3px solid #555 !important;
+    font-size: 0.8rem !important;
+  }
+
+  .otherServicesMenu .dropdownItem:hover {
+    padding-left: 50px !important;
+  }
 }
+
 /* iPad Portrait Navigation Links (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .nav a {
     font-size: 0.95rem;
     padding: 0.5rem 0.8rem;
+  }
+
+  /* Tablet Dropdown Styles */
+  .dropdownMenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: rgba(17, 17, 17, 0.95);
+    border: none;
+    box-shadow: none;
+    min-width: auto;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .servicesDropdown:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdownItem {
+    padding: 10px 20px 10px 35px !important;
+    font-size: 0.9rem !important;
+    border-left: 3px solid #333 !important;
+  }
+
+  .dropdownItem:hover {
+    padding-left: 40px !important;
+  }
+
+  .otherServicesContainer {
+    border-top: 1px solid #444;
+    margin-top: 10px;
+  }
+
+  .otherServicesLabel {
+    padding: 12px 20px 12px 35px;
+    font-size: 0.9rem;
+    border-left: 3px solid #666;
+    border-top: none;
+  }
+
+  .otherServicesLabel:hover {
+    padding-left: 40px;
+  }
+
+  .otherServicesMenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: rgba(34, 34, 34, 0.95);
+    border: none;
+    box-shadow: none;
+    min-width: auto;
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .otherServicesContainer:hover .otherServicesMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .otherServicesMenu .dropdownItem {
+    padding: 10px 20px 10px 50px !important;
+    border-left: 3px solid #555 !important;
+    font-size: 0.85rem !important;
+  }
+
+  .otherServicesMenu .dropdownItem:hover {
+    padding-left: 55px !important;
   }
 }/*# sourceMappingURL=header.module.css.map */

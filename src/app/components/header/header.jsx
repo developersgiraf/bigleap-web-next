@@ -2,10 +2,34 @@
 import styles from './header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function MainHeader() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    // Services data
+    const mainServices = [
+        { id: 'twoDanimation', title: '2D Animation' },
+        { id: 'threeDanimation', title: '3D Animation' },
+        { id: 'whiteboard-animation', title: 'Whiteboard Animation' },
+        { id: 'motion-graphics', title: 'Motion Graphics' },
+        { id: 'vfx-and-post-production', title: 'VFX And Post Production' },
+        { id: 'product-animation', title: 'Product Animation' },
+        { id: 'character-design', title: 'Character Design' },
+        { id: 'storytelling', title: 'Storytelling' }
+    ];
+
+    const otherServices = [
+        { id: 'video-editing-and-post-production', title: 'Video Editing And Post Production' },
+        { id: 'web-development', title: 'Web Development' },
+        { id: 'graphic-design', title: 'Graphic Design' },
+        { id: 'digital-marketing', title: 'Digital Marketing' }
+    ];
 
     const handleToggle = () => {
         setMenuOpen((prev) => !prev);
@@ -24,17 +48,17 @@ export default function MainHeader() {
             <button
                 className={styles['nav-toggle']}
                 aria-label="Toggle navigation menu"
-                aria-expanded={menuOpen}
+                aria-expanded={isClient ? menuOpen : false}
                 onClick={handleToggle}
                 type="button"
             >
                 {/* Hamburger icon */}
-                <span style={{ display: 'block', width: 24, height: 2, background: '#ddd6cb', margin: '5px 0', borderRadius: 2 }}></span>
-                <span style={{ display: 'block', width: 24, height: 2, background: '#ddd6cb', margin: '5px 0', borderRadius: 2 }}></span>
-                <span style={{ display: 'block', width: 24, height: 2, background: '#ddd6cb', margin: '5px 0', borderRadius: 2 }}></span>
+                <span className={styles.hamburgerLine}></span>
+                <span className={styles.hamburgerLine}></span>
+                <span className={styles.hamburgerLine}></span>
             </button>
 
-            <nav className={menuOpen ? `${styles.nav} ${styles.open}` : styles.nav}>
+            <nav className={isClient && menuOpen ? `${styles.nav} ${styles.open}` : styles.nav}>
                 <ul onClick={closeMenu}>
                     <li>
                         <Link href="/">HOME</Link>
@@ -42,8 +66,33 @@ export default function MainHeader() {
                     <li>
                         <Link href="/about">ABOUT US</Link>
                     </li>
-                    <li>
-                        <Link href="/servicess">SERVICES</Link>
+                    <li className={styles.servicesDropdown}>
+                        <Link href="/servicess" className={styles.servicesLink}>SERVICES</Link>
+                        <div className={styles.dropdownMenu}>
+                            {mainServices.map((service) => (
+                                <Link 
+                                    key={service.id} 
+                                    href={`/servicess/${service.id}`} 
+                                    className={styles.dropdownItem}
+                                >
+                                    {service.title}
+                                </Link>
+                            ))}
+                            <div className={styles.otherServicesContainer}>
+                                <span className={styles.otherServicesLabel}>Other Services</span>
+                                <div className={styles.otherServicesMenu}>
+                                    {otherServices.map((service) => (
+                                        <Link 
+                                            key={service.id} 
+                                            href={`/servicess/${service.id}`} 
+                                            className={styles.dropdownItem}
+                                        >
+                                            {service.title}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <Link href="/portfolio">PORTFOLIO</Link>

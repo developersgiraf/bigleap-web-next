@@ -80,9 +80,9 @@ export default function HeroSection() {
           }}
         >
           <div className={styles.textssWrapper}>
-          <h1>360°</h1>
-          <h4>DIGITAL MARKETING</h4>
-         <h4>COMPANY IN UAE</h4>
+          <h3>LET'S </h3>
+          <h1>ANIMATE</h1>
+          
           </div>
 
           {false && <Image
