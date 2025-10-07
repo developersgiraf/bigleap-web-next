@@ -79,7 +79,7 @@ export default function HeroSection() {
             mass: 0.8
           }}
         >
-          <div className={styles.textsWrapper}>
+          <div className={styles.textssWrapper}>
           <h1>360°</h1>
           <h4>DIGITAL MARKETING</h4>
          <h4>COMPANY IN UAE</h4>

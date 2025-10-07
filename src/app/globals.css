@@ -769,13 +769,13 @@ padding: 0 0 !important;
 
   @media (min-width:768px) and (max-width: 992px) {
   .videoSliderSection button.circle-nav-btn{
-    top: 95%;
+    top: 75% !important;
     }
   .videoSliderSection button.circle-nav-btn.left{
-    left: 5px !important;
+    left: 20px !important;
     }
    .videoSliderSection button.circle-nav-btn.right{
-   left: 70px;
+   left: 80px;
     }
   .videoSliderSection.videoIframe{
   width: 100% !important;
