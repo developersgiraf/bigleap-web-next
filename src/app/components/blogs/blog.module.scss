@@ -141,9 +141,8 @@
                     justify-content: center;
                     padding: 0 20px;
 
-                
                 img {
-                    height: 45vh !important;
+                    height: auto !important;
                     object-fit: contain !important;
                 }
 
@@ -163,7 +162,7 @@
 }
 @media (min-width: 768px) and (max-width: 992px) {
     .blogsection {
-        padding: 100px 0 60px 0;
+        padding: 10px 0 60px 0 !important;
 
         .blogcontent {
 
@@ -183,7 +182,7 @@
 
                 
                 img {
-                    height: 25vh !important;
+                    height: auto !important;
                     object-fit: contain !important;
                 }
 

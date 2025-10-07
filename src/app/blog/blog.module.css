@@ -109,7 +109,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .tagHeader {
     flex-direction: column;
     text-align: center;
