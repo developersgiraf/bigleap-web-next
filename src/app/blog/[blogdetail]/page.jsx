@@ -120,7 +120,7 @@ export default async function BlogDetailPage({ params }) {
         </div>
       </div>
       <GradientLights customCounts={{
-        xl: 8,  // Rich visual experience for extra large screens
+        xl: 3,  // Rich visual experience for extra large screens
         lg: 2,  // Substantial gradients for large screens
         md: 3,  // Balanced for medium screens
         sm: 3,  // Moderate for tablets

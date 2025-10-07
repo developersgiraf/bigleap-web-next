@@ -3,12 +3,17 @@
   "title": "Where Imagination Takes Flight: The Art of 2D Animation",
   "slug": "twoDanimation",
   "image": "/servicess/2danimation.png",
-  "caption": "2D Animation",
+  "caption": "Where Imagination Takes Flight: The Art of 2D Animation",
   "description": "2D animation brings stories to life through traditional hand-drawn techniques and modern digital tools. Our expert animators create captivating characters and scenes that engage audiences across all platforms. From concept to completion, we handle every aspect of 2D animation production with meticulous attention to detail. Whether it's for marketing videos, educational content, or entertainment, our 2D animations deliver powerful visual storytelling that resonates with viewers and achieves your creative goals. 2D animation brings stories to life through traditional hand-drawn techniques and modern digital tools. Our expert animators create captivating characters and scenes that engage audiences across all platforms. From concept to completion, we handle every aspect of 2D animation production with meticulous attention to detail. Whether it's for marketing videos, educational content, or entertainment, our 2D animations deliver powerful visual storytelling that resonates with viewers and achieves your creative goals.",
   "publishedDate": "2024-10-01",
-  "lastModified": "2024-10-01",
+  "lastModified": "2025-10-07",
   "category": "Animation",
-  "tags": ["2d-animation", "traditional-animation", "digital-animation", "storytelling"],
+  "tags": [
+    "2d-animation",
+    "traditional-animation",
+    "digital-animation",
+    "storytelling"
+  ],
   "featured": true,
   "status": "published",
   "index": 1,
@@ -16,6 +21,12 @@
   "seo": {
     "metaTitle": "2D Animation Services - Where Imagination Takes Flight",
     "metaDescription": "Professional 2D animation services combining traditional techniques with modern digital tools. Create captivating characters and engaging stories.",
-    "keywords": ["2d animation", "character animation", "explainer videos", "animation services"]
-  }
+    "keywords": [
+      "2d animation",
+      "character animation",
+      "explainer videos",
+      "animation services"
+    ]
+  },
+  "customSlug": ""
 }

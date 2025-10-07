@@ -3,10 +3,10 @@
   "title": "Visual Storytelling Mastery: The Art of Comic Book Creation",
   "slug": "comic-book",
   "image": "/servicess/comic-book.png",
-  "caption": "Comic Book",
+  "caption": "Visual Storytelling Mastery: The Art of Comic Book Creation",
   "description": "Comic book creation combines visual artistry with compelling storytelling to create immersive reading experiences. Our team of artists and writers collaborate to produce professional-quality comics with dynamic artwork, engaging plots, and memorable characters. From concept development to final publication, we handle every aspect of comic book production including storyboarding, illustration, coloring, and lettering. Whether you're creating educational comics, marketing materials, or entertainment content, we deliver comics that captivate readers and effectively communicate your message.",
   "publishedDate": "2024-10-05",
-  "lastModified": "2025-10-06",
+  "lastModified": "2025-10-07",
   "category": "Design",
   "tags": [
     "comic-book",
@@ -28,5 +28,6 @@
       "graphic narrative"
     ]
   },
-  "createdAt": "2025-10-06T21:32:05.836Z"
+  "createdAt": "2025-10-06T21:32:05.836Z",
+  "customSlug": ""
 }
