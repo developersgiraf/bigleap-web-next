@@ -139,7 +139,7 @@
     padding: 0 20px;
   }
   .blogsection .blogcontent .blogimages .blogrow img {
-    height: 25vh !important;
+    height: auto !important;
     -o-object-fit: contain !important;
        object-fit: contain !important;
   }

@@ -1,5 +1,5 @@
 .hero {
-  height: clamp(50vh, 75vh, 93dvh);
+  height: clamp(50vh, 85vh, 93dvh);
   min-height: clamp(300px, 40vh, 500px);
   position: static;
   overflow: visible;
@@ -32,6 +32,15 @@
   position: absolute;
   right: clamp(20px, 15vw, 170px);
   top: clamp(60px, 20vh, 220px);
+}
+
+.hangingContainer{
+    width: 100vw;
+    max-width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow-x: hidden;
 }
 
 .hangAnchor {
@@ -75,6 +84,23 @@
 
   }
 }
+
+.touchText{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.touchText .textssWrapper{
+  h1 {
+  }
+  h3 {
+  }
+
+}
+
 
 @media screen and (aspect-ratio > 4/3) {
   .hangAnchor {
