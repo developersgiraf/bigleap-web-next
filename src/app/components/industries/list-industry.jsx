@@ -6,11 +6,13 @@ export default function ListIndustry({ industries }) {
     <div className={styles.industryList} >
       <ul>
         {industries.map((industry, idx) => (
-          <li key={idx-1}>
-            <Link href="#" className={styles.link}>
-              {industry}
-            </Link>
-          </li>
+          industry && (
+            <li key={idx-1}>
+              <Link href="#" className={styles.link}>
+                {industry}
+              </Link>
+            </li>
+          )
         ))}
       </ul>
     </div>
