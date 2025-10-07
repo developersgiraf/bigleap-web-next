@@ -4,28 +4,28 @@ export default function Industries() {
   const list = [
     {
       industries: [
-        "Real Estate",
-        "Healthcare",
-        "Education",
-        "Finance",
-        "Entertainment"
+        {title:"Real Estate", link:"#"},
+        {title:"Healthcare", link:"#"},
+        {title:"Education", link:"#"},
+        {title:"Finance", link:"#"},
+        {title:"Entertainment", link:"#"}
       ]
     },
     {
       industries: [
-        "Technology",
-        "Retail & E-Commerce",
-        "Manufacturing",
-        "Automotive",
-        "Hospitality & Tourism",
+        {title:"Technology", link:"#"},
+        {title:"Retail & E-Commerce", link:"#"},
+        {title:"Manufacturing", link:"#"},
+        {title:"Automotive", link:"#"},
+        {title:"Hospitality & Tourism", link:"#"},
       ]
     },
     {
       industries: [
-        "Media & Advertising",
-        "Energy & Utilities",
-        "Education & E-Learning",
-        "Technology & Startups",
+        {title:"Media & Advertising", link:"#"},
+        {title:"Energy & Utilities", link:"#"},
+        {title:"Education & E-Learning", link:"#"},
+        {title:"Technology & Startups", link:"#"},
       ]
     },
   ];

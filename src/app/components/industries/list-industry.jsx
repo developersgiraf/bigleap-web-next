@@ -8,8 +8,8 @@ export default function ListIndustry({ industries }) {
         {industries.map((industry, idx) => (
           industry && (
             <li key={idx-1}>
-              <Link href="#" className={styles.link}>
-                {industry}
+              <Link href={industry.link} className={styles.link}>
+                {industry.title}
               </Link>
             </li>
           )
