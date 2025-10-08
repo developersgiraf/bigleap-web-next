@@ -879,8 +879,10 @@ padding: 0 0 !important;
   .abc.imageBtnSliderSection img{
   height: 30vh !important;
 }
+.portfolioSlide .slideImage {
+  transform: translateX(20%) !important;
 }
-
+  }
 
 @media (max-width: 767px) {
     .videoSliderSection button.circle-nav-btn{

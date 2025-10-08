@@ -16,6 +16,12 @@
   .portfolioSwiperContainer {
     display: block;
   }
+  .portfolioDescription{
+    width: 50% !important;
+  }
+  .portfolioContent{
+    left: 50px !important;
+  }
 }
 @media (max-width: 767px) {
   .portfolioSwiperContainer {

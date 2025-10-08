@@ -84,7 +84,7 @@ export default function PortfolioSwiper() {
     };
 
     const autoplayConfig = {
-        enabled: true,
+        enabled: false,
         delay: 4000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
