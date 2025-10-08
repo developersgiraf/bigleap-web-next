@@ -15,7 +15,7 @@
 .headerContent {
   flex: 1;
   min-width: -webkit-fill-available;
-  min-width: fit-content;
+  min-width: 'fit-content';
 }
 
 .headerContent h2 {
