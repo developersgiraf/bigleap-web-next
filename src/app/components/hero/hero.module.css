@@ -152,9 +152,11 @@
   .hangAnchor {
     width: min(1%, 10px);
   }
-
+ .hangAnchor img {
+    transform: scale(70) translateY(40%);
+  }
   .hero {
-    height: clamp(40vh, 40vh, 80vh);
+    height: clamp(40vh, 80vh, 80vh);
     padding-top: clamp(5px, 1vh, 10px);
   }
 
@@ -162,6 +164,17 @@
     justify-content: flex-start;
     padding-top: 10vh;
   }
+  .touchText .textssWrapper{
+  h1 {
+    font-size: clamp(92px, 6vw, 72px);
+    line-height: 90%;
+  }
+  h3 {
+    font-size: clamp(54px, 5vw, 52px);
+    line-height: 90%;
+  }
+
+}
 }
 
 @media screen and (orientation: portrait) and (max-height: 700px) {

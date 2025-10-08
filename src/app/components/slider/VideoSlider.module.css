@@ -34,7 +34,7 @@
 
   }
   @media (max-width: 767px) {
-    min-height: 430px !important;
+    min-height: 520px !important;
     flex-direction: column !important;
     padding: 0 0 !important;
 
