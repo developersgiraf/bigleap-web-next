@@ -106,7 +106,15 @@
   .portfolio-entry {
     height: 40dvh !important;
   }
+.unfocused .content {
+  padding: 170px 0 0 0 !important;
 }
+.portfolio-image {
+    min-height: 530px !important;
+    max-height: 540px !important;
+  }
+}
+/* padding: 170px 0 0 !important; */
 @media (min-width: 1025px) and (max-width: 1370px) {
   .content h3 {
     font-size: 44px !important;

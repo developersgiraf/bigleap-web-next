@@ -3,6 +3,13 @@
   gap: 0;
   flex-wrap: no-wrap;
 }
+
+.portfolioEntrySection{
+  /* Scale with viewport width*/
+  opacity: 1;
+  padding: 80px 0;
+  
+}
 @media (max-width: 767px) {
   .portfolioEntryContainer {
     display: none;

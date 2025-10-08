@@ -5,7 +5,9 @@
      object-fit: cover;
   border-radius: 12px;
 }
-
+.portfolioSwiperSection{
+  opacity: 1;
+}
 .portfolioSwiperContainer {
   padding: 80px 0;
   position: relative;
