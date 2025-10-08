@@ -1,4 +1,5 @@
-/* header.module.scss */
+/* header.module.css */
+
 /* Make sure the header sits above any hero art */
 .header {
   display: flex;
@@ -14,24 +15,28 @@
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
+
 /* Mobile Responsive (up to 767px) */
 @media (max-width: 767px) {
   .header {
     padding: 1rem 0.5rem;
   }
 }
+
 /* iPad Portrait Responsive (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .header {
     padding: 1.5rem 5%;
   }
 }
+
 /* Desktop Responsive (1025px and above) */
 @media (min-width: 1025px) {
   .header {
     padding: 0 10%;
   }
 }
+
 .nav ul {
   list-style: none;
   margin: 0;
@@ -47,6 +52,7 @@
 /* ============================================
    NAVIGATION RESPONSIVE BREAKPOINTS
    ============================================ */
+
 /* Mobile Navigation (up to 767px) */
 @media (max-width: 767px) {
   .nav ul {
@@ -63,20 +69,25 @@
     padding: 15px 8px;
     line-height: 35px;
   }
+
   .nav.open ul {
     display: flex;
   }
+
   .nav-toggle {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: none;
     border: none;
-    font-size: 1.8rem;
-    color: #ddd6cb;
     cursor: pointer;
     z-index: 1001;
     margin-left: auto;
+    padding: 5px;
   }
 }
+
 /* iPad Portrait Navigation (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .nav ul {
@@ -93,28 +104,163 @@
     padding: 20px 12px;
     line-height: 40px;
   }
+
   .nav.open ul {
     display: flex;
   }
+
   .nav-toggle {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: none;
     border: none;
-    font-size: 2rem;
-    color: #ddd6cb;
     cursor: pointer;
     z-index: 1001;
     margin-left: auto;
+    padding: 5px;
   }
 }
+
 /* Desktop Navigation (1025px and above) */
 @media (min-width: 1025px) {
   .nav-toggle {
     display: none;
   }
 }
+
+/* ============================================
+   HAMBURGER ICON STYLES
+   ============================================ */
+.hamburgerLine {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #ddd6cb;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* ============================================
+   SERVICES DROPDOWN STYLES
+   ============================================ */
+.servicesDropdown {
+  position: relative;
+}
+
+.servicesLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.servicesLink::after {
+  content: '▼';
+  font-size: 10px;
+  color: #ff8a05;
+  transition: transform 0.3s ease;
+}
+
+.servicesDropdown:hover .servicesLink::after {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -50px;
+  background: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid #333;
+  border-radius: 8px;
+  min-width: 280px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 8px 0;
+  margin-top: 8px;
+}
+
+.servicesDropdown:hover .dropdownMenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  display: block;
+  padding: 12px 20px;
+  color: #fdfdfd;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdownItem:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff8a05;
+  padding-left: 25px;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.otherServicesContainer {
+  position: relative;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #ff8a05;
+  background-color: #0a0a0a;
+}
+
+.otherServicesLabel {
+  display: block;
+  padding: 12px 20px;
+  color: #ff8a05;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.otherServicesLabel:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  padding-left: 25px;
+}
+
+.otherServicesMenu {
+  padding-left: 0;
+}
+
+.otherServicesMenu .dropdownItem {
+  background-color: #0a0a0a;
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
+.otherServicesMenu .dropdownItem:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  padding-left: 25px;
+}
+
 .nav a {
-  font-family: "montserrat", sans-serif !important;
+  font-family: "montserrat", sans-serif;
   height: 100%;
   text-decoration: none;
   color: #fdfdfd;
@@ -127,7 +273,7 @@
 }
 
 .nav a:hover {
-  color: red;
+  color: #ff8a05;
 }
 
 .active {
@@ -140,7 +286,7 @@
 .active:hover {
   background: none;
   -webkit-text-fill-color: initial;
-  color: red;
+  color: #ff8a05;
 }
 
 .logo {
@@ -161,42 +307,186 @@
 /* ============================================
    LOGO RESPONSIVE BREAKPOINTS
    ============================================ */
+
 /* Mobile Logo (up to 767px) */
 @media (max-width: 767px) {
   .logo {
     font-size: 1.1rem;
     gap: 1rem;
   }
+
   .logo .logoImage {
     width: 2.5rem;
     height: 2.5rem;
   }
 }
+
 /* iPad Portrait Logo (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .logo {
     font-size: 1.3rem;
     gap: 1.5rem;
   }
+
   .logo .logoImage {
     width: 3rem;
     height: 3rem;
   }
 }
+
 /* ============================================
    NAVIGATION LINKS RESPONSIVE BREAKPOINTS
    ============================================ */
+
 /* Mobile Navigation Links (up to 767px) */
 @media (max-width: 767px) {
   .nav a {
     font-size: 0.9rem;
     padding: 0.4rem 0.6rem;
   }
+
+  /* Mobile Dropdown Styles */
+  .dropdownMenu {
+    position: static;
+    display: block;
+    opacity: 1;
+    transform: none;
+    background: rgba(17, 17, 17, 0.95);
+    border: none;
+    box-shadow: none;
+    min-width: auto;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 0;
+    padding: 0;
+    left: 0;
+  }
+
+  .servicesDropdown:hover .dropdownMenu {
+    display: block;
+    opacity: 1;
+    transform: none;
+  }
+
+  .dropdownItem {
+    padding: 8px 16px 8px 30px;
+    font-size: 0.85rem;
+    border-left: 3px solid #333;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdownItem:hover {
+    padding-left: 35px;
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+
+  .otherServicesContainer {
+    border-top: 1px solid #444;
+    margin-top: 8px;
+    background-color: #0a0a0a;
+  }
+
+  .otherServicesLabel {
+    padding: 10px 16px 10px 30px;
+    font-size: 0.85rem;
+    border-left: 3px solid #666;
+    border-top: none;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .otherServicesLabel:hover {
+    padding-left: 35px;
+  }
+
+  .otherServicesMenu {
+    background: rgba(34, 34, 34, 0.95);
+    padding: 0;
+  }
+
+  .otherServicesMenu .dropdownItem {
+    padding: 8px 16px 8px 45px;
+    border-left: 3px solid #555;
+    font-size: 0.8rem;
+  }
+
+  .otherServicesMenu .dropdownItem:hover {
+    padding-left: 50px;
+  }
 }
+
 /* iPad Portrait Navigation Links (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .nav a {
     font-size: 0.95rem;
     padding: 0.5rem 0.8rem;
   }
-}/*# sourceMappingURL=header.module.css.map */
+
+  /* Tablet Dropdown Styles */
+  .dropdownMenu {
+    position: static;
+    display: block;
+    opacity: 1;
+    transform: none;
+    background: rgba(17, 17, 17, 0.95);
+    border: none;
+    box-shadow: none;
+    min-width: auto;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 0;
+    padding: 0;
+    left: 0;
+  }
+
+  .servicesDropdown:hover .dropdownMenu {
+    display: block;
+    opacity: 1;
+    transform: none;
+  }
+
+  .dropdownItem {
+    padding: 10px 20px 10px 35px;
+    font-size: 0.9rem;
+    border-left: 3px solid #333;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdownItem:hover {
+    padding-left: 40px;
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+
+  .otherServicesContainer {
+    border-top: 1px solid #444;
+    margin-top: 8px;
+    background-color: #0a0a0a;
+  }
+
+  .otherServicesLabel {
+    padding: 12px 20px 12px 35px;
+    font-size: 0.9rem;
+    border-left: 3px solid #666;
+    border-top: none;
+  }
+
+  .otherServicesLabel:hover {
+    padding-left: 40px;
+  }
+
+  .otherServicesMenu {
+    background: rgba(34, 34, 34, 0.95);
+    padding: 0;
+  }
+
+  .otherServicesMenu .dropdownItem {
+    padding: 10px 20px 10px 50px;
+    border-left: 3px solid #555;
+    font-size: 0.85rem;
+  }
+
+  .otherServicesMenu .dropdownItem:hover {
+    padding-left: 55px;
+  }
+}

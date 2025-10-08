@@ -66,7 +66,7 @@ export default function MainHeader() {
                     <li>
                         <Link href="/about">ABOUT US</Link>
                     </li>
-                    <li className={styles.servicesDropdown}>
+                     <li className={styles.servicesDropdown}>
                         <Link href="/servicess" className={styles.servicesLink}>SERVICES</Link>
                         <div className={styles.dropdownMenu}>
                             {mainServices.map((service) => (
@@ -103,7 +103,9 @@ export default function MainHeader() {
                     <li>
                         <Link href="/contact">CONTACT US</Link>
                     </li>
+
                 </ul>
+
             </nav>
         </header>
     );
