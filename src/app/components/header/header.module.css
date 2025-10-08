@@ -129,7 +129,8 @@
   font-family: 'Montserrat', sans-serif !important;
 }
 
-.otherServicesContainer:hover .otherServicesMenu {
+.otherServicesLabel:hover + .otherServicesMenu,
+.otherServicesMenu:hover {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
@@ -214,7 +215,8 @@
     padding: 0;
   }
 
-  .otherServicesContainer:hover .otherServicesMenu {
+  .otherServicesLabel:hover + .otherServicesMenu,
+  .otherServicesMenu:hover {
     opacity: 1;
     visibility: visible;
     transform: none;
@@ -257,7 +259,8 @@
     padding: 0;
   }
 
-  .otherServicesContainer:hover .otherServicesMenu {
+  .otherServicesLabel:hover + .otherServicesMenu,
+  .otherServicesMenu:hover {
     opacity: 1;
     visibility: visible;
     transform: none;
