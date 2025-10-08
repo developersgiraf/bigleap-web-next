@@ -86,13 +86,16 @@
   .bloghead h2 {
     font-size: 44px !important;
   }
+   .titleHead {
+    padding-top: 10px !important;
+  }
   .blogrow {
     flex-wrap: wrap;
     justify-content: center;
     padding: 0 20px;
   }
   .blogrow img {
-    height: 40vh !important;
+    height: auto !important;
     -o-object-fit: contain !important;
        object-fit: contain !important;
   }

@@ -46,7 +46,7 @@
 
 @media (min-width: 1025px) and (max-width: 1370px) {
 .iframeContainer{
-  width: 90% !important;
+  width: 100% !important;
 }
 }
 @media (max-width: 767px) {

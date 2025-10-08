@@ -320,10 +320,10 @@
     padding: 0 40px !important;
   }
   .watch-area .first-video .video1 iframe {
-    height: 274px !important;
+    height: 360px !important;
   }
   .watch-area .first-video .video2 iframe {
-    height: 190px !important;
+    height: 250px !important;
   }
   .watch-area .second-video .content {
     padding: 0px 0 0px !important;
@@ -332,7 +332,7 @@
     font-size: 24px !important;
   }
   .watch-area .second-video .video3 iframe {
-    height: 274px !important;
+    height: 360px !important;
   }
   .motion-graphics .motion-graphics-content h2 {
     font-size: 40px !important;
