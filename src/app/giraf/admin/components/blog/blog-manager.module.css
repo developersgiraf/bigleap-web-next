@@ -16,7 +16,11 @@
   flex: 1;
   min-width: -webkit-fill-available;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   min-width: fit-content;
+=======
+  min-width: 'fit-content';
+>>>>>>> Stashed changes
 =======
   min-width: 'fit-content';
 >>>>>>> Stashed changes
