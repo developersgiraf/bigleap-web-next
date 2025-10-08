@@ -15,7 +15,11 @@
 .headerContent {
   flex: 1;
   min-width: -webkit-fill-available;
+<<<<<<< Updated upstream
   min-width: fit-content;
+=======
+  min-width: 'fit-content';
+>>>>>>> Stashed changes
 }
 
 .headerContent h2 {
