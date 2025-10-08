@@ -31,9 +31,9 @@
 }
 .blogsection .blogcontent .blogimages .blogrow img {
   width: 100%;
-  height: 40vh;
+  height: auto;
   -o-object-fit: cover;
-     object-fit: cover;
+     object-fit: contain;
 }
 .blogsection .blogcontent .blogimages .blogrow .titleHead {
   display: flex;
@@ -62,7 +62,6 @@
   font-style: medium;
   color: #fdfdfd;
 }
-
 @media (min-width: 1025px) and (max-width: 1560px) {
   .bloghead h2 {
     font-size: 44px !important;

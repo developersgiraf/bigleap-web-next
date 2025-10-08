@@ -333,7 +333,7 @@ export default function Home() {
         xl: 11,  // Rich visual experience for extra large screens
         lg: 12,  // Substantial gradients for large screens
         md: 12,  // Balanced for medium screens
-        sm: 11,  // Moderate for tablets
+        sm: 8,  // Moderate for tablets
         xs: 10   // Minimal but visible on mobile
       }} />
     </>
