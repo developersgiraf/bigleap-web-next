@@ -330,11 +330,11 @@ export default function Home() {
       <EnquirySect />
       <InstaFeeds />
       <GradientLights customCounts={{
-        xl: 11,  // Rich visual experience for extra large screens
-        lg: 12,  // Substantial gradients for large screens
-        md: 12,  // Balanced for medium screens
+        xl: 12,  // Rich visual experience for extra large screens
+        lg: 11,  // Substantial gradients for large screens
+        md: 10,  // Balanced for medium screens
         sm: 8,  // Moderate for tablets
-        xs: 10   // Minimal but visible on mobile
+        xs: 9   // Minimal but visible on mobile
       }} />
     </>
   );
