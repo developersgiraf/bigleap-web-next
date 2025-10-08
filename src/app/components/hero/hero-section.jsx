@@ -112,6 +112,7 @@ export default function HeroSection() {
         
         <motion.div 
         className={styles.hangAnchor}
+        style={ isTouchDevice ? {pointerEvents: "none"} : {} }
         initial={{ rotateZ: -20 }}
         animate={isTouchDevice ? {
           // Automatic hanging animation for touch devices (10 degrees swing)
