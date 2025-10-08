@@ -114,7 +114,7 @@ export default function Home() {
               customSelector={"imageSliderSection abc"}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
-                640: { slidesPerView: 2, spaceBetween: 0 },
+                640: { slidesPerView: 3, spaceBetween: 0 },
                 1024: { slidesPerView: 3, spaceBetween: 50 },
                 1366: { slidesPerView: 4, spaceBetween: 10 },
               }}
@@ -303,7 +303,7 @@ export default function Home() {
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 50 },
                 992: { slidesPerView: 2, spaceBetween: 40 },
-                1024: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 2, spaceBetween: 30 },
                 1366: { slidesPerView: 3, spaceBetween: 0 },
               }}
               imageSize={400}

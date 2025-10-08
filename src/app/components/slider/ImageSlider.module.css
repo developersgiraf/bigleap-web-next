@@ -116,9 +116,9 @@
 
 /* Medium Desktop */
 @media (min-width: 993px) and (max-width: 1024px) {
-  .mySwiper {
+  /* .mySwiper {
     padding: 20px 70px !important;
-  }
+  } */
   
   .imageContainer {
     width: 90%;
