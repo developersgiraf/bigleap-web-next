@@ -171,7 +171,7 @@
   .blogsection .blogcontent .blogimages .blogrow img {
     -o-object-fit: contain !important;
        object-fit: contain !important;
-    height: 30vh !important;
+    height: auto !important;
     margin-top: 20px !important;
   }
   .blogsection .blogcontent .blogimages .blogrow .titleHead {

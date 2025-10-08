@@ -312,7 +312,7 @@ position: absolute;
   }
   
   .sliderContainer {
-    max-width: 100% !important;
+    max-width: 50% !important;
     height: 260px !important;
   }
   
