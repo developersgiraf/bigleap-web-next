@@ -54,6 +54,12 @@
   .businessArea .business-list {
     padding: 0 30px !important;
   }
+  .businessArea .business-list .heading h2 {
+  font-size: 34px !important;
+  }
+  .businessArea .business-list .lists {
+  padding-left: 0px !important;
+}
 }
 /* Medium Desktop */
 @media (min-width: 993px) and (max-width: 1370px) {

@@ -303,7 +303,7 @@ export default function Home() {
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 50 },
                 992: { slidesPerView: 2, spaceBetween: 40 },
-                1024: { slidesPerView: 3, spaceBetween: 60 },
+                1024: { slidesPerView: 2, spaceBetween: 20 },
                 1366: { slidesPerView: 3, spaceBetween: 0 },
               }}
               imageSize={400}
@@ -330,9 +330,9 @@ export default function Home() {
       <EnquirySect />
       <InstaFeeds />
       <GradientLights customCounts={{
-        xl: 12,  // Rich visual experience for extra large screens
+        xl: 11,  // Rich visual experience for extra large screens
         lg: 12,  // Substantial gradients for large screens
-        md: 13,  // Balanced for medium screens
+        md: 12,  // Balanced for medium screens
         sm: 10,  // Moderate for tablets
         xs: 10   // Minimal but visible on mobile
       }} />

@@ -33,7 +33,7 @@
 }
 
 .slide-head {
-  padding: 80px 340px;
+  padding: 40px 320px;
 }
 .slide-head .special-head {
   display: flex;
@@ -142,7 +142,7 @@
 }
 
 .video-slider {
-  padding: 100px 0 80px 0;
+  padding: 250px 0 80px 0;
 }
 .video-slider .vdo {
   position: relative;
@@ -323,23 +323,29 @@
     height: 274px !important;
   }
   .watch-area .first-video .video2 iframe {
-    height: 250px !important;
+    height: 190px !important;
   }
   .watch-area .second-video .content {
-    padding: 80px 0 0px !important;
+    padding: 0px 0 0px !important;
   }
   .watch-area .second-video .content h2 {
-    font-size: 24px;
+    font-size: 24px !important;
   }
   .watch-area .second-video .video3 iframe {
     height: 274px !important;
   }
   .motion-graphics .motion-graphics-content h2 {
-    font-size: 50px !important;
+    font-size: 40px !important;
   }
   .motion-graphics .specialslides {
     padding: 0 140px !important;
   }
+  .motion-graphics {
+  padding: 10px 0 80px 0 !important;
+}
+  .video-slider {
+  padding: 0px 0 80px 0 !important;
+}
 }
 /* Small Desktop/Large Tablet: 993px - 1024px */
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -486,10 +492,10 @@
     padding: 0px 0 80px !important;
   }
   .watch-area .first-video .video1 iframe {
-    height: 445px !important;
+    height: 415px !important;
   }
   .watch-area .first-video .video2 iframe {
-    height: 445px !important;
+    height: 415px !important;
     -o-object-fit: contain !important;
        object-fit: contain !important;
   }
@@ -507,7 +513,7 @@
     font-size: 26px !important;
   }
   .watch-area .second-video .video3 iframe {
-    height: 445px !important;
+    height: 415px !important;
   }
   .video-slider {
     padding: 0px 0 0px 0 !important;

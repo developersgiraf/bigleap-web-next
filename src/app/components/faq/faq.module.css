@@ -1,5 +1,5 @@
 .faqSection {
-  padding: 100px 0 80px 0;
+  padding: 270px 0 80px 0;
 }
 .faqSection .faqrow {
   width: 100%;
@@ -94,18 +94,22 @@
     padding: 90px 0 60px 0 !important;
   }
   .question {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
   .accordionHeader {
     margin-right: 50px !important;
   }
   .title {
-    font-size: 54px !important;
-    line-height: 80px !important;
+    font-size: 44px !important;
+    line-height: 70px !important;
     text-align: left !important;
   }
   .faqrow {
-    
+    padding: 0 30px !important;
+  }
+  .accordionContent {
+    padding: 10px !important;
+    width: 90% !important;
   }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -155,7 +159,7 @@
   }
   .faqrow .faqContent .title {
     font-size: 39px !important;
-    line-height: 40px !important;
+    line-height: 90px !important;
     text-align: center !important;
   }
   .faqrow .faqList {

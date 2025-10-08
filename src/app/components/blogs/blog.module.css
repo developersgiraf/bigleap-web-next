@@ -97,6 +97,9 @@
     -o-object-fit: contain !important;
        object-fit: contain !important;
   }
+  .blogsection {
+    padding: 50px 0 20px 0 !important;
+  }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
   .blogsection {
@@ -113,7 +116,7 @@
     padding: 0 20px;
   }
   .blogsection .blogcontent .blogimages .blogrow img {
-    height: 45vh !important;
+    height: auto !important;
     -o-object-fit: contain !important;
        object-fit: contain !important;
   }
@@ -126,7 +129,7 @@
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .blogsection {
-    padding: 100px 0 60px 0;
+    padding: 10px 0 60px 0 !important;
   }
   .blogsection .blogcontent .bloghead h2 {
     font-size: 35px !important;
