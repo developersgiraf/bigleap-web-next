@@ -41,25 +41,32 @@ export default function MainHeader() {
 
     return (
         <header className={styles.header}>
+<<<<<<< Updated upstream
         
             <Link href="/" className={styles.logo}>
                 <Image src="/logo.png" alt="logo" width={74} height={87} className={styles.logoImage} />
             </Link>
+=======
+            <div className={styles.container}>
+                <Link href="/" className={styles.logo}>
+                    <Image src="/logo.png" alt="logo" width={74} height={87} className={styles.logoImage} />
+                </Link>
+>>>>>>> Stashed changes
 
-            <button
-                className={styles['nav-toggle']}
-                aria-label="Toggle navigation menu"
-                aria-expanded={isClient ? menuOpen : false}
-                onClick={handleToggle}
-                type="button"
-            >
-                {/* Hamburger icon */}
-                <span className={styles.hamburgerLine}></span>
-                <span className={styles.hamburgerLine}></span>
-                <span className={styles.hamburgerLine}></span>
-            </button>
+                <button
+                    className={styles['nav-toggle']}
+                    aria-label="Toggle navigation menu"
+                    aria-expanded={isClient ? menuOpen : false}
+                    onClick={handleToggle}
+                    type="button"
+                >
+                    {/* Hamburger icon */}
+                    <span className={styles.hamburgerLine}></span>
+                    <span className={styles.hamburgerLine}></span>
+                    <span className={styles.hamburgerLine}></span>
+                </button>
 
-            <nav className={isClient && menuOpen ? `${styles.nav} ${styles.open}` : styles.nav}>
+                <nav className={isClient && menuOpen ? `${styles.nav} ${styles.open}` : styles.nav}>
                 <ul onClick={closeMenu}>
                     <li>
                         <Link href="/">HOME</Link>
