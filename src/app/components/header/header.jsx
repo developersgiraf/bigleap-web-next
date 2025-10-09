@@ -31,6 +31,7 @@ export default function MainHeader() {
         { id: 'e-commerce', title: 'E-Commerce Web and App' },
         { id: 'UI-UX-design', title: 'UI/UX Designing' },
         { id: 'branding', title: 'Branding' },
+        { id: 'digital-marketing', title: 'Digital Marketing' },
         { id: 'photography', title: 'Photography & Videography' },
     ];
 

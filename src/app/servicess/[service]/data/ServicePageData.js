@@ -642,7 +642,48 @@ export const servicesData = {
       }
     ]
   },
-
+"digital-marketing": {
+    bannerTitle: "Digital Marketing",
+    section01: {
+      image: "/servicess/detail-image.png",
+      heading: "Comprehensive Digital Marketing Solutions",
+      description:
+        "Build a powerful brand identity that resonates with your audience and sets you apart from the competition. Our comprehensive branding services help you create a cohesive visual identity that communicates your values and drives business growth.",
+    },
+    section02: {
+      DescTitle: "Branding: || Your Identity Matters",
+      Descpara:
+        "Effective branding goes beyond just a logo - it's about creating a complete identity system that tells your story, connects with your audience, and builds lasting relationships. Our branding approach combines strategic thinking with creative execution to deliver brands that stand the test of time.",
+      subhead1: "Brand Strategy",
+      subdes1:
+        "Comprehensive brand strategy development including positioning, messaging, and visual identity guidelines that align with your business goals.",
+      subhead2: "Visual Identity",
+      subdes2:
+        "Complete visual identity systems including logos, color palettes, typography, and brand guidelines for consistent application.",
+      subhead3: "Brand Applications",
+      subdes3:
+        "Consistent brand implementation across all touchpoints, from business cards to websites, ensuring a cohesive brand experience.",
+    },
+    listHead: "Branding Services",
+    list: [
+      {
+        title: "Logo Design",
+        description: "Memorable logo designs that capture your brand essence and work effectively across all media and applications."
+      },
+      {
+        title: "Brand Guidelines",
+        description: "Comprehensive brand style guides that ensure consistent application of your brand identity across all platforms."
+      },
+      {
+        title: "Marketing Collateral",
+        description: "Professionally designed marketing materials including brochures, business cards, and promotional materials."
+      },
+      {
+        title: "Brand Consulting",
+        description: "Strategic brand consulting to help position your brand effectively in the market and connect with your target audience."
+      }
+    ]
+  },
   "photography": {
     bannerTitle: "Photography & Videography",
     section01: {
