@@ -3,11 +3,13 @@
 /* Tag Navigation Styles */
 .tagNavigation {
   padding: 2rem 0 3rem 0;
-  background: rgba(255, 255, 255, 0.02);
-  margin-bottom: 2rem;
+  background: #ed2124;
+  margin-bottom: 12rem;
+  margin-top: 12rem;
+  border-radius: 50px;
 }
 .blogPageWrapper{
-  margin: 300px 0 0 0;
+  margin: 100px 0 0 0;
 }
 .tagHeader {
   display: flex;
@@ -23,24 +25,24 @@
   font-family: "Montserrat", sans-serif !important;
   font-size: 28px;
   font-weight: 600;
-  margin: 0;
+  margin: auto;
 }
 
 .viewAllLink {
-  color: #ff4757;
+  color: #ed2124;
   text-decoration: none;
   font-family: "Montserrat", sans-serif !important;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border: 1px solid #ff4757;
+  border: 1px solid #ed2124;
   border-radius: 20px;
   transition: all 0.3s ease;
 }
 
 .viewAllLink:hover {
-  background: #ff4757;
+  background: #ed2124;
   color: #ffffff;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .tagCloud {

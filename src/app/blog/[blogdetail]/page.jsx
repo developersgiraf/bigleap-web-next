@@ -79,8 +79,23 @@ export default async function BlogDetailPage({ params }) {
             className={styles.image}
           />
           <p className={styles.description}>{blogsData.description}</p>
-          
-          {/* Blog Metadata */}
+          </div>
+          </div>
+         
+          {/* Tags */}
+          {blogsData.tags && blogsData.tags.length > 0 && (
+            <div className={styles.tagsSection}>
+              <strong>Tags</strong>
+              <div className={styles.tagsList}>
+                {blogsData.tags.map((tag, index) => (
+                  <Link key={index} href={`/blog/tags/${tag}`} className={styles.tag}>
+                    {tag.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+           {/* Blog Metadata */}
           <div className={styles.blogMeta}>
             {blogsData.publishedDate && (
               <div className={styles.metaItem}>
@@ -102,23 +117,8 @@ export default async function BlogDetailPage({ params }) {
                 <strong>Author:</strong> {blogsData.author}
               </div>
             )}
-          </div>
           
-          {/* Tags */}
-          {blogsData.tags && blogsData.tags.length > 0 && (
-            <div className={styles.tagsSection}>
-              <strong>Tags:</strong>
-              <div className={styles.tagsList}>
-                {blogsData.tags.map((tag, index) => (
-                  <Link key={index} href={`/blog/tags/${tag}`} className={styles.tag}>
-                    {tag.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
+          </div>
       <GradientLights customCounts={{
         xl: 3,  // Rich visual experience for extra large screens
         lg: 2,  // Substantial gradients for large screens

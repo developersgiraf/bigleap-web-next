@@ -23,7 +23,7 @@
 
 @media (min-width: 1025px) and (max-width: 1370px) {
   .title-banner h1 {
-    width: 80% !important;
+    width: 100% !important;
     line-height: 100px !important;
   }
 }
