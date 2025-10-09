@@ -1,12 +1,24 @@
+import Link from 'next/link';
+import { servicesData } from '../../[service]/data/ServicePageData.js';
+
 export default function OtherServices() {
-    const otherServices = [
-        { id: 'website-design', title: 'Website Designing & Development' },
-        { id: 'mobile-app', title: 'Mobile App Development' },
-        { id: 'e-commerce', title: 'E-Commerce Web and App' },
-        { id: 'UI-UX-design', title: 'UI/UX Designing' },
-        { id: 'branding', title: 'Branding' },
-        { id: 'photography', title: 'Photography & Videography' },
+    // Define the other services IDs
+    const otherServiceIds = [
+        'website-design',
+        'mobile-app', 
+        'e-commerce',
+        'UI-UX-design',
+        'branding',
+        'photography'
     ];
+
+    // Get the other services data from ServicePageData
+    const otherServices = otherServiceIds.map(id => ({
+        id,
+        title: servicesData[id]?.title || servicesData[id]?.bannerTitle || id,
+        description: servicesData[id]?.section01?.description || '',
+        thumbnail: servicesData[id]?.thumbnail || '/servicess/default-image.png'
+    }));
 
     return (
         <div>

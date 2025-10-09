@@ -19,7 +19,7 @@ export default function MainHeader() {
         { id: 'twoDanimation', title: '2D Animation' },
         { id: 'vfx-and-post-production', title: 'VFX And Post Production' },
         { id: 'motion-graphics', title: 'Motion Graphics' },
-        { id: 'videoediting', title: 'Video Editing And Post Production' },
+        { id: 'video-editing-post-production', title: 'Video Editing And Post Production' },
         { id: 'character-design', title: 'Character Design' },
         { id: 'storytelling', title: 'Storytelling' },
         { id: 'whiteboard-animation', title: 'Whiteboard Animation' },
