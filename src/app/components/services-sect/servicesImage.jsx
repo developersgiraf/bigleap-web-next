@@ -91,14 +91,14 @@ export default function ServiceImage({
             {head.length > 0 && <h2>{head}</h2>}
             {showSelect && (
               <select className={styles.select}>
-                <option value="scale" className={styles.options}>
+                <option value="creative" className={styles.options}>
                   Creative Team
                 </option>
-                <option value="fade" className={styles.options}>
-                  Fade
+                <option value="seo" className={styles.options}>
+                  SEO Team
                 </option>
-                <option value="slide" className={styles.options}>
-                  Slide
+                <option value="development" className={styles.options}>
+                  Development Team
                 </option>
               </select>
             )}
