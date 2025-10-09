@@ -26,42 +26,6 @@
 .nav a:hover {
   color: #ED2124;
 }
-.servicesDropdown {
-  position: relative;
-}
-
-.servicesLink {
-  display: block;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif !important;
-}
-.dropdownMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgba(0, 0, 0, 0.95);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid #333;
-  border-radius: 8px;
-  min-width: 280px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 2000;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  padding: 8px 0;
-  margin-top: 8px;
-  pointer-events: none;
-}
-.servicesDropdown:hover .dropdownMenu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
 .dropdownItem {
   display: block !important;
   padding: 12px 20px !important;
@@ -86,10 +50,65 @@
 }
 
 /* ============================================
-   OTHER SERVICES SUBMENU STYLES
+   SERVICES DROPDOWN STYLES
+   ============================================ */
+.servicesDropdown {
+  position: relative;
+}
+
+.servicesLink {
+  display: block;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif !important;
+  color: #fdfdfd;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: color 0.2s ease;
+  font-size: 16px;
+  line-height: 93%;
+}
+
+.servicesLink:hover {
+  color: #ED2124;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid #333;
+  border-radius: 8px;
+  min-width: 280px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 8px 0;
+  margin-top: 8px;
+  pointer-events: none;
+}
+
+.servicesDropdown:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ============================================
+   OTHER SERVICES NESTED DROPDOWN STYLES
    ============================================ */
 .otherServicesContainer {
   position: relative;
+  border-top: 1px solid #333;
+  margin-top: 4px;
 }
 
 .otherServicesLabel {
@@ -100,9 +119,9 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  border-top: 2px solid #333;
   font-family: 'Montserrat', sans-serif !important;
   background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .otherServicesLabel:hover {
@@ -113,7 +132,7 @@
 
 .otherServicesMenu {
   position: absolute;
-  top: 0;
+  top: -128px;
   left: 100%;
   background: rgba(0, 0, 0, 0.95);
   -webkit-backdrop-filter: blur(10px);
@@ -128,15 +147,15 @@
   z-index: 2001;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   padding: 8px 0;
-  margin-left: 5px;
-  font-family: 'Montserrat', sans-serif !important;
+  margin-left: 8px;
+  pointer-events: none;
 }
 
-.otherServicesLabel:hover + .otherServicesMenu,
-.otherServicesMenu:hover {
+.otherServicesContainer:hover .otherServicesMenu {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
+  pointer-events: auto;
 }
 .active {
 .active:hover {
@@ -151,8 +170,8 @@
     padding: 0.4rem 0.6rem;
   }
 
-  /* Mobile Dropdown Styles */
-  /* .dropdownMenu {
+  /* Mobile Dropdown Styles - Clean implementation */
+  .dropdownMenu {
     position: static;
     opacity: 1;
     visibility: visible;
@@ -165,25 +184,12 @@
     margin-top: 0.5rem;
     border-radius: 0;
     padding: 0;
-  } */
+  }
 
-  /* .servicesDropdown:hover .dropdownMenu {
+  .servicesDropdown:hover .dropdownMenu {
     opacity: 1;
     visibility: visible;
     transform: none;
-  } */
-
-  .dropdownItem {
-    padding: 8px 16px 8px 30px !important;
-    font-size: 0.85rem !important;
-    border-left: 3px solid #333 !important;
-    font-family: 'Montserrat', sans-serif !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .dropdownItem:hover {
-    padding-left: 35px !important;
-    background-color: rgba(255, 0, 0, 0.1) !important;
   }
 
   .otherServicesContainer {
@@ -216,10 +222,10 @@
     margin-left: 0;
     border-radius: 0;
     padding: 0;
+    pointer-events: auto;
   }
 
-  .otherServicesLabel:hover + .otherServicesMenu,
-  .otherServicesMenu:hover {
+  .otherServicesContainer:hover .otherServicesMenu {
     opacity: 1;
     visibility: visible;
     transform: none;
@@ -234,50 +240,20 @@
   .otherServicesMenu .dropdownItem:hover {
     padding-left: 50px !important;
   }
-}
 
-  .otherServicesLabel {
-    padding: 12px 20px 12px 35px;
-    font-size: 0.9rem;
-    border-left: 3px solid #666;
-    border-top: none;
-  }
-
-  .otherServicesLabel:hover {
-    padding-left: 40px;
-  }
-
-  .otherServicesMenu {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    background: rgba(34, 34, 34, 0.95);
-    border: none;
-    box-shadow: none;
-    min-width: auto;
-    width: 100%;
-    margin-left: 0;
-    border-radius: 0;
-    padding: 0;
-  }
-
-  .otherServicesLabel:hover + .otherServicesMenu,
-  .otherServicesMenu:hover {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .otherServicesMenu .dropdownItem {
-    padding: 10px 20px 10px 50px !important;
-    border-left: 3px solid #555 !important;
+  .dropdownItem {
+    padding: 8px 16px 8px 30px !important;
     font-size: 0.85rem !important;
+    border-left: 3px solid #333 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 
-  .otherServicesMenu .dropdownItem:hover {
-    padding-left: 55px !important;
+  .dropdownItem:hover {
+    padding-left: 35px !important;
+    background-color: rgba(255, 0, 0, 0.1) !important;
   }
+}
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
@@ -455,14 +431,16 @@
    ============================================ */
 /* Mobile Navigation Links (up to 767px) */
 @media (max-width: 767px) {
-  .nav a {
+  .nav a,
+  .servicesLink {
     font-size: 0.9rem;
     padding: 0.4rem 0.6rem;
   }
 }
 /* iPad Portrait Navigation Links (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .nav a {
+  .nav a,
+  .servicesLink {
     font-size: 0.95rem;
     padding: 0.5rem 0.8rem;
   }
