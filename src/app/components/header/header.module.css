@@ -292,21 +292,12 @@
   .header {
     padding: 1.5rem 5%;
   }
-  .nav ul{
-  gap: .5rem;
-
-  }
 }
 /* Desktop Responsive (1025px and above) */
-@media (min-width: 1025px) and (max-width: 1370px) {
+@media (min-width: 1025px) {
   .header {
     padding: 0 10%;
   }
-  .nav ul{
-  gap: .5rem;
-
-  }
-
 }
 .nav ul {
   list-style: none;
