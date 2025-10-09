@@ -14,21 +14,24 @@ export default function MainHeader() {
 
     // Services data
     const mainServices = [
-        { id: 'twoDanimation', title: '2D Animation' },
-        { id: 'threeDanimation', title: '3D Animation' },
-        { id: 'whiteboard-animation', title: 'Whiteboard Animation' },
-        { id: 'motion-graphics', title: 'Motion Graphics' },
-        { id: 'vfx-and-post-production', title: 'VFX And Post Production' },
         { id: 'product-animation', title: 'Product Animation' },
+        { id: 'threeDanimation', title: '3D Animation' },
+        { id: 'twoDanimation', title: '2D Animation' },
+        { id: 'vfx-and-post-production', title: 'VFX And Post Production' },
+        { id: 'motion-graphics', title: 'Motion Graphics' },
+        { id: 'videoediting', title: 'Video Editing And Post Production' },
         { id: 'character-design', title: 'Character Design' },
-        { id: 'storytelling', title: 'Storytelling' }
+        { id: 'storytelling', title: 'Storytelling' },
+        { id: 'whiteboard-animation', title: 'Whiteboard Animation' },
     ];
 
     const otherServices = [
-        { id: 'video-editing-and-post-production', title: 'Video Editing And Post Production' },
-        { id: 'web-development', title: 'Web Development' },
-        { id: 'graphic-design', title: 'Graphic Design' },
-        { id: 'digital-marketing', title: 'Digital Marketing' }
+       { id: 'website-design', title: 'Website Designing & Development' },
+        { id: 'mobile-app', title: 'Mobile App Development' },
+        { id: 'e-commerce', title: 'E-Commerce Web and App' },
+        { id: 'UI-UX-design', title: 'UI/UX Designing' },
+        { id: 'branding', title: 'Branding' },
+        { id: 'photography', title: 'Photography & Videography' },
     ];
 
     const handleToggle = () => {

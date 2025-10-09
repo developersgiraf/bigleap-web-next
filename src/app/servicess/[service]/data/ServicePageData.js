@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 export const servicesData = {
   "twoDanimation": {
     bannerTitle: "2D Animation",
@@ -428,3 +429,119 @@ export const servicesData = {
   },
 
 };
+=======
+// Fallback service data for when API/Firebase data is not available
+export const servicesData = {
+  "threeDanimation": {
+    "id": "threeDanimation",
+    "title": "3D Animation",
+    "bannerTitle": "3D Animation",
+    "thumbnail": "/servicess/3danimation.png",
+    "section01": {
+      "image": "/servicess/red-machine.png",
+      "heading": "The Creative Animation Studio That Brings Your Vision To Life.",
+      "description": "Ready to unfold your story in motion? Elevate your brand with realistic and immersive 3D animation that will bring your vision to life. At Big Leap, we create innovative content that best reflects your brand value, enhancing your online presence."
+    },
+    "section02": {
+      "DescTitle": "3D Animation: Transforming Ideas",
+      "Descpara": "3D animation presents a more realistic depiction of ideas. It involves creating the digital models, rigging them to enable movement and animating them with realistic motion.",
+      "subsections": [
+        {
+          "heading": "Effective Communication of Complex Ideas",
+          "description": "Complex information can be well explained with 3D animation. Whether it is product launching or its demonstration, a well-crafted 3D animation video can deliver the message clearly to the intended audience."
+        },
+        {
+          "heading": "Visual Appeal",
+          "description": "3D animation can create enthralling visuals that will capture the attention of the audience. It will render in the dynamic presentation of the product, highlighting its various parts and zooming on the details."
+        }
+      ]
+    },
+    "listHead": "3D Animation Services That We Offer",
+    "listPara": "",
+    "list": [
+      {
+        "title": "Product Visualization",
+        "description": "Got an idea of how your product will be? Then leave the rest to Big Leap. We ensure that you get a detailed product visualization, creating high-quality and detailed images and animations."
+      },
+      {
+        "title": "Character Animation",
+        "description": "Ready to bring your digital characters to life? At Big Leap, we transform your vision into reality. Whether it's a dynamic mascot for your product or a character that represents your brand vision."
+      }
+    ]
+  },
+  "twoDanimation": {
+    "id": "twoDanimation",
+    "title": "2D Animation",
+    "bannerTitle": "2D Animation",
+    "thumbnail": "/servicess/2danimation.png",
+    "section01": {
+      "image": "/servicess/detail-image.png",
+      "heading": "Creative 2D Animation Services",
+      "description": "Bring your ideas to life with our professional 2D animation services. We create engaging animated content that tells your story effectively."
+    },
+    "section02": {
+      "DescTitle": "2D Animation: Creative Storytelling",
+      "Descpara": "2D animation is a powerful medium for storytelling that combines visual appeal with effective communication.",
+      "subsections": [
+        {
+          "heading": "Cost-Effective Solution",
+          "description": "2D animation offers a budget-friendly approach to creating high-quality animated content for businesses of all sizes."
+        },
+        {
+          "heading": "Quick Turnaround",
+          "description": "With streamlined production processes, 2D animation projects can be completed faster than complex 3D animations."
+        }
+      ]
+    },
+    "listHead": "2D Animation Services",
+    "listPara": "",
+    "list": [
+      {
+        "title": "Explainer Videos",
+        "description": "Create compelling explainer videos that simplify complex concepts and engage your audience effectively."
+      },
+      {
+        "title": "Character Animation",
+        "description": "Develop memorable animated characters that represent your brand and connect with your target audience."
+      }
+    ]
+  },
+  "motion-graphics": {
+    "id": "motion-graphics",
+    "title": "Motion Graphics",
+    "bannerTitle": "Motion Graphics",
+    "thumbnail": "/servicess/motion-graphics.png",
+    "section01": {
+      "image": "/servicess/detail-image.png",
+      "heading": "Professional Motion Graphics Services",
+      "description": "Enhance your brand with dynamic motion graphics that capture attention and communicate your message effectively."
+    },
+    "section02": {
+      "DescTitle": "Motion Graphics: Visual Communication",
+      "Descpara": "Motion graphics combine graphic design with animation to create engaging visual content for various media platforms.",
+      "subsections": [
+        {
+          "heading": "Brand Enhancement",
+          "description": "Motion graphics help strengthen brand identity through consistent visual elements and professional presentation."
+        },
+        {
+          "heading": "Versatile Applications",
+          "description": "From social media content to corporate presentations, motion graphics adapt to various marketing needs."
+        }
+      ]
+    },
+    "listHead": "Motion Graphics Services",
+    "listPara": "",
+    "list": [
+      {
+        "title": "Logo Animation",
+        "description": "Bring your logo to life with professional animation that enhances brand recognition and memorability."
+      },
+      {
+        "title": "Infographic Animation",
+        "description": "Transform static data into dynamic animated infographics that make information more digestible and engaging."
+      }
+    ]
+  }
+};
+>>>>>>> Stashed changes

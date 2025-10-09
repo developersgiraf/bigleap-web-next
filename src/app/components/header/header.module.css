@@ -132,7 +132,7 @@
 
 .otherServicesMenu {
   position: absolute;
-  top: -128px;
+  bottom: 0;
   left: 100%;
   background: rgba(0, 0, 0, 0.95);
   -webkit-backdrop-filter: blur(10px);
