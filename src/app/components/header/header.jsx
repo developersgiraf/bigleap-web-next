@@ -12,28 +12,7 @@ export default function MainHeader() {
         setIsClient(true);
     }, []);
 
-    // Services data
-    const mainServices = [
-        { id: 'product-animation', title: 'Product Animation' },
-        { id: 'threeDanimation', title: '3D Animation' },
-        { id: 'twoDanimation', title: '2D Animation' },
-        { id: 'vfx-and-post-production', title: 'VFX And Post Production' },
-        { id: 'motion-graphics', title: 'Motion Graphics' },
-        { id: 'video-editing-post-production', title: 'Video Editing And Post Production' },
-        { id: 'character-design', title: 'Character Design' },
-        { id: 'storytelling', title: 'Storytelling' },
-        { id: 'whiteboard-animation', title: 'Whiteboard Animation' },
-    ];
 
-    const otherServices = [
-       { id: 'website-design', title: 'Website Designing & Development' },
-        { id: 'mobile-app', title: 'Mobile App Development' },
-        { id: 'e-commerce', title: 'E-Commerce Web and App' },
-        { id: 'UI-UX-design', title: 'UI/UX Designing' },
-        { id: 'branding', title: 'Branding' },
-        { id: 'digital-marketing', title: 'Digital Marketing' },
-        { id: 'photography', title: 'Photography & Videography' },
-    ];
 
     const handleToggle = () => {
         setMenuOpen((prev) => !prev);
@@ -71,33 +50,8 @@ export default function MainHeader() {
                     <li>
                         <Link href="/about">ABOUT US</Link>
                     </li>
-                     <li className={styles.servicesDropdown}>
-                        <Link href="/servicess" className={styles.servicesLink}>SERVICES</Link>
-                        <div className={styles.dropdownMenu}>
-                            {mainServices.map((service) => (
-                                <Link 
-                                    key={service.id} 
-                                    href={`/servicess/${service.id}`} 
-                                    className={styles.dropdownItem}
-                                >
-                                    {service.title}
-                                </Link>
-                            ))}
-                            <div className={styles.otherServicesContainer}>
-                                <span className={styles.otherServicesLabel}>Other Services</span>
-                                <div className={styles.otherServicesMenu}>
-                                    {otherServices.map((service) => (
-                                        <Link 
-                                            key={service.id} 
-                                            href={`/servicess/${service.id}`} 
-                                            className={styles.dropdownItem}
-                                        >
-                                            {service.title}
-                                        </Link>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+                    <li>
+                        <Link href="/servicess">SERVICES</Link>
                     </li>
                     <li>
                         <Link href="/portfolio">PORTFOLIO</Link>
