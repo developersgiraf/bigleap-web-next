@@ -75,6 +75,8 @@
 @media (max-width: 1999px) {
   .header {
     padding: 0 10%;
+      border-image: linear-gradient(90deg,rgba(237, 33, 36, 0) 20%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 98%)1;
+
   }
    .nav a {
   padding: .7rem 1rem !important;
