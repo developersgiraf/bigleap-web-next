@@ -1,5 +1,5 @@
 .faqSection {
-  padding: 100px 0 80px 0;
+  padding: 270px 0 80px 0;
 }
 .faqSection .faqrow {
   width: 100%;
@@ -105,7 +105,7 @@
     text-align: left !important;
   }
   .faqrow {
-    padding: 0 80px !important;
+    padding: 0 30px !important;
   }
   .accordionContent {
     padding: 10px !important;
@@ -158,7 +158,7 @@
     flex: 1;
   }
   .faqrow .faqContent .title {
-    font-size: 30px !important;
+    font-size: 39px !important;
     line-height: 90px !important;
     text-align: center !important;
   }

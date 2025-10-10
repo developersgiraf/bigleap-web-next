@@ -17,6 +17,7 @@
   border-left: none;
   border-right: none;
   margin-top: 20px;
+  gap:5rem;
 }
 .hamburgerLine {
   display: block;
@@ -27,6 +28,11 @@
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+
+.nav{
+  width: 100%;
+}
+
 .nav a {
   font-family: "montserrat", sans-serif !important;
   height: 100%;
@@ -36,17 +42,17 @@
 }
 
 .active {
-.active:hover {
-  background: none;
-  -webkit-text-fill-color: initial;
-  color: #ED2124;
-}
-
-.logo {
-
-    font-size: 0.9rem;
-    padding: 0.4rem 0.6rem;
+  .active:hover {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #ED2124;
   }
+
+  .logo {
+
+      font-size: 0.9rem;
+      padding: 0.4rem 0.6rem;
+    }
 
 }
 /* ============================================
@@ -90,11 +96,22 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1.5rem;
+  /* gap: 1.5rem; */
   font-size: 15px;
   position: relative;
   z-index: 999;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav ul li {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-right: 1px solid transparent;
+  border-image: linear-gradient(0deg, rgba(237, 33, 36, 0) 0%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 100%) 1;
+  padding: 1rem;
+  text-align: center;
 }
 
 /* ============================================
@@ -177,8 +194,8 @@
   transition: color .2s;
   font-family: 'montserrat', sans-serif !important;
   /* border-left: 1px solid transparent; */
-  border-right: 1px solid transparent;
-  border-image: linear-gradient(0deg,rgba(237, 33, 36, 0) 0%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 100%) 1;
+  /* border-right: 1px solid transparent; */
+  /* border-image: linear-gradient(0deg,rgba(237, 33, 36, 0) 0%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 100%) 1; */
   border-top: none;
   border-bottom: none;
 }

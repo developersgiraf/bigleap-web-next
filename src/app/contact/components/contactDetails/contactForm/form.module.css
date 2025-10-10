@@ -21,7 +21,8 @@
   z-index: -1;
 }
 .contactFormArea .formBackground {
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
   position: absolute;
   top: 0;
@@ -107,7 +108,7 @@
 }
 @media (max-width: 1370px) {
   .contactFormArea .formBackground {
-    height: 100% !important;
+    height: 80%;
   }
 }
 @media (max-width: 1024px) {

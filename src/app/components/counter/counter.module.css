@@ -48,11 +48,6 @@
 .stat-block:hover {
   transform: translateY(-5px);
 }
-@media (min-width: 1025px) and (max-width: 1370px) {
-  .stat-block {
-    min-width: 90px !important;
-  }
-}
 @media (max-width: 767px) {
   .stat-block {
     min-width: 120px !important;

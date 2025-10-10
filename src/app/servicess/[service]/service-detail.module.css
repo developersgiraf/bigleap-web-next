@@ -42,7 +42,7 @@
   font-size: 45px;
   font-weight: 600;
   text-align: center;
-  margin-top: 140px;
+  margin-top: 250px;
   padding: 0 270px;
   line-height: 80px;
 }
@@ -163,7 +163,7 @@
 }
 
 .serDetail {
-  padding: 390px 0 120px 0;
+  padding: 390px 0;
 }
 .serDetail .detail {
   max-width: 1000px;
@@ -182,7 +182,7 @@
   text-align: justify;
 }
 .serDetail .detail .des h4 {
-  line-height: 120%;
+  line-height: 100%;
   color: #fdfdfd;
   font-size: 30px;
   font-weight: 600;
