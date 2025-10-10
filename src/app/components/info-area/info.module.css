@@ -2,15 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  margin: 0 0 0 70px;
+  margin: 30px 0 0 0px;
   position: relative;
   z-index: 999;
-  background-color: #ed2124;
   padding: 10px 0 10px 0;
   width: -moz-fit-content;
   width: fit-content;
   gap: 40px;
-  padding: 20px 40px;
+  padding: 10px 10px;
+  border-top:1px solid;
+  border-bottom: 1px solid;
+    border-image: linear-gradient(90deg,rgba(237, 33, 36, 0) 0%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 100%) 1;
+border-left: none;
+  border-right: none;
 }
 .header-top-area .head-top-contacts ul li {
   list-style: none;
