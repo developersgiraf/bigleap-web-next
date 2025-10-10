@@ -77,18 +77,18 @@
     padding: 0 10%;
   }
    .nav a {
-  padding: .8rem 2rem !important;
+  padding: .7rem 1rem !important;
 }
 }
 
 @media (min-width: 1370px) and (max-width: 1560px) {
   .nav a {
-  padding: .8rem 2rem !important;
+padding: .6rem 0rem !important;
 }
 }
 @media (min-width: 1024px) and (max-width: 1370px) {
   .nav a {
-  padding: .8rem 1rem !important;
+  padding: .8rem 0rem !important;
 }
 }
 .nav ul {
