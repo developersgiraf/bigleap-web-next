@@ -74,7 +74,8 @@
   color: #fff;
 }
 .footerArea .footer-bottom {
-   border-top: 1px solid ;
+   border-top: 1px;
+   border-top-style: solid;
   border-image: linear-gradient(90deg,rgba(237, 33, 36, 0) 0%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 100%) 1;
   border-bottom: none;
   border-left: none;
