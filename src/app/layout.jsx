@@ -48,10 +48,12 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Providers>
+        <div className="head-info">
           <ConditionalLayout excludeComponents={['info']}>
             <InfoArea />
           </ConditionalLayout>
           <MainHeader />
+          </div>
           {children}
           <ConditionalLayout excludeComponents={['footer']}>
             <Footer />

@@ -27,6 +27,9 @@
 /* ========================================
    COMPONENT STYLES
    ======================================== */
+   .head-info{
+    margin: 0 20px;
+   }
 .readbtn {
   background-color: none;
 }
