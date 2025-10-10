@@ -191,7 +191,7 @@
 
 @media screen and (max-width: 480px) and (orientation: portrait) {
   .hero {
-    height: clamp(30vh, 30vh, 75vh);
+    height: clamp(30vh, 60vh, 75vh);
     min-height: 280px;
   }
 

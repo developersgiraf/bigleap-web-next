@@ -91,6 +91,9 @@ padding: .6rem 0rem !important;
   padding: .8rem 0rem !important;
 }
 }
+.nav{
+  display: block;
+}
 .nav ul {
   list-style: none;
   margin: 0;
@@ -119,6 +122,12 @@ padding: .6rem 0rem !important;
    ============================================ */
 /* Mobile Navigation (up to 767px) */
 @media (max-width: 767px) {
+  .nav{
+    display: none;
+  }
+    .header{
+    border: none;
+    }
   .nav ul {
     display: none;
     flex-direction: column;
@@ -149,6 +158,12 @@ padding: .6rem 0rem !important;
 }
 /* iPad Portrait Navigation (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .nav{
+    display: none;
+  }
+  .header{
+    border: none;
+  }
   .nav ul {
     display: none;
     flex-direction: column;
