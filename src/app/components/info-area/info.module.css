@@ -10,10 +10,12 @@
   width: fit-content;
   gap: 40px;
   padding: 10px 10px;
-  border-top:1px solid;
-  border-bottom: 1px solid;
-    border-image: linear-gradient(90deg,rgba(237, 33, 36, 0) 0%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 100%) 1;
-border-left: none;
+  border-top:1px ;
+  border-top-style: solid;
+  border-bottom: 1px ;
+  border-bottom-style: solid;
+  border-image: linear-gradient(90deg,rgba(237, 33, 36, 0) 0%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 100%) 1;
+  border-left: none;
   border-right: none;
 }
 .header-top-area .head-top-contacts ul li {
