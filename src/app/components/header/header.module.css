@@ -11,9 +11,10 @@
   box-sizing: border-box;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-image: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(237, 33, 36, 1) 50%, rgba(199, 58, 60, 0.62) 100%) 1;
+  border-image: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%,rgb(15, 15, 15) 23%, rgba(237, 33, 36, 1) 50%, rgba(44, 22, 22, 0.62) 86%) 1;
   border-left: none;
   border-right: none;
+  margin-top: 20px;
 }
 .hamburgerLine {
   display: block;
@@ -160,7 +161,8 @@
   font-family: 'montserrat', sans-serif !important;
   /* border-left: 1px solid transparent; */
   border-right: 1px solid transparent;
-  border-image: radial-gradient(circle, rgba(237, 33, 36, 1) 0%, rgb(237, 45, 45) 97%) 1;
+  border-image: radial-gradient(circle, rgba(207, 198, 198, 0.79) 35%, rgba(237, 33, 36, 1) 0%) 1;
+
   border-top: none;
   border-bottom: none;
 }
