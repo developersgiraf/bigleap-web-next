@@ -3,7 +3,7 @@
   padding: 170px 0 0 0;
 }
 .footerArea .firstcol {
-  padding: 40px 0 0 90px;
+  padding: 40px 0 0 20px;
 }
 .footerArea .firstcol .bigleap {
   display: flex;
@@ -74,7 +74,11 @@
   color: #fff;
 }
 .footerArea .footer-bottom {
-  border-top: 1px solid #3e3e3e;
+   border-top: 1px solid ;
+  border-image: linear-gradient(90deg,rgba(237, 33, 36, 0) 0%, rgba(237, 33, 36, 1) 50%, rgba(237, 33, 36, 0) 100%) 1;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
   padding: 40px 0 0 0;
   width: 100%;
 }
