@@ -8,12 +8,13 @@ import EnquirySect from "../components/enquiry/enquiry.jsx";
 import TitleDescription from "./components/title-description/titleDes.jsx";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
 import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
-
+import DownArrow from "../components/downArrow/arrow.jsx";
 export default function ServicesPage() {
   return (
     <>
       <TitleBanner title="Our creativity begins where reality ends" sub=""/>
 
+      <DownArrow scrolltoID="#ser_id" />
       {/* SERVICE MAIN AREA START */}
       <section className={styles["service-main-area"]}>
         <div className="container">
@@ -43,7 +44,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className={styles.serviceCollect}>
+      <section className={styles.serviceCollect} id="ser_id">
         <Image
           src="/Sersess.png"
           alt="Services Background"
