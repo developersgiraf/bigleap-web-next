@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="col-xl-8 col-lg-7 col-md-12 col-12">
               <div className={styles.content}>
                 <div className={styles.bigleapCnt}>
-                  <h2>Are you ready to take the Big Leap?</h2>
+                  <h2>Are you ready to take the Big Leap?</h2>
                 </div>
 
                 <div className={styles.footerList}>
