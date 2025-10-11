@@ -87,7 +87,7 @@ export default function ServicesPage() {
       
       <EnquirySect />
       <GradientLights customCounts={{
-        xl: 6,  // Rich visual experience for extra large screens
+        xl: 7,  // Rich visual experience for extra large screens
         lg: 7,  // Substantial gradients for large screens
         md: 13,  // Balanced for medium screens
         sm: 12,  // Moderate for tablets

@@ -58,14 +58,16 @@ export default function MainHeader() {
                     </li>
                     <li  className={styles.dropdown}>
                         <Link href="/servicess" className={styles.dropbtn}>SERVICES
-                        <i className={`fas fa-chevron-down ${styles.dropdownIcon}`}></i></Link>
+                        <i className={styles.dropdownIcon}></i></Link>
                         <div className={styles.dropdownContent}>
-                            <Link href="/servicess/web-design">Web Design</Link>
-                            <Link href="/servicess/graphic-design">Graphic Design</Link>
-                            <Link href="/servicess/video-editing-and-post-production">Video Editing</Link>
-                            <Link href="/servicess/vfx-and-post-production">VFX & Post Production</Link>
-                            <Link href="/servicess/character-design">Character Design</Link>
+                            <Link href="/servicess/product-animation">Product Animation</Link>
+                            <Link href="/servicess/threeDanimation">3D Animation</Link>
+                            <Link href="/servicess/twoDanimation">2D Animation</Link>
+                            <Link href="/servicess/vfx-post-production">VFX & Post Production</Link>
                             <Link href="/servicess/motion-graphics">Motion Graphics</Link>
+                            <Link href="/servicess/character-design">Character Design</Link>
+                            <Link href="/servicess/storyboarding-design">Storyboarding</Link>
+                            <Link href="/servicess/whiteboard-animation">Whiteboard Animation</Link>
                             <div className={styles.divider}></div>
                             <div className={styles.otherServicesContainer}>
                                 <div className={styles.otherServicesItem}>
@@ -74,11 +76,11 @@ export default function MainHeader() {
                                         <i className={`fas fa-chevron-right ${styles.arrowIcon}`}></i>
                                     </span>
                                     <div className={styles.otherServicesContent}>
-                                        <Link href="/servicess/twoDanimation">2D Animation</Link>
-                                        <Link href="/servicess/threeDanimation">3D Animation</Link>
-                                        <Link href="/servicess/whiteboard-animation">Whiteboard Animation</Link>
-                                        <Link href="/servicess/product-animation">Product Animation</Link>
-                                        <Link href="/servicess/storytelling">Storytelling</Link>
+                                        <Link href="/servicess/website-design">Website Design</Link>
+                                        <Link href="/servicess/mobile-app">Mobile App Development</Link>
+                                        <Link href="/servicess/branding">Branding</Link>
+                                        <Link href="/servicess/digital-marketing">Digital Marketing</Link>
+                                        <Link href="/servicess/photography">Photography</Link>
                                     </div>
                                 </div>
                             </div>

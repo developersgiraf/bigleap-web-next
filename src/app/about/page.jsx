@@ -90,7 +90,7 @@ export default function AboutPage() {
       <FAQSection />
       <Difference />
       <GradientLights customCounts={{
-        xl: 7,  // Rich visual experience for extra large screens
+        xl: 8,  // Rich visual experience for extra large screens
         lg: 7,  // Substantial gradients for large screens
         md: 7,  // Balanced for medium screens
         sm:7,  // Moderate for tablets
