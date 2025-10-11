@@ -28,7 +28,7 @@
    COMPONENT STYLES
    ======================================== */
    .head-info{
-    margin: 0 20px;
+    margin: 0 150px;
    }
 .readbtn {
   background-color: none;
@@ -863,6 +863,9 @@ padding: 0 0 !important;
 
 
   @media (min-width:768px) and (max-width: 992px) {
+    .head-info {
+  margin: 0 40px !important;
+}
   .videoSliderSection button.circle-nav-btn{
     top: 75% !important;
     }
@@ -888,6 +891,9 @@ padding: 0 0 !important;
   }
 
 @media (max-width: 767px) {
+     .head-info {
+  margin: 0 60px !important;
+}
     .videoSliderSection button.circle-nav-btn{
       top: 93% !important;
       

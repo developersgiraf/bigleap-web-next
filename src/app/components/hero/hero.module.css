@@ -202,7 +202,7 @@
 
 @media screen and (max-width: 766px) and (min-width: 564px) {
   .hero {
-    height: clamp(65vh, 65vh, 90vh);
+    height: clamp(65vh, 80vh, 90vh);
     min-height: 250px;
   }
 }
