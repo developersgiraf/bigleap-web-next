@@ -41,6 +41,23 @@
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0;
+  position: relative;
+}
+
+.dropdown .dropbtn.active {
+  color: #ED2124 !important;
+}
+
+.dropdown .dropbtn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, #ED2124, #ed2124);
+  border-radius: 1px;
 }
 .dropdown:hover .dropbtn{
   color: #ED2124;
@@ -293,21 +310,6 @@
   color: #ED2124;
 }
 
-.active {
-  .active:hover {
-    background: none;
-    -webkit-text-fill-color: initial;
-    color: #ED2124;
-  }
-
-  .logo {
-
-      font-size: 0.9rem;
-      padding: 0.4rem 0.6rem;
-    }
-
-}
-
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
@@ -439,6 +441,12 @@ padding: .6rem 0rem !important;
     z-index: 1001;
     margin-left: auto;
   }
+  .nav.open{
+    right: -15%;
+    }
+    .nav{
+      width: 90%;
+    }
 }
 /* iPad Portrait Navigation (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -504,16 +512,26 @@ padding: .6rem 0rem !important;
 }
 
 .active {
-  background: linear-gradient(90deg, #ff8a05, #f9b331);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ED2124 !important;
+  position: relative;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, #ED2124, #ff4d4d);
+  border-radius: 1px;
 }
 
 .active:hover {
   background: none;
   -webkit-text-fill-color: initial;
-  color: red;
+  color: #ED2124 !important;
 }
 
 .logo {
@@ -565,11 +583,23 @@ padding: .6rem 0rem !important;
     font-size: 0.9rem;
     padding: 0.4rem 0.6rem;
   }
+  
+  .active::after {
+    bottom: -3px;
+    width: 90%;
+    height: 1.5px;
+  }
 }
 /* iPad Portrait Navigation Links (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .nav a {
     font-size: 0.95rem;
     padding: 0.5rem 0.8rem;
+  }
+  
+  .active::after {
+    bottom: -4px;
+    width: 85%;
+    height: 1.8px;
   }
 }/*# sourceMappingURL=header.module.css.map */

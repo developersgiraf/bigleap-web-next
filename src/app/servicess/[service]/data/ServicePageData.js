@@ -431,10 +431,10 @@ export const servicesData = {
   "website-design": {
     bannerTitle: "Website Designing & Development",
     section01: {
-      image: "/servicess/detail-image.png",
-      heading: "Professional Website Design & Development Services",
+      image: "/servicess/Otherservice/website-development-large.jpg",
+      heading: "Website Designing & Development ",
       description:
-        "Transform your online presence with our comprehensive website design and development services. We create responsive, user-friendly websites that drive engagement and convert visitors into customers. From concept to launch, we ensure your website reflects your brand identity and meets your business objectives.",
+        "Don't you wish to keep the customers engaged in your website? Let’s tell you the secret. Help your website to be more informative, attractive, interesting, user-friendly, and magical. We provide Website design & development, E-commerce design & development, and Mobile App Development.A Website design company in Dubai that is supported by a team of experts who can make your online web presence impressive, optimized, and powerful. Design a website that can impress each of your targeted customers. . ",
     },
     section02: {
       DescTitle: "Website Design: || Building Digital Excellence",

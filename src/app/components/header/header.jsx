@@ -3,10 +3,12 @@ import styles from './header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function MainHeader() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isClient, setIsClient] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         setIsClient(true);
@@ -26,6 +28,14 @@ export default function MainHeader() {
 
     const closeMenu = () => {
         setMenuOpen(false);
+    };
+
+    // Helper function to check if link is active
+    const isActiveLink = (href) => {
+        if (href === '/') {
+            return pathname === '/';
+        }
+        return pathname.startsWith(href);
     };
 
     return (
@@ -51,13 +61,13 @@ export default function MainHeader() {
                 <nav className={isClient && menuOpen ? `${styles.nav} ${styles.open}` : styles.nav}>
                 <ul onClick={closeMenu}>
                     <li>
-                        <Link href="/">HOME</Link>
+                        <Link href="/" className={isActiveLink('/') ? styles.active : ''}>HOME</Link>
                     </li>
                     <li>
-                        <Link href="/about">ABOUT US</Link>
+                        <Link href="/about" className={isActiveLink('/about') ? styles.active : ''}>ABOUT US</Link>
                     </li>
                     <li  className={styles.dropdown}>
-                        <Link href="/servicess" className={styles.dropbtn}>SERVICES
+                        <Link href="/servicess" className={`${styles.dropbtn} ${isActiveLink('/servicess') ? styles.active : ''}`}>SERVICES
                         <i className={styles.dropdownIcon}></i></Link>
                         <div className={styles.dropdownContent}>
                             <Link href="/servicess/product-animation">Product Animation</Link>
@@ -87,13 +97,13 @@ export default function MainHeader() {
                         </div>
                     </li>
                     <li>
-                        <Link href="/portfolio" >PORTFOLIO </Link>
+                        <Link href="/portfolio" className={isActiveLink('/portfolio') ? styles.active : ''}>PORTFOLIO </Link>
                     </li>
                     <li>
-                        <Link href="/blog">BLOG</Link>
+                        <Link href="/blog" className={isActiveLink('/blog') ? styles.active : ''}>BLOG</Link>
                     </li>
                     <li>
-                        <Link href="/contact">CONTACT US</Link>
+                        <Link href="/contact" className={isActiveLink('/contact') ? styles.active : ''}>CONTACT US</Link>
                     </li>
                 </ul>
             </nav>
