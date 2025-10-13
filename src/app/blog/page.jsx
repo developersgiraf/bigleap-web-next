@@ -107,7 +107,6 @@ export default async function BlogPage() {
 
   return (
     <>
-      <TitleBanner title="Where Imagination Takes Flight: The Art of Animation" sub=""/>
 
       <div className={styles.blogPageWrapper}>
         <ServiceImage
@@ -131,7 +130,7 @@ export default async function BlogPage() {
         )}
       </div>
       <GradientLights customCounts={{
-        xl: 2,  // Subtle gradients for extra large screens
+        xl: 3,  // Subtle gradients for extra large screens
         lg: 2,  // Minimal gradients for large screens
         md: 3,  // Light gradients for medium screens
         sm: 2,  // Very subtle for tablets

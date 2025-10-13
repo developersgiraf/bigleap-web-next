@@ -15,7 +15,7 @@
 .headerContent {
   flex: 1;
   min-width: -webkit-fill-available;
-  min-width: fit-content;
+  min-width: 'fit-content';
 }
 
 .headerContent h2 {
@@ -72,7 +72,7 @@
   transition: all 0.3s ease;
   font-size: 14px;
   white-space: nowrap;
-  min-width: fit-content;
+  min-width: 'fit-content';
 }
 
 .addButton:hover {

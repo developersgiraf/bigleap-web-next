@@ -3,10 +3,10 @@
   "title": "Red Machine: Innovation in Animation Technology",
   "slug": "red-machine",
   "image": "/servicess/red-machine.png",
-  "caption": "Red Machine",
+  "caption": "Red Machine: Innovation in Animation Technology",
   "description": "Discover the cutting-edge Red Machine animation technology that's revolutionizing the industry. Our innovative approach combines traditional animation principles with groundbreaking technical solutions to create unique visual experiences. This comprehensive guide explores the methodology, applications, and future possibilities of Red Machine animation techniques.",
   "publishedDate": "2024-10-06",
-  "lastModified": "2024-10-06",
+  "lastModified": "2025-10-07",
   "category": "Animation",
   "tags": [
     "red-machine",
@@ -27,5 +27,6 @@
       "ai animation",
       "innovative animation"
     ]
-  }
+  },
+  "customSlug": ""
 }

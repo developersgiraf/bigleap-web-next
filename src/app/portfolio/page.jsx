@@ -7,6 +7,7 @@ export default function PortfolioPage() {
   return (
     <>
       <PortfolioContainer />
+      
       <PortfolioSwiper />
       <GradientLights count={2} />
     </>

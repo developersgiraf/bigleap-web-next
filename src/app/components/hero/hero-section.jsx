@@ -8,6 +8,11 @@ export default function HeroSection() {
   const [isCharacterHovered, setIsCharacterHovered] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
+  const letsAnim = (<div className={styles.textssWrapper}>
+          <h3>LET'S </h3>
+          <h1>ANIMATE</h1>
+          </div>);
+
   // Detect touch devices
   useEffect(() => {
     const checkTouchDevice = () => {
@@ -65,7 +70,7 @@ export default function HeroSection() {
             }}
           />
         </motion.div>
-        { true && <motion.div
+        { !isTouchDevice && <motion.div
         
           className={styles.image360}
           initial={{ x: "150vw" }}
@@ -79,11 +84,7 @@ export default function HeroSection() {
             mass: 0.8
           }}
         >
-          <div className={styles.textsWrapper}>
-          <h1>360°</h1>
-          <h4>DIGITAL MARKETING</h4>
-         <h4>COMPANY IN UAE</h4>
-          </div>
+          {letsAnim}
 
           {false && <Image
             id="three60-img"
@@ -99,13 +100,19 @@ export default function HeroSection() {
           />}
         </motion.div>
         }
+        {isTouchDevice && <div className={styles.touchText}>
+          {letsAnim}
+        </div>}
+
       </div>
       <div className={styles.hanging}>
         
         {/* <img id="img360" src="360.png" alt="360image" /> */}
+        <div className={styles.hangingContainer}>
         
         <motion.div 
         className={styles.hangAnchor}
+        style={ isTouchDevice ? {pointerEvents: "none"} : {} }
         initial={{ rotateZ: -20 }}
         animate={isTouchDevice ? {
           // Automatic hanging animation for touch devices (10 degrees swing)
@@ -138,6 +145,7 @@ export default function HeroSection() {
             }}
           />}
         </motion.div>
+        </div>
           
       </div>
     </section>

@@ -3,12 +3,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 300px 0 0 0;
+}
+.imagepara{
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
 }
 .imageContainer .image {
   width: 70%;
-  height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 90vh;
+  object-fit: fill;
 }
 .imageContainer .description {
   color: #fdfdfd;
@@ -18,18 +25,17 @@
   font-weight: 400;
   width: 70%;
   padding-top: 20px;
-  text-align: left;
+  text-align: justify;
 }
 
 @media (max-width: 1370px) {
   .imageContainer {
-    padding-top: 160px;
+   margin: 10px !important;
   }
   .imageContainer .image {
-    width: 50%;
+    width: 70%;
     height: 60vh;
-    -o-object-fit: contain;
-       object-fit: contain;
+       object-fit: fill;
   }
   .imageContainer .description {
     text-align: justify;
@@ -45,6 +51,10 @@
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .imageContainer{
+  margin: 100px 0 0 0 !important;
+
+  }
   .imageContainer .description {
     width: 80%;
     font-size: 16px;
@@ -58,6 +68,10 @@
     width: 100%;
     height: 50vh;
   }
+  .imageContainer{
+  margin: 100px 0 0 0 !important;
+
+  }
   .imageContainer .description {
     text-align: justify;
     width: 90%;
@@ -67,6 +81,10 @@
 @media (max-width: 767px) {
   .imageContainer {
     padding-top: 0px;
+  }
+  .imageContainer{
+  margin: 100px 0 0 0 !important;
+
   }
   .imageContainer .image {
     width: 90%;
@@ -83,11 +101,18 @@
 
 /* Blog metadata styles */
 .blogMeta {
-  margin-top: 30px;
+  margin-top: 2rem;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  width: 70%;
+  margin-bottom: 12rem;
+  background: #000000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  opacity: .6;
+  height: auto;
+  flex-wrap: wrap;
   font-family: "Montserrat", sans-serif !important;
 }
 
@@ -95,31 +120,42 @@
   margin-bottom: 10px;
   color: #fdfdfd;
   font-size: 16px;
+
 }
 
 .metaItem strong {
   color: #f0f0f0;
   margin-right: 8px;
+  font-family: 'montserrat', sans-serif !important;
 }
 
 .tagsSection {
-  margin-top: 25px;
-  width: 70%;
-  font-family: "Montserrat", sans-serif !important;
-  color: #fdfdfd;
-}
+   padding: 2rem 0 3rem 0;
+  background: #ed2124;
+  margin-bottom: 2rem;
+  margin-top: 12rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
 
+  
+}
 .tagsSection strong {
   color: #f0f0f0;
-  font-size: 16px;
+  font-size: 30px;
   display: block;
   margin-bottom: 10px;
+  font-family: 'montserrat', sans-serif !important;
 }
 
 .tagsList {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
+  justify-content: center;
 }
 
 .tag {
@@ -132,6 +168,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   display: inline-block;
+  font-family: 'montserrat', sans-serif !important;
 }
 
 .tag:hover {
@@ -145,14 +182,14 @@
 @media (max-width: 1370px) {
   .blogMeta,
   .tagsSection {
-    width: 80%;
+    width: 100%;
   }
 }
 
 @media (max-width: 1024px) {
   .blogMeta,
   .tagsSection {
-    width: 90%;
+    width: 100%;
   }
   
   .metaItem {
@@ -163,10 +200,12 @@
 @media (max-width: 767px) {
   .blogMeta,
   .tagsSection {
-    width: 90%;
+    width: 100%;
     padding: 15px;
   }
-  
+  .blogMeta {
+  gap: 20px;
+}
   .metaItem {
     font-size: 14px;
   }

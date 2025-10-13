@@ -17,6 +17,7 @@ export default function ContactPage() {
           your business forward.
         </p> */}
         <h5 className="signature-text-large">Basanth Raghavan</h5>
+        <h6 className="signature-text-small">CEO</h6>
       </div>
       <ContactBanner />
       <ContactForm />

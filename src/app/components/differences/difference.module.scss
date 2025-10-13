@@ -95,7 +95,7 @@
       }
     }
     .all {
-     
+     padding: 40px 100px !important;
 
       .each {
       }
@@ -112,20 +112,20 @@
       }
       p {
         width: 60% !important;
-        font-size: 14px;
+        font-size: 12px !important;
         line-height: 20px !important;
         text-align: center;
       }
     }
     .all {
-      flex-wrap: wrap;
-      padding: 20px 0px;
+      flex-wrap: wrap !important;
+      padding: 20px 0px !important;
       gap: 20px !important;
 
       .each {
         height: auto !important;
         p{
-          font-size: 14px !important;
+          font-size: 12px !important;
           text-align: left !important;
         }
       }
@@ -142,19 +142,23 @@
       }
       p {
         width: 80% !important;
-        font-size: 14px;
+        font-size: 12px !important;
         line-height: 20px !important;
         text-align: center !important;
       }
     }
     .all {
       flex-wrap: wrap !important;
-      padding: 20px 90px !important;
+      padding: 20px 0px !important;
       gap: 20px !important;
 
       .each {
         height: auto !important;
+        p{
+          font-size: 12px !important;
+        }
       }
+      
     }
   }
 }

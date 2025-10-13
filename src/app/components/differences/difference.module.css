@@ -73,6 +73,9 @@
     text-align: center !important;
     width: 50% !important;
   }
+  .test .all {
+    padding: 40px 100px !important;
+  }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
   .test {
@@ -84,20 +87,20 @@
   }
   .test .diff p {
     width: 60% !important;
-    font-size: 14px;
+    font-size: 12px !important;
     line-height: 20px !important;
     text-align: center;
   }
   .test .all {
-    flex-wrap: wrap;
-    padding: 20px 0px;
+    flex-wrap: wrap !important;
+    padding: 20px 0px !important;
     gap: 20px !important;
   }
   .test .all .each {
     height: auto !important;
   }
   .test .all .each p {
-    font-size: 14px !important;
+    font-size: 12px !important;
     text-align: left !important;
   }
 }
@@ -111,17 +114,20 @@
   }
   .test .diff p {
     width: 80% !important;
-    font-size: 14px;
+    font-size: 12px !important;
     line-height: 20px !important;
     text-align: center !important;
   }
   .test .all {
     flex-wrap: wrap !important;
-    padding: 20px 90px !important;
+    padding: 20px 0px !important;
     gap: 20px !important;
   }
   .test .all .each {
     height: auto !important;
+  }
+  .test .all .each p {
+    font-size: 12px !important;
   }
 }
 @media (max-width: 767px) {

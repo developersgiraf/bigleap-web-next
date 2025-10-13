@@ -103,6 +103,7 @@ export default function PortfolioContainer() {
   }
 
   return (
+    <div className={styles.portfolioEntrySection}>
     <div className={styles.portfolioEntryContainer}>
       {portfolios.map((item, index) => (
         <PortfolioEntry 
@@ -116,5 +117,6 @@ export default function PortfolioContainer() {
         />
       ))}
     </div>
+  </div>
   );
 }

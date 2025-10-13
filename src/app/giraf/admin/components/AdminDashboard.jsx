@@ -7,6 +7,7 @@ import ServicesManager from './services/ServicesManager';
 import BlogManager from './blog/BlogManager';
 import PortfolioManager from './portfolio/PortfolioManager';
 import DatabaseManager from './database/DatabaseManager';
+import StatCard from './subComponents/statCard/StatCard';
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth();
@@ -33,38 +34,10 @@ const AdminDashboard = () => {
           <div className={styles.overview}>
             <h2>Dashboard Overview</h2>
             <div className={styles.statsGrid}>
-              <div className={styles.statCard}>
-                <div className={styles.statIcon}>🎨</div>
-                <div className={styles.statInfo}>
-                  <h3>Services</h3>
-                  <p className={styles.statNumber}>12</p>
-                  <p className={styles.statLabel}>Active</p>
-                </div>
-              </div>
-              <div className={styles.statCard}>
-                <div className={styles.statIcon}>💼</div>
-                <div className={styles.statInfo}>
-                  <h3>Portfolio Items</h3>
-                  <p className={styles.statNumber}>24</p>
-                  <p className={styles.statLabel}>Projects</p>
-                </div>
-              </div>
-              <div className={styles.statCard}>
-                <div className={styles.statIcon}>�</div>
-                <div className={styles.statInfo}>
-                  <h3>Blog Posts</h3>
-                  <p className={styles.statNumber}>8</p>
-                  <p className={styles.statLabel}>Published</p>
-                </div>
-              </div>
-              <div className={styles.statCard}>
-                <div className={styles.statIcon}>�</div>
-                <div className={styles.statInfo}>
-                  <h3>Clients</h3>
-                  <p className={styles.statNumber}>65</p>
-                  <p className={styles.statLabel}>Total</p>
-                </div>
-              </div>
+              <StatCard icon="🎨" title="Services" number={12} label="Active" />
+              <StatCard icon="💼" title="Portfolio Items" number={24} label="Projects" />
+              <StatCard icon="📝" title="Blog Posts" number={8} label="Published" />
+              <StatCard icon="👥" title="Clients" number={65} label="Total" />
             </div>
           </div>
         );

@@ -17,7 +17,7 @@ export default function GradientLights({
     <>
       <div className={styles["gradient-lights"]} data-breakpoint={currentBreakpoint}>
         {Array.from({ length: finalCount }).map((_, index) => {
-          let position = index % 2 === 0 ? "left" : "right";
+          let position = index % 2 === 0 ? "right" : "left";
           return (
             <div
               key={index}

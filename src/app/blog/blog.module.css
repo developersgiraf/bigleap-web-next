@@ -3,10 +3,20 @@
 /* Tag Navigation Styles */
 .tagNavigation {
   padding: 2rem 0 3rem 0;
-  background: rgba(255, 255, 255, 0.02);
-  margin-bottom: 2rem;
+  background: linear-gradient(-45deg, rgba(34, 0, 0, 0.7) 0%, rgba(143, 0, 0, .5) 100%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin-top: 12rem;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, black 80px, black calc(100% - 500px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0px, black 80px, black calc(100% - 500px), transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
-
+.blogPageWrapper{
+  margin: 100px 0 0 0;
+}
 .tagHeader {
   display: flex;
   justify-content: space-between;
@@ -21,24 +31,24 @@
   font-family: "Montserrat", sans-serif !important;
   font-size: 28px;
   font-weight: 600;
-  margin: 0;
+  margin: auto;
 }
 
 .viewAllLink {
-  color: #ff4757;
+  color: #ed2124;
   text-decoration: none;
   font-family: "Montserrat", sans-serif !important;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border: 1px solid #ff4757;
+  border: 1px solid #ed2124;
   border-radius: 20px;
   transition: all 0.3s ease;
 }
 
 .viewAllLink:hover {
-  background: #ff4757;
+  background: #ed2124;
   color: #ffffff;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .tagCloud {
@@ -70,15 +80,15 @@
 }
 
 .activeTag {
-  background: #ff4757 !important;
+  background: #ed2124 !important;
   color: #ffffff !important;
-  border-color: #ff4757 !important;
+  border-color: #ed2124 !important;
   font-weight: 500;
 }
 
 .activeTag:hover {
-  background: #e84241 !important;
-  border-color: #e84241 !important;
+  background: #ed2124 !important;
+  border-color: #ed2124 !important;
 }
 
 .noResults {
@@ -100,7 +110,7 @@
 }
 
 .noResults a {
-  color: #ff4757;
+  color: #ed2124;
   text-decoration: none;
 }
 
@@ -109,7 +119,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .tagHeader {
     flex-direction: column;
     text-align: center;
@@ -153,7 +163,7 @@
 }
 
 .tagToggleButton {
-  background: linear-gradient(135deg, #ff4757, #ff3838);
+  background: linear-gradient(135deg, #ed2124, #ed2124);
   color: #ffffff;
   border: none;
   padding: 0.7rem 1.5rem;
@@ -171,7 +181,7 @@
 }
 
 .tagToggleButton:hover {
-  background: linear-gradient(135deg, #e84241, #d63435);
+  background: linear-gradient(135deg, #ed2124, #ed2124);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
 }
@@ -200,5 +210,5 @@
 }
 
 .tagStats strong {
-  color: #ff4757;
+  color: #ed2124;
 }

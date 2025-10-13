@@ -3,25 +3,30 @@ import ListIndustry from "./list-industry";
 export default function Industries() {
   const list = [
     {
-      li1: "Real Estate",
-      li2: "Healthcare",
-      li3: "Education",
-      li4: "Finance",
-      li5: "Entertainment",
+      industries: [
+        {title:"Real Estate", link:"#"},
+        {title:"Healthcare", link:"#"},
+        {title:"Education", link:"#"},
+        {title:"Finance", link:"#"},
+        {title:"Entertainment", link:"#"}
+      ]
     },
     {
-      li1: "Technology",
-      li2: "Retail & E-Commerce",
-      li3: "Manufacturing",
-      li4: "Automotive",
-      li5: "Hospitality & Tourism",
+      industries: [
+        {title:"Technology", link:"#"},
+        {title:"Retail & E-Commerce", link:"#"},
+        {title:"Manufacturing", link:"#"},
+        {title:"Automotive", link:"#"},
+        {title:"Hospitality & Tourism", link:"#"},
+      ]
     },
     {
-      li1: "Media & Advertising",
-      li2: "Energy & Utilities",
-      li3: "Education & E-Learning",
-      li4: "Technology & Startups",
-      
+      industries: [
+        {title:"Media & Advertising", link:"#"},
+        {title:"Energy & Utilities", link:"#"},
+        {title:"Education & E-Learning", link:"#"},
+        {title:"Technology & Startups", link:"#"},
+      ]
     },
   ];
   return (
@@ -34,13 +39,7 @@ export default function Industries() {
             {list.map((item, index) => (
               <div key={index} className="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                 <ListIndustry
-                  industries={[
-                    item.li1,
-                    item.li2,
-                    item.li3,
-                    item.li4,
-                    item.li5,
-                  ]}
+                  industries={item.industries}
                 />
               </div>
             ))}

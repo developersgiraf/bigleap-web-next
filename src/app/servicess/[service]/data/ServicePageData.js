@@ -427,4 +427,305 @@ export const servicesData = {
     ]
   },
 
+  // Other Services Data
+  "website-design": {
+    bannerTitle: "Website Designing & Development",
+    section01: {
+      image: "/servicess/Otherservice/website-development-large.jpg",
+      heading: "Website Designing & Development ",
+      description:
+        "Don't you wish to keep the customers engaged in your website? Let’s tell you the secret. Help your website to be more informative, attractive, interesting, user-friendly, and magical. We provide Website design & development, E-commerce design & development, and Mobile App Development.A Website design company in Dubai that is supported by a team of experts who can make your online web presence impressive, optimized, and powerful. Design a website that can impress each of your targeted customers. . ",
+    },
+    section02: {
+      DescTitle: "Website Design: || Building Digital Excellence",
+      Descpara:
+        "Modern website design combines aesthetics with functionality to create seamless user experiences. Our approach focuses on responsive design, optimal performance, and strategic user journey mapping to ensure your website not only looks great but also performs exceptionally across all devices and platforms.",
+      subhead1: "Responsive Design",
+      subdes1:
+        "Our websites are built to provide optimal viewing experience across all devices - from desktop computers to mobile phones, ensuring your content is accessible everywhere.",
+      subhead2: "User Experience Focus",
+      subdes2:
+        "We prioritize user experience in every design decision, creating intuitive navigation and engaging interfaces that keep visitors on your site longer.",
+      subhead3: "SEO Optimized",
+      subdes3:
+        "Every website we create is optimized for search engines, helping you rank better and attract more organic traffic to your business.",
+    },
+    listHead: "Website Design & Development Services",
+    list: [
+      {
+        title: "Custom Website Design",
+        description: "Tailored website designs that reflect your brand identity and business goals, created from scratch to meet your specific requirements."
+      },
+      {
+        title: "E-commerce Development",
+        description: "Full-featured online stores with secure payment gateways, inventory management, and user-friendly shopping experiences."
+      },
+      {
+        title: "WordPress Development",
+        description: "Custom WordPress themes and plugins, content management systems that are easy to use and maintain."
+      },
+      {
+        title: "Website Maintenance",
+        description: "Ongoing support and maintenance services to keep your website secure, updated, and performing at its best."
+      }
+    ]
+  },
+
+  "mobile-app": {
+    bannerTitle: "Mobile App Development",
+    section01: {
+      image: "/servicess/detail-image.png",
+      heading: "Innovative Mobile App Development Solutions",
+      description:
+        "Bring your ideas to life with our cutting-edge mobile app development services. We create native and cross-platform applications that deliver exceptional user experiences and drive business growth. From iOS to Android, we've got your mobile presence covered.",
+    },
+    section02: {
+      DescTitle: "Mobile Apps: || Innovation In Your Pocket",
+      Descpara:
+        "Mobile app development has revolutionized how businesses connect with their customers. Our team specializes in creating intuitive, feature-rich mobile applications that not only meet user expectations but exceed them, providing seamless functionality across all mobile platforms.",
+      subhead1: "Cross-Platform Development",
+      subdes1:
+        "Develop once, deploy everywhere. Our cross-platform solutions ensure your app works perfectly on both iOS and Android devices.",
+      subhead2: "User-Centric Design",
+      subdes2:
+        "We design apps with the end-user in mind, creating intuitive interfaces that make complex tasks simple and enjoyable.",
+      subhead3: "Performance Optimization",
+      subdes3:
+        "Fast loading times, smooth animations, and reliable functionality ensure your app provides an excellent user experience.",
+    },
+    listHead: "Mobile App Development Services",
+    list: [
+      {
+        title: "Native App Development",
+        description: "Platform-specific apps that take full advantage of iOS and Android features for optimal performance and user experience."
+      },
+      {
+        title: "Cross-Platform Apps",
+        description: "Cost-effective solutions that work across multiple platforms while maintaining native-like performance and feel."
+      },
+      {
+        title: "App UI/UX Design",
+        description: "Beautiful, intuitive app interfaces designed to provide seamless user experiences and drive engagement."
+      },
+      {
+        title: "App Maintenance & Support",
+        description: "Ongoing support, updates, and maintenance to keep your app running smoothly and up-to-date with latest standards."
+      }
+    ]
+  },
+
+  "e-commerce": {
+    bannerTitle: "E-Commerce Web and App Development",
+    section01: {
+      image: "/servicess/detail-image.png",
+      heading: "Complete E-Commerce Solutions",
+      description:
+        "Launch your online business with our comprehensive e-commerce development services. We create powerful online stores and mobile apps that drive sales, manage inventory, and provide seamless shopping experiences for your customers.",
+    },
+    section02: {
+      DescTitle: "E-Commerce: || Your Digital Storefront",
+      Descpara:
+        "E-commerce platforms are the backbone of modern retail. Our solutions combine robust functionality with user-friendly design to create online stores that not only look great but also convert visitors into customers and drive sustainable business growth.",
+      subhead1: "Secure Payment Integration",
+      subdes1:
+        "Multiple payment gateway integrations ensure secure, convenient transactions for your customers across various payment methods.",
+      subhead2: "Inventory Management",
+      subdes2:
+        "Advanced inventory tracking and management systems help you stay organized and never miss a sale opportunity.",
+      subhead3: "Mobile Commerce",
+      subdes3:
+        "Mobile-optimized shopping experiences ensure your customers can shop comfortably from any device, anywhere, anytime.",
+    },
+    listHead: "E-Commerce Development Services",
+    list: [
+      {
+        title: "Online Store Development",
+        description: "Full-featured e-commerce websites with product catalogs, shopping carts, and secure checkout processes."
+      },
+      {
+        title: "Mobile Commerce Apps",
+        description: "Native mobile shopping apps that provide seamless purchasing experiences on smartphones and tablets."
+      },
+      {
+        title: "Payment Gateway Integration",
+        description: "Secure payment processing solutions supporting multiple payment methods and currencies for global reach."
+      },
+      {
+        title: "E-commerce Analytics",
+        description: "Comprehensive analytics and reporting tools to track sales, customer behavior, and business performance."
+      }
+    ]
+  },
+
+  "UI-UX-design": {
+    bannerTitle: "UI/UX Designing",
+    section01: {
+      image: "/servicess/detail-image.png",
+      heading: "Exceptional UI/UX Design Services",
+      description:
+        "Create memorable digital experiences with our expert UI/UX design services. We design interfaces that are not only visually stunning but also intuitive and user-friendly, ensuring your digital products engage and delight users at every touchpoint.",
+    },
+    section02: {
+      DescTitle: "UI/UX Design: || Crafting User Experiences",
+      Descpara:
+        "Great UI/UX design is the bridge between users and technology. Our design philosophy centers on understanding user needs, business goals, and technical constraints to create digital experiences that are both beautiful and functional, driving user satisfaction and business success.",
+      subhead1: "User Research & Analysis",
+      subdes1:
+        "In-depth user research and behavioral analysis inform our design decisions, ensuring we create experiences that truly resonate with your target audience.",
+      subhead2: "Intuitive Interface Design",
+      subdes2:
+        "Clean, modern interfaces that guide users naturally through their journey, making complex tasks feel simple and enjoyable.",
+      subhead3: "Usability Testing",
+      subdes3:
+        "Rigorous testing ensures our designs work flawlessly in real-world scenarios, providing optimal user experiences across all touchpoints.",
+    },
+    listHead: "UI/UX Design Services",
+    list: [
+      {
+        title: "User Experience Design",
+        description: "Comprehensive UX design including user research, journey mapping, wireframing, and prototyping for optimal user experiences."
+      },
+      {
+        title: "User Interface Design",
+        description: "Beautiful, modern UI designs that align with your brand while providing intuitive and engaging user interactions."
+      },
+      {
+        title: "Design Systems",
+        description: "Scalable design systems and style guides that ensure consistency across all your digital products and platforms."
+      },
+      {
+        title: "Usability Testing",
+        description: "Comprehensive testing and optimization to ensure your designs provide the best possible user experience."
+      }
+    ]
+  },
+
+  "branding": {
+    bannerTitle: "Brand Identity & Design",
+    section01: {
+      image: "/servicess/detail-image.png",
+      heading: "Strategic Brand Identity Development",
+      description:
+        "Build a powerful brand identity that resonates with your audience and sets you apart from the competition. Our comprehensive branding services help you create a cohesive visual identity that communicates your values and drives business growth.",
+    },
+    section02: {
+      DescTitle: "Branding: || Your Identity Matters",
+      Descpara:
+        "Effective branding goes beyond just a logo - it's about creating a complete identity system that tells your story, connects with your audience, and builds lasting relationships. Our branding approach combines strategic thinking with creative execution to deliver brands that stand the test of time.",
+      subhead1: "Brand Strategy",
+      subdes1:
+        "Comprehensive brand strategy development including positioning, messaging, and visual identity guidelines that align with your business goals.",
+      subhead2: "Visual Identity",
+      subdes2:
+        "Complete visual identity systems including logos, color palettes, typography, and brand guidelines for consistent application.",
+      subhead3: "Brand Applications",
+      subdes3:
+        "Consistent brand implementation across all touchpoints, from business cards to websites, ensuring a cohesive brand experience.",
+    },
+    listHead: "Branding Services",
+    list: [
+      {
+        title: "Logo Design",
+        description: "Memorable logo designs that capture your brand essence and work effectively across all media and applications."
+      },
+      {
+        title: "Brand Guidelines",
+        description: "Comprehensive brand style guides that ensure consistent application of your brand identity across all platforms."
+      },
+      {
+        title: "Marketing Collateral",
+        description: "Professionally designed marketing materials including brochures, business cards, and promotional materials."
+      },
+      {
+        title: "Brand Consulting",
+        description: "Strategic brand consulting to help position your brand effectively in the market and connect with your target audience."
+      }
+    ]
+  },
+"digital-marketing": {
+    bannerTitle: "Digital Marketing",
+    section01: {
+      image: "/servicess/detail-image.png",
+      heading: "Comprehensive Digital Marketing Solutions",
+      description:
+        "Build a powerful brand identity that resonates with your audience and sets you apart from the competition. Our comprehensive branding services help you create a cohesive visual identity that communicates your values and drives business growth.",
+    },
+    section02: {
+      DescTitle: "Branding: || Your Identity Matters",
+      Descpara:
+        "Effective branding goes beyond just a logo - it's about creating a complete identity system that tells your story, connects with your audience, and builds lasting relationships. Our branding approach combines strategic thinking with creative execution to deliver brands that stand the test of time.",
+      subhead1: "Brand Strategy",
+      subdes1:
+        "Comprehensive brand strategy development including positioning, messaging, and visual identity guidelines that align with your business goals.",
+      subhead2: "Visual Identity",
+      subdes2:
+        "Complete visual identity systems including logos, color palettes, typography, and brand guidelines for consistent application.",
+      subhead3: "Brand Applications",
+      subdes3:
+        "Consistent brand implementation across all touchpoints, from business cards to websites, ensuring a cohesive brand experience.",
+    },
+    listHead: "Branding Services",
+    list: [
+      {
+        title: "Logo Design",
+        description: "Memorable logo designs that capture your brand essence and work effectively across all media and applications."
+      },
+      {
+        title: "Brand Guidelines",
+        description: "Comprehensive brand style guides that ensure consistent application of your brand identity across all platforms."
+      },
+      {
+        title: "Marketing Collateral",
+        description: "Professionally designed marketing materials including brochures, business cards, and promotional materials."
+      },
+      {
+        title: "Brand Consulting",
+        description: "Strategic brand consulting to help position your brand effectively in the market and connect with your target audience."
+      }
+    ]
+  },
+  "photography": {
+    bannerTitle: "Photography & Videography",
+    section01: {
+      image: "/servicess/detail-image.png",
+      heading: "Professional Photography & Videography Services",
+      description:
+        "Capture your brand's story with our professional photography and videography services. From corporate headshots to promotional videos, we create high-quality visual content that elevates your brand and engages your audience.",
+    },
+    section02: {
+      DescTitle: "Visual Content: || Capturing Your Story",
+      Descpara:
+        "In today's visual-first world, high-quality photography and videography are essential for effective brand communication. Our team combines technical expertise with creative vision to produce compelling visual content that tells your story and drives engagement.",
+      subhead1: "Professional Quality",
+      subdes1:
+        "State-of-the-art equipment and expert techniques ensure every photo and video meets the highest professional standards.",
+      subhead2: "Creative Direction",
+      subdes2:
+        "Innovative creative direction that aligns with your brand vision and marketing objectives for maximum impact.",
+      subhead3: "Versatile Services",
+      subdes3:
+        "From corporate events to product photography, we offer comprehensive visual content creation services for all your needs.",
+    },
+    listHead: "Photography & Videography Services",
+    list: [
+      {
+        title: "Corporate Photography",
+        description: "Professional headshots, team photos, and corporate event photography that showcases your company's professionalism."
+      },
+      {
+        title: "Product Photography",
+        description: "High-quality product images that highlight features and details, perfect for e-commerce and marketing materials."
+      },
+      {
+        title: "Promotional Videos",
+        description: "Engaging promotional videos that tell your brand story and drive customer engagement and conversions."
+      },
+      {
+        title: "Event Coverage",
+        description: "Comprehensive photography and videography coverage of corporate events, conferences, and special occasions."
+      }
+    ]
+  }
+
 };
+

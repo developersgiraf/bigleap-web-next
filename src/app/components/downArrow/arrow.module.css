@@ -1,0 +1,36 @@
+.downArrow{
+    position: fixed;
+    transform: translate(-50% , 0);
+    aspect-ratio: 1 / 1;
+    width: 70px;
+    height: auto;
+    left : 50%;
+    bottom : 0;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    background:linear-gradient(-45deg, rgba(193, 21, 21, 0.7) 0%, rgba(179, 150, 150, 0.5) 100%);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(1px);
+    padding: 20px;
+    z-index: 100000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.downArrow.rotated {
+    transform: translate(-50%, 0) rotate(180deg);
+}
+
+.arrowImage{
+    width: 100%;
+    height: 100%;
+    --arrow-color:white;
+    transition: all 0.3s ease;
+}
+
+.arrowImage:hover{
+    --arrow-color:red;
+}
+

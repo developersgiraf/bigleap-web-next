@@ -139,7 +139,7 @@ export default async function Services({ params }) {
       <EnquirySect />
       <GradientLights
         customCounts={{
-          xl: 5, // Rich visual experience for extra large screens
+          xl: 4, // Rich visual experience for extra large screens
           lg: 5, // Substantial gradients for large screens
           md: 5, // Balanced for medium screens
           sm: 4, // Moderate for tablets

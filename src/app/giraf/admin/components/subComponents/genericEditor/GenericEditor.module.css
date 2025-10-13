@@ -1,0 +1,456 @@
+/* Generic Editor styles - unified for all editors */
+.editorForm {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.formSection {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid rgba(237, 35, 42, 0.1);
+}
+
+.formSection h3 {
+  margin: 0 0 20px 0;
+  color: #ed232a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.sectionDescription {
+  margin: 0 0 20px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.formField label {
+  color: #ffcccb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Input Styles */
+.textInput,
+.textareaInput,
+.numberInput,
+.selectInput,
+.dateInput {
+  padding: 12px 16px;
+  background: rgba(237, 35, 42, 0.1);
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.textInput::placeholder,
+.textareaInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.textInput:focus,
+.textareaInput:focus,
+.numberInput:focus,
+.selectInput:focus,
+.dateInput:focus {
+  outline: none;
+  border-color: #ed232a;
+  box-shadow: 0 0 0 2px rgba(237, 35, 42, 0.2);
+}
+
+.numberInput {
+  max-width: 120px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.selectInput {
+  cursor: pointer;
+}
+
+.selectInput option {
+  background: #2d0404;
+  color: white;
+}
+
+/* Checkbox Styles */
+.checkboxLabel {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 12px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  margin-bottom: 0 !important;
+}
+
+.checkboxLabel:hover {
+  background: rgba(237, 35, 42, 0.08);
+}
+
+.checkboxInput {
+  width: auto !important;
+  margin: 0 !important;
+  accent-color: #ed232a;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.checkboxLabel label {
+  color: #ffffff !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  margin: 0 !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Field Notes */
+.fieldNote {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 4px;
+  display: block;
+  line-height: 1.4;
+}
+
+/* Section Fields */
+.sectionFields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(237, 35, 42, 0.2);
+}
+
+/* List Management */
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.listHeader h4 {
+  margin: 0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.addItemBtn {
+  background: rgba(76, 175, 80, 0.8);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addItemBtn:hover {
+  background: #4caf50;
+  transform: translateY(-1px);
+}
+
+.listItem {
+  padding: 20px;
+  margin-bottom: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(237, 35, 42, 0.2);
+}
+
+.listItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.listItemHeader h5 {
+  margin: 0;
+  color: #ed232a;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.removeItemBtn {
+  background: rgba(244, 67, 54, 0.8);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.removeItemBtn:hover {
+  background: #f44336;
+}
+
+/* Slug Section */
+.slugSection {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(237, 35, 42, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.slugPreview {
+  background: rgba(237, 35, 42, 0.1);
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  border-radius: 6px;
+  padding: 14px;
+  margin: 12px 0 16px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.urlPrefix {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.slugDisplay {
+  color: #ed232a;
+  font-weight: 600;
+  background: rgba(237, 35, 42, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.slugControls {
+  margin-top: 16px;
+}
+
+.customSlugInputContainer {
+  margin-top: 12px;
+}
+
+.customSlugInput {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(237, 35, 42, 0.1);
+  border: 1px solid rgba(237, 35, 42, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.customSlugInput:focus {
+  outline: none;
+  border-color: #ed232a;
+  box-shadow: 0 0 0 2px rgba(237, 35, 42, 0.2);
+}
+
+.customSlugInput.invalidInput {
+  border-color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.customSlugInput.invalidInput:focus {
+  border-color: #f44336;
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+.errorNote {
+  color: #f44336;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  display: block;
+  font-style: italic;
+  padding: 6px 8px;
+  background: rgba(244, 67, 54, 0.05);
+  border-radius: 4px;
+  border-left: 3px solid #f44336;
+}
+
+.slugNote {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  margin-top: 8px;
+  display: block;
+  font-style: italic;
+  line-height: 1.4;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.idNote {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-top: 8px;
+  display: block;
+  line-height: 1.3;
+}
+
+.slugInfo {
+  margin-top: 12px;
+}
+
+/* Tag Management */
+.tagInput {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.tagInput input {
+  flex: 1;
+}
+
+.addTagBtn {
+  background: rgba(76, 175, 80, 0.8);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.addTagBtn:hover {
+  background: #4caf50;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  background: rgba(237, 35, 42, 0.2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  margin-left: 4px;
+}
+
+.tag button:hover {
+  color: white;
+}
+
+/* Archive Section */
+.archiveSection {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(237, 35, 42, 0.2);
+  border-radius: 8px;
+  padding: 18px;
+  margin-top: 15px;
+}
+
+.archiveToggle {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 12px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  margin-bottom: 12px;
+}
+
+.archiveToggle:hover {
+  background: rgba(255, 152, 0, 0.08);
+}
+
+.archiveToggle input[type="checkbox"] {
+  width: auto !important;
+  margin: 0 !important;
+  accent-color: #ff9800;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.archiveNote {
+  color: rgba(255, 152, 0, 0.8);
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.4;
+  padding: 8px 12px;
+  background: rgba(255, 152, 0, 0.08);
+  border-radius: 4px;
+  border-left: 3px solid rgba(255, 152, 0, 0.4);
+}
+
+/* Color Preview */
+.colorPreview {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border-left: 3px solid #ed232a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tagInput {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .tagInput input {
+    margin-bottom: 0;
+  }
+}

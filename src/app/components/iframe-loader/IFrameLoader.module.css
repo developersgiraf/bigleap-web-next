@@ -43,6 +43,12 @@
 }
 
 /* Responsive adjustments */
+
+@media (min-width: 1025px) and (max-width: 1370px) {
+.iframeContainer{
+  width: 100% !important;
+}
+}
 @media (max-width: 767px) {
   .placeholder {
     min-height: 150px;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./footer.module.css";
 import Image from "next/image";
+import VerticalLine from "../verticalLine/vertical";
 
 export default function Footer() {
   return (
@@ -31,54 +32,59 @@ export default function Footer() {
             <div className="col-xl-8 col-lg-7 col-md-12 col-12">
               <div className={styles.content}>
                 <div className={styles.bigleapCnt}>
-                  <h2>Are you ready to take the Big Leap?</h2>
+                  <h2>Are you ready to take the Big Leap?</h2>
                 </div>
 
                 <div className={styles.footerList}>
                   <div className="row">
                     <div className="col-xl-3 col-lg-3 col-md-4 col-6">
-                      <div className={styles.subcol}>
-                        <h5>Services</h5>
-                        <ul>
-                          <li>
-                            <Link href="/services/twoDanimation">2D Animation</Link>
-                          </li>
-                          <li>
-                            <Link href="/services/threeDanimation">3D Animation</Link>
-                          </li>
-                          <li>
-                            <Link href="/services/whiteboard-animation">Whiteboard Animation</Link>
-                          </li>
-                          <li>
-                            <Link href="/servicess/character-design">Character Design</Link>
-                          </li>
-                          
-                        </ul>
+                      <div className={styles.subcolWrapper}>
+                        <div className={styles.subcol}>
+                          <h5>Services</h5>
+                          <ul>
+                            <li>
+                              <Link href="/servicess/twoDanimation">2D Animation</Link>
+                            </li>
+                            <li>
+                              <Link href="/servicess/threeDanimation">3D Animation</Link>
+                            </li>
+                            <li>
+                              <Link href="/servicess/whiteboard-animation">Whiteboard Animation</Link>
+                            </li>
+                            <li>
+                              <Link href="/servicesss/character-design">Character Design</Link>
+                            </li>
+                          </ul>
+                        </div>
+                        <VerticalLine />
                       </div>
                     </div>
                     <div className="col-xl-3 col-lg-3 col-md-4 col-6">
-                      <div className={styles.subcol}>
-                        <h5>Menu</h5>
-                        <ul>
-                          <li>
-                            <Link href="/">Home</Link>
-                          </li>
-                          <li>
-                            <Link href="/about">About</Link>
-                          </li>
-                          <li>
-                            <Link href="/servicess">Services</Link>
-                          </li>
-                          <li>
-                            <Link href="/blog">Blog</Link>
-                          </li>
-                          <li>
-                            <Link href="/portfolio">Portfolio</Link>
-                          </li>
-                          <li>
-                            <Link href="/contact">Contact</Link>
-                          </li>
-                        </ul>
+                      <div className={styles.subcolWrapper}>
+                        <div className={styles.subcol}>
+                          <h5>Menu</h5>
+                          <ul>
+                            <li>
+                              <Link href="/">Home</Link>
+                            </li>
+                            <li>
+                              <Link href="/about">About</Link>
+                            </li>
+                            <li>
+                              <Link href="/servicess">Services</Link>
+                            </li>
+                            <li>
+                              <Link href="/blog">Blog</Link>
+                            </li>
+                            <li>
+                              <Link href="/portfolio">Portfolio</Link>
+                            </li>
+                            <li>
+                              <Link href="/contact">Contact</Link>
+                            </li>
+                          </ul>
+                        </div>
+                        <VerticalLine />
                       </div>
                     </div>
                     <div className="col-xl-3 col-lg-6 col-md-4 col-7">

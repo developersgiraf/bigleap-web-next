@@ -222,11 +222,6 @@
   gap: clamp(10px, 2vw, 15px);
 }
 
-.statCard:hover {
-  transform: translateY(-8px);
-  border-color: rgba(237, 35, 42, 0.6);
-  box-shadow: 0 15px 40px rgba(237, 35, 42, 0.2);
-}
 
 .statIcon {
   font-size: clamp(2rem, 4vw, 2.5rem);
@@ -243,16 +238,6 @@
   margin-bottom: clamp(8px, 2vw, 12px);
 }
 
-.statInfo h3 {
-  margin: 0 0 8px 0;
-  color: #ffcccb;
-  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  opacity: 0.9;
-}
 
 .statNumber {
   margin: 0 0 4px 0;

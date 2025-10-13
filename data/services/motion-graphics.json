@@ -3,7 +3,7 @@
   "title": "Motion Graphics",
   "bannerTitle": "Motion Graphics",
   "archived": false,
-  "index": 4,
+  "index": 5,
   "thumbnail": "/servicess/motion-graphics.png",
   "section01": {
     "image": "/servicess/motion-graphics.png",
@@ -17,28 +17,8 @@
   },
   "listHead": "Motion Graphics Services That We Provide",
   "listPara": "",
-  "list": [
-    {
-      "description": "Make your logo unforgettable. At Big Leap, we animate your logo with creativity and accuracy, delivering a visually appealing output, leaving a lasting impression on your audience and building a brand identity that stands the test of time.",
-      "title": "Logo Animation"
-    },
-    {
-      "description": "At Big Leap we create intuitive and interactive interfaces that will enhance the overall user experience. Whether it's your app or website, we craft engaging micro interactions, screen transitions and progress indications, button animations and many more, enhancing the visual aesthetics and making user interaction smooth and memorable.",
-      "title": "UI/UX Animations"
-    },
-    {
-      "title": "App/Website Demo Videos",
-      "description": "Effectively showcase your app or website with our demonstration services. We craft precise and engaging demo videos that will highlight the features of your website or apps, providing a clear and informative experience for the users."
-    },
-    {
-      "description": "Set the visual style and tone for your video with a dynamic and vibrant title sequence that will grab your audience's attention in the very first frame. We create title sequences that perfectly suit your content- visually appealing and thematically relevant, leaving a lasting impression on the viewers.",
-      "title": "Title Sequences"
-    },
-    {
-      "description": "We deliver the best animated infographics that will make your video engagingly informative. Dynamic visualization of data, will set it apart from the cliche representation which is static. This will keep the viewers invested in the video.",
-      "title": "Infographics in Motion"
-    }
-  ],
+  "list": [],
   "createdAt": "2025-10-05T14:10:58.554Z",
-  "lastModified": "2025-10-06T20:08:21.571Z"
+  "lastModified": "2025-10-09T09:28:09.804Z",
+  "customSlug": ""
 }

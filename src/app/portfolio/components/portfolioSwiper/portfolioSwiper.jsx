@@ -67,6 +67,10 @@ export default function PortfolioSwiper() {
             768: {
                 slidesPerView: 1,
                 spaceBetween: 25,
+            },
+             1370: {
+                slidesPerView: 1,
+                spaceBetween: 25,
             }
         },
     };
@@ -84,7 +88,7 @@ export default function PortfolioSwiper() {
     };
 
     const autoplayConfig = {
-        enabled: true,
+        enabled: false,
         delay: 4000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,

@@ -114,7 +114,8 @@ export default function Home() {
               customSelector={"imageSliderSection abc"}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
-                640: { slidesPerView: 3, spaceBetween: 50 },
+                640: { slidesPerView: 3, spaceBetween: 20 },
+                767: { slidesPerView: 2, spaceBetween: 20 },
                 1024: { slidesPerView: 3, spaceBetween: 50 },
                 1366: { slidesPerView: 4, spaceBetween: 10 },
               }}
@@ -174,7 +175,7 @@ export default function Home() {
                 <div className={styles["second-video"]}>
                   <div className={styles.content}>
                     <p> Our Portfolio</p>
-                    <h2>Explore our creative works and see how we made an impact.</h2>
+                    <h2>Explore our works and see how we made an impact.</h2>
                     <CTAButton title="WATCH MORE" link="/portfolio" />
                   </div>
 
@@ -303,7 +304,7 @@ export default function Home() {
                 320: { slidesPerView: 1, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 50 },
                 992: { slidesPerView: 2, spaceBetween: 40 },
-                1024: { slidesPerView: 3, spaceBetween: 60 },
+                1024: { slidesPerView: 2, spaceBetween: 30 },
                 1366: { slidesPerView: 3, spaceBetween: 0 },
               }}
               imageSize={400}
@@ -331,10 +332,10 @@ export default function Home() {
       <InstaFeeds />
       <GradientLights customCounts={{
         xl: 12,  // Rich visual experience for extra large screens
-        lg: 12,  // Substantial gradients for large screens
-        md: 13,  // Balanced for medium screens
-        sm: 10,  // Moderate for tablets
-        xs: 10   // Minimal but visible on mobile
+        lg: 10,  // Substantial gradients for large screens
+        md: 10,  // Balanced for medium screens
+        sm: 8,  // Moderate for tablets
+        xs: 9   // Minimal but visible on mobile
       }} />
     </>
   );
