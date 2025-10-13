@@ -30,7 +30,7 @@
 }
 .image360 {
   position: absolute;
-  right: clamp(20px, 15vw, 170px);
+  right: clamp(20px, 15vw, 350px);
   top: clamp(60px, 20vh, 220px);
 }
 

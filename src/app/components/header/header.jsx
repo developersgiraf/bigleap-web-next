@@ -89,8 +89,7 @@ export default function MainHeader() {
                                         <Link href="/servicess/mobile-app">Mobile App Development</Link>
                                         <Link href="/servicess/branding">Branding</Link>
                                         <Link href="/servicess/digital-marketing">Digital Marketing</Link>
-                                        <Link href="/servicess/photography">Photography</Link>
-                                    </div>
+                                     </div>
                                 </div>
                             </div>
                         </div>
