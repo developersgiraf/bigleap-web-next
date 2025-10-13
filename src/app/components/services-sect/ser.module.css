@@ -157,6 +157,9 @@
   .serimgs {
     gap: 0px !important;
   }
+  .headings h2 {
+    font-size: 54px !important;
+  }
 }
 @media (min-width: 993px) and (max-width: 1024px) {
   .ServiceImage {

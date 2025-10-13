@@ -70,3 +70,12 @@ color: #fdfdfd;
     display: block;
   
 } */
+
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .otherServices {
+    height: auto;
+  }
+}
