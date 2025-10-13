@@ -18,18 +18,14 @@ export default function OtherListServices() {
             <div className={`${styles.otherServices} ${isClosed ? styles.closed : ""}`}>
                 <h3>Other Services</h3>
                 <ul>
-                    <li><Link href="/servicess/photography">Photography</Link></li>
+                    <li><Link href="/servicess/photography">Photography $ Videography</Link></li>
                     <li><Link href="/servicess/mobile-app">Mobile App Development</Link></li>
                     <li><Link href="/servicess/branding">Branding</Link></li>
                     <li><Link href="/servicess/digital-marketing">Digital Marketing</Link></li>
-                    <li><Link href="/servicess/photography">Photography</Link></li>
-                    <li><Link href="/servicess/mobile-app">Mobile App Development</Link></li>
-                    <li><Link href="/servicess/branding">Branding</Link></li>
-                    <li><Link href="/servicess/digital-marketing">Digital Marketing</Link></li>
-                    <li><Link href="/servicess/photography">Photography</Link></li>
-                    <li><Link href="/servicess/mobile-app">Mobile App Development</Link></li>
-                    <li><Link href="/servicess/branding">Branding</Link></li>
-                    <li><Link href="/servicess/digital-marketing">Digital Marketing</Link></li>
+                    <li><Link href="/servicess/website-design">Website Designing $ Development</Link></li>
+                    <li><Link href="/servicess/ecommerce">Ecommerce Web And App</Link></li>
+                    <li><Link href="/servicess/ui-ux">UI $ UX Design</Link></li>
+
                 </ul>
 
               {/* <div className={styles.otherbtn} onClick={toggleClass}>
