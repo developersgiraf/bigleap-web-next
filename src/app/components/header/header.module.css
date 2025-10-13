@@ -118,7 +118,8 @@
   display: none;
   position: absolute;
   left: 102%;
-  top: -180px; /* Position to align with the top of main dropdown */
+  bottom: 0;
+  /* Position to align with the top of main dropdown */
   min-width: 240px;
   line-height: 90px;
   height: auto;

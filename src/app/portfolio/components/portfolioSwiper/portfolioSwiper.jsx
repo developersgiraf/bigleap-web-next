@@ -67,6 +67,10 @@ export default function PortfolioSwiper() {
             768: {
                 slidesPerView: 1,
                 spaceBetween: 25,
+            },
+             1370: {
+                slidesPerView: 1,
+                spaceBetween: 25,
             }
         },
     };

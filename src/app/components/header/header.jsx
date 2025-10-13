@@ -86,7 +86,6 @@ export default function MainHeader() {
                                         <i className={`fas fa-chevron-right ${styles.arrowIcon}`}></i>
                                     </span>
                                     <div className={styles.otherServicesContent}>
-                                        <Link href="/servicess/website-design">Website Design</Link>
                                         <Link href="/servicess/mobile-app">Mobile App Development</Link>
                                         <Link href="/servicess/branding">Branding</Link>
                                         <Link href="/servicess/digital-marketing">Digital Marketing</Link>
