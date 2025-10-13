@@ -234,7 +234,7 @@
     font-size: 14px !important;
     font-weight: 400 !important;
     line-height: 18px !important;
-    /* max-width: 360px !important; */
+    max-width: 360px !important;
     margin: 0 auto;
   }
   .portfolioDetail {
@@ -266,7 +266,7 @@
   }
   .titleDescriptionSection h2 {
     font-size: 28px;
-    line-height: 24px ;
+    line-height: 36px;
     padding: 0 0px;
   }
 }/*# sourceMappingURL=portfolioDetail.module.css.map */

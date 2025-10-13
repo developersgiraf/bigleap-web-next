@@ -130,10 +130,7 @@ export default async function BlogTagPage({ params }) {
   
   return (
     <>
-      <TitleBanner 
-        title={`${displayName} Articles`} 
-        sub={`Found ${taggedBlogs.length} article${taggedBlogs.length !== 1 ? 's' : ''} with this tag`}
-      />
+      
 
       <div className={styles.blogPageWrapper}>
         {/* Blog Articles */}

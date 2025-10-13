@@ -9,6 +9,7 @@ import TitleDescription from "./components/title-description/titleDes.jsx";
 import GradientLights from "../components/gradient-lights/gradient.jsx";
 import { GRADIENT_PRESETS } from "../components/gradient-lights/gradientConfig.js";
 import DownArrow from "../components/downArrow/arrow.jsx";
+import OtherListServices from "./components/otherListServices/otherList.jsx";
 export default function ServicesPage() {
   return (
     <>
@@ -56,6 +57,7 @@ export default function ServicesPage() {
         <DynamicServiceImage head="Services We Provide" />
       </section>
 
+      <OtherListServices />
 
       <section className={styles.titledes}>
         <div className="container">
@@ -63,23 +65,11 @@ export default function ServicesPage() {
             title={'Do You Want to|| Create|| an|| Impact|| with a Professional & Effective|| Animated Video'}
             description={
               <span className={styles.paraColor}>
-                lorem ipsum dolor sit amet consectetur adipiscing elit. lorem
-                ipsum dolor sit amet consectetur adipiscing elit. lorem ipsum
-                dolor sit amet consectetur adipiscing elit. lorem ipsum dolor
-                sit amet consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. lorem ipsum dolor sit amet
-                consectetur adipiscing elit. <br />
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
-                dolores, quasi porro ducimus inventore corporis maxime commodi
-                quo optio nemo aliquam officia recusandae consequatur ipsa
-                dolorum blanditiis vitae placeat delectus!Lorem, ipsum dolor sit
-                amet consectetur adipisicing elit. Modi dolores, quasi porro
-                ducimus inventore corporis maxime commodi quo optio nemo aliquam
-                officia recusandae consequatur ipsa dolorum blanditiis vitae
-                placeat delectus!
+                At BigLeap, we don’t just animate — we elevate ideas and take concepts to the next level.
+                We give narratives a new form through compelling animation that clearly expresses your vision, strengthens your brand, and drives user engagement.
+                From 2D animation to motion graphics, product animation, VFX, and post-production, we offer a full range of animation services. 
+                Got an idea? Let’s animate it.<br />
+                
               </span>
             }
           />

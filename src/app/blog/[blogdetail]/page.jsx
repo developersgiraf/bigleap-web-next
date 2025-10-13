@@ -68,7 +68,7 @@ export default async function BlogDetailPage({ params }) {
 
   return (
     <>
-      <TitleBanner title={blogsData.title} sub="" />
+     <TitleBanner title={blogsData.title} sub="" />
       <div className="container">
         <div className={styles.imageContainer}>
           <Image
