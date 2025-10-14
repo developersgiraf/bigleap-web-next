@@ -1,0 +1,124 @@
+[build]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  command = "npm run build"
+=======
+  command = "npm run clean && npm run build && node scripts/post-build-cleanup.js"
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+  command = "npm run clean && npm run build && node scripts/post-build-cleanup.js"
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+  command = "npm run build"
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
+
+# Simple function configuration to avoid 250MB limit
+[functions]
+  external_node_modules = ["firebase", "firebase-admin", "sharp", "canvas"]
+  
+# Exclude large files from functions
+[functions.excluded_files]
+  ".next/cache/**" = true
+  ".next/standalone/**" = true
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+  # Optimize build for smaller functions
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
+# Enhanced function configuration to reduce size
+[functions]
+  # External modules to reduce function bundle size
+  external_node_modules = ["sharp", "canvas", "bcryptjs", "next-auth", "swiper", "bootstrap"]
+  
+# Exclude more files to reduce function size
+[functions.excluded_files]
+  ".next/cache/**" = true
+  ".next/standalone/**" = true
+  ".next/static/**" = true
+  "node_modules/**" = true
+  "*.map" = true
+  "*.md" = true
+  ".git/**" = true
+  "public/**" = true
+
+# Function timeout configuration
+[functions."*"]
+  timeout = 30
+<<<<<<< HEAD
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
+
+# Redirects for Next.js app router
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/___netlify-handler"
+  status = 200
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+# Headers for static assets
+=======
+  force = false
+
+# Headers for static assets - better caching
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+  force = false
+
+# Headers for static assets - better caching
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+
+# Headers for static assets
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    Cache-Control = "public, max-age=31536000, immutable"
+=======
+=======
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Headers for images
+[[headers]]
+  for = "/public/*"
+  [headers.values]
+<<<<<<< HEAD
+    Cache-Control = "public, max-age=31536000"
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+    Cache-Control = "public, max-age=31536000"
+>>>>>>> parent of 9311b77 (removed netlify dependancies)
+=======
+    Cache-Control = "public, max-age=31536000, immutable"
+>>>>>>> parent of 216196d (Merge branch 'main' of https://github.com/developersgiraf/bigleap-web-next)
