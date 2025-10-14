@@ -688,41 +688,39 @@ export const servicesData = {
     bannerTitle: "Photography & Videography",
     section01: {
       image: "/servicess/detail-image.png",
-      heading: "Professional Photography & Videography Services",
+      heading: "Photography & Videography ",
       description:
-        "Capture your brand's story with our professional photography and videography services. From corporate headshots to promotional videos, we create high-quality visual content that elevates your brand and engages your audience.",
+        "Set the tone for your whole business by availing of our Photography & Videography services. Show your commitment and passion through videos and photos. Let the action communicate than words. Showcase your brand in the most creative way of Photography & Videography. Inspire your customers to take action through engaging photos and videos. Build trust and credibility with your client and Create brand recognition through the best Photography & Videography services in UAE. Our scope of work includes storage facilities and warehouses, office/corporate spaces, hotels & resorts, residential, construction, and other custom projects. Photography & Videography are crucial strategies to expand your brand and reach the customer. Create stunning, high-resolution videos and virtual tours and showcase your business with the most immersive media on the web. Give your viewers a visual treat and a professional experience that will leave a lasting impression. ",
     },
     section02: {
-      DescTitle: "Visual Content: || Capturing Your Story",
+      DescTitle: "",
       Descpara:
-        "In today's visual-first world, high-quality photography and videography are essential for effective brand communication. Our team combines technical expertise with creative vision to produce compelling visual content that tells your story and drives engagement.",
-      subhead1: "Professional Quality",
+        "",
       subdes1:
-        "State-of-the-art equipment and expert techniques ensure every photo and video meets the highest professional standards.",
-      subhead2: "Creative Direction",
+        "",
       subdes2:
-        "Innovative creative direction that aligns with your brand vision and marketing objectives for maximum impact.",
-      subhead3: "Versatile Services",
+        "",
+      subhead3: "",
       subdes3:
-        "From corporate events to product photography, we offer comprehensive visual content creation services for all your needs.",
+        "",
     },
-    listHead: "Photography & Videography Services",
+    listHead: "Our Speciality ",
     list: [
       {
-        title: "Corporate Photography",
-        description: "Professional headshots, team photos, and corporate event photography that showcases your company's professionalism."
+        title: "Pilot skills ",
+        description: "The best team, the best equipment, and all other ingredients that we possess eventually will wow your clients and set you apart from the competition. "
       },
       {
-        title: "Product Photography",
-        description: "High-quality product images that highlight features and details, perfect for e-commerce and marketing materials."
+        title: "Creativity ",
+        description: "The magic that makes us unique. "
       },
       {
-        title: "Promotional Videos",
-        description: "Engaging promotional videos that tell your brand story and drive customer engagement and conversions."
+        title: "Video editing ",
+        description: "A professionally talented team who are capable to edit videos and photos into beautiful and eye-catchy ones with the best latest software."
       },
       {
-        title: "Event Coverage",
-        description: "Comprehensive photography and videography coverage of corporate events, conferences, and special occasions."
+        title: "Ambitious and Unique",
+        description: "An ambitious team for an ambitious team because we settle for nothing less. And uniqueness is our specialty. "
       }
     ]
   }

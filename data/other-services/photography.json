@@ -10,6 +10,7 @@
     "heading": "Character Design & Rigging",
     "description": "Bring your characters to life with expert character designing and rigging. At Big Leap, we turn concepts into reality, animating characters to motion. Adding charm and personality, our team will craft the character that will align with your vision, embodying the vibrance, emotional appeal, and realism."
   },
+
   "section02": {
     "DescTitle": "||Designing And ||Rigging",
     "Descpara": "Character designing is the visual creation of a character, which includes the appearance, personality, expressions, and behaviour. The character thus designed will embody the brand identity and value.The mesh or the designed 3D model is bound to a skeleton, the interconnected part or joints. This rigging process allows the animators to give dynamics to the character.",
@@ -28,6 +29,7 @@
       }
     ]
   },
+  
   "listHead": "The Services We Offer",
   "listPara": "",
   "list": [
