@@ -7,7 +7,7 @@ export default function TitleDescription({
   // Legacy props for backward compatibility
   subhead1, subdes1, subhead2, subdes2, subhead3, subdes3, subhead4, subdes4 
 }) {
-
+  // const link = description.match(/https?:\/\/[^\s]+/);
   const titleSplit = title.includes("||") ? title.split("||") : null;
 
   // Use subsections if available, otherwise fall back to legacy format

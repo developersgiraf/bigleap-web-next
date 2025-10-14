@@ -434,39 +434,47 @@ export const servicesData = {
       image: "/servicess/Otherservice/website-development-large.jpg",
       heading: "Website Designing & Development ",
       description:
-        "Don't you wish to keep the customers engaged in your website? Let’s tell you the secret. Help your website to be more informative, attractive, interesting, user-friendly, and magical. We provide Website design & development, E-commerce design & development, and Mobile App Development.A Website design company in Dubai that is supported by a team of experts who can make your online web presence impressive, optimized, and powerful. Design a website that can impress each of your targeted customers. . ",
+        "Don't you wish to keep the customers engaged in your website? Let’s tell you the secret. Help your website to be more informative, attractive, interesting, user-friendly, and magical. We provide Website design & development, E-commerce design & development, and Mobile App Development. http:// A Website design company in Dubai that is supported by a team of experts who can make your online web presence impressive, optimized, and powerful. Design a website that can impress each of your targeted customers.  To create an unmatched user experience, we craft our web development services with incredible web graphic and interface design, standardized code and proprietary software authoring, and search engine optimization.A unique web development company in UAE that has established a strong foothold in the industry and is capable to develop a website that can communicate your evolving ideas to a broader audience. Maintain a long-lasting relationship with the client with a customer-centric approach.Developing a brand new website or revamping an outdated website is no more a hassle. Build a welcoming website to boost your revenue, keep up with your competitor, improve the search ranking, and a website that helps you in brand promotion. We help to build a dynamic website that enables you to add your future functionalities very simply.A perfect website and App development studio for those who dream big and are ambitious. Take your first flight to become a successful business through the best service. Bring your idea into a fully-fledged and optimized website and App. We build a niche solution for all your web and App development services. ",
     },
     section02: {
-      DescTitle: "Website Design: || Building Digital Excellence",
+      DescTitle: "",
       Descpara:
-        "Modern website design combines aesthetics with functionality to create seamless user experiences. Our approach focuses on responsive design, optimal performance, and strategic user journey mapping to ensure your website not only looks great but also performs exceptionally across all devices and platforms.",
-      subhead1: "Responsive Design",
+        "",
+      subhead1: "",
       subdes1:
-        "Our websites are built to provide optimal viewing experience across all devices - from desktop computers to mobile phones, ensuring your content is accessible everywhere.",
-      subhead2: "User Experience Focus",
+        "",
+      subhead2: "",
       subdes2:
-        "We prioritize user experience in every design decision, creating intuitive navigation and engaging interfaces that keep visitors on your site longer.",
-      subhead3: "SEO Optimized",
+        "",
+      subhead3: "",
       subdes3:
-        "Every website we create is optimized for search engines, helping you rank better and attract more organic traffic to your business.",
+        "",
     },
-    listHead: "Website Design & Development Services",
+    listHead: "Strategy",
     list: [
       {
-        title: "Custom Website Design",
-        description: "Tailored website designs that reflect your brand identity and business goals, created from scratch to meet your specific requirements."
+        title: "Responsive Web Design",
+        description: "Built a perfect webpage compatible with any device. Make that dynamic changes beautiful and clear for different screen sizes and viewports. "
       },
       {
-        title: "E-commerce Development",
-        description: "Full-featured online stores with secure payment gateways, inventory management, and user-friendly shopping experiences."
+        title: "Front-end and Back-end Web Development ",
+        description: "Enhance user experience to the next level by implementing the best visual aspects through our front-end web development. Make your website more interactive and userfriendly through the best back-end web development "
       },
       {
-        title: "WordPress Development",
-        description: "Custom WordPress themes and plugins, content management systems that are easy to use and maintain."
+        title: "Mobile-friendly design ",
+        description: "Make your web design mobile friendly. Experience how easily a visitor can use your page on a mobile device when it is specially made by our developers. "
       },
       {
-        title: "Website Maintenance",
-        description: "Ongoing support and maintenance services to keep your website secure, updated, and performing at its best."
+        title: "SEO Friendly Design ",
+        description: "Bring more traffic to the website by making it SEO-friendly. Also, increase brand awareness and enhance the user experience. "
+      },
+      {
+        title: "Customized design",
+        description: "A web design tailored exclusively for your brand, customer-oriented, and offers you greater control over your website’s hosting.  "
+      },
+      {
+        title: "Iconic and secure ",
+        description: "We follow lean and agile frameworks to build a superior Website. We have better knowledge about all threats a website can face and we have better solutions to reduce the risk of your site being hacked. We design and develop the most Iconic and Secure Websites."
       }
     ]
   },
@@ -475,50 +483,51 @@ export const servicesData = {
     bannerTitle: "Mobile App Development",
     section01: {
       image: "/servicess/detail-image.png",
-      heading: "Innovative Mobile App Development Solutions",
+      heading: "Mobile App Development",
       description:
-        "Bring your ideas to life with our cutting-edge mobile app development services. We create native and cross-platform applications that deliver exceptional user experiences and drive business growth. From iOS to Android, we've got your mobile presence covered.",
+        "Build a use friendly App that can be accessed by anyone in this world who has a smartphone with the best Mobile App Development Company in UAE. Looking for the best companion to develop the right Mobile App? If yes, then we heard that. We not only develop Hybrid Mobile Apps but are aligned with your journey. BigLeap is one of the Best Mobile App Development companies in Dubai that will guide and help you in every step to select the best technology and process for your current or upcoming project.  Discover the scope of the mass mobile space. Build the best App that can showcase your products or services. keep in touch with your customers, notify your customers of promotions, attract your customers, educate your customers, entertain and engage your customers, drive traffic to your business, generate sales leads, increase your sales, and show your passion and commitment to your field. A complete digital destination especially if you decide to build a mobile app for your company. Mobiles have become pocket computers, which we depend on for any information, to get connected and whatnot. And technology has developed to another level, which increased the demand for mobile applications. We have experts who have a hand full of experience in Hybrid Mobile Apps, Android Mobile App Development, and iOS Mobile App Development. Create budget-optimized and brand-driven mobile applications. We have the primmest app builders and creators in the industry who are passionate and dedicated. Create easy reading and navigation, responsive and adaptive, fast-loading, highly optimized responsive website.",
     },
     section02: {
-      DescTitle: "Mobile Apps: || Innovation In Your Pocket",
+      DescTitle: "Android  || App  || Development",
       Descpara:
-        "Mobile app development has revolutionized how businesses connect with their customers. Our team specializes in creating intuitive, feature-rich mobile applications that not only meet user expectations but exceed them, providing seamless functionality across all mobile platforms.",
-      subhead1: "Cross-Platform Development",
+        "BigLeap is an android mobile app development agency in UAE that design and develop User Centric Andriod Application with proven development processes. App with excellent performance and compatibility across all Android devices. Android App will be the most developed Application since most of us use Android devices. Across the world, Android has become the most commonly found operating system on mobile phones because of its accessibility as an open-source platform. Diversity in Android devices has become a big challenge for developers. But as an experienced android application development company in Dubai, we have accepted that challenge and made it simple. ",
+
+      subhead1: "iOS App Development / || iPhone App ",
       subdes1:
-        "Develop once, deploy everywhere. Our cross-platform solutions ensure your app works perfectly on both iOS and Android devices.",
-      subhead2: "User-Centric Design",
+        "An iOS app development company in Dubai with a team of professional developers and creative designers who are experts in building iOS Applications. By keeping the target audiences in mind we develop and deliver the best user experience iOS App by using a cross-platform approach. This will ensure the users will revisit your App again and again by getting deep into their minds. We are an iPhone app development agency in Dubai that develops top-rated iOS Apps for all kinds of businesses. Make your App loved by Apple users. Nail down the app performance, data security, and great user experience through the best iOS App Design and Development Agency in UAE. iOS App is considered a perfect ecosystem to launch a product. And also the best platform to gather user feedback and fine-tune monetization options to reach product-market fit. ",
+      subhead2: "Hybrid App Development ",
       subdes2:
-        "We design apps with the end-user in mind, creating intuitive interfaces that make complex tasks simple and enjoyable.",
-      subhead3: "Performance Optimization",
+        "Leading hybrid App Development Company in UAE with the best hybrid mobile app development solution. Leverage your marketing effort by building sturdy and functional cross-platform with the best Hybrid App Developers in UAE. We have a global clientele for whom we have rendered our hybrid app development services and helped them to develop efficient, effective, and satisfactory hybrid apps. And also make sure that the app develops maximum engagement and measurable value to the business. ",
+      subhead3: "",
       subdes3:
-        "Fast loading times, smooth animations, and reliable functionality ensure your app provides an excellent user experience.",
+        "",
     },
-    listHead: "Mobile App Development Services",
+    listHead: "Why we are unique ",
     list: [
       {
-        title: "Native App Development",
-        description: "Platform-specific apps that take full advantage of iOS and Android features for optimal performance and user experience."
+        title: "Problem solvers",
+        description: "We like to call them challenges because for BigLeap problems are not problems if we take them as challenges. "
       },
       {
-        title: "Cross-Platform Apps",
-        description: "Cost-effective solutions that work across multiple platforms while maintaining native-like performance and feel."
+        title: "Time bounded ",
+        description: "On-time delivery of services with uncompromised quality is the vow that we keep to our clients."
       },
       {
-        title: "App UI/UX Design",
-        description: "Beautiful, intuitive app interfaces designed to provide seamless user experiences and drive engagement."
+        title: "Value Givers",
+        description: "For a quality outcome for App Development, we provide the best services with top-notch technology and the right choices of raw materials for the clients to gain maximum value. "
       },
       {
-        title: "App Maintenance & Support",
-        description: "Ongoing support, updates, and maintenance to keep your app running smoothly and up-to-date with latest standards."
+        title: "Innovators and ideators",
+        description: "A team of consistent developers who are Innovators, and ideators, and are always ready to face new challenges even if they have to invent new methods to crack them. "
       }
     ]
   },
 
   "e-commerce": {
-    bannerTitle: "E-Commerce Web and App Development",
+    bannerTitle: "E-Commerce Web and App",
     section01: {
       image: "/servicess/detail-image.png",
-      heading: "Complete E-Commerce Solutions",
+      heading: "eCommerce Web and App ",
       description:
         "Launch your online business with our comprehensive e-commerce development services. We create powerful online stores and mobile apps that drive sales, manage inventory, and provide seamless shopping experiences for your customers.",
     },
