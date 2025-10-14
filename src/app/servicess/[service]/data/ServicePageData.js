@@ -523,46 +523,70 @@ export const servicesData = {
     ]
   },
 
-  "e-commerce": {
-    bannerTitle: "E-Commerce Web and App",
+  "ecommerce": {
+    bannerTitle: "ECommerce Web and App",
     section01: {
-      image: "/servicess/detail-image.png",
-      heading: "eCommerce Web and App ",
+      image: "/servicess/Otherservice/Ecommerse.jpg",
+      heading: "ECommerce Web and App ",
       description:
-        "Launch your online business with our comprehensive e-commerce development services. We create powerful online stores and mobile apps that drive sales, manage inventory, and provide seamless shopping experiences for your customers.",
+        "Delivers you an e-commerce website and App that can be optimized for mobiles or any device, search, and the social web. A Website and App that is visually appealing, polished, and professional. Make your website user-friendly and easy to access the information and page. Build an eCommerce Website and App that delivers a Top-Notch shopping experience. The best eCommerce Website Development Service in UAE, which is digitally competitive and reliable. Gift your user a website with a premium experience and high performance. Build a website that runs seamlessly through your evolution. Simplify the user experience and increase customer outreach with a connected, efficient, and inherently digital design. Build a dynamic Ecommerce Website and App, optimizing traffic and conversion by proactively managing your online shop. Experts who are capable to provide benchmarked e-commerce progress reports with expert analysis and recommendations. For our work and strategies, we follow a limitless yet wide-eyed approach.",
     },
     section02: {
-      DescTitle: "E-Commerce: || Your Digital Storefront",
+      DescTitle: "E-Commerce: || The Digital Advantage",
       Descpara:
-        "E-commerce platforms are the backbone of modern retail. Our solutions combine robust functionality with user-friendly design to create online stores that not only look great but also convert visitors into customers and drive sustainable business growth.",
-      subhead1: "Secure Payment Integration",
+        "The world has simplified to a global village and so is the market. You can now avail of anything from any part of the world just in a few clicks from the comfort of your home. Improve inventory and build customer loyalty through a company that offers you next-gen retail solutions. Boost your visibility on the digital channels with the best ready-to-market eCommerce mobile app development and eCommerce web application development solutions. You are going to build a website that has the following advantages:",
+      subhead1: "Presentable Look",
       subdes1:
-        "Multiple payment gateway integrations ensure secure, convenient transactions for your customers across various payment methods.",
-      subhead2: "Inventory Management",
+        "A visually appealing and professional design that builds trust and credibility with your customers.",
+      subhead2: "Attract Target Customers",
       subdes2:
-        "Advanced inventory tracking and management systems help you stay organized and never miss a sale opportunity.",
-      subhead3: "Mobile Commerce",
+        "Optimized for search and social, your e-commerce site draws in the right audience and increases conversion rates.",
+      subhead3: "Better Customer Experience & Engagement",
       subdes3:
-        "Mobile-optimized shopping experiences ensure your customers can shop comfortably from any device, anywhere, anytime.",
+        "User-friendly navigation and interactive features keep customers engaged and encourage repeat visits.",
+      subhead4: "Comfortable Sale & Buy",
+      subdes4:
+        "Streamlined purchasing process makes buying and selling easy and efficient for both customers and business owners.",
+      subhead5: "Interactive Website",
+      subdes5:
+        "Dynamic elements and personalized experiences foster deeper connections with your audience.",
+      subhead6: "Better Security",
+      subdes6:
+        "Robust security measures protect customer data and transactions, building confidence in your brand.",
+      subhead7: "Manageable",
+      subdes7:
+        "Easy-to-use admin tools allow you to update products, track orders, and manage your business efficiently.",
+      subhead8: "Customizable",
+      subdes8:
+        "Flexible design and features let you tailor your e-commerce site to your unique business needs.",
     },
-    listHead: "E-Commerce Development Services",
+    listHead: "Our Specialty ",
     list: [
       {
-        title: "Online Store Development",
-        description: "Full-featured e-commerce websites with product catalogs, shopping carts, and secure checkout processes."
+        title: "Capitative UX/UI design",
+        description: "For a distinguished user experience, we have the best in-house front-end developers and UX/UI designers who are highly capable to craft the best capitative design."
       },
       {
-        title: "Mobile Commerce Apps",
-        description: "Native mobile shopping apps that provide seamless purchasing experiences on smartphones and tablets."
+        title: "Back-End development ",
+        description: "Make your Web and App more adhesive, engaging, and feature-rich with the trending technology stack and development framework."
       },
       {
-        title: "Payment Gateway Integration",
-        description: "Secure payment processing solutions supporting multiple payment methods and currencies for global reach."
+        title: "100% quality testing",
+        description: "Clears and ensures the website and Apps are bugs free and error-free through extensive testing in each stage of development. "
       },
       {
-        title: "E-commerce Analytics",
-        description: "Comprehensive analytics and reporting tools to track sales, customer behavior, and business performance."
+        title: "Requirement elicitation ",
+        description: "As a customer-oriented, dedicated, and perfectionist company we view each of our clients and their requirements as unique. "
+      },
+      {
+        title: "On-demand strategy ",
+        description: "Through the perfect research method, requirement understanding, and product feasibility, we develop customized and unique strategies to build the perfect fit Website and App. "
+      },
+      {
+        title: "Quick Support ",
+        description: "We provide an open communication platform so that we can communicate easily whenever you need it without any barriers. So whenever you need assistance we are readily available for you to assist you."
       }
+
     ]
   },
 
